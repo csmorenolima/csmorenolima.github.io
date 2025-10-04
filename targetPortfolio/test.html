@@ -414,6 +414,13 @@
             border: none;
         }
 
+        /* Support video elements inside video-container */
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         /* Skills Section */
         .skills-grid {
             display: grid;
@@ -695,14 +702,11 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1.5rem;">CARLA SOFIA</h3>
-                    <p>I'm a <strong>DevOps Engineer</strong><i>(...In case you're wondering that means I help bridge the gap between software development <–> IT operations – making sure applications are built, tested and deployed efficiently and reliably.)</i></italics></p>
-                    <br>
-                    <p>But DevOps isn't just about systems, it's also about helping people become more collaborative, typically through automation to handle manual processes.</p>
-                    
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1rem;"><strong>Last updated:</strong> 04 Oct 2025</h4>
+                    <p>I'm a <strong>DevOps Engineer</strong><i>(...In case you're wondering that means I help bridge the gap between software development <–> IT operations by treamlining automated workflows, facilitating continuous deployment and enhancing team collaboration to deliver at pace.)</i></italics></p>
+                    <br>                    
                     <p>When I'm not optimising infrastructure or streamlining deployment pipelines, you'll find me exploring creative projects and pushing the boundaries of what's possible with technology.</p>
                     
-                    <p><strong>Last updated:</strong> 04 Oct 2025</p>
                 </div>
                 <div class="about-image">
                     <img src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/02/thumbnail_headshot_edited-hi-1.jpg" alt="Carla Sofia Lima" loading="lazy">
@@ -757,7 +761,12 @@
             <div class="featured-grid">
                 <!-- SCAAR Project -->
                 <div class="featured-item">
-                    <div class="featured-image" style="background-image: url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47-1-e1611693908853.png')"></div>
+                    <div class="video-container">
+                        <video controls playsinline preload="metadata">
+                            <source src="https://www.dropbox.com/scl/fi/y6r4cuyvvjtb7pq2sh7fz/JCPD8428.MP4?rlkey=idrhxijjjmb01450pukablggd&raw=1" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <div class="featured-content">
                         <h3 class="featured-title">SCAAR – NOMAD</h3>
                         <p class="featured-description">Advanced product design and development project featuring innovative user experience and modern design principles.</p>
@@ -861,13 +870,13 @@
                 <div class="footer-section">
                     <h3>Social</h3>
                     <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/Carla022" target="_blank">GitHub</a>
+                    <a href="https://github.com/csmorenolima" target="_blank">GitHub</a>
                     
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com/Carla022" target="_blank">
+                        <a href="https://github.com/csmorenolima" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank">

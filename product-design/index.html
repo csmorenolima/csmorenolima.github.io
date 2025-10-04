@@ -45,9 +45,14 @@
         .carousel-track {
             display: flex;
             gap: 2rem;
-            overflow-x: auto;
+            overflow-x: hidden; /* disable drag/scroll */
             scroll-behavior: smooth;
             padding-bottom: 1rem;
+            padding-left: 48px; /* match button width, keeps cards clear of left button */
+            padding-right: 48px; /* match button width, keeps cards clear of right button */
+            /* Remove pointer events for drag */
+            -ms-touch-action: none;
+            touch-action: none;
         }
         .carousel-card {
             min-width: 350px;
@@ -62,13 +67,19 @@
         }
         .carousel-btn {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.85);
+            top: 0;
+            bottom: 0;
+            left: auto;
+            right: auto;
+            transform: none;
+            background: var(--gradient);
+            background-size: 400% 400%;
+            background-position: 0% 50%;
             border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            border-radius: 0; /* base: no rounding */
+            opacity: 0.85; /* 85% opacity */
+            width: 48px;
+            height: 100%; /* match carousel/card height */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -76,14 +87,39 @@
             cursor: pointer;
             z-index: 2;
             font-size: 1.25rem;
-            transition: background 0.2s;
+            color: #fff;
+            transition: background 0.3s ease, transform 0.2s ease;
+            animation: gradientMove 4s linear infinite; /* bring back gradient animation */
         }
-        .carousel-btn.left { left: 0.5rem; }
-        .carousel-btn.right { right: 0.5rem; }
-        .carousel-btn:hover { background: var(--primary-color); color: white; }
+        .carousel-btn.left {
+            left: 0;
+            border-radius: 12px 0 0 12px; /* round outer (left) corners */
+        }
+        .carousel-btn.right {
+            right: 0;
+            border-radius: 0 12px 12px 0; /* round outer (right) corners */
+        }
+        .carousel-btn:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            background-size: 400% 400%;
+            background-position: 100% 50%;
+            color: #fff;
+            animation: gradientMoveHover 1.5s linear infinite; /* animated hover */
+            transform: scale(1.02);
+        }
         @media (max-width: 600px) {
             .carousel-card { min-width: 80vw; }
-            .carousel-btn { width: 32px; height: 32px; font-size: 1rem; }
+            .carousel-btn { width: 36px; height: 100%; font-size: 1rem; }
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes gradientMoveHover {
+            0% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
@@ -122,7 +158,6 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Explore selected work across categories.</p>
 
             <!-- Audio Electronics Carousel -->
             <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin-bottom:1rem;">Audio Electronics</h3>
@@ -233,10 +268,10 @@
                 <div class="footer-section">
                     <h3>Social</h3>
                     <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/Carla022" target="_blank">GitHub</a>
+                    <a href="https://github.com/csmorenolima" target="_blank">GitHub</a>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/Carla022" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/csmorenolima" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank"><i class="fab fa-tiktok"></i></a>
                     </div>
