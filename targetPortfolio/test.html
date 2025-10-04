@@ -1073,6 +1073,284 @@
             }
         }
 
+        // Wolf Sprite Sheet Wanderer (supports multi-row sprite sheets; EPS not supported in browsers)
+        (function() {
+            // Convert the EPS to PNG or SVG first (e.g., Inkscape: File > Save As > PNG). Then set SPRITE_CANDIDATES below.
+            const SPRITE_CANDIDATES = [
+                '/targetPortfolio/wolf-walk.png', // preferred exported PNG
+                '/targetPortfolio/wolf-walk.jpg', // optional JPG
+                '/targetPortfolio/2112.q708.007.P.m012.c25.dogs emotions body language flat set.jpg' // current JPG
+            ].map(p => encodeURI(p));
+            // Sprite layout config
+            const ROWS = 1;                 // number of rows in the sheet
+            const FRAMES_PER_ROW = 6;       // frames per row
+            const ACTION_ROW = 0;           // which row to use for walking animation
+            const ANIMATION_SPEED = 120;    // ms per frame
+            const MOVE_SPEED = 2;           // px per tick
+            const CANVAS_ID = 'wolf-sprite-canvas';
+
+            // Create canvas behind content
+            let canvas = document.getElementById(CANVAS_ID);
+            if (!canvas) {
+                canvas = document.createElement('canvas');
+                canvas.id = CANVAS_ID;
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                canvas.style.position = 'fixed';
+                canvas.style.left = '0';
+                canvas.style.top = '0';
+                canvas.style.width = '100vw';
+                canvas.style.height = '100vh';
+                canvas.style.zIndex = '0';
+                canvas.style.pointerEvents = 'none';
+                document.body.insertBefore(canvas, document.body.firstChild);
+            }
+            const ctx = canvas.getContext('2d');
+
+            // Try to load the first available sprite candidate
+            function loadSprite(urls) {
+                return new Promise(resolve => {
+                    let img = new Image();
+                    let i = 0;
+                    function tryNext() {
+                        if (i >= urls.length) return resolve(null);
+                        img = new Image();
+                        img.onload = () => resolve(img);
+                        img.onerror = () => { i++; tryNext(); };
+                        img.src = urls[i];
+                    }
+                    tryNext();
+                });
+            }
+
+            loadSprite(SPRITE_CANDIDATES).then(sprite => {
+                if (!sprite) {
+                    console.warn('No sprite sheet found. Please export the EPS to PNG/JPG and update SPRITE_CANDIDATES.');
+                    return;
+                }
+                const FRAME_WIDTH = Math.floor(sprite.width / FRAMES_PER_ROW);
+                const FRAME_HEIGHT = Math.floor(sprite.height / ROWS);
+                const srcY = ACTION_ROW * FRAME_HEIGHT;
+
+                const wolf = {
+                    x: Math.random() * (canvas.width - FRAME_WIDTH),
+                    y: Math.random() * (canvas.height - FRAME_HEIGHT),
+                    dir: Math.random() < 0.5 ? 1 : -1, // 1: right, -1: left
+                    frame: 0,
+                    frameTick: 0
+                };
+
+                function wanderWolf() {
+                    // Move with slight vertical drift
+                    wolf.x += wolf.dir * MOVE_SPEED;
+                    wolf.y += (Math.random() - 0.5) * 1.2;
+                    wolf.y = Math.max(0, Math.min(canvas.height - FRAME_HEIGHT, wolf.y));
+                    // Bounce horizontally
+                    if (wolf.x < 0) { wolf.x = 0; wolf.dir = 1; }
+                    if (wolf.x > canvas.width - FRAME_WIDTH) { wolf.x = canvas.width - FRAME_WIDTH; wolf.dir = -1; }
+                    // Advance animation
+                    wolf.frameTick++;
+                    if (wolf.frameTick >= ANIMATION_SPEED / 16) {
+                        wolf.frame = (wolf.frame + 1) % FRAMES_PER_ROW;
+                        wolf.frameTick = 0;
+                    }
+                }
+
+                function drawWolf() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.save();
+                    ctx.translate(wolf.x + FRAME_WIDTH / 2, wolf.y + FRAME_HEIGHT / 2);
+                    ctx.scale(wolf.dir, 1); // flip horizontally for direction
+                    ctx.drawImage(
+                        sprite,
+                        wolf.frame * FRAME_WIDTH, srcY, FRAME_WIDTH, FRAME_HEIGHT,
+                        -FRAME_WIDTH / 2, -FRAME_HEIGHT / 2, FRAME_WIDTH, FRAME_HEIGHT
+                    );
+                    ctx.restore();
+                }
+
+                function loop() {
+                    wanderWolf();
+                    drawWolf();
+                    requestAnimationFrame(loop);
+                }
+
+                loop();
+
+                window.addEventListener('resize', () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                });
+            });
+        })();
+
+        // Cute Dog Wanderer: background canvas, random behaviors, sprite-sheet with emoji fallback
+        (function() {
+            const SPRITE_CANDIDATES = [
+                '/targetPortfolio/dog-walk.png',
+                '/targetPortfolio/dog-walk.jpg',
+                '/targetPortfolio/2112.q708.007.P.m012.c25.dogs emotions body language flat set.jpg'
+            ].map(p => encodeURI(p));
+
+            // Layout config (adjust to your sheet)
+            const ROWS = 1;                 // total rows
+            const FRAMES_PER_ROW = 6;       // frames per row
+            const WALK_ROW = 0;             // row index for walk
+            const SNIFF_ROW = 0;            // row index for sniff/idle if available
+
+            const CANVAS_ID = 'cute-dog-canvas';
+            const ANIMATION_MS = 120;       // ms per frame
+            const WALK_SPEED = 2;           // px per tick
+            const DRIFT = 1.2;              // vertical drift
+
+            // Create canvas behind content
+            let canvas = document.getElementById(CANVAS_ID);
+            if (!canvas) {
+                canvas = document.createElement('canvas');
+                canvas.id = CANVAS_ID;
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                canvas.style.position = 'fixed';
+                canvas.style.left = '0';
+                canvas.style.top = '0';
+                canvas.style.width = '100vw';
+                canvas.style.height = '100vh';
+                canvas.style.zIndex = '0';
+                canvas.style.pointerEvents = 'none';
+                document.body.insertBefore(canvas, document.body.firstChild);
+            }
+            const ctx = canvas.getContext('2d');
+
+            // Load first available sprite
+            function loadSprite(urls) {
+                return new Promise(resolve => {
+                    let img = new Image();
+                    let i = 0;
+                    function tryNext() {
+                        if (i >= urls.length) return resolve(null);
+                        img = new Image();
+                        img.onload = () => resolve(img);
+                        img.onerror = () => { i++; tryNext(); };
+                        img.src = urls[i];
+                    }
+                    tryNext();
+                });
+            }
+
+            loadSprite(SPRITE_CANDIDATES).then(sprite => {
+                const useEmoji = !sprite;
+                let FRAME_WIDTH = 80, FRAME_HEIGHT = 80, srcYWalk = 0, srcYSniff = 0;
+                if (sprite) {
+                    FRAME_WIDTH = Math.floor(sprite.width / FRAMES_PER_ROW);
+                    FRAME_HEIGHT = Math.floor(sprite.height / ROWS);
+                    srcYWalk = WALK_ROW * FRAME_HEIGHT;
+                    srcYSniff = SNIFF_ROW * FRAME_HEIGHT;
+                }
+
+                const dog = {
+                    x: Math.random() * (canvas.width - FRAME_WIDTH),
+                    y: Math.random() * (canvas.height - FRAME_HEIGHT),
+                    dir: Math.random() < 0.5 ? 1 : -1, // 1: right, -1: left
+                    frame: 0,
+                    tick: 0,
+                    state: 'walk', // 'walk' | 'sniff' | 'idle'
+                    stateTime: 0,
+                    stateDur: randRange(1800, 4200)
+                };
+
+                function randRange(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+                function pickState() {
+                    const r = Math.random();
+                    if (r < 0.15) return 'idle';
+                    if (r < 0.35) return 'sniff';
+                    return 'walk';
+                }
+
+                function updateDog() {
+                    // state machine time
+                    dog.stateTime += 16; // ~frame duration
+                    if (dog.stateTime >= dog.stateDur) {
+                        dog.state = pickState();
+                        dog.stateTime = 0;
+                        dog.stateDur = randRange(1200, 4000);
+                    }
+
+                    // movement
+                    if (dog.state === 'walk') {
+                        dog.x += dog.dir * WALK_SPEED;
+                        dog.y += (Math.random() - 0.5) * DRIFT;
+                    } else if (dog.state === 'sniff') {
+                        // small head bobbing drift
+                        dog.y += Math.sin(dog.stateTime / 180) * 0.6;
+                    }
+                    // bounds and bounce
+                    if (dog.x < 0) { dog.x = 0; dog.dir = 1; }
+                    if (dog.x > canvas.width - FRAME_WIDTH) { dog.x = canvas.width - FRAME_WIDTH; dog.dir = -1; }
+                    dog.y = Math.max(0, Math.min(canvas.height - FRAME_HEIGHT, dog.y));
+
+                    // animation frames
+                    dog.tick++;
+                    if (dog.tick >= ANIMATION_MS / 16) {
+                        dog.tick = 0;
+                        if (dog.state === 'idle') {
+                            // hold a single frame
+                        } else {
+                            dog.frame = (dog.frame + 1) % FRAMES_PER_ROW;
+                        }
+                    }
+
+                    // occasional look-around flip
+                    if (dog.state !== 'walk' && Math.random() < 0.01) {
+                        dog.dir *= -1;
+                    }
+                }
+
+                function drawDog() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.save();
+                    ctx.translate(dog.x + FRAME_WIDTH / 2, dog.y + FRAME_HEIGHT / 2);
+                    ctx.scale(dog.dir, 1);
+                    if (useEmoji) {
+                        ctx.font = '48px serif';
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.fillText('🐶', 0, 0);
+                    } else {
+                        const srcY = dog.state === 'sniff' ? srcYSniff : srcYWalk;
+                        ctx.drawImage(
+                            sprite,
+                            dog.frame * FRAME_WIDTH, srcY, FRAME_WIDTH, FRAME_HEIGHT,
+                            -FRAME_WIDTH / 2, -FRAME_HEIGHT / 2, FRAME_WIDTH, FRAME_HEIGHT
+                        );
+                    }
+                    ctx.restore();
+                }
+
+                function loop() {
+                    updateDog();
+                    drawDog();
+                    requestAnimationFrame(loop);
+                }
+
+                loop();
+
+                // Resize handling
+                window.addEventListener('resize', () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                });
+
+                // Toggle with keyboard: press "G" to hide/show
+                let enabled = true;
+                document.addEventListener('keydown', (e) => {
+                    if (e.key.toLowerCase() === 'g') {
+                        enabled = !enabled;
+                        canvas.style.display = enabled ? 'block' : 'none';
+                    }
+                });
+            });
+        })();
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

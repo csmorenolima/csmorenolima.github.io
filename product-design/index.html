@@ -58,12 +58,26 @@
             min-width: 350px;
             max-width: 350px;
             flex: 0 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            background: #fff;
         }
         .carousel-card > a {
             display: block;
             text-decoration: none;
             color: inherit;
             height: 100%;
+        }
+        .featured-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover !important;
+            background-position: center !important;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         .carousel-btn {
             position: absolute;
@@ -202,7 +216,7 @@
                 <div class="carousel-track">
                     <div class="carousel-card featured-item">
                         <a href="/brightup/">
-                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/07/final-banner-vending-machine.jpg')"></div>
+                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/08/screenshot-2020-03-17-at-18.17.05-edited-1.jpg')"></div>
                             <div class="featured-content">
                                 <h3 class="featured-title">BrightUP</h3>
                                 <p class="featured-description">Brand and product experience concepts.</p>
@@ -211,7 +225,7 @@
                     </div>
                     <div class="carousel-card featured-item">
                         <a href="/health/">
-                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/07/enovacard-design-2-1.png')"></div>
+                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/08/screenshot-2025-07-26-at-22.19.13.jpg');background-size:contain !important;background-repeat:no-repeat !important;background-position:center !important;"></div>
                             <div class="featured-content">
                                 <h3 class="featured-title">ENOVA</h3>
                                 <p class="featured-description">App, case and dispenser prototypes for student services.</p>
@@ -220,7 +234,9 @@
                     </div>
                     <div class="carousel-card featured-item">
                         <a href="/barebarrel/">
-                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/08/screenshot-2025-07-26-at-22.19.13.jpg')"></div>
+                            <div class="featured-image" style="background:#f3f3f3;display:flex;align-items:center;justify-content:center;height:200px;">
+                                <i class="fas fa-tools" style="font-size:3rem;color:#764ba2;"></i>
+                            </div>
                             <div class="featured-content">
                                 <h3 class="featured-title">The BareBarrel</h3>
                                 <p class="featured-description">Sustainable product design for modern living.</p>
@@ -330,6 +346,47 @@
             rightBtn.addEventListener('click', function() {
                 track.scrollBy({ left: 340, behavior: 'smooth' });
             });
+        });
+        let wolfInterval;
+        document.querySelector('.logo').addEventListener('click', function(e) {
+            e.preventDefault();
+            let wolf = document.getElementById('wolf-pup-img');
+            if (!wolf) {
+                const wolfBase = '/targetPortfolio/Wolf pup-20251004-051005';
+                const frame1 = encodeURI(`${wolfBase}.png`);
+                const frame2 = encodeURI(`${wolfBase}-step.png`);
+                wolf = document.createElement('img');
+                wolf.id = 'wolf-pup-img';
+                wolf.src = frame1; // use PNG exported next to the .piskel
+                wolf.alt = 'Wolf Pup Sprite';
+                wolf.style.position = 'fixed';
+                wolf.style.pointerEvents = 'none';
+                wolf.style.width = '80px';
+                wolf.style.zIndex = '9999';
+                wolf.style.boxShadow = '0 4px 16px rgba(0,0,0,0.15)';
+                wolf.style.background = 'transparent';
+                wolf.style.borderRadius = '12px';
+                document.body.appendChild(wolf);
+                // Animate walk by swapping frames
+                let frame = 0;
+                const walkFrames = [frame1, frame2]; // export both PNGs
+                wolfInterval = setInterval(() => {
+                    wolf.src = walkFrames[frame % walkFrames.length];
+                    frame++;
+                }, 120);
+                // Follow cursor
+                document.addEventListener('mousemove', moveWolf);
+                function moveWolf(ev) {
+                    wolf.style.left = (ev.clientX - 40) + 'px';
+                    wolf.style.top = (ev.clientY - 60) + 'px';
+                }
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    clearInterval(wolfInterval);
+                    document.removeEventListener('mousemove', moveWolf);
+                    wolf.remove();
+                }, 3000);
+            }
         });
     </script>
 </body>
