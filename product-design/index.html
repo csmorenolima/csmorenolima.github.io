@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Design - Carla Sofia Lima</title>
+    <meta name="description" content="Audio electronics and product design projects by Carla Sofia Lima." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Product Design - Carla Sofia Lima" />
+    <meta property="og:description" content="Explore Drop Mini, HonEcomb, Sensation 360, BrightUP, ENOVA, NOMAD." />
+    <meta property="og:site_name" content="Carla Sofia Lima" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Shared Theme -->
+    <link rel="stylesheet" href="/targetPortfolio/theme.css">
+
+    <style>
+        /* Page-specific tweaks (kept minimal) */
+        .hero {
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .hero-quote { font-size: 1.125rem; opacity: 0.9; }
+        .featured-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+        /* Carousel styles */
+        .carousel-container {
+            position: relative;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 1rem;
+        }
+        .carousel-card {
+            min-width: 350px;
+            max-width: 350px;
+            flex: 0 0 auto;
+        }
+        .carousel-card > a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            height: 100%;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.85);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            cursor: pointer;
+            z-index: 2;
+            font-size: 1.25rem;
+            transition: background 0.2s;
+        }
+        .carousel-btn.left { left: 0.5rem; }
+        .carousel-btn.right { right: 0.5rem; }
+        .carousel-btn:hover { background: var(--primary-color); color: white; }
+        @media (max-width: 600px) {
+            .carousel-card { min-width: 80vw; }
+            .carousel-btn { width: 32px; height: 32px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/targetPortfolio/test.html#home" class="logo">Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="/targetPortfolio/test.html#home">HOME</a></li>
+                <li><a href="/targetPortfolio/test.html#about">ABOUT</a></li>
+                <li class="nav-projects-dropdown">
+                    <a href="#" aria-haspopup="true" aria-expanded="false">PROJECTS <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/product-design/" role="menuitem">Product Design</a></li>
+                        <li><a href="/engineering/" role="menuitem">Engineering</a></li>
+                    </ul>
+                </li>
+                <li><a href="/targetPortfolio/test.html#contact">CONTACT</a></li>
+            </ul>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>Product Design</h1>
+                <p class="hero-quote">Audio electronics, products & services, and transportation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">Explore selected work across categories.</p>
+
+            <!-- Audio Electronics Carousel -->
+            <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin-bottom:1rem;">Audio Electronics</h3>
+            <div class="carousel-container">
+                <button class="carousel-btn left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-track">
+                    <div class="carousel-card featured-item">
+                        <a href="/bass-drop-mini/">
+                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass_speakers_2020-apr-13_02-59-02pm-000_customizedview45477518777_jpg.jpg')"></div>
+                            <div class="featured-content">
+                                <h3 class="featured-title">Drop Mini</h3>
+                                <p class="featured-description">Compact wireless speaker design with deep bass and quick charge.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-card featured-item">
+                        <a href="/honecomb/">
+                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/09/touch-controls.jpg')"></div>
+                            <div class="featured-content">
+                                <h3 class="featured-title">HonEcomb</h3>
+                                <p class="featured-description">Bamboo portable speaker with LED touch sensor technology.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-card featured-item">
+                        <a href="/230-2/">
+                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/08/screenshot-2020-03-17-at-18.17.05-edited-1.jpg')"></div>
+                            <div class="featured-content">
+                                <h3 class="featured-title">Sensation 360</h3>
+                                <p class="featured-description">Immersive audio headset concept exploring human-product emotion.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <button class="carousel-btn right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Products & Services Carousel -->
+            <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin:2rem 0 1rem;">Products & Services</h3>
+            <div class="carousel-container">
+                <button class="carousel-btn left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-track">
+                    <div class="carousel-card featured-item">
+                        <a href="/brightup/">
+                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/07/final-banner-vending-machine.jpg')"></div>
+                            <div class="featured-content">
+                                <h3 class="featured-title">BrightUP</h3>
+                                <p class="featured-description">Brand and product experience concepts.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-card featured-item">
+                        <a href="/health/">
+                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/07/enovacard-design-2-1.png')"></div>
+                            <div class="featured-content">
+                                <h3 class="featured-title">ENOVA</h3>
+                                <p class="featured-description">App, case and dispenser prototypes for student services.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-card featured-item">
+                        <a href="/barebarrel/">
+                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/08/screenshot-2025-07-26-at-22.19.13.jpg')"></div>
+                            <div class="featured-content">
+                                <h3 class="featured-title">The BareBarrel</h3>
+                                <p class="featured-description">Sustainable product design for modern living.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <button class="carousel-btn right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Transportation Carousel -->
+            <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin:2rem 0 1rem;">Transportation</h3>
+            <div class="carousel-container">
+                <button class="carousel-btn left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-track">
+                    <div class="carousel-card featured-item">
+                        <a href="/scaar/">
+                            <div class="featured-image" style="background-image:url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2025/08/screenshot-2020-03-16-at-22.02.47-1-e1611693908853-1-1.jpg')"></div>
+                            <div class="featured-content">
+                                <h3 class="featured-title">NOMAD</h3>
+                                <p class="featured-description">Transportation concept within the SCAAR project.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <button class="carousel-btn right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Let's Work Together</h3>
+                    <p>Ready to bring your ideas to life? Let's discuss how we can collaborate on your next project.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>OfficialMV</h3>
+                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank">RedBubble</a>
+                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank">Instagram</a>
+                    <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank">TikTok</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Social</h3>
+                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Carla022" target="_blank">GitHub</a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Carla022" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; COPYRIGHT 2025 . ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'white';
+                navLinks.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                navLinks.style.padding = '1rem';
+            }
+        });
+        // Projects dropdown toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectsItem = document.querySelector('.nav-projects-dropdown > a');
+            const menu = document.querySelector('.nav-projects-dropdown .dropdown-menu');
+            if (projectsItem && menu) {
+                projectsItem.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isOpen = menu.style.display === 'block';
+                    menu.style.display = isOpen ? 'none' : 'block';
+                    projectsItem.setAttribute('aria-expanded', (!isOpen).toString());
+                });
+                document.addEventListener('click', function(e) {
+                    if (!menu.contains(e.target) && !projectsItem.contains(e.target)) {
+                        menu.style.display = 'none';
+                        projectsItem.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+        document.querySelectorAll('.carousel-container').forEach(function(container) {
+            const track = container.querySelector('.carousel-track');
+            const leftBtn = container.querySelector('.carousel-btn.left');
+            const rightBtn = container.querySelector('.carousel-btn.right');
+            leftBtn.addEventListener('click', function() {
+                track.scrollBy({ left: -340, behavior: 'smooth' });
+            });
+            rightBtn.addEventListener('click', function() {
+                track.scrollBy({ left: 340, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
