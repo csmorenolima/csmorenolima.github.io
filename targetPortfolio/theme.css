@@ -39,6 +39,7 @@ body {
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid var(--border);
+    opacity: 90%
 }
 
 .nav {

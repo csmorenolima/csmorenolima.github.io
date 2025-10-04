@@ -71,6 +71,8 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
+            opacity: 90%
+
         }
 
         .nav {
@@ -1073,284 +1075,6 @@
             }
         }
 
-        // Wolf Sprite Sheet Wanderer (supports multi-row sprite sheets; EPS not supported in browsers)
-        (function() {
-            // Convert the EPS to PNG or SVG first (e.g., Inkscape: File > Save As > PNG). Then set SPRITE_CANDIDATES below.
-            const SPRITE_CANDIDATES = [
-                '/targetPortfolio/wolf-walk.png', // preferred exported PNG
-                '/targetPortfolio/wolf-walk.jpg', // optional JPG
-                '/targetPortfolio/2112.q708.007.P.m012.c25.dogs emotions body language flat set.jpg' // current JPG
-            ].map(p => encodeURI(p));
-            // Sprite layout config
-            const ROWS = 1;                 // number of rows in the sheet
-            const FRAMES_PER_ROW = 6;       // frames per row
-            const ACTION_ROW = 0;           // which row to use for walking animation
-            const ANIMATION_SPEED = 120;    // ms per frame
-            const MOVE_SPEED = 2;           // px per tick
-            const CANVAS_ID = 'wolf-sprite-canvas';
-
-            // Create canvas behind content
-            let canvas = document.getElementById(CANVAS_ID);
-            if (!canvas) {
-                canvas = document.createElement('canvas');
-                canvas.id = CANVAS_ID;
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                canvas.style.position = 'fixed';
-                canvas.style.left = '0';
-                canvas.style.top = '0';
-                canvas.style.width = '100vw';
-                canvas.style.height = '100vh';
-                canvas.style.zIndex = '0';
-                canvas.style.pointerEvents = 'none';
-                document.body.insertBefore(canvas, document.body.firstChild);
-            }
-            const ctx = canvas.getContext('2d');
-
-            // Try to load the first available sprite candidate
-            function loadSprite(urls) {
-                return new Promise(resolve => {
-                    let img = new Image();
-                    let i = 0;
-                    function tryNext() {
-                        if (i >= urls.length) return resolve(null);
-                        img = new Image();
-                        img.onload = () => resolve(img);
-                        img.onerror = () => { i++; tryNext(); };
-                        img.src = urls[i];
-                    }
-                    tryNext();
-                });
-            }
-
-            loadSprite(SPRITE_CANDIDATES).then(sprite => {
-                if (!sprite) {
-                    console.warn('No sprite sheet found. Please export the EPS to PNG/JPG and update SPRITE_CANDIDATES.');
-                    return;
-                }
-                const FRAME_WIDTH = Math.floor(sprite.width / FRAMES_PER_ROW);
-                const FRAME_HEIGHT = Math.floor(sprite.height / ROWS);
-                const srcY = ACTION_ROW * FRAME_HEIGHT;
-
-                const wolf = {
-                    x: Math.random() * (canvas.width - FRAME_WIDTH),
-                    y: Math.random() * (canvas.height - FRAME_HEIGHT),
-                    dir: Math.random() < 0.5 ? 1 : -1, // 1: right, -1: left
-                    frame: 0,
-                    frameTick: 0
-                };
-
-                function wanderWolf() {
-                    // Move with slight vertical drift
-                    wolf.x += wolf.dir * MOVE_SPEED;
-                    wolf.y += (Math.random() - 0.5) * 1.2;
-                    wolf.y = Math.max(0, Math.min(canvas.height - FRAME_HEIGHT, wolf.y));
-                    // Bounce horizontally
-                    if (wolf.x < 0) { wolf.x = 0; wolf.dir = 1; }
-                    if (wolf.x > canvas.width - FRAME_WIDTH) { wolf.x = canvas.width - FRAME_WIDTH; wolf.dir = -1; }
-                    // Advance animation
-                    wolf.frameTick++;
-                    if (wolf.frameTick >= ANIMATION_SPEED / 16) {
-                        wolf.frame = (wolf.frame + 1) % FRAMES_PER_ROW;
-                        wolf.frameTick = 0;
-                    }
-                }
-
-                function drawWolf() {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.save();
-                    ctx.translate(wolf.x + FRAME_WIDTH / 2, wolf.y + FRAME_HEIGHT / 2);
-                    ctx.scale(wolf.dir, 1); // flip horizontally for direction
-                    ctx.drawImage(
-                        sprite,
-                        wolf.frame * FRAME_WIDTH, srcY, FRAME_WIDTH, FRAME_HEIGHT,
-                        -FRAME_WIDTH / 2, -FRAME_HEIGHT / 2, FRAME_WIDTH, FRAME_HEIGHT
-                    );
-                    ctx.restore();
-                }
-
-                function loop() {
-                    wanderWolf();
-                    drawWolf();
-                    requestAnimationFrame(loop);
-                }
-
-                loop();
-
-                window.addEventListener('resize', () => {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                });
-            });
-        })();
-
-        // Cute Dog Wanderer: background canvas, random behaviors, sprite-sheet with emoji fallback
-        (function() {
-            const SPRITE_CANDIDATES = [
-                '/targetPortfolio/dog-walk.png',
-                '/targetPortfolio/dog-walk.jpg',
-                '/targetPortfolio/2112.q708.007.P.m012.c25.dogs emotions body language flat set.jpg'
-            ].map(p => encodeURI(p));
-
-            // Layout config (adjust to your sheet)
-            const ROWS = 1;                 // total rows
-            const FRAMES_PER_ROW = 6;       // frames per row
-            const WALK_ROW = 0;             // row index for walk
-            const SNIFF_ROW = 0;            // row index for sniff/idle if available
-
-            const CANVAS_ID = 'cute-dog-canvas';
-            const ANIMATION_MS = 120;       // ms per frame
-            const WALK_SPEED = 2;           // px per tick
-            const DRIFT = 1.2;              // vertical drift
-
-            // Create canvas behind content
-            let canvas = document.getElementById(CANVAS_ID);
-            if (!canvas) {
-                canvas = document.createElement('canvas');
-                canvas.id = CANVAS_ID;
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                canvas.style.position = 'fixed';
-                canvas.style.left = '0';
-                canvas.style.top = '0';
-                canvas.style.width = '100vw';
-                canvas.style.height = '100vh';
-                canvas.style.zIndex = '0';
-                canvas.style.pointerEvents = 'none';
-                document.body.insertBefore(canvas, document.body.firstChild);
-            }
-            const ctx = canvas.getContext('2d');
-
-            // Load first available sprite
-            function loadSprite(urls) {
-                return new Promise(resolve => {
-                    let img = new Image();
-                    let i = 0;
-                    function tryNext() {
-                        if (i >= urls.length) return resolve(null);
-                        img = new Image();
-                        img.onload = () => resolve(img);
-                        img.onerror = () => { i++; tryNext(); };
-                        img.src = urls[i];
-                    }
-                    tryNext();
-                });
-            }
-
-            loadSprite(SPRITE_CANDIDATES).then(sprite => {
-                const useEmoji = !sprite;
-                let FRAME_WIDTH = 80, FRAME_HEIGHT = 80, srcYWalk = 0, srcYSniff = 0;
-                if (sprite) {
-                    FRAME_WIDTH = Math.floor(sprite.width / FRAMES_PER_ROW);
-                    FRAME_HEIGHT = Math.floor(sprite.height / ROWS);
-                    srcYWalk = WALK_ROW * FRAME_HEIGHT;
-                    srcYSniff = SNIFF_ROW * FRAME_HEIGHT;
-                }
-
-                const dog = {
-                    x: Math.random() * (canvas.width - FRAME_WIDTH),
-                    y: Math.random() * (canvas.height - FRAME_HEIGHT),
-                    dir: Math.random() < 0.5 ? 1 : -1, // 1: right, -1: left
-                    frame: 0,
-                    tick: 0,
-                    state: 'walk', // 'walk' | 'sniff' | 'idle'
-                    stateTime: 0,
-                    stateDur: randRange(1800, 4200)
-                };
-
-                function randRange(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
-                function pickState() {
-                    const r = Math.random();
-                    if (r < 0.15) return 'idle';
-                    if (r < 0.35) return 'sniff';
-                    return 'walk';
-                }
-
-                function updateDog() {
-                    // state machine time
-                    dog.stateTime += 16; // ~frame duration
-                    if (dog.stateTime >= dog.stateDur) {
-                        dog.state = pickState();
-                        dog.stateTime = 0;
-                        dog.stateDur = randRange(1200, 4000);
-                    }
-
-                    // movement
-                    if (dog.state === 'walk') {
-                        dog.x += dog.dir * WALK_SPEED;
-                        dog.y += (Math.random() - 0.5) * DRIFT;
-                    } else if (dog.state === 'sniff') {
-                        // small head bobbing drift
-                        dog.y += Math.sin(dog.stateTime / 180) * 0.6;
-                    }
-                    // bounds and bounce
-                    if (dog.x < 0) { dog.x = 0; dog.dir = 1; }
-                    if (dog.x > canvas.width - FRAME_WIDTH) { dog.x = canvas.width - FRAME_WIDTH; dog.dir = -1; }
-                    dog.y = Math.max(0, Math.min(canvas.height - FRAME_HEIGHT, dog.y));
-
-                    // animation frames
-                    dog.tick++;
-                    if (dog.tick >= ANIMATION_MS / 16) {
-                        dog.tick = 0;
-                        if (dog.state === 'idle') {
-                            // hold a single frame
-                        } else {
-                            dog.frame = (dog.frame + 1) % FRAMES_PER_ROW;
-                        }
-                    }
-
-                    // occasional look-around flip
-                    if (dog.state !== 'walk' && Math.random() < 0.01) {
-                        dog.dir *= -1;
-                    }
-                }
-
-                function drawDog() {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.save();
-                    ctx.translate(dog.x + FRAME_WIDTH / 2, dog.y + FRAME_HEIGHT / 2);
-                    ctx.scale(dog.dir, 1);
-                    if (useEmoji) {
-                        ctx.font = '48px serif';
-                        ctx.textAlign = 'center';
-                        ctx.textBaseline = 'middle';
-                        ctx.fillText('🐶', 0, 0);
-                    } else {
-                        const srcY = dog.state === 'sniff' ? srcYSniff : srcYWalk;
-                        ctx.drawImage(
-                            sprite,
-                            dog.frame * FRAME_WIDTH, srcY, FRAME_WIDTH, FRAME_HEIGHT,
-                            -FRAME_WIDTH / 2, -FRAME_HEIGHT / 2, FRAME_WIDTH, FRAME_HEIGHT
-                        );
-                    }
-                    ctx.restore();
-                }
-
-                function loop() {
-                    updateDog();
-                    drawDog();
-                    requestAnimationFrame(loop);
-                }
-
-                loop();
-
-                // Resize handling
-                window.addEventListener('resize', () => {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                });
-
-                // Toggle with keyboard: press "G" to hide/show
-                let enabled = true;
-                document.addEventListener('keydown', (e) => {
-                    if (e.key.toLowerCase() === 'g') {
-                        enabled = !enabled;
-                        canvas.style.display = enabled ? 'block' : 'none';
-                    }
-                });
-            });
-        })();
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1482,7 +1206,647 @@
                 observer.observe(section);
             });
         });
+
+        // Mini Me Character Implementation with Realistic Element Interaction
+        class MiniMe {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.x = 100;
+                this.y = window.innerHeight - 100;
+                this.targetX = this.x;
+                this.targetY = this.y;
+                this.vx = 0;
+                this.vy = 0;
+                this.size = 25;
+                this.isClimbing = false;
+                this.isJumping = false;
+                this.isOnGround = false;
+                this.currentPlatform = null;
+                this.facingRight = true;
+                this.animFrame = 0;
+                this.animSpeed = 0;
+                this.currentAction = 'idle'; // idle, walking, climbing, jumping, falling
+                this.lastScrollY = window.scrollY;
+                this.energy = 100;
+                this.gravity = 0.5;
+                this.jumpPower = -12;
+                
+                // Animation states
+                this.walkCycle = 0;
+                this.climbCycle = 0;
+                this.jumpPhase = 0;
+                
+                // Pathfinding
+                this.path = [];
+                this.currentPathIndex = 0;
+                
+                // Personality traits
+                this.patience = 0;
+                this.excitement = 0;
+                
+                this.init();
+            }
+
+            init() {
+                this.findNearestPlatform();
+                this.update();
+            }
+
+            getAllPlatforms() {
+                const elements = document.querySelectorAll('section, .nav, .container, h1, h2, h3, .project-card, button, .header');
+                const platforms = [];
+
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.width > 50 && rect.height > 20) { // Filter out tiny elements
+                        platforms.push({
+                            element: el,
+                            left: rect.left,
+                            right: rect.right,
+                            top: rect.top + window.scrollY,
+                            bottom: rect.bottom + window.scrollY,
+                            width: rect.width,
+                            height: rect.height,
+                            screenTop: rect.top,
+                            screenBottom: rect.bottom
+                        });
+                    }
+                });
+
+                // Sort by Y position (top to bottom)
+                return platforms.sort((a, b) => a.top - b.top);
+            }
+
+            findNearestPlatform() {
+                const platforms = this.getAllPlatforms();
+                const viewportCenter = window.scrollY + window.innerHeight / 2;
+                
+                let closest = null;
+                let closestDistance = Infinity;
+
+                platforms.forEach(platform => {
+                    const platformCenter = platform.top + platform.height / 2;
+                    const distance = Math.abs(platformCenter - viewportCenter);
+                    
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closest = platform;
+                    }
+                });
+
+                return closest;
+            }
+
+            isOnPlatform(platform) {
+                if (!platform) return false;
+                
+                const onHorizontally = this.x >= platform.left - 10 && this.x <= platform.right + 10;
+                const onVertically = Math.abs((this.y + this.size) - (platform.top - window.scrollY)) < 10;
+                
+                return onHorizontally && onVertically;
+            }
+
+            findPlatformBelow() {
+                const platforms = this.getAllPlatforms();
+                const currentY = this.y + window.scrollY;
+                
+                let closestBelow = null;
+                let closestDistance = Infinity;
+
+                platforms.forEach(platform => {
+                    if (platform.top > currentY) {
+                        const horizontalOverlap = !(this.x < platform.left - 20 || this.x > platform.right + 20);
+                        if (horizontalOverlap) {
+                            const distance = platform.top - currentY;
+                            if (distance < closestDistance) {
+                                closestDistance = distance;
+                                closestBelow = platform;
+                            }
+                        }
+                    }
+                });
+
+                return closestBelow;
+            }
+
+            planRealisticRoute() {
+                const targetPlatform = this.findNearestPlatform();
+                if (!targetPlatform) return;
+
+                const currentPlatform = this.currentPlatform;
+                
+                // If we're on the same platform, just walk to the target
+                if (currentPlatform && currentPlatform.element === targetPlatform.element) {
+                    this.targetX = Math.max(targetPlatform.left + 30, 
+                                   Math.min(targetPlatform.right - 30, 
+                                   targetPlatform.left + targetPlatform.width * 0.5));
+                    this.targetY = targetPlatform.top - window.scrollY - this.size;
+                    this.currentAction = 'walking';
+                    return;
+                }
+
+                // If target is below current platform
+                if (currentPlatform && targetPlatform.top > currentPlatform.top) {
+                    // Walk to edge, then jump down
+                    const edgeX = targetPlatform.left < currentPlatform.left ? 
+                                 currentPlatform.left : currentPlatform.right;
+                    
+                    if (Math.abs(this.x - edgeX) > 20) {
+                        this.targetX = edgeX;
+                        this.targetY = currentPlatform.top - window.scrollY - this.size;
+                        this.currentAction = 'walking';
+                    } else {
+                        // At edge, jump down
+                        this.targetX = Math.max(targetPlatform.left + 30, 
+                                       Math.min(targetPlatform.right - 30, 
+                                       targetPlatform.left + targetPlatform.width * 0.5));
+                        this.targetY = targetPlatform.top - window.scrollY - this.size;
+                        this.currentAction = 'jumping';
+                        this.isJumping = true;
+                        this.jumpPhase = 0;
+                    }
+                }
+                // If target is above current platform
+                else if (currentPlatform && targetPlatform.top < currentPlatform.top) {
+                    // Try to climb up or jump up
+                    this.targetX = Math.max(targetPlatform.left + 30, 
+                                   Math.min(targetPlatform.right - 30, 
+                                   targetPlatform.left + targetPlatform.width * 0.5));
+                    this.targetY = targetPlatform.top - window.scrollY - this.size;
+                    
+                    const verticalDistance = currentPlatform.top - targetPlatform.top;
+                    if (verticalDistance > 100) {
+                        this.currentAction = 'climbing';
+                        this.isClimbing = true;
+                    } else {
+                        this.currentAction = 'jumping';
+                        this.isJumping = true;
+                        this.jumpPhase = 0;
+                    }
+                }
+                // No current platform, need to find ground or platform
+                else {
+                    this.targetX = Math.max(targetPlatform.left + 30, 
+                                   Math.min(targetPlatform.right - 30, 
+                                   targetPlatform.left + targetPlatform.width * 0.5));
+                    this.targetY = targetPlatform.top - window.scrollY - this.size;
+                    this.currentAction = 'jumping';
+                    this.isJumping = true;
+                    this.jumpPhase = 0;
+                }
+            }
+
+            update() {
+                const currentScrollY = window.scrollY;
+                const scrollDelta = Math.abs(currentScrollY - this.lastScrollY);
+                
+                // React to scrolling
+                if (scrollDelta > 10) {
+                    this.excitement = Math.min(100, this.excitement + scrollDelta * 0.5);
+                    this.planRealisticRoute();
+                    this.lastScrollY = currentScrollY;
+                } else {
+                    this.excitement = Math.max(0, this.excitement - 1);
+                    this.patience++;
+                }
+
+                // Check if we're on a platform
+                const platforms = this.getAllPlatforms();
+                this.currentPlatform = null;
+                this.isOnGround = false;
+
+                for (let platform of platforms) {
+                    if (this.isOnPlatform(platform)) {
+                        this.currentPlatform = platform;
+                        this.isOnGround = true;
+                        break;
+                    }
+                }
+
+                // Physics and movement
+                switch (this.currentAction) {
+                    case 'walking':
+                        this.updateWalking();
+                        break;
+                    case 'climbing':
+                        this.updateClimbing();
+                        break;
+                    case 'jumping':
+                        this.updateJumping();
+                        break;
+                    case 'falling':
+                        this.updateFalling();
+                        break;
+                    default:
+                        this.updateIdle();
+                }
+
+                // Apply gravity if not on ground and not climbing
+                if (!this.isOnGround && !this.isClimbing) {
+                    this.vy += this.gravity;
+                    if (this.currentAction !== 'jumping') {
+                        this.currentAction = 'falling';
+                    }
+                }
+
+                // Apply physics
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Platform collision detection
+                if (this.vy > 0) { // Falling
+                    const platformBelow = this.findPlatformBelow();
+                    if (platformBelow) {
+                        const platformScreenY = platformBelow.top - window.scrollY;
+                        if (this.y + this.size >= platformScreenY && this.y + this.size <= platformScreenY + 20) {
+                            this.y = platformScreenY - this.size;
+                            this.vy = 0;
+                            this.isOnGround = true;
+                            this.currentPlatform = platformBelow;
+                            this.currentAction = 'idle';
+                            this.isJumping = false;
+                        }
+                    }
+                }
+
+                // Bounds checking
+                this.x = Math.max(this.size, Math.min(this.canvas.width - this.size, this.x));
+                this.y = Math.max(this.size, Math.min(this.canvas.height - this.size, this.y));
+
+                // Animation updates
+                this.animFrame += this.animSpeed;
+                this.walkCycle += this.animSpeed * 0.3;
+                this.climbCycle += this.animSpeed * 0.2;
+            }
+
+            updateWalking() {
+                const dx = this.targetX - this.x;
+                const distance = Math.abs(dx);
+
+                if (distance > 5) {
+                    this.facingRight = dx > 0;
+                    this.vx = Math.sign(dx) * (2 + this.excitement * 0.03);
+                    this.animSpeed = 0.3 + this.excitement * 0.01;
+                    
+                    // Don't walk off the platform
+                    if (this.currentPlatform) {
+                        const nextX = this.x + this.vx;
+                        if (nextX < this.currentPlatform.left || nextX > this.currentPlatform.right) {
+                            this.vx = 0;
+                            this.currentAction = 'idle';
+                        }
+                    }
+                } else {
+                    this.vx *= 0.8;
+                    this.currentAction = 'idle';
+                    this.animSpeed = 0.1;
+                }
+            }
+
+            updateClimbing() {
+                const dx = this.targetX - this.x;
+                const dy = this.targetY - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance > 15) {
+                    this.vx = (dx / distance) * 1.5;
+                    this.vy = (dy / distance) * 1.5;
+                    this.animSpeed = 0.4;
+                } else {
+                    this.isClimbing = false;
+                    this.currentAction = 'idle';
+                    this.vx *= 0.9;
+                    this.vy *= 0.9;
+                }
+            }
+
+            updateJumping() {
+                if (this.jumpPhase === 0) {
+                    // Launch
+                    const dx = this.targetX - this.x;
+                    const dy = this.targetY - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    this.vx = (dx / distance) * 6;
+                    this.vy = this.jumpPower;
+                    this.jumpPhase = 1;
+                    this.animSpeed = 0.6;
+                    this.isOnGround = false;
+                } else if (this.jumpPhase === 1) {
+                    // In air - gravity is applied in main update
+                    
+                    // Check if we should land
+                    if (this.vy > 0) { // Falling
+                        this.jumpPhase = 2;
+                    }
+                } else {
+                    // Landing phase - handled by platform collision detection
+                    if (this.isOnGround) {
+                        this.isJumping = false;
+                        this.currentAction = 'idle';
+                        this.jumpPhase = 0;
+                    }
+                }
+            }
+
+            updateFalling() {
+                // Just apply gravity and air resistance
+                this.vx *= 0.98;
+                this.animSpeed = 0.2;
+            }
+
+            updateIdle() {
+                this.vx *= 0.95;
+                this.vy *= 0.95;
+                this.animSpeed = 0.05;
+                
+                // Occasionally look around
+                if (this.patience > 120 && Math.random() < 0.02) {
+                    this.patience = 0;
+                    this.facingRight = !this.facingRight;
+                }
+            }
+
+            draw() {
+                this.ctx.save();
+                
+                // Character position
+                const screenY = this.y;
+                const jiggle = Math.sin(this.animFrame) * 1;
+                
+                this.ctx.translate(this.x, screenY + jiggle);
+                if (!this.facingRight) {
+                    this.ctx.scale(-1, 1);
+                }
+
+                // Body (simple stick figure style)
+                this.ctx.strokeStyle = '#2c3e50';
+                this.ctx.fillStyle = '#e74c3c';
+                this.ctx.lineWidth = 3;
+                this.ctx.lineCap = 'round';
+
+                // Head
+                this.ctx.fillStyle = '#fdbcb4'; // Skin tone
+                this.ctx.beginPath();
+                this.ctx.arc(0, -this.size, this.size * 0.4, 0, Math.PI * 2);
+                this.ctx.fill();
+
+                // Hair
+                this.ctx.fillStyle = '#8B4513'; // Brown hair
+                this.ctx.beginPath();
+                this.ctx.arc(0, -this.size * 1.2, this.size * 0.35, 0, Math.PI);
+                this.ctx.fill();
+
+                // Eyes
+                this.ctx.fillStyle = '#333';
+                const eyeSize = 2;
+                this.ctx.beginPath();
+                this.ctx.arc(-this.size * 0.15, -this.size * 1.1, eyeSize, 0, Math.PI * 2);
+                this.ctx.fill();
+                this.ctx.beginPath();
+                this.ctx.arc(this.size * 0.15, -this.size * 1.1, eyeSize, 0, Math.PI * 2);
+                this.ctx.fill();
+
+                // Expression based on current action
+                this.ctx.strokeStyle = '#333';
+                this.ctx.lineWidth = 1.5;
+                if (this.currentAction === 'jumping' || this.excitement > 50) {
+                    // Excited expression
+                    this.ctx.beginPath();
+                    this.ctx.arc(0, -this.size * 0.85, this.size * 0.1, 0, Math.PI);
+                    this.ctx.stroke();
+                } else if (this.currentAction === 'climbing') {
+                    // Determined expression
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(-this.size * 0.1, -this.size * 0.85);
+                    this.ctx.lineTo(this.size * 0.1, -this.size * 0.85);
+                    this.ctx.stroke();
+                } else {
+                    // Content expression
+                    this.ctx.beginPath();
+                    this.ctx.arc(0, -this.size * 0.9, this.size * 0.08, 0.2, Math.PI - 0.2);
+                    this.ctx.stroke();
+                }
+
+                // Body
+                this.ctx.strokeStyle = '#e74c3c';
+                this.ctx.lineWidth = 4;
+                this.ctx.beginPath();
+                this.ctx.moveTo(0, -this.size * 0.6);
+                this.ctx.lineTo(0, this.size * 0.3);
+                this.ctx.stroke();
+
+                // Arms
+                const armSwing = Math.sin(this.walkCycle) * 0.3;
+                const climbArm = this.isClimbing ? Math.sin(this.climbCycle) * 0.8 : 0;
+                
+                this.ctx.beginPath();
+                this.ctx.moveTo(0, -this.size * 0.3);
+                this.ctx.lineTo(this.size * 0.5, armSwing * this.size + climbArm * this.size);
+                this.ctx.stroke();
+                
+                this.ctx.beginPath();
+                this.ctx.moveTo(0, -this.size * 0.3);
+                this.ctx.lineTo(-this.size * 0.5, -armSwing * this.size - climbArm * this.size);
+                this.ctx.stroke();
+
+                // Legs
+                const legSwing = Math.sin(this.walkCycle + Math.PI) * 0.4;
+                const climbLeg = this.isClimbing ? Math.sin(this.climbCycle + Math.PI/2) * 0.6 : 0;
+                
+                this.ctx.beginPath();
+                this.ctx.moveTo(0, this.size * 0.3);
+                this.ctx.lineTo(this.size * 0.3, this.size * 0.8 + legSwing * this.size + climbLeg * this.size);
+                this.ctx.stroke();
+                
+                this.ctx.beginPath();
+                this.ctx.moveTo(0, this.size * 0.3);
+                this.ctx.lineTo(-this.size * 0.3, this.size * 0.8 - legSwing * this.size - climbLeg * this.size);
+                this.ctx.stroke();
+
+                // Action indicators
+                if (this.isJumping) {
+                    // Motion lines
+                    this.ctx.strokeStyle = 'rgba(52, 152, 219, 0.6)';
+                    this.ctx.lineWidth = 2;
+                    for (let i = 0; i < 3; i++) {
+                        this.ctx.beginPath();
+                        this.ctx.moveTo(-this.size - i * 5, i * 5);
+                        this.ctx.lineTo(-this.size - i * 5 - 10, i * 5);
+                        this.ctx.stroke();
+                    }
+                }
+
+                if (this.excitement > 70) {
+                    // Energy particles
+                    this.ctx.fillStyle = 'rgba(255, 215, 0, 0.7)';
+                    for (let i = 0; i < 3; i++) {
+                        const sparkleX = (Math.random() - 0.5) * this.size * 2;
+                        const sparkleY = (Math.random() - 0.5) * this.size * 2;
+                        this.ctx.beginPath();
+                        this.ctx.arc(sparkleX, sparkleY, 2, 0, Math.PI * 2);
+                        this.ctx.fill();
+                    }
+                }
+
+                this.ctx.restore();
+            }
+        }
+
+        // Initialize mini me system
+        function initMiniMe() {
+            const canvas = document.getElementById('blobCanvas');
+            const ctx = canvas.getContext('2d');
+            const gravityBtn = document.getElementById('gravityToggle');
+            
+            let miniMe = null; // Mini Me doesn't exist initially
+
+            // Resize canvas to full window
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Play button - creates and shows Mini Me on About section
+            gravityBtn.addEventListener('click', () => {
+                if (!miniMe) {
+                    // Create Mini Me for the first time
+                    miniMe = new MiniMe(canvas);
+                    
+                    // Find the About Me section
+                    const aboutSection = document.querySelector('#about, [id*="about"], h2:contains("About"), h1:contains("About")') || 
+                                        document.querySelector('section:nth-child(2), .about, .about-section');
+                    
+                    if (aboutSection) {
+                        const aboutRect = aboutSection.getBoundingClientRect();
+                        const aboutTop = aboutRect.top + window.scrollY;
+                        
+                        // Position Mini Me on top of the About section
+                        miniMe.x = aboutRect.left + aboutRect.width * 0.3;
+                        miniMe.y = aboutTop - window.scrollY - miniMe.size;
+                        miniMe.vx = 0;
+                        miniMe.vy = 0;
+                        
+                        // Set current platform to the about section
+                        miniMe.currentPlatform = {
+                            element: aboutSection,
+                            left: aboutRect.left,
+                            right: aboutRect.right,
+                            top: aboutTop,
+                            bottom: aboutTop + aboutRect.height,
+                            width: aboutRect.width,
+                            height: aboutRect.height,
+                            screenTop: aboutRect.top,
+                            screenBottom: aboutRect.bottom
+                        };
+                        
+                        miniMe.isOnGround = true;
+                        miniMe.currentAction = 'idle';
+                        miniMe.isJumping = false;
+                        miniMe.isClimbing = false;
+                        miniMe.excitement = 50; // Start with some excitement
+                        
+                        // Make Mini Me face towards the center of the section
+                        miniMe.facingRight = miniMe.x < (aboutRect.left + aboutRect.width / 2);
+                        
+                        console.log('Mini Me appeared on About section for the first time!');
+                    } else {
+                        // Fallback: create Mini Me at default position
+                        miniMe.excitement = 50;
+                        console.log('About section not found, Mini Me created at default position!');
+                    }
+                } else {
+                    // Mini Me already exists, just energize it
+                    miniMe.excitement = Math.min(100, miniMe.excitement + 30);
+                    miniMe.currentAction = 'jumping';
+                    miniMe.isJumping = true;
+                    miniMe.jumpPhase = 0;
+                    console.log('Mini Me is energized!');
+                }
+            });
+
+            // Scroll tracking (only if Mini Me exists)
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    if (miniMe) {
+                        miniMe.planRealisticRoute();
+                    }
+                }, 100);
+            });
+
+            // Click interaction (only if Mini Me exists)
+            document.addEventListener('click', (e) => {
+                if (miniMe) {
+                    const clickX = e.clientX;
+                    const clickY = e.clientY;
+                    
+                    const distance = Math.sqrt((clickX - miniMe.x) ** 2 + (clickY - miniMe.y) ** 2);
+                    if (distance < 100) {
+                        miniMe.excitement = Math.min(100, miniMe.excitement + 30);
+                        miniMe.facingRight = clickX > miniMe.x;
+                        e.stopPropagation();
+                    }
+                }
+            });
+
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Only draw and update Mini Me if it exists
+                if (miniMe) {
+                    miniMe.update();
+                    miniMe.draw();
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        // Start mini me when page loads
+        window.addEventListener('load', initMiniMe);
     </script>
+
+    <!-- Mini Me Canvas -->
+    <canvas id="blobCanvas" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        background: transparent;
+    "></canvas>
+
+    <!-- Mini Me Action Button -->
+    <button id="gravityToggle" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(45deg, #6c5ce7, #74b9ff);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: transform 0.2s;
+        z-index: 10000;
+    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        Play
+    </button>
+
 </body>
 
 </html>

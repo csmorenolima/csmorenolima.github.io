@@ -347,47 +347,6 @@
                 track.scrollBy({ left: 340, behavior: 'smooth' });
             });
         });
-        let wolfInterval;
-        document.querySelector('.logo').addEventListener('click', function(e) {
-            e.preventDefault();
-            let wolf = document.getElementById('wolf-pup-img');
-            if (!wolf) {
-                const wolfBase = '/targetPortfolio/Wolf pup-20251004-051005';
-                const frame1 = encodeURI(`${wolfBase}.png`);
-                const frame2 = encodeURI(`${wolfBase}-step.png`);
-                wolf = document.createElement('img');
-                wolf.id = 'wolf-pup-img';
-                wolf.src = frame1; // use PNG exported next to the .piskel
-                wolf.alt = 'Wolf Pup Sprite';
-                wolf.style.position = 'fixed';
-                wolf.style.pointerEvents = 'none';
-                wolf.style.width = '80px';
-                wolf.style.zIndex = '9999';
-                wolf.style.boxShadow = '0 4px 16px rgba(0,0,0,0.15)';
-                wolf.style.background = 'transparent';
-                wolf.style.borderRadius = '12px';
-                document.body.appendChild(wolf);
-                // Animate walk by swapping frames
-                let frame = 0;
-                const walkFrames = [frame1, frame2]; // export both PNGs
-                wolfInterval = setInterval(() => {
-                    wolf.src = walkFrames[frame % walkFrames.length];
-                    frame++;
-                }, 120);
-                // Follow cursor
-                document.addEventListener('mousemove', moveWolf);
-                function moveWolf(ev) {
-                    wolf.style.left = (ev.clientX - 40) + 'px';
-                    wolf.style.top = (ev.clientY - 60) + 'px';
-                }
-                // Remove after 3 seconds
-                setTimeout(() => {
-                    clearInterval(wolfInterval);
-                    document.removeEventListener('mousemove', moveWolf);
-                    wolf.remove();
-                }, 3000);
-            }
-        });
     </script>
 </body>
 </html>
