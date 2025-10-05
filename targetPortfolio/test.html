@@ -1316,45 +1316,58 @@
             }
 
             findAboutMePosition() {
-                // Find the About Me section and text
-                let aboutTitle = document.querySelector('#about .section-title');
+                // Find the About Me section more reliably
+                let aboutElement = null;
                 
-                // If not found, search through all headings for "About Me" text
-                if (!aboutTitle) {
-                    aboutTitle = Array.from(document.querySelectorAll('h1, h2, h3, h4')).find(el => 
-                        el.textContent.toLowerCase().includes('about me') || 
+                // First, try to find About Me heading specifically
+                aboutElement = Array.from(document.querySelectorAll('h1, h2, h3, h4, .section-title')).find(el => 
+                    el.textContent.toLowerCase().includes('about me')
+                );
+                
+                // If not found, try broader "about" search
+                if (!aboutElement) {
+                    aboutElement = Array.from(document.querySelectorAll('h1, h2, h3, h4, .section-title')).find(el => 
                         el.textContent.toLowerCase().includes('about')
                     );
                 }
                 
-                // If still not found, try to find the about section itself
-                if (!aboutTitle) {
+                // Try finding by ID or class
+                if (!aboutElement) {
+                    aboutElement = document.querySelector('#about .section-title, #about h1, #about h2, #about h3');
+                }
+                
+                // Try finding the about section itself
+                if (!aboutElement) {
                     const aboutSection = document.querySelector('#about, .about, section[id*="about"]');
                     if (aboutSection) {
-                        aboutTitle = aboutSection.querySelector('h1, h2, h3, .section-title') || aboutSection;
+                        aboutElement = aboutSection.querySelector('h1, h2, h3, .section-title') || aboutSection;
                     }
                 }
                 
-                if (aboutTitle) {
-                    const rect = aboutTitle.getBoundingClientRect();
+                if (aboutElement) {
+                    const rect = aboutElement.getBoundingClientRect();
                     this.aboutMeElement = {
                         x: rect.left + rect.width / 2,
-                        y: rect.top + window.scrollY,
+                        y: rect.bottom + window.scrollY, // Position at bottom of About Me text
                         width: rect.width,
                         height: rect.height,
-                        element: aboutTitle
+                        element: aboutElement
                     };
+                    
+                    console.log('Found About Me element:', aboutElement.textContent.trim(), 'at position:', this.aboutMeElement);
                 } else {
-                    // Fallback position - place on the first heading found
-                    const fallbackElement = document.querySelector('h1, h2, h3') || document.body;
+                    // Fallback - use the first major heading
+                    const fallbackElement = document.querySelector('h1, h2, .hero-title') || document.body;
                     const rect = fallbackElement.getBoundingClientRect();
                     this.aboutMeElement = {
                         x: rect.left + rect.width / 2,
-                        y: rect.top + window.scrollY,
+                        y: rect.bottom + window.scrollY,
                         width: rect.width,
                         height: rect.height,
                         element: fallbackElement
                     };
+                    
+                    console.log('Using fallback element:', fallbackElement.tagName, 'at position:', this.aboutMeElement);
                 }
             }
 
@@ -1362,13 +1375,28 @@
                 this.isActive = true;
                 this.hasAppeared = true;
                 
-                // Position Mini Me on the About Me text
+                // Position Mini Me on the About Me text (corrected positioning)
                 this.x = this.aboutMeElement.x;
-                this.y = this.aboutMeElement.y - window.scrollY - this.height;
+                this.y = this.aboutMeElement.y - this.height;
+                
+                // Convert to screen coordinates if necessary
+                const screenY = this.y - window.scrollY;
+                if (screenY < 0 || screenY > window.innerHeight) {
+                    // If About Me is off-screen, scroll to it
+                    window.scrollTo({
+                        top: this.aboutMeElement.y - window.innerHeight / 2,
+                        behavior: 'smooth'
+                    });
+                }
+                
                 this.vx = 0;
                 this.vy = 0;
                 this.isOnGround = true;
                 this.currentAction = 'idle';
+                
+                console.log('Mini Me activated at position:', { x: this.x, y: this.y, width: this.width, height: this.height });
+                console.log('About Me element:', this.aboutMeElement);
+                console.log('Screen Y position:', this.y - window.scrollY);
                 
                 // Scroll to show the About Me section
                 if (this.aboutMeElement.element) {
@@ -1482,8 +1510,8 @@
                 const horizontalOverlap = this.x >= platform.left - 15 && this.x <= platform.right + 15;
                 
                 // Check if we're standing on top of the platform (more forgiving)
-                const onTop = this.y + this.size >= platformScreenY - 10 && 
-                             this.y + this.size <= platformScreenY + 15 &&
+                const onTop = this.y + this.height >= platformScreenY - 10 && 
+                             this.y + this.height <= platformScreenY + 15 &&
                              this.vy >= -2; // Allow small upward velocity
                 
                 return horizontalOverlap && onTop;
@@ -1569,34 +1597,33 @@
                     
                     // Landing on platform from above (more forgiving)
                     if (this.vy >= 0 && 
-                        this.y + this.size >= platformScreenY - 5 && 
-                        this.y + this.size <= platformScreenY + 20 &&
+                        this.y + this.height >= platformScreenY - 5 && 
+                        this.y + this.height <= platformScreenY + 20 &&
                         this.x >= platform.left - 20 && 
                         this.x <= platform.right + 20) {
                         
-                        this.y = platformScreenY - this.size;
+                        this.y = platformScreenY - this.height;
                         this.vy = 0;
                         this.isOnGround = true;
                         this.currentPlatform = platform;
                         this.isJumping = false;
-                        this.canAirDash = true; // Reset air dash on platform landing
                         this.currentAction = Math.abs(this.vx) > 0.5 ? 'walking' : 'idle';
                         break;
                     }
                     
                     // Side collisions (basic wall collision) - only for solid elements
                     if (platform.element && platform.height > 30) { // Only larger elements act as walls
-                        if (this.y + this.size > platformScreenY + 5 && 
+                        if (this.y + this.height > platformScreenY + 5 && 
                             this.y < platformScreenBottom - 5) {
                             
                             // Left wall collision
-                            if (this.vx > 0 && this.x + this.size > platform.left && this.x < platform.left + 10) {
-                                this.x = platform.left - this.size;
+                            if (this.vx > 0 && this.x + this.width > platform.left && this.x < platform.left + 10) {
+                                this.x = platform.left - this.width;
                                 this.vx = 0;
                             }
                             
                             // Right wall collision  
-                            if (this.vx < 0 && this.x < platform.right && this.x + this.size > platform.right - 10) {
+                            if (this.vx < 0 && this.x < platform.right && this.x + this.width > platform.right - 10) {
                                 this.x = platform.right;
                                 this.vx = 0;
                             }
@@ -1653,12 +1680,15 @@
                 
                 // Down arrow to fall down to next element
                 if (this.keys.down && this.isOnGround) {
-                    // Smooth drop through current platform
-                    this.y += 8;
-                    this.vy = 2; // Small downward velocity for smooth drop
+                    // Improved drop through current platform to find next element below
+                    this.y += 15; // Move down more to clear current platform
+                    this.vy = 4; // Stronger downward velocity for smoother drop
                     this.isOnGround = false;
                     this.isJumping = false;
                     this.currentAction = 'falling';
+                    
+                    // Clear current platform so we don't immediately re-land
+                    this.currentPlatform = null;
                 }
                 
                 // Spacebar hold to float up (smoother floating)
@@ -1773,8 +1803,8 @@
                         
                         // Snap to platform if we're close
                         const platformScreenY = platform.top - window.scrollY;
-                        if (Math.abs((this.y + this.size) - platformScreenY) < 15) {
-                            this.y = platformScreenY - this.size;
+                        if (Math.abs((this.y + this.height) - platformScreenY) < 15) {
+                            this.y = platformScreenY - this.height;
                             if (this.vy > 0) this.vy = 0; // Stop falling
                         }
                         break;
@@ -1802,12 +1832,13 @@
             }
 
             drawKawaiiCharacter() {
-                // Original kawaii run character proportions (3x bigger, side profile)
-                const headSize = this.size * 1.5; // 3x bigger head
-                const bodyWidth = this.size * 1.05; // 3x bigger body
-                const bodyHeight = this.size * 0.75;
-                const legLength = this.size * 0.6; // 3x bigger legs
-                const armLength = this.size * 0.45; // 3x bigger arms
+                // Original kawaii run character proportions (based on actual height)
+                const baseSize = this.height / 4.2; // Calculate base size from height
+                const headSize = baseSize * 1.5; 
+                const bodyWidth = baseSize * 1.05; 
+                const bodyHeight = baseSize * 0.75;
+                const legLength = baseSize * 0.6; 
+                const armLength = baseSize * 0.45; 
                 
                 // Animation cycles
                 const isMoving = Math.abs(this.vx) > 0.5;
@@ -1829,14 +1860,14 @@
                 this.ctx.lineWidth = 6;
                 this.ctx.beginPath();
                 // Side profile head - slightly oval, facing right
-                this.ctx.ellipse(0, -this.size + headSize/2 + headBob, headSize/2.2, headSize/2, 0, 0, Math.PI * 2);
+                this.ctx.ellipse(0, -this.height + headSize/2 + headBob, headSize/2.2, headSize/2, 0, 0, Math.PI * 2);
                 this.ctx.fill();
                 this.ctx.stroke();
                 
                 // Single eye (side profile - only one eye visible)
                 this.ctx.fillStyle = '#000000';
                 const eyeSize = 4.5; // 3x bigger eye
-                const eyeY = -this.size + headSize/2 - 9 + headBob;
+                const eyeY = -this.height + headSize/2 - 9 + headBob;
                 
                 // Single eye on the right side (facing direction)
                 this.ctx.beginPath();
@@ -1846,16 +1877,16 @@
                 // Simple mouth (side profile)
                 this.ctx.strokeStyle = '#000000';
                 this.ctx.lineWidth = 3;
-                if (this.currentAction === 'jumping' || this.currentAction === 'airdashing' || isMoving) {
+                if (this.currentAction === 'jumping' || this.currentAction === 'floating' || isMoving) {
                     // Happy small smile (side view)
                     this.ctx.beginPath();
-                    this.ctx.arc(headSize/6, -this.size + headSize/2 + 15 + headBob, 6, 0, Math.PI);
+                    this.ctx.arc(headSize/6, -this.height + headSize/2 + 15 + headBob, 6, 0, Math.PI);
                     this.ctx.stroke();
                 } else {
                     // Neutral dot mouth (side view)
                     this.ctx.fillStyle = '#000000';
                     this.ctx.beginPath();
-                    this.ctx.arc(headSize/6, -this.size + headSize/2 + 15 + headBob, 1.5, 0, Math.PI * 2);
+                    this.ctx.arc(headSize/6, -this.height + headSize/2 + 15 + headBob, 1.5, 0, Math.PI * 2);
                     this.ctx.fill();
                 }
                 
@@ -1865,12 +1896,12 @@
                 this.ctx.lineWidth = 6;
                 this.ctx.beginPath();
                 // Side profile body - slightly wider from side view
-                this.ctx.ellipse(0, -this.size + headSize + bodyHeight/2, bodyWidth/2.5, bodyHeight/2, 0, 0, Math.PI * 2);
+                this.ctx.ellipse(0, -this.height + headSize + bodyHeight/2, bodyWidth/2.5, bodyHeight/2, 0, 0, Math.PI * 2);
                 this.ctx.fill();
                 this.ctx.stroke();
                 
                 // Simple stick arms (side profile, 3x bigger)
-                const armY = -this.size + headSize + bodyHeight/3;
+                const armY = -this.height + headSize + bodyHeight/3;
                 let leftArmAngle = 0; // Back arm (less visible)
                 let rightArmAngle = 0; // Front arm (more visible)
                 
@@ -1908,7 +1939,7 @@
                 this.ctx.stroke();
                 
                 // Simple stick legs (side profile, 3x bigger)
-                const legY = -this.size + headSize + bodyHeight;
+                const legY = -this.height + headSize + bodyHeight;
                 let leftLegAngle = 0; // Back leg
                 let rightLegAngle = 0; // Front leg
                 
@@ -2008,12 +2039,12 @@
                     // Jump burst lines
                     for (let i = 0; i < 6; i++) {
                         const angle = (i * Math.PI * 2) / 6;
-                        const length = this.size * 0.8 * intensity;
+                        const length = this.height * 0.2 * intensity;
                         this.ctx.beginPath();
-                        this.ctx.moveTo(0, this.size * 0.6);
+                        this.ctx.moveTo(0, this.height * 0.15);
                         this.ctx.lineTo(
                             Math.cos(angle) * length, 
-                            this.size * 0.6 + Math.sin(angle) * length
+                            this.height * 0.15 + Math.sin(angle) * length
                         );
                         this.ctx.stroke();
                     }
@@ -2026,8 +2057,8 @@
                     
                     // Sparkle effect around character
                     for (let i = 0; i < 5; i++) {
-                        const sparkleX = (Math.random() - 0.5) * this.size * 2;
-                        const sparkleY = (Math.random() - 0.5) * this.size * 2;
+                        const sparkleX = (Math.random() - 0.5) * this.width;
+                        const sparkleY = (Math.random() - 0.5) * this.height;
                         this.ctx.beginPath();
                         this.ctx.arc(sparkleX, sparkleY, 2 * intensity, 0, Math.PI * 2);
                         this.ctx.fill();
