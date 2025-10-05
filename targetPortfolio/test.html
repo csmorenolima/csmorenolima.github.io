@@ -19,17 +19,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
-        /* :root {
-            --primary-color: #047ab3;
-            --secondary-color: #018985;
-            --accent-color: #01a573;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --background: #ffffff;
-            --surface: #f9fafb;
-            --border: #e5e7eb;
-            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
-        } */
         :root{
             --primary-color: #6366f1;
             --secondary-color: #8b5cf6;
@@ -1207,104 +1196,297 @@
             });
         });
 
-        // Mini Me Character Implementation with Realistic Element Interaction
+        // Mini Me Character Implementation with User Controls
         class MiniMe {
             constructor(canvas) {
                 this.canvas = canvas;
                 this.ctx = canvas.getContext('2d');
                 this.x = 100;
                 this.y = window.innerHeight - 100;
-                this.targetX = this.x;
-                this.targetY = this.y;
                 this.vx = 0;
                 this.vy = 0;
-                this.size = 25;
-                this.isClimbing = false;
+                
+                // Kawaii character size (3x bigger than original)
+                this.width = 96; // 32 * 3
+                this.height = 126; // 42 * 3
+                
+                // Smooth physics properties
+                this.gravity = 0.45; // Reduced for smoother feel
                 this.isJumping = false;
                 this.isOnGround = false;
-                this.currentPlatform = null;
-                this.facingRight = true;
-                this.animFrame = 0;
-                this.animSpeed = 0;
-                this.currentAction = 'idle'; // idle, walking, climbing, jumping, falling
-                this.lastScrollY = window.scrollY;
-                this.energy = 100;
-                this.gravity = 0.5;
-                this.jumpPower = -12;
-                
-                // Animation states
+                this.currentAction = 'idle'; // idle, walking, jumping, falling, floating
                 this.walkCycle = 0;
-                this.climbCycle = 0;
-                this.jumpPhase = 0;
                 
-                // Pathfinding
-                this.path = [];
-                this.currentPathIndex = 0;
+                // User controls
+                this.keys = {
+                    left: false,
+                    right: false,
+                    up: false,
+                    down: false,
+                    space: false
+                };
                 
-                // Personality traits
-                this.patience = 0;
-                this.excitement = 0;
+                // Game state
+                this.isActive = false;
+                this.hasAppeared = false;
+                
+                // Set ground level to footer position
+                const footer = document.querySelector('footer') || document.querySelector('.footer') || document.querySelector('#footer');
+                if (footer) {
+                    const footerRect = footer.getBoundingClientRect();
+                    this.groundLevel = footerRect.top + window.scrollY;
+                } else {
+                    // Fallback to bottom of page if no footer found
+                    this.groundLevel = document.body.scrollHeight - 50;
+                }
+                
+                this.showPlatforms = false; // Debug mode for showing platform boundaries
                 
                 this.init();
             }
 
             init() {
-                this.findNearestPlatform();
-                this.update();
+                this.setupControls();
+                this.findAboutMePosition();
+            }
+
+            setupControls() {
+                // Keyboard event listeners
+                document.addEventListener('keydown', (e) => {
+                    if (!this.isActive) return;
+                    
+                    switch(e.code) {
+                        case 'ArrowLeft':
+                        case 'KeyA':
+                            this.keys.left = true;
+                            e.preventDefault();
+                            break;
+                        case 'ArrowRight':
+                        case 'KeyD':
+                            this.keys.right = true;
+                            e.preventDefault();
+                            break;
+                        case 'ArrowUp':
+                        case 'KeyW':
+                            this.keys.up = true;
+                            e.preventDefault();
+                            break;
+                        case 'ArrowDown':
+                        case 'KeyS':
+                            this.keys.down = true;
+                            e.preventDefault();
+                            break;
+                        case 'Space':
+                            this.keys.space = true;
+                            e.preventDefault();
+                            break;
+                        case 'KeyP':
+                            // Toggle platform visibility (debug mode)
+                            this.showPlatforms = !this.showPlatforms;
+                            console.log('Platform boundaries:', this.showPlatforms ? 'ON' : 'OFF');
+                            break;
+                    }
+                });
+
+                document.addEventListener('keyup', (e) => {
+                    if (!this.isActive) return;
+                    
+                    switch(e.code) {
+                        case 'ArrowLeft':
+                        case 'KeyA':
+                            this.keys.left = false;
+                            break;
+                        case 'ArrowRight':
+                        case 'KeyD':
+                            this.keys.right = false;
+                            break;
+                        case 'ArrowUp':
+                        case 'KeyW':
+                            this.keys.up = false;
+                            break;
+                        case 'ArrowDown':
+                        case 'KeyS':
+                            this.keys.down = false;
+                            break;
+                        case 'Space':
+                            this.keys.space = false;
+                            break;
+                    }
+                });
+            }
+
+            findAboutMePosition() {
+                // Find the About Me section and text
+                let aboutTitle = document.querySelector('#about .section-title');
+                
+                // If not found, search through all headings for "About Me" text
+                if (!aboutTitle) {
+                    aboutTitle = Array.from(document.querySelectorAll('h1, h2, h3, h4')).find(el => 
+                        el.textContent.toLowerCase().includes('about me') || 
+                        el.textContent.toLowerCase().includes('about')
+                    );
+                }
+                
+                // If still not found, try to find the about section itself
+                if (!aboutTitle) {
+                    const aboutSection = document.querySelector('#about, .about, section[id*="about"]');
+                    if (aboutSection) {
+                        aboutTitle = aboutSection.querySelector('h1, h2, h3, .section-title') || aboutSection;
+                    }
+                }
+                
+                if (aboutTitle) {
+                    const rect = aboutTitle.getBoundingClientRect();
+                    this.aboutMeElement = {
+                        x: rect.left + rect.width / 2,
+                        y: rect.top + window.scrollY,
+                        width: rect.width,
+                        height: rect.height,
+                        element: aboutTitle
+                    };
+                } else {
+                    // Fallback position - place on the first heading found
+                    const fallbackElement = document.querySelector('h1, h2, h3') || document.body;
+                    const rect = fallbackElement.getBoundingClientRect();
+                    this.aboutMeElement = {
+                        x: rect.left + rect.width / 2,
+                        y: rect.top + window.scrollY,
+                        width: rect.width,
+                        height: rect.height,
+                        element: fallbackElement
+                    };
+                }
+            }
+
+            activate() {
+                this.isActive = true;
+                this.hasAppeared = true;
+                
+                // Position Mini Me on the About Me text
+                this.x = this.aboutMeElement.x;
+                this.y = this.aboutMeElement.y - window.scrollY - this.height;
+                this.vx = 0;
+                this.vy = 0;
+                this.isOnGround = true;
+                this.currentAction = 'idle';
+                
+                // Scroll to show the About Me section
+                if (this.aboutMeElement.element) {
+                    this.aboutMeElement.element.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }
+                
+                console.log('Mini Me is now playable! Use arrow keys to move and spacebar to jump.');
             }
 
             getAllPlatforms() {
-                const elements = document.querySelectorAll('section, .nav, .container, h1, h2, h3, .project-card, button, .header');
+                const elements = document.querySelectorAll('section, .container, h1, h2, h3, .featured-item, button, .header, p, .nav, .about-content, .skills-grid, .contact-grid, .footer');
                 const platforms = [];
 
                 elements.forEach(el => {
                     const rect = el.getBoundingClientRect();
-                    if (rect.width > 50 && rect.height > 20) { // Filter out tiny elements
+                    const style = window.getComputedStyle(el);
+                    
+                    // Only include visible elements that are large enough and not hidden
+                    if (rect.width > 80 && rect.height > 20 && 
+                        style.display !== 'none' && 
+                        style.visibility !== 'hidden' &&
+                        rect.top < window.innerHeight + window.scrollY + 500 && 
+                        rect.bottom > window.scrollY - 500) {
+                        
+                        let platformWidth = rect.width;
+                        let platformLeft = rect.left;
+                        let platformRight = rect.right;
+                        
+                        // For text elements (headings, paragraphs), make platform match actual text width
+                        if (el.tagName.match(/^H[1-6]$/) || el.tagName === 'P' || el.classList.contains('section-title')) {
+                            const textContent = el.textContent.trim();
+                            if (textContent) {
+                                // Create a temporary span to measure actual text width
+                                const tempSpan = document.createElement('span');
+                                tempSpan.style.cssText = `
+                                    position: absolute;
+                                    visibility: hidden;
+                                    white-space: nowrap;
+                                    font-family: ${style.fontFamily};
+                                    font-size: ${style.fontSize};
+                                    font-weight: ${style.fontWeight};
+                                    letter-spacing: ${style.letterSpacing};
+                                `;
+                                tempSpan.textContent = textContent;
+                                document.body.appendChild(tempSpan);
+                                
+                                const textWidth = tempSpan.offsetWidth;
+                                document.body.removeChild(tempSpan);
+                                
+                                // Center the text platform within the element
+                                const centerX = rect.left + rect.width / 2;
+                                platformLeft = centerX - textWidth / 2 - 20; // Add some padding
+                                platformRight = centerX + textWidth / 2 + 20;
+                                platformWidth = textWidth + 40;
+                            }
+                        }
+                        
+                        // For container elements, make them narrower to avoid invisible walking
+                        else if (el.classList.contains('container') || el.tagName === 'SECTION') {
+                            const centerX = rect.left + rect.width / 2;
+                            const reducedWidth = Math.min(rect.width * 0.6, 400); // Reduce to 60% or max 400px
+                            platformLeft = centerX - reducedWidth / 2;
+                            platformRight = centerX + reducedWidth / 2;
+                            platformWidth = reducedWidth;
+                        }
+                        
                         platforms.push({
                             element: el,
-                            left: rect.left,
-                            right: rect.right,
+                            left: platformLeft,
+                            right: platformRight,
                             top: rect.top + window.scrollY,
                             bottom: rect.bottom + window.scrollY,
-                            width: rect.width,
+                            width: platformWidth,
                             height: rect.height,
                             screenTop: rect.top,
-                            screenBottom: rect.bottom
+                            screenBottom: rect.bottom,
+                            isPlatform: true,
+                            originalWidth: rect.width,
+                            isTextElement: el.tagName.match(/^H[1-6]$/) || el.tagName === 'P' || el.classList.contains('section-title')
                         });
                     }
                 });
 
-                // Sort by Y position (top to bottom)
-                return platforms.sort((a, b) => a.top - b.top);
-            }
-
-            findNearestPlatform() {
-                const platforms = this.getAllPlatforms();
-                const viewportCenter = window.scrollY + window.innerHeight / 2;
-                
-                let closest = null;
-                let closestDistance = Infinity;
-
-                platforms.forEach(platform => {
-                    const platformCenter = platform.top + platform.height / 2;
-                    const distance = Math.abs(platformCenter - viewportCenter);
-                    
-                    if (distance < closestDistance) {
-                        closestDistance = distance;
-                        closest = platform;
-                    }
+                // Add ground level platform (always available)
+                platforms.push({
+                    element: null,
+                    left: 0,
+                    right: window.innerWidth,
+                    top: this.groundLevel + window.scrollY,
+                    bottom: this.groundLevel + window.scrollY + 50,
+                    width: window.innerWidth,
+                    height: 50,
+                    screenTop: this.groundLevel,
+                    screenBottom: this.groundLevel + 50,
+                    isPlatform: true,
+                    isGround: true
                 });
 
-                return closest;
+                return platforms.sort((a, b) => a.top - b.top);
             }
 
             isOnPlatform(platform) {
                 if (!platform) return false;
                 
-                const onHorizontally = this.x >= platform.left - 10 && this.x <= platform.right + 10;
-                const onVertically = Math.abs((this.y + this.size) - (platform.top - window.scrollY)) < 10;
+                const platformScreenY = platform.top - window.scrollY;
                 
-                return onHorizontally && onVertically;
+                // Check horizontal overlap with some tolerance
+                const horizontalOverlap = this.x >= platform.left - 15 && this.x <= platform.right + 15;
+                
+                // Check if we're standing on top of the platform (more forgiving)
+                const onTop = this.y + this.size >= platformScreenY - 10 && 
+                             this.y + this.size <= platformScreenY + 15 &&
+                             this.vy >= -2; // Allow small upward velocity
+                
+                return horizontalOverlap && onTop;
             }
 
             findPlatformBelow() {
@@ -1330,364 +1512,729 @@
                 return closestBelow;
             }
 
-            planRealisticRoute() {
-                const targetPlatform = this.findNearestPlatform();
-                if (!targetPlatform) return;
-
-                const currentPlatform = this.currentPlatform;
-                
-                // If we're on the same platform, just walk to the target
-                if (currentPlatform && currentPlatform.element === targetPlatform.element) {
-                    this.targetX = Math.max(targetPlatform.left + 30, 
-                                   Math.min(targetPlatform.right - 30, 
-                                   targetPlatform.left + targetPlatform.width * 0.5));
-                    this.targetY = targetPlatform.top - window.scrollY - this.size;
-                    this.currentAction = 'walking';
-                    return;
-                }
-
-                // If target is below current platform
-                if (currentPlatform && targetPlatform.top > currentPlatform.top) {
-                    // Walk to edge, then jump down
-                    const edgeX = targetPlatform.left < currentPlatform.left ? 
-                                 currentPlatform.left : currentPlatform.right;
-                    
-                    if (Math.abs(this.x - edgeX) > 20) {
-                        this.targetX = edgeX;
-                        this.targetY = currentPlatform.top - window.scrollY - this.size;
-                        this.currentAction = 'walking';
-                    } else {
-                        // At edge, jump down
-                        this.targetX = Math.max(targetPlatform.left + 30, 
-                                       Math.min(targetPlatform.right - 30, 
-                                       targetPlatform.left + targetPlatform.width * 0.5));
-                        this.targetY = targetPlatform.top - window.scrollY - this.size;
-                        this.currentAction = 'jumping';
-                        this.isJumping = true;
-                        this.jumpPhase = 0;
-                    }
-                }
-                // If target is above current platform
-                else if (currentPlatform && targetPlatform.top < currentPlatform.top) {
-                    // Try to climb up or jump up
-                    this.targetX = Math.max(targetPlatform.left + 30, 
-                                   Math.min(targetPlatform.right - 30, 
-                                   targetPlatform.left + targetPlatform.width * 0.5));
-                    this.targetY = targetPlatform.top - window.scrollY - this.size;
-                    
-                    const verticalDistance = currentPlatform.top - targetPlatform.top;
-                    if (verticalDistance > 100) {
-                        this.currentAction = 'climbing';
-                        this.isClimbing = true;
-                    } else {
-                        this.currentAction = 'jumping';
-                        this.isJumping = true;
-                        this.jumpPhase = 0;
-                    }
-                }
-                // No current platform, need to find ground or platform
-                else {
-                    this.targetX = Math.max(targetPlatform.left + 30, 
-                                   Math.min(targetPlatform.right - 30, 
-                                   targetPlatform.left + targetPlatform.width * 0.5));
-                    this.targetY = targetPlatform.top - window.scrollY - this.size;
-                    this.currentAction = 'jumping';
-                    this.isJumping = true;
-                    this.jumpPhase = 0;
-                }
-            }
-
             update() {
-                const currentScrollY = window.scrollY;
-                const scrollDelta = Math.abs(currentScrollY - this.lastScrollY);
-                
-                // React to scrolling
-                if (scrollDelta > 10) {
-                    this.excitement = Math.min(100, this.excitement + scrollDelta * 0.5);
-                    this.planRealisticRoute();
-                    this.lastScrollY = currentScrollY;
-                } else {
-                    this.excitement = Math.max(0, this.excitement - 1);
-                    this.patience++;
-                }
+                if (!this.isActive) return;
 
-                // Check if we're on a platform
-                const platforms = this.getAllPlatforms();
-                this.currentPlatform = null;
-                this.isOnGround = false;
+                // Update ground level based on footer position
+                this.updateGroundLevel();
 
-                for (let platform of platforms) {
-                    if (this.isOnPlatform(platform)) {
-                        this.currentPlatform = platform;
-                        this.isOnGround = true;
-                        break;
-                    }
-                }
+                // Handle user input
+                this.handleInput();
 
-                // Physics and movement
-                switch (this.currentAction) {
-                    case 'walking':
-                        this.updateWalking();
-                        break;
-                    case 'climbing':
-                        this.updateClimbing();
-                        break;
-                    case 'jumping':
-                        this.updateJumping();
-                        break;
-                    case 'falling':
-                        this.updateFalling();
-                        break;
-                    default:
-                        this.updateIdle();
-                }
-
-                // Apply gravity if not on ground and not climbing
-                if (!this.isOnGround && !this.isClimbing) {
+                // Apply gravity if not on ground
+                if (!this.isOnGround) {
                     this.vy += this.gravity;
-                    if (this.currentAction !== 'jumping') {
+                    // Smooth terminal velocity
+                    this.vy = Math.min(this.vy, 10);
+                    if (this.currentAction !== 'jumping' && this.currentAction !== 'floating') {
                         this.currentAction = 'falling';
                     }
                 }
 
-                // Apply physics
+                // Apply physics with smooth movement
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Platform collision detection
-                if (this.vy > 0) { // Falling
-                    const platformBelow = this.findPlatformBelow();
-                    if (platformBelow) {
-                        const platformScreenY = platformBelow.top - window.scrollY;
-                        if (this.y + this.size >= platformScreenY && this.y + this.size <= platformScreenY + 20) {
-                            this.y = platformScreenY - this.size;
-                            this.vy = 0;
-                            this.isOnGround = true;
-                            this.currentPlatform = platformBelow;
-                            this.currentAction = 'idle';
-                            this.isJumping = false;
-                        }
-                    }
-                }
+                // Enhanced platform collision detection
+                this.checkPlatformCollisions();
 
-                // Bounds checking
-                this.x = Math.max(this.size, Math.min(this.canvas.width - this.size, this.x));
-                this.y = Math.max(this.size, Math.min(this.canvas.height - this.size, this.y));
-
-                // Animation updates
-                this.animFrame += this.animSpeed;
-                this.walkCycle += this.animSpeed * 0.3;
-                this.climbCycle += this.animSpeed * 0.2;
-            }
-
-            updateWalking() {
-                const dx = this.targetX - this.x;
-                const distance = Math.abs(dx);
-
-                if (distance > 5) {
-                    this.facingRight = dx > 0;
-                    this.vx = Math.sign(dx) * (2 + this.excitement * 0.03);
-                    this.animSpeed = 0.3 + this.excitement * 0.01;
-                    
-                    // Don't walk off the platform
-                    if (this.currentPlatform) {
-                        const nextX = this.x + this.vx;
-                        if (nextX < this.currentPlatform.left || nextX > this.currentPlatform.right) {
-                            this.vx = 0;
-                            this.currentAction = 'idle';
-                        }
-                    }
-                } else {
-                    this.vx *= 0.8;
-                    this.currentAction = 'idle';
-                    this.animSpeed = 0.1;
-                }
-            }
-
-            updateClimbing() {
-                const dx = this.targetX - this.x;
-                const dy = this.targetY - this.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance > 15) {
-                    this.vx = (dx / distance) * 1.5;
-                    this.vy = (dy / distance) * 1.5;
-                    this.animSpeed = 0.4;
-                } else {
-                    this.isClimbing = false;
-                    this.currentAction = 'idle';
-                    this.vx *= 0.9;
-                    this.vy *= 0.9;
-                }
-            }
-
-            updateJumping() {
-                if (this.jumpPhase === 0) {
-                    // Launch
-                    const dx = this.targetX - this.x;
-                    const dy = this.targetY - this.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    this.vx = (dx / distance) * 6;
-                    this.vy = this.jumpPower;
-                    this.jumpPhase = 1;
-                    this.animSpeed = 0.6;
-                    this.isOnGround = false;
-                } else if (this.jumpPhase === 1) {
-                    // In air - gravity is applied in main update
-                    
-                    // Check if we should land
-                    if (this.vy > 0) { // Falling
-                        this.jumpPhase = 2;
-                    }
-                } else {
-                    // Landing phase - handled by platform collision detection
-                    if (this.isOnGround) {
-                        this.isJumping = false;
-                        this.currentAction = 'idle';
-                        this.jumpPhase = 0;
-                    }
-                }
-            }
-
-            updateFalling() {
-                // Just apply gravity and air resistance
-                this.vx *= 0.98;
-                this.animSpeed = 0.2;
-            }
-
-            updateIdle() {
-                this.vx *= 0.95;
-                this.vy *= 0.95;
-                this.animSpeed = 0.05;
+                // Screen bounds with smooth clamping
+                const margin = this.width / 2;
+                this.x = Math.max(margin, Math.min(this.canvas.width - margin, this.x));
                 
-                // Occasionally look around
-                if (this.patience > 120 && Math.random() < 0.02) {
-                    this.patience = 0;
-                    this.facingRight = !this.facingRight;
+                // Bottom boundary (ground level)
+                if (this.y + this.height >= this.groundLevel) {
+                    this.y = this.groundLevel - this.height;
+                    this.vy = 0;
+                    this.isOnGround = true;
+                    this.isJumping = false;
+                    // Smooth action transition
+                    if (Math.abs(this.vx) > 0.5) {
+                        this.currentAction = 'walking';
+                    } else {
+                        this.currentAction = 'idle';
+                    }
                 }
+
+                // Smooth camera follow
+                this.updateCamera();
+            }
+
+            checkPlatformCollisions() {
+                const platforms = this.getAllPlatforms();
+                
+                for (let platform of platforms) {
+                    const platformScreenY = platform.top - window.scrollY;
+                    const platformScreenBottom = platform.bottom - window.scrollY;
+                    
+                    // Landing on platform from above (more forgiving)
+                    if (this.vy >= 0 && 
+                        this.y + this.size >= platformScreenY - 5 && 
+                        this.y + this.size <= platformScreenY + 20 &&
+                        this.x >= platform.left - 20 && 
+                        this.x <= platform.right + 20) {
+                        
+                        this.y = platformScreenY - this.size;
+                        this.vy = 0;
+                        this.isOnGround = true;
+                        this.currentPlatform = platform;
+                        this.isJumping = false;
+                        this.canAirDash = true; // Reset air dash on platform landing
+                        this.currentAction = Math.abs(this.vx) > 0.5 ? 'walking' : 'idle';
+                        break;
+                    }
+                    
+                    // Side collisions (basic wall collision) - only for solid elements
+                    if (platform.element && platform.height > 30) { // Only larger elements act as walls
+                        if (this.y + this.size > platformScreenY + 5 && 
+                            this.y < platformScreenBottom - 5) {
+                            
+                            // Left wall collision
+                            if (this.vx > 0 && this.x + this.size > platform.left && this.x < platform.left + 10) {
+                                this.x = platform.left - this.size;
+                                this.vx = 0;
+                            }
+                            
+                            // Right wall collision  
+                            if (this.vx < 0 && this.x < platform.right && this.x + this.size > platform.right - 10) {
+                                this.x = platform.right;
+                                this.vx = 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            updateGroundLevel() {
+                // Update ground level to footer position
+                const footer = document.querySelector('footer') || document.querySelector('.footer') || document.querySelector('#footer');
+                if (footer) {
+                    const footerRect = footer.getBoundingClientRect();
+                    this.groundLevel = footerRect.top + window.scrollY;
+                } else {
+                    // Fallback to bottom of page if no footer found
+                    this.groundLevel = document.body.scrollHeight - 50;
+                }
+            }
+
+            handleInput() {
+                // Smooth movement controls with acceleration
+                const maxMoveSpeed = 4;
+                const acceleration = 0.6;
+                const friction = 0.88;
+                const jumpPower = 11;
+                const floatPower = 0.6;
+                
+                // Smooth left and right movement with acceleration
+                if (this.keys.left) {
+                    this.vx = Math.max(this.vx - acceleration, -maxMoveSpeed);
+                    this.currentAction = 'walking';
+                } else if (this.keys.right) {
+                    this.vx = Math.min(this.vx + acceleration, maxMoveSpeed);
+                    this.currentAction = 'walking';
+                } else {
+                    // Apply friction for smooth deceleration
+                    this.vx *= friction;
+                    if (Math.abs(this.vx) < 0.1) {
+                        this.vx = 0;
+                    }
+                    if (this.isOnGround && Math.abs(this.vx) < 0.5) {
+                        this.currentAction = 'idle';
+                    }
+                }
+                
+                // Up arrow to jump (only when on ground)
+                if (this.keys.up && this.isOnGround && !this.isJumping) {
+                    this.vy = -jumpPower;
+                    this.isJumping = true;
+                    this.isOnGround = false;
+                    this.currentAction = 'jumping';
+                }
+                
+                // Down arrow to fall down to next element
+                if (this.keys.down && this.isOnGround) {
+                    // Smooth drop through current platform
+                    this.y += 8;
+                    this.vy = 2; // Small downward velocity for smooth drop
+                    this.isOnGround = false;
+                    this.isJumping = false;
+                    this.currentAction = 'falling';
+                }
+                
+                // Spacebar hold to float up (smoother floating)
+                if (this.keys.space) {
+                    this.vy -= floatPower;
+                    // Cap floating speed for control
+                    this.vy = Math.max(this.vy, -4);
+                    if (!this.isOnGround) {
+                        this.currentAction = 'floating';
+                    }
+                }
+                
+                // Set falling action when in air and not floating/jumping
+                if (!this.isOnGround && this.currentAction !== 'jumping' && this.currentAction !== 'floating') {
+                    this.currentAction = 'falling';
+                }
+                
+                // Update walk cycle for animation
+                if (Math.abs(this.vx) > 0.5 && this.isOnGround) {
+                    this.walkCycle += 0.15 + Math.abs(this.vx) * 0.02; // Variable speed based on movement
+                }
+            }
+
+            updateWallSliding() {
+                // Update wall sliding effect
+                if (this.wallSlideEffect > 0) {
+                    this.wallSlideEffect--;
+                }
+                
+                // Reset wall sliding state
+                this.isWallSliding = false;
+                this.canWallJump = false;
+                this.wallSide = 0;
+
+                // Only check for wall sliding when airborne and moving
+                if (this.isOnGround || this.wallJumpCooldown > 0) return;
+
+                const platforms = this.getAllPlatforms();
+                
+                for (let platform of platforms) {
+                    const platformScreenY = platform.top - window.scrollY;
+                    const platformScreenBottom = platform.bottom - window.scrollY;
+                    
+                    // Check if we're against a wall vertically
+                    if (this.y < platformScreenBottom && this.y + this.size > platformScreenY) {
+                        // Left wall (moving right into wall)
+                        if (this.vx > 1 && this.x + this.size >= platform.left - 5 && this.x + this.size <= platform.left + 10) {
+                            this.isWallSliding = true;
+                            this.wallSide = -1; // Left wall
+                            this.canWallJump = true;
+                            this.wallSlideEffect = 10;
+                            this.x = platform.left - this.size - 2; // Stick to wall
+                            break;
+                        }
+                        // Right wall (moving left into wall)
+                        else if (this.vx < -1 && this.x <= platform.right + 5 && this.x >= platform.right - 10) {
+                            this.isWallSliding = true;
+                            this.wallSide = 1; // Right wall
+                            this.canWallJump = true;
+                            this.wallSlideEffect = 10;
+                            this.x = platform.right + 2; // Stick to wall
+                            break;
+                        }
+                    }
+                }
+
+                // Apply wall slide physics
+                if (this.isWallSliding) {
+                    // Slow down falling while wall sliding
+                    if (this.vy > this.wallSlideSpeed) {
+                        this.vy = this.wallSlideSpeed;
+                    }
+                    // Stick to wall horizontally
+                    this.vx = 0;
+                }
+            }
+
+            findPlatformAbove() {
+                const platforms = this.getAllPlatforms();
+                const currentY = this.y + window.scrollY;
+                
+                let closestAbove = null;
+                let closestDistance = Infinity;
+
+                platforms.forEach(platform => {
+                    if (platform.top < currentY) {
+                        const horizontalOverlap = !(this.x < platform.left - 20 || this.x > platform.right + 20);
+                        if (horizontalOverlap) {
+                            const distance = currentY - platform.top;
+                            if (distance < closestDistance) {
+                                closestDistance = distance;
+                                closestAbove = platform;
+                            }
+                        }
+                    }
+                });
+
+                return closestAbove;
+            }
+
+            updatePlatformCollisions() {
+                const platforms = this.getAllPlatforms();
+                let wasOnGround = this.isOnGround;
+                this.currentPlatform = null;
+                this.isOnGround = false;
+
+                // Check if we're on any platform
+                for (let platform of platforms) {
+                    if (this.isOnPlatform(platform)) {
+                        this.currentPlatform = platform;
+                        this.isOnGround = true;
+                        
+                        // Snap to platform if we're close
+                        const platformScreenY = platform.top - window.scrollY;
+                        if (Math.abs((this.y + this.size) - platformScreenY) < 15) {
+                            this.y = platformScreenY - this.size;
+                            if (this.vy > 0) this.vy = 0; // Stop falling
+                        }
+                        break;
+                    }
+                }
+
+                // If we just left a platform, give extended coyote time
+                if (wasOnGround && !this.isOnGround) {
+                    this.coyoteTime = 10;
+                }
+            }
+
+            updateCamera() {
+                // Smooth scroll to follow Mini Me
+                const targetScrollY = (this.y + window.scrollY) - window.innerHeight / 2;
+                const currentScrollY = window.scrollY;
+                const scrollDiff = targetScrollY - currentScrollY;
+                
+                if (Math.abs(scrollDiff) > 50) {
+                    window.scrollTo({
+                        top: currentScrollY + scrollDiff * 0.05,
+                        behavior: 'auto'
+                    });
+                }
+            }
+
+            drawKawaiiCharacter() {
+                // Original kawaii run character proportions (3x bigger, side profile)
+                const headSize = this.size * 1.5; // 3x bigger head
+                const bodyWidth = this.size * 1.05; // 3x bigger body
+                const bodyHeight = this.size * 0.75;
+                const legLength = this.size * 0.6; // 3x bigger legs
+                const armLength = this.size * 0.45; // 3x bigger arms
+                
+                // Animation cycles
+                const isMoving = Math.abs(this.vx) > 0.5;
+                const runCycle = Math.sin(this.walkCycle * 0.5);
+                
+                // Head bob for kawaii run feel
+                const headBob = this.isOnGround && isMoving ? Math.sin(this.walkCycle * 0.8) * 3 : 0;
+                
+                // Original kawaii run character colors
+                this.ctx.fillStyle = '#ffffff'; // White body like original
+                this.ctx.strokeStyle = '#000000'; // Black outlines
+                this.ctx.lineWidth = 6; // Thicker lines for 3x scale
+                this.ctx.lineCap = 'round';
+                this.ctx.lineJoin = 'round';
+                
+                // Main head (side profile - oval instead of circle)
+                this.ctx.fillStyle = '#ffffff';
+                this.ctx.strokeStyle = '#000000';
+                this.ctx.lineWidth = 6;
+                this.ctx.beginPath();
+                // Side profile head - slightly oval, facing right
+                this.ctx.ellipse(0, -this.size + headSize/2 + headBob, headSize/2.2, headSize/2, 0, 0, Math.PI * 2);
+                this.ctx.fill();
+                this.ctx.stroke();
+                
+                // Single eye (side profile - only one eye visible)
+                this.ctx.fillStyle = '#000000';
+                const eyeSize = 4.5; // 3x bigger eye
+                const eyeY = -this.size + headSize/2 - 9 + headBob;
+                
+                // Single eye on the right side (facing direction)
+                this.ctx.beginPath();
+                this.ctx.arc(headSize/8, eyeY, eyeSize, 0, Math.PI * 2);
+                this.ctx.fill();
+                
+                // Simple mouth (side profile)
+                this.ctx.strokeStyle = '#000000';
+                this.ctx.lineWidth = 3;
+                if (this.currentAction === 'jumping' || this.currentAction === 'airdashing' || isMoving) {
+                    // Happy small smile (side view)
+                    this.ctx.beginPath();
+                    this.ctx.arc(headSize/6, -this.size + headSize/2 + 15 + headBob, 6, 0, Math.PI);
+                    this.ctx.stroke();
+                } else {
+                    // Neutral dot mouth (side view)
+                    this.ctx.fillStyle = '#000000';
+                    this.ctx.beginPath();
+                    this.ctx.arc(headSize/6, -this.size + headSize/2 + 15 + headBob, 1.5, 0, Math.PI * 2);
+                    this.ctx.fill();
+                }
+                
+                // Simple oval body (side profile, 3x bigger)
+                this.ctx.fillStyle = '#ffffff';
+                this.ctx.strokeStyle = '#000000';
+                this.ctx.lineWidth = 6;
+                this.ctx.beginPath();
+                // Side profile body - slightly wider from side view
+                this.ctx.ellipse(0, -this.size + headSize + bodyHeight/2, bodyWidth/2.5, bodyHeight/2, 0, 0, Math.PI * 2);
+                this.ctx.fill();
+                this.ctx.stroke();
+                
+                // Simple stick arms (side profile, 3x bigger)
+                const armY = -this.size + headSize + bodyHeight/3;
+                let leftArmAngle = 0; // Back arm (less visible)
+                let rightArmAngle = 0; // Front arm (more visible)
+                
+                if (this.currentAction === 'climbing') {
+                    const climbMotion = Math.sin(this.climbCycle) * 0.2;
+                    leftArmAngle = -Math.PI/2 + climbMotion;
+                    rightArmAngle = -Math.PI/2 - climbMotion;
+                } else if (isMoving && this.isOnGround) {
+                    // Simple arm swing for walking
+                    leftArmAngle = runCycle * 0.4 + Math.PI; // Back arm
+                    rightArmAngle = -runCycle * 0.4; // Front arm
+                } else if (!this.isOnGround) {
+                    leftArmAngle = -Math.PI/8 + Math.PI; // Back arm
+                    rightArmAngle = -Math.PI/8; // Front arm
+                } else {
+                    leftArmAngle = Math.PI; // Back arm hanging down
+                    rightArmAngle = 0; // Front arm hanging down
+                }
+                
+                // Draw arms with depth (back arm slightly darker/thinner)
+                // Back arm
+                this.ctx.strokeStyle = '#666666'; // Darker for depth
+                this.ctx.lineWidth = 4;
+                this.ctx.beginPath();
+                this.ctx.moveTo(-bodyWidth/6, armY);
+                this.ctx.lineTo(-bodyWidth/6 + Math.cos(leftArmAngle) * armLength * 0.8, armY + Math.sin(leftArmAngle) * armLength * 0.8);
+                this.ctx.stroke();
+                
+                // Front arm
+                this.ctx.strokeStyle = '#000000';
+                this.ctx.lineWidth = 6;
+                this.ctx.beginPath();
+                this.ctx.moveTo(bodyWidth/6, armY);
+                this.ctx.lineTo(bodyWidth/6 + Math.cos(rightArmAngle) * armLength, armY + Math.sin(rightArmAngle) * armLength);
+                this.ctx.stroke();
+                
+                // Simple stick legs (side profile, 3x bigger)
+                const legY = -this.size + headSize + bodyHeight;
+                let leftLegAngle = 0; // Back leg
+                let rightLegAngle = 0; // Front leg
+                
+                if (this.currentAction === 'climbing') {
+                    const climbLegMotion = Math.sin(this.climbCycle + Math.PI/2) * 0.3;
+                    leftLegAngle = -Math.PI/2.5 + climbLegMotion + Math.PI/4;
+                    rightLegAngle = -Math.PI/2.5 - climbLegMotion;
+                } else if (isMoving && this.isOnGround) {
+                    // Simple kawaii run leg animation
+                    const legCycle = Math.sin(this.walkCycle * 0.5);
+                    if (legCycle > 0) {
+                        leftLegAngle = -Math.PI/2 - Math.PI/8 + Math.PI/3; // Back leg kicked back
+                        rightLegAngle = -Math.PI/2 + Math.PI/6; // Front leg forward
+                    } else {
+                        leftLegAngle = -Math.PI/2 + Math.PI/6 + Math.PI/6; // Back leg forward
+                        rightLegAngle = -Math.PI/2 - Math.PI/8; // Front leg back
+                    }
+                } else if (!this.isOnGround) {
+                    leftLegAngle = -Math.PI/2 + Math.PI/8 + Math.PI/6; // Back leg
+                    rightLegAngle = -Math.PI/2 - Math.PI/8; // Front leg
+                } else {
+                    // Standing straight (side profile)
+                    leftLegAngle = -Math.PI/2 + Math.PI/12; // Back leg slightly back
+                    rightLegAngle = -Math.PI/2; // Front leg straight
+                }
+                
+                // Draw legs with depth (back leg slightly darker/thinner)
+                // Back leg
+                this.ctx.strokeStyle = '#666666'; // Darker for depth
+                this.ctx.lineWidth = 4;
+                this.ctx.beginPath();
+                this.ctx.moveTo(-bodyWidth/8, legY);
+                this.ctx.lineTo(-bodyWidth/8 + Math.cos(leftLegAngle) * legLength * 0.8, legY + Math.sin(leftLegAngle) * legLength * 0.8);
+                this.ctx.stroke();
+                
+                // Front leg
+                this.ctx.strokeStyle = '#000000';
+                this.ctx.lineWidth = 6;
+                this.ctx.beginPath();
+                this.ctx.moveTo(bodyWidth/8, legY);
+                this.ctx.lineTo(bodyWidth/8 + Math.cos(rightLegAngle) * legLength, legY + Math.sin(rightLegAngle) * legLength);
+                this.ctx.stroke();
+                
+                // Simple circular feet (3x bigger)
+                // Back foot
+                this.ctx.fillStyle = '#666666';
+                this.ctx.beginPath();
+                this.ctx.arc(-bodyWidth/8 + Math.cos(leftLegAngle) * legLength * 0.8, legY + Math.sin(leftLegAngle) * legLength * 0.8, 3, 0, Math.PI * 2);
+                this.ctx.fill();
+                
+                // Front foot
+                this.ctx.fillStyle = '#000000';
+                this.ctx.beginPath();
+                this.ctx.arc(bodyWidth/8 + Math.cos(rightLegAngle) * legLength, legY + Math.sin(rightLegAngle) * legLength, 4.5, 0, Math.PI * 2);
+                this.ctx.fill();
             }
 
             draw() {
+                if (!this.isActive) return;
+                
                 this.ctx.save();
                 
                 // Character position
                 const screenY = this.y;
-                const jiggle = Math.sin(this.animFrame) * 1;
+                const jiggle = this.currentAction === 'walking' ? Math.sin(this.walkCycle) * 1 : 0;
                 
                 this.ctx.translate(this.x, screenY + jiggle);
-                if (!this.facingRight) {
+                
+                // Special orientation for climbing - side profile view
+                if (this.isClimbing) {
+                    // Show side profile by scaling horizontally and rotating slightly
+                    this.ctx.scale(0.3, 1); // Make very narrow for side profile
+                    // Don't rotate - keep upright for side view
+                } else if (!this.facingRight) {
                     this.ctx.scale(-1, 1);
                 }
 
-                // Body (simple stick figure style)
-                this.ctx.strokeStyle = '#2c3e50';
-                this.ctx.fillStyle = '#e74c3c';
-                this.ctx.lineWidth = 3;
-                this.ctx.lineCap = 'round';
+                // Draw effects first (behind character)
+                this.drawEffects();
 
-                // Head
-                this.ctx.fillStyle = '#fdbcb4'; // Skin tone
-                this.ctx.beginPath();
-                this.ctx.arc(0, -this.size, this.size * 0.4, 0, Math.PI * 2);
-                this.ctx.fill();
+                // Kawaii character style (like kawaii run games)
+                this.drawKawaiiCharacter();
 
-                // Hair
-                this.ctx.fillStyle = '#8B4513'; // Brown hair
-                this.ctx.beginPath();
-                this.ctx.arc(0, -this.size * 1.2, this.size * 0.35, 0, Math.PI);
-                this.ctx.fill();
+                this.ctx.restore();
 
-                // Eyes
-                this.ctx.fillStyle = '#333';
-                const eyeSize = 2;
-                this.ctx.beginPath();
-                this.ctx.arc(-this.size * 0.15, -this.size * 1.1, eyeSize, 0, Math.PI * 2);
-                this.ctx.fill();
-                this.ctx.beginPath();
-                this.ctx.arc(this.size * 0.15, -this.size * 1.1, eyeSize, 0, Math.PI * 2);
-                this.ctx.fill();
+                // Draw HUD elements
+                this.drawHUD();
+            }
 
-                // Expression based on current action
-                this.ctx.strokeStyle = '#333';
-                this.ctx.lineWidth = 1.5;
-                if (this.currentAction === 'jumping' || this.excitement > 50) {
-                    // Excited expression
-                    this.ctx.beginPath();
-                    this.ctx.arc(0, -this.size * 0.85, this.size * 0.1, 0, Math.PI);
-                    this.ctx.stroke();
-                } else if (this.currentAction === 'climbing') {
-                    // Determined expression
-                    this.ctx.beginPath();
-                    this.ctx.moveTo(-this.size * 0.1, -this.size * 0.85);
-                    this.ctx.lineTo(this.size * 0.1, -this.size * 0.85);
-                    this.ctx.stroke();
-                } else {
-                    // Content expression
-                    this.ctx.beginPath();
-                    this.ctx.arc(0, -this.size * 0.9, this.size * 0.08, 0.2, Math.PI - 0.2);
-                    this.ctx.stroke();
-                }
-
-                // Body
-                this.ctx.strokeStyle = '#e74c3c';
-                this.ctx.lineWidth = 4;
-                this.ctx.beginPath();
-                this.ctx.moveTo(0, -this.size * 0.6);
-                this.ctx.lineTo(0, this.size * 0.3);
-                this.ctx.stroke();
-
-                // Arms
-                const armSwing = Math.sin(this.walkCycle) * 0.3;
-                const climbArm = this.isClimbing ? Math.sin(this.climbCycle) * 0.8 : 0;
-                
-                this.ctx.beginPath();
-                this.ctx.moveTo(0, -this.size * 0.3);
-                this.ctx.lineTo(this.size * 0.5, armSwing * this.size + climbArm * this.size);
-                this.ctx.stroke();
-                
-                this.ctx.beginPath();
-                this.ctx.moveTo(0, -this.size * 0.3);
-                this.ctx.lineTo(-this.size * 0.5, -armSwing * this.size - climbArm * this.size);
-                this.ctx.stroke();
-
-                // Legs
-                const legSwing = Math.sin(this.walkCycle + Math.PI) * 0.4;
-                const climbLeg = this.isClimbing ? Math.sin(this.climbCycle + Math.PI/2) * 0.6 : 0;
-                
-                this.ctx.beginPath();
-                this.ctx.moveTo(0, this.size * 0.3);
-                this.ctx.lineTo(this.size * 0.3, this.size * 0.8 + legSwing * this.size + climbLeg * this.size);
-                this.ctx.stroke();
-                
-                this.ctx.beginPath();
-                this.ctx.moveTo(0, this.size * 0.3);
-                this.ctx.lineTo(-this.size * 0.3, this.size * 0.8 - legSwing * this.size - climbLeg * this.size);
-                this.ctx.stroke();
-
-                // Action indicators
-                if (this.isJumping) {
-                    // Motion lines
-                    this.ctx.strokeStyle = 'rgba(52, 152, 219, 0.6)';
-                    this.ctx.lineWidth = 2;
-                    for (let i = 0; i < 3; i++) {
+            drawEffects() {
+                // Jump effect
+                if (this.jumpEffect > 0) {
+                    const intensity = this.jumpEffect / 10;
+                    this.ctx.strokeStyle = `rgba(52, 152, 219, ${intensity})`;
+                    this.ctx.lineWidth = 3;
+                    
+                    // Jump burst lines
+                    for (let i = 0; i < 6; i++) {
+                        const angle = (i * Math.PI * 2) / 6;
+                        const length = this.size * 0.8 * intensity;
                         this.ctx.beginPath();
-                        this.ctx.moveTo(-this.size - i * 5, i * 5);
-                        this.ctx.lineTo(-this.size - i * 5 - 10, i * 5);
+                        this.ctx.moveTo(0, this.size * 0.6);
+                        this.ctx.lineTo(
+                            Math.cos(angle) * length, 
+                            this.size * 0.6 + Math.sin(angle) * length
+                        );
                         this.ctx.stroke();
                     }
                 }
 
-                if (this.excitement > 70) {
-                    // Energy particles
-                    this.ctx.fillStyle = 'rgba(255, 215, 0, 0.7)';
-                    for (let i = 0; i < 3; i++) {
+                // Climb effect
+                if (this.climbEffect > 0 || this.isClimbing) {
+                    const intensity = this.isClimbing ? 0.8 : this.climbEffect / 15;
+                    this.ctx.fillStyle = `rgba(46, 204, 113, ${intensity})`;
+                    
+                    // Sparkle effect around character
+                    for (let i = 0; i < 5; i++) {
                         const sparkleX = (Math.random() - 0.5) * this.size * 2;
                         const sparkleY = (Math.random() - 0.5) * this.size * 2;
                         this.ctx.beginPath();
-                        this.ctx.arc(sparkleX, sparkleY, 2, 0, Math.PI * 2);
+                        this.ctx.arc(sparkleX, sparkleY, 2 * intensity, 0, Math.PI * 2);
                         this.ctx.fill();
                     }
+                    
+                    // Climbing trail effect
+                    if (this.isClimbing) {
+                        this.ctx.strokeStyle = `rgba(46, 204, 113, ${intensity * 0.6})`;
+                        this.ctx.lineWidth = 3;
+                        this.ctx.setLineDash([2, 4]);
+                        
+                        // Vertical trail showing climb path
+                        for (let i = 0; i < 3; i++) {
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(-this.size * 0.3 + i * this.size * 0.3, this.size + i * 8);
+                            this.ctx.lineTo(-this.size * 0.3 + i * this.size * 0.3, this.size + i * 8 + 15);
+                            this.ctx.stroke();
+                        }
+                        this.ctx.setLineDash([]);
+                    }
+                }
+
+                // Wall sliding effects
+                if (this.wallSlideEffect > 0 || this.isWallSliding) {
+                    const intensity = this.isWallSliding ? 0.8 : this.wallSlideEffect / 10;
+                    this.ctx.fillStyle = `rgba(255, 165, 0, ${intensity})`;
+                    
+                    // Sparks from wall contact
+                    for (let i = 0; i < 3; i++) {
+                        const sparkX = this.wallSide * this.size * 0.6 + (Math.random() - 0.5) * 5;
+                        const sparkY = (Math.random() - 0.5) * this.size + 5;
+                        this.ctx.beginPath();
+                        this.ctx.arc(sparkX, sparkY, 1.5 * intensity, 0, Math.PI * 2);
+                        this.ctx.fill();
+                    }
+                    
+                    // Wall slide trail
+                    if (this.isWallSliding) {
+                        this.ctx.strokeStyle = `rgba(255, 165, 0, ${intensity * 0.6})`;
+                        this.ctx.lineWidth = 2;
+                        this.ctx.setLineDash([1, 3]);
+                        
+                        for (let i = 0; i < 4; i++) {
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(this.wallSide * this.size * 0.5, -this.size + i * 10);
+                            this.ctx.lineTo(this.wallSide * this.size * 0.3, -this.size + i * 10 + 8);
+                            this.ctx.stroke();
+                        }
+                        this.ctx.setLineDash([]);
+                    }
+                }
+
+                // Air dash effect
+                if (this.dashEffect > 0 || this.currentAction === 'airdashing') {
+                    const intensity = this.currentAction === 'airdashing' ? 1.0 : this.dashEffect / 15;
+                    this.ctx.strokeStyle = `rgba(0, 191, 255, ${intensity})`;
+                    this.ctx.lineWidth = 3;
+                    this.ctx.setLineDash([3, 2]);
+                    
+                    // Speed lines behind character
+                    const dashDirection = this.vx > 0 ? -1 : 1;
+                    for (let i = 0; i < 5; i++) {
+                        this.ctx.beginPath();
+                        this.ctx.moveTo(dashDirection * (20 + i * 8), -this.size/2 + (i-2) * 3);
+                        this.ctx.lineTo(dashDirection * (10 + i * 8), -this.size/2 + (i-2) * 3);
+                        this.ctx.stroke();
+                    }
+                    this.ctx.setLineDash([]);
+                    
+                    // Glowing outline
+                    this.ctx.strokeStyle = `rgba(0, 191, 255, ${intensity * 0.6})`;
+                    this.ctx.lineWidth = 2;
+                    this.ctx.strokeRect(-this.size/2 - 2, -this.size - 2, this.size + 4, this.size + 4);
+                }
+
+                // Floating effect
+                if (this.floatEffect > 0 || this.currentAction === 'floating') {
+                    const intensity = this.currentAction === 'floating' ? 0.8 : this.floatEffect / 10;
+                    this.ctx.fillStyle = `rgba(116, 185, 255, ${intensity})`;
+                    
+                    // Floating particles below character
+                    for (let i = 0; i < 4; i++) {
+                        const floatX = (Math.random() - 0.5) * this.size * 1.2;
+                        const floatY = this.size * 0.3 + Math.random() * 8;
+                        this.ctx.beginPath();
+                        this.ctx.arc(floatX, floatY, 2 * intensity, 0, Math.PI * 2);
+                        this.ctx.fill();
+                    }
+                    
+                    // Floating aura
+                    this.ctx.strokeStyle = `rgba(116, 185, 255, ${intensity * 0.5})`;
+                    this.ctx.lineWidth = 2;
+                    this.ctx.beginPath();
+                    this.ctx.arc(0, 0, this.size * 1.2, 0, Math.PI * 2);
+                    this.ctx.stroke();
+                }
+
+                // Walking dust particles
+                if (this.currentAction === 'walking' && this.isOnGround) {
+                    this.ctx.fillStyle = 'rgba(160, 160, 160, 0.4)';
+                    for (let i = 0; i < 2; i++) {
+                        const dustX = (Math.random() - 0.5) * this.size * 0.8;
+                        const dustY = this.size * 0.5 + Math.random() * 8;
+                        this.ctx.beginPath();
+                        this.ctx.arc(dustX, dustY, 1.5, 0, Math.PI * 2);
+                        this.ctx.fill();
+                    }
+                }
+
+                // Falling trail
+                if (this.currentAction === 'falling' && this.vy > 5) {
+                    this.ctx.strokeStyle = 'rgba(231, 76, 60, 0.3)';
+                    this.ctx.lineWidth = 2;
+                    for (let i = 0; i < 3; i++) {
+                        this.ctx.beginPath();
+                        this.ctx.moveTo(-this.size * 0.2 + i * 5, -this.size - i * 8);
+                        this.ctx.lineTo(-this.size * 0.2 + i * 5, -this.size - i * 8 - 10);
+                        this.ctx.stroke();
+                    }
+                }
+            }
+
+            drawHUD() {
+                // Only draw HUD when character is active
+                if (!this.isActive) return;
+
+                this.ctx.save();
+                this.ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform
+                
+                // Draw platform boundaries (debug mode)
+                if (this.showPlatforms) {
+                    this.ctx.strokeStyle = 'rgba(52, 152, 219, 0.8)';
+                    this.ctx.lineWidth = 2;
+                    this.ctx.setLineDash([5, 5]);
+                    
+                    const platforms = this.getAllPlatforms();
+                    platforms.forEach(platform => {
+                        const screenY = platform.top - window.scrollY;
+                        if (screenY > -50 && screenY < window.innerHeight + 50) {
+                            this.ctx.strokeRect(
+                                platform.left, 
+                                screenY, 
+                                platform.width, 
+                                Math.min(platform.height, 5)
+                            );
+                            
+                            // Label text elements differently
+                            if (platform.isTextElement) {
+                                this.ctx.fillStyle = 'rgba(52, 152, 219, 0.3)';
+                                this.ctx.fillRect(platform.left, screenY, platform.width, 3);
+                            }
+                        }
+                    });
+                    this.ctx.setLineDash([]);
+                }
+                
+                // Current action indicator
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+                this.ctx.fillRect(this.x - 50, this.y - this.size - 25, 100, 20);
+                
+                this.ctx.fillStyle = 'white';
+                this.ctx.font = '10px monospace';
+                this.ctx.textAlign = 'center';
+                
+                let actionText = '';
+                switch (this.currentAction) {
+                    case 'walking': actionText = '🏃‍♀️ Walking'; break;
+                    case 'jumping': actionText = '🚀 Jumping'; break;
+                    case 'climbing': actionText = '🧗‍♀️ Climbing'; break;
+                    case 'floating': actionText = '🎈 Floating'; break;
+                    case 'falling': actionText = '⬇️ Falling'; break;
+                    default: actionText = '😊 Idle'; break;
+                }
+                
+                // Add ground status
+                if (this.isOnGround) {
+                    actionText += ' (Grounded)';
+                } else {
+                    actionText += ' (Airborne)';
+                }
+                
+                this.ctx.fillText(actionText, this.x, this.y - this.size - 10);
+                
+                // Velocity indicator
+                if (Math.abs(this.vx) > 1 || Math.abs(this.vy) > 1) {
+                    this.ctx.strokeStyle = 'rgba(52, 152, 219, 0.8)';
+                    this.ctx.lineWidth = 2;
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(this.x, this.y);
+                    this.ctx.lineTo(this.x + this.vx * 3, this.y + this.vy * 3);
+                    this.ctx.stroke();
+                    
+                    // Arrow head
+                    const angle = Math.atan2(this.vy, this.vx);
+                    const headSize = 5;
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(this.x + this.vx * 3, this.y + this.vy * 3);
+                    this.ctx.lineTo(
+                        this.x + this.vx * 3 - headSize * Math.cos(angle - Math.PI/6),
+                        this.y + this.vy * 3 - headSize * Math.sin(angle - Math.PI/6)
+                    );
+                    this.ctx.moveTo(this.x + this.vx * 3, this.y + this.vy * 3);
+                    this.ctx.lineTo(
+                        this.x + this.vx * 3 - headSize * Math.cos(angle + Math.PI/6),
+                        this.y + this.vy * 3 - headSize * Math.sin(angle + Math.PI/6)
+                    );
+                    this.ctx.stroke();
                 }
 
                 this.ctx.restore();
@@ -1698,9 +2245,9 @@
         function initMiniMe() {
             const canvas = document.getElementById('blobCanvas');
             const ctx = canvas.getContext('2d');
-            const gravityBtn = document.getElementById('gravityToggle');
+            const playBtn = document.getElementById('gravityToggle');
             
-            let miniMe = null; // Mini Me doesn't exist initially
+            let miniMe = null;
 
             // Resize canvas to full window
             function resizeCanvas() {
@@ -1711,87 +2258,29 @@
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
 
-            // Play button - creates and shows Mini Me on About section
-            gravityBtn.addEventListener('click', () => {
+            // Play button - creates and activates Mini Me
+            playBtn.addEventListener('click', () => {
                 if (!miniMe) {
                     // Create Mini Me for the first time
                     miniMe = new MiniMe(canvas);
+                    miniMe.activate();
                     
-                    // Find the About Me section
-                    const aboutSection = document.querySelector('#about, [id*="about"], h2:contains("About"), h1:contains("About")') || 
-                                        document.querySelector('section:nth-child(2), .about, .about-section');
+                    // Update button text
+                    playBtn.innerHTML = '⏸️ Mini Me Active!';
+                    playBtn.style.background = 'linear-gradient(45deg, #00b894, #00cec9)';
                     
-                    if (aboutSection) {
-                        const aboutRect = aboutSection.getBoundingClientRect();
-                        const aboutTop = aboutRect.top + window.scrollY;
-                        
-                        // Position Mini Me on top of the About section
-                        miniMe.x = aboutRect.left + aboutRect.width * 0.3;
-                        miniMe.y = aboutTop - window.scrollY - miniMe.size;
-                        miniMe.vx = 0;
-                        miniMe.vy = 0;
-                        
-                        // Set current platform to the about section
-                        miniMe.currentPlatform = {
-                            element: aboutSection,
-                            left: aboutRect.left,
-                            right: aboutRect.right,
-                            top: aboutTop,
-                            bottom: aboutTop + aboutRect.height,
-                            width: aboutRect.width,
-                            height: aboutRect.height,
-                            screenTop: aboutRect.top,
-                            screenBottom: aboutRect.bottom
-                        };
-                        
-                        miniMe.isOnGround = true;
-                        miniMe.currentAction = 'idle';
-                        miniMe.isJumping = false;
-                        miniMe.isClimbing = false;
-                        miniMe.excitement = 50; // Start with some excitement
-                        
-                        // Make Mini Me face towards the center of the section
-                        miniMe.facingRight = miniMe.x < (aboutRect.left + aboutRect.width / 2);
-                        
-                        console.log('Mini Me appeared on About section for the first time!');
-                    } else {
-                        // Fallback: create Mini Me at default position
-                        miniMe.excitement = 50;
-                        console.log('About section not found, Mini Me created at default position!');
-                    }
+                    console.log('🎮 Mini Me is now playable!');
+                    console.log('Controls: ⬅️➡️ Arrow keys to move, ⬆️ to climb, 🚀 Spacebar to jump');
+                } else if (!miniMe.isActive) {
+                    // Reactivate Mini Me
+                    miniMe.activate();
+                    playBtn.innerHTML = '⏸️ Mini Me Active!';
+                    playBtn.style.background = 'linear-gradient(45deg, #00b894, #00cec9)';
                 } else {
-                    // Mini Me already exists, just energize it
-                    miniMe.excitement = Math.min(100, miniMe.excitement + 30);
-                    miniMe.currentAction = 'jumping';
-                    miniMe.isJumping = true;
-                    miniMe.jumpPhase = 0;
-                    console.log('Mini Me is energized!');
-                }
-            });
-
-            // Scroll tracking (only if Mini Me exists)
-            let scrollTimeout;
-            window.addEventListener('scroll', () => {
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(() => {
-                    if (miniMe) {
-                        miniMe.planRealisticRoute();
-                    }
-                }, 100);
-            });
-
-            // Click interaction (only if Mini Me exists)
-            document.addEventListener('click', (e) => {
-                if (miniMe) {
-                    const clickX = e.clientX;
-                    const clickY = e.clientY;
-                    
-                    const distance = Math.sqrt((clickX - miniMe.x) ** 2 + (clickY - miniMe.y) ** 2);
-                    if (distance < 100) {
-                        miniMe.excitement = Math.min(100, miniMe.excitement + 30);
-                        miniMe.facingRight = clickX > miniMe.x;
-                        e.stopPropagation();
-                    }
+                    // Deactivate Mini Me
+                    miniMe.isActive = false;
+                    playBtn.innerHTML = '🎮 Activate Mini Me';
+                    playBtn.style.background = 'linear-gradient(45deg, #6c5ce7, #74b9ff)';
                 }
             });
 
@@ -1809,6 +2298,88 @@
             }
 
             animate();
+
+            // Add control instructions overlay
+            createControlsOverlay();
+        }
+
+        // Create controls overlay
+        function createControlsOverlay() {
+            const overlay = document.createElement('div');
+            overlay.id = 'controls-overlay';
+            overlay.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                background: rgba(0, 0, 0, 0.9);
+                color: white;
+                padding: 20px;
+                border-radius: 15px;
+                font-family: 'Inter', monospace;
+                font-size: 13px;
+                z-index: 10001;
+                display: none;
+                line-height: 1.6;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                max-width: 280px;
+            `;
+            overlay.innerHTML = `
+                <div style="font-weight: bold; margin-bottom: 12px; color: #74b9ff; font-size: 14px;">🎮 Mini Me Game Controls</div>
+                <div style="margin-bottom: 8px;"><span style="color: #00b894;">⬅️➡️</span> Arrow keys: Move left/right</div>
+                <div style="margin-bottom: 8px;"><span style="color: #00b894;">⬆️</span> Arrow up: Jump</div>
+                <div style="margin-bottom: 8px;"><span style="color: #00b894;">⬇️</span> Arrow down: Fall down to next element</div>
+                <div style="margin-bottom: 8px;"><span style="color: #00b894;">🚀</span> Spacebar: Hold to float up</div>
+                <div style="margin-bottom: 8px;"><span style="color: #00b894;">🎯</span> Camera follows Mini Me smoothly</div>
+                <div style="margin-bottom: 8px;"><span style="color: #fdcb6e;">💡</span> Mini Me walks only on actual text areas!</div>
+                <div style="margin-bottom: 8px;"><span style="color: #e17055;">🔧</span> Press P: Toggle platform boundaries (debug)</div>
+                <div style="margin-top: 12px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 11px; color: #b2bec3;">
+                    Click "Play" again to pause the game
+                </div>
+            `;
+            document.body.appendChild(overlay);
+
+            // Show/hide controls when Mini Me is active
+            const playBtn = document.getElementById('gravityToggle');
+            
+            playBtn.addEventListener('click', () => {
+                setTimeout(() => {
+                    const isActive = playBtn.innerHTML.includes('Active');
+                    overlay.style.display = isActive ? 'block' : 'none';
+                    
+                    // Add a subtle glow effect to the play button when active
+                    if (isActive) {
+                        playBtn.style.boxShadow = '0 4px 25px rgba(0, 184, 148, 0.4)';
+                    } else {
+                        playBtn.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+                    }
+                }, 100);
+            });
+
+            // Add a close button to the overlay
+            const closeBtn = document.createElement('button');
+            closeBtn.innerHTML = '×';
+            closeBtn.style.cssText = `
+                position: absolute;
+                top: 8px;
+                right: 12px;
+                background: none;
+                border: none;
+                color: #ddd;
+                font-size: 18px;
+                cursor: pointer;
+                padding: 0;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            closeBtn.addEventListener('click', () => {
+                overlay.style.display = 'none';
+            });
+            overlay.appendChild(closeBtn);
         }
 
         // Start mini me when page loads
@@ -1835,16 +2406,18 @@
         background: linear-gradient(45deg, #6c5ce7, #74b9ff);
         color: white;
         border: none;
-        padding: 12px 20px;
-        border-radius: 25px;
+        padding: 15px 25px;
+        border-radius: 30px;
         cursor: pointer;
         font-weight: bold;
-        font-size: 14px;
+        font-size: 15px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        transition: transform 0.2s;
+        transition: all 0.3s ease;
         z-index: 10000;
+        font-family: 'Inter', sans-serif;
+        letter-spacing: 0.5px;
     " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        Play
+        🎮 Activate Mini Me
     </button>
 
 </body>
