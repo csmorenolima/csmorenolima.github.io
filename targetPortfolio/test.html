@@ -1230,21 +1230,29 @@
                 let animationFrame = null;
                 let wanderTimer = 0;
                 let targetX = null;
+                let targetY = null;
                 let direction = 1; // 1 = right, -1 = left
-                const groundOffset = 40; // distance from bottom
                 const wanderAreaPadding = 60; // keep inside viewport
-                const speed = 0.6; // base horizontal speed
+                const speed = 0.8; // base movement speed
 
                 function createCharacter(){
                     if(characterEl) return characterEl;
                     characterEl = document.createElement('div');
                     characterEl.id = 'tinyCharacter';
                     characterEl.setAttribute('aria-hidden','true');
+                    
+                    // Start character near the About section or middle of page
+                    const aboutSection = document.querySelector('#about') || document.querySelector('.about');
+                    let startY = window.innerHeight / 2 + window.scrollY;
+                    if(aboutSection) {
+                        const aboutRect = aboutSection.getBoundingClientRect();
+                        startY = aboutRect.top + window.scrollY + aboutRect.height / 2;
+                    }
+                    
                     characterEl.style.cssText = `
-                        position: fixed;
-                        bottom: ${groundOffset}px;
-                        left: 50%;
-                        transform: translateX(-50%) translateY(0);
+                        position: absolute;
+                        top: ${startY - 36}px;
+                        left: ${(window.innerWidth/2) - 36}px;
                         width: 72px;
                         height: 72px;
                         pointer-events: none;
@@ -1279,6 +1287,7 @@
                     document.body.appendChild(characterEl);
                     injectCharacterStyles();
                     targetX = window.innerWidth/2;
+                    targetY = startY;
                     wanderTimer = 0;
                     animate();
                 }
@@ -1301,7 +1310,10 @@
                 function pickNewTarget(){
                     const minX = wanderAreaPadding;
                     const maxX = window.innerWidth - wanderAreaPadding;
+                    const minY = wanderAreaPadding;
+                    const maxY = document.body.scrollHeight - wanderAreaPadding;
                     targetX = Math.random() * (maxX - minX) + minX;
+                    targetY = Math.random() * (maxY - minY) + minY;
                 }
 
                 function animate(){
@@ -1309,17 +1321,39 @@
                     wanderTimer--;
                     if(wanderTimer <= 0){
                         pickNewTarget();
-                        wanderTimer = Math.floor(Math.random()*240) + 120; // 2–6s
+                        wanderTimer = Math.floor(Math.random()*300) + 180; // 3–8s
                     }
+                    
                     const rect = characterEl.getBoundingClientRect();
                     let currentX = rect.left + rect.width/2;
-                    const diff = targetX - currentX;
-                    const move = Math.sign(diff) * Math.min(Math.abs(diff), speed + Math.random()*0.4);
-                    currentX += move;
-                    direction = move < 0 ? -1 : 1;
+                    let currentY = rect.top + window.scrollY + rect.height/2;
+                    
+                    const diffX = targetX - currentX;
+                    const diffY = targetY - currentY;
+                    const distance = Math.sqrt(diffX*diffX + diffY*diffY);
+                    
+                    if(distance > 2) {
+                        const moveX = (diffX / distance) * speed;
+                        const moveY = (diffY / distance) * speed;
+                        currentX += moveX;
+                        currentY += moveY;
+                        
+                        // Clamp position to page bounds
+                        const minX = wanderAreaPadding + 36;
+                        const maxX = window.innerWidth - wanderAreaPadding - 36;
+                        const minY = wanderAreaPadding + 36;
+                        const maxY = document.body.scrollHeight - wanderAreaPadding - 36;
+                        
+                        currentX = Math.max(minX, Math.min(maxX, currentX));
+                        currentY = Math.max(minY, Math.min(maxY, currentY));
+                        
+                        direction = moveX < 0 ? -1 : 1;
+                    }
 
-                    // Apply position
-                    characterEl.style.left = currentX + 'px';
+                    // Apply position (convert back to left/top edge)
+                    characterEl.style.left = (currentX - 36) + 'px';
+                    characterEl.style.top = (currentY - 36) + 'px';
+                    
                     // Flip based on direction
                     if(direction < 0){
                         characterEl.firstElementChild.style.transform = 'scaleX(-1)';
@@ -1327,7 +1361,7 @@
                         characterEl.firstElementChild.style.transform = 'scaleX(1)';
                     }
                     // State class
-                    if(Math.abs(diff) > 4){
+                    if(distance > 4){
                         characterEl.classList.add('walking');
                         characterEl.classList.remove('idle');
                     } else {
@@ -1378,12 +1412,27 @@
                     }
                 });
 
-                // Handle window resize to keep target inside bounds
+                // Handle window resize to keep character and target inside bounds
                 window.addEventListener('resize', ()=>{
                     if(!characterEl) return;
                     const rect = characterEl.getBoundingClientRect();
-                    if(rect.left < wanderAreaPadding) characterEl.style.left = (wanderAreaPadding+36) + 'px';
-                    if(rect.right > window.innerWidth - wanderAreaPadding) characterEl.style.left = (window.innerWidth - wanderAreaPadding - 36) + 'px';
+                    let currentX = rect.left + 36;
+                    let currentY = rect.top + window.scrollY + 36;
+                    const minX = wanderAreaPadding + 36;
+                    const maxX = window.innerWidth - wanderAreaPadding - 36;
+                    const minY = wanderAreaPadding + 36;
+                    const maxY = document.body.scrollHeight - wanderAreaPadding - 36;
+                    
+                    currentX = Math.max(minX, Math.min(maxX, currentX));
+                    currentY = Math.max(minY, Math.min(maxY, currentY));
+                    
+                    characterEl.style.left = (currentX - 36) + 'px';
+                    characterEl.style.top = (currentY - 36) + 'px';
+                    
+                    // Update target if it's now out of bounds
+                    if(targetX < minX || targetX > maxX || targetY < minY || targetY > maxY) {
+                        pickNewTarget();
+                    }
                 });
             })();
         </script>
