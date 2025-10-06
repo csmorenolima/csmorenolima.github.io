@@ -290,27 +290,7 @@ body {
     color: var(--accent-color);
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
 
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-}
-
-.social-links a:hover {
-    background: var(--accent-color);
-}
 
 .footer-bottom {
     text-align: center;
