@@ -17,43 +17,27 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <!-- Shared Theme -->
-    <link rel="stylesheet" href="/targetPortfolio/theme.css">
-
-    <style>
-        .hero { min-height: 40vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; position: relative; overflow: hidden; }
-        .hero h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 0.5rem; }
-        .hero-quote { font-size: 1.125rem; opacity: 0.9; }
-        .featured-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-        .video-container { height: 180px; }
-
-        /* Carousel styles to match Featured cards */
-        .carousel-container { position: relative; margin-bottom: 2rem; overflow: hidden; }
-        .carousel-track { display: flex; gap: 2rem; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 1rem; }
-        .carousel-card { min-width: 350px; max-width: 350px; flex: 0 0 auto; }
-        .carousel-card > a { display: block; text-decoration: none; color: inherit; height: 100%; }
-        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.85); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); cursor: pointer; z-index: 2; font-size: 1.25rem; transition: background 0.2s; }
-        .carousel-btn.left { left: 0.5rem; }
-        .carousel-btn.right { right: 0.5rem; }
-        .carousel-btn:hover { background: var(--primary-color); color: white; }
-        @media (max-width: 600px) { .carousel-card { min-width: 80vw; } .carousel-btn { width: 32px; height: 32px; font-size: 1rem; } }
-    </style>
+    <link rel="stylesheet" href="../targetPortfolio/theme.css">
+    
+    <!-- Category Page Template -->
+    <link rel="stylesheet" href="/assets/css/category-page.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <a href="/targetPortfolio/test.html#home" class="logo">Portfolio</a>
+            <a href="../targetPortfolio/test.html#home" class="logo">Portfolio</a>
             <ul class="nav-links">
-                <li><a href="/targetPortfolio/test.html#home">HOME</a></li>
-                <li><a href="/targetPortfolio/test.html#about">ABOUT</a></li>
+                <li><a href="../targetPortfolio/test.html#home">HOME</a></li>
+                <li><a href="../targetPortfolio/test.html#about">ABOUT</a></li>
                 <li class="nav-projects-dropdown">
-                    <a href="#" aria-haspopup="true" aria-expanded="false">PROJECTS <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" aria-haspopup="true" aria-expanded="false">MY WORK <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/product-design/" role="menuitem">Product Design</a></li>
-                        <li><a href="/engineering/" role="menuitem">Engineering</a></li>
+                        <li><a href="../product-design/" role="menuitem">Product Design</a></li>
+                        <li><a href="../engineering/" role="menuitem">Engineering</a></li>
                     </ul>
                 </li>
-                <li><a href="/targetPortfolio/test.html#contact">CONTACT</a></li>
+                <li><a href="../targetPortfolio/test.html#contact">CONTACT</a></li>
             </ul>
             <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </nav>
@@ -73,7 +57,7 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Selected work in software engineering and games.</p>
+            <p class="section-subtitle">Work related to software engineering</p>
 
             <!-- Games Carousel -->
             <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin-bottom:1rem;">Games & Demos</h3>
@@ -100,8 +84,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Let's Work Together</h3>
-                    <p>Ready to bring your ideas to life? Let's discuss how we can collaborate on your next project.</p>
+                    <h3>Let's Collaborate!</h3>
+                    <p>Learning Together, Growing Together.</p>
                 </div>
                 <div class="footer-section">
                     <h3>OfficialMV</h3>

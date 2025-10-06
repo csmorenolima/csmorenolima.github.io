@@ -1,0 +1,104 @@
+/* Hero Section and CTA Styles */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/bike-proj-photo.jpg') center/cover;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10; /* Ensure it's above the dots background */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-quote {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #141a23;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(45deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 25%,
+        var(--accent-color) 50%,
+        var(--secondary-color) 75%,
+        var(--primary-color) 100%);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: -1;
+    border-radius: inherit;
+    transform: skewX(-15deg);
+    animation: waterFlow 3s ease-in-out infinite;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    color: white;
+    border-color: #047ab3;
+    box-shadow: 0 10px 25px rgba(4, 122, 179, 0.3);
+}
+
+.cta-button:hover::before {
+    left: -10%;
+    transform: skewX(0deg) scale(1.1);
+    animation: waterFlowHover 2s ease-in-out infinite;
+}
+
+.cta-button:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 5px 15px rgba(4, 122, 179, 0.4);
+}
+
+.cta-button:active::before {
+    animation: pulse 0.3s ease;
+}

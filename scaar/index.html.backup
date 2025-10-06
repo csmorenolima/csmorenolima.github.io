@@ -7,23 +7,21 @@
 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 	
 	<!-- This site is optimized with the Yoast SEO plugin v26.0 - https://yoast.com/wordpress/plugins/seo/ -->
-	<link rel="canonical" href="/cad-renders/">
+	<link rel="canonical" href="/scaar/">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Electronics - Carla Sofia Lima">
-	<meta property="og:description" content="Bass Drop Mini SMALL BUT. POWERFUL . Up to 12 hours of battery life . Wide Bluetooth . Portable Wireless Speaker . Deep bass for enhanced experience . Quick charge in 3 hours . Designed simple Available Colours Silver &ndash; Matte &amp; Glossy Red &ndash; Matte &amp; Glossy Blue &ndash; Matte &amp; Glossy Yellow &ndash; [&hellip;]">
-	<meta property="og:url" content="/cad-renders/">
+	<meta property="og:title" content="TRANSPORTATION - Carla Sofia Lima">
+	<meta property="og:description" content="Overview The Brief The &lsquo;Laid Back Bike&rsquo; project builds on the School of Engineering&rsquo;s&nbsp;Aim93&nbsp;initiative which aims to break the speed record for a human power vehicle Working in teams , first year Product Design &amp; Engineering Product Design , have designed and prototyped recumbent cycles using old bikes, bamboo , fibre glass tape, epoxy resin, [&hellip;]">
+	<meta property="og:url" content="/scaar/">
 	<meta property="og:site_name" content="Carla Sofia Lima">
-	<meta property="article:modified_time" content="2020-06-07T01:19:50+00:00">
-	<meta property="og:image" content="/wp-content/uploads/2020/04/brand-logo.png?w=750">
+	<meta property="article:modified_time" content="2025-09-14T17:30:08+00:00">
+	<meta property="og:image" content="/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47.png">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:label1" content="Est. reading time">
-	<meta name="twitter:data1" content="1 minute">
-	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"/cad-renders/","url":"/cad-renders/","name":"Electronics - Carla Sofia Lima","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/cad-renders/#primaryimage"},"image":{"@id":"/cad-renders/#primaryimage"},"thumbnailUrl":"/wp-content/uploads/2020/04/brand-logo.png?w=750","datePublished":"2020-04-11T01:19:35+00:00","dateModified":"2020-06-07T01:19:50+00:00","breadcrumb":{"@id":"/cad-renders/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["/cad-renders/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"/cad-renders/#primaryimage","url":"/wp-content/uploads/2020/04/brand-logo.png?w=750","contentUrl":"/wp-content/uploads/2020/04/brand-logo.png?w=750"},{"@type":"BreadcrumbList","@id":"/cad-renders/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"/"},{"@type":"ListItem","position":2,"name":"Electronics"}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Carla Sofia Lima","description":"PORTFOLIO |","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"/scaar/","url":"/scaar/","name":"TRANSPORTATION - Carla Sofia Lima","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/scaar/#primaryimage"},"image":{"@id":"/scaar/#primaryimage"},"thumbnailUrl":"/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47.png","datePublished":"2020-03-13T21:54:47+00:00","dateModified":"2025-09-14T17:30:08+00:00","breadcrumb":{"@id":"/scaar/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["/scaar/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"/scaar/#primaryimage","url":"https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47.png?fit=992%2C685&ssl=1","contentUrl":"https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47.png?fit=992%2C685&ssl=1","width":992,"height":685},{"@type":"BreadcrumbList","@id":"/scaar/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"/"},{"@type":"ListItem","position":2,"name":"TRANSPORTATION"}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Carla Sofia Lima","description":"PORTFOLIO |","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
 	<!-- / Yoast SEO plugin. -->
 
 
-<title>Electronics - Carla Sofia Lima</title>
+<title>TRANSPORTATION - Carla Sofia Lima</title>
 <link rel="dns-prefetch" href="//secure.gravatar.com">
 <link rel="dns-prefetch" href="//stats.wp.com">
 <link rel="dns-prefetch" href="//widgets.wp.com">
@@ -42,7 +40,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 /*! This file is auto-generated */
 !function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
 </script>
-<link rel="stylesheet" id="all-css-1cf1b58047d76206318775db28b74576" href="/_static/?-eJylU1tOwzAQvBDGqipU_ED8VOIAHABt7CVZ4pe8dkJuj9MmCDVKVMrnPma8uzPug1DeJXRJBpNrciw/MQVQrbReZ4MsIxpIqEXwnC6ie8V81y8p6lzCCmMtq0xGy8p41QpDVYQ4nCOWDjqqIZF3ktNg8F9kyncYt3nmvd7JqRnGhjRy43vZEfZ/QvYUMK4hDAw_J1FH0tcNNR9bQfSZ0cwFMSfWCJSfBtLE6fyWmHMCv0ovlwuvKrUJB0f2JNCqNBE6SBAFugacQj1JFCAljI4FNxBR3wxHTelm8Jail55S3gbvSgdvy/VzruIEk4t15BEDOo1OUQle/RG0HuTbyMET9/hfeLFGatCOLSNdBYwiRLSUrQRmLGOUcYYPMgvdJ1xXfOsttMX0E_BUuNZmhlr8teqLfd4dHvaH/f5p9/gN/CeR1A=%3D" type="text/css" media="all">
+<link rel="stylesheet" id="all-css-8915ab2a515fd82b6e026d6a648ef092" href="/_static/?-eJylU1tOxDAMvBAhWlVo4QPxsxIH4ADITUxrmpfipKW3J91tEdpVCyyfdjwT2zMeglDeJXRJBpMbcizfMQVQnbReZ4MsIxpIqEXwnM6iW8V8M1xSNLmENcZG1pmMlrXxqhOG6ghxPEUsHfTUQCLvJKfR4L/IlO8xbvMsc72SUwuMDWnk1g_yJxz_hBwoYPwJsexQQfSZ0SwPYkmsESg//6OJ02kuseTE7ioUfpRaLutelW0TDo7sUa1VnSL0kCAKdC04hXrWK0BKGB0LbiGivhqOmtLV4C15zw2mvA3elQreNtTXuootTC4_kgcM6DQ6RSV49gfQepQvEwfP3NPx8MUYqUU7lUx0NTCKENFSthKYsbRR2hnfyFy4Zcb1xcTeQlcuYAYcH35rTkMdfhv1yT7u9nfVvqoedvefoYuWcQ=%3D" type="text/css" media="all">
 <style id="blockbase_premium_font_faces-inline-css">
 /* cyrillic-ext */
 @font-face {
@@ -144,14 +142,14 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 <style id="wp-block-heading-inline-css">
 h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-background,h6.has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
 </style>
-<style id="wp-block-image-inline-css">
-.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .close-button{align-items:center;cursor:pointer;display:flex;justify-content:center;min-height:40px;min-width:40px;padding:0;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .close-button:focus,.wp-lightbox-overlay .close-button:hover,.wp-lightbox-overlay .close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:9999999999}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
-</style>
 <style id="wp-block-paragraph-inline-css">
 .is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
 </style>
 <style id="wp-block-separator-inline-css">
 @charset "UTF-8";.wp-block-separator{border:none;border-top:2px solid}:root :where(.wp-block-separator.is-style-dots){height:auto;line-height:1;text-align:center}:root :where(.wp-block-separator.is-style-dots):before{color:currentColor;content:"&middot;&middot;&middot;";font-family:serif;font-size:1.5em;letter-spacing:2em;padding-left:2em}.wp-block-separator.is-style-dots{background:none!important;border:none!important}
+</style>
+<style id="wp-block-columns-inline-css">
+.wp-block-columns{align-items:normal!important;box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
 </style>
 <style id="wp-block-post-content-inline-css">
 .wp-block-post-content{display:flow-root}
@@ -216,7 +214,7 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
 :root :where(.wp-block-post-terms){font-size: var(--wp--preset--font-size--small);}
 </style>
 <style id="core-block-supports-inline-css">
-.wp-container-core-navigation-is-layout-aa60f3ea{justify-content:flex-end;}.wp-container-core-group-is-layout-cc45ab1a{justify-content:space-between;}
+.wp-container-core-navigation-is-layout-aa60f3ea{justify-content:flex-end;}.wp-container-core-group-is-layout-cc45ab1a{justify-content:space-between;}.wp-elements-b4866726ecb74f1f23f7c5fc0067ec8e a:where(:not(.wp-element-button)){color:var(--wp--preset--color--foreground);}.wp-container-core-columns-is-layout-28f84493{flex-wrap:nowrap;}.wp-container-core-group-is-layout-19e250f3 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-19e250f3 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-81d5c4b5 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-81d5c4b5 > * + *{margin-block-start:var(--wp--preset--spacing--20);margin-block-end:0;}.wp-container-core-column-is-layout-22223934 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-22223934 > * + *{margin-block-start:var(--wp--preset--spacing--20);margin-block-end:0;}.wp-container-core-columns-is-layout-7f3773af{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) 2em;}.wp-container-core-group-is-layout-ecbb37cf > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-ecbb37cf > * + *{margin-block-start:var(--wp--preset--spacing--30);margin-block-end:0;}
 </style>
 <link rel="stylesheet" id="dashicons-css" href="/wp-includes/css/dashicons.min.css?ver=6.8.3" media="all">
 <style id="jetpack-global-styles-frontend-style-inline-css">
@@ -233,11 +231,11 @@ wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 <script id="jetpack-mu-wpcom-settings-js-before">
 var JETPACK_MU_WPCOM_SETTINGS = {"assetsUrl":"\/wp-content\/mu-plugins\/wpcomsh\/jetpack_vendor\/automattic\/jetpack-mu-wpcom\/src\/build\/"};
 </script>
-<link rel="https://api.w.org/" href="/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/pages/249"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="https://api.w.org/" href="/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/pages/108"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
 
-<link rel="shortlink" href="https://wp.me/PbM86P-41">
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fcad-renders%2F">
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fcad-renders%2F&amp;format=xml">
+<link rel="shortlink" href="https://wp.me/PbM86P-1K">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fscaar%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fscaar%2F&amp;format=xml">
 	<style>img#wpstats{display:none}</style>
 		<script type="importmap" id="wp-importmap">
 {"imports":{"@wordpress\/interactivity":"\/wp-content\/plugins\/gutenberg\/build-module\/interactivity\/index.min.js?ver=d9948f13df6155717023"}}
@@ -249,7 +247,7 @@ var JETPACK_MU_WPCOM_SETTINGS = {"assetsUrl":"\/wp-content\/mu-plugins\/wpcomsh\
 <meta name="msapplication-TileImage" content="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/cropped-cropped-cl-brand-on-black-back.jpg?fit=270%2C270&amp;ssl=1">
 </head>
 
-<body class="wp-singular page-template-default page page-id-249 wp-embed-responsive wp-theme-blockbase-premium wp-child-theme-videomaker is-block-theme elementor-default elementor-kit-1362">
+<body class="wp-singular page-template-default page page-id-108 wp-embed-responsive wp-theme-blockbase-premium wp-child-theme-videomaker is-block-theme elementor-default elementor-kit-1362">
 
 <div class="wp-site-blocks"><header class="wp-block-template-part">
 <div class="wp-block-group gapless-group is-layout-constrained wp-block-group-is-layout-constrained">
@@ -277,7 +275,7 @@ var JETPACK_MU_WPCOM_SETTINGS = {"assetsUrl":"\/wp-content\/mu-plugins\/wpcomsh\
 						<div class="wp-block-navigation__responsive-dialog" data-wp-bind--aria-modal="state.ariaModal" data-wp-bind--aria-label="state.ariaLabel" data-wp-bind--role="state.roleAttribute">
 							<button aria-label="Close menu" class="wp-block-navigation__responsive-container-close" data-wp-on-async--click="actions.closeMenuOnClick"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
 							<div class="wp-block-navigation__responsive-container-content" data-wp-watch="callbacks.focusFirstElement" id="modal-1-content">
-								<ul class="wp-block-navigation__container is-responsive items-justified-right social-links wp-block-navigation"><li class=" wp-block-navigation-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-home wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/" title=""><span class="wp-block-navigation-item__label">HOME</span></a></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on-async--mouseenter="actions.openMenuOnHover" data-wp-on-async--mouseleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click  menu-item menu-item-type-custom menu-item-object-custom wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" title=""><span class="wp-block-navigation-item__label">PROJECTS</span></a><button data-wp-bind--aria-expanded="state.isMenuOpen" data-wp-on-async--click="actions.toggleMenuOnClick" aria-label="PROJECTS submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on-async--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container  menu-item menu-item-type-custom menu-item-object-custom wp-block-navigation-submenu"><li class=" wp-block-navigation-item  menu-item menu-item-type-post_type menu-item-object-page wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="../product-design/" title=""><span class="wp-block-navigation-item__label">PRODUCT DESIGN</span></a></li><li class=" wp-block-navigation-item  menu-item menu-item-type-post_type menu-item-object-page wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="../engineering/" title=""><span class="wp-block-navigation-item__label">SOFTWARE ENGINEERING </span></a></li></ul></li><li class=" wp-block-navigation-item  menu-item menu-item-type-post_type menu-item-object-page wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/about/" title=""><span class="wp-block-navigation-item__label">ABOUT</span></a></li><li class=" wp-block-navigation-item  menu-item menu-item-type-post_type menu-item-object-page wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/contact/" title=""><span class="wp-block-navigation-item__label">CONTACT</span></a></li></ul>
+								<ul class="wp-block-navigation__container is-responsive items-justified-right social-links wp-block-navigation"><li class=" wp-block-navigation-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-home wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/" title=""><span class="wp-block-navigation-item__label">HOME</span></a></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on-async--mouseenter="actions.openMenuOnHover" data-wp-on-async--mouseleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click  menu-item menu-item-type-custom menu-item-object-custom wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" title=""><span class="wp-block-navigation-item__label">PROJECTS</span></a><button data-wp-bind--aria-expanded="state.isMenuOpen" data-wp-on-async--click="actions.toggleMenuOnClick" aria-label="PROJECTS submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on-async--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container  menu-item menu-item-type-custom menu-item-object-custom wp-block-navigation-submenu"><li class=" wp-block-navigation-item  menu-item menu-item-type-post_type menu-item-object-page wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/product-design/" title=""><span class="wp-block-navigation-item__label">PRODUCT DESIGN</span></a></li><li class=" wp-block-navigation-item  menu-item menu-item-type-post_type menu-item-object-page wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/engineering/" title=""><span class="wp-block-navigation-item__label">SOFTWARE ENGINEERING </span></a></li></ul></li><li class=" wp-block-navigation-item  menu-item menu-item-type-post_type menu-item-object-page wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/about/" title=""><span class="wp-block-navigation-item__label">ABOUT</span></a></li><li class=" wp-block-navigation-item  menu-item menu-item-type-post_type menu-item-object-page wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/contact/" title=""><span class="wp-block-navigation-item__label">CONTACT</span></a></li></ul>
 							</div>
 						</div>
 					</div>
@@ -297,7 +295,7 @@ var JETPACK_MU_WPCOM_SETTINGS = {"assetsUrl":"\/wp-content\/mu-plugins\/wpcomsh\
 
 
 <main class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
-<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained"><h2 class="wp-block-post-title">Electronics</h2>
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained"><h2 class="wp-block-post-title">TRANSPORTATION</h2>
 
 
 <div class="wp-block-group post-meta is-layout-flex wp-block-group-is-layout-flex" style="padding-top:var(--wp--style--block-gap,1em);padding-bottom:var(--wp--style--block-gap,1em)"></div>
@@ -311,206 +309,170 @@ var JETPACK_MU_WPCOM_SETTINGS = {"assetsUrl":"\/wp-content\/mu-plugins\/wpcomsh\
 
 
 <div class="entry-content wp-block-post-content is-layout-constrained wp-block-post-content-is-layout-constrained">
-<div class="wp-block-cover alignfull" style="background-image:url('/wp-content/uploads/2020/04/bass_speakers_2020-apr-13_02-59-02pm-000_customizedview9874801015_jpg.jpg');"><div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
-<h2 class="has-text-align-center wp-block-heading"><strong>SPEAKERS</strong></h2>
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-cover alignfull"><img fetchpriority="high" data-recalc-dims="1" decoding="async" width="992" height="685" data-attachment-id="130" data-permalink="/screenshot-2020-03-16-at-22-02-47/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47.png?fit=992%2C685&amp;ssl=1" data-orig-size="992,685" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="screenshot-2020-03-16-at-22.02.47" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47.png?fit=300%2C207&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47.png?fit=992%2C685&amp;ssl=1" class="wp-block-cover__image-background wp-image-130 size-full" alt="" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47.png?resize=992%2C685&amp;ssl=1" style="object-position:87% 74%" data-object-fit="cover" data-object-position="87% 74%"><span aria-hidden="true" class="wp-block-cover__background has-tertiary-background-color has-background-dim"></span><div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
+<h2 class="wp-block-heading has-text-align-center has-foreground-color has-text-color has-link-color wp-elements-b4866726ecb74f1f23f7c5fc0067ec8e">NOMAD</h2>
+
+
+
+<div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p class="has-text-align-center" style="font-size:18px"><a href="https://www.dropbox.com/s/ffo1yrrpmab4rw2/JCPD8428.MP4?dl=0" target="_blank" rel="noreferrer noopener"><strong>Watch Video</strong></a></p>
 </div></div>
 
 
 
-<figure class="wp-block-image size-large is-resized"><img fetchpriority="high" data-recalc-dims="1" decoding="async" data-attachment-id="240" data-permalink="/brand-logo/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/brand-logo.png?fit=952%2C554&amp;ssl=1" data-orig-size="952,554" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="brand-logo" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/brand-logo.png?fit=300%2C175&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/brand-logo.png?fit=952%2C554&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/brand-logo.png?resize=296%2C172&amp;ssl=1" alt="" class="wp-image-240" width="296" height="172"></figure>
+<div class="wp-block-group alignfull has-background-background-color has-background is-layout-flow wp-block-group-is-layout-flow">
+<p><strong>Overview</strong></p>
 
 
 
-<div class="wp-block-group alignfull has-background-background-color has-background"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow">
-<h2 class="wp-block-heading">Bass Drop Mini</h2>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" data-recalc-dims="1" decoding="async" width="3300" height="2550" data-attachment-id="281" data-permalink="/bass_speakers_2020-apr-13_03-15-50pm-000_customizedview24268899919_jpg/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass_speakers_2020-apr-13_03-15-50pm-000_customizedview24268899919_jpg.jpg?fit=3300%2C2550&amp;ssl=1" data-orig-size="3300,2550" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="bass_speakers_2020-apr-13_03-15-50pm-000_customizedview24268899919_jpg" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass_speakers_2020-apr-13_03-15-50pm-000_customizedview24268899919_jpg.jpg?fit=300%2C232&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass_speakers_2020-apr-13_03-15-50pm-000_customizedview24268899919_jpg.jpg?fit=1024%2C791&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass_speakers_2020-apr-13_03-15-50pm-000_customizedview24268899919_jpg.jpg?resize=3300%2C2550&amp;ssl=1" alt="" class="wp-image-281"></figure>
-
-
-
-<h2 class="wp-block-heading">SMALL BUT. POWERFUL</h2>
-
-
-
-<p class="has-small-font-size">. Up to 12 hours of battery life</p>
-
-
-
-<p class="has-small-font-size">. Wide Bluetooth</p>
-
-
-
-<p class="has-small-font-size">. Portable Wireless Speaker</p>
-
-
-
-<p class="has-small-font-size">. Deep bass for enhanced experience</p>
-
-
-
-<p class="has-small-font-size">. Quick charge in 3 hours</p>
-
-
-
-<p class="has-small-font-size">. Designed simple</p>
-
-
-
-<p></p>
-</div></div>
-
-
-
-<div class="wp-block-jetpack-slideshow aligncenter" data-effect="slide"><div class="wp-block-jetpack-slideshow_container swiper-container"><ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper"><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="3300" height="2550" alt="" class="wp-block-jetpack-slideshow_image wp-image-277" data-id="277" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/red-bass_speakers_2020-apr-13_01-50-03pm-000_customizedview26205250022_jpg.jpg?resize=3300%2C2550&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="1137" height="879" alt="" class="wp-block-jetpack-slideshow_image wp-image-275" data-id="275" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass_speakers_2020-apr-13_02-59-02pm-000_customizedview9874801015_jpg.jpg?resize=1137%2C879&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="1137" height="879" alt="" class="wp-block-jetpack-slideshow_image wp-image-276" data-id="276" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass_speakers_2020-apr-13_02-59-02pm-000_customizedview45477518777_jpg.jpg?resize=1137%2C879&amp;ssl=1"></figure></li></ul><a class="wp-block-jetpack-slideshow_button-prev swiper-button-prev swiper-button-white" role="button"></a><a class="wp-block-jetpack-slideshow_button-next swiper-button-next swiper-button-white" role="button"></a><a aria-label="Pause Slideshow" class="wp-block-jetpack-slideshow_button-pause" role="button"></a><div class="wp-block-jetpack-slideshow_pagination swiper-pagination swiper-pagination-white"></div></div></div>
-
-
-
-<h2 class="has-text-align-center wp-block-heading">Available Colours</h2>
-
-
-
-<div class="wp-block-group alignfull"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow">
-<div class="wp-block-jetpack-layout-grid alignfull column1-desktop-grid__span-4 column1-desktop-grid__row-1 column2-desktop-grid__span-4 column2-desktop-grid__start-5 column2-desktop-grid__row-1 column3-desktop-grid__span-4 column3-desktop-grid__start-9 column3-desktop-grid__row-1 column1-tablet-grid__span-4 column1-tablet-grid__row-1 column2-tablet-grid__span-4 column2-tablet-grid__start-5 column2-tablet-grid__row-1 column3-tablet-grid__span-8 column3-tablet-grid__row-2 column1-mobile-grid__span-4 column1-mobile-grid__row-1 column2-mobile-grid__span-4 column2-mobile-grid__row-2 column3-mobile-grid__span-4 column3-mobile-grid__row-3">
-<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-large">
-<figure class="wp-block-image size-large"><img loading="lazy" data-recalc-dims="1" decoding="async" width="1536" height="557" data-attachment-id="293" data-permalink="/bass-speakers-silver/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-silver.jpg?fit=1536%2C557&amp;ssl=1" data-orig-size="1536,557" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="bass-speakers-silver" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-silver.jpg?fit=300%2C109&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-silver.jpg?fit=1024%2C371&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-silver.jpg?resize=1536%2C557&amp;ssl=1" alt="" class="wp-image-293"></figure>
-
-
-
-<h4 class="wp-block-heading">Silver &ndash; <strong>Matte &amp; Glossy</strong></h4>
+<hr class="wp-block-separator has-text-color has-foreground-dark-color has-css-opacity has-foreground-dark-background-color has-background is-style-wide">
 </div>
 
 
 
-<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-large">
-<figure class="wp-block-image size-large"><img loading="lazy" data-recalc-dims="1" decoding="async" width="1536" height="557" data-attachment-id="289" data-permalink="/bass-speakers-red/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-red.png?fit=1536%2C557&amp;ssl=1" data-orig-size="1536,557" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="bass-speakers-red" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-red.png?fit=300%2C109&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-red.png?fit=1024%2C371&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-red.png?resize=1536%2C557&amp;ssl=1" alt="" class="wp-image-289"></figure>
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
 
 
 
-<h4 class="wp-block-heading">Red &ndash; <strong>Matte &amp; Glossy</strong></h4>
-</div>
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<h2 class="wp-block-heading has-text-align-center" style="font-size:50px">The Brief</h2>
 
 
 
-<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-large">
-<figure class="wp-block-image size-large"><img loading="lazy" data-recalc-dims="1" decoding="async" width="1536" height="557" data-attachment-id="287" data-permalink="/bass-speakers-blue/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-blue.jpg?fit=1536%2C557&amp;ssl=1" data-orig-size="1536,557" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="bass-speakers-blue" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-blue.jpg?fit=300%2C109&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-blue.jpg?fit=1024%2C371&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-blue.jpg?resize=1536%2C557&amp;ssl=1" alt="" class="wp-image-287"></figure>
+<p>The &lsquo;Laid Back Bike&rsquo; project builds on the School of Engineering&rsquo;s<strong>&nbsp;Aim93</strong>&nbsp;initiative which aims to break the speed record for a human power vehicle</p>
 
 
 
-<h4 class="wp-block-heading">Blue &ndash; <strong>Matte &amp; Glossy</strong></h4>
-
-
-
-<p></p>
+<p>Working in teams , first year Product Design &amp; Engineering Product Design , have designed and prototyped recumbent cycles using old bikes, bamboo , fibre glass tape, epoxy resin, blood, sweat and tears as key structural elements.</p>
 </div>
 </div>
 
 
 
-<div class="wp-block-jetpack-layout-grid alignfull column1-desktop-grid__span-4 column1-desktop-grid__row-1 column2-desktop-grid__span-4 column2-desktop-grid__start-5 column2-desktop-grid__row-1 column3-desktop-grid__span-4 column3-desktop-grid__start-9 column3-desktop-grid__row-1 column1-tablet-grid__span-4 column1-tablet-grid__row-1 column2-tablet-grid__span-4 column2-tablet-grid__start-5 column2-tablet-grid__row-1 column3-tablet-grid__span-8 column3-tablet-grid__row-2 column1-mobile-grid__span-4 column1-mobile-grid__row-1 column2-mobile-grid__span-4 column2-mobile-grid__row-2 column3-mobile-grid__span-4 column3-mobile-grid__row-3">
-<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-large">
-<figure class="wp-block-image size-large"><img loading="lazy" data-recalc-dims="1" decoding="async" width="1536" height="557" data-attachment-id="290" data-permalink="/bass-speakers-yellow/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-yellow.jpg?fit=1536%2C557&amp;ssl=1" data-orig-size="1536,557" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="bass-speakers-yellow" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-yellow.jpg?fit=300%2C109&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-yellow.jpg?fit=1024%2C371&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-yellow.jpg?resize=1536%2C557&amp;ssl=1" alt="" class="wp-image-290"></figure>
+<hr class="wp-block-coblocks-dynamic-separator has-background has-foreground-color is-style-dots" style="height:50px">
 
 
 
-<h4 class="wp-block-heading">Yellow &ndash; <strong>Matte &amp; Glossy</strong></h4>
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3 class="wp-block-heading has-text-align-center">Engineering Process</h3>
+
+
+
+<div class="wp-block-jetpack-slideshow aligncenter" data-effect="slide"><div class="wp-block-jetpack-slideshow_container swiper"><ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper"><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="1600" height="1130" alt="" class="wp-block-jetpack-slideshow_image wp-image-147" data-id="147" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/engineering-drawing-1.jpg?resize=1600%2C1130&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="723" height="425" alt="" class="wp-block-jetpack-slideshow_image wp-image-151" data-id="151" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.21.00-3.png?resize=723%2C425&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="672" height="342" alt="" class="wp-block-jetpack-slideshow_image wp-image-152" data-id="152" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.20.54-2.png?resize=672%2C342&amp;ssl=1"></figure></li></ul><a class="wp-block-jetpack-slideshow_button-prev swiper-button-prev swiper-button-white" role="button"></a><a class="wp-block-jetpack-slideshow_button-next swiper-button-next swiper-button-white" role="button"></a><a aria-label="Pause Slideshow" class="wp-block-jetpack-slideshow_button-pause" role="button"></a><div class="wp-block-jetpack-slideshow_pagination swiper-pagination swiper-pagination-white"></div></div></div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3 class="wp-block-heading has-text-align-center">Physical Prototype</h3>
+
+
+
+<div class="wp-block-jetpack-slideshow aligncenter" data-autoplay="true" data-delay="3" data-effect="slide"><div class="wp-block-jetpack-slideshow_container swiper"><ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper"><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="992" height="685" alt="" class="wp-block-jetpack-slideshow_image wp-image-130" data-id="130" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47.png?resize=992%2C685&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="831" height="609" alt="" class="wp-block-jetpack-slideshow_image wp-image-164" data-id="164" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/finish-1-2.jpg?resize=831%2C609&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="756" height="849" alt="" class="wp-block-jetpack-slideshow_image wp-image-157" data-id="157" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/finish-2-1.jpg?resize=756%2C849&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="1213" height="680" alt="" class="wp-block-jetpack-slideshow_image wp-image-156" data-id="156" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/finish-3.jpg?resize=1213%2C680&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="1280" height="960" alt="" class="wp-block-jetpack-slideshow_image wp-image-154" data-id="154" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/bamboo-develop-2.jpg?resize=1280%2C960&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="1280" height="960" alt="" class="wp-block-jetpack-slideshow_image wp-image-153" data-id="153" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/bamboo-develop-1-1.jpg?resize=1280%2C960&amp;ssl=1"></figure></li></ul><a class="wp-block-jetpack-slideshow_button-prev swiper-button-prev swiper-button-white" role="button"></a><a class="wp-block-jetpack-slideshow_button-next swiper-button-next swiper-button-white" role="button"></a><a aria-label="Pause Slideshow" class="wp-block-jetpack-slideshow_button-pause" role="button"></a><div class="wp-block-jetpack-slideshow_pagination swiper-pagination swiper-pagination-white"></div></div></div>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity">
+
+
+
+<div style="height:121px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<footer class="wp-block-group alignfull is-style-section-3 has-background is-layout-constrained wp-container-core-group-is-layout-ecbb37cf wp-block-group-is-layout-constrained" style="background-color:#141a23;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30)">
+<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-7f3773af wp-block-columns-is-layout-flex">
+<div class="wp-block-column has-small-font-size is-layout-flow wp-container-core-column-is-layout-81d5c4b5 wp-block-column-is-layout-flow">
+<h2 class="wp-block-heading has-text-align-left" style="font-size:35px"><strong>Let&rsquo;s Work Together</strong></h2>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-19e250f3 wp-block-group-is-layout-constrained"></div>
 </div>
 
 
 
-<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-large">
-<figure class="wp-block-image size-large"><img loading="lazy" data-recalc-dims="1" decoding="async" width="1536" height="557" data-attachment-id="292" data-permalink="/bass-speakers-black/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-black.jpg?fit=1536%2C557&amp;ssl=1" data-orig-size="1536,557" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="bass-speakers-black" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-black.jpg?fit=300%2C109&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-black.jpg?fit=1024%2C371&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-black.jpg?resize=1536%2C557&amp;ssl=1" alt="" class="wp-image-292"></figure>
+<div class="wp-block-column has-small-font-size is-layout-flow wp-container-core-column-is-layout-81d5c4b5 wp-block-column-is-layout-flow">
+<h3 class="wp-block-heading has-text-align-left has-medium-font-size">OfficialMV</h3>
 
 
 
-<h4 class="wp-block-heading">Black &ndash; <strong>Matte &amp; Glossy</strong></h4>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-19e250f3 wp-block-group-is-layout-constrained">
+<p><a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank" rel="noreferrer noopener"></a><a href="https://www.instagram.com/officialmorenovalentim/" target="_blank" rel="noreferrer noopener"></a><a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank" rel="noreferrer noopener">RedBubble</a></p>
+
+
+
+<div style="height:var(--wp--preset--spacing--20)" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p><a href="https://www.instagram.com/officialmorenovalentim/" target="_blank" rel="noreferrer noopener">Instagram</a></p>
+
+
+
+<div style="height:var(--wp--preset--spacing--20)" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p><a href="https://l.instagram.com/?u=https%3A%2F%2Fwww.tiktok.com%2F%40officialmorenovalentim%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaaR90MkD6qmlx3dkZmG_SbMvgnw6xqy-v210PwnPgrPH3T6OATRfLGrRrQ_aem_SxJzpGXmvckPxLoYweeujA&amp;e=AT3eFk5QLpGEM9yoNETMs9cFrGOdtLabqHgG46Xw01TRFLFhFV5K_aofjPDSagzm-Gsct-wyb_6q8iCi7MQe7IWFt84_Hpis2nJ6P-359Rh_eNJhuGScNPE" target="_blank" rel="noreferrer noopener">TikTok</a></p>
+</div>
 </div>
 
 
 
-<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-large">
-<figure class="wp-block-image size-large"><img loading="lazy" data-recalc-dims="1" decoding="async" width="1536" height="557" data-attachment-id="291" data-permalink="/bass-speakers-orange/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-orange.jpg?fit=1536%2C557&amp;ssl=1" data-orig-size="1536,557" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="bass-speakers-orange" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-orange.jpg?fit=300%2C109&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-orange.jpg?fit=1024%2C371&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/bass-speakers-orange.jpg?resize=1536%2C557&amp;ssl=1" alt="" class="wp-image-291"></figure>
+<div class="wp-block-column has-small-font-size is-layout-flow wp-container-core-column-is-layout-22223934 wp-block-column-is-layout-flow">
+<h3 class="wp-block-heading has-medium-font-size">SOCIAL</h3>
 
 
 
-<h4 class="wp-block-heading">Orange &ndash;<strong> Matte &amp; Glossy</strong></h4>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-19e250f3 wp-block-group-is-layout-constrained">
+<p class="has-text-align-left is-footer-address"><a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank" rel="noreferrer noopener">LinkedIn</a></p>
+
+
+
+<div style="height:var(--wp--preset--spacing--20)" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p class="has-text-align-left is-footer-address"><a href="https://github.com/csmorenolima" target="_blank" rel="noreferrer noopener">GitHub</a></p>
+
+
+
+<div style="height:var(--wp--preset--spacing--20)" aria-hidden="true" class="wp-block-spacer"></div>
 </div>
 </div>
-</div></div>
+</div>
 
 
 
-<figure class="wp-block-image size-large is-resized"><img loading="lazy" data-recalc-dims="1" decoding="async" data-attachment-id="285" data-permalink="/ideas/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/ideas.jpg?fit=1280%2C720&amp;ssl=1" data-orig-size="1280,720" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ideas" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/ideas.jpg?fit=300%2C169&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/ideas.jpg?fit=1024%2C576&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/04/ideas.jpg?resize=598%2C335&amp;ssl=1" alt="" class="wp-image-285" width="598" height="335"></figure>
+<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 
 
 
-<hr class="wp-block-separator has-text-color has-background has-foreground-light-background-color has-foreground-light-color is-style-wide">
-
-
-
-<h2 class="wp-block-heading">Bass HonEcomb</h2>
-
-
-
-<figure class="wp-block-image size-large is-resized"><img loading="lazy" data-recalc-dims="1" decoding="async" data-attachment-id="304" data-permalink="/speak1-jpg-1/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/speak1-jpg-1.jpg?fit=3300%2C2550&amp;ssl=1" data-orig-size="3300,2550" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="speak1-jpg-1" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/speak1-jpg-1.jpg?fit=300%2C232&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/speak1-jpg-1.jpg?fit=1024%2C791&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/speak1-jpg-1.jpg?resize=780%2C602&amp;ssl=1" alt="" class="wp-image-304" width="780" height="602"></figure>
-
-
-
-<h2 class="wp-block-heading">Built For Bass</h2>
-
-
-
-<p class="has-small-font-size">. Touch Sensor</p>
-
-
-
-<p class="has-small-font-size">. 15 hour single charge playtime  </p>
-
-
-
-<p class="has-small-font-size">. Operation distance: 66f</p>
-
-
-
-<p class="has-small-font-size">. Bluetooth 4.2</p>
-
-
-
-<p class="has-small-font-size">. Micro SD</p>
-
-
-
-<p class="has-small-font-size">. AUX In</p>
-
-
-
-<p>. Simple control</p>
-
-
-
-<p><strong>Sustainable</strong></p>
-
-
-
-<p>Sustainability is a term being used more often used to describe the modern products . It has become an important aspect to consider for contemporary designers as people become environmentally conscious and demand for eco friendly alternatives. The Bass HonEcomb is a bamboo portable speaker infused with LED touch sensor technology for a user friendly design.</p>
-
-
-
-<div class="wp-block-jetpack-slideshow aligncenter" data-effect="slide"><div class="wp-block-jetpack-slideshow_container swiper-container"><ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper"><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="3303" height="2557" alt="" class="wp-block-jetpack-slideshow_image wp-image-325" data-id="325" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/speakers2_jpg-2.jpg?resize=3303%2C2557&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="3300" height="2550" alt="" class="wp-block-jetpack-slideshow_image wp-image-333" data-id="333" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/speakers4jpg-2.jpg?resize=3300%2C2550&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="2127" height="2275" alt="" class="wp-block-jetpack-slideshow_image wp-image-335" data-id="335" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/speakers3_jpg-1.jpg?resize=2127%2C2275&amp;ssl=1"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img loading="lazy" data-recalc-dims="1" decoding="async" width="3300" height="2550" alt="" class="wp-block-jetpack-slideshow_image wp-image-337" data-id="337" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/speakers5-edited_jpg.jpg?resize=3300%2C2550&amp;ssl=1"></figure></li></ul><a class="wp-block-jetpack-slideshow_button-prev swiper-button-prev swiper-button-white" role="button"></a><a class="wp-block-jetpack-slideshow_button-next swiper-button-next swiper-button-white" role="button"></a><a aria-label="Pause Slideshow" class="wp-block-jetpack-slideshow_button-pause" role="button"></a><div class="wp-block-jetpack-slideshow_pagination swiper-pagination swiper-pagination-white"></div></div></div>
-
-
-
-<p class="has-text-align-center has-small-font-size">Bass is a brand name and logo created by Carla Sofia Lima for the sole purpose of branding electronics, more specifically, audio products that I have designed.</p>
-
-
-
-<div class="wp-block-image is-style-rounded"><figure class="alignright size-large is-resized"><img loading="lazy" data-recalc-dims="1" decoding="async" data-attachment-id="316" data-permalink="/fusion360-5d76c87271/" data-orig-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/fusion360-5d76c87271.png?fit=512%2C512&amp;ssl=1" data-orig-size="512,512" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="fusion360-5d76c87271" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/fusion360-5d76c87271.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/fusion360-5d76c87271.png?fit=512%2C512&amp;ssl=1" src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/06/fusion360-5d76c87271.png?resize=66%2C66&amp;ssl=1" alt="" class="wp-image-316" width="66" height="66"><figcaption>Fusion 360 Software  used for CAD</figcaption></figure></div>
-
-
-
-<p></p>
-<div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" id="like-post-wrapper-174010615-249-68e05bc219e10" data-src="https://widgets.wp.com/likes/?ver=15.1-a.11#blog_id=174010615&amp;post_id=249&amp;origin=carlasofiaportfolio.wpcomstaging.com&amp;obj_id=174010615-249-68e05bc219e10" data-name="like-post-frame-174010615-249-68e05bc219e10" data-title="Like or Reblog"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> <span class="loading">Loading&hellip;</span></div><span class="sd-text-color"></span><a class="sd-link-color"></a></div></div></main>
+<p class="has-text-align-center" style="font-size:10px">&copy; COPYRIGHT 2025 . ALL RIGHTS RESERVED</p>
+</footer>
+<div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" id="like-post-wrapper-174010615-108-68e05bc38eadb" data-src="https://widgets.wp.com/likes/?ver=15.1-a.11#blog_id=174010615&amp;post_id=108&amp;origin=carlasofiaportfolio.wpcomstaging.com&amp;obj_id=174010615-108-68e05bc38eadb" data-name="like-post-frame-174010615-108-68e05bc38eadb" data-title="Like or Reblog"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> <span class="loading">Loading&hellip;</span></div><span class="sd-text-color"></span><a class="sd-link-color"></a></div></div></main>
 
 
 
@@ -674,7 +636,7 @@ var JETPACK_MU_WPCOM_SETTINGS = {"assetsUrl":"\/wp-content\/mu-plugins\/wpcomsh\
 		</div>
 		<script id="jetpack-carousel-js-extra">
 var jetpackSwiperLibraryPath = {"url":"\/wp-content\/plugins\/jetpack\/_inc\/blocks\/swiper.js"};
-var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"\/wp-admin\/admin-ajax.php","nonce":"9334f19623","display_exif":"1","display_comments":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","image_label":"Open image in full-screen.","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"\/wp-login.php?redirect_to=%2Fcad-renders%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"]};
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"\/wp-admin\/admin-ajax.php","nonce":"9334f19623","display_exif":"1","display_comments":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","image_label":"Open image in full-screen.","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"\/wp-login.php?redirect_to=%2Fscaar%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"]};
 </script>
 <script type='text/javascript'  src='/_static/?-eJyVj0sOwjAMRC9EsSqogAXiKChNTOvW_ShOGnp7KkRXSHyW49Ebz5RQae8SugSBc0dOoMuLbDF20GZiA8bbKqIyM5AzeN9acttBNuU7iaJVwKpPlt9YcpqzQYFBwJAkmNAZH2Gxguf5RswfPg2YgtIjXJcYaNnrUUCYlrzeF5gIyz9goYDxJ_A5S6vosyCvXrUeXoUv9lwfmlO9q/fN8QFT/oUF'></script>
 <script id="wp-block-template-skip-link-js-after">
@@ -722,8 +684,8 @@ var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_
 <script type='text/javascript'  src='/_static/?wp-content/plugins/coblocks/dist/js/coblocks-animation_js,wp-content/plugins/jetpack/_inc/build/likes/queuehandler_min_js?m=1755180040'></script>
 <script id="jetpack-stats-js-before">
 _stq = window._stq || [];
-_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"174010615\",\"post\":\"249\",\"tz\":\"0\",\"srv\":\"carlasofiaportfolio.wpcomstaging.com\",\"hp\":\"atomic\",\"ac\":\"2\",\"amp\":\"0\",\"j\":\"1:15.1-a.11\"}") ]);
-_stq.push([ "clickTrackerInit", "174010615", "249" ]);
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"174010615\",\"post\":\"108\",\"tz\":\"0\",\"srv\":\"carlasofiaportfolio.wpcomstaging.com\",\"hp\":\"atomic\",\"ac\":\"2\",\"amp\":\"0\",\"j\":\"1:15.1-a.11\"}") ]);
+_stq.push([ "clickTrackerInit", "174010615", "108" ]);
 </script>
 <script src="https://stats.wp.com/e-202540.js" id="jetpack-stats-js" defer data-wp-strategy="defer"></script>
 	<iframe src="https://widgets.wp.com/likes/master.html?ver=20251003#ver=20251003" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>

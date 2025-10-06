@@ -1,0 +1,62 @@
+/* Animations and Keyframes */
+@keyframes waterFlow {
+    0%, 100% {
+        transform: skewX(-15deg) scaleX(1);
+        filter: hue-rotate(0deg);
+    }
+    25% {
+        transform: skewX(-10deg) scaleX(1.05);
+        filter: hue-rotate(5deg);
+    }
+    50% {
+        transform: skewX(-20deg) scaleX(0.95);
+        filter: hue-rotate(-5deg);
+    }
+    75% {
+        transform: skewX(-5deg) scaleX(1.02);
+        filter: hue-rotate(3deg);
+    }
+}
+
+@keyframes waterFlowHover {
+    0%, 100% {
+        transform: skewX(0deg) scale(1.1);
+        background-position: 0% 50%;
+    }
+    50% {
+        transform: skewX(5deg) scale(1.15);
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, transparent 37%, #f0f0f0 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
