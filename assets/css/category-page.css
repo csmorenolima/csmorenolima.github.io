@@ -100,7 +100,7 @@ body[data-category="design"] .hero,
 body[data-category="product-design"] .hero,
 .hero.product-design {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../productDesign-hero.jpg') center/cover;
+                url('../productDesign-hero.jpg?v=3') center/cover !important;
 }
 
 /* HonEcomb category hero */
@@ -203,28 +203,66 @@ body[data-category="honEcomb"] .hero,
     position: relative;
     margin-bottom: 2rem;
     overflow: hidden;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .carousel-track {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     overflow-x: hidden; /* disable drag/scroll */
     scroll-behavior: smooth;
     padding-bottom: 1rem;
-    padding-left: 48px; /* match button width, keeps cards clear of left button */
-    padding-right: 48px; /* match button width, keeps cards clear of right button */
+    padding-left: 60px; /* space for left button */
+    padding-right: 60px; /* space for right button */
     /* Remove pointer events for drag */
     -ms-touch-action: none;
     touch-action: none;
+    justify-content: flex-start;
 }
 
 .carousel-card {
-    min-width: 350px;
-    max-width: 350px;
-    flex: 0 0 auto;
+    min-width: 400px;
+    max-width: 450px;
+    flex: 1 1 400px;
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     background: #fff;
+}
+
+@media (max-width: 1200px) {
+    .carousel-card {
+        min-width: 350px;
+        max-width: 400px;
+        flex: 1 1 350px;
+    }
+}
+
+@media (max-width: 900px) {
+    .carousel-card {
+        min-width: 300px;
+        max-width: 350px;
+        flex: 1 1 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-card {
+        min-width: 80vw;
+        max-width: 80vw;
+        flex: 0 0 80vw;
+    }
+    
+    .carousel-btn { 
+        width: 36px; 
+        height: 100%; 
+        font-size: 1rem; 
+    }
+    
+    .featured-image {
+        height: 200px;
+    }
 }
 
 .carousel-card > a {
@@ -237,7 +275,7 @@ body[data-category="honEcomb"] .hero,
 /* Enhanced featured image styling for carousel cards */
 .featured-image {
     width: 100%;
-    height: 200px;
+    height: 250px;
     background-size: cover !important;
     background-position: center !important;
     border-radius: 12px 12px 0 0;
@@ -245,6 +283,12 @@ body[data-category="honEcomb"] .hero,
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .featured-image {
+        height: 200px;
+    }
 }
 
 /* Enhanced Gradient Animated Buttons */
@@ -292,17 +336,6 @@ body[data-category="honEcomb"] .hero,
     color: #fff;
     animation: gradientMoveHover 1.5s linear infinite; /* animated hover */
     transform: scale(1.02);
-}
-
-@media (max-width: 600px) {
-    .carousel-card { 
-        min-width: 80vw; 
-    }
-    .carousel-btn { 
-        width: 36px; 
-        height: 100%; 
-        font-size: 1rem; 
-    }
 }
 
 /* Gradient Animation Keyframes */
