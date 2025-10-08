@@ -73,16 +73,38 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">Key Features</h2>
-            <div class="content-grid">
-                <div class="content-section">
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 1rem;"><strong>🔊 Superior Sound:</strong> Deep, powerful bass with enhanced low-frequency response</li>
-                        <li style="margin-bottom: 1rem;"><strong>🔋 12-Hour Battery:</strong> All-day listening with quick-charge technology</li>
-                        <li style="margin-bottom: 1rem;"><strong>📶 Bluetooth 5.0:</strong> Seamless wireless connectivity with extended range</li>
-                        <li style="margin-bottom: 1rem;"><strong>💧 IPX5 Rating:</strong> Water-resistant for outdoor adventures</li>
-                        <li style="margin-bottom: 1rem;"><strong>🎨 Multiple Colors:</strong> Available in Black, Silver, Blue, and Red</li>
-                        <li style="margin-bottom: 1rem;"><strong>📱 Touch Controls:</strong> Intuitive gesture-based operation</li>
-                    </ul>
+            <div class="project-features">
+                <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
+                        <i class="fas fa-volume-up" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Superior Sound</h3>
+                        <p style="color: var(--text-secondary);">Deep, powerful bass with enhanced low-frequency response</p>
+                    </div>
+                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
+                        <i class="fas fa-battery-full" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">12-Hour Battery</h3>
+                        <p style="color: var(--text-secondary);">All-day listening with quick-charge technology</p>
+                    </div>
+                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
+                        <i class="fas fa-bluetooth-b" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Bluetooth 5.0</h3>
+                        <p style="color: var(--text-secondary);">Seamless wireless connectivity with extended range</p>
+                    </div>
+                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
+                        <i class="fas fa-tint" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">IPX5 Rating</h3>
+                        <p style="color: var(--text-secondary);">Water-resistant for outdoor adventures</p>
+                    </div>
+                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
+                        <i class="fas fa-palette" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Multiple Colours</h3>
+                        <p style="color: var(--text-secondary);">Available in Black, Silver, Blue, and Red</p>
+                    </div>
+                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
+                        <i class="fas fa-hand-pointer" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Touch Controls</h3>
+                        <p style="color: var(--text-secondary);">Intuitive gesture-based operation</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,12 +135,22 @@
         </div>
     </section>
 
+    <!-- Brand Identity -->
+    <section class="section">
+        <div class="container">
+            <div class="project-gallery" style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 16px;">
+                <h3 style="margin-bottom: 2rem; color: var(--text-primary);">Brand Identity</h3>
+                <img src="../assets/bass-logo.png" alt="Bass Audio Brand Logo" loading="lazy" style="max-width: 200px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
     <!-- Navigation -->
     <section class="project-navigation">
         <div class="nav-buttons">
-            <a href="../product-design/" class="nav-btn back">
+            <a href="../targetPortfolio/test.html" class="nav-btn back">
                 <i class="fas fa-arrow-left"></i>
-                <span>Back to Product Design</span>
+                <span>Back to Portfolio</span>
             </a>
             <a href="../honecomb/" class="nav-btn next">
                 <span>Next: HonEcomb</span>
@@ -175,18 +207,18 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: none;
+            border-radius: 0;
             text-decoration: none;
             color: var(--text-primary);
             transition: all 0.3s ease;
         }
 
         .nav-btn:hover {
-            background: #2d8f47;
-            color: white;
+            background: transparent;
+            color: #2d8f47;
             transform: translateY(-2px);
         }
 

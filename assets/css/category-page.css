@@ -100,7 +100,9 @@ body[data-category="design"] .hero,
 body[data-category="product-design"] .hero,
 .hero.product-design {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../productDesign-hero.jpg?v=3') center/cover !important;
+                url('../productDesign-hero.jpg?v=4') center/cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
 /* HonEcomb category hero */
@@ -203,7 +205,8 @@ body[data-category="honEcomb"] .hero,
     position: relative;
     margin-bottom: 2rem;
     overflow: hidden;
-    max-width: 1400px;
+    max-width: 90vw; /* Use 90% of viewport width instead of fixed 1400px */
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -353,4 +356,17 @@ body[data-category="honEcomb"] .hero,
 /* Video Container Styles */
 .video-container { 
     height: 180px; 
+}
+
+/* Expand container width for sections containing carousels */
+.section:has(.carousel-container) .container,
+.container:has(.carousel-container) {
+    max-width: 95vw; /* Use 95% of viewport width for carousel sections */
+    width: 100%;
+}
+
+/* Fallback for browsers that don't support :has() */
+.carousel-section .container {
+    max-width: 95vw;
+    width: 100%;
 }
