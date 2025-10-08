@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games - Carla Sofia Lima</title>
+    <title>Scrolls of Odyssey: Call to Tarragon - Carla Sofia Lima</title>
     <meta name="description" content="Adventure game demo: Scrolls of Odyssey - Call to Tarragon. Story, video, and details.">
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Games - Carla Sofia Lima" />
+    <meta property="og:title" content="Scrolls of Odyssey: Call to Tarragon - Carla Sofia Lima" />
     <meta property="og:description" content="Adventure demo: interactive storytelling and mechanics." />
     <meta property="og:site_name" content="Carla Sofia Lima" />
 
@@ -18,9 +18,9 @@
     <link rel="stylesheet" href="../targetPortfolio/theme.css">
     
     <!-- Category Page Template -->
-    <link rel="stylesheet" href="/assets/css/category-page.css">
+    <link rel="stylesheet" href="../assets/css/category-page.css">
 </head>
-<body>
+<body data-category="games">
     <!-- Header -->
     <header class="header">
         <nav class="nav">
@@ -45,7 +45,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content fade-in-up">
-                <h1>Games</h1>
+                <h1>Scrolls of Odyssey: Call to Tarragon</h1>
                 <p class="hero-quote">Interactive storytelling and adventure mechanics.</p>
             </div>
         </div>
@@ -54,7 +54,6 @@
     <!-- Content -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Scrolls of Odyssey: Call to Tarragon</h2>
             <p class="section-subtitle">A fantasy adventure demo set in the realms of the Enën Sea.</p>
 
             <div class="video-container" aria-label="Scrolls of Odyssey demo video">
@@ -67,6 +66,20 @@
                 <br
                 ><p>From the far reaches of the realm, disparate factions converged to reclaim their land and dignity. United by shared loss, they forged alliances born of necessity. Yet within the ranks of these allies, treachery and strife lurked - old grievances resurfaced and the quest for redemption grew tainted by ambition and betrayal.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="project-navigation">
+        <div class="nav-buttons">
+            <a href="../engineering/" class="nav-btn back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Engineering</span>
+            </a>
+            <a href="../targetPortfolio/test.html" class="nav-btn next">
+                <span>Back to Portfolio</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
     </section>
 
@@ -100,5 +113,44 @@
 
     <!-- External JavaScript Files -->
     <script src="../assets/js/navigation.js"></script>
+    
+    <style>
+        .project-navigation {
+            margin: 4rem 0 2rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #764ba2;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </body>
 </html>

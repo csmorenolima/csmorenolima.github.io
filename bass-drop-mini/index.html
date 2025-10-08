@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bass Drop Mini Speakers - Carla Sofia Lima</title>
-    <meta name="description" content="BUILT FOR BASS - Wireless portable speakers with deep bass, 12-hour battery life, and elegant design." />
+        <title>Drop Mini Speakers - Carla Sofia Lima</title>
+    <meta name="description" content="Compact wireless speaker design with deep bass and quick charge technology." />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Bass Drop Mini Speakers - Carla Sofia Lima" />
+    <meta property="og:title" content="Drop Mini Speakers - Carla Sofia Lima" />
     <meta property="og:description" content="BUILT FOR BASS - Wireless portable speakers with deep bass, 12-hour battery life, and elegant design." />
     <meta property="og:site_name" content="Carla Sofia Lima" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -22,7 +22,7 @@
     <!-- Category Page Template -->
     <link rel="stylesheet" href="../assets/css/category-page.css">
 </head>
-<body data-category="electronics">
+<body data-category="bass-drop-mini">
     <!-- Header -->
     <header class="header">
         <nav class="nav">
@@ -47,24 +47,25 @@
     <section class="hero transportation">
         <div class="container">
             <div class="hero-content fade-in-up">
-                <h1>Bass Drop Mini</h1>
+                <h1>Drop Mini</h1>
                 <p class="hero-quote">Wireless portable speakers with premium bass technology.</p>
             </div>
         </div>
     </section>
 
-    <!-- Bass Drop Mini Section -->
+    <!-- Drop Mini Section -->
     <section class="section">
         <div class="container">
             <div class="featured-project" style="text-align: center; margin-bottom: 3rem;">
                 <div style="background: linear-gradient(135deg, rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.9)); padding: 3rem; border-radius: 16px; color: white;">
+                    <img src="../assets/bass-logo.png" alt="Bass Logo" style="height: 60px; margin-bottom: 1rem;">
                     <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">BUILT FOR BASS</h2>
                     <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Premium wireless portable speakers delivering exceptional sound quality</p>
                 </div>
             </div>
 
             <h2 class="section-title">Overview</h2>
-            <p class="section-subtitle">The Bass Drop Mini represents the perfect fusion of compact design and powerful audio performance, delivering deep, rich bass that defies its portable form factor.</p>
+            <p class="section-subtitle">The Drop Mini represents the perfect fusion of compact design and powerful audio performance, delivering deep, rich bass that defies its portable form factor.</p>
         </div>
     </section>
 
@@ -112,6 +113,20 @@
         </div>
     </section>
 
+    <!-- Navigation -->
+    <section class="project-navigation">
+        <div class="nav-buttons">
+            <a href="../product-design/" class="nav-btn back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Product Design</span>
+            </a>
+            <a href="../honecomb/" class="nav-btn next">
+                <span>Next: HonEcomb</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -142,5 +157,44 @@
 
     <!-- External JavaScript Files -->
     <script src="../assets/js/navigation.js"></script>
+    
+    <style>
+        .project-navigation {
+            margin: 4rem 0 2rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #2d8f47;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </body>
 </html>

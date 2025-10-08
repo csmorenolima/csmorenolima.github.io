@@ -50,25 +50,36 @@
 /* Games category hero */
 body[data-category="games"] .hero,
 .hero.games {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('../so-ct-hero.jpeg') center/cover;
 }
 
 /* Health category hero */
 body[data-category="health"] .hero,
 .hero.health {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('../enova-app.jpg') center/cover;
 }
 
 /* Transportation category hero */
 body[data-category="transportation"] .hero,
 .hero.transportation {
-    background: linear-gradient(135deg, #667db6 0%, #0082c8 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('../scaar_nomad-hero.png') center/cover;
 }
 
 /* Electronics category hero */
 body[data-category="electronics"] .hero,
 .hero.electronics {
-    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('../bass-sensation-360-4-hero.jpg') center/cover;
+}
+
+/* Drop Mini hero */
+body[data-category="bass-drop-mini"] .hero,
+.hero.bass-drop-mini {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('../bassDropMini-hero.jpg') center/cover;
 }
 
 /* Engineering category hero */
@@ -77,6 +88,77 @@ body[data-category="engineering"] .hero,
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
                 url('../Engineering_hero.jpg') center/cover;
 }
+
+/* Design category hero */
+body[data-category="design"] .hero,
+.hero.design {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('../brightUp_hero.png') center/cover;
+}
+
+/* Product Design category hero */
+body[data-category="product-design"] .hero,
+.hero.product-design {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('../productDesign-hero.jpg') center/cover;
+}
+
+/* HonEcomb category hero */
+body[data-category="honEcomb"] .hero,
+.hero.honEcomb {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('../honEcomb_hero.jpg') center/cover;
+}
+
+/* Colours Grid for Bass Sensation 360 */
+.colours-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 968px) {
+    .colours-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .colours-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.colour-item {
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.colour-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.colour-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.colour-item h4 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
 
 .hero h1 {
     font-size: 2.5rem;

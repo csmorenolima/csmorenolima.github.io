@@ -22,7 +22,7 @@
     <!-- Category Page Template -->
     <link rel="stylesheet" href="../assets/css/category-page.css">
 </head>
-<body data-category="engineering">
+<body data-category="health">
     <!-- Header -->
     <header class="header">
         <nav class="nav">
@@ -135,6 +135,20 @@
         </div>
     </section>
 
+    <!-- Navigation -->
+    <section class="project-navigation">
+        <div class="nav-buttons">
+            <a href="../targetPortfolio/test.html" class="nav-btn back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <a href="../brightup/" class="nav-btn next">
+                <span>Next: BrightUp</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -165,5 +179,44 @@
 
     <!-- External JavaScript Files -->
     <script src="../assets/js/navigation.js"></script>
+    
+    <style>
+        .project-navigation {
+            margin: 4rem 0 2rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #2d8f47;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </body>
 </html>
