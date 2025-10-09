@@ -100,7 +100,7 @@ body[data-category="design"] .hero,
 body[data-category="product-design"] .hero,
 .hero.product-design {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../productDesign-hero.jpg?v=4') center/cover !important;
+                url('../product-design-hero.jpg')center/cover !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
 }
