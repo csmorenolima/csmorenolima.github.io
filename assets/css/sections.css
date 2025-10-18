@@ -92,6 +92,7 @@
 .featured-description {
     color: var(--text-secondary);
     margin-bottom: 1rem;
+    text-align: justify;
 }
 
 .video-container {
