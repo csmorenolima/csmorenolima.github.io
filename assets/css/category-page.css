@@ -76,8 +76,8 @@ body[data-category="electronics"] .hero,
 }
 
 /* Drop Mini hero */
-body[data-category="bass-drop-mini"] .hero,
-.hero.bass-drop-mini {
+body[data-category="drop-mini"] .hero,
+.hero.drop-mini {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
                 url('../bassDropMini-hero.jpg') center/cover;
 }
