@@ -48,8 +48,8 @@
         <div class="container">
             <div class="hero-content fade-in-up">
                 <h1>Drop Mini</h1>
-                <p class="hero-quote">Premium wireless portable speakers delivering exceptional sound quality.</p>
-                <div style="margin-top:40px;"><a class="hero-link" href="#features" style="color:#fff;font-weight:bold;text-decoration:underline;">3D VIEWER</a></div>
+                <p class="hero-quote">Wireless portable speakers with premium bass technology.</p>
+                <div style="margin-top:40px;"><a class="hero-link" href="#features" style="color:#fff;font-weight:bold;text-decoration:none;">See Features</a></div>
             </div>
         </div>
     </section>
@@ -61,14 +61,21 @@
                 <div style="background: linear-gradient(135deg, rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.9)); padding: 3rem; border-radius: 16px; color: white;">
                     <img src="../assets/bass-logo.png" alt="Bass Logo" style="height: 60px; margin-bottom: 1rem;">
                     <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">BUILT FOR BASS</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Premium wireless portable speakers delivering exceptional sound quality</p>
                 </div>
             </div>
 
             <h2 class="section-title">Overview</h2>
-            <p class="section-subtitle" style="text-align: justify;">The Drop Mini represents the perfect fusion of compact design and powerful audio performance, delivering deep, rich bass that defies its portable form factor.</p>
+            <p class="section-subtitle">The Drop Mini represents the perfect fusion of compact design and powerful audio performance, delivering deep, rich bass that defies its portable form factor.</p>
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
             <div class="project-features">
-                <div class="feature-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+                <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
                     <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
                         <i class="fas fa-volume-up" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
                         <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Superior Sound</h3>
@@ -80,7 +87,7 @@
                         <p style="color: var(--text-secondary);">All-day listening with quick-charge technology</p>
                     </div>
                     <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
-                        <i class="fab fa-bluetooth-b" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
+                        <i class="fas fa-bluetooth-b" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
                         <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Bluetooth 5.0</h3>
                         <p style="color: var(--text-secondary);">Seamless wireless connectivity with extended range</p>
                     </div>
@@ -102,194 +109,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Available Colours Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Available Colours</h2>
-            <div class="center-carousel" style="max-width: 600px; margin: 0 auto; position: relative;">
-                <button class="carousel-btn left" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-flex-track" style="display:flex;justify-content:center;align-items:center;height:260px;overflow:visible;">
-                    <div class="carousel-flex-item" data-label="Black"><img src="../assets/bass-speakers-black.jpg" alt="Black" /></div>
-                    <div class="carousel-flex-item" data-label="Silver"><img src="../assets/bass-speakers-silver.jpg" alt="Silver" /></div>
-                    <div class="carousel-flex-item" data-label="Blue"><img src="../assets/bass-speakers-blue.jpg" alt="Blue" /></div>
-                    <div class="carousel-flex-item" data-label="Red"><img src="../assets/bass-speakers-red.png" alt="Red" /></div>
-                    <div class="carousel-flex-item" data-label="Yellow"><img src="../assets/bass-speakers-yellow.jpg" alt="Yellow" /></div>
-                    <div class="carousel-flex-item" data-label="Orange"><img src="../assets/bass-speakers-orange.jpg" alt="Orange" /></div>
-                </div>
-                <button class="carousel-btn right" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-        <style>
-        .center-carousel {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .center-carousel .carousel-flex-track {
-            min-width: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 260px;
-            transition: transform 0.7s cubic-bezier(.77,0,.18,1);
-        }
-        .center-carousel .carousel-flex-item {
-            flex: 0 0 140px;
-            opacity: 0.5;
-            transform: scale(0.7) translateY(20px);
-            transition: transform 0.7s cubic-bezier(.77,0,.18,1), opacity 0.7s cubic-bezier(.77,0,.18,1);
-            margin: 0 18px;
-            text-align: center;
-            position: relative;
-            filter: blur(0.5px);
-        }
-        .center-carousel .carousel-flex-item img {
-            width: 140px;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 18px;
-            background: #f3f3f3;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1.5px 6px rgba(0,0,0,0.08);
-            border: 2.5px solid #fff;
-        }
-        .center-carousel .carousel-flex-item.active {
-            flex: 0 0 260px;
-            opacity: 1;
-            transform: scale(1.18) translateY(0);
-            z-index: 3;
-            filter: none;
-        }
-        .center-carousel .carousel-flex-item.side {
-            opacity: 0.85;
-            transform: scale(0.92) translateY(10px);
-            z-index: 2;
-            filter: none;
-        }
-        .center-carousel .carousel-flex-item .color-label {
-            display: block;
-            margin-top: 1.1rem;
-            font-weight: 700;
-            font-size: 1.15rem;
-            letter-spacing: 0.5px;
-            color: #222;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.07);
-        }
-        .center-carousel .carousel-btn {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: auto;
-            right: auto;
-            transform: none;
-            background: var(--gradient);
-            background-size: 400% 400%;
-            background-position: 0% 50%;
-            border: none;
-            border-radius: 0;
-            opacity: 0.85;
-            width: 48px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            cursor: pointer;
-            z-index: 2;
-            font-size: 1.25rem;
-            color: #fff;
-            transition: background 0.3s ease, transform 0.2s ease;
-            animation: gradientMove 4s linear infinite;
-        }
-        .center-carousel .carousel-btn.left {
-            left: 0;
-            border-radius: 12px 0 0 12px;
-        }
-        .center-carousel .carousel-btn.right {
-            right: 0;
-            border-radius: 0 12px 12px 0;
-        }
-        .center-carousel .carousel-btn:hover {
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-            background-size: 400% 400%;
-            background-position: 100% 50%;
-            color: #fff;
-            animation: gradientMoveHover 1.5s linear infinite;
-            transform: scale(1.02);
-        }
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @keyframes gradientMoveHover {
-            0% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @media (max-width: 900px) {
-            .center-carousel .carousel-flex-item { flex-basis: 90px; }
-            .center-carousel .carousel-flex-item img { width: 90px; height: 90px; }
-            .center-carousel .carousel-flex-item.active { flex-basis: 160px !important; }
-        }
-        @media (max-width: 600px) {
-            .center-carousel .carousel-flex-item { flex-basis: 60px; }
-            .center-carousel .carousel-flex-item img { width: 60px; height: 60px; }
-            .center-carousel .carousel-flex-item.active { flex-basis: 110px !important; }
-        }
-        </style>
-        <script>
-        (function() {
-            const items = Array.from(document.querySelectorAll('.center-carousel .carousel-flex-item'));
-            const prevBtn = document.querySelector('.center-carousel .carousel-btn.left');
-            const nextBtn = document.querySelector('.center-carousel .carousel-btn.right');
-            let index = 0;
-            function updateCarousel() {
-                items.forEach((item, i) => {
-                    item.classList.remove('active', 'side');
-                    item.querySelector('.color-label')?.remove();
-                    if (i === index) {
-                        item.classList.add('active');
-                        const label = document.createElement('span');
-                        label.className = 'color-label';
-                        label.textContent = item.getAttribute('data-label');
-                        item.appendChild(label);
-                    } else if (i === (index - 1 + items.length) % items.length || i === (index + 1) % items.length) {
-                        item.classList.add('side');
-                    }
-                });
-                // Center the active item
-                const track = document.querySelector('.center-carousel .carousel-flex-track');
-                const itemWidth = items[index].offsetWidth || 220;
-                const containerWidth = track.offsetWidth;
-                const totalWidth = items.reduce((sum, item) => sum + item.offsetWidth, 0);
-                // Center the active item smoothly
-                let offset = 0;
-                for (let i = 0; i < index; i++) offset += items[i].offsetWidth + 36;
-                const centerOffset = (containerWidth - itemWidth) / 2;
-                track.style.transform = `translateX(${-offset + centerOffset}px)`;
-            }
-            prevBtn.addEventListener('click', () => {
-                index = (index - 1 + items.length) % items.length;
-                updateCarousel();
-            });
-            nextBtn.addEventListener('click', () => {
-                index = (index + 1) % items.length;
-                updateCarousel();
-            });
-            // Swipe support
-            let startX = 0;
-            const track = document.querySelector('.center-carousel .carousel-flex-track');
-            track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
-            track.addEventListener('touchend', e => {
-                let endX = e.changedTouches[0].clientX;
-                if (endX - startX > 50) prevBtn.click();
-                else if (startX - endX > 50) nextBtn.click();
-            });
-            window.addEventListener('resize', updateCarousel);
-            updateCarousel();
-        })();
-        </script>
     </section>
 
     <!-- Technical Specifications Section -->
@@ -318,6 +137,14 @@
     </section>
 
     <!-- Brand Identity -->
+    <section class="section">
+        <div class="container">
+            <div class="project-gallery" style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 16px;">
+                <h3 style="margin-bottom: 2rem; color: var(--text-primary);">Brand Identity</h3>
+                <img src="../assets/bass-logo.png" alt="Bass Audio Brand Logo" loading="lazy" style="max-width: 200px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
 
     <!-- Navigation -->
     <section class="project-navigation">
