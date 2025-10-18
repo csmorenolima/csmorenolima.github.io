@@ -305,7 +305,7 @@
 
         /* Section Styles */
         .section {
-            padding: 5rem 0;
+            padding: 5rem 0 0 0;
         }
 
         .section-title {
@@ -587,17 +587,19 @@
             gap: 1rem;
             padding: 1rem;
             margin-bottom: 1rem;
-            background: white;
-            border-radius: 10px;
+            background: linear-gradient(90deg,#8b5cf6,#6366f1);
+            border-radius: 32px;
             text-decoration: none;
-            color: var(--text-primary);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(99,102,241,0.10);
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
         .contact-link:hover {
+            background: linear-gradient(90deg,#a78bfa,#6366f1);
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(99,102,241,0.18);
         }
 
         .contact-link i {
@@ -1015,24 +1017,20 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Let's Collaborate!</h2>
-            <p class="section-subtitle">I'm always interested in new opportunities and exciting projects.</p>
-            
-            <div class="contact-info" style="text-align: center; max-width: 600px; margin: 0 auto;">
-                
-                <div class="contact-links" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin-in"></i>
-                        <span>Connect on LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/csmorenolima" target="_blank" class="contact-link">
-                        <i class="fab fa-github"></i>
-                        <span>View GitHub</span>
-                    </a>
-                </div>
-            </div>
+    <div style="width:100vw; margin-left:calc(-50vw + 50%); background: linear-gradient(90deg, #8b5cf6 0%, #6366f1 100%); padding: 1.5rem 0 1.2rem 0; margin-bottom:0; text-align:center;">
+        <h2 class="section-title" style="color: #fff; margin-bottom: 0.5rem;">Let's Collaborate!</h2>
+        <p class="section-subtitle" style="color: #fff; margin-bottom: 1.2rem;">I'm always interested in new opportunities and exciting projects.</p>
+        <div class="contact-links" style="display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; margin-top:0;">
+            <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:rgba(255,255,255,0.15);color:#fff;border-radius:32px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(99,102,241,0.10);transition:background 0.2s;">
+                <i class="fab fa-linkedin-in" style="color:#fff;"></i>
+                <span>Connect on LinkedIn</span>
+            </a>
+            <a href="https://github.com/csmorenolima" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:rgba(255,255,255,0.15);color:#fff;border-radius:32px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(99,102,241,0.10);transition:background 0.2s;">
+                <i class="fab fa-github" style="color:#fff;"></i>
+                <span>View GitHub</span>
+            </a>
         </div>
+    </div>
     </section>
 
     <!-- Footer -->
@@ -1040,7 +1038,6 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Let's Collaborate!</h3>
                     <p>Learning Together, Growing Together.</p>
                 </div>
                 
