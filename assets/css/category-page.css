@@ -215,8 +215,6 @@ body[data-category="honEcomb"] .hero,
     overflow-x: hidden; /* disable drag/scroll */
     scroll-behavior: smooth;
     padding-bottom: 1rem;
-    padding-left: 60px; /* space for left button */
-    padding-right: 60px; /* space for right button */
     /* Remove pointer events for drag */
     -ms-touch-action: none;
     touch-action: none;
