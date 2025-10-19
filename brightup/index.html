@@ -54,13 +54,12 @@
         <div class="container">
             <div class="hero-content fade-in-up">
                 <h1>BRIGHTUP</h1>
-                <p class="hero-quote">Educational digital tool using gamification to teach politics and democratic
-                    participation.</p>
+                <p class="hero-quote">Educational digital tool using gamification to teach politics and democratic participation.</p>
             </div>
         </div>
     </section>
 
-    <!-- HonEcomb Section -->
+    <!-- BrightUp Section -->
     <section class="section">
         <div class="container">
 
@@ -70,6 +69,9 @@
 
                 <img src="../assets/brightup-logo.png" alt="Bass Logo" style="height: 60px; margin-bottom: 1rem;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">EXPRESS ENGAGE EMPOWER</h2>
+                <a href="https://marvelapp.com/di2hef1" target="_blank" rel="noreferrer noopener" class="cta-button" style="display: inline-block; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;cursor: pointer;">
+                    <strong>App Prototype</strong>
+                </a>
             </div>
         </div>
 
@@ -195,13 +197,13 @@
             <h2 class="section-title">GALLERY</h2>
             <div class="gallery-grid"
                 style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
-                <img src="../assets/speakers3_jpg-1.jpg" alt="Speaker 3" class="gallery-lightbox-img"
+                <img src="../assets/brightUpGal1.jpeg" alt="Speaker 3" class="gallery-lightbox-img"
                     style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;">
-                <img src="../assets/speakers4jpg-2.jpg" alt="Speaker 4" class="gallery-lightbox-img"
+                <img src="../assets/brightupgal2.jpeg" alt="Speaker 4" class="gallery-lightbox-img"
                     style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;">
-                <img src="../assets/speakers5-edited_jpg.jpg" alt="Speaker 5" class="gallery-lightbox-img"
+                <img src="../assets/brightupgal3.jpeg" alt="Speaker 5" class="gallery-lightbox-img"
                     style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;">
-                <img src="../assets/touch-controls.jpg" alt="Touch Controls" class="gallery-lightbox-img"
+                <img src="../assets/brightupgal4.jpeg" alt="Touch Controls" class="gallery-lightbox-img"
                     style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;">
             </div>
             <!-- Lightbox overlay markup -->
@@ -232,28 +234,19 @@
     <!-- Technical Specifications -->
     <section class="section">
         <div class="container">
-            <h3 class="section-title" style="font-size: 1.8rem;">Technical Specifications</h3>
-            <div class="specs-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                <div class="spec-card" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
-                    <h4 style="color: #333; margin-bottom: 0.5rem;">Audio</h4>
-                    <p style="color: #666; margin: 0;">Bluetooth 6.0 connectivity<br>66ft operational range<br>AUX input
-                        support<br>Micro SD card slot</p>
+            <h3 class="section-title" style="font-size: 1.8rem;">Application Development</h3>
+            <div class="appdev-columns" style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
+                <div class="appdev-col" style="flex: 1 1 320px; background: #f8f9fa; padding: 1.5rem; border-radius: 8px; min-width: 260px;">
+                    <h4 style="color: #3498db; margin-bottom: 1rem;">Wireframes</h4>
+                    <img src="../assets/brightupwf1.png" alt="Wireframes" style="width: 100%; max-width: 100%; border-radius: 6px; background: #e3eaf3; min-height: 180px; object-fit: contain; margin-bottom: 0.5rem;">
                 </div>
-                <div class="spec-card" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
-                    <h4 style="color: #333; margin-bottom: 0.5rem;">Power</h4>
-                    <p style="color: #666; margin: 0;">15-hour battery life<br>Quick charge capability<br>USB-C charging
-                        port<br>Battery indicator</p>
-                </div>
-                <div class="spec-card" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
-                    <h4 style="color: #333; margin-bottom: 0.5rem;">Design</h4>
-                    <p style="color: #666; margin: 0;">Sustainable bamboo construction<br>Touch sensor
-                        controls<br>Honeycomb-inspired aesthetics<br>Portable form factor</p>
+                <div class="appdev-col" style="flex: 1 1 320px; background: #f8f9fa; padding: 1.5rem; border-radius: 8px; min-width: 260px;">
+                    <h4 style="color: #3498db; margin-bottom: 1rem;">Graphic Design</h4>
+                    <img src="../assets/graphicDesign.png" alt="Graphic Design" style="width: 100%; max-width: 100%; border-radius: 6px; background: #e3eaf3; min-height: 180px; object-fit: contain; margin-bottom: 0.5rem;">
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Navigation -->
     <section class="project-navigation">
@@ -383,9 +376,12 @@
             transform: translateY(-5px);
         }
 
+        .cta-button {
+            color: #3498db !important;
+        }
         .cta-button:hover {
             background: white !important;
-            color: #3498db !important;
+            color: white !important;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(45, 143, 71, 0.3);
         }
