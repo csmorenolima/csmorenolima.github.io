@@ -53,6 +53,48 @@
             </div>
         </div>
     </section>
+        </div>
+    </section>
+    
+    <style>
+    .gallery-grid {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+    .gallery-item {
+        flex: 1 1 320px;
+        max-width: 400px;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+        padding: 1.2rem 1.2rem 1.8rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        object-fit: contain;
+        background: #f3f3f3;
+    }
+    .gallery-caption {
+        font-size: 1.08rem;
+        color: #333;
+        text-align: center;
+        margin-top: 0.2rem;
+        opacity: 0.85;
+    }
+    @media (max-width: 900px) {
+        .gallery-grid { flex-direction: column; gap: 1.5rem; }
+        .gallery-item { max-width: 100%; }
+    }
+    </style>
 
     <!-- Drop Mini Section -->
     <section class="section">
@@ -123,108 +165,126 @@
             </div>
         </div>
         <style>
-        .auto-carousel {
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-        .carousel-track {
-            display: flex;
-            transition: transform 0.7s cubic-bezier(.77,0,.18,1);
-        }
-        .carousel-item {
-            flex: 0 0 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .carousel-item.active {
-            display: flex;
-        }
-        .carousel-item img {
-            height: 240px;
-            object-fit: contain;
-            border-radius: 12px;
-            background: #f3f3f3;
-            border: 2px solid #fff;
-            box-sizing: border-box;
-        }
-        .color-label {
-            margin-top: 0;
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            padding: 0.7em 0;
-            border-radius: 0 0 12px 12px;
-            display: block;
-            min-width: 100%;
-            width: 100%;
-            box-shadow: none;
-            opacity: 1;
-            position: relative;
-            top: 0;
-            left: 0;
-            text-align: center;
-            border-top: 1px solid #e5e7eb;
-            margin-bottom: 0;
-        }
-        @media (max-width: 700px) {
-            .auto-carousel { max-width: 100vw; }
-            .carousel-item img { height: 80px; }
-        }
+            .auto-carousel {
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden;
+            }
+            .carousel-track {
+                display: flex;
+                transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+            }
+            .carousel-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .carousel-item.active {
+                display: flex;
+            }
+            .carousel-item img {
+                height: 240px;
+                object-fit: contain;
+                border-radius: 12px;
+                background: #f3f3f3;
+                border: 2px solid #fff;
+                box-sizing: border-box;
+            }
+            .color-label {
+                margin-top: 0;
+                font-weight: 700;
+                font-size: 1.1rem;
+                letter-spacing: 0.5px;
+                padding: 0.7em 0;
+                border-radius: 0 0 12px 12px;
+                display: block;
+                min-width: 100%;
+                width: 100%;
+                box-shadow: none;
+                opacity: 1;
+                position: relative;
+                top: 0;
+                left: 0;
+                text-align: center;
+                border-top: 1px solid #e5e7eb;
+                margin-bottom: 0;
+            }
+            @media (max-width: 700px) {
+                .auto-carousel { max-width: 100vw; }
+                .carousel-item img { height: 80px; }
+            }
         </style>
         
         <script>
-        (function() {
-            const carousel = document.querySelector('.auto-carousel');
-            const track = carousel.querySelector('.carousel-track');
-            const items = Array.from(track.children);
-            const toggleBtn = carousel.querySelector('.carousel-toggle');
-            const toggleIcon = toggleBtn.querySelector('.carousel-toggle-icon');
-            let index = 0;
-            let interval = null;
-            let paused = false;
+            (function() {
+                const carousel = document.querySelector('.auto-carousel');
+                const track = carousel.querySelector('.carousel-track');
+                const items = Array.from(track.children);
+                const toggleBtn = carousel.querySelector('.carousel-toggle');
+                const toggleIcon = toggleBtn.querySelector('.carousel-toggle-icon');
+                let index = 0;
+                let interval = null;
+                let paused = false;
 
-            function updateClasses() {
-                items.forEach((item, i) => {
-                    item.classList.toggle('active', i === index);
-                });
-            }
-            function showSlide(i) {
-                index = i;
-                updateClasses();
-            }
-            function nextSlide() {
-                index = (index + 1) % items.length;
-                showSlide(index);
-            }
-            function startAuto() {
-                if (interval) clearInterval(interval);
-                if (!paused) interval = setInterval(nextSlide, 2500);
-            }
-            function stopAuto() {
-                if (interval) clearInterval(interval);
-            }
-            toggleBtn.addEventListener('click', function() {
-                paused = !paused;
-                if (paused) {
-                    stopAuto();
-                    toggleIcon.innerHTML = '&#9654;'; // play icon
-                    toggleBtn.setAttribute('aria-label', 'Play carousel');
-                } else {
-                    startAuto();
-                    toggleIcon.innerHTML = '&#10073;&#10073;'; // pause icon
-                    toggleBtn.setAttribute('aria-label', 'Pause carousel');
+                function updateClasses() {
+                    items.forEach((item, i) => {
+                        item.classList.toggle('active', i === index);
+                    });
                 }
-            });
-            showSlide(index);
-            startAuto();
-        })();
+                function showSlide(i) {
+                    index = i;
+                    updateClasses();
+                }
+                function nextSlide() {
+                    index = (index + 1) % items.length;
+                    showSlide(index);
+                }
+                function startAuto() {
+                    if (interval) clearInterval(interval);
+                    if (!paused) interval = setInterval(nextSlide, 2500);
+                }
+                function stopAuto() {
+                    if (interval) clearInterval(interval);
+                }
+                toggleBtn.addEventListener('click', function() {
+                    paused = !paused;
+                    if (paused) {
+                        stopAuto();
+                        toggleIcon.innerHTML = '&#9654;'; // play icon
+                        toggleBtn.setAttribute('aria-label', 'Play carousel');
+                    } else {
+                        startAuto();
+                        toggleIcon.innerHTML = '&#10073;&#10073;'; // pause icon
+                        toggleBtn.setAttribute('aria-label', 'Pause carousel');
+                    }
+                });
+                showSlide(index);
+                startAuto();
+            })();
         </script>
+    
+    <!-- Gallery Section (now after Available Colours) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../assets/red-bass_speakers_back.jpg" alt="Back View – Red Edition">
+                    <div class="gallery-caption">Back View – Red Edition</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/drop-mini-controls.jpg" alt="Touch Controls">
+                    <div class="gallery-caption">Touch Controls</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section class="section">
         <div class="container">
             <h3 class="section-title" style="font-size: 1.8rem;">Technical Specifications</h3>
