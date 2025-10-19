@@ -277,6 +277,34 @@
         </script>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">GALLERY</h2>
+            <div class="gallery-grid" style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+                <img src="../assets/sensation_360_by_bass_gallery.jpg" alt="Headphone shot" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;">
+            </div>
+            <!-- Lightbox overlay markup -->
+            <div id="gallery-lightbox-overlay" class="gallery-lightbox-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;">
+                <div class="gallery-lightbox-content" style="position:relative;max-width:90vw;max-height:90vh;">
+                    <button class="gallery-lightbox-close" aria-label="Close" onclick="document.getElementById('gallery-lightbox-overlay').style.display='none';" style="position:absolute;top:-40px;right:0;font-size:2.5rem;color:#fff;background:none;border:none;cursor:pointer;">&times;</button>
+                    <img id="gallery-lightbox-img" src="" alt="Gallery Image" style="max-width:100%;max-height:80vh;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);">
+                </div>
+            </div>
+        </div>
+        <script>
+        // Lightbox functionality for gallery images
+        document.querySelectorAll('.gallery-lightbox-img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                var overlay = document.getElementById('gallery-lightbox-overlay');
+                var lightboxImg = document.getElementById('gallery-lightbox-img');
+                lightboxImg.src = this.src;
+                overlay.style.display = 'flex';
+            });
+        });
+        </script>
+    </section>
+
     <!-- Technical Specifications Section -->
     <section class="section">
         <div class="container">
