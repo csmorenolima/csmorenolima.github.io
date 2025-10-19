@@ -73,21 +73,6 @@
 
                 <img src="../assets/bass-logo.png" alt="Bass Logo" style="height: 60px; margin-bottom: 1rem;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">SIMPLE SUSTAINABLE MODERN</h2>
-
-                <!-- <h3 style="font-size: 2rem; margin-bottom: 2rem; color: #2d8f47; text-align: center; font-weight: 700;">SIMPLE • SUSTAINABLE • MODERN</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2d8f47; margin-right: 0.5rem;"></i> Touch sensor controls</li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2d8f47; margin-right: 0.5rem;"></i> 15-hour single charge playtime</li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2d8f47; margin-right: 0.5rem;"></i> 66ft operation distance</li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2d8f47; margin-right: 0.5rem;"></i> Bluetooth 6.0 connectivity</li>
-                    </ul>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2d8f47; margin-right: 0.5rem;"></i> Micro SD card support</li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2d8f47; margin-right: 0.5rem;"></i> AUX input option</li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2d8f47; margin-right: 0.5rem;"></i> Simple, intuitive controls</li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2d8f47; margin-right: 0.5rem;"></i> Bamboo sustainability design</li>
-                    </ul> -->
             </div>
         </div>
 
@@ -134,8 +119,8 @@
 
     <!-- Sustainability Section -->
     <section class="section">
-    <div class="about-section" style="background: #f5f6fa; border-radius: 18px; box-shadow: 0 4px 18px rgba(45,143,71,0.07); padding: 2.5rem 2rem; width: 100vw; max-width: none; margin-left: 50%; transform: translateX(-50%); margin-bottom: 2.5rem;">
-        <div style="display: flex; flex-wrap: wrap; gap: 5rem; align-items: stretch; justify-content: center; width: 100%; max-width: 1400px; margin: 0 auto;">
+    <div class="about-section" style="background: #f5f6fa; border-radius: 18px; box-shadow: 0 4px 18px rgba(45,143,71,0.07); padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: stretch; justify-content: space-between; width: 100%; max-width: 1100px; margin: 0 auto;">
             <!-- Left: Text -->
             <div style="flex: 0.8 1 380px; min-width: 320px; max-width: 420px; text-align: left; display: flex; flex-direction: column; justify-content: center;">
                 <h2 style="font-size: 2rem; color: #2d8f47; margin-bottom: 1.2rem; text-align:left;">Bamboo Sustainability</h2>
@@ -217,6 +202,37 @@
     </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid" style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+                <img src="../assets/speakers3_jpg-1.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;">
+                <img src="../assets/speakers4jpg-2.jpg" alt="Speaker 4" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;">
+                <img src="../assets/speakers5-edited_jpg.jpg" alt="Speaker 5" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;">
+                <img src="../assets/touch-controls.jpg" alt="Touch Controls" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;">
+            </div>
+            <!-- Lightbox overlay markup -->
+            <div id="gallery-lightbox-overlay" class="gallery-lightbox-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;">
+                <div class="gallery-lightbox-content" style="position:relative;max-width:90vw;max-height:90vh;">
+                    <button class="gallery-lightbox-close" aria-label="Close" onclick="document.getElementById('gallery-lightbox-overlay').style.display='none';" style="position:absolute;top:-40px;right:0;font-size:2.5rem;color:#fff;background:none;border:none;cursor:pointer;">&times;</button>
+                    <img id="gallery-lightbox-img" src="" alt="Gallery Image" style="max-width:100%;max-height:80vh;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);">
+                </div>
+            </div>
+        </div>
+        <script>
+        // Lightbox functionality for gallery images
+        document.querySelectorAll('.gallery-lightbox-img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                var overlay = document.getElementById('gallery-lightbox-overlay');
+                var lightboxImg = document.getElementById('gallery-lightbox-img');
+                lightboxImg.src = this.src;
+                overlay.style.display = 'flex';
+            });
+        });
+        </script>
+    </section>
+
     <!-- Technical Specifications -->
     <section class="section">
         <div class="container">
@@ -228,53 +244,36 @@
                     <h4
                         style="color: #2d8f47; font-size: 1.3rem; margin-bottom: 1.5rem; display: flex; align-items: center;">
                         <i class="fas fa-volume-up" style="margin-right: 0.5rem;"></i> Audio</h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> Bluetooth 6.0 connectivity
-                        </li>
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> 66ft operational range
-                        </li>
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> AUX input support</li>
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> Micro SD card slot</li>
-                    </ul>
+            <div>
+            <p style="margin-bottom: 0.75rem;">Bluetooth 6.0 connectivity</p>
+            <p style="margin-bottom: 0.75rem;">66ft operational range</p>
+            <p style="margin-bottom: 0.75rem;">AUX input support</p>
+            <p style="margin-bottom: 0.75rem;">Micro SD card slot</p>
+            </div>
                 </div>
                 <div class="spec-category"
                     style="background: var(--surface); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
                     <h4
                         style="color: #2d8f47; font-size: 1.3rem; margin-bottom: 1.5rem; display: flex; align-items: center;">
                         <i class="fas fa-battery-three-quarters" style="margin-right: 0.5rem;"></i> Power</h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> 15-hour battery life</li>
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> Quick charge capability
-                        </li>
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> USB-C charging port</li>
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> Battery indicator</li>
-                    </ul>
+            <div>
+            <p style="margin-bottom: 0.75rem;">15-hour battery life</p>
+            <p style="margin-bottom: 0.75rem;">Quick charge capability</p>
+            <p style="margin-bottom: 0.75rem;">USB-C charging port</p>
+            <p style="margin-bottom: 0.75rem;">Battery indicator</p>
+            </div>
                 </div>
                 <div class="spec-category"
                     style="background: var(--surface); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
                     <h4
                         style="color: #2d8f47; font-size: 1.3rem; margin-bottom: 1.5rem; display: flex; align-items: center;">
                         <i class="fas fa-cube" style="margin-right: 0.5rem;"></i> Design</h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> Sustainable bamboo
-                            construction</li>
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> Touch sensor controls</li>
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> Honeycomb-inspired
-                            aesthetics</li>
-                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span
-                                style="position: absolute; left: 0; color: #2d8f47;">•</span> Portable form factor</li>
-                    </ul>
+                    <div>
+                        <p style="margin-bottom: 0.75rem;">Sustainable bamboo construction</p>
+                        <p style="margin-bottom: 0.75rem;">Touch sensor controls</p>
+                        <p style="margin-bottom: 0.75rem;">Honeycomb-inspired aesthetics</p>
+                        <p style="margin-bottom: 0.75rem;">Portable form factor</p>
+                    </div>
                 </div>
             </div>
         </div>
