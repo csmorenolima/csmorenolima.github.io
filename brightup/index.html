@@ -90,18 +90,18 @@
                 <!-- Right: Carousel -->
                 <div class="sustainability-benefits" style="flex: 1 1 480px; min-width: 320px; max-width: 480px; display: flex; justify-content: flex-end; align-items: center;">
                     <div class="auto-carousel" style="width: 100%; max-width: 480px; min-width: 320px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(45,143,71,0.07); border-left: 4px solid #3498db; position: relative;">
-                        <div class="carousel-track">
-                            <div class="carousel-item active benefit-item">
+                        <div class="overview-carousel-track">
+                            <div class="overview-carousel-item active benefit-item">
                                 <i class="fas fa-graduation-cap" style="font-size: 2rem; color: #3498db; margin-bottom: 0.7rem;"></i>
                                 <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">18-24</h4>
                                 <p style="color: var(--text-secondary);">year olds report low understanding of politics.</p>
                             </div>
-                            <div class="carousel-item benefit-item">
+                            <div class="overview-carousel-item benefit-item">
                                 <i class="fas fa-user-shield" style="font-size: 2rem; color: #3498db; margin-bottom: 0.7rem;"></i>
                                 <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">19%</h4>
                                 <p style="color: var(--text-secondary);">of young people have trust in ministers. 17% trust politicians.</p>
                             </div>
-                            <div class="carousel-item benefit-item">
+                            <div class="overview-carousel-item benefit-item">
                                 <i class="fas fa-vote-yea" style="font-size: 2rem; color: #3498db; margin-bottom: 0.7rem;"></i>
                                 <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">20%</h4>
                                 <p style="color: var(--text-secondary);">Decrease in young people on the electoral register. 45% in 2015, falling to only 25% in 2018.</p>
@@ -287,12 +287,12 @@
             overflow: hidden;
         }
 
-        .carousel-track {
+    .overview-carousel-track {
             display: flex;
             transition: transform 0.7s cubic-bezier(.77, 0, .18, 1);
         }
 
-        .carousel-item {
+    .overview-carousel-item {
             flex: 0 0 100%;
             max-width: 100%;
             box-sizing: border-box;
@@ -303,7 +303,7 @@
             justify-content: center;
         }
 
-        .carousel-item.active {
+    .overview-carousel-item.active {
             display: flex;
         }
 
@@ -388,7 +388,7 @@
         (function () {
             const carousel = document.querySelector('.sustainability-benefits .auto-carousel');
             if (!carousel) return;
-            const track = carousel.querySelector('.carousel-track');
+            const track = carousel.querySelector('.overview-carousel-track');
             const items = Array.from(track.children);
             const toggleBtn = carousel.querySelector('.carousel-toggle');
             const toggleIcon = toggleBtn.querySelector('.carousel-toggle-icon');

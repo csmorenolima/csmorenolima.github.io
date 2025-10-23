@@ -124,18 +124,18 @@
                     <!-- Right: Carousel -->
                     <div class="sustainability-benefits" style="flex: 1 1 480px; min-width: 320px; max-width: 480px; display: flex; justify-content: flex-end; align-items: center;">
                         <div class="auto-carousel" style="width: 100%; max-width: 480px; min-width: 320px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(45,143,71,0.07); border-left: 4px solid #2d8f47; position: relative;">
-                            <div class="carousel-track">
-                                <div class="carousel-item active benefit-item">
+                            <div class="overview-carousel-track">
+                                <div class="overview-carousel-item active benefit-item">
                                     <i class="fas fa-seedling" style="font-size: 2rem; color: #2d8f47; margin-bottom: 0.7rem;"></i>
                                     <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Renewable Resource</h4>
                                     <p style="color: var(--text-secondary);">Bamboo grows 35% faster than trees</p>
                                 </div>
-                                <div class="carousel-item benefit-item">
+                                <div class="overview-carousel-item benefit-item">
                                     <i class="fas fa-recycle" style="font-size: 2rem; color: #2d8f47; margin-bottom: 0.7rem;"></i>
                                     <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Zero Waste</h4>
                                     <p style="color: var(--text-secondary);">100% biodegradable material</p>
                                 </div>
-                                <div class="carousel-item benefit-item">
+                                <div class="overview-carousel-item benefit-item">
                                     <i class="fas fa-globe-americas" style="font-size: 2rem; color: #2d8f47; margin-bottom: 0.7rem;"></i>
                                     <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Carbon Neutral</h4>
                                     <p style="color: var(--text-secondary);">Absorbs more CO2 than it produces</p>
@@ -314,12 +314,12 @@
             overflow: hidden;
         }
 
-        .carousel-track {
+    .overview-carousel-track {
             display: flex;
             transition: transform 0.7s cubic-bezier(.77, 0, .18, 1);
         }
 
-        .carousel-item {
+    .overview-carousel-item {
             flex: 0 0 100%;
             max-width: 100%;
             box-sizing: border-box;
@@ -330,7 +330,7 @@
             justify-content: center;
         }
 
-        .carousel-item.active {
+    .overview-carousel-item.active {
             display: flex;
         }
 
@@ -411,7 +411,7 @@
         (function () {
             const carousel = document.querySelector('.sustainability-benefits .auto-carousel');
             if (!carousel) return;
-            const track = carousel.querySelector('.carousel-track');
+            const track = carousel.querySelector('.overview-carousel-track');
             const items = Array.from(track.children);
             const toggleBtn = carousel.querySelector('.carousel-toggle');
             const toggleIcon = toggleBtn.querySelector('.carousel-toggle-icon');

@@ -166,13 +166,13 @@
                 <button class="carousel-toggle" aria-label="Pause carousel" style="position:absolute;top:10px;right:10px;z-index:2;background:rgba(255,255,255,0.8);border:none;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.3rem;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
                     <span class="carousel-toggle-icon" style="color:#7c3aed">&#10073;&#10073;</span>
                 </button>
-                <div class="carousel-track">
-                    <div class="carousel-item"><img src="../assets/bass-speakers-black.jpg" alt="Black"><div class="color-label" style="background:rgba(34,34,34,0.6); color:#fff;">Black – Matte & Glossy</div></div>
-                    <div class="carousel-item"><img src="../assets/bass-speakers-silver.jpg" alt="Silver"><div class="color-label" style="background:rgba(209,213,219,0.6); color:#222;">Silver – Matte & Glossy</div></div>
-                    <div class="carousel-item"><img src="../assets/bass-speakers-blue.jpg" alt="Blue"><div class="color-label" style="background:rgba(59,130,246,0.6); color:#fff;">Blue – Matte & Glossy</div></div>
-                    <div class="carousel-item"><img src="../assets/bass-speakers-red.png" alt="Red"><div class="color-label" style="background:rgba(239,68,68,0.6); color:#fff;">Red – Matte & Glossy</div></div>
-                    <div class="carousel-item"><img src="../assets/bass-speakers-yellow.jpg" alt="Yellow"><div class="color-label" style="background:rgba(253,224,71,0.6); color:#222;">Yellow – Matte & Glossy</div></div>
-                    <div class="carousel-item"><img src="../assets/bass-speakers-orange.jpg" alt="Orange"><div class="color-label" style="background:rgba(251,146,60,0.6); color:#fff;">Orange – Matte & Glossy</div></div>
+                <div class="availableColours-carousel-track">
+                    <div class="availableColours-carousel-item"><img src="../assets/bass-speakers-black.jpg" alt="Black"><div class="color-label" style="background:rgba(34,34,34,0.6); color:#fff;">Black – Matte & Glossy</div></div>
+                    <div class="availableColours-carousel-item"><img src="../assets/bass-speakers-silver.jpg" alt="Silver"><div class="color-label" style="background:rgba(209,213,219,0.6); color:#222;">Silver – Matte & Glossy</div></div>
+                    <div class="availableColours-carousel-item"><img src="../assets/bass-speakers-blue.jpg" alt="Blue"><div class="color-label" style="background:rgba(59,130,246,0.6); color:#fff;">Blue – Matte & Glossy</div></div>
+                    <div class="availableColours-carousel-item"><img src="../assets/bass-speakers-red.png" alt="Red"><div class="color-label" style="background:rgba(239,68,68,0.6); color:#fff;">Red – Matte & Glossy</div></div>
+                    <div class="availableColours-carousel-item"><img src="../assets/bass-speakers-yellow.jpg" alt="Yellow"><div class="color-label" style="background:rgba(253,224,71,0.6); color:#222;">Yellow – Matte & Glossy</div></div>
+                    <div class="availableColours-carousel-item"><img src="../assets/bass-speakers-orange.jpg" alt="Orange"><div class="color-label" style="background:rgba(251,146,60,0.6); color:#fff;">Orange – Matte & Glossy</div></div>
                 </div>
             </div>
         </div>
@@ -182,11 +182,11 @@
                 position: relative;
                 overflow: hidden;
             }
-            .carousel-track {
+            .availableColours-carousel-track {
                 display: flex;
                 transition: transform 0.7s cubic-bezier(.77,0,.18,1);
             }
-            .carousel-item {
+            .availableColours-carousel-item {
                 flex: 0 0 100%;
                 max-width: 100%;
                 box-sizing: border-box;
@@ -196,10 +196,10 @@
                 align-items: center;
                 justify-content: center;
             }
-            .carousel-item.active {
+            .availableColours-carousel-item.active {
                 display: flex;
             }
-            .carousel-item img {
+            .availableColours-carousel-item img {
                 width: 100%;
                 height: 310px;
                 border-radius: 12px;
@@ -228,14 +228,14 @@
             }
             @media (max-width: 700px) {
                 .auto-carousel { max-width: 100vw; }
-                .carousel-item img { height: 80px; }
+                .availableColours-carousel-item img { height: 80px; }
             }
         </style>
 
         <script>
             (function() {
                 const carousel = document.querySelector('.auto-carousel');
-                const track = carousel.querySelector('.carousel-track');
+                const track = carousel.querySelector('.availableColours-carousel-track');
                 const items = Array.from(track.children);
                 const toggleBtn = carousel.querySelector('.carousel-toggle');
                 const toggleIcon = toggleBtn.querySelector('.carousel-toggle-icon');
