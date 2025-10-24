@@ -382,11 +382,6 @@
             box-shadow: 0 4px 12px rgba(45, 143, 71, 0.3);
         }
 
-        .benefit-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(45, 143, 71, 0.15);
-        }
-
         .spec-category:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -455,102 +450,7 @@
             startAuto();
         })();
     </script>
-    <script>
-        (function () {
-            const carousel = document.querySelector('.sustainability-benefits .auto-carousel');
-            if (!carousel) return;
-            const track = carousel.querySelector('.overview-carousel-track');
-            const items = Array.from(track.children);
-            const toggleBtn = carousel.querySelector('.carousel-toggle');
-            const toggleIcon = toggleBtn.querySelector('.carousel-toggle-icon');
-            let index = 0;
-            let interval = null;
-            let paused = false;
 
-            function updateClasses() {
-                items.forEach((item, i) => {
-                    item.classList.toggle('active', i === index);
-                });
-            }
-            function showSlide(i) {
-                index = i;
-                updateClasses();
-            }
-            function nextSlide() {
-                index = (index + 1) % items.length;
-                showSlide(index);
-            }
-            function startAuto() {
-                if (interval) clearInterval(interval);
-                if (!paused) interval = setInterval(nextSlide, 2500);
-            }
-            function stopAuto() {
-                if (interval) clearInterval(interval);
-            }
-            toggleBtn.addEventListener('click', function () {
-                paused = !paused;
-                if (paused) {
-                    stopAuto();
-                    toggleIcon.innerHTML = '&#9654;'; // play icon
-                    toggleBtn.setAttribute('aria-label', 'Play carousel');
-                } else {
-                    startAuto();
-                    toggleIcon.innerHTML = '&#10073;&#10073;'; // pause icon
-                    toggleBtn.setAttribute('aria-label', 'Pause carousel');
-                }
-            });
-            showSlide(index);
-            startAuto();
-        })();
-    </script>
-    <script>
-        (function () {
-            const carousel = document.querySelector('.sustainability-benefits .auto-carousel');
-            if (!carousel) return;
-            const track = carousel.querySelector('.overview-carousel-track');
-            const items = Array.from(track.children);
-            const toggleBtn = carousel.querySelector('.carousel-toggle');
-            const toggleIcon = toggleBtn.querySelector('.carousel-toggle-icon');
-            let index = 0;
-            let interval = null;
-            let paused = false;
-
-            function updateClasses() {
-                items.forEach((item, i) => {
-                    item.classList.toggle('active', i === index);
-                });
-            }
-            function showSlide(i) {
-                index = i;
-                updateClasses();
-            }
-            function nextSlide() {
-                index = (index + 1) % items.length;
-                showSlide(index);
-            }
-            function startAuto() {
-                if (interval) clearInterval(interval);
-                if (!paused) interval = setInterval(nextSlide, 2500);
-            }
-            function stopAuto() {
-                if (interval) clearInterval(interval);
-            }
-            toggleBtn.addEventListener('click', function () {
-                paused = !paused;
-                if (paused) {
-                    stopAuto();
-                    toggleIcon.innerHTML = '&#9654;'; // play icon
-                    toggleBtn.setAttribute('aria-label', 'Play carousel');
-                } else {
-                    startAuto();
-                    toggleIcon.innerHTML = '&#10073;&#10073;'; // pause icon
-                    toggleBtn.setAttribute('aria-label', 'Pause carousel');
-                }
-            });
-            showSlide(index);
-            startAuto();
-        })();
-    </script>
 </body>
 
 </html>

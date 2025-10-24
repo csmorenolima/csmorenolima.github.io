@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENOVA - Carla Sofia Lima</title>
@@ -15,7 +18,7 @@
 
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Shared Theme -->
     <link rel="stylesheet" href="../targetPortfolio/theme.css">
@@ -61,9 +64,9 @@
         <div class="container">
             <div class="feature-highlight sustainable"
                 style="color: white;background: linear-gradient(135deg, #F5BBA6 0%, #fff6f2 100%); padding: 3rem; border-radius: 16px; margin-bottom: 3rem; text-align: center;">
-                <img src="../assets/enova-logo.png" alt="ENOVA Logo" style="height: 60px; margin-bottom: 1rem;">
+                <img src="../assets/enova-logo.png" alt="ENOVA Logo" style="height: 60px; margin-bottom: 1rem;" loading="lazy">
                 <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">INNOVATE • EDUCATE • EMPOWER</h2>
-                <a href="#" target="_blank" rel="noreferrer noopener" class="cta-button" style="display: inline-block; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;cursor: pointer;">
+                <a href="https://www.figma.com/proto/MjM44iWukJDj1uiGtX6JOJ/ENOVA?node-id=0-3&scaling=contain&t=ndd9NYvlqSsRJbuZ-1" target="_blank" rel="noreferrer noopener" class="cta-button" style="display: inline-block; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;cursor: pointer;">
                     <strong>App Prototype</strong>
                 </a>
             </div>
@@ -78,7 +81,7 @@
             real-world challenges.</p>
     </section>
 
-    <!-- Sustainability Section (BrightUp Layout) -->
+    <!--  -->
     <section class="section">
         <div class="about-section"
             style="background: #f5f6fa; border-radius: 18px; box-shadow: 0 4px 18px rgba(45,143,71,0.07); padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
@@ -87,45 +90,149 @@
                 <!-- Left: Text -->
                 <div
                     style="flex: 0.8 1 380px; min-width: 320px; max-width: 420px; text-align: left; display: flex; flex-direction: column; justify-content: center;">
-                    <h2 style="font-size: 2rem; color: #3498db; margin-bottom: 1.2rem; text-align:left;">The Story</h2>
+                    <h2 style="font-size: 2rem; color: #F5BDA9; margin-bottom: 1.2rem; text-align:left;">The Story</h2>
                     <p style="font-size: 1.08rem; color: #222; margin-bottom: 1.2rem; text-align:left;">This initiative
                         proposes a combination of physical products and a dedicated application to be introduced across
                         UK educational institutions. Its goal is to empower and support young people in education by
                         tackling period poverty and the stigma that surrounds it.</p>
                 </div>
 
-                <div
-                    style="flex: 0.8 1 380px; min-width: 320px; max-width: 420px; text-align: left; display: flex; flex-direction: column; justify-content: center;">
-                    <h2 style="font-size: 2rem; color: #3498db; margin-bottom: 1.2rem; text-align:left;">The Story</h2>
-                    <p style="font-size: 1.08rem; color: #222; margin-bottom: 1.2rem; text-align:left;">This initiative
-                        proposes a combination of physical products and a dedicated application to be introduced across
-                        UK educational institutions. Its goal is to empower and support young people in education by
-                        tackling period poverty and the stigma that surrounds it.</p>
+                <div class="perdiodPoverty-challenges" style="flex: 1 1 480px; min-width: 320px; max-width: 480px; display: flex; justify-content: flex-end; align-items: center;">
+                    <div class="auto-carousel" style="width: 100%; max-width: 480px; min-width: 320px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(45,143,71,0.07); border-left: 4px solid #F5BDA9; position: relative;">
+                        <div class="overview-carousel-track">
+
+                            <div class="overview-carousel-item active benefit-item">
+                                <i class="fas fa-female" style="font-size: 2rem; color: #F5BDA9; margin-bottom: 0.7rem;"></i>
+                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">500 Million</h4>
+                                <p style="color: var(--text-secondary);">women and girls are living in period poverty every month.</p>
+                            </div>
+
+                            <div class="overview-carousel-item benefit-item">
+                                <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: #F5BDA9; margin-bottom: 0.7rem;"></i>
+                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Stigma</h4>
+                                <p style="color: var(--text-secondary);">around the topic of menstruation can cause exploitation, domestic violence and victim silence.</p>
+                            </div>
+
+                            <div class="overview-carousel-item benefit-item">
+                                <i class="fas fa-newspaper" style="font-size: 2rem; color: #F5BDA9; margin-bottom: 0.7rem;"></i>
+                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">10%</h4>
+                                <p style="color: var(--text-secondary);">of girls use newspapers, rags, toilet paper and leaves as substitutes to sanitary napkins.</p>
+                            </div>
+
+                            <div class="overview-carousel-item benefit-item">
+                                <i class="fas fa-shopping-basket" style="font-size: 2rem; color: #F5BDA9; margin-bottom: 0.7rem;"></i>
+                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">1 in 10</h4>
+                                <p style="color: var(--text-secondary);">girls in UK 2017 can not afford to buy menstrual products.</p>
+                            </div>
+                        </div>
+                        <button class="carousel-toggle" aria-label="Pause carousel" style="position: absolute; top: 10px; right: 10px; background: #f8fffe; border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(45,143,71,0.07); cursor: pointer;">
+                            <span class="carousel-toggle-icon" style="font-size: 1.2rem; color: #F5BDA9;">&#10073;&#10073;</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+     <section class="section">
+        <div class="container">
+            <h3 class="section-title" style="font-size: 1.8rem;">DESIGN SHOW BANNER</h3>
+            <img src="/assets/DesignShowBanner.png" alt="design show banner" loading="lazy">
+        </div>
+     </section>
+
+     <section class="section">
+        <div class="container">
+            <h3 class="section-title" style="font-size: 2rem;">GALLERY</h3>
+            <div class="gallery-grid" style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+                <img src="../assets/enova-gal1.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/enova-gal2.png" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/enova-gal3.png" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/enova-gal4.png" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/enova-gal5.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/enova-gal6.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/enova-gal7.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/enova-gal8.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/enova-gal9.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/enova-gal10.png" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/enova-gal11.png" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                
+            </div>
+            <!-- Lightbox overlay markup -->
+            <div id="gallery-lightbox-overlay" class="gallery-lightbox-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;">
+                <div class="gallery-lightbox-content" style="position:relative;max-width:90vw;max-height:90vh;">
+                    <button class="gallery-lightbox-close" aria-label="Close" onclick="document.getElementById('gallery-lightbox-overlay').style.display='none';" style="position:absolute;top:-40px;right:0;font-size:2.5rem;color:#fff;background:none;border:none;cursor:pointer;">&times;</button>
+                    <img id="gallery-lightbox-img" src="" alt="Gallery Image" style="max-width:100%;max-height:80vh;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);" loading="lazy">
+                    <div id="gallery-lightbox-desc" style="color:#fff; margin-top:1.5rem; font-size:1.1rem; text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+        // Lightbox functionality for gallery images
+        document.querySelectorAll('.gallery-lightbox-img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                var overlay = document.getElementById('gallery-lightbox-overlay');
+                var lightboxImg = document.getElementById('gallery-lightbox-img');
+                var lightboxDesc = document.getElementById('gallery-lightbox-desc');
+                lightboxImg.src = this.src;
+                // Set description based on image src or alt
+                var desc = '';
+                switch(this.src.split('/').pop()) {
+                    case 'enova-gal1.jpg': desc = 'ENOVA DISPENSER'; break;
+                    case 'enova-gal2.png': desc = 'ENOVA APP (Home Screen)'; break;
+                    case 'enova-gal3.png': desc = 'ENOVA APP (Case Sleeve Catalogue Screen)'; break;
+                    case 'enova-gal4.png': desc = 'ENOVA CASE'; break;
+                    case 'enova-gal5.jpg': desc = 'ENOVA CASE (Empty)'; break;
+                    case 'enova-gal6.jpg': desc = 'ENOVA CASE (Perspective)'; break;
+                    case 'enova-gal7.jpg': desc = 'ENOVA CASE (Case Sleeve - No Hook and Loop)'; break;
+                    case 'enova-gal8.jpg': desc = 'ENOVA CASE (Case Sleeve - Hook and Loop) '; break;
+                    case 'enova-gal9.jpg': desc = 'ENOVA CASE (Magnetic Latch)'; break;
+                    case 'enova-gal10.png': desc = 'ENOVA STUDENT CARD (Front)'; break;
+                    case 'enova-gal11.png': desc = 'ENOVA STUDENT CARD  (Back)'; break;
+                    default: desc = this.alt || 'Gallery Image';
+                }
+                lightboxDesc.textContent = desc;
+                overlay.style.display = 'flex';
+            });
+        });
+        </script>
+    </section>
+
+
     <!-- Design Process Section -->
     <section class="section">
         <div class="container">
-            <h3 class="section-title" style="font-size: 1.8rem;">Design Development Process</h3>
+            <!-- Match header placement to product design page: header above carousel -->
+            <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin-bottom:1rem;">Reports</h3>
             <div class="carousel-container">
-                <button class="carousel-btn left" aria-label="Previous image"><i
-                        class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-track">
-                    <div class="carousel-card">
-                        <img src="../h/h-1.png" alt="ENOVA concept development" loading="lazy">
+                    <div class="carousel-card featured-item">
+                        <div class="featured-image" style="background:#fff;display:flex;align-items:center;justify-content:center;height:200px;position:relative;overflow:hidden;">
+                            <embed src="../assets/projectReport.pdf" type="application/pdf" width="100%" height="200px" style="border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:#fff;" />
+                            <a href="../assets/projectReport.pdf" download title="Download Project Report (PDF)" style="position:absolute;top:12px;right:18px;background:#f8fffe;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+                                <i class="fas fa-download" style="color:#F5BDA9;font-size:1.1rem;"></i>
+                            </a>
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">Project Report</h3>
+                            <p class="featured-description">Preview and download the full project report (PDF).</p>
+                        </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="/engineering-drawing/engineering-drawing.jpg" alt="Technical specifications"
-                            loading="lazy">
-                    </div>
-                    <div class="carousel-card">
-                        <img src="/health/design-process.jpg" alt="Human-centered design process" loading="lazy">
+                    <div class="carousel-card featured-item">
+                        <div class="featured-image" style="background:#fff;display:flex;align-items:center;justify-content:center;height:200px;position:relative;overflow:hidden;">
+                            <embed src="../assets/projectResearch.pdf" type="application/pdf" width="100%" height="200px" style="border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:#fff;" />
+                            <a href="../assets/projectResearch.pdf" download title="Download Project Research (PDF)" style="position:absolute;top:12px;right:18px;background:#f8fffe;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+                                <i class="fas fa-download" style="color:#F5BDA9;font-size:1.1rem;"></i>
+                            </a>
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">Product Design Specification</h3>
+                            <p class="featured-description">Preview and download the full product design specification (PDF).</p>
+                        </div>
                     </div>
                 </div>
-                <button class="carousel-btn right" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+                <button class="carousel-btn right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -133,29 +240,40 @@
     <!-- Solution Implementation Section -->
     <section class="section">
         <div class="container">
-            <h3 class="section-title" style="font-size: 1.8rem;">Solution Implementation</h3>
+            <!-- Match header placement to product design page: header above carousel -->
+            <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin-bottom:1rem;">Videos</h3>
             <div class="carousel-container">
-                <button class="carousel-btn left" aria-label="Previous prototype"><i
-                        class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-track">
-                    <div class="carousel-card">
-                        <img src="../h/h-1.png" alt="ENOVA health solution" loading="lazy">
+                    <div class="carousel-card featured-item video-lightbox-trigger" data-video="https://www.youtube.com/embed/g_pYIK9BgFQ?list=PLBb5VxtHK_n_JGOV66HqvVE7QESpE8zNi">
+                        <div class="featured-image" style="position:relative;height:200px;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+                            <img src="https://img.youtube.com/vi/g_pYIK9BgFQ/hqdefault.jpg" alt="ENOVA Dispenser Prototype Video Thumbnail" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.7);border-radius:6px;" loading="lazy">
+                            <i class="fas fa-play-circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:3rem;z-index:2;"></i>
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">ENOVA Dispenser Prototype</h3>
+                            <p class="featured-description">Watch the ENOVA project video playlist.</p>
+                        </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="/health/solution-detail.jpg" alt="Solution detail view" loading="lazy">
+                    <div class="carousel-card featured-item video-lightbox-trigger" data-video="https://www.youtube.com/embed/OIWOaEc2Id4">
+                        <div class="featured-image" style="position:relative;height:200px;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+                            <img src="https://img.youtube.com/vi/OIWOaEc2Id4/hqdefault.jpg" alt="ENOVA App Walkthrough Video Thumbnail" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.7);border-radius:6px;" loading="lazy">
+                            <i class="fas fa-play-circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:3rem;z-index:2;"></i>
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">ENOVA App Walkthrough</h3>
+                            <p class="featured-description">Watch the ENOVA project demonstration video.</p>
+                        </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="/health/implementation.jpg" alt="Implementation process" loading="lazy">
-                    </div>
-                    <div class="carousel-card">
-                        <img src="/health/user-testing.jpg" alt="User testing and validation" loading="lazy">
-                    </div>
-                    <div class="carousel-card">
-                        <img src="/health/final-solution.jpg" alt="Final engineered solution" loading="lazy">
-                    </div>
-                </div>
-                <button class="carousel-btn right" aria-label="Next prototype"><i
-                        class="fas fa-chevron-right"></i></button>
+    <!-- Video Lightbox Overlay -->
+    <div id="video-lightbox-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;">
+        <div style="position:relative;max-width:90vw;max-height:90vh;display:flex;align-items:center;justify-content:center;">
+            <button id="video-lightbox-close" aria-label="Close" style="position:absolute;top:-40px;right:0;font-size:2.5rem;color:#fff;background:none;border:none;cursor:pointer;z-index:2;">&times;</button>
+            <iframe id="video-lightbox-iframe" width="900" height="506" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="max-width:90vw;max-height:80vh;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);"></iframe>
+        </div>
+    </div>
+    </div>
+                <button class="carousel-btn right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -204,9 +322,51 @@
     </footer>
 
     <!-- External JavaScript Files -->
-    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/navigation.js" defer></script>
 
     <style>
+    .benefit-item {
+            min-width: 320px;
+            width: 100%;
+            min-height: 320px;
+            max-height: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auto-carousel {
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+    .overview-carousel-track {
+            display: flex;
+            transition: transform 0.7s cubic-bezier(.77, 0, .18, 1);
+        }
+
+    .overview-carousel-item {
+            flex: 0 0 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+    .overview-carousel-item.active {
+            display: flex;
+        }
+
+        @media (max-width: 700px) {
+            .auto-carousel {
+                max-width: 100vw;
+            }
+        }
         .project-navigation {
             margin: 4rem 0 2rem;
             padding: 2rem 0;
@@ -234,7 +394,7 @@
 
         .nav-btn:hover {
             background: transparent;
-            color: #56b560;
+            color: #F5BDA9;
             transform: translateY(-2px);
         }
 
@@ -244,6 +404,73 @@
             }
         }
     </style>
+
+    <script>
+        (function () {
+            const carousel = document.querySelector('.perdiodPoverty-challenges .auto-carousel');
+            if (!carousel) return;
+            const track = carousel.querySelector('.overview-carousel-track');
+            const items = Array.from(track.children);
+            const toggleBtn = carousel.querySelector('.carousel-toggle');
+            const toggleIcon = toggleBtn.querySelector('.carousel-toggle-icon');
+            let index = 0;
+            let interval = null;
+            let paused = false;
+
+            function updateClasses() {
+                items.forEach((item, i) => {
+                    item.classList.toggle('active', i === index);
+                });
+            }
+            function showSlide(i) {
+                index = i;
+                updateClasses();
+            }
+            function nextSlide() {
+                index = (index + 1) % items.length;
+                showSlide(index);
+            }
+            function startAuto() {
+                if (interval) clearInterval(interval);
+                if (!paused) interval = setInterval(nextSlide, 2500);
+            }
+            function stopAuto() {
+                if (interval) clearInterval(interval);
+            }
+            toggleBtn.addEventListener('click', function () {
+                paused = !paused;
+                if (paused) {
+                    stopAuto();
+                    toggleIcon.innerHTML = '&#9654;'; // play icon
+                    toggleBtn.setAttribute('aria-label', 'Play carousel');
+                } else {
+                    startAuto();
+                    toggleIcon.innerHTML = '&#10073;&#10073;'; // pause icon
+                    toggleBtn.setAttribute('aria-label', 'Pause carousel');
+                }
+            });
+            showSlide(index);
+            startAuto();
+        })();
+    </script>
+    <script>
+        // Video lightbox functionality for video carousel
+        document.querySelectorAll('.video-lightbox-trigger').forEach(function(card) {
+            card.addEventListener('click', function() {
+                var overlay = document.getElementById('video-lightbox-overlay');
+                var iframe = document.getElementById('video-lightbox-iframe');
+                var videoUrl = this.getAttribute('data-video');
+                iframe.src = videoUrl + (videoUrl.includes('?') ? '&autoplay=1' : '?autoplay=1');
+                overlay.style.display = 'flex';
+            });
+        });
+        document.getElementById('video-lightbox-close').addEventListener('click', function() {
+            var overlay = document.getElementById('video-lightbox-overlay');
+            var iframe = document.getElementById('video-lightbox-iframe');
+            iframe.src = '';
+            overlay.style.display = 'none';
+        });
+        </script>  
 </body>
 
 </html>
