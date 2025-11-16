@@ -86,26 +86,30 @@
                     <div class="auto-carousel scaar-story-carousel" style="width: 100%; max-width: 480px; min-width: 320px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(45,143,71,0.07); border-left: 4px solid #8d6742; position: relative;">
                         <div class="overview-carousel-track">
                             <div class="overview-carousel-item active benefit-item">
-                                <i class="fas fa-bicycle" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
-                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Recumbent Cycle</h4>
-                                <p style="color: var(--text-secondary);">Custom-designed for speed, comfort, and efficiency in human-powered travel.</p>
+                                <i class="fas fa-wind" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
+                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">15-30%</h4>
+                                <p style="color: var(--text-secondary);">More wind resistant than the traditional bike.</p>
                             </div>
+
                             <div class="overview-carousel-item benefit-item">
-                                <i class="fas fa-leaf" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
-                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Sustainable Materials</h4>
-                                <p style="color: var(--text-secondary);">Bamboo and reclaimed bike parts used for eco-friendly construction.</p>
+                                <i class="fas fa-child" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
+                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Reduced Stress</h4>
+                                <p style="color: var(--text-secondary);">On the rider's back muscle, arm and hands due to its ergonomic design.</p>
                             </div>
+
                             <div class="overview-carousel-item benefit-item">
-                                <i class="fas fa-users-cog" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
-                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Collaborative Engineering</h4>
-                                <p style="color: var(--text-secondary);">Team-based design and prototyping.</p>
+                                <i class="fas fa-shield-alt" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
+                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Increased Safety and comfort</h4>
+                                <p style="color: var(--text-secondary);">Due to a lower center of gravity, a lower risk of going over the handlebars and a more visiblity and better riding position.</p>
                             </div>
+
                             <div class="overview-carousel-item benefit-item">
-                                <i class="fas fa-tachometer-alt" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
+                                <i class="fas fa-flag-checkered" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
                                 <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Speed Record Challenge</h4>
                                 <p style="color: var(--text-secondary);">Part of the Aim93 initiative to break human-powered vehicle speed records.</p>
                             </div>
                         </div>
+
                         <button class="carousel-toggle" aria-label="Pause carousel" style="position: absolute; top: 10px; right: 10px; background: #f8fffe; border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(45,143,71,0.07); cursor: pointer;">
                             <span class="carousel-toggle-icon" style="font-size: 1.2rem; color: #8d6742;">&#10073;&#10073;</span>
                         </button>
@@ -115,55 +119,71 @@
         </div>
     </section>
 
+    <section class="section">
+        <div class="container">
+            <h3 class="section-title" style="font-size: 2rem;">GALLERY</h3>
+            <div class="gallery-grid" style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+                <img src="../assets/scaargallery1.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/scaargalary2.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/scaargallery3.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/scaargallery4.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
+                <img src="../assets/scaargallery5.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">            
+            </div>
+            <!-- Lightbox overlay markup -->
+            <div id="gallery-lightbox-overlay" class="gallery-lightbox-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;">
+                <div class="gallery-lightbox-content" style="position:relative;max-width:90vw;max-height:90vh;">
+                    <button class="gallery-lightbox-close" aria-label="Close" onclick="document.getElementById('gallery-lightbox-overlay').style.display='none';" style="position:absolute;top:-40px;right:0;font-size:2.5rem;color:#fff;background:none;border:none;cursor:pointer;">&times;</button>
+                    <img id="gallery-lightbox-img" src="" alt="Gallery Image" style="max-width:100%;max-height:80vh;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);" loading="lazy">
+                    <div id="gallery-lightbox-desc" style="color:#fff; margin-top:1.5rem; font-size:1.1rem; text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+        // Lightbox functionality for gallery images
+        document.querySelectorAll('.gallery-lightbox-img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                var overlay = document.getElementById('gallery-lightbox-overlay');
+                var lightboxImg = document.getElementById('gallery-lightbox-img');
+                var lightboxDesc = document.getElementById('gallery-lightbox-desc');
+                lightboxImg.src = this.src;
+                // Set description based on image src or alt
+                var desc = '';
+                switch(this.src.split('/').pop()) {
+                    case 'scaargallery1.jpg': desc = 'SIDE VIEW'; break;
+                    case 'scaargalary2.jpg': desc = 'FRONT VIEW'; break;
+                    case 'scaargallery3.jpg': desc = 'PERSPECTIVE BACK VIEW'; break;
+                    case 'scaargallery4.jpg': desc = 'SIDE VIEW'; break;
+                    case 'scaargallery5.jpg': desc = 'SIDE VIEW'; break;
+                    default: desc = this.alt || 'Gallery Image';
+                }
+                lightboxDesc.textContent = desc;
+                overlay.style.display = 'flex';
+            });
+        });
+        </script>
+    </section>
+
     <!-- Engineering Process Section -->
     <section class="section">
         <div class="container">
-            <h3 class="section-title" style="font-size: 1.8rem;">Engineering Process</h3>
+            <h3 class="section-title" style="font-size: 1.8rem;">Computer Aided Design</h3>
             <div class="carousel-container">
                 <button class="carousel-btn left" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-track">
                     <div class="carousel-card">
-                        <img src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/engineering-drawing-1.jpg" alt="Engineering drawings" loading="lazy">
+                        <img src="../assets/engineering-drawing.jpg" alt="Engineering Drawing" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;">
                     </div>
                     <div class="carousel-card">
-                        <img src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.21.00-3.png" alt="Design process" loading="lazy">
+                        <img src="../assets/scaarCADModel.png" alt="Engineering Drawing" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;">
                     </div>
                     <div class="carousel-card">
-                        <img src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.20.54-2.png" alt="Technical specifications" loading="lazy">
+                        <img src="../assets/engineering3Dscaar.png" alt="3D CAD Model 1" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;">
+                    </div>
+                    <div class="carousel-card">
+                        <img src="../assets/engineering3Dscaar2.png" alt="3D CAD Model 2" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;">
                     </div>
                 </div>
                 <button class="carousel-btn right" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Physical Prototype Section -->
-    <section class="section">
-        <div class="container">
-            <h3 class="section-title" style="font-size: 1.8rem;">Physical Prototype</h3>
-            <div class="carousel-container">
-                <button class="carousel-btn left" aria-label="Previous prototype"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-track">
-                    <div class="carousel-card">
-                        <img src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/screenshot-2020-03-16-at-22.02.47.png" alt="Main prototype" loading="lazy">
-                    </div>
-                    <div class="carousel-card">
-                        <img src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/finish-1-2.jpg" alt="Finished prototype detail" loading="lazy">
-                    </div>
-                    <div class="carousel-card">
-                        <img src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/finish-2-1.jpg" alt="Prototype assembly" loading="lazy">
-                    </div>
-                    <div class="carousel-card">
-                        <img src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/finish-3.jpg" alt="Final prototype" loading="lazy">
-                    </div>
-                    <div class="carousel-card">
-                        <img src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/bamboo-develop-2.jpg" alt="Bamboo development" loading="lazy">
-                    </div>
-                    <div class="carousel-card">
-                        <img src="https://i0.wp.com/carlasofiaportfolio.wpcomstaging.com/wp-content/uploads/2020/03/bamboo-develop-1-1.jpg" alt="Bamboo construction" loading="lazy">
-                    </div>
-                </div>
-                <button class="carousel-btn right" aria-label="Next prototype"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -271,7 +291,7 @@
 
         .nav-btn:hover {
             background: transparent;
-            color: #667eea;
+            color: #8d6742;
             transform: translateY(-2px);
         }
 
@@ -283,6 +303,7 @@
     </style>
 
     <script>
+        // Story section auto-carousel (unchanged)
         (function () {
             const carousel = document.querySelector('.scaar-story-carousel.auto-carousel');
             if (!carousel) return;
@@ -329,6 +350,20 @@
             showSlide(index);
             startAuto();
         })();
+
+        // Manual scroll for all .carousel-container carousels (Engineering Process, Physical Prototype)
+        document.querySelectorAll('.carousel-container').forEach(function(container) {
+            const track = container.querySelector('.carousel-track');
+            const leftBtn = container.querySelector('.carousel-btn.left');
+            const rightBtn = container.querySelector('.carousel-btn.right');
+            if (!track || !leftBtn || !rightBtn) return;
+            leftBtn.addEventListener('click', function() {
+                track.scrollBy({ left: -340, behavior: 'smooth' });
+            });
+            rightBtn.addEventListener('click', function() {
+                track.scrollBy({ left: 340, behavior: 'smooth' });
+            });
+        });
     </script>
 
     </body>
