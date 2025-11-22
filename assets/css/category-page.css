@@ -47,28 +47,28 @@
     overflow: hidden;
 }
 
-/* Games category hero */
+/* soct category hero */
 body[data-category="games"] .hero,
 .hero.games {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
                 url('../so-ct-hero.jpeg') center/cover;
 }
 
-/* Health category hero */
+/* Enova category hero */
 body[data-category="health"] .hero,
 .hero.health {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
                 url('../enova-app.jpg') center/cover;
 }
 
-/* Transportation category hero */
+/* Nomad category hero */
 body[data-category="transportation"] .hero,
 .hero.transportation {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
                 url('../scaar_nomad-hero.png') center/cover;
 }
 
-/* Electronics category hero */
+/* Sensation 360 hero */
 body[data-category="electronics"] .hero,
 .hero.electronics {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
@@ -89,7 +89,7 @@ body[data-category="engineering"] .hero,
                 url('../Engineering_hero.jpg') center/cover;
 }
 
-/* Design category hero */
+/* BrightUp hero */
 body[data-category="design"] .hero,
 .hero.design {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
