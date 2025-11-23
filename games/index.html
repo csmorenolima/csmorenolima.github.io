@@ -40,39 +40,122 @@
             <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </nav>
     </header>
-
+<style>
+    body[data-category="games"] {
+        background: url('/assets/so-ct-hero.jpeg') center top/cover no-repeat fixed;
+        background-color: #181c1f;
+        position: relative;
+    }
+    body[data-category="games"]:after {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(24,28,31,0.60);
+        pointer-events: none;
+        z-index: 0;
+    }
+    .hero {
+        position: relative;
+        z-index: 2;
+    }
+    .section, .container, .featured-project, .story, .footer, .project-navigation {
+        position: relative;
+        z-index: 2;
+    }
+</style>
     <!-- Hero -->
     <section class="hero">
-        <div class="container">
+        <div class="container" style="position:relative;z-index:1;">
             <div class="hero-content fade-in-up">
                 <h1>Scrolls of Odyssey: Call to Tarragon</h1>
-                <p class="hero-quote">Interactive storytelling and adventure mechanics.</p>
+                <p class="hero-quote">A fantasy adventure game set in the realms of the Enën Sea</p>
             </div>
         </div>
+        <style>
+            .hero {
+                min-height: 420px;
+                position: relative;
+                background: none;
+            }
+        </style>
     </section>
 
     <!-- Content -->
     <section class="section">
         <div class="container">
             <div class="featured-project" style="text-align: center; margin-bottom: 3rem;">
-                <div style="background: linear-gradient(135deg, #131E21 0%, #022216 100%); padding: 3rem; border-radius: 16px; color: white;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">SCROLLS OF ODYSSEY</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">A fantasy adventure game set in the realms of the Enën Sea</p>
+                <div style="background: linear-gradient(135deg, #131E21 0%, #021b22c7 100%);padding: 3rem;border-radius: 16px;color: white;">
+                    <img src="../assets/so-ct-thumbnail.png" alt="SOCT Logo" style="height: 60px; margin-bottom: 1rem;" loading="lazy">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">EMERSIVE • FANTASY • LORE</h2>
                     <button id="watchDemoBtn" class="cta-button" style="display: inline-block; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer;">
                         <strong>WATCH DEMO</strong>
                     </button>
                 </div>
             </div>
 
-            <h2 class="section-title">OVERVIEW</h2>
-            <p class="section-subtitle">A fantasy adventure demo set in the realms of the Enën Sea.</p>
-
             <div class="story" style="margin-top:2rem">
-                <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin-bottom:1rem;">The Story</h3>
-                <p>A nail-biting fantasy adventure, in a world full of dangerous creatures. Once, the land and sea flourished under the rule of mighty kings and queens, but darkness descended upon the kingdoms. Amidst the chaos, great kingdoms crumbled and people scattered across the plains.</p>
-                <br
-                ><p>From the far reaches of the realm, disparate factions converged to reclaim their land and dignity. United by shared loss, they forged alliances born of necessity. Yet within the ranks of these allies, treachery and strife lurked - old grievances resurfaced and the quest for redemption grew tainted by ambition and betrayal.</p>
+                <div style="position:relative;display:flex;flex-direction:column;align-items:center;">
+                    <div style="position:relative;width:100%;max-width:700px;margin:0 auto;">
+                        <img src="/assets/agedScroll.png" alt="Aged Scroll" style="width:100%;height:auto;display:block;pointer-events:none;">
+                        
+                        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                            <div style="max-width:78%;margin:2.5rem auto 0 auto;padding:2.5rem 1.5rem 2.5rem 1.5rem;box-sizing:border-box;border-radius:18px;">
+                                <h3 class="section-title" style="font-size:1.5rem;text-align:center;margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;color:#7a5c1e;justify-content:center;">The Story</h3>
+
+                                <div style="font-family: 'EB Garamond', 'Georgia', serif; font-size:0.8rem; color:#6b4e1e; font-style:italic; letter-spacing:0.01em; text-align:center; max-width:420px; margin:0 auto;">
+                                    <p style="margin-bottom:1.2rem;max-width:320px;margin-left:auto;margin-right:auto;color:#1a1200;text-align:justify;text-shadow:none;">The Enen Sea is unraveling.<br><br>Once-proud kingdoms crumble, ancient realms fracture, and dark forces stir across land and waters. An ancient evil has awakened in the West, warping creatures, breaking borders, and driving the world toward chaos.<br><br>Queen Ahris entrusts the Guardian Lumyrion to you alone, setting you on a path toward the source of the world’s ruin. The old relic awakens only when turmoil threatens the balance of the mortal realm, guiding its chosen through shadows few dare enter.</p>
+                                    <p style="margin-top:0;max-width:320px;margin-left:auto;margin-right:auto;color:#1a1200;text-align:justify;text-shadow:none;">With Lumyrion’s light at your side, you must cross lands scarred by corruption, confront the force spreading through the West, and face the power rising within Tarragon before it consumes all.<br><br>Your journey begins where the light ends.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h3 class="section-title" style="font-size: 1.8rem;">USER NEEDS</h3>
+            <div style="margin-bottom:2rem;">
+                <ul style="margin:0.5rem 0 1.5rem 1.5rem;">
+                    <li>Use Engaging Colours</li>
+                    <li>Graphics Must Be Appropriate For The Age Group</li>
+                    <li>Simple Instructions</li>
+                    <li>Text Readability</li>
+                </ul>
             </div>
+            <img src="/assets/soctUserProfile.png" alt="User Profile Example" loading="lazy" style="max-width:700px;width:100%;height:auto;display:block;margin:0 auto;">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h3 class="section-title" style="font-size: 1.8rem;">GAME STYLE IDEATION</h3>
+            <img src="/assets/soct-ideationgamestyle.png" alt="Game Style Ideation" loading="lazy" style="max-width:1134px;width:100%;height:auto;display:block;margin:0 auto;">
+        </div>
+    </section>
+
+     <section class="section">
+        <div class="container">
+            <h3 class="section-title" style="font-size: 1.8rem;">UI AND GAME DESIGN</h3>
+            <div style="margin-bottom:2rem;">
+                <strong>Webpage Properties</strong>
+                <ul style="margin:0.5rem 0 1.5rem 1.5rem;">
+                    <li>Title</li>
+                    <li>Dropdown Menu &rarr; Play Game / Instructions / About + Credits</li>
+                    <li>Instructions</li>
+                    <li>Game Window</li>
+                    <li>Footer</li>
+                </ul>
+                <strong>Game Window</strong>
+                <ul style="margin:0.5rem 0 1.5rem 1.5rem;">
+                    <li>Enter Name &amp; Play</li>
+                    <li>Lobby</li>
+                    <li>Shop</li>
+                    <li>Battle</li>
+                </ul>
+            </div>
+            <img src="/assets/uiGameDevelopment.png" alt="UI Game Development" loading="lazy" style="max-width:700px;width:100%;height:auto;display:block;margin:0 auto;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.10);background:#f3f3f3;">
         </div>
     </section>
 

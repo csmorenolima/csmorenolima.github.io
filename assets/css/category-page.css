@@ -21,15 +21,6 @@
     border: 0;
 }
 
-/* Story and content sections */
-.story {
-    background: #fff;
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    margin: 2rem 0;
-}
-
 .story h3 {
     margin-top: 0;
 }
@@ -50,8 +41,7 @@
 /* soct category hero */
 body[data-category="games"] .hero,
 .hero.games {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../so-ct-hero.jpeg') center/cover;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))
 }
 
 /* Enova category hero */
