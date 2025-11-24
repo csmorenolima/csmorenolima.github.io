@@ -41,7 +41,8 @@
 /* soct category hero */
 body[data-category="games"] .hero,
 .hero.games {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.68)),
+                url('../SoctPoster.png') center 70%/60% repeat;
 }
 
 /* Enova category hero */

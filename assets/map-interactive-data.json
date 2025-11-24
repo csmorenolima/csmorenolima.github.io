@@ -1,0 +1,20 @@
+{
+  "regions": [
+    {
+      "id": "tarragon",
+      "name": "Tarragon (Corrupted Zone)",
+      "coords": "540,320,600,380",
+      "blurb": "A land twisted by corruption. Once fertile, now a source of dread.",
+      "lore": "Tarragon was once the breadbasket of the Enen Sea, but a creeping darkness has warped its fields and minds. Few dare enter.",
+      "effect": "corrupted"
+    },
+    {
+      "id": "aeyantis",
+      "name": "Aeyantis (Queen Ahris’ Realm)",
+      "coords": "220,180,280,240",
+      "blurb": "The shining capital, ruled by Queen Ahris.",
+      "lore": "Aeyantis is the heart of civilization, a beacon of hope and order. Queen Ahris’ wisdom is renowned across the realms.",
+      "effect": "glow"
+    }
+  ]
+}

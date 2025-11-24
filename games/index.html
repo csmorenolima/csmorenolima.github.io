@@ -1,3 +1,117 @@
+
+
+
+                <!-- Interactive Map Modal Overlay -->
+                <div id="mapModal" class="map-modal-overlay">
+                    <div class="map-modal-content">
+                        <button class="map-modal-close" id="closeMapModal">×</button>
+                        <h2 class="section-title" style="
+                            text-align:center;
+                            margin-bottom:0.5rem;
+                            font-size:2.3rem;
+                            letter-spacing:0.04em;
+                            color:#7a5c1e;
+                            text-shadow:0 2px 8px #0007,0 1px 0 #bfa14a;
+                            font-family: 'EB Garamond', 'Georgia', serif;
+                        ">DOMAINS OF THE ENËN SEA</h2>
+                        <div class="map-modal-subtitle" style="text-align:center;font-size:1.18rem;color:#b8e0ff;margin-bottom:1.7rem;letter-spacing:0.01em;text-shadow:0 1px 8px #000a;">
+                            <em>Explore the kingdoms, secrets, and dangers of the world. Hover for rulers and lore. Click for deeper history.</em>
+                        </div>
+                        
+                        <div class="map-wrapper" style="position:relative;max-width:900px;margin:0 auto;">
+                            <img src="/assets/EnenSeaMap.jpg" alt="Map of the Enen Sea" class="map-image" style="width:100%;border-radius:18px;box-shadow:0 4px 24px #0006;">
+                            <!-- Overlay for interactive regions -->
+                            <div class="map-region" id="region-tarragon" style="position:absolute;left:60%;top:55%;width:7%;height:7%;cursor:pointer;"></div>
+                            <div class="map-region" id="region-aeyantis" style="position:absolute;left:24%;top:31%;width:7%;height:7%;cursor:pointer;"></div>
+                            <!-- Animated overlays -->
+                            <div class="map-effect corrupted-flash" style="position:absolute;left:61%;top:56%;width:6%;height:6%;pointer-events:none;"></div>
+                            <div class="map-effect aeyantis-glow" style="position:absolute;left:25%;top:32%;width:6%;height:6%;pointer-events:none;"></div>
+                        </div>
+                        <div id="map-tooltip" class="map-tooltip" style="display:none;"></div>
+                    </div>
+                </div>
+                <style>
+                    .map-modal-overlay {
+                        display: none;
+                        position: fixed;
+                        top: 0; left: 0; width: 100vw; height: 100vh;
+                        background: rgba(10,16,24,0.92);
+                        z-index: 10001;
+                        align-items: center;
+                        justify-content: center;
+                        transition: opacity 0.3s;
+                    }
+                    .map-modal-overlay.active {
+                        display: flex;
+                        opacity: 1;
+                    }
+                    .map-modal-content {
+                        position: relative;
+                        background: #181c1f;
+                        border-radius: 18px;
+                        box-shadow: 0 8px 32px #000a;
+                        padding: 2.5rem 2.2rem 2.5rem 2.2rem;
+                        max-width: 960px;
+                        width: 98vw;
+                        max-height: 92vh;
+                        overflow-y: auto;
+                        color: #fff;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .map-modal-close {
+                        position: absolute;
+                        top: -40px;
+                        right: 0;
+                        font-size: 2.5rem;
+                        color: #fff;
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        z-index: 2;
+                        transition: color 0.2s;
+                    }
+                    .map-modal-close:hover {
+                        color: #ff0033;
+                    }
+                    .map-wrapper { position:relative; }
+                    .map-region { background:rgba(0,0,0,0.01); border-radius:50%; transition:box-shadow 0.2s; }
+                    .map-region:hover { box-shadow:0 0 0 4px #fff3,0 0 16px #fff6; }
+                    .map-tooltip {
+                        position:fixed;
+                        z-index:1000;
+                        background:rgba(24,28,31,0.97);
+                        color:#fff;
+                        padding:1.1rem 1.3rem;
+                        border-radius:12px;
+                        box-shadow:0 4px 24px #0008;
+                        min-width:220px;
+                        max-width:320px;
+                        pointer-events:none;
+                        font-size:1rem;
+                        line-height:1.4;
+                        transition:opacity 0.2s;
+                    }
+                    .corrupted-flash {
+                        border-radius:50%;
+                        background:radial-gradient(circle,rgba(255,0,32,0.45) 0%,rgba(255,0,32,0.12) 60%,rgba(255,0,32,0.01) 100%);
+                        animation: corrupted-flash 1.2s infinite alternate;
+                    }
+                    @keyframes corrupted-flash {
+                        0% { opacity:0.7; filter:blur(2px); }
+                        100% { opacity:1; filter:blur(8px); }
+                    }
+                    .aeyantis-glow {
+                        border-radius:50%;
+                        background:radial-gradient(circle,rgba(0,180,255,0.38) 0%,rgba(0,180,255,0.10) 60%,rgba(0,180,255,0.01) 100%);
+                        animation: aeyantis-glow 2.2s infinite alternate;
+                    }
+                    @keyframes aeyantis-glow {
+                        0% { opacity:0.7; filter:blur(2px); }
+                        100% { opacity:1; filter:blur(10px); }
+                    }
+                </style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +202,7 @@
                     <img src="../assets/so-ct-thumbnail.png" alt="SOCT Logo" style="height: 60px; margin-bottom: 1rem;" loading="lazy">
                     <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">EMERSIVE • FANTASY • LORE</h2>
                     <button id="watchDemoBtn" class="cta-button" style="display: inline-block; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer;">
-                        <strong>WATCH DEMO</strong>
+                        <strong>EXPLORE</strong>
                     </button>
                 </div>
             </div>
@@ -111,6 +225,7 @@
                     </div>
                 </div>
         </div>
+    </section>
     </section>
 
     <section class="section">
@@ -204,6 +319,84 @@
 
     <!-- External JavaScript Files -->
     <script src="../assets/js/navigation.js"></script>
+
+        <script>
+        // Map Modal open/close logic using WATCH DEMO button
+        (function() {
+            var watchDemoBtn = document.getElementById('watchDemoBtn');
+            var mapModal = document.getElementById('mapModal');
+            var closeMapModalBtn = document.getElementById('closeMapModal');
+            if (watchDemoBtn && mapModal && closeMapModalBtn) {
+                watchDemoBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mapModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+                closeMapModalBtn.addEventListener('click', function() {
+                    mapModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+                mapModal.addEventListener('click', function(e) {
+                    if (e.target === mapModal) {
+                        mapModal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mapModal.classList.contains('active')) {
+                        mapModal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        })();
+        </script>
+
+        <script>
+        // Interactive Map Data
+        const mapData = {
+            tarragon: {
+                name: "Tarragon (Corrupted Zone)",
+                blurb: "A land twisted by corruption. Once fertile, now a source of dread.",
+                lore: "Tarragon was once the breadbasket of the Enen Sea, but a creeping darkness has warped its fields and minds. Few dare enter.",
+            },
+            aeyantis: {
+                name: "Aeyantis (Queen Ahris’ Realm)",
+                blurb: "The shining capital, ruled by Queen Ahris.",
+                lore: "Aeyantis is the heart of civilization, a beacon of hope and order. Queen Ahris’ wisdom is renowned across the realms.",
+            }
+        };
+        // Tooltip logic
+        function showMapTooltip(region, x, y) {
+            const tooltip = document.getElementById('map-tooltip');
+            if (!tooltip || !mapData[region]) return;
+            tooltip.innerHTML = `<strong>${mapData[region].name}</strong><br><em>${mapData[region].blurb}</em><br><span style='font-size:0.95em;color:#b8e0ff;display:none;' class='lore'>${mapData[region].lore}</span>`;
+            tooltip.style.display = 'block';
+            tooltip.style.left = (x + 24) + 'px';
+            tooltip.style.top = (y - 10) + 'px';
+            tooltip.style.opacity = 1;
+        }
+        function hideMapTooltip() {
+            const tooltip = document.getElementById('map-tooltip');
+            if (tooltip) { tooltip.style.display = 'none'; tooltip.style.opacity = 0; }
+        }
+        function expandLore(region) {
+            const tooltip = document.getElementById('map-tooltip');
+            if (tooltip) {
+                const lore = tooltip.querySelector('.lore');
+                if (lore) lore.style.display = 'block';
+            }
+        }
+        document.getElementById('region-tarragon').addEventListener('mouseenter', e => showMapTooltip('tarragon', e.clientX, e.clientY));
+        document.getElementById('region-tarragon').addEventListener('mousemove', e => showMapTooltip('tarragon', e.clientX, e.clientY));
+        document.getElementById('region-tarragon').addEventListener('mouseleave', hideMapTooltip);
+        document.getElementById('region-tarragon').addEventListener('click', () => expandLore('tarragon'));
+        document.getElementById('region-aeyantis').addEventListener('mouseenter', e => showMapTooltip('aeyantis', e.clientX, e.clientY));
+        document.getElementById('region-aeyantis').addEventListener('mousemove', e => showMapTooltip('aeyantis', e.clientX, e.clientY));
+        document.getElementById('region-aeyantis').addEventListener('mouseleave', hideMapTooltip);
+        document.getElementById('region-aeyantis').addEventListener('click', () => expandLore('aeyantis'));
+        // (Optional) Sound effects can be added here using HTML5 Audio API
+        </script>
 
     <style>
         .project-navigation {
@@ -336,44 +529,33 @@
     </div>
 
     <script>
-        // Video Modal Functionality
-        const watchDemoBtn = document.getElementById('watchDemoBtn');
-        const videoModal = document.getElementById('videoModal');
-        const closeModal = document.getElementById('closeModal');
-        const modalVideo = document.getElementById('modalVideo');
-
-        const videoURL = 'https://www.youtube.com/embed/nOmu1B7e_GY?autoplay=1&rel=0';
-
-        // Open modal
-        watchDemoBtn.addEventListener('click', function() {
-            modalVideo.src = videoURL;
-            videoModal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        });
-
-        // Close modal function
-        function closeVideoModal() {
-            videoModal.classList.remove('active');
-            modalVideo.src = ''; // Stop video playback
-            document.body.style.overflow = ''; // Restore scrolling
-        }
-
-        // Close modal events
-        closeModal.addEventListener('click', closeVideoModal);
-
-        // Close modal when clicking outside the video
-        videoModal.addEventListener('click', function(e) {
-            if (e.target === videoModal) {
-                closeVideoModal();
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-                closeVideoModal();
-            }
-        });
+                // Map Modal open/close logic using WATCH DEMO button
+                const watchDemoBtn = document.getElementById('watchDemoBtn');
+                const mapModal = document.getElementById('mapModal');
+                const closeMapModalBtn = document.getElementById('closeMapModal');
+                if (watchDemoBtn && mapModal && closeMapModalBtn) {
+                    watchDemoBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        mapModal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
+                    closeMapModalBtn.addEventListener('click', () => {
+                        mapModal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                    mapModal.addEventListener('click', (e) => {
+                        if (e.target === mapModal) {
+                            mapModal.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'Escape' && mapModal.classList.contains('active')) {
+                            mapModal.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                }
     </script>
 </body>
 </html>
