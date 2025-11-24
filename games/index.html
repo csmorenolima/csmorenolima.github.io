@@ -21,11 +21,7 @@
                         <div class="map-wrapper" style="position:relative;max-width:900px;margin:0 auto;">
                             <img src="/assets/EnenSeaMap.jpg" alt="Map of the Enen Sea" class="map-image" style="width:100%;border-radius:18px;box-shadow:0 4px 24px #0006;">
                             <!-- Overlay for interactive regions -->
-                            <div class="map-region" id="region-tarragon" style="position:absolute;left:60%;top:55%;width:7%;height:7%;cursor:pointer;"></div>
-                            <div class="map-region" id="region-aeyantis" style="position:absolute;left:24%;top:31%;width:7%;height:7%;cursor:pointer;"></div>
-                            <!-- Animated overlays -->
-                            <div class="map-effect corrupted-flash" style="position:absolute;left:61%;top:56%;width:6%;height:6%;pointer-events:none;"></div>
-                            <div class="map-effect aeyantis-glow" style="position:absolute;left:25%;top:32%;width:6%;height:6%;pointer-events:none;"></div>
+                            <div id="map-regions-container"></div>
                         </div>
                         <div id="map-tooltip" class="map-tooltip" style="display:none;"></div>
                     </div>
@@ -353,49 +349,84 @@
         </script>
 
         <script>
-        // Interactive Map Data
-        const mapData = {
-            tarragon: {
-                name: "Tarragon (Corrupted Zone)",
-                blurb: "A land twisted by corruption. Once fertile, now a source of dread.",
-                lore: "Tarragon was once the breadbasket of the Enen Sea, but a creeping darkness has warped its fields and minds. Few dare enter.",
-            },
-            aeyantis: {
-                name: "Aeyantis (Queen Ahris’ Realm)",
-                blurb: "The shining capital, ruled by Queen Ahris.",
-                lore: "Aeyantis is the heart of civilization, a beacon of hope and order. Queen Ahris’ wisdom is renowned across the realms.",
-            }
-        };
-        // Tooltip logic
-        function showMapTooltip(region, x, y) {
-            const tooltip = document.getElementById('map-tooltip');
-            if (!tooltip || !mapData[region]) return;
-            tooltip.innerHTML = `<strong>${mapData[region].name}</strong><br><em>${mapData[region].blurb}</em><br><span style='font-size:0.95em;color:#b8e0ff;display:none;' class='lore'>${mapData[region].lore}</span>`;
-            tooltip.style.display = 'block';
-            tooltip.style.left = (x + 24) + 'px';
-            tooltip.style.top = (y - 10) + 'px';
-            tooltip.style.opacity = 1;
-        }
-        function hideMapTooltip() {
-            const tooltip = document.getElementById('map-tooltip');
-            if (tooltip) { tooltip.style.display = 'none'; tooltip.style.opacity = 0; }
-        }
-        function expandLore(region) {
-            const tooltip = document.getElementById('map-tooltip');
-            if (tooltip) {
-                const lore = tooltip.querySelector('.lore');
-                if (lore) lore.style.display = 'block';
-            }
-        }
-        document.getElementById('region-tarragon').addEventListener('mouseenter', e => showMapTooltip('tarragon', e.clientX, e.clientY));
-        document.getElementById('region-tarragon').addEventListener('mousemove', e => showMapTooltip('tarragon', e.clientX, e.clientY));
-        document.getElementById('region-tarragon').addEventListener('mouseleave', hideMapTooltip);
-        document.getElementById('region-tarragon').addEventListener('click', () => expandLore('tarragon'));
-        document.getElementById('region-aeyantis').addEventListener('mouseenter', e => showMapTooltip('aeyantis', e.clientX, e.clientY));
-        document.getElementById('region-aeyantis').addEventListener('mousemove', e => showMapTooltip('aeyantis', e.clientX, e.clientY));
-        document.getElementById('region-aeyantis').addEventListener('mouseleave', hideMapTooltip);
-        document.getElementById('region-aeyantis').addEventListener('click', () => expandLore('aeyantis'));
-        // (Optional) Sound effects can be added here using HTML5 Audio API
+                // Dynamically create map regions and effects from JSON
+                fetch('/assets/map-interactive-data.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        const container = document.getElementById('map-regions-container');
+                        const mapImg = document.querySelector('.map-image');
+                        if (!container || !mapImg) return;
+                        // Wait for image to load to get natural size
+                        function renderRegions() {
+                            container.innerHTML = '';
+                            const imgW = mapImg.naturalWidth;
+                            const imgH = mapImg.naturalHeight;
+                            const dispW = mapImg.clientWidth;
+                            const dispH = mapImg.clientHeight;
+                            data.regions.forEach(region => {
+                                const [x, y, r] = region.coords.split(',').map(Number);
+                                // Convert to percent
+                                const cx = x / imgW * 100;
+                                const cy = y / imgH * 100;
+                                const cr = r / imgW * 100; // radius as percent of width
+                                // Place region overlay
+                                const div = document.createElement('div');
+                                div.className = 'map-region';
+                                div.id = `region-${region.id}`;
+                                div.style.position = 'absolute';
+                                div.style.left = `calc(${cx}% - ${cr}% )`;
+                                div.style.top = `calc(${cy}% - ${cr}% )`;
+                                div.style.width = `${cr*2}%`;
+                                div.style.height = `${cr*2}%`;
+                                div.style.cursor = 'pointer';
+                                // Tooltip events
+                                div.addEventListener('mouseenter', e => showMapTooltip(region, e.clientX, e.clientY));
+                                div.addEventListener('mousemove', e => showMapTooltip(region, e.clientX, e.clientY));
+                                div.addEventListener('mouseleave', hideMapTooltip);
+                                div.addEventListener('click', () => expandLore());
+                                container.appendChild(div);
+                                // Add animated effect overlay
+                                if (region.effect === 'corrupted' || region.effect === 'glow') {
+                                    const effect = document.createElement('div');
+                                    effect.className = 'map-effect ' + (region.effect === 'corrupted' ? 'corrupted-flash' : 'aeyantis-glow');
+                                    effect.style.position = 'absolute';
+                                    effect.style.left = `calc(${cx}% - ${cr*0.9}% )`;
+                                    effect.style.top = `calc(${cy}% - ${cr*0.9}% )`;
+                                    effect.style.width = `${cr*2*0.9}%`;
+                                    effect.style.height = `${cr*2*0.9}%`;
+                                    effect.style.pointerEvents = 'none';
+                                    container.appendChild(effect);
+                                }
+                            });
+                        }
+                        if (mapImg.complete) {
+                            renderRegions();
+                        } else {
+                            mapImg.onload = renderRegions;
+                        }
+                        window.addEventListener('resize', renderRegions);
+                        // Tooltip logic
+                        function showMapTooltip(region, x, y) {
+                            const tooltip = document.getElementById('map-tooltip');
+                            if (!tooltip || !region) return;
+                            tooltip.innerHTML = `<strong>${region.name}</strong><br><em>${region.blurb}</em><br><span style='font-size:0.95em;color:#b8e0ff;display:none;' class='lore'>${region.lore}</span>`;
+                            tooltip.style.display = 'block';
+                            tooltip.style.left = (x + 24) + 'px';
+                            tooltip.style.top = (y - 10) + 'px';
+                            tooltip.style.opacity = 1;
+                        }
+                        function hideMapTooltip() {
+                            const tooltip = document.getElementById('map-tooltip');
+                            if (tooltip) { tooltip.style.display = 'none'; tooltip.style.opacity = 0; }
+                        }
+                        function expandLore() {
+                            const tooltip = document.getElementById('map-tooltip');
+                            if (tooltip) {
+                                const lore = tooltip.querySelector('.lore');
+                                if (lore) lore.style.display = 'block';
+                            }
+                        }
+                    });
         </script>
 
     <style>

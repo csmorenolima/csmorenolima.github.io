@@ -2,18 +2,82 @@
   "regions": [
     {
       "id": "tarragon",
-      "name": "Tarragon (Corrupted Zone)",
-      "coords": "540,320,600,380",
-      "blurb": "A land twisted by corruption. Once fertile, now a source of dread.",
-      "lore": "Tarragon was once the breadbasket of the Enen Sea, but a creeping darkness has warped its fields and minds. Few dare enter.",
+      "name": "The Kingdom of Tarragon",
+      "coords": "219,258,107",
+      "blurb": "The birthplace of the West’s downfall.",
+      "lore": "Once the fertile heartland of the West, Tarragon rose when Zuläch united the Western Realms. But beneath Dsärr he broke the ancient seal, awakening the force sealed by the Old Treaty. Corruption surged outward, twisting land and creatures alike. All blight across the Enen Sea originates here.",
       "effect": "corrupted"
     },
     {
       "id": "aeyantis",
-      "name": "Aeyantis (Queen Ahris’ Realm)",
-      "coords": "220,180,280,240",
-      "blurb": "The shining capital, ruled by Queen Ahris.",
-      "lore": "Aeyantis is the heart of civilization, a beacon of hope and order. Queen Ahris’ wisdom is renowned across the realms.",
+      "name": "Aeyantis Kingdom",
+      "coords": "1218,370,53",
+      "blurb": "The oldest of the kingdoms, ruled by Queen Ahris.",
+      "lore": "Aeyantis is the heart of civilisation and the seat of Queen Ahris. Here the Guardian Lumyrion was summoned—an ancient relic awakened only when chaos threatens the world. Aeyantis stands as one of the last bastions of order as the realm collapses around it.",
+      "effect": "glow"
+    },
+    {
+      "id": "katzh",
+      "name": "Katzh Kingdom",
+      "coords": "1006,584,42",
+      "blurb": "A quiet, reflective kingdom of serene forests and calm waters.",
+      "lore": "Katzh, ruled by the formless sovereign Yutanari, lies far from Tarragon’s direct influence. Though its mist-laden lands sense the imbalance spreading across the Enen Sea, Katzh itself remains uncorrupted. Its people act as watchers of the world’s shifting tides, preparing for the moment the darkness reaches their borders.",
+      "effect": "glow"
+    },
+    {
+      "id": "dreonathen",
+      "name": "Dreonathen Kingdom",
+      "coords": "508,512,48",
+      "blurb": "A warrior kingdom standing between East and West.",
+      "lore": "Dreonathen, ruled by King Diogenes, formed the shield between the Western Realms and the Six Kingdoms. Their stone fortresses were the first to face Tarragon’s spread. Though strong, their borders tremble as corruption pushes closer.",
+      "effect": "glow"
+    },
+    {
+      "id": "yan",
+      "name": "Yán Realm",
+      "coords": "52,117,37",
+      "blurb": "A fractured realm known for its sky-watchers.",
+      "lore": "Under Domiyán, the Yán Realm once observed the heavens for signs of destiny. When Zuläch united the West, Yán followed—but corruption now divides its people. Some cling to Tarragon’s order; others flee from the spreading darkness.",
+      "effect": "corrupted"
+    },
+    {
+      "id": "edresan",
+      "name": "Edresan Realm",
+      "coords": "170,93,55",
+      "blurb": "One of the Western Realms absorbed into Tarragon.",
+      "lore": "Ruled by Qadril, Edresan stood beside Zuläch during the unification of the West. Their marsh strongholds and covert alliances gave him the advantage needed to form Tarragon. Now corruption seeps through the wetlands, twisting both land and allegiance.",
+      "effect": "corrupted"
+    },
+    {
+      "id": "kithren",
+      "name": "Kithren Queendom",
+      "coords": "548,268,23",
+      "blurb": "A bright queendom now standing against encroaching shadow.",
+      "lore": "Kithren, ruled by Queen Keisth, once flourished on harmony and enchantment. Its shimmering stone cities have grown quiet as Tarragon’s blight approaches, blackening their once-luminous forests and silencing their choral wildlife.",
+      "effect": "corrupted"
+    },
+    {
+      "id": "vulcaria",
+      "name": "Vulcaria Kingdom",
+      "coords": "1004,118,32",
+      "blurb": "A volcanic kingdom of ancient fire.",
+      "lore": "Vulcaria, ruled by Queen Olorus, stands on rivers of molten rock. The kingdom’s fire-wrought fortresses resist corruption, yet tremors beneath the volcanic halls suggest Tarragon’s influence is reaching deep into the earth’s oldest veins.",
+      "effect": "glow"
+    },
+    {
+      "id": "amexore",
+      "name": "Ame’xore Kingdom",
+      "coords": "645,154,33",
+      "blurb": "A kingdom of winds, peaks, and hidden archives.",
+      "lore": "Ruled by Queen Teri'itaria, Ame’xore protects vast archives of lost languages and ancient records. Scholars race to decode forgotten texts as corruption rides the mountain winds toward their sky temples.",
+      "effect": "corrupted"
+    },
+    {
+      "id": "brigachin",
+      "name": "Brigachin Realm",
+      "coords": "1254,196,42",
+      "blurb": "A harsh northern realm bordering Aeyantis.",
+      "lore": "Brigachin, ruled by Broyagia, lies just north of Aeyantis, separated by fortified ridgelines and cold highlands. Despite this proximity, Brigachin has long isolated itself from the affairs of the Six Kingdoms. When Queen Ahris warned of rising corruption, Brigachin dismissed it as an eastern burden. But now distortions creep through their northern passes—proof that even their rigid traditions cannot hold back the spreading chaos.",
       "effect": "glow"
     }
   ]
