@@ -80,5 +80,61 @@
       "lore": "Brigachin, ruled by Broyagia, lies just north of Aeyantis, separated by fortified ridgelines and cold highlands. Despite this proximity, Brigachin has long isolated itself from the affairs of the Six Kingdoms. When Queen Ahris warned of rising corruption, Brigachin dismissed it as an eastern burden. But now distortions creep through their northern passes—proof that even their rigid traditions cannot hold back the spreading chaos.",
       "effect": "glow"
     }
+  ],
+  "creatures": [
+    {
+      "id": "megalore",
+      "name": "Megalore Domain",
+      "coords": "1245,655,70",
+      "danger": "High",
+      "blurb": "A colossal apex predator ruling the deep coastal waters.",
+      "lore": "Megalore stalks the warm currents near Katzh and the southern Aeyantis coast. Sailors say the tides shift when it hunts, and whole ships vanish without a cry. Its massive, angular head slices through both waves and hulls, marking it the terror of the Enen Sea.",
+      "effect": "water-glow"
+    },
+    {
+      "id": "lycara",
+      "name": "Ly’cara Hunting Grounds",
+      "coords": "560,475,60",
+      "danger": "Medium",
+      "blurb": "Territorial forest hunters who never stalk alone.",
+      "lore": "The Ly’cara roam the shadow-thick forests between Kithren and Dreonathen. Swift, coordinated, and fiercely territorial, their cries echo through the trees long before a pack is seen. Many believe they are nature’s first warning before greater dangers draw near.",
+      "effect": "forest-mist"
+    },
+    {
+      "id": "gortusk",
+      "name": "Gortusk Highlands",
+      "coords": "1085,270,65",
+      "danger": "High",
+      "blurb": "Armored war-beasts forged by volcanic heat.",
+      "lore": "In the volcanic plains of Vulcaria, the Gortusk thrive among molten rock and ash storms. Their armored hides are said to be tougher than forged steel. When a herd stampedes, the ground itself trembles under the weight of living battering rams.",
+      "effect": "ember-glow"
+    },
+    {
+      "id": "deep_abyssal",
+      "name": "Deep Abyssal Trenches",
+      "coords": "220,650,85",
+      "danger": "Extreme",
+      "blurb": "Towering horrors from the lightless depths.",
+      "lore": "In the northern ocean trenches, where light has never touched, the Deep Abyssal rise from fathomless voids. Standing taller than most mortal architecture, these beings twist water and shadow alike. Their presence signals an ancient darkness stirring beneath the waves.",
+      "effect": "abyss-dark"
+    },
+    {
+      "id": "cyrenthos",
+      "name": "Cyrenthos Valley",
+      "coords": "360,340,55",
+      "danger": "High",
+      "blurb": "Savage valley predators warped by Tarragon’s corruption.",
+      "lore": "Once noble valley guardians, the Cyrenthos were twisted when Tarragon fell to Saar’s corruption. Their equine bodies carry monstrous upper torsos, driven by a rage not fully their own. They patrol the borderlands between Dreonathen and Tarragon, striking down anything that crosses.",
+      "effect": "corruption-flicker"
+    },
+    {
+      "id": "mighty_troll",
+      "name": "Mighty Troll of Tarragon",
+      "coords": "230,295,110",
+      "danger": "Cataclysmic",
+      "blurb": "The corrupted titan that rules Tarragon’s core.",
+      "lore": "Once Zuläch of Dsärr, now the living vessel of Saar’s hatred. The Mighty Troll towers above all creatures, wrapped in dark energy that rots the land beneath its feet. Every step spreads corruption. Every roar shakes kingdoms. Defeating it is the only hope to end the unraveling of the Enen Sea.",
+      "effect": "void-corruption"
+    }
   ]
 }

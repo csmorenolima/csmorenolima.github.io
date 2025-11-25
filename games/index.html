@@ -72,8 +72,28 @@
                         color: #ff0033;
                     }
                     .map-wrapper { position:relative; }
-                    .map-region { background:rgba(0,0,0,0.01); border-radius:50%; transition:box-shadow 0.2s; }
-                    .map-region:hover { box-shadow:0 0 0 4px #fff3,0 0 16px #fff6; }
+                    .map-region {
+                        background: rgba(122, 92, 30, 0.18); /* gold-brown semi-transparent */
+                        border: 2.5px solid #7a5c1e;
+                        border-radius: 50%;
+                        transition: box-shadow 0.2s, background 0.2s, border-color 0.2s;
+                        box-shadow: 0 0 0 2px #fff2 inset;
+                    }
+                    .map-region.creature-region {
+                        background: rgba(25, 120, 180, 0.18); /* blue semi-transparent for creatures */
+                        border: 2.5px solid #1e6fa8;
+                        box-shadow: 0 0 0 2px #fff2 inset;
+                    }
+                    .map-region:hover, .map-region:focus {
+                        box-shadow: 0 0 0 6px #fff7, 0 0 18px #fff8;
+                        background: rgba(122, 92, 30, 0.32);
+                        border-color: #e6c97a;
+                        z-index: 2;
+                    }
+                    .map-region.creature-region:hover, .map-region.creature-region:focus {
+                        background: rgba(25, 120, 180, 0.32);
+                        border-color: #7fd6ff;
+                    }
                     .map-tooltip {
                         position:fixed;
                         z-index:1000;
@@ -361,18 +381,15 @@
                             container.innerHTML = '';
                             const imgW = mapImg.naturalWidth;
                             const imgH = mapImg.naturalHeight;
-                            const dispW = mapImg.clientWidth;
-                            const dispH = mapImg.clientHeight;
-                            data.regions.forEach(region => {
-                                const [x, y, r] = region.coords.split(',').map(Number);
-                                // Convert to percent
+                            // Helper to render overlays for any array (regions or creatures)
+                            function renderOverlay(item, type) {
+                                const [x, y, r] = item.coords.split(',').map(Number);
                                 const cx = x / imgW * 100;
                                 const cy = y / imgH * 100;
-                                const cr = r / imgW * 100; // radius as percent of width
-                                // Place region overlay
+                                const cr = r / imgW * 100;
                                 const div = document.createElement('div');
-                                div.className = 'map-region';
-                                div.id = `region-${region.id}`;
+                                div.className = type === 'creature' ? 'map-region creature-region' : 'map-region';
+                                div.id = `${type}-${item.id}`;
                                 div.style.position = 'absolute';
                                 div.style.left = `calc(${cx}% - ${cr}% )`;
                                 div.style.top = `calc(${cy}% - ${cr}% )`;
@@ -380,15 +397,19 @@
                                 div.style.height = `${cr*2}%`;
                                 div.style.cursor = 'pointer';
                                 // Tooltip events
-                                div.addEventListener('mouseenter', e => showMapTooltip(region, e.clientX, e.clientY));
-                                div.addEventListener('mousemove', e => showMapTooltip(region, e.clientX, e.clientY));
+                                div.addEventListener('mouseenter', e => showMapTooltip(item, e.clientX, e.clientY, type));
+                                div.addEventListener('mousemove', e => showMapTooltip(item, e.clientX, e.clientY, type));
                                 div.addEventListener('mouseleave', hideMapTooltip);
                                 div.addEventListener('click', () => expandLore());
                                 container.appendChild(div);
                                 // Add animated effect overlay
-                                if (region.effect === 'corrupted' || region.effect === 'glow') {
+                                if (item.effect) {
                                     const effect = document.createElement('div');
-                                    effect.className = 'map-effect ' + (region.effect === 'corrupted' ? 'corrupted-flash' : 'aeyantis-glow');
+                                    let effectClass = '';
+                                    if (item.effect === 'corrupted') effectClass = 'corrupted-flash';
+                                    else if (item.effect === 'glow') effectClass = 'aeyantis-glow';
+                                    else effectClass = item.effect; // allow custom creature effects
+                                    effect.className = 'map-effect ' + effectClass;
                                     effect.style.position = 'absolute';
                                     effect.style.left = `calc(${cx}% - ${cr*0.9}% )`;
                                     effect.style.top = `calc(${cy}% - ${cr*0.9}% )`;
@@ -397,7 +418,11 @@
                                     effect.style.pointerEvents = 'none';
                                     container.appendChild(effect);
                                 }
-                            });
+                            }
+                            // Render regions
+                            (data.regions || []).forEach(region => renderOverlay(region, 'region'));
+                            // Render creatures
+                            (data.creatures || []).forEach(creature => renderOverlay(creature, 'creature'));
                         }
                         if (mapImg.complete) {
                             renderRegions();
@@ -406,10 +431,16 @@
                         }
                         window.addEventListener('resize', renderRegions);
                         // Tooltip logic
-                        function showMapTooltip(region, x, y) {
+                        function showMapTooltip(item, x, y, type) {
                             const tooltip = document.getElementById('map-tooltip');
-                            if (!tooltip || !region) return;
-                            tooltip.innerHTML = `<strong>${region.name}</strong><br><em>${region.blurb}</em><br><span style='font-size:0.95em;color:#b8e0ff;display:none;' class='lore'>${region.lore}</span>`;
+                            if (!tooltip || !item) return;
+                            let loreBlock = `<span style='font-size:0.95em;color:#b8e0ff;display:none;' class='lore'>${item.lore}</span>`;
+                            let dangerBlock = '';
+                            let expandPrompt = `<span style='display:block;font-size:0.93em;color:#e6c97a;margin-top:0.5em;'>Click to expand lore</span>`;
+                            if (type === 'creature' && item.danger) {
+                                dangerBlock = `<span style='display:inline-block;margin:0.2em 0 0.5em 0;padding:0.2em 0.7em;border-radius:6px;background:#b91c1c;color:#fff;font-size:0.98em;'>Danger: ${item.danger}</span><br>`;
+                            }
+                            tooltip.innerHTML = `<strong>${item.name}</strong><br>${dangerBlock}<em>${item.blurb}</em>${expandPrompt}<br>${loreBlock}`;
                             tooltip.style.display = 'block';
                             tooltip.style.left = (x + 24) + 'px';
                             tooltip.style.top = (y - 10) + 'px';
