@@ -20,6 +20,7 @@
     <!-- Category Page Template -->
     <link rel="stylesheet" href="../assets/css/category-page.css">
 </head>
+
 <body data-category="games">
     <!-- Header -->
     <header class="header">
@@ -189,7 +190,7 @@
     <section class="section">
         <div class="container">
             <div class="featured-project" style="text-align: center; margin-bottom: 3rem;">
-                <div style="background: linear-gradient(135deg, #131E21 0%, #021b22c7 100%);padding: 3rem;border-radius: 16px;color: white;">
+                <div style="background-image: url('../assets/SoctPoster.png'); background-size: auto; background-position: center 65%; padding: 3rem; border-radius: 16px;color: white;">
                     <img src="../assets/so-ct-thumbnail.png" alt="SOCT Logo" style="height: 60px; margin-bottom: 1rem;" loading="lazy">
                     <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">EMERSIVE • FANTASY • LORE</h2>
                     <button id="watchDemoBtn" class="cta-button" style="display: inline-block; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer;">
@@ -219,7 +220,167 @@
                         <!-- Overlay for interactive regions -->
                         <div id="map-regions-container"></div>
                     </div>
+
                     <div id="map-tooltip" class="map-tooltip" style="display:none;"></div>
+                    <!-- Simple Downward Arrowhead for Chronicle Scroll -->
+                    <div style="width:100%;text-align:center;margin:2.2rem 0 0.5rem 0;">
+                        <span id="chronicleArrow" style="display:inline-block;cursor:pointer;animation:swordPulse 1.2s infinite alternate;">
+                            <!-- Bootstrap chevron-down outline SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="none" viewBox="0 0 16 16" style="display:block;margin:0 auto;">
+                              <path fill="none" stroke="#e6c97a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 6l6 6 6-6"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <style>
+                        @keyframes swordPulse {
+                            0% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 8px #e6c97a44); }
+                            100% { transform: translateY(10px) scale(1.08); filter: drop-shadow(0 0 18px #e6c97a99); }
+                        }
+                    </style>
+
+                    <!-- Chronicle Text -->
+                    <h2 style="color:#e6c97a;font-size:2.1rem;margin:2.5rem 0 1.2rem 0;text-align:center;letter-spacing:0.03em;">The Chronicle</h2>
+                    <div style="color:#fff;font-size:1.08rem;line-height:1.7;text-align:center;white-space:pre-line;margin-bottom:2.5rem;">
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">I. The Age of Six Crowns</h3>
+                        For centuries, the lands surrounding the Enen Sea were shaped by six great kingdoms:
+
+                        Aeyantis Kingdom – ruled by Queen Ahris, an ancient and powerful sovereign.
+                        Katzh Kingdom – ruled by Yutanari, a formless, genderless ruler.
+                        Vulcaria Kingdom – ruled by Queen Olorus, mistress of molten lands.
+                        Ame’xore Kingdom – ruled by Queen Teri’itaria, keeper of hidden archives.
+                        Dreonathen Kingdom – ruled by King Diogenes, commander of stone fortresses.
+                        Kithren Queendom – ruled by Queen Keisth, whose cities shone with enchantment.
+
+                        These Six Crowns dominated diplomacy, trade, and warfare. Their decisions defined the laws of the Enen Sea and shaped the fates of countless creatures—troll clans, forest hunters, sea leviathans, volcanic beasts, and more.
+                        To the east, life flourished under their banners. To the west, resentment grew.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">II. The Western Realms</h3>
+                        Beyond the formal reach of the Six Crowns lay three realms on the western edge of the world:
+
+                        Dsärr Realm – ruled by Zhäro, over his kind.
+                        Edresan Realm – ruled by Qadril.
+                        Yán Realm – ruled by Domiyán.
+
+                        The Western Realms were bound by the laws of the Six Crowns but denied equal standing. They had no seats in grand councils, no voice in the treaties that governed the Enen Sea.
+                        In Dsärr, Zhäro ruled quietly. He never claimed a crown; his lands were small, his strength limited. He believed survival depended on humility. The Six Kingdoms were too powerful, their armies too vast. Submitting to their dominance seemed the only way to endure.
+                        But not everyone shared that belief.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">III. The Old Peace Treaty</h3>
+                        Long before Zuläch’s rise, an older threat had nearly consumed the world: Saar, a formless spirit of destruction that cared nothing for kingdoms, crowns, or creatures—only for unmaking.
+
+                        Saar was sealed beneath the Mountains of Shal’Mur, deep in the earth’s bones. In the aftermath, a pact was forged:
+
+                        Signatories:
+                        The Six Great Kingdoms
+                        The Three Western Realms
+
+                        The Old Treaty decreed:
+                        None would seek Saar.
+                        None would attempt to wield Saar in war.
+                        None would break or weaken the seals beneath Shal’Mur.
+                        All disputes must be settled without invoking ancient evil.
+
+                        The treaty preserved peace and kept Saar contained—but it also froze the political order. The Western Realms remained beneath the Six, bound by the same laws but never granted the same respect.
+                        Resentment took root in the West and grew for generations.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">IV. Zuläch and the Rise of the West</h3>
+                        In Dsärr, Zhäro’s heir, Zuläch, grew up watching his father bow to eastern pressure.
+
+                        Where Zhäro saw wisdom, Zuläch saw weakness.
+                        Where Zhäro saw survival, Zuläch saw humiliation.
+
+                        He wanted recognition.
+                        He wanted a crown.
+                        He wanted the West to stand equal to the Six—or above them.
+
+                        In secret, Zuläch reached out to the rulers of the other Western Realms: Qadril of Edresan and Domiyán of Yán. Together, they forged a pact in shadows.
+                        They orchestrated Zhäro’s death, disguising it as a tragic accident. With his father gone, Zuläch assumed control of Dsärr and moved swiftly.
+
+                        Through threats, promises, and carefully spun lies, he unified the West:
+                        Dsärr and Edresan under one banner.
+                        Dsärr and Yán bound by shared rule.
+
+                        At last, they emerged as a single power:
+                        The Kingdom of Tarragon — the First Western-most Kingdom.
+
+                        For the first time, the West held a crown equal to the Six.
+                        For a brief moment, it seemed Zuläch had achieved what his father never dreamed possible.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">V. The Breaking of the Seal</h3>
+                        But power did not satisfy Zuläch. It sharpened his hunger.
+
+                        Ruling Tarragon was not enough. He wanted to secure it forever—faster armies, larger territories, a kingdom no force could challenge. For that, he sought what the Old Treaty forbade: the power sealed beneath Shal’Mur.
+
+                        Beneath the Mountains of Shal’Mur, Zuläch found the ancient seals holding Saar in check. Convinced he could control what others had only feared, he broke the ancient protections.
+                        He was wrong.
+
+                        Saar did not become a weapon in his hand.
+                        Saar consumed him.
+
+                        His body warped and expanded into an immense, nightmarish form. Magic howled through his veins, his mind torn apart and reshaped into something monstrous.
+
+                        Zuläch became the Mighty Troll of Tarragon—a towering horror wreathed in dark, roiling energy, its will driven by Saar’s hatred and hunger.
+
+                        Zuläch was gone.
+                        Only Saar’s wrath wearing his flesh remained.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">VI. A World of Beasts and Ruin</h3>
+                        The Enen Sea is not a world of humans—it is a world of creatures, clans, and ancient lineages, each ruling over their own kind. As Tarragon fell into corruption, the impact rippled across every land and sea.
+
+                        Among the most feared are:
+                        Megalore – A colossal sea predator cutting through waves with a massive, angular head. It prowls the coasts, shattering hulls and capsizing ships that stray too near Tarragon’s shores.
+                        Deep Abyssal – Towering beings from the blackest trenches of the Enen Sea. They rise like living shadows, bending currents and darkness around them, heralding storms and disappearances along distant coasts.
+                        Gortusk – Armored, thundering beasts that roam volcanic plains and highlands, particularly near Vulcaria. Their tusks carve trenches into the earth, and their raids can break entire warbands.
+                        Ly’cara – Pack hunters that move like shadows through dense forests, especially in Kithren and Dreonathen. They stalk with intent, shaping the balance between predator, prey, and intruder.
+                        Cyrenthos – Cunning, ancient entities that dwell in twisted valleys near Tarragon’s borders. They are as territorial as they are intelligent, and their lairs are among the first places where Saar’s corruption can be felt in full.
+
+                        As Tarragon expanded under the Mighty Troll’s command, corruption spread:
+                        Kithren Queendom suffered first, its enchanted forests dimming and falling silent.
+                        Gesanania, Edresan, and parts of Dreonathen buckled under assaults by corrupted forces and beasts.
+                        Even creatures untouched by Saar reacted violently as the balance of the world shattered.
+
+                        The Six Crowns realized too late: the true threat was not the political rise of Tarragon.
+                        It was what ruled Tarragon now.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">VII. Queen Ahris and the Guardian Lumyrion</h3>
+                        As the Enen Sea buckled under the spreading corruption, Queen Ahris of Aeyantis moved where others hesitated. She recognized the pattern in old texts and broken prophecies: this was Saar’s work.
+
+                        But Saar could not be fought by armies alone.
+
+                        Within the deep archives of Aeyantis lay records of a different power: an ancient guardian bound not to a kingdom, but to the balance of the world itself—
+                        the Guardian Lumyrion.
+
+                        Through a forbidden rite older than the Old Treaty, Queen Ahris summoned and awakened Lumyrion, binding its essence into a pendant of pure, radiant light.
+
+                        She did not summon a hero from another world.
+                        Instead, she chose one of her own knights—you.
+
+                        Entrusting Lumyrion to you alone, she set you on a path that no kingdom, no council, and no army could walk:
+                        A path straight toward the heart of Tarragon.
+
+                        Lumyrion awakens when chaos threatens the mortal realm. It flares brightest in the presence of ancient evil, warns of unseen corruption, and shields its bearer against Saar’s influence—though not without cost.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">VIII. The Knight’s Journey</h3>
+                        With Lumyrion’s light at your side, you step into a world on the brink. Your path carries you across:
+
+                        The coasts of Megalore’s domain, where shattered ships drift like bones.
+                        Forests haunted by Ly’cara, where every rustle might be a stalking pack.
+                        Volcanic highlands of Gortusk, where the ground itself can turn against you.
+                        The open sea and Deep Abyssal trenches, where darkness moves with intent.
+                        The corrupted valleys of Cyrenthos, twisted by Tarragon’s spreading blight.
+
+                        Every region bears scars of Saar’s awakening.
+                        Every step toward Tarragon takes you further from the safety of Aeyantis.
+
+                        At last, your journey leads into the heart of Dsärr–Tarragon, where the corruption is thickest and the sky itself seems to bend away. There, amid a landscape remade by darkness, the Mighty Troll of Tarragon awaits—towering above all other creatures, wreathed in pure, violent power.
+
+                        To confront the Troll is to confront Saar’s will.
+
+                        If you fall, the Enen Sea will drown in shadow.
+                        If you succeed, Lumyrion’s light may seal Saar once more and bring peace again to the Enen Sea.
+
+                        Your chronicle begins where the light ends.
+                    </div>
                 </div>
             </div>
 
@@ -266,7 +427,7 @@
         </div>
     </section>
 
-     <section class="section">
+    <section class="section">
         <div class="container">
             <h3 class="section-title" style="font-size: 1.8rem;">UI AND GAME DESIGN</h3>
             <div style="margin-bottom:2rem;">
