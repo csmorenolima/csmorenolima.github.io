@@ -22,6 +22,8 @@
 </head>
 
 <body data-category="games">
+    <div id="fog-bg"></div>
+
     <!-- Header -->
     <header class="header">
         <nav class="nav">
@@ -166,6 +168,37 @@
         @keyframes aeyantis-glow {
             0% { opacity:0.7; filter:blur(2px); }
             100% { opacity:1; filter:blur(10px); }
+        }
+    </style>
+
+    <style>
+        /* Layering:
+           - body:after dark overlay ... z-index: 0
+           - #fog-bg (fog) .............. z-index: 1
+           - page content ............... z-index: 2
+        */
+        #fog-bg {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Each SVG layer is oversized so no hard edge appears */
+        #fog-bg .fog-layer {
+            position: absolute;
+            width: 160vw;     /* wider than viewport so it can drift */
+            height: 160vh;    /* taller than viewport so you never see the bottom */
+            top: -30vh;       /* stick out above and below screen */
+            left: -30vw;
+            will-change: transform, opacity;
+        }
+
+        #fog-bg svg {
+            display: block;
         }
     </style>
 
@@ -497,7 +530,7 @@
     <!-- External JavaScript Files -->
     <script src="../assets/js/navigation.js"></script>
 
-        <script>
+    <script>
         // Map Modal open/close logic using WATCH DEMO button
         (function() {
             var watchDemoBtn = document.getElementById('watchDemoBtn');
@@ -527,99 +560,103 @@
                 });
             }
         })();
-        </script>
+    </script>
 
-        <script>
-                // Dynamically create map regions and effects from JSON
-                fetch('/assets/map-interactive-data.json')
-                    .then(res => res.json())
-                    .then(data => {
-                        const container = document.getElementById('map-regions-container');
-                        const mapImg = document.querySelector('.map-image');
-                        if (!container || !mapImg) return;
-                        // Wait for image to load to get natural size
-                        function renderRegions() {
-                            container.innerHTML = '';
-                            const imgW = mapImg.naturalWidth;
-                            const imgH = mapImg.naturalHeight;
-                            // Helper to render overlays for any array (regions or creatures)
-                            function renderOverlay(item, type) {
-                                const [x, y, r] = item.coords.split(',').map(Number);
-                                const cx = x / imgW * 100;
-                                const cy = y / imgH * 100;
-                                const cr = r / imgW * 100;
-                                const div = document.createElement('div');
-                                div.className = type === 'creature' ? 'map-region creature-region' : 'map-region';
-                                div.id = `${type}-${item.id}`;
-                                div.style.position = 'absolute';
-                                div.style.left = `calc(${cx}% - ${cr}% )`;
-                                div.style.top = `calc(${cy}% - ${cr}% )`;
-                                div.style.width = `${cr*2}%`;
-                                div.style.height = `${cr*2}%`;
-                                div.style.cursor = 'pointer';
-                                // Tooltip events
-                                div.addEventListener('mouseenter', e => showMapTooltip(item, e.clientX, e.clientY, type));
-                                div.addEventListener('mousemove', e => showMapTooltip(item, e.clientX, e.clientY, type));
-                                div.addEventListener('mouseleave', hideMapTooltip);
-                                div.addEventListener('click', () => expandLore());
-                                container.appendChild(div);
-                                // Add animated effect overlay
-                                if (item.effect) {
-                                    const effect = document.createElement('div');
-                                    let effectClass = '';
-                                    if (item.effect === 'corrupted') effectClass = 'corrupted-flash';
-                                    else if (item.effect === 'glow') effectClass = 'aeyantis-glow';
-                                    else effectClass = item.effect; // allow custom creature effects
-                                    effect.className = 'map-effect ' + effectClass;
-                                    effect.style.position = 'absolute';
-                                    effect.style.left = `calc(${cx}% - ${cr*0.9}% )`;
-                                    effect.style.top = `calc(${cy}% - ${cr*0.9}% )`;
-                                    effect.style.width = `${cr*2*0.9}%`;
-                                    effect.style.height = `${cr*2*0.9}%`;
-                                    effect.style.pointerEvents = 'none';
-                                    container.appendChild(effect);
-                                }
-                            }
-                            // Render regions
-                            (data.regions || []).forEach(region => renderOverlay(region, 'region'));
-                            // Render creatures
-                            (data.creatures || []).forEach(creature => renderOverlay(creature, 'creature'));
+    <script>
+        // Dynamically create map regions and effects from JSON
+        fetch('/assets/map-interactive-data.json')
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('map-regions-container');
+                const mapImg = document.querySelector('.map-image');
+                if (!container || !mapImg) return;
+                // Wait for image to load to get natural size
+                function renderRegions() {
+                    container.innerHTML = '';
+                    const imgW = mapImg.naturalWidth;
+                    const imgH = mapImg.naturalHeight;
+                    // Helper to render overlays for any array (regions or creatures)
+                    function renderOverlay(item, type) {
+                        const [x, y, r] = item.coords.split(',').map(Number);
+                        const cx = x / imgW * 100;
+                        const cy = y / imgH * 100;
+                        const cr = r / imgW * 100;
+                        const div = document.createElement('div');
+                        div.className = type === 'creature' ? 'map-region creature-region' : 'map-region';
+                        div.id = `${type}-${item.id}`;
+                        div.style.position = 'absolute';
+                        div.style.left = `calc(${cx}% - ${cr}% )`;
+                        div.style.top = `calc(${cy}% - ${cr}% )`;
+                        div.style.width = `${cr*2}%`;
+                        div.style.height = `${cr*2}%`;
+                        div.style.cursor = 'pointer';
+                        // Tooltip events
+                        div.addEventListener('mouseenter', e => showMapTooltip(item, e.clientX, e.clientY, type));
+                        div.addEventListener('mousemove', e => showMapTooltip(item, e.clientX, e.clientY, type));
+                        div.addEventListener('mouseleave', hideMapTooltip);
+                        div.addEventListener('click', () => expandLore());
+                        container.appendChild(div);
+                        // Add animated effect overlay
+                        if (item.effect) {
+                            const effect = document.createElement('div');
+                            let effectClass = '';
+                            if (item.effect === 'corrupted') effectClass = 'corrupted-flash';
+                            else if (item.effect === 'glow') effectClass = 'aeyantis-glow';
+                            else effectClass = item.effect; // allow custom creature effects
+                            effect.className = 'map-effect ' + effectClass;
+                            effect.style.position = 'absolute';
+                            effect.style.left = `calc(${cx}% - ${cr*0.9}% )`;
+                            effect.style.top = `calc(${cy}% - ${cr*0.9}% )`;
+                            effect.style.width = `${cr*2*0.9}%`;
+                            effect.style.height = `${cr*2*0.9}%`;
+                            effect.style.pointerEvents = 'none';
+                            container.appendChild(effect);
                         }
-                        if (mapImg.complete) {
-                            renderRegions();
-                        } else {
-                            mapImg.onload = renderRegions;
-                        }
-                        window.addEventListener('resize', renderRegions);
-                        // Tooltip logic
-                        function showMapTooltip(item, x, y, type) {
-                            const tooltip = document.getElementById('map-tooltip');
-                            if (!tooltip || !item) return;
-                            let loreBlock = `<span style='font-size:0.95em;color:#b8e0ff;display:none;' class='lore'>${item.lore}</span>`;
-                            let dangerBlock = '';
-                            let expandPrompt = `<span style='display:block;font-size:0.93em;color:#e6c97a;margin-top:0.5em;'>Click to expand lore</span>`;
-                            if (type === 'creature' && item.danger) {
-                                dangerBlock = `<span style='display:inline-block;margin:0.2em 0 0.5em 0;padding:0.2em 0.7em;border-radius:6px;background:#b91c1c;color:#fff;font-size:0.98em;'>Danger: ${item.danger}</span><br>`;
-                            }
-                            tooltip.innerHTML = `<strong>${item.name}</strong><br>${dangerBlock}<em>${item.blurb}</em>${expandPrompt}<br>${loreBlock}`;
-                            tooltip.style.display = 'block';
-                            tooltip.style.left = (x + 24) + 'px';
-                            tooltip.style.top = (y - 10) + 'px';
-                            tooltip.style.opacity = 1;
-                        }
-                        function hideMapTooltip() {
-                            const tooltip = document.getElementById('map-tooltip');
-                            if (tooltip) { tooltip.style.display = 'none'; tooltip.style.opacity = 0; }
-                        }
-                        function expandLore() {
-                            const tooltip = document.getElementById('map-tooltip');
-                            if (tooltip) {
-                                const lore = tooltip.querySelector('.lore');
-                                if (lore) lore.style.display = 'block';
-                            }
-                        }
-                    });
-        </script>
+                    }
+                    // Render regions
+                    (data.regions || []).forEach(region => renderOverlay(region, 'region'));
+                    // Render creatures
+                    (data.creatures || []).forEach(creature => renderOverlay(creature, 'creature'));
+                }
+
+                if (mapImg.complete) {
+                    renderRegions();
+                } else {
+                    mapImg.onload = renderRegions;
+                }
+
+                window.addEventListener('resize', renderRegions);
+                // Tooltip logic
+                function showMapTooltip(item, x, y, type) {
+                    const tooltip = document.getElementById('map-tooltip');
+                    if (!tooltip || !item) return;
+                    let loreBlock = `<span style='font-size:0.95em;color:#b8e0ff;display:none;' class='lore'>${item.lore}</span>`;
+                    let dangerBlock = '';
+                    let expandPrompt = `<span style='display:block;font-size:0.93em;color:#e6c97a;margin-top:0.5em;'>Click to expand lore</span>`;
+                    if (type === 'creature' && item.danger) {
+                        dangerBlock = `<span style='display:inline-block;margin:0.2em 0 0.5em 0;padding:0.2em 0.7em;border-radius:6px;background:#b91c1c;color:#fff;font-size:0.98em;'>Danger: ${item.danger}</span><br>`;
+                    }
+                    tooltip.innerHTML = `<strong>${item.name}</strong><br>${dangerBlock}<em>${item.blurb}</em>${expandPrompt}<br>${loreBlock}`;
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = (x + 24) + 'px';
+                    tooltip.style.top = (y - 10) + 'px';
+                    tooltip.style.opacity = 1;
+                }
+
+                function hideMapTooltip() {
+                    const tooltip = document.getElementById('map-tooltip');
+                    if (tooltip) { tooltip.style.display = 'none'; tooltip.style.opacity = 0; }
+                }
+
+                function expandLore() {
+                    const tooltip = document.getElementById('map-tooltip');
+                    if (tooltip) {
+                        const lore = tooltip.querySelector('.lore');
+                        if (lore) lore.style.display = 'block';
+                    }
+                }
+            });
+    </script>
 
     <style>
         .project-navigation {
@@ -752,33 +789,155 @@
     </div>
 
     <script>
-                // Map Modal open/close logic using WATCH DEMO button
-                const watchDemoBtn = document.getElementById('watchDemoBtn');
-                const mapModal = document.getElementById('mapModal');
-                const closeMapModalBtn = document.getElementById('closeMapModal');
-                if (watchDemoBtn && mapModal && closeMapModalBtn) {
-                    watchDemoBtn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        mapModal.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    });
-                    closeMapModalBtn.addEventListener('click', () => {
-                        mapModal.classList.remove('active');
+        // Map Modal open/close logic using WATCH DEMO button
+        const watchDemoBtn = document.getElementById('watchDemoBtn');
+        const mapModal = document.getElementById('mapModal');
+        const closeMapModalBtn = document.getElementById('closeMapModal');
+        
+        if (watchDemoBtn && mapModal && closeMapModalBtn) {
+            watchDemoBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                mapModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            closeMapModalBtn.addEventListener('click', () => {
+                mapModal.classList.remove('active');
                         document.body.style.overflow = '';
-                    });
-                    mapModal.addEventListener('click', (e) => {
-                        if (e.target === mapModal) {
-                            mapModal.classList.remove('active');
-                            document.body.style.overflow = '';
-                        }
-                    });
-                    document.addEventListener('keydown', function(e) {
-                        if (e.key === 'Escape' && mapModal.classList.contains('active')) {
-                            mapModal.classList.remove('active');
-                            document.body.style.overflow = '';
-                        }
-                    });
+            });
+            mapModal.addEventListener('click', (e) => {
+                if (e.target === mapModal) {
+                    mapModal.classList.remove('active');
+                    document.body.style.overflow = '';
                 }
+                });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mapModal.classList.contains('active')) {
+                    mapModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
     </script>
+
+    <script>
+    // SVG fog with organic drift + scroll-linked flow
+    (function () {
+        const fogBg = document.getElementById('fog-bg');
+        if (!fogBg) return;
+
+        // Your original style fog, but without inline top/height (CSS controls size)
+        const fogSvgs = [
+            // Back layer - very soft
+            `<svg class="fog-layer" data-layer="0"
+                   viewBox="0 0 1600 420"
+                   preserveAspectRatio="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="blur1" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="32" />
+                    </filter>
+                </defs>
+                <path d="M0 320 Q400 200 800 320 T1600 320 Q1400 420 800 400 Q200 380 0 320Z"
+                      fill="white"
+                      filter="url(#blur1)" />
+            </svg>`,
+
+            // Mid layer
+            `<svg class="fog-layer" data-layer="1"
+                   viewBox="0 0 1400 340"
+                   preserveAspectRatio="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="blur2" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="20" />
+                    </filter>
+                </defs>
+                <path d="M0 220 Q350 120 700 220 T1400 220 Q1200 340 700 320 Q200 300 0 220Z"
+                      fill="white"
+                      filter="url(#blur2)" />
+            </svg>`,
+
+            // Front layer - more pronounced
+            `<svg class="fog-layer" data-layer="2"
+                   viewBox="0 0 900 180"
+                   preserveAspectRatio="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="blur3" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="14" />
+                    </filter>
+                </defs>
+                <path d="M0 120 Q200 60 450 120 T900 120 Q800 180 450 170 Q100 160 0 120Z"
+                      fill="white"
+                      filter="url(#blur3)" />
+            </svg>`
+        ];
+
+        fogBg.innerHTML = fogSvgs.join('');
+        const layers = Array.from(fogBg.querySelectorAll('.fog-layer'));
+
+        // Parameters per layer:
+        // - baseY spreads them vertically so it's not all in one band
+        // - scrollRange controls how much each layer reacts to scroll
+        const fogParams = [
+            {
+                baseY: -100, speed: 0.025, ampX: 260, ampY: 25,
+                opBase: 0.10, opAmp: 0.06, opSpeed: 0.18,
+                scrollRange: 80
+            },
+            {
+                baseY: -10, speed: -0.035, ampX: 300, ampY: 35,
+                opBase: 0.13, opAmp: 0.07, opSpeed: 0.22,
+                scrollRange: 120
+            },
+            {
+                baseY: 90, speed: 0.055, ampX: 220, ampY: 40,
+                opBase: 0.16, opAmp: 0.10, opSpeed: 0.27,
+                scrollRange: 160
+            }
+        ];
+
+        let start = null;
+        let scrollY = window.scrollY || window.pageYOffset || 0;
+
+        // Track scroll; we’ll use it in the animation loop
+        window.addEventListener('scroll', function () {
+            scrollY = window.scrollY || window.pageYOffset || 0;
+        }, { passive: true });
+
+        function animateFog(ts) {
+            if (!start) start = ts;
+            const t = (ts - start) / 1000; // seconds
+
+            const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight || 1;
+            const viewportHeight = window.innerHeight || 1;
+            const maxScrollable = Math.max(docHeight - viewportHeight, 1);
+            const scrollNorm = scrollY / maxScrollable; // 0..1 across page
+
+            layers.forEach((layer, i) => {
+                const p = fogParams[i] || fogParams[0];
+
+                // Time-based organic movement (your original idea)
+                const x = Math.sin(t * p.speed + i) * p.ampX;
+                const yWave = Math.cos(t * (p.speed * 0.7) + i) * p.ampY;
+
+                // Scroll-based vertical “flow”
+                const yScroll = -scrollNorm * p.scrollRange;
+
+                const y = p.baseY + yWave + yScroll;
+
+                // Soft opacity pulsing
+                const op = p.opBase + Math.abs(Math.sin(t * p.opSpeed + i)) * p.opAmp;
+
+                layer.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+                layer.style.opacity = op.toFixed(3);
+            });
+
+            requestAnimationFrame(animateFog);
+        }
+
+        requestAnimationFrame(animateFog);
+    })();
+    </script> 
 </body>
 </html>
