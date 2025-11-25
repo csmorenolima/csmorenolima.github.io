@@ -97,6 +97,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+        }
+        .map-modal-content::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
         }
         .map-modal-close {
             position: absolute;
@@ -246,7 +251,7 @@
                         font-family: 'EB Garamond', 'Georgia', serif;
                     ">DOMAINS OF THE ENËN SEA</h2>
                     <div class="map-modal-subtitle" style="text-align:center;font-size:1.18rem;color:#b8e0ff;margin-bottom:1.7rem;letter-spacing:0.01em;text-shadow:0 1px 8px #000a;">
-                        <em>Explore the kingdoms, secrets, and dangers of the world. Hover for rulers and lore. Click for deeper history.</em>
+                        <em>Explore the kingdoms, secrets, and dangers of the world. <br><p>Hover for rulers and lore. Click for deeper history.</p></em>
                     </div>
                     <div class="map-wrapper" style="position:relative;max-width:900px;margin:0 auto;">
                         <img src="/assets/EnenSeaMap.jpg" alt="Map of the Enen Sea" class="map-image" style="width:100%;border-radius:18px;box-shadow:0 4px 24px #0006;">
@@ -256,12 +261,12 @@
 
                     <div id="map-tooltip" class="map-tooltip" style="display:none;"></div>
                     <!-- Simple Downward Arrowhead for Chronicle Scroll -->
-                    <div style="width:100%;text-align:center;margin:2.2rem 0 0.5rem 0;">
+                    <div style="width:100%;text-align:center;">
                         <span id="chronicleArrow" style="display:inline-block;cursor:pointer;animation:swordPulse 1.2s infinite alternate;">
-                            <!-- Bootstrap chevron-down outline SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="none" viewBox="0 0 16 16" style="display:block;margin:0 auto;">
-                              <path fill="none" stroke="#e6c97a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 6l6 6 6-6"/>
-                            </svg>
+                                                        <!-- Bootstrap chevron-down outline SVG -->
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="none" viewBox="0 0 16 16" style="display:block;margin:0 auto;">
+                                                            <path fill="none" stroke="#e6c97a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 6l6 6 6-6"/>
+                                                        </svg>
                         </span>
                     </div>
                     <style>
@@ -272,7 +277,7 @@
                     </style>
 
                     <!-- Chronicle Text -->
-                    <h2 style="color:#e6c97a;font-size:2.1rem;margin:2.5rem 0 1.2rem 0;text-align:center;letter-spacing:0.03em;">The Chronicle</h2>
+                    <h2 id="chronicleHeader" style="color:#e6c97a;font-size:2.1rem;margin:2.5rem 0 1.2rem 0;text-align:center;letter-spacing:0.03em;">The Chronicle</h2>
                     <div style="color:#fff;font-size:1.08rem;line-height:1.7;text-align:center;white-space:pre-line;margin-bottom:2.5rem;">
                         <h3 style="color:#e6c97a;margin-top:2.2rem;">I. The Age of Six Crowns</h3>
                         For centuries, the lands surrounding the Enen Sea were shaped by six great kingdoms:
@@ -411,22 +416,20 @@
 
                         If you fall, the Enen Sea will drown in shadow.
                         If you succeed, Lumyrion’s light may seal Saar once more and bring peace again to the Enen Sea.
-
-                        Your chronicle begins where the light ends.
                     </div>
                 </div>
             </div>
 
             <div class="story" style="margin-top:2rem">
                 <div style="position:relative;display:flex;flex-direction:column;align-items:center;">
-                    <div style="position:relative;width:100%;max-width:700px;margin:0 auto;">
-                        <img src="/assets/agedScroll.png" alt="Aged Scroll" style="width:100%;height:auto;display:block;pointer-events:none;">
+                    <div style="position:relative;width:100%;max-width:950px;margin:0 auto;">
+                        <img src="/assets/agedScroll.png" alt="Aged Scroll" style="width:100%;max-width:950px;height:auto;display:block;pointer-events:none;">
                         
                         <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
-                            <div style="max-width:78%;margin:2.5rem auto 0 auto;padding:2.5rem 1.5rem 2.5rem 1.5rem;box-sizing:border-box;border-radius:18px;">
-                                <h3 class="section-title" style="font-size:1.5rem;text-align:center;margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;color:#7a5c1e;justify-content:center;">The Story</h3>
+                            <div style="max-width:78%;margin:2.5rem auto 0 auto;padding:3.5rem 1.5rem 1.5rem 1.5rem;box-sizing:border-box;border-radius:18px;">
+                                <h3 class="section-title" style="font-size:30px;text-align:center;margin-bottom:1.1rem;display:flex;align-items:center;gap:0.7rem;color:#7a5c1e;justify-content:center;">THE STORY</h3>
 
-                                <div style="font-family: 'EB Garamond', 'Georgia', serif; font-size:0.8rem; color:#6b4e1e; font-style:italic; letter-spacing:0.01em; text-align:center; max-width:420px; margin:0 auto;">
+                                <div style="font-family: 'EB Garamond', 'Georgia', serif; font-size:15px; color:#6b4e1e; font-style:italic; letter-spacing:0.01em; text-align:center; max-width:420px; margin:0 auto;">
                                     <p style="margin-bottom:1.2rem;max-width:320px;margin-left:auto;margin-right:auto;color:#1a1200;text-align:justify;text-shadow:none;">The Enen Sea is unraveling.<br><br>Once-proud kingdoms crumble, ancient realms fracture, and dark forces stir across land and waters. An ancient evil has awakened in the West, warping creatures, breaking borders, and driving the world toward chaos.<br><br>Queen Ahris entrusts the Guardian Lumyrion to you alone, setting you on a path toward the source of the world’s ruin. The old relic awakens only when turmoil threatens the balance of the mortal realm, guiding its chosen through shadows few dare enter.</p>
                                     <p style="margin-top:0;max-width:320px;margin-left:auto;margin-right:auto;color:#1a1200;text-align:justify;text-shadow:none;">With Lumyrion’s light at your side, you must cross lands scarred by corruption, confront the force spreading through the West, and face the power rising within Tarragon before it consumes all.<br><br>Your journey begins where the light ends.</p>
                                 </div>
@@ -529,6 +532,65 @@
 
     <!-- External JavaScript Files -->
     <script src="../assets/js/navigation.js"></script>
+
+    <script>
+    // Ensure smooth scroll works after DOM is ready and modal is open
+    document.addEventListener('DOMContentLoaded', function() {
+        var arrow = document.getElementById('chronicleArrow');
+        var header = document.getElementById('chronicleHeader');
+        if (arrow && header) {
+            arrow.addEventListener('click', function() {
+                // If inside a modal, scroll the modal, not the window
+                var modalContent = header.closest('.map-modal-content');
+                if (modalContent) {
+                    var headerRect = header.getBoundingClientRect();
+                    var modalRect = modalContent.getBoundingClientRect();
+                    var offset = 40; // px below the top of modal
+                    // Scroll so header is offset from top of modal
+                    var scrollTarget = header.offsetTop - offset;
+                    modalContent.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+                } else {
+                    // fallback: scroll window
+                    var rect = header.getBoundingClientRect();
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    var offset = 100;
+                    var targetY = rect.top + scrollTop - offset;
+                    window.scrollTo({ top: targetY, behavior: 'smooth' });
+                }
+            });
+        }
+    });
+    </script>
+
+    <script>
+    // Smooth scroll to Chronicle header with offset so header remains visible
+    (function() {
+        var arrow = document.getElementById('chronicleArrow');
+        var header = document.getElementById('chronicleHeader');
+        if (arrow && header) {
+            arrow.addEventListener('click', function() {
+                var rect = header.getBoundingClientRect();
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                var offset = 1000; // px below the top, so header is still visible
+                var targetY = rect.top + scrollTop - offset;
+                window.scrollTo({ top: targetY, behavior: 'smooth' });
+            });
+        }
+    })();
+    </script>
+
+    <script>
+        // Smooth scroll to Chronicle body when arrow is clicked
+        (function() {
+            var arrow = document.getElementById('chronicleArrow');
+            var header = document.getElementById('chronicleHeader');
+            if (arrow && header) {
+                arrow.addEventListener('click', function() {
+                    header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
+        })();
+    </script>
 
     <script>
         // Map Modal open/close logic using WATCH DEMO button
