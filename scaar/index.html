@@ -139,27 +139,7 @@
             </div>
         </div>
         <script>
-        // Lightbox functionality for gallery images
-        document.querySelectorAll('.gallery-lightbox-img').forEach(function(img) {
-            img.addEventListener('click', function() {
-                var overlay = document.getElementById('gallery-lightbox-overlay');
-                var lightboxImg = document.getElementById('gallery-lightbox-img');
-                var lightboxDesc = document.getElementById('gallery-lightbox-desc');
-                lightboxImg.src = this.src;
-                // Set description based on image src or alt
-                var desc = '';
-                switch(this.src.split('/').pop()) {
-                    case 'scaargallery1.jpg': desc = 'SIDE VIEW'; break;
-                    case 'scaargalary2.jpg': desc = 'FRONT VIEW'; break;
-                    case 'scaargallery3.jpg': desc = 'PERSPECTIVE BACK VIEW'; break;
-                    case 'scaargallery4.jpg': desc = 'SIDE VIEW'; break;
-                    case 'scaargallery5.jpg': desc = 'SIDE VIEW'; break;
-                    default: desc = this.alt || 'Gallery Image';
-                }
-                lightboxDesc.textContent = desc;
-                overlay.style.display = 'flex';
-            });
-        });
+        // (Moved to end of file)
         </script>
     </section>
 
@@ -171,16 +151,16 @@
                 <button class="carousel-btn left" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-track">
                     <div class="carousel-card">
-                        <img src="../assets/engineering-drawing.jpg" alt="Engineering Drawing" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;">
+                        <img class="gallery-lightbox-img" src="../assets/engineering-drawing.jpg" alt="Engineering Drawing" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;cursor:pointer;">
                     </div>
                     <div class="carousel-card">
-                        <img src="../assets/scaarCADModel.png" alt="Engineering Drawing" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;">
+                        <img class="gallery-lightbox-img" src="../assets/scaarCADModel.png" alt="CAD Model" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;cursor:pointer;">
                     </div>
                     <div class="carousel-card">
-                        <img src="../assets/engineering3Dscaar.png" alt="3D CAD Model 1" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;">
+                        <img class="gallery-lightbox-img" src="../assets/engineering3Dscaar.png" alt="3D CAD Model 1" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;cursor:pointer;">
                     </div>
                     <div class="carousel-card">
-                        <img src="../assets/engineering3Dscaar2.png" alt="3D CAD Model 2" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;">
+                        <img class="gallery-lightbox-img" src="../assets/engineering3Dscaar2.png" alt="3D CAD Model 2" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;cursor:pointer;">
                     </div>
                 </div>
                 <button class="carousel-btn right" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
@@ -301,6 +281,37 @@
             }
         }
     </style>
+
+    <script>
+    // Lightbox functionality for gallery images (main gallery and CAD carousel)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.gallery-lightbox-img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                var overlay = document.getElementById('gallery-lightbox-overlay');
+                var lightboxImg = document.getElementById('gallery-lightbox-img');
+                var lightboxDesc = document.getElementById('gallery-lightbox-desc');
+                lightboxImg.src = this.src;
+                // Set description based on image src or alt
+                var desc = '';
+                var file = this.src.split('/').pop();
+                switch(file) {
+                    case 'scaargallery1.jpg': desc = 'SIDE VIEW'; break;
+                    case 'scaargalary2.jpg': desc = 'FRONT VIEW'; break;
+                    case 'scaargallery3.jpg': desc = 'PERSPECTIVE BACK VIEW'; break;
+                    case 'scaargallery4.jpg': desc = 'SIDE VIEW'; break;
+                    case 'scaargallery5.jpg': desc = 'SIDE VIEW'; break;
+                    case 'engineering-drawing.jpg': desc = 'ENGINEERING DRAWING'; break;
+                    case 'scaarCADModel.png': desc = 'CAD MODEL'; break;
+                    case 'engineering3Dscaar.png': desc = '3D CAD MODEL 1'; break;
+                    case 'engineering3Dscaar2.png': desc = '3D CAD MODEL 2'; break;
+                    default: desc = this.alt || 'Gallery Image';
+                }
+                lightboxDesc.textContent = desc;
+                overlay.style.display = 'flex';
+            });
+        });
+    });
+    </script>
 
     <script>
         // Story section auto-carousel (unchanged)
