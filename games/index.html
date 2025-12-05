@@ -419,8 +419,9 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="story" style="margin-top:2rem">
+        <div class="story" style="margin-top:2rem">
                 <div style="position:relative;display:flex;flex-direction:column;align-items:center;">
                     <div style="position:relative;width:100%;max-width:950px;margin:0 auto;">
                         <img src="/assets/agedScroll.png" alt="Aged Scroll" style="width:100%;max-width:950px;height:auto;display:block;pointer-events:none;">
@@ -441,51 +442,238 @@
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <h3 class="section-title" style="font-size: 1.8rem;">USER NEEDS</h3>
-            <div style="margin-bottom:2rem;">
-                <ul style="margin:0.5rem 0 1.5rem 1.5rem;">
-                    <li>Use Engaging Colours</li>
-                    <li>Graphics Must Be Appropriate For The Age Group</li>
-                    <li>Simple Instructions</li>
-                    <li>Text Readability</li>
-                </ul>
-            </div>
-            <img src="/assets/soctUserProfile.png" alt="User Profile Example" loading="lazy" style="max-width:700px;width:100%;height:auto;display:block;margin:0 auto;">
-        </div>
-    </section>
 
-    <section class="section">
-        <div class="container">
-            <h3 class="section-title" style="font-size: 1.8rem;">GAME STYLE IDEATION</h3>
-            <img src="/assets/soct-gameStyleIdeation.png" alt="Game Style Ideation" loading="lazy" style="max-width:1134px;width:100%;height:auto;display:block;margin:0 auto;">
-        </div>
-    </section>
+    <!-- ENCASED SECTIONS START -->
+    <div class="container" style="background:rgba(24,28,31,0.80);border-radius:18px;box-shadow:0 4px 24px #0008;padding:2.5rem 0 2.5rem 0;margin-bottom:2.5rem;">
 
-    <section class="section">
-        <div class="container">
-            <h3 class="section-title" style="font-size: 1.8rem;">UI AND GAME DESIGN</h3>
-            <div style="margin-bottom:2rem;">
-                <strong>Webpage Properties</strong>
-                <ul style="margin:0.5rem 0 1.5rem 1.5rem;">
-                    <li>Title</li>
-                    <li>Dropdown Menu &rarr; Play Game / Instructions / About + Credits</li>
-                    <li>Instructions</li>
-                    <li>Game Window</li>
-                    <li>Footer</li>
-                </ul>
-                <strong>Game Window</strong>
-                <ul style="margin:0.5rem 0 1.5rem 1.5rem;">
-                    <li>Enter Name &amp; Play</li>
-                    <li>Lobby</li>
-                    <li>Shop</li>
-                    <li>Battle</li>
-                </ul>
+        <!-- THE JOURNEY (FLOWCHART) -->
+        <section id="journey" class="journey journey-flowchart">
+            <div class="journey-inner">
+
+                <p class="journey-kicker">THE JOURNEY</p>
+                <h2 class="journey-title">Across the Realms of the Enen Sea</h2>
+
+                <p class="journey-intro">
+                    With Lumyrion’s light as your guide, you travel west from the bright courts of Aeyantis,
+                    across coasts and fortresses into forests drowned in corruption. Each step pulls you
+                    closer to Tarragon — and to the source of the world’s unraveling.
+                </p>
+
+                <div class="journey-flow">
+
+                    <!-- TOP ROW – NORTHERN / SIDE KINGDOMS -->
+                    <div class="journey-row journey-row-top">
+
+                        <!-- empty spacer so Brigachian is above Aeyantis (col 1) -->
+                        <span class="journey-spacer"></span>
+
+                        <!-- Brigachian above the Aeyantis coast -->
+                        <article class="journey-node branch">
+                            <header class="journey-step-header">
+                                <div class="journey-icon icon-wave"></div>
+                                <h3>Brigachian Realm</h3>
+                                <p class="journey-step-sub">Northern sea frontier</p>
+                            </header>
+                            <p class="journey-branch-text">
+                                North of Aeyantis, guarding cold waters where Megalore and other leviathans prowl.
+                                Its harbours are the first to close when ships begin to vanish.
+                            </p>
+                        </article>
+
+                        <!-- Vulcaria above Dreonathen -->
+                        <article class="journey-node branch">
+                            <header class="journey-step-header">
+                                <div class="journey-icon icon-volcano"></div>
+                                <h3>Vulcaria</h3>
+                                <p class="journey-step-sub">Kingdom of ash and fire</p>
+                            </header>
+                            <p class="journey-branch-text">
+                                To the north of Dreonathen, Vulcaria’s molten plains and lava fields are home
+                                to roaming Gortusk herds and war-clans sworn to Queen Olorus.
+                            </p>
+                        </article>
+
+                        <!-- Ame’xore above Kithren -->
+                        <article class="journey-node branch">
+                            <header class="journey-step-header">
+                                <div class="journey-icon icon-scroll"></div>
+                                <h3>Ame’xore</h3>
+                                <p class="journey-step-sub">Kingdom of hidden archives</p>
+                            </header>
+                            <p class="journey-branch-text">
+                                North of Kithren, Ame’xore shelters deep archives on Saar and the Old Treaty.
+                                Queen Teri’itaria’s scholars know more than they dare reveal.
+                            </p>
+                        </article>
+
+                        <!-- spacer so layout is symmetric -->
+                        <span class="journey-spacer"></span>
+                    </div>
+
+                    <!-- MAIN ROW – Aeyantis → Katzh → Dreonathen → Kithren → Tarragon -->
+                    <div class="journey-row journey-row-main">
+
+                        <!-- Aeyantis -->
+                        <article class="journey-node main">
+                            <header class="journey-step-header">
+                                <div class="journey-icon icon-sun"></div>
+                                <h3>Aeyantis</h3>
+                                <p class="journey-step-sub">Where the light begins</p>
+                            </header>
+                            <details class="journey-details" open>
+                                <summary>View details</summary>
+                                <p>
+                                    Seat of Queen Ahris and heart of civilisation. Here you are entrusted with
+                                    the Guardian Lumyrion and ordered to trace the corruption west toward Tarragon.
+                                </p>
+                            </details>
+                        </article>
+
+                        <!-- Katzh -->
+                        <article class="journey-node main">
+                            <header class="journey-step-header">
+                                <div class="journey-icon icon-harbor"></div>
+                                <h3>Katzh</h3>
+                                <p class="journey-step-sub">Crossroads kingdom</p>
+                            </header>
+                            <details class="journey-details">
+                                <summary>View details</summary>
+                                <p>
+                                    A coastal, genderless kingdom ruled by Yutanari. Traders and wanderers bring
+                                    rumours of strange tides, missing vessels, and creatures seen near Tarragon’s shores.
+                                </p>
+                            </details>
+                        </article>
+
+                        <!-- Dreonathen -->
+                        <article class="journey-node main">
+                            <header class="journey-step-header">
+                                <div class="journey-icon icon-fortress"></div>
+                                <h3>Dreonathen</h3>
+                                <p class="journey-step-sub">The last shield</p>
+                            </header>
+                            <details class="journey-details">
+                                <summary>View details</summary>
+                                <p>
+                                    A kingdom of stone fortresses and open plains, standing between the Six Crowns
+                                    and the Western Realms. Its walls face west, bracing against raids and the
+                                    slow advance of Tarragon’s influence.
+                                </p>
+                            </details>
+                        </article>
+
+                        <!-- Kithren -->
+                        <article class="journey-node main">
+                            <header class="journey-step-header">
+                                <div class="journey-icon icon-forest"></div>
+                                <h3>Kithren</h3>
+                                <p class="journey-step-sub">The mistwood queendom</p>
+                            </header>
+                            <details class="journey-details">
+                                <summary>View details</summary>
+                                <p>
+                                    Enchanted forests dimmed by spreading blight. Ly’cara packs stalk between twisted
+                                    trees, and Lumyrion’s light flickers as you approach the borders of Tarragon.
+                                </p>
+                            </details>
+                        </article>
+
+                        <!-- Tarragon -->
+                        <article class="journey-node main journey-step-final">
+                            <header class="journey-step-header">
+                                <div class="journey-icon icon-corruption"></div>
+                                <h3>Tarragon</h3>
+                                <p class="journey-step-sub">Corrupted western throne</p>
+                            </header>
+                            <details class="journey-details">
+                                <summary>View details</summary>
+                                <p>
+                                    Forged from Dsärr, Edresan, and Yán as a united Western kingdom. Now it is the
+                                    source of the world’s corruption. At its core, the Mighty Troll of Tarragon —
+                                    Zuläch consumed by Saar — awaits your final confrontation.
+                                </p>
+                            </details>
+                        </article>
+                    </div>
+
+                    <!-- BOTTOM ROW – BEYOND TARRAGON -->
+                    <div class="journey-row journey-row-bottom">
+
+                        <!-- spacer under Aeyantis -->
+                        <span class="journey-spacer"></span>
+                        <!-- spacer under Katzh -->
+                        <span class="journey-spacer"></span>
+                        <!-- spacer under Dreonathen -->
+                        <span class="journey-spacer"></span>
+                        <!-- spacer under Kithren -->
+                        <span class="journey-spacer"></span>
+
+                        <!-- Edresan & Yán under/after Tarragon -->
+                        <article class="journey-node branch journey-node-locked">
+                            <header class="journey-step-header">
+                                <div class="journey-icon icon-locked"></div>
+                                <h3>Edresan &amp; Yán</h3>
+                                <p class="journey-step-sub">Realms beyond the corruption</p>
+                            </header>
+                            <p class="journey-branch-text">
+                                Western realms that helped forge Tarragon. Their fates are now tied to Saar’s
+                                power; they can only be reached once the corruption at Tarragon’s core is faced.
+                            </p>
+                        </article>
+                    </div>
+
+                </div><!-- /.journey-flow -->
             </div>
-            <img src="/assets/uiGameDevelopment.png" alt="UI Game Development" loading="lazy" style="max-width:700px;width:100%;height:auto;display:block;margin:0 auto;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.10);background:#f3f3f3;">
-        </div>
-    </section>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h3 class="section-title" style="font-size: 1.8rem;">USER NEEDS</h3>
+                <div style="margin-bottom:2rem;">
+                    <ul style="margin:0.5rem 0 1.5rem 1.5rem;">
+                        <li>Use Engaging Colours</li>
+                        <li>Graphics Must Be Appropriate For The Age Group</li>
+                        <li>Simple Instructions</li>
+                        <li>Text Readability</li>
+                    </ul>
+                </div>
+                <img src="/assets/soctUserProfile.png" alt="User Profile Example" loading="lazy" style="max-width:700px;width:100%;height:auto;display:block;margin:0 auto;">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h3 class="section-title" style="font-size: 1.8rem;">GAME STYLE IDEATION</h3>
+                <img src="/assets/soct-gameStyleIdeation.png" alt="Game Style Ideation" loading="lazy" style="max-width:1134px;width:100%;height:auto;display:block;margin:0 auto;">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h3 class="section-title" style="font-size: 1.8rem;">UI AND GAME DESIGN</h3>
+                <div style="margin-bottom:2rem;">
+                    <strong>Webpage Properties</strong>
+                    <ul style="margin:0.5rem 0 1.5rem 1.5rem;">
+                        <li>Title</li>
+                        <li>Dropdown Menu &rarr; Play Game / Instructions / About + Credits</li>
+                        <li>Instructions</li>
+                        <li>Game Window</li>
+                        <li>Footer</li>
+                    </ul>
+                    <strong>Game Window</strong>
+                    <ul style="margin:0.5rem 0 1.5rem 1.5rem;">
+                        <li>Enter Name &amp; Play</li>
+                        <li>Lobby</li>
+                        <li>Shop</li>
+                        <li>Battle</li>
+                    </ul>
+                </div>
+                <img src="/assets/uiGameDevelopment.png" alt="UI Game Development" loading="lazy" style="max-width:700px;width:100%;height:auto;display:block;margin:0 auto;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.10);background:#f3f3f3;">
+            </div>
+        </section>
+
+    </div>
+    <!-- ENCASED SECTIONS END -->
 
     <!-- Navigation -->
     <section class="project-navigation">

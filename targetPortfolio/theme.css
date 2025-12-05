@@ -138,8 +138,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(103, 125, 182, 0.3), rgba(0, 130, 200, 0.3));
-    opacity: 0.3;
+    /* background: linear-gradient(135deg, rgba(103, 125, 182, 0.3), rgba(0, 130, 200, 0.3)); */
+    opacity: 0.8;
+    background:rgba(24,28,31,0.92);
     z-index: 1;
 }
 
