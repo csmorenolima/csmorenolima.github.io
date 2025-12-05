@@ -384,144 +384,122 @@ body[data-category="honEcomb"] .hero,
 .journey-title {
   font-size: clamp(2rem, 3vw, 2.6rem);
   margin: 0 0 1.25rem;
+  text-align: center;
 }
 
 .journey-intro {
-  max-width: 640px;
+  max-width: 100%;
   font-size: 0.98rem;
   line-height: 1.7;
   color: #d3d7e0;
   margin-bottom: 2.5rem;
+  text-align: start;
 }
-.journey-details summary {
-  cursor: pointer;
+
+/* ------------------------------------------------ */
+/* VERTICAL MAIN TIMELINE                           */
+/* ------------------------------------------------ */
+
+.journey-timeline {
   list-style: none;
-  font-weight: 600;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #f7c86d;
-  margin-bottom: 0.3rem;
-}
-
-/* ------------------------------------------------ */
-/* FLOWCHART LAYOUT                                 */
-/* ------------------------------------------------ */
-
-.journey-flowchart .journey-inner {
-  padding: 2.5rem 2rem 2.5rem;
-  border-radius: 18px;
-  background: rgba(10, 14, 18, 0.88);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.65);
-}
-
-.journey-flowchart .journey-flow {
-  display: grid;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.journey-flowchart .journey-row {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1.5rem;
+  margin: 0;
+  padding: 0 0 0 2.5rem;
   position: relative;
 }
 
-.journey-flowchart .journey-spacer {
-  display: block;
+/* Vertical golden line */
+.journey-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(230, 201, 122, 0.05),
+    rgba(230, 201, 122, 0.75),
+    rgba(230, 201, 122, 0.05)
+  );
+  opacity: 0.9;
 }
 
-/* ------------------------------------------------ */
-/* NODE STYLING                                     */
-/* ------------------------------------------------ */
+.journey-node {
+  position: relative;
+  display: flex;
+  gap: 0;
+  margin-bottom: 2.1rem;
+}
 
-.journey-flowchart .journey-node {
-  background: rgba(19, 24, 30, 0.9);
-  border-radius: 14px;
-  padding: 1.25rem 1.1rem;
-  border: 1px solid rgba(150, 137, 96, 0.4);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
-  font-size: 0.95rem;
+.journey-node:last-child {
+  margin-bottom: 0;
+}
+
+/* Left marker column (icon over the line) */
+.journey-node-marker {
+  position: absolute;
+  left: -1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+/* Card body */
+.journey-node-body {
+  background: rgba(19, 24, 30, 0.96);
+  border-radius: 24px;
+  padding: 1.1rem 1.2rem 1.1rem 3rem;
+  border: 1px solid rgba(150, 137, 96, 0.55);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+  flex: 1;
+  position: relative;
+  margin-left: 0;
   transition: transform 180ms ease,
               box-shadow 180ms ease,
               border-color 180ms ease,
               background 180ms ease;
 }
 
-.journey-flowchart .journey-node.main {
-  background: rgba(20, 26, 32, 0.96);
-}
-
-.journey-flowchart .journey-node.branch {
-  background: rgba(9, 16, 22, 0.96);
-}
-
-/* Hover lift for every node */
-.journey-flowchart .journey-node:hover {
+/* Hover lift */
+.journey-node-body:hover {
   transform: translateY(-4px);
-  border-color: rgba(247, 200, 109, 0.6);
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.85);
+  border-color: rgba(247, 200, 109, 0.7);
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.85);
 }
 
 /* ------------------------------------------------ */
-/* MAIN HORIZONTAL LINE                             */
+/* TWO-COLUMN HEADER (TITLE LEFT, DETAILS RIGHT)    */
 /* ------------------------------------------------ */
 
-.journey-flowchart .journey-row-main::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 6%;
-  right: 6%;
-  height: 2px;
-  background: linear-gradient(
-    to right,
-    rgba(230, 201, 122, 0.1),
-    rgba(230, 201, 122, 0.7),
-    rgba(230, 201, 122, 0.1)
-  );
-  z-index: 0;
+.journey-headrow {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: flex-start;
+  column-gap: 2rem;
 }
 
-.journey-flowchart .journey-row-main .journey-node.main {
-  position: relative;
-  z-index: 1;
+/* Left column: title + subtitle */
+.journey-headrow-left h3 {
+  margin: 0;
+  font-size: 1.1rem;
 }
 
-/* ------------------------------------------------ */
-/* VERTICAL CONNECTORS                              */
-/* ------------------------------------------------ */
-
-.journey-flowchart .journey-row-top .journey-node.branch::after,
-.journey-flowchart .journey-row-bottom .journey-node.branch::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 2px;
-  transform: translateX(-50%);
-  background: linear-gradient(
-    to bottom,
-    rgba(230, 201, 122, 0.0),
-    rgba(230, 201, 122, 0.6)
-  );
+.journey-headrow-left .journey-step-sub {
+  margin-top: 0.15rem;
 }
 
-.journey-flowchart .journey-row-top .journey-node.branch::after {
-  bottom: -1.6rem;
-  height: 1.8rem;
-}
-
-.journey-flowchart .journey-row-bottom .journey-node.branch::after {
-  top: -1.6rem;
-  height: 1.8rem;
+/* Right column: View details + content */
+.journey-headrow-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* ------------------------------------------------ */
 /* ICONS                                            */
 /* ------------------------------------------------ */
 
-.journey-flowchart .journey-icon {
+.journey-icon {
   width: 40px;
   height: 40px;
   border-radius: 999px;
@@ -529,95 +507,199 @@ body[data-category="honEcomb"] .hero,
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.4rem;
   background: radial-gradient(circle at 30% 20%, #fdf7dd 0, #b89242 55%, #3b2b11 100%);
   box-shadow: 0 0 12px rgba(230, 201, 122, 0.6);
   font-size: 1.15rem;
+  color: #2b1905;
 }
 
-.journey-flowchart .icon-sun::before        { content: "☀"; }
-.journey-flowchart .icon-harbor::before     { content: "⚓"; }
-.journey-flowchart .icon-fortress::before   { content: "🏰"; }
-.journey-flowchart .icon-forest::before     { content: "🌲"; }
-.journey-flowchart .icon-corruption::before { content: "☠"; }
-.journey-flowchart .icon-wave::before       { content: "🌊"; }
-.journey-flowchart .icon-volcano::before    { content: "🌋"; }
-.journey-flowchart .icon-scroll::before     { content: "📜"; }
-.journey-flowchart .icon-locked::before     { content: "🔒"; }
+/* Icon glyphs */
+.icon-sun::before        { content: "☀"; }
+.icon-harbor::before     { content: "⚓"; }
+.icon-fortress::before   { content: "🏰"; }
+.icon-forest::before     { content: "🌲"; }
+.icon-corruption::before { content: "☠"; }
+.icon-wave::before       { content: "🌊"; }
+.icon-volcano::before    { content: "🌋"; }
+.icon-scroll::before     { content: "📜"; }
+.icon-locked::before     { content: "🔒"; }
 
 /* ------------------------------------------------ */
 /* TEXT STYLING                                     */
 /* ------------------------------------------------ */
 
-.journey-flowchart .journey-step-header h3 {
-  margin: 0.1rem 0;
-  font-size: 1.1rem;
-}
-
-.journey-flowchart .journey-step-sub {
+.journey-step-sub {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #9ca4ba;
   margin: 0;
-  font-size: 0.85rem;
-  opacity: 0.85;
 }
 
-.journey-flowchart .journey-branch-text {
-  margin-top: 0.6rem;
-  font-size: 0.92rem;
-  line-height: 1.4;
+/* details/summary on the right column */
+.journey-details-right {
+  font-size: 0.86rem;
+  color: #c1c6d3;
+}
+
+.journey-details-right summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #f7c86d;
+  white-space: nowrap;
+}
+
+.journey-details-right summary::-webkit-details-marker {
+  display: none;
+}
+
+/* expanded text stays IN the right column only */
+.journey-details-content {
+  margin-top: 0.55rem;
+  width: 100%;
+  max-width: 420px;
+  text-align: left;
+  line-height: 1.6;
 }
 
 /* ------------------------------------------------ */
-/* LOCKED NODES (Edresan + Yán)                     */
+/* FINAL NODE – TARRAGON (CORRUPTED)               */
 /* ------------------------------------------------ */
 
-.journey-flowchart .journey-node-locked {
-  border-style: dashed;
-  border-color: rgba(180, 180, 180, 0.6);
-  opacity: 0.9;
-}
-
-/* ------------------------------------------------ */
-/* FINAL STEP (Tarragon Corrupted Node)             */
-/* ------------------------------------------------ */
-
-.journey-flowchart .journey-step-final {
+.journey-node-final .journey-node-body {
   background: radial-gradient(circle at top, #3b1719 0, #0b0507 60%);
   border: 2px solid rgba(255, 80, 80, 0.85);
   box-shadow: 0 0 18px rgba(255, 50, 50, 0.6);
 }
 
-.journey-flowchart .journey-step-final .journey-icon {
+.journey-node-final .journey-icon {
   border-color: rgba(255, 104, 93, 0.9);
   box-shadow: 0 0 18px rgba(255, 104, 93, 0.6);
 }
 
-.journey-flowchart .journey-step-final .journey-step-sub {
+.journey-node-final .journey-step-sub {
   color: #fda29b;
 }
 
-.journey-flowchart .journey-step-final:hover {
+.journey-node-final .journey-node-body:hover {
   border-color: rgba(255, 50, 50, 1);
   box-shadow:
-      0 0 28px rgba(255, 70, 70, 0.75),
-      0 22px 55px rgba(0, 0, 0, 0.9);
+    0 0 28px rgba(255, 70, 70, 0.75),
+    0 22px 55px rgba(0, 0, 0, 0.9);
+}
+
+/* ------------------------------------------------ */
+/* SIDE PATHS / REALMS                              */
+/* ------------------------------------------------ */
+
+.journey-sides {
+  margin-top: 3.5rem;
+}
+
+.journey-sides-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.journey-sides-intro {
+  font-size: 0.95rem;
+  color: #c6cad8;
+  margin-bottom: 1.8rem;
+  max-width: 100%;
+  text-align: start;
+}
+
+.journey-sides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+}
+
+.journey-side-node {
+  background: rgba(9, 16, 22, 0.96);
+  border-radius: 14px;
+  padding: 2.5rem 1.15rem 1rem;
+  border: 1px solid rgba(150, 137, 96, 0.45);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+  font-size: 0.94rem;
+  line-height: 1.5;
+  position: relative;
+  transition: transform 180ms ease,
+              box-shadow 180ms ease,
+              border-color 180ms ease;
+}
+
+.journey-side-node .journey-step-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey-side-node .journey-icon {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.journey-side-node h4 {
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.journey-side-node .journey-step-sub {
+  margin-bottom: 0.6rem;
+}
+
+.journey-side-node:hover {
+  transform: translateY(-4px);
+  border-color: rgba(247, 200, 109, 0.7);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.85);
+}
+
+.journey-side-node p {
+  margin-top: 0.6rem;
+}
+
+/* Locked / beyond Tarragon */
+.journey-side-locked {
+  border-style: dashed;
+  border-color: rgba(180, 180, 180, 0.7);
+  opacity: 0.95;
 }
 
 /* ------------------------------------------------ */
 /* MOBILE                                           */
 /* ------------------------------------------------ */
 
-@media (max-width: 840px) {
-  .journey-flowchart .journey-row {
-      grid-template-columns: 1fr;
+@media (max-width: 720px) {
+  .journey-timeline {
+    padding-left: 2rem;
   }
-  .journey-flowchart .journey-row-main::before {
-      display: none;
+
+  .journey-timeline::before {
+    left: 0.9rem;
   }
-  .journey-flowchart .journey-row-top .journey-node.branch::after,
-  .journey-flowchart .journey-row-bottom .journey-node.branch::after {
-      display: none;
+
+  .journey-node-marker {
+    margin-left: -2.2rem;
   }
-  .journey-flowchart .journey-inner {
-      padding: 2rem 1.2rem;
+
+  .journey-headrow {
+    grid-template-columns: 1fr;
+    row-gap: 0.4rem;
+  }
+
+  .journey-headrow-right {
+    align-items: flex-start;
+  }
+
+  .journey-details-content {
+    text-align: left;
+    max-width: 100%;
   }
 }

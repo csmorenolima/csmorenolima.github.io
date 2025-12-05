@@ -446,8 +446,8 @@
     <!-- ENCASED SECTIONS START -->
     <div class="container" style="background:rgba(24,28,31,0.80);border-radius:18px;box-shadow:0 4px 24px #0008;padding:2.5rem 0 2.5rem 0;margin-bottom:2.5rem;">
 
-        <!-- THE JOURNEY (FLOWCHART) -->
-        <section id="journey" class="journey journey-flowchart">
+        <!-- THE JOURNEY (VERTICAL) -->
+        <section id="journey" class="journey journey-vertical">
             <div class="journey-inner">
 
                 <p class="journey-kicker">THE JOURNEY</p>
@@ -455,176 +455,225 @@
 
                 <p class="journey-intro">
                     With Lumyrion’s light as your guide, you travel west from the bright courts of Aeyantis,
-                    across coasts and fortresses into forests drowned in corruption. Each step pulls you
+                    across coasts and fortresses into forests scarred by corruption. Each step pulls you
                     closer to Tarragon — and to the source of the world’s unraveling.
                 </p>
 
-                <div class="journey-flow">
+                <!-- MAIN VERTICAL STORYLINE -->
+                <ol class="journey-timeline">
 
-                    <!-- TOP ROW – NORTHERN / SIDE KINGDOMS -->
-                    <div class="journey-row journey-row-top">
+                    <!-- Aeyantis -->
+                    <li class="journey-node journey-node-main">
+                        <div class="journey-node-marker">
+                            <div class="journey-icon icon-sun"></div>
+                        </div>
 
-                        <!-- empty spacer so Brigachian is above Aeyantis (col 1) -->
-                        <span class="journey-spacer"></span>
+                        <div class="journey-node-body">
+                            <div class="journey-headrow">
+                                <!-- Left column: title + subtitle -->
+                                <div class="journey-headrow-left">
+                                    <h3>Aeyantis</h3>
+                                    <p class="journey-step-sub">Where the light begins</p>
+                                </div>
 
-                        <!-- Brigachian above the Aeyantis coast -->
-                        <article class="journey-node branch">
+                                <!-- Right column: view details + expanding text -->
+                                <div class="journey-headrow-right">
+                                    <details class="journey-details journey-details-right" open>
+                                        <summary>View details</summary>
+                                        <div class="journey-details-content">
+                                            Seat of Queen Ahris and heart of civilisation. Here you are entrusted
+                                            with the Guardian Lumyrion and ordered to trace the spreading corruption
+                                            west toward Tarragon.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Katzh -->
+                    <li class="journey-node journey-node-main">
+                        <div class="journey-node-marker">
+                            <div class="journey-icon icon-harbor"></div>
+                        </div>
+
+                        <div class="journey-node-body">
+                            <div class="journey-headrow">
+                                <div class="journey-headrow-left">
+                                    <h3>Katzh</h3>
+                                    <p class="journey-step-sub">Crossroads kingdom</p>
+                                </div>
+
+                                <div class="journey-headrow-right">
+                                    <details class="journey-details journey-details-right">
+                                        <summary>View details</summary>
+                                        <div class="journey-details-content">
+                                            A coastal, genderless kingdom ruled by Yutanari. Traders and wanderers
+                                            bring rumours of strange tides, missing vessels, and creatures sighted
+                                            too near Tarragon’s shores.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Dreonathen -->
+                    <li class="journey-node journey-node-main">
+                        <div class="journey-node-marker">
+                            <div class="journey-icon icon-fortress"></div>
+                        </div>
+
+                        <div class="journey-node-body">
+                            <div class="journey-headrow">
+                                <div class="journey-headrow-left">
+                                    <h3>Dreonathen</h3>
+                                    <p class="journey-step-sub">The last shield</p>
+                                </div>
+
+                                <div class="journey-headrow-right">
+                                    <details class="journey-details journey-details-right">
+                                        <summary>View details</summary>
+                                        <div class="journey-details-content">
+                                            A kingdom of stone fortresses and open plains, standing between the Six
+                                            Crowns and the Western Realms. Its walls face west, bracing against raids,
+                                            Gortusk charges, and the slow advance of Tarragon’s influence.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Kithren -->
+                    <li class="journey-node journey-node-main">
+                        <div class="journey-node-marker">
+                            <div class="journey-icon icon-forest"></div>
+                        </div>
+
+                        <div class="journey-node-body">
+                            <div class="journey-headrow">
+                                <div class="journey-headrow-left">
+                                    <h3>Kithren</h3>
+                                    <p class="journey-step-sub">The mistwood queendom</p>
+                                </div>
+
+                                <div class="journey-headrow-right">
+                                    <details class="journey-details journey-details-right">
+                                        <summary>View details</summary>
+                                        <div class="journey-details-content">
+                                            Enchanted forests dimmed by spreading blight. Ly’cara packs stalk between
+                                            twisted trees, and Lumyrion’s light flickers as you approach the borders
+                                            of Tarragon’s corruption.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Tarragon -->
+                    <li class="journey-node journey-node-main journey-node-final">
+                        <div class="journey-node-marker">
+                            <div class="journey-icon icon-corruption"></div>
+                        </div>
+
+                        <div class="journey-node-body">
+                            <div class="journey-headrow">
+                                <div class="journey-headrow-left">
+                                    <h3>Tarragon</h3>
+                                    <p class="journey-step-sub">Corrupted western throne</p>
+                                </div>
+
+                                <div class="journey-headrow-right">
+                                    <details class="journey-details journey-details-right">
+                                        <summary>View details</summary>
+                                        <div class="journey-details-content">
+                                            Forged from Dsärr, Edresan, and Yán as a united Western kingdom. Now it is
+                                            the source of the world’s corruption. At its core, the Mighty Troll of
+                                            Tarragon — Zuläch consumed by Saar — awaits your final confrontation.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ol>
+
+                <!-- SIDE PATHS & WESTERN REALMS -->
+                <div class="journey-sides">
+                    <h3 class="journey-sides-title">Side Paths & Western Realms</h3>
+                    <p class="journey-sides-intro">
+                        Not every path runs straight to Tarragon. Some realms lie off the main road or beyond
+                        the corrupted core — places you may hear of, visit briefly, or return to once the
+                        corruption has been challenged.
+                    </p>
+
+                    <div class="journey-sides-grid">
+
+                        <!-- Brigachian -->
+                        <article class="journey-side-node">
                             <header class="journey-step-header">
                                 <div class="journey-icon icon-wave"></div>
-                                <h3>Brigachian Realm</h3>
+                                <h4>Brigachian Realm</h4>
                                 <p class="journey-step-sub">Northern sea frontier</p>
                             </header>
-                            <p class="journey-branch-text">
+                            <p>
                                 North of Aeyantis, guarding cold waters where Megalore and other leviathans prowl.
-                                Its harbours are the first to close when ships begin to vanish.
+                                Its harbours are the first to close when ships begin to vanish near the western currents.
                             </p>
                         </article>
 
-                        <!-- Vulcaria above Dreonathen -->
-                        <article class="journey-node branch">
+                        <!-- Vulcaria -->
+                        <article class="journey-side-node">
                             <header class="journey-step-header">
                                 <div class="journey-icon icon-volcano"></div>
-                                <h3>Vulcaria</h3>
+                                <h4>Vulcaria</h4>
                                 <p class="journey-step-sub">Kingdom of ash and fire</p>
                             </header>
-                            <p class="journey-branch-text">
-                                To the north of Dreonathen, Vulcaria’s molten plains and lava fields are home
-                                to roaming Gortusk herds and war-clans sworn to Queen Olorus.
+                            <p>
+                                A molten land north of the central plains, where lava rivers and volcanic ridges
+                                shape the horizon. Gortusk herds and war-clans answer to Queen Olorus, holding
+                                the high ground against whatever comes from the West.
                             </p>
                         </article>
 
-                        <!-- Ame’xore above Kithren -->
-                        <article class="journey-node branch">
+                        <!-- Ame’xore -->
+                        <article class="journey-side-node">
                             <header class="journey-step-header">
                                 <div class="journey-icon icon-scroll"></div>
-                                <h3>Ame’xore</h3>
+                                <h4>Ame’xore</h4>
                                 <p class="journey-step-sub">Kingdom of hidden archives</p>
                             </header>
-                            <p class="journey-branch-text">
-                                North of Kithren, Ame’xore shelters deep archives on Saar and the Old Treaty.
-                                Queen Teri’itaria’s scholars know more than they dare reveal.
+                            <p>
+                                North of Dreonathen and Kithren, Ame’xore shelters deep archives on Saar,
+                                Tarragon, and the Old Treaty. Queen Teri’itaria’s scholars see patterns in the
+                                corruption others refuse to name.
                             </p>
                         </article>
 
-                        <!-- spacer so layout is symmetric -->
-                        <span class="journey-spacer"></span>
-                    </div>
-
-                    <!-- MAIN ROW – Aeyantis → Katzh → Dreonathen → Kithren → Tarragon -->
-                    <div class="journey-row journey-row-main">
-
-                        <!-- Aeyantis -->
-                        <article class="journey-node main">
-                            <header class="journey-step-header">
-                                <div class="journey-icon icon-sun"></div>
-                                <h3>Aeyantis</h3>
-                                <p class="journey-step-sub">Where the light begins</p>
-                            </header>
-                            <details class="journey-details" open>
-                                <summary>View details</summary>
-                                <p>
-                                    Seat of Queen Ahris and heart of civilisation. Here you are entrusted with
-                                    the Guardian Lumyrion and ordered to trace the corruption west toward Tarragon.
-                                </p>
-                            </details>
-                        </article>
-
-                        <!-- Katzh -->
-                        <article class="journey-node main">
-                            <header class="journey-step-header">
-                                <div class="journey-icon icon-harbor"></div>
-                                <h3>Katzh</h3>
-                                <p class="journey-step-sub">Crossroads kingdom</p>
-                            </header>
-                            <details class="journey-details">
-                                <summary>View details</summary>
-                                <p>
-                                    A coastal, genderless kingdom ruled by Yutanari. Traders and wanderers bring
-                                    rumours of strange tides, missing vessels, and creatures seen near Tarragon’s shores.
-                                </p>
-                            </details>
-                        </article>
-
-                        <!-- Dreonathen -->
-                        <article class="journey-node main">
-                            <header class="journey-step-header">
-                                <div class="journey-icon icon-fortress"></div>
-                                <h3>Dreonathen</h3>
-                                <p class="journey-step-sub">The last shield</p>
-                            </header>
-                            <details class="journey-details">
-                                <summary>View details</summary>
-                                <p>
-                                    A kingdom of stone fortresses and open plains, standing between the Six Crowns
-                                    and the Western Realms. Its walls face west, bracing against raids and the
-                                    slow advance of Tarragon’s influence.
-                                </p>
-                            </details>
-                        </article>
-
-                        <!-- Kithren -->
-                        <article class="journey-node main">
-                            <header class="journey-step-header">
-                                <div class="journey-icon icon-forest"></div>
-                                <h3>Kithren</h3>
-                                <p class="journey-step-sub">The mistwood queendom</p>
-                            </header>
-                            <details class="journey-details">
-                                <summary>View details</summary>
-                                <p>
-                                    Enchanted forests dimmed by spreading blight. Ly’cara packs stalk between twisted
-                                    trees, and Lumyrion’s light flickers as you approach the borders of Tarragon.
-                                </p>
-                            </details>
-                        </article>
-
-                        <!-- Tarragon -->
-                        <article class="journey-node main journey-step-final">
-                            <header class="journey-step-header">
-                                <div class="journey-icon icon-corruption"></div>
-                                <h3>Tarragon</h3>
-                                <p class="journey-step-sub">Corrupted western throne</p>
-                            </header>
-                            <details class="journey-details">
-                                <summary>View details</summary>
-                                <p>
-                                    Forged from Dsärr, Edresan, and Yán as a united Western kingdom. Now it is the
-                                    source of the world’s corruption. At its core, the Mighty Troll of Tarragon —
-                                    Zuläch consumed by Saar — awaits your final confrontation.
-                                </p>
-                            </details>
-                        </article>
-                    </div>
-
-                    <!-- BOTTOM ROW – BEYOND TARRAGON -->
-                    <div class="journey-row journey-row-bottom">
-
-                        <!-- spacer under Aeyantis -->
-                        <span class="journey-spacer"></span>
-                        <!-- spacer under Katzh -->
-                        <span class="journey-spacer"></span>
-                        <!-- spacer under Dreonathen -->
-                        <span class="journey-spacer"></span>
-                        <!-- spacer under Kithren -->
-                        <span class="journey-spacer"></span>
-
-                        <!-- Edresan & Yán under/after Tarragon -->
-                        <article class="journey-node branch journey-node-locked">
+                        <!-- Edresan & Yán -->
+                        <article class="journey-side-node journey-side-locked">
                             <header class="journey-step-header">
                                 <div class="journey-icon icon-locked"></div>
-                                <h3>Edresan &amp; Yán</h3>
+                                <h4>Edresan &amp; Yán</h4>
                                 <p class="journey-step-sub">Realms beyond the corruption</p>
                             </header>
-                            <p class="journey-branch-text">
-                                Western realms that helped forge Tarragon. Their fates are now tied to Saar’s
-                                power; they can only be reached once the corruption at Tarragon’s core is faced.
+                            <p>
+                                Western realms that helped forge Tarragon. Their lands now lie beyond the corrupted
+                                core, their fates tied to Saar’s power. Reaching them is only truly possible once
+                                the tide of corruption is confronted at Tarragon itself.
                             </p>
                         </article>
-                    </div>
 
-                </div><!-- /.journey-flow -->
+                    </div>
+                </div>
+
             </div>
         </section>
+
+
 
         <section class="section">
             <div class="container">
