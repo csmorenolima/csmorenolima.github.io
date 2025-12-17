@@ -634,13 +634,13 @@ body[data-category="honEcomb"] .hero,
 /* FINAL NODE – TARRAGON (CORRUPTED)               */
 /* ------------------------------------------------ */
 
-.journey-node-final .journey-node-body {
+.journey-node-final {
   background: radial-gradient(circle at top, #3b1719 0, #0b0507 60%);
   border: 2px solid rgba(255, 80, 80, 0.85);
   box-shadow: 0 0 18px rgba(255, 50, 50, 0.6);
 }
 
-.journey-node-final .journey-icon {
+.journey-node-final .journey-icon-final {
   border-color: rgba(255, 104, 93, 0.9);
   box-shadow: 0 0 18px rgba(255, 104, 93, 0.6);
 }
@@ -649,7 +649,7 @@ body[data-category="honEcomb"] .hero,
   color: #fda29b;
 }
 
-.journey-node-final .journey-node-body:hover {
+.journey-node-final:hover {
   border-color: rgba(255, 50, 50, 1);
   box-shadow:
     0 0 28px rgba(255, 70, 70, 0.75),
@@ -725,6 +725,12 @@ body[data-category="honEcomb"] .hero,
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.85);
 }
 
+.journey-side-locked:hover {
+  transform: none;
+  border-color: rgba(180, 180, 180);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+}
+
 .journey-side-node p {
   margin-top: 0.6rem;
 }
@@ -732,8 +738,22 @@ body[data-category="honEcomb"] .hero,
 /* Locked / beyond Tarragon */
 .journey-side-locked {
   border-style: dashed;
-  border-color: rgba(180, 180, 180, 0.7);
+  border-color: rgba(180, 180, 180);
   opacity: 0.95;
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-side-locked::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 15, 0.4);
+  pointer-events: none;
+  border-radius: 14px;
 }
 
 /* ------------------------------------------------ */
