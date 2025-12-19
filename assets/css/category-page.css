@@ -865,7 +865,7 @@ body[data-category="honEcomb"] .hero,
 .persona-image-wrap {
   border-radius: 12px;
   overflow: hidden;
-  background: #11151e;
+  /* background: #11151e; */
   padding: 0.4rem;
 }
 
