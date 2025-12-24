@@ -907,6 +907,9 @@ body[data-category="honEcomb"] .hero,
 .character-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* Fixed equal-height cards */
+  grid-auto-rows: var(--character-card-height, 620px);
+  align-items: stretch;
   gap: 2rem;
   margin-top: 2.5rem;
 }
@@ -920,7 +923,14 @@ body[data-category="honEcomb"] .hero,
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  height: 100%;
   transition: transform 180ms ease, box-shadow 180ms ease;
+
+  perspective: 1000px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+
+
 }
 
 .character-card:hover {
@@ -964,6 +974,11 @@ body[data-category="honEcomb"] .hero,
   justify-content: center;
 }
 
+/* Games page: slightly taller portrait frame so contained images read larger (no cropping) */
+body[data-category="games"] .character-portrait {
+  aspect-ratio: 2.7 / 4;
+}
+
 .character-portrait img {
   width: 100%;
   height: 100%;
@@ -983,6 +998,12 @@ body[data-category="honEcomb"] .hero,
   gap: 0.6rem;
   font-size: 0.8rem;
   align-items: center;
+}
+
+/* Text-only stat rows (no bar), e.g. Size: 7m tall */
+.character-stats .stat-value {
+  color: #d5d9e4;
+  justify-self: start;
 }
 
 .character-stats .bar {
@@ -1065,4 +1086,109 @@ body[data-category="honEcomb"] .hero,
 
 .character-card.beast:hover {
   box-shadow: 0 0 28px rgba(230, 201, 122, 0.45);
+}
+
+/* Flip Card Styles */
+.flip-card {
+  cursor: pointer;
+  position: relative;
+  overflow: visible !important;
+  perspective: 1000px !important;
+}
+
+/*
+  The base `.character-card` draws the border/shadow on the outer <article>.
+  If only `.flip-card-inner` rotates, that outer border/shadow looks static.
+  For flip cards: remove chrome from the outer card and apply it to the faces
+  (which rotate), so the *entire card* appears to flip.
+*/
+.character-card.flip-card {
+  display: block;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  height: 100%;
+  transform-style: flat !important;
+  transition: none !important;
+}
+
+/* Override character-card hover lift for flip cards */
+.character-card.flip-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  display: grid;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  grid-area: 1 / 1;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 18px;
+  background: rgba(12, 16, 22, 0.96);
+  border: 1px solid rgba(247, 200, 109, 0.25);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.65);
+}
+
+.flip-card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+  padding: 1.4rem 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+}
+
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  padding: 0;
+}
+
+/* Preserve variant borders/shadows on the rotating faces */
+.character-card.beast.flip-card .flip-card-front,
+.character-card.beast.flip-card .flip-card-back {
+  border-style: dashed;
+  border-color: rgba(180, 160, 120, 0.6);
+}
+
+.character-card.corrupted.flip-card .flip-card-front,
+.character-card.corrupted.flip-card .flip-card-back {
+  border-color: rgba(255, 80, 80, 0.8);
+  box-shadow: 0 0 22px rgba(255, 60, 60, 0.45);
+}
+
+.character-card.mythic.flip-card .flip-card-front,
+.character-card.mythic.flip-card .flip-card-back {
+  border-color: rgba(120, 200, 255, 0.7);
 }
