@@ -976,7 +976,7 @@ body[data-category="honEcomb"] .hero,
 
 /* Games page: slightly taller portrait frame so contained images read larger (no cropping) */
 body[data-category="games"] .character-portrait {
-  aspect-ratio: 2.7 / 4;
+  aspect-ratio: 3.2 / 4;
 }
 
 .character-portrait img {
