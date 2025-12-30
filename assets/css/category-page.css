@@ -1145,7 +1145,6 @@ body[data-category="games"] .character-portrait {
   -webkit-backface-visibility: hidden;
   border-radius: 18px;
   background: rgba(12, 16, 22, 0.96);
-  border: 1px solid rgba(247, 200, 109, 0.25);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.65);
 }
 

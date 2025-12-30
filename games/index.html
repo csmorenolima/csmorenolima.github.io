@@ -1279,10 +1279,20 @@
                 <div class="character-grid">
 
                     <article class="character-card mythic">
-                        <h4>Lumyrion</h4>
-                        <div class="character-portrait">
-                            <img src="/assets/soct-characters/Lumyrion.png" alt="Lumyrion" loading="lazy">
+                        <div class="flip-card-front">
+                            <h4>Lumyrion</h4>
+
+                            <div class="character-portrait" data-portrait-carousel="lumyrion" style="position: relative;">
+                                <img class="portraitImage" src="/assets/soct-characters/Lumyrion.png" alt="Lumyrion" loading="lazy">
+
+                                <span class="portraitArrow carousel-arrow carousel-arrow-right" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; z-index: 10;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 16 16" style="display:block;filter: drop-shadow(0 0 4px rgba(230, 201, 122, 0.6));">
+                                        <path fill="none" stroke="#e6c97a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 2l6 6-6 6" />
+                                    </svg>
+                                </span>
+                            </div>
                         </div>
+
                         <p class="character-role">Guardian of Balance</p>
                         <p class="character-lore">
                             An ancient force bound to the world itself. Lumyrion shields its bearer
@@ -1449,15 +1459,12 @@
                             <div class="flip-card-front">
                                 <h4>Cyrenthos</h4>
 
-                                <div class="character-portrait" style="position: relative;">
-                                    <img id="cyrenthosImage" src="/assets/soct-characters/Cyrenthos.png" alt="Cyrenthos" loading="lazy">
+                                <div class="character-portrait" data-portrait-carousel="cyrenthos" style="position: relative;">
+                                    <img class="portraitImage" src="/assets/soct-characters/Cyrenthos.png" alt="Cyrenthos" loading="lazy">
                                     
-                                    <span id="cyrenthosArrow" class="carousel-arrow carousel-arrow-right"
-                                        style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; z-index: 10;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"
-                                            viewBox="0 0 16 16" style="display:block;filter: drop-shadow(0 0 4px rgba(230, 201, 122, 0.6));">
-                                            <path fill="none" stroke="#e6c97a" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" d="M6 2l6 6-6 6" />
+                                    <span class="portraitArrow carousel-arrow carousel-arrow-right" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; z-index: 10;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 16 16" style="display:block;filter: drop-shadow(0 0 4px rgba(230, 201, 122, 0.6));">
+                                            <path fill="none" stroke="#e6c97a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 2l6 6-6 6" />
                                         </svg>
                                     </span>
                                 </div>
@@ -1924,42 +1931,59 @@
     </script>
 
     <script>
-        // Cyrenthos Image Carousel
+        // Cyrenthos/Lumyrion Image Carousel
         (function () {
-            const images = [
-                '/assets/soct-characters/Cyrenthos.png',
-                '/assets/soct-characters/CyrenthosFemale.png'
-            ];
-            let currentIndex = 0;
-            const imgElement = document.getElementById('cyrenthosImage');
-            const arrowElement = document.getElementById('cyrenthosArrow');
+            const portraitImagesByKey = {
+                cyrenthos: [
+                    '/assets/soct-characters/Cyrenthos.png',
+                    '/assets/soct-characters/CyrenthosFemale.png'
+                ],
+                lumyrion: [
+                    '/assets/soct-characters/Lumyrion.png',
+                    '/assets/soct-characters/LumyrionArtifact.png'
+                ]
+            };
 
-            if (imgElement && arrowElement) {
-                arrowElement.addEventListener('click', function(e) {
+            function updateArrow(arrowElement, currentIndex) {
+                const path = arrowElement.querySelector('path');
+                if (!path) return;
+
+                if (currentIndex === 1) {
+                    arrowElement.classList.remove('carousel-arrow-right');
+                    arrowElement.classList.add('carousel-arrow-left');
+                    arrowElement.style.right = 'auto';
+                    arrowElement.style.left = '10px';
+                    path.setAttribute('d', 'M10 2L4 8l6 6');
+                } else {
+                    arrowElement.classList.remove('carousel-arrow-left');
+                    arrowElement.classList.add('carousel-arrow-right');
+                    arrowElement.style.left = 'auto';
+                    arrowElement.style.right = '10px';
+                    path.setAttribute('d', 'M6 2l6 6-6 6');
+                }
+            }
+
+            document.querySelectorAll('[data-portrait-carousel]').forEach((portraitContainer) => {
+                const key = portraitContainer.getAttribute('data-portrait-carousel');
+                const images = portraitImagesByKey[key];
+                if (!images || images.length < 2) return;
+
+                const imgElement = portraitContainer.querySelector('.portraitImage');
+                const arrowElement = portraitContainer.querySelector('.portraitArrow');
+                if (!imgElement || !arrowElement) return;
+
+                let currentIndex = Math.max(0, images.indexOf(imgElement.getAttribute('src') || ''));
+                updateArrow(arrowElement, currentIndex);
+
+                arrowElement.addEventListener('click', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
 
                     currentIndex = (currentIndex + 1) % images.length;
                     imgElement.src = images[currentIndex];
-                    
-                    // Move arrow to left when showing second image
-                    if (currentIndex === 1) {
-                        arrowElement.classList.remove('carousel-arrow-right');
-                        arrowElement.classList.add('carousel-arrow-left');
-                        arrowElement.style.right = 'auto';
-                        arrowElement.style.left = '10px';
-                        // Flip the arrow direction
-                        arrowElement.querySelector('path').setAttribute('d', 'M10 2L4 8l6 6');
-                    } else {
-                        arrowElement.classList.remove('carousel-arrow-left');
-                        arrowElement.classList.add('carousel-arrow-right');
-                        arrowElement.style.left = 'auto';
-                        arrowElement.style.right = '10px';
-                        // Arrow pointing right
-                        arrowElement.querySelector('path').setAttribute('d', 'M6 2l6 6-6 6');
-                    }
+                    updateArrow(arrowElement, currentIndex);
                 });
-            }
+            });
         })();
     </script>
 
