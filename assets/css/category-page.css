@@ -39,10 +39,9 @@
 }
 
 /* soct category hero */
-body[data-category="games"] .hero,
-.hero.games {
+body[data-category="soct"] .hero,
+.hero.soct {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.68)),
-                /* url('../SoctPoster.png') center 70%/60% repeat; */
 }
 
 /* Enova category hero */
@@ -974,8 +973,8 @@ body[data-category="honEcomb"] .hero,
   justify-content: center;
 }
 
-/* Games page: slightly taller portrait frame so contained images read larger (no cropping) */
-body[data-category="games"] .character-portrait {
+/* Soct page: slightly taller portrait frame so contained images read larger (no cropping) */
+body[data-category="soct"] .character-portrait {
   aspect-ratio: 3.2 / 4;
 }
 
