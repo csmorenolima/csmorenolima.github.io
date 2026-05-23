@@ -5,7 +5,7 @@
       "name": "The Kingdom of TarragØn",
       "coords": "219,258,107",
       "blurb": "The birthplace of the West’s downfall.",
-      "lore": "Once the fertile heartland of the West, TarragØn rose when Zuläch united the Western Realms. But beneath Dsärr he broke the ancient seal, awakening the force sealed by the Old Treaty. Corruption surged outward, twisting land and creatures alike. All blight across the Enen Sea originates here.",
+      "lore": "Once the fertile heartland of the West, TarragØn rose when Zuläch united the Western Realms. But beneath Dsärr he broke the ancient seal, awakening the force sealed by the Old Treaty. Corruption surged outward, twisting land and creatures alike. All blight across the Enën Sea originates here.",
       "effect": "corrupted"
     },
     {
@@ -21,7 +21,7 @@
       "name": "Katzh Kingdom",
       "coords": "1006,584,42",
       "blurb": "A quiet, reflective kingdom of serene forests and calm waters.",
-      "lore": "Katzh, ruled by the formless sovereign Yutanari, lies far from TarragØn’s direct influence. Though its mist-laden lands sense the imbalance spreading across the Enen Sea, Katzh itself remains uncorrupted. Its people act as watchers of the world’s shifting tides, preparing for the moment the darkness reaches their borders.",
+      "lore": "Katzh, ruled by the formless sovereign Yutanari, lies far from TarragØn’s direct influence. Though its mist-laden lands sense the imbalance spreading across the Enën Sea, Katzh itself remains uncorrupted. Its people act as watchers of the world’s shifting tides, preparing for the moment the darkness reaches their borders.",
       "effect": "glow"
     },
     {
@@ -88,7 +88,7 @@
       "coords": "1245,655,70",
       "danger": "High",
       "blurb": "A colossal apex predator ruling the deep coastal waters.",
-      "lore": "Megalore stalks the warm currents near Katzh and the southern Aeyantis coast. Sailors say the tides shift when it hunts, and whole ships vanish without a cry. Its massive, angular head slices through both waves and hulls, marking it the terror of the Enen Sea.",
+      "lore": "Megalore stalks the warm currents near Katzh and the southern Aeyantis coast. Sailors say the tides shift when it hunts, and whole ships vanish without a cry. Its massive, angular head slices through both waves and hulls, marking it the terror of the Enën Sea.",
       "effect": "water-glow"
     },
     {
@@ -133,7 +133,7 @@
       "coords": "230,295,110",
       "danger": "Cataclysmic",
       "blurb": "The corrupted titan that rules TarragØn’s core.",
-      "lore": "Once Zuläch of Dsärr, now the living vessel of Saar’s hatred. The Mighty Troll towers above all creatures, wrapped in dark energy that rots the land beneath its feet. Every step spreads corruption. Every roar shakes kingdoms. Defeating it is the only hope to end the unraveling of the Enen Sea.",
+      "lore": "Once Zuläch of Dsärr, now the living vessel of Saar’s hatred. The Mighty Troll towers above all creatures, wrapped in dark energy that rots the land beneath its feet. Every step spreads corruption. Every roar shakes kingdoms. Defeating it is the only hope to end the unraveling of the Enën Sea.",
       "effect": "void-corruption"
     }
   ]

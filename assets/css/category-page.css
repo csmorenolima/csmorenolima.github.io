@@ -1192,3 +1192,7 @@ body[data-category="soct"] .character-portrait {
 .character-card.mythic.flip-card .flip-card-back {
   border-color: rgba(120, 200, 255, 0.7);
 }
+
+.theChronicleText {
+  text-align: justify;
+}
