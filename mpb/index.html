@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Prayer Bot - Carla Sofia Lima</title>
+    <meta name="description" content="Automation: Morning Prayer Bot">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Morning Prayer Bot - Carla Sofia Lima" />
+    <meta property="og:description" content="Daily Prayer Feed: Share daily prayer content on social media." />
+    <meta property="og:site_name" content="Carla Sofia Lima" />
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Shared Theme -->
+    <link rel="stylesheet" href="../targetPortfolio/theme.css">
+
+    <!-- Category Page Template -->
+    <link rel="stylesheet" href="../assets/css/category-page.css">
+</head>
+
+<body data-category="automation">
+    <div id="fog-bg"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">PORTFOLIO |</a>
+            <ul class="nav-links">
+                <li><a href="../targetPortfolio/test.html#home">HOME</a></li>
+                <li><a href="../targetPortfolio/test.html#about">ABOUT</a></li>
+                <li class="nav-projects-dropdown">
+                    <a href="#" aria-haspopup="true" aria-expanded="false">MY WORK <i
+                            class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="../product-design/" role="menuitem">Product Design</a></li>
+                        <li><a href="../engineering/" role="menuitem">Engineering</a></li>
+                    </ul>
+                </li>
+                <li><a href="../targetPortfolio/test.html#contact">CONNECT</a></li>
+            </ul>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <style>
+        body[data-category="automation"] {
+            background: url('/assets/so-ct-hero.jpeg') center top/cover no-repeat fixed;
+            background-color: #181c1f;
+            position: relative;
+        }
+
+        body[data-category="automation"]:after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(24, 28, 31, 0.60);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section,
+        .container,
+        .featured-project,
+        .story,
+        .footer,
+        .project-navigation {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+
+    <style>
+        .map-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(10, 16, 24, 0.92);
+            z-index: 10001;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
+        }
+
+        .map-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .map-modal-content {
+            position: relative;
+            background: #181c1f;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px #000a;
+            padding: 2.5rem 2.2rem 2.5rem 2.2rem;
+            max-width: 960px;
+            width: 98vw;
+            max-height: 92vh;
+            overflow-y: auto;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE/Edge */
+        }
+
+        .map-modal-content::-webkit-scrollbar {
+            display: none;
+            /* Chrome/Safari */
+        }
+
+        .map-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            font-size: 2.5rem;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+            transition: color 0.2s;
+        }
+
+        .map-modal-close:hover {
+            color: #ff0033;
+        }
+
+        .map-wrapper {
+            position: relative;
+        }
+
+        .map-region {
+            background: rgba(122, 92, 30, 0.18);
+            /* gold-brown semi-transparent */
+            border: 2.5px solid #7a5c1e;
+            border-radius: 50%;
+            transition: box-shadow 0.2s, background 0.2s, border-color 0.2s;
+            box-shadow: 0 0 0 2px #fff2 inset;
+        }
+
+        .map-region.creature-region {
+            background: rgba(25, 120, 180, 0.18);
+            /* blue semi-transparent for creatures */
+            border: 2.5px solid #1e6fa8;
+            box-shadow: 0 0 0 2px #fff2 inset;
+        }
+
+        .map-region:hover,
+        .map-region:focus {
+            box-shadow: 0 0 0 6px #fff7, 0 0 18px #fff8;
+            background: rgba(122, 92, 30, 0.32);
+            border-color: #e6c97a;
+            z-index: 2;
+        }
+
+        .map-region.creature-region:hover,
+        .map-region.creature-region:focus {
+            background: rgba(25, 120, 180, 0.32);
+            border-color: #7fd6ff;
+        }
+
+        .map-tooltip {
+            position: fixed;
+            z-index: 1000;
+            background: rgba(24, 28, 31, 0.97);
+            color: #fff;
+            padding: 1.1rem 1.3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px #0008;
+            min-width: 220px;
+            max-width: 320px;
+            pointer-events: none;
+            font-size: 1rem;
+            line-height: 1.4;
+            transition: opacity 0.2s;
+        }
+
+        .corrupted-flash {
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 0, 32, 0.45) 0%, rgba(255, 0, 32, 0.12) 60%, rgba(255, 0, 32, 0.01) 100%);
+            animation: corrupted-flash 1.2s infinite alternate;
+        }
+
+        @keyframes corrupted-flash {
+            0% {
+                opacity: 0.7;
+                filter: blur(2px);
+            }
+
+            100% {
+                opacity: 1;
+                filter: blur(8px);
+            }
+        }
+
+        .aeyantis-glow {
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 180, 255, 0.38) 0%, rgba(0, 180, 255, 0.10) 60%, rgba(0, 180, 255, 0.01) 100%);
+            animation: aeyantis-glow 2.2s infinite alternate;
+        }
+
+        @keyframes aeyantis-glow {
+            0% {
+                opacity: 0.7;
+                filter: blur(2px);
+            }
+
+            100% {
+                opacity: 1;
+                filter: blur(10px);
+            }
+        }
+    </style>
+
+    <style>
+        /* Layering:
+           - body:after dark overlay ... z-index: 0
+           - #fog-bg (fog) .............. z-index: 1
+           - page content ............... z-index: 2
+        */
+        #fog-bg {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Each SVG layer is oversized so no hard edge appears */
+        #fog-bg .fog-layer {
+            position: absolute;
+            width: 160vw;
+            /* wider than viewport so it can drift */
+            height: 160vh;
+            /* taller than viewport so you never see the bottom */
+            top: -30vh;
+            /* stick out above and below screen */
+            left: -30vw;
+            will-change: transform, opacity;
+        }
+
+        #fog-bg svg {
+            display: block;
+        }
+    </style>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container" style="position:relative;z-index:1;">
+            <div class="hero-content fade-in-up">
+                <h1>Scrolls of Odyssey: Call to TarragØn</h1>
+                <p class="hero-quote">A fantasy adventure game set in the realms of the Enën Sea</p>
+            </div>
+        </div>
+        <style>
+            .hero {
+                min-height: 420px;
+                position: relative;
+                background: none;
+            }
+        </style>
+    </section>
+
+    <!-- Content -->
+    <section class="section">
+        <div class="container">
+            <div class="featured-project" style="text-align: center; margin-bottom: 3rem;">
+                <div
+                    style="background-image: url('../assets/SoctPoster.png'); background-size: auto; background-position: center 65%; padding: 3rem; border-radius: 16px;color: white;">
+                    <img src="../assets/so-ct-thumbnail.png" alt="SOCT Logo" style="height: 60px; margin-bottom: 1rem;"
+                        loading="lazy">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">EMERSIVE • FANTASY • LORE</h2>
+                    <button id="watchDemoBtn" class="cta-button"
+                        style="display: inline-block; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer;">
+                        <strong>EXPLORE</strong>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Map Modal Overlay -->
+            <div id="mapModal" class="map-modal-overlay">
+                <div class="map-modal-content">
+                    <button class="map-modal-close" id="closeMapModal">×</button>
+                    <h2 class="section-title" style="
+                        text-align:center;
+                        margin-bottom:0.5rem;
+                        font-size:2.3rem;
+                        letter-spacing:0.04em;
+                        color:#7a5c1e;
+                        text-shadow:0 2px 8px #0007,0 1px 0 #bfa14a;
+                        font-family: 'EB Garamond', 'Georgia', serif;
+                    ">DOMAINS OF THE ENËN SEA</h2>
+                    <div class="map-modal-subtitle"
+                        style="text-align:center;font-size:1.18rem;color:#b8e0ff;margin-bottom:1.7rem;letter-spacing:0.01em;text-shadow:0 1px 8px #000a;">
+                        <em>Explore the kingdoms, secrets, and dangers of the world. <br>
+                            <p>Hover for rulers and lore. Click for deeper history.</p>
+                        </em>
+                    </div>
+                    <div class="map-wrapper" style="position:relative;max-width:900px;margin:0 auto;">
+                        <img src="/assets/EnënSeaMap.jpg" alt="Map of the Enën Sea" class="map-image"
+                            style="width:100%;border-radius:18px;box-shadow:0 4px 24px #0006;">
+                        <!-- Overlay for interactive regions -->
+                        <div id="map-regions-container"></div>
+                    </div>
+
+                    <div id="map-tooltip" class="map-tooltip" style="display:none;"></div>
+                    <!-- Simple Downward Arrowhead for Chronicle Scroll -->
+                    <div style="width:100%;text-align:center;">
+                        <span id="chronicleArrow"
+                            style="display:inline-block;cursor:pointer;animation:swordPulse 1.2s infinite alternate;">
+                            <!-- Bootstrap chevron-down outline SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="none"
+                                viewBox="0 0 16 16" style="display:block;margin:0 auto;">
+                                <path fill="none" stroke="#e6c97a" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" d="M2 6l6 6 6-6" />
+                            </svg>
+                        </span>
+                    </div>
+                    <style>
+                        @keyframes swordPulse {
+                            0% {
+                                transform: translateY(0) scale(1);
+                                filter: drop-shadow(0 0 8px #e6c97a44);
+                            }
+
+                            100% {
+                                transform: translateY(10px) scale(1.08);
+                                filter: drop-shadow(0 0 18px #e6c97a99);
+                            }
+                        }
+                    </style>
+
+                    <!-- Chronicle Text -->
+                    <h2 id="chronicleHeader" style="color:#e6c97a;font-size:2.1rem;margin:2.5rem 0 1.2rem 0;text-align:center;letter-spacing:0.03em;">
+                        The Chronicle
+                    </h2>
+
+                    <div style="color:#fff;font-size:1.08rem;line-height:1.7;text-align:center;white-space:pre-line;margin-bottom:2.5rem;">
+                        
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">I. The Age of Six Crowns</h3>
+                        <p class="theChronicleText">
+                            For centuries, the lands surrounding the Enën Sea lived beneath the sovereign of the Six Crowns — Aeyantis, Katzh, Vulcaria, Ame’xore, Dreonathen, and Kithren. Their banners shaped diplomacy, war, and the rhythms of life itself.
+
+                            To the east, prosperity thrived beneath the Crowns’ watchful eyes.
+                            To the west, a slow-burning tension grew, layered over generations.
+                        </p>
+                        
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">II. The Western Realms</h3>
+                        <p class="theChronicleText">
+                            Beyond the reach of eastern courts lay the Western Realms — Dsärr, Edresan, and Yán - lands bound by the laws of the Six, yet never granted the dignity of equal standing.
+                            
+                            They were expected to uphold treaties they had no voice in shaping, and to honour decisions forged in distant halls where their names were seldom spoken and their counsel never sought.
+                            
+                            In Dsärr, Zhäro ruled with quiet restraint.
+                            He claimed no crown, held no illusions of grandeur.
+                            His realm was small, his strength limited, and he believed survival lay in humility.
+                            The Six Kingdoms were too vast, their armies too numerous; resistance would only bring ruin.
+
+                            But his son, Zuläch, saw only the weight of humiliation.
+                        </p>
+                        
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">III. The War of Sundering</h3>
+                        <p class="theChronicleText">
+                            In the age of the Sundering, long before the rise of TarragØn, the world had faced a darkness so absolute that strikes fear in the hearts.
+
+                            From the void beyond memory came Saar, an ancient evil so absolute in its malice that the world could not comprehend it.
+                            It swept across land and sea, unmaking everything in it's path.
+
+                            Forests curled inward, seas recoiled from their own shores, and living beings twisted into violent forms no natural law could explain.
+                            Kingdoms fell without blade or flame, collapsing into silence as if erased from within.
+                            
+                            Language faltered as meaning slipped away.
+                            Armies marched against Saar and vanished without trace. 
+
+                            When the end seemed certain, the scriptures speak of only two vast presences that rose against the unraveling — the Guardians.
+                            Not gods, nor angels, nor creatures of flesh, but primordial anchors bound to the world’s foundations, shaping its laws simply by existing.                            
+                            
+                            Together, they forged four stabilising truths:
+
+                            &#9672; <b>Order</b> - Restrain chaos
+                            &#9672; <b>Will</b> - Resist corruption
+                            &#9672; <b>Form</b> - Prevent manifestation
+                            &#9672; <b>Veil</b> - Conceal and contain
+
+                            These became the Four Eternal Chains, sunk beneath the Mountains of Shal’Mur, binding the wounded world tight against Saar’s wrath.
+                            
+                            The first three rose in unbroken unity.
+                            But as the Guardians began the fourth, Saar struck back — a violent convulsion of destruction that shattered the boundaries of existence.
+                            Continents split and Seas blackened. Storms tore open the heavens as the world buckled beneath the clash.
+
+                            In that final moment, Caelthior was drawn into the void, its presence unraveling under Saar’s strike.
+                            Yet even as it faded into absence, it held the rising Pillar long enough for the truth to take shape.
+
+                            The Veil — the Fourth and final Pillar rose.
+                        </p>
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">IV. The Old Treaty</h3>
+                        <p class="theChronicleText">
+                            In the aftermath of the Sundering, the Six Crowns and the Western Realms forged the Old Treaty — a pact born of fear and necessity.
+
+                            &#9672; None would seek Saar
+                            &#9672; None would attempt to wield Saar
+                            &#9672; None would disturb the Pillars beneath Shal’Mur
+                            &#9672; All disputes must be settled without invoking ancient forces
+
+                            The vows were forged together, but over time the Six became their stewards.
+                            What they upheld became the measure; what they forbade became the boundary.
+                            And the West bore the burden of laws guided by hands not their own.
+
+                            The treaty preserved peace, but froze the political order.
+                            The West remained beneath the Six, tied to laws that never granted them respect.
+
+                            Resentment grew like roots beneath stone.
+                        </p>
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">V. Zuläch and the Rise of TarragØn</h3>
+                        Zuläch grew up watching his father bow to eastern pressure.
+
+                        Where Zhäro saw wisdom, Zuläch saw weakness.
+                        Where Zhäro saw survival, Zuläch saw humiliation.
+
+                        He wanted recognition. He wanted a crown. He wanted the West to stand equal - or above.
+
+                        In secret, he forged alliances with Qadril of Edresan and Domiyán of Yán realm, and together, they orchestrated Zhäro’s death, disguising it as a tragic accident.
+
+                        With his father gone, Zuläch unified the West through threats, promises, and carefully spun lies. The three realms became one, The Kingdom of TarragØn — the First Western-most Kingdom.
+                        
+                        For the first time, the West held a crown equal to the Six and for a moment, Zuläch’s dream seemed fulfilled.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">VI. The Breaking of the Seal</h3>
+                        But power sharpened his hunger.
+
+                        Ruling TarragØn was not enough. He wanted permanence - faster armies, larger territories, a kingdom no force could challenge. For that, he sought what the Old Treaty forbade.
+
+                        Beneath Shal’Mur, Zuläch found the ancient seals that imprisoned Saar.
+                        The air swelled with whispering voices, beckoning to be freed. Convinced he could control what others had only feared, he broke the ancient protections. 
+
+                        He was wrong.
+
+                        Saar did not serve him.
+                        Saar consumed him.
+
+                        His body warped into a colossal, nightmarish form.
+                        His mind shattered and reformed under Saar’s will.
+
+                        Zuläch became the Mighty Troll of TarragØn - Saar’s hatred wearing his flesh.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">VII. Beasts of the Enën Sea</h3>
+                        The Enën Sea is a world of many creatures.
+                        They answer to instinct, territory, and corruption.
+
+                        Gortusk — Volcanic War-Beast
+                        Armoured thundering titans whose charges flatten fortifications, tusks that carve trenches into the earth. They roam volcanic highlands of Vulcaria.
+
+                        Megalore — Colossal Sea Predator
+                        A 110‑ft hunter that prowls the coasts, shattering hulls and capsising ships that stray too near TarragØn’s shores.
+
+                        Ly’cara — Mistwood Pack Hunters
+                        Shadow-moving predators that stalk the forests of Kithren.
+
+                        Deep Abyssal — Trench-Dwelling Colossi
+                        Towering beings rising from the deepest trenches of the Enën Sea, bending currents and darkness.
+                        
+                        Cyrenthos — Corruption-Bound Entities
+                        Ancient beasts dwelling in twisted valleys near Dreonathen's borders.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">VIII. The Keeper of Hidden Archives</h3>
+                        The first to recognise the pattern was Teri’itaria of Ame’xore, Keeper of the Hidden Archives.
+
+                        She saw echoes of the Sundering in the spreading corruption - Signs recorded only in the oldest vaults, written by those who witnessed Saar’s first rise.
+
+                        She recognised what others refused to see.
+
+                        The return of Saar.
+
+                        Teri’itaria carried this truth to Queen Ahris of Aeyantis, whose resolve could act where others hesitated.
+
+                        Together, they awakened Lumyrion - the last Guardian capable of standing against the corruption rising from TarragØn.
+
+                        <h3 style="color:#e6c97a;margin-top:2.2rem;">IX. The Call To TarragØn</h3>
+                        Within the vaults of Aeyantis lay the rites to awaken the surviving Guardian.
+
+                        Through a forbidden ritual, Queen Ahris summoned Lumyrion and bound its essence into a radiant pendant.
+
+                        Lumyrion does not choose.
+                        It answers.
+
+                        When it stirred, its light sought a spirit steady enough to bear its weight —
+                        one that did not recoil when all others faltered.
+
+                        Queen Ahris recognised this and placed the pendant in that knight’s hands,
+                        a burden the world could no longer carry on its own.
+
+                        With Lumyrion’s light at your side, you begin the long road toward TarragØn.
+
+                        There, beneath a sky warped by ancient malice, waits the Mighty Troll of TarragØn - To face the Troll is to face Saar itself.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="story" style="margin-top:2rem">
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;">
+                <div style="position:relative;width:100%;max-width:950px;margin:0 auto;">
+                    <img src="/assets/agedScroll.png" alt="Aged Scroll" style="width:100%;max-width:950px;height:auto;display:block;pointer-events:none;">
+
+                    <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2.2rem 0;box-sizing:border-box;">
+                        <div style="max-width:78%;width:100%;max-height:100%;margin:0 auto;padding:3.5rem 1.5rem 1.5rem 1.5rem;box-sizing:border-box;border-radius:18px;display:flex;flex-direction:column;overflow:hidden;">
+                            <h3 class="section-title" style="font-size:30px;text-align:center;display:flex;align-items:center;gap:0.7rem;color:#7a5c1e;justify-content:center;">
+                                The Story
+                            </h3>
+
+                            <div style="font-family: 'EB Garamond', 'Georgia', serif; font-size:15px; color:#6b4e1e; font-style:italic; letter-spacing:0.01em; text-align:center; max-width:420px; margin:0 auto;flex:1;min-height:0;overflow-y:auto;max-height:clamp(220px,42vh,420px);padding-right:0.75rem;scrollbar-gutter:stable;-webkit-overflow-scrolling:touch;">
+                                <p style="margin-bottom:1.2rem;max-width:620px;margin-left:auto;margin-right:auto;color:#1a1200;text-align:justify;text-shadow:none;">
+                                    The Enën Sea is unraveling.<br><br>Once-proud kingdoms crumble, ancient realms
+                                    fracture, and something dark stirs across land and water. In the West, an ancient evil has awakened — 
+                                    warping creatures, shattering borders, and driving the world toward chaos.<br><br>
+                                    Queen Ahris entrusts the Guardian Of Order 𖬺 Balance to you alone, sending you
+                                    on a path to TarragØn - the source of the ruin. <br><br>Legends speak of Lumyrion — an ancient relic 
+                                    said to have awakened once, at the dawn of the world, when order had yet to exist. For millennias, 
+                                    it has been guarded, revered… and never seen again.<br><br>
+                                    
+                                    Some claim that when turmoil rises, its light will return to guide the chosen through shadows few dare to enter.<br><br>   
+                                    
+                                    But legends are not truth.
+                                    
+                                    With only faith, or fate at your side, you must cross lands scarred by corruption, confront the spreading darkness, 
+                                    and face the power growing within TarragØn before it consumes all.<br><br>
+                                    
+                                    Your journey begins where the light ends.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ENCASED SECTIONS START -->
+    <div class="container"
+        style="background:rgba(24,28,31,0.80);border-radius:18px;box-shadow:0 4px 24px #0008;padding:2.5rem 0 2.5rem 0;margin-bottom:2.5rem;">
+
+        <!-- THE JOURNEY (VERTICAL) -->
+        <section id="journey" class="journey journey-vertical">
+            <div class="journey-inner">
+
+                <header class="journey-header">
+                    <p class="journey-kicker">THE JOURNEY</p>
+                    <h2 class="journey-title">Across the Realms of the Enën Sea</h2>
+
+                    <p class="journey-intro">
+                        With Lumyrion’s light as your guide, you travel west from the bright courts of Aeyantis,
+                        across coasts and fortresses into forests scarred by corruption. Each step pulls you
+                        closer to TarragØn — and to the source of the world’s unraveling.
+                    </p>
+                </header>
+
+                <!-- MAIN VERTICAL STORYLINE -->
+                <div class="journey-timeline">
+                    <div class="journey-main-grid">
+
+                        <!-- Aeyantis -->
+                        <article class="journey-main-node">
+                            <header class="journey-step-header">
+                                <div class="journey-main-icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                            </header>
+
+                            <div class="journey-headrow">
+                                <div class="journey-headrow-left">
+                                    <h3>Aeyantis Kingdom</h3>
+                                    <p class="journey-step-sub">Where the light begins</p>
+                                </div>
+
+                                <!-- Right column: view details + expanding text -->
+                                <div class="journey-headrow-right">
+                                    <details class="journey-details journey-details-right" open>
+                                        <summary>View details</summary>
+                                        <div class="journey-details-content">
+                                            Seat of Queen Ahris and heart of civilisation. Here you are entrusted
+                                            with the Guardian Lumyrion and ordered to trace the spreading corruption
+                                            west toward TarragØn.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Katzh -->
+                        <article class="journey-main-node">
+                            <header class="journey-step-header">
+                                <div class="journey-main-icon">
+                                    <i class="fa-solid fa-life-ring"></i>
+                                </div>
+                            </header>
+
+                            <div class="journey-headrow">
+                                <div class="journey-headrow-left">
+                                    <h3>Katzh Crownland</h3>
+                                    <p class="journey-step-sub">Crossroads Kingdom</p>
+                                </div>
+
+                                <!-- Right column: view details + expanding text -->
+                                <div class="journey-headrow-right">
+                                    <details class="journey-details journey-details-right">
+                                        <summary>View details</summary>
+                                        <div class="journey-details-content">
+                                            A coastal, Crownland ruled by Yutanari. Traders and wanderers
+                                            bring rumours of strange tides, missing vessels, and creatures sighted
+                                            too near TarragØn’s shores.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Dreonathen -->
+                        <article class="journey-main-node">
+                            <header class="journey-step-header">
+                                <div class="journey-main-icon">
+                                    <i class="fa-brands fa-servicestack"></i>
+                                </div>
+                            </header>
+
+                            <div class="journey-headrow">
+                                <div class="journey-headrow-left">
+                                    <h3>Dreonathen Kingdom</h3>
+                                    <p class="journey-step-sub">The Last Shield</p>
+                                </div>
+
+                                <!-- Right column: view details + expanding text -->
+                                <div class="journey-headrow-right">
+                                    <details class="journey-details journey-details-right">
+                                        <summary>View details</summary>
+                                        <div class="journey-details-content">
+                                            A kingdom of stone fortresses and open plains, standing between the Six
+                                            Crowns and the Western Realms. Ruled by King Diogenes, its walls face west,
+                                            bracing against raids,
+                                            Gortusk charges, and the slow advance of TarragØn’s influence.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Kithren -->
+                        <article class="journey-main-node">
+                            <header class="journey-step-header">
+                                <div class="journey-main-icon">
+                                    <i class="fas fa-tree"></i>
+                                </div>
+                            </header>
+
+                            <div class="journey-headrow">
+                                <div class="journey-headrow-left">
+                                    <h3>Kithren Queendom</h3>
+                                    <p class="journey-step-sub">The Mistwood Queendom</p>
+                                </div>
+
+                                <!-- Right column: view details + expanding text -->
+                                <div class="journey-headrow-right">
+                                    <details class="journey-details journey-details-right">
+                                        <summary>View details</summary>
+                                        <div class="journey-details-content">
+                                            A queendom nestled between the twisting trees, ruled by Queen Keisth,
+                                            lies shrouded in ancient whispers. Within its shadowed groves,
+                                            Ly’cara packs stalk between gnarled roots and crooked branches.
+                                            At the borders, Lumyrion’s light flickers faintly, a fragile beacon against
+                                            the spreading blight.
+                                            Beyond, TarragØn’s corruption seeps outward, staining bark and soil,
+                                            threatening to engulf the realm entire.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- TarragØn -->
+                        <article class="journey-main-node journey-node-final">
+                            <header class="journey-step-header">
+                                <div class="journey-main-icon journey-icon-final">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="140"
+                                        height="140">
+                                        <path fill="currentColor" fill-rule="evenodd" d="
+                                            M128 18
+                                            C104 22 83 35 69 55
+                                            C54 77 51 104 58 128
+                                            C65 154 80 176 98 196
+                                            C110 209 119 224 128 238
+                                            C137 224 146 209 158 196
+                                            C176 176 191 154 198 128
+                                            C205 104 202 77 187 55
+                                            C173 35 152 22 128 18
+                                            Z
+
+                                            M92 118
+                                            C106 106 120 102 128 106
+                                            C118 120 106 126 92 118
+                                            Z
+
+                                            M164 118
+                                            C150 106 136 102 128 106
+                                            C138 120 150 126 164 118
+                                            Z
+
+                                            M128 66
+                                            L121 84
+                                            L128 80
+                                            L135 84
+                                            Z
+
+                                            M128 102
+                                            C125 124 125 148 128 176
+                                            C131 148 131 124 128 102
+                                            Z
+
+                                            M118 192
+                                            C123 188 126 187 128 188
+                                            C130 187 133 188 138 192
+                                            C134 199 131 203 128 205
+                                            C125 203 122 199 118 192
+                                            Z
+                                        " />
+                                    </svg>
+                                </div>
+                            </header>
+
+                            <div class="journey-headrow">
+                                <div class="journey-headrow-left">
+                                    <h3>TarragØn</h3>
+                                    <p class="journey-step-sub">Corrupted Western Throne</p>
+                                </div>
+
+                                <!-- Right column: view details + expanding text -->
+                                <div class="journey-headrow-right">
+                                    <details class="journey-details journey-details-right">
+                                        <summary>View details</summary>
+                                        <div class="journey-details-content">
+                                            Forged from Dsärr, Edresan, and Yán as a united Western kingdom. Now it is
+                                            the source of the world’s corruption. At its core, the Mighty Troll of
+                                            TarragØn — Zuläch consumed by Saar — awaits your final confrontation.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- SIDE PATHS & WESTERN REALMS -->
+                <div class="journey-sides">
+                    <h3 class="journey-sides-title">Side Paths & Western Realms</h3>
+                    <p class="journey-sides-intro">
+                        Not every path runs straight to TarragØn. Some realms lie off the main road or beyond
+                        the corrupted core — places you may hear of, visit briefly, or return to once the
+                        corruption has been challenged.
+                    </p>
+
+                    <div class="journey-sides-grid">
+
+                        <!-- Brigachian -->
+                        <article class="journey-side-node">
+                            <header class="journey-step-header">
+                                <div class="journey-icon">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <h4>Brigachian Realm</h4>
+                                <p class="journey-step-sub">Northern sea frontier</p>
+                            </header>
+                            <p>
+                                North of Aeyantis, guarding cold waters where Megalore and other leviathans prowl.
+                                Its harbours are the first to close when ships begin to vanish near the western
+                                currents.
+                            </p>
+                        </article>
+
+                        <!-- Vulcaria -->
+                        <article class="journey-side-node">
+                            <header class="journey-step-header">
+                                <div class="journey-icon">
+                                    <i class="fas fa-fire-flame-curved"></i>
+                                </div>
+                                <h4>Vulcaria</h4>
+                                <p class="journey-step-sub">Kingdom of ash and fire</p>
+                            </header>
+                            <p>
+                                A molten land north of the central plains, where lava rivers and volcanic ridges
+                                shape the horizon. Gortusk herds and war-clans answer to Queen Olorus, holding
+                                the high ground against whatever comes from the West.
+                            </p>
+                        </article>
+
+                        <!-- Ame’xore -->
+                        <article class="journey-side-node">
+                            <header class="journey-step-header">
+                                <div class="journey-icon">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                </div>
+                                <h4>Ame’xore</h4>
+                                <p class="journey-step-sub">Kingdom of hidden archives</p>
+                            </header>
+                            <p>
+                                North of Dreonathen and Kithren, Ame’xore shelters deep archives on Saar,
+                                TarragØn, and the Old Treaty. Queen Teri’itaria’s scholars see patterns in the
+                                corruption others refuse to name.
+                            </p>
+                        </article>
+
+                        <!-- Edresan & Yán -->
+                        <article class="journey-side-node journey-side-locked">
+                            <header class="journey-step-header">
+                                <h3>LOCKED</h3>
+                                <h4>Edresan &amp; Yán</h4>
+                                <p class="journey-step-sub">Realms beyond the corruption</p>
+                            </header>
+                            <p>
+                                Western realms that helped forge TarragØn. Their lands now lie beyond the corrupted
+                                core, their fates tied to Saar’s power. Reaching them is only truly possible once
+                                the tide of corruption is confronted at TarragØn itself.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="userNeeds" class="userNeeds journey-vertical">
+            <div class="userNeeds-inner">
+
+                <header class="userNeeds-header">
+                    <p class="userNeeds-kicker">PLAYER FOUNDATIONS</p>
+                    <h2 class="userNeeds-title">User Needs</h2>
+                    <p class="userNeeds-intro">
+                        Scrolls of Odyssey is a PEGI 18 fantasy title designed around a dark, politically fractured
+                        world.
+                        The experience prioritises deliberate pacing, strong visual hierarchy, and readable interfaces
+                        to support
+                        long-form exploration, narrative weight and player choice without overwhelming the player.
+                    </p>
+                </header>
+
+                <div class="user-needs-grid">
+                    <!-- Design Need 1 -->
+                    <article class="need-card">
+                        <h4>Engaging Colour</h4>
+                        <p>
+                            High-contrast palettes and controlled highlights are used to guide attention,
+                            signal danger, and reinforce narrative beats. Colour is employed deliberately
+                            to distinguish safe spaces, corrupted regions, and moments of consequence.
+                        </p>
+                    </article>
+
+                    <!-- Design Need 2 -->
+                    <article class="need-card">
+                        <h4>Mature Visual Tone</h4>
+                        <p>
+                            Violence is present and narratively significant, reinforcing the game’s darker themes.
+                            Encounters are visually clear and impactful, focusing on atmosphere, scale, and consequence
+                            rather than gratuitous detail. The aesthetic supports tension, dread, and moral weight.
+                        </p>
+                    </article>
+
+                    <!-- Design Need 3 -->
+                    <article class="need-card">
+                        <h4>Clear Direction</h4>
+                        <p>
+                            Despite the game’s complexity, player actions are communicated clearly.
+                            Objectives, interactions, and combat prompts are concise and readable,
+                            allowing players to focus on strategy and immersion rather than interface friction.
+                        </p>
+                    </article>
+
+                    <!-- Design Need 4 -->
+                    <article class="need-card">
+                        <h4>Readable Text</h4>
+                        <p>
+                            Typography is built for dark scenes: strong contrast, controlled line-length,
+                            clear hierarchy, and consistent spacing. Key prompts remain readable through
+                            fog, vignette and heavy atmospherics without breaking immersion.
+                        </p>
+                    </article>
+                </div>
+
+                <!-- Persona / User Profile -->
+                <div>
+                    <aside class="persona-card">
+                        <h3>Player Snapshot</h3>
+
+                        <div class="persona-image-wrap">
+                            <img src="/assets/soct-userProfile.png" alt="User profile sketch for Scrolls of Odyssey"
+                                loading="lazy">
+                        </div>
+
+                        <ul class="persona-notes">
+                            <li>Plays in longer sessions (1–3 hours), often at night with headphones.</li>
+                            <li>Values worldbuilding, political tension, and choices with consequences.</li>
+                            <li>Prefers minimal UI clutter, strong contrast, and clear readability in dark scenes.</li>
+                            <li>Explores off the critical path when lore or side regions feel meaningful.</li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="userNeeds" class="userNeeds journey-vertical">
+            <div class="userNeeds-inner">
+
+                <header class="userNeeds-header">
+                    <p class="userNeeds-kicker">CONCEPTUALISATION</p>
+                    <h2 class="userNeeds-title">Game Genre</h2>
+                    <p class="userNeeds-intro">
+                        Scrolls of Odyssey combines point-and-click exploration with text-based mechanics to blend
+                        visual intuition with deep, narrative-driven interaction.
+                        This hybrid style allows for seamless navigation while using text to convey nuanced sensory
+                        details and complex choices that visuals alone cannot capture, creating a highly immersive and
+                        atmospheric experience.
+                    </p>
+                </header>
+
+                <div>
+                    <aside class="persona-card">
+                        <div class="persona-image-wrap">
+                            <img src="/assets/soct-gameStyleIdeation.png"
+                                alt="User profile sketch for Scrolls of Odyssey" loading="lazy">
+                        </div>
+                    </aside>
+                </div>
+
+                <div>
+                    <aside class="persona-card">
+                        <div class="persona-image-wrap">
+                            <img src="/assets/soct-moodboard.png" alt="User profile sketch for Scrolls of Odyssey"
+                                loading="lazy">
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="userNeeds" class="userNeeds journey-vertical">
+            <div class="userNeeds-inner">
+
+                <header class="userNeeds-header">
+                    <p class="userNeeds-kicker">GAME FOUNDATIONS</p>
+                    <h2 class="userNeeds-title">UI and Game Design</h2>
+                    <p class="userNeeds-intro">
+                        Scrolls of Odyssey is a PEGI 18 fantasy title designed around a dark, politically fractured
+                        world.
+                        The experience prioritises deliberate pacing, strong visual hierarchy, and readable interfaces
+                        to support
+                        long-form exploration, narrative weight and player choice without overwhelming the player.
+                    </p>
+                </header>
+
+                <div class="user-needs-grid">
+                    <!-- Design Need 1 -->
+                    <article class="need-card">
+                        <h4>Webpage Properties</h4>
+                        <p>
+                            The webpage features a clear <strong>Title</strong> and a simplified <strong>Dropdown
+                                Menu</strong> that provides instant access to the core game loop, including <strong>Play
+                                Game</strong>, <strong>Instructions</strong>, and <strong>About</strong> and
+                            <strong>Credits</strong>.
+                            <br>
+                            The interface is designed with a centralised <strong>Game Window</strong> for focused play,
+                            supported by a structured <strong>Instructions</strong> section for quick reference and a
+                            <strong>Footer</strong> for additional developer details.
+                        </p>
+                    </article>
+
+                    <!-- Design Need 2 -->
+                    <article class="need-card">
+                        <h4>Game Window</h4>
+                        <p>
+                            The <strong>Game Window</strong> serves as the central hub of player activity, beginning
+                            with a prompt to <strong>Enter Name</strong> and <strong>Play</strong> to establish a
+                            session.
+                            Once logged in, players transition into the gates of Aeyantis Kingdom, a staging area for
+                            navigation and social interaction, which provides direct access to the Blacksmith for
+                            acquiring equipment.
+                        </p>
+                    </article>
+                </div>
+
+                <div>
+                    <aside class="persona-card">
+                        <h3>Ideation</h3>
+
+                        <div class="persona-image-wrap">
+                            <img src="/assets/soct-gameDesign.png" alt="User profile sketch for Scrolls of Odyssey"
+                                loading="lazy">
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="gameFeatures" class="userNeeds journey-vertical">
+            <div class="userNeeds-inner">
+
+                <header class="userNeeds-header">
+                    <p class="userNeeds-kicker">GAME OVERVIEW</p>
+                    <h2 class="userNeeds-title">Game Features</h2>
+                    <p class="userNeeds-intro">
+                        A focused set of systems designed to support atmospheric exploration,
+                        narrative clarity, and creature-driven worldbuilding.
+                    </p>
+                </header>
+
+                <div class="user-needs-grid">
+
+                    <article class="need-card">
+                        <h4>Guided Narrative Journey</h4>
+                        <p>
+                            A story-driven experience with a clear beginning and end, designed to
+                            maintain pacing while allowing players to engage with the world at a
+                            comfortable, readable pace.
+                        </p>
+                    </article>
+
+                    <article class="need-card">
+                        <h4>Branching Exploration Paths</h4>
+                        <p>
+                            While the main journey leads toward TarragØn, optional regions allow
+                            players to uncover side stories, creatures, and lore without disrupting
+                            the core narrative.
+                        </p>
+                    </article>
+
+                    <article class="need-card">
+                        <h4>Guardian Relic System (Lumyrion)</h4>
+                        <p>
+                            A living relic bound to the player that reacts to corruption and choice.
+                            Lumyrion offers guidance and protection, but introduces risk and
+                            consequence when relied upon too heavily.
+                        </p>
+                    </article>
+
+                    <article class="need-card">
+                        <h4>Creature-Centric World Design</h4>
+                        <p>
+                            The Enën Sea is shaped by powerful creatures rather than human rule.
+                            Beasts define territories, danger levels, and narrative tone, making
+                            the world feel ancient and untamed.
+                        </p>
+                    </article>
+
+                    <article class="need-card">
+                        <h4>Environmental Storytelling</h4>
+                        <p>
+                            Lore is embedded directly into landscapes, ruins, and creature domains,
+                            encouraging discovery through observation rather than exposition.
+                        </p>
+                    </article>
+
+                    <article class="need-card">
+                        <h4>Accessible, Readable Interface</h4>
+                        <p>
+                            A dark, high-contrast UI with strong hierarchy, built to support long-form
+                            exploration without overwhelming the player.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="characters" class="userNeeds journey-vertical">
+            <div class="userNeeds-inner">
+
+                <header class="userNeeds-header">
+                    <p class="userNeeds-kicker">GAME CHARACTERS</p>
+                    <h2 class="userNeeds-title">Meet The Characters</h2>
+                    <p class="userNeeds-intro">
+                        Power in the Enën Sea is not held by heroes alone. Queens, kings, conspirators,
+                        and ancient forces shape the world long before the player takes their first step.
+                    </p>
+                </header>
+
+                <!-- ======================= -->
+                <!-- THE SIX CROWNS -->
+                <!-- ======================= -->
+                <h3 class="character-section-title">The Six Crowns</h3>
+
+                <div class="character-grid">
+
+                    <article class="character-card playable">
+                        <h4>Queen Ahris</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/QueenAhris.png" alt="Queen Ahris">
+                        </div>
+
+                        <p class="character-role">Sovereign of Aeyantis</p>
+                        <ul class="character-stats">
+                            <li><span>Influence</span>
+                                <div class="bar"><i style="width:90%"></i></div>
+                            </li>
+                            <li><span>Wisdom</span>
+                                <div class="bar"><i style="width:95%"></i></div>
+                            </li>
+                            <li><span>Resolve</span>
+                                <div class="bar"><i style="width:80%"></i></div>
+                            </li>
+                        </ul>
+                        <p class="character-lore">
+                            An ancient ruler who understands that balance often demands sacrifice.
+                            She binds Lumyrion not to conquer the world, but to prevent its collapse.
+                        </p>
+                    </article>
+
+                    <article class="character-card">
+                        <h4>Yutanari</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/Yutanari.png" alt="Yutanari">
+                        </div>
+
+                        <p class="character-role">Ruler of Katzh</p>
+                        <ul class="character-stats">
+                            <li><span>Influence</span>
+                                <div class="bar"><i style="width:85%"></i></div>
+                            </li>
+                            <li><span>Adaptation</span>
+                                <div class="bar"><i style="width:90%"></i></div>
+                            </li>
+                            <li><span>Control</span>
+                                <div class="bar"><i style="width:70%"></i></div>
+                            </li>
+                        </ul>
+                        <p class="character-lore">
+                            A formless sovereign whose rule shifts like the tides. Katzh survives by
+                            bending rather than breaking.
+                        </p>
+                    </article>
+
+                    <article class="character-card">
+                        <h4>Queen Olorus</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/QueenOlorus.png" alt="Queen Olorus">
+                        </div>
+
+                        <p class="character-role">Mistress of Vulcaria</p>
+                        <ul class="character-stats">
+                            <li><span>Might</span>
+                                <div class="bar"><i style="width:88%"></i></div>
+                            </li>
+                            <li><span>Command</span>
+                                <div class="bar"><i style="width:75%"></i></div>
+                            </li>
+                            <li><span>Endurance</span>
+                                <div class="bar"><i style="width:85%"></i></div>
+                            </li>
+                        </ul>
+                        <p class="character-lore">
+                            Ruler of ash and fire. Olorus commands lands that devour the unprepared
+                            and beasts that answer only to strength.
+                        </p>
+                    </article>
+
+                    <article class="character-card">
+                        <h4>Queen Teri’itaria</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/QueenTeriitaria.png" alt="Queen Teri’itaria">
+                        </div>
+
+                        <p class="character-role">Keeper of Ame’xore</p>
+                        <ul class="character-stats">
+                            <li><span>Knowledge</span>
+                                <div class="bar"><i style="width:98%"></i></div>
+                            </li>
+                            <li><span>Foresight</span>
+                                <div class="bar"><i style="width:90%"></i></div>
+                            </li>
+                            <li><span>Secrecy</span>
+                                <div class="bar"><i style="width:85%"></i></div>
+                            </li>
+                        </ul>
+                        <p class="character-lore">
+                            Guardian of the hidden archives. She sees patterns others deny and fears
+                            truths that cannot be unlearned.
+                        </p>
+                    </article>
+
+                    <article class="character-card">
+                        <h4>King Diogenes</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/KingDiogenes.png" alt="King Diogenes">
+                        </div>
+
+                        <p class="character-role">Warden of Dreonathen</p>
+                        <ul class="character-stats">
+                            <li><span>Defense</span>
+                                <div class="bar"><i style="width:95%"></i></div>
+                            </li>
+                            <li><span>Discipline</span>
+                                <div class="bar"><i style="width:85%"></i></div>
+                            </li>
+                            <li><span>Authority</span>
+                                <div class="bar"><i style="width:75%"></i></div>
+                            </li>
+                        </ul>
+                        <p class="character-lore">
+                            Commander of stone fortresses and the last shield between the Six Crowns
+                            and the West.
+                        </p>
+                    </article>
+
+                    <article class="character-card">
+                        <h4>Queen Keisth</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/QueenKeisth.png" alt="Queen Keisth">
+                        </div>
+
+                        <p class="character-role">Sovereign of Mistwood</p>
+                        <ul class="character-stats">
+                            <li><span>Harmony</span>
+                                <div class="bar"><i style="width:80%"></i></div>
+                            </li>
+                            <li><span>Instinct</span>
+                                <div class="bar"><i style="width:90%"></i></div>
+                            </li>
+                            <li><span>Influence</span>
+                                <div class="bar"><i style="width:70%"></i></div>
+                            </li>
+                        </ul>
+                        <p class="character-lore">
+                            Ruler of Kithren’s forests. As corruption spreads, her realm is the first
+                            to fall silent.
+                        </p>
+                    </article>
+
+                </div>
+
+                <!-- ======================= -->
+                <!-- WESTERN REALMS -->
+                <!-- ======================= -->
+                <h3 class="character-section-title">The Western Realms</h3>
+
+                <div class="character-grid">
+
+                    <article class="character-card">
+                        <h4>Zhäro</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/Zharo.png" alt="Zhäro">
+                        </div>
+
+                        <p class="character-role">Former Ruler of Dsärr</p>
+                        <p class="character-lore">
+                            A king who chose survival over pride. His quiet rule kept the West alive,
+                            but planted the seeds of rebellion.
+                        </p>
+                    </article>
+
+                    <article class="character-card antagonist corrupted">
+                        <h4>Zuläch</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/Zulach.png" alt="Zuläch, the Mighty Troll of TarragØn" loading="lazy">
+                        </div>
+
+                        <p class="character-role">The Mighty Troll of TarragØn</p>
+                        <ul class="character-stats">
+                            <li><span>Might</span>
+                                <div class="bar danger"><i style="width:100%"></i></div>
+                            </li>
+                            <li><span>Corruption</span>
+                                <div class="bar danger"><i style="width:100%"></i></div>
+                            </li>
+                        </ul>
+                        <p class="character-lore">
+                            Once a ruler seeking equality. Now Saar’s will wearing flesh.
+                        </p>
+                    </article>
+
+                    <article class="character-card">
+                        <h4>Qadril</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/Qadril.png" alt="Qadril" loading="lazy">
+                        </div>
+
+                        <p class="character-role">Ruler of Edresan</p>
+                        <p class="character-lore">
+                            A conspirator who traded stability for ambition, believing the West
+                            deserved more than obedience.
+                        </p>
+                    </article>
+
+                    <article class="character-card">
+                        <h4>Domiyán</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/Domiyán.png" alt="Domiyán" loading="lazy">
+                        </div>
+
+                        <p class="character-role">Ruler of Yán</p>
+                        <p class="character-lore">
+                            Bound to TarragØn through shared rule, Yán’s fate is entwined with
+                            Saar’s awakening.
+                        </p>
+                    </article>
+
+                </div>
+
+                <!-- ======================= -->
+                <!-- MYTHIC FORCES -->
+                <!-- ======================= -->
+                <h3 class="character-section-title">Mythic Forces</h3>
+
+                <div class="character-grid">
+
+                    <article class="character-card mythic">
+                        <div class="flip-card-front">
+                            <h4>Lumyrion</h4>
+
+                            <div class="character-portrait" data-portrait-carousel="lumyrion" style="position: relative;">
+                                <img class="portraitImage" src="/assets/soct-characters/Lumyrion.png" alt="Lumyrion" loading="lazy">
+
+                                <span class="portraitArrow carousel-arrow carousel-arrow-right" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; z-index: 10;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 16 16" style="display:block;filter: drop-shadow(0 0 4px rgba(230, 201, 122, 0.6));">
+                                        <path fill="none" stroke="#e6c97a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 2l6 6-6 6" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <p class="character-role">Guardian of Balance</p>
+                        <p class="character-lore">
+                            An ancient force bound to the world itself. Lumyrion shields its bearer
+                            — but every awakening extracts a price.
+                        </p>
+                    </article>
+
+                    <article class="character-card mythic antagonist">
+                        <h4>Saar</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/Saar.png" alt="Saar" loading="lazy">
+                        </div>
+                        <p class="character-role">Formless Ancient Evil</p>
+                        <p class="character-lore">
+                            A force of unmaking sealed beneath Shal’Mur. Saar does not rule —
+                            it consumes.
+                        </p>
+                    </article>
+
+                </div>
+
+                <h3 class="character-section-title">Beasts of the Enën Sea</h3>
+
+                <p class="userNeeds-intro" style="max-width:900px;">
+                These creatures do not serve kingdoms. They answer to instinct, territory,
+                and corruption. Their presence reshapes regions, alters travel routes,
+                and signals the world’s descent toward chaos.
+                </p>
+
+                <div class="character-grid">
+
+                    <!-- GORTUSK -->
+                    <article class="character-card beast flip-card">
+                        <div class="flip-card-inner">
+                            <!-- Front Face -->
+                            <div class="flip-card-front">
+                                <h4>Gortusk</h4>
+                                <div class="character-portrait">
+                                    <img src="/assets/soct-characters/Gortusk.png" alt="Gortusk" loading="lazy">
+                                </div>
+                                <p class="character-role">Volcanic War-Beast</p>
+
+                                <ul class="character-stats">
+                                    <li><span>Height</span><span class="stat-value">16 ft</span></li>
+                                    <li><span>Length</span><span class="stat-value">28 ft</span></li>
+                                    <li><span>Might</span><div class="bar danger"><i style="width:95%"></i></div></li>
+                                    <li><span>Armor</span><div class="bar"><i style="width:90%"></i></div></li>
+                                    <li><span>Territory</span><div class="bar"><i style="width:85%"></i></div></li>
+                                </ul>
+
+                                <p class="character-lore">
+                                Armoured titans that roam the volcanic highlands of Vulcaria.
+                                Their charges can flatten fortifications and scatter entire warbands.
+                                </p>
+                            </div>
+                            
+                            <!-- Back Face -->
+                            <div class="flip-card-back">
+                                <img src="/assets/soct-envs/GortuskEnv.png" alt="Gortusk Environment" loading="lazy">
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MEGALORE -->
+                    <article class="character-card beast flip-card">
+                        <div class="flip-card-inner">
+                            <!-- Front Face -->
+                            <div class="flip-card-front">
+                                <h4>Megalore</h4>
+                                <div class="character-portrait">
+                                    <img src="/assets/soct-characters/Megalore.png" alt="Megalore" loading="lazy">
+                                </div>
+                                <p class="character-role">Colossal Sea Predator</p>
+
+                                <ul class="character-stats">
+                                    <li><span>Height</span><span class="stat-value">20 ft (body depth / dorsal rise)</span></li>
+                                    <li><span>Length</span><span class="stat-value">110 ft</span></li>
+                                    <li><span>Threat</span><div class="bar danger"><i style="width:100%"></i></div></li>
+                                    <li><span>Range</span><div class="bar"><i style="width:95%"></i></div></li>
+                                    <li><span>Detection</span><div class="bar"><i style="width:80%"></i></div></li>
+                                </ul>
+
+                                <p class="character-lore">
+                                A massive predator cutting through the Enën Sea.
+                                Ships vanish without warning when Megalore prowls nearby waters.
+                                </p>
+                            </div>
+                            
+                            <!-- Back Face -->
+                            <div class="flip-card-back">
+                                <img src="/assets/soct-envs/MegaloreEnv.png" alt="Megalore Environment" loading="lazy">
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LY’CARA -->
+                    <article class="character-card beast flip-card">
+                        <div class="flip-card-inner">
+                            <!-- Front Face -->
+                            <div class="flip-card-front">
+                                <h4>Ly’cara</h4>
+                                <div class="character-portrait">
+                                    <img src="/assets/soct-characters/Ly’cara.png" alt="Ly’cara" loading="lazy">
+                                </div>
+                                <p class="character-role">Mistwood Pack Hunters</p>
+
+                                <ul class="character-stats">
+                                    <li><span>Height</span><span class="stat-value">7 ft</span></li>
+                                    <li><span>Length</span><span class="stat-value">22 ft</span></li>
+                                    <li><span>Stealth</span><div class="bar"><i style="width:90%"></i></div></li>
+                                    <li><span>Coordination</span><div class="bar"><i style="width:95%"></i></div></li>
+                                    <li><span>Ambush</span><div class="bar danger"><i style="width:85%"></i></div></li>
+                                </ul>
+
+                                <p class="character-lore">
+                                    Shadow-moving hunters that stalk the forests of Kithren and Dreonathen.
+                                    Rarely seen. Never alone.
+                                </p>
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="flip-card-back">
+                                <img src="/assets/soct-envs/LycaraEnv.png" alt="Ly’cara Environment" loading="lazy">
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- DEEP ABYSSAL -->
+                    <article class="character-card beast flip-card">
+                        <div class="flip-card-inner">
+                            <!-- Front Face -->
+                            <div class="flip-card-front">
+                                <h4>Deep Abyssal</h4>
+                                <div class="character-portrait">
+                                    <img src="/assets/soct-characters/DeepAbyssal.png" alt="Deep Abyssal" loading="lazy">
+                                </div>
+                                <p class="character-role">Trench-Dwelling Colossi</p>
+
+                                <ul class="character-stats">
+                                    <li><span>Height</span><span class="stat-value">Undocumented</span></li>
+                                    <li><span>Length</span><span class="stat-value">Undocumented</span></li>
+                                    <li><span>Presence</span><div class="bar danger"><i style="width:90%"></i></div></li>
+                                    <li><span>Control</span><div class="bar"><i style="width:85%"></i></div></li>
+                                    <li><span>Obscurity</span><div class="bar"><i style="width:95%"></i></div></li>
+                                </ul>
+
+                                <p class="character-lore">
+                                    Towering entities rising from the deepest trenches.
+                                    Their movements bend currents, darkness, and storms.
+                                </p>
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="flip-card-back">
+                                <img src="/assets/soct-envs/DeepAbyssalEnv.png" alt="Deep Abyssal Environment" loading="lazy">
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CYRENTHOS -->
+                    <article class="character-card beast corrupted flip-card">
+                        <div class="flip-card-inner">
+                            <!-- Front Face -->
+                            <div class="flip-card-front">
+                                <h4>Cyrenthos</h4>
+
+                                <div class="character-portrait" data-portrait-carousel="cyrenthos" style="position: relative;">
+                                    <img class="portraitImage" src="/assets/soct-characters/Cyrenthos.png" alt="Cyrenthos" loading="lazy">
+                                    
+                                    <span class="portraitArrow carousel-arrow carousel-arrow-right" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; z-index: 10;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 16 16" style="display:block;filter: drop-shadow(0 0 4px rgba(230, 201, 122, 0.6));">
+                                            <path fill="none" stroke="#e6c97a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 2l6 6-6 6" />
+                                        </svg>
+                                    </span>
+                                </div>
+
+                                
+                                <p class="character-role">Corruption-Bound Entity</p>
+
+                                <ul class="character-stats">
+                                    <li><span>Height</span><span class="stat-value">14 ft</span></li>
+                                    <li><span>Length</span><span class="stat-value">22 ft</span></li>
+                                    <li><span>Corruption</span><div class="bar danger"><i style="width:100%"></i></div></li>
+                                    <li><span>Intelligence</span><div class="bar"><i style="width:85%"></i></div></li>
+                                    <li><span>Territory</span><div class="bar"><i style="width:80%"></i></div></li>
+                                </ul>
+
+                                <p class="character-lore">
+                                    Ancient beings dwelling near TarragØn’s borders.
+                                    Their lairs are among the first places Saar’s influence takes hold.
+                                </p>
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="flip-card-back">
+                                <img src="/assets/soct-envs/CyrenthosEnv.png" alt="Cyrenthos Environment" loading="lazy">
+                            </div>
+                        </div>
+                    </article>  
+
+                </div>
+
+                <!-- ======================= -->
+                <!-- COMPANIONS & ALLIES -->
+                <!-- ======================= -->
+                <h3 class="character-section-title">Companions &amp; Allies</h3>
+
+                <div class="character-grid">
+
+                    <article class="character-card">
+                        <h4>Grog</h4>
+                        <div class="character-portrait">
+                            <img src="/assets/soct-characters/Grog.png" alt="Grog" loading="lazy">
+                        </div>
+
+                        <p class="character-role">A jovial companion</p>
+                        <p class="character-lore">
+                            Small in stature, but rich in wisdom. Grog is a well-traveled Gnorvish wanderer with an enduring love for a frothy pint, he offers gentle counsel, wry observations and the occasional melodic song to lift weary spirits along the road. 
+                            Though not built for battle, he carries a collection of carefully brewed potions that restore health and raise morale, making him a trusted companion.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="sourceCode" class="userNeeds journey-vertical">
+            <div class="userNeeds-inner">
+                <header class="userNeeds-header">
+                    <p class="userNeeds-kicker">CALL TO ACTION</p>
+                    <h2 class="userNeeds-title">View The Source</h2>
+                    <p class="userNeeds-intro">
+                        Want to explore the implementation details and project files?
+                    </p>
+                </header>
+
+                <div style="text-align:center;">
+                    <!-- TODO: replace GitHub repository URL -->
+                    <a class="cta-button" href="https://github.com/csmorenolima" target="_blank" rel="noopener" style="display: inline-block; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; cursor: pointer;">
+                        <strong>OPEN GITHUB REPO</strong>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- ENCASED SECTIONS END -->
+
+    <!-- Navigation -->
+    <section class="project-navigation">
+        <div class="nav-buttons">
+            <a href="../engineering/" class="nav-btn back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Engineering</span>
+            </a>
+            <a href="../targetPortfolio/test.html" class="nav-btn next">
+                <span>Back to Portfolio</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <p>Learning Together, Growing Together.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>OfficialMV</h3>
+                    <span>
+                        <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank">RedBubble</a>
+                        <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank">Instagram</a>
+                        <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank">TikTok</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Social</h3>
+                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/csmorenolima" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; COPYRIGHT 2025 . ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Files -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.flip-card').on('click', function(e) {
+                // Allow other in-card interactions (like the Cyrenthos carousel arrow)
+                // without also flipping the card.
+                if ($(e.target).closest('.carousel-arrow, a, button').length) return;
+
+                $(this).toggleClass('flipped');
+            });
+        });
+    </script>
+
+    <script>
+        // Ensure smooth scroll works after DOM is ready and modal is open
+        document.addEventListener('DOMContentLoaded', function () {
+            var arrow = document.getElementById('chronicleArrow');
+            var header = document.getElementById('chronicleHeader');
+            if (arrow && header) {
+                arrow.addEventListener('click', function () {
+                    // If inside a modal, scroll the modal, not the window
+                    var modalContent = header.closest('.map-modal-content');
+                    if (modalContent) {
+                        var headerRect = header.getBoundingClientRect();
+                        var modalRect = modalContent.getBoundingClientRect();
+                        var offset = 40; // px below the top of modal
+                        // Scroll so header is offset from top of modal
+                        var scrollTarget = header.offsetTop - offset;
+                        modalContent.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+                    } else {
+                        // fallback: scroll window
+                        var rect = header.getBoundingClientRect();
+                        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        var offset = 100;
+                        var targetY = rect.top + scrollTop - offset;
+                        window.scrollTo({ top: targetY, behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script>
+        // Smooth scroll to Chronicle header with offset so header remains visible
+        (function () {
+            var arrow = document.getElementById('chronicleArrow');
+            var header = document.getElementById('chronicleHeader');
+            if (arrow && header) {
+                arrow.addEventListener('click', function () {
+                    var rect = header.getBoundingClientRect();
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    var offset = 1000; // px below the top, so header is still visible
+                    var targetY = rect.top + scrollTop - offset;
+                    window.scrollTo({ top: targetY, behavior: 'smooth' });
+                });
+            }
+        })();
+    </script>
+
+    <script>
+        // Smooth scroll to Chronicle body when arrow is clicked
+        (function () {
+            var arrow = document.getElementById('chronicleArrow');
+            var header = document.getElementById('chronicleHeader');
+            if (arrow && header) {
+                arrow.addEventListener('click', function () {
+                    header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
+        })();
+    </script>
+
+    <script>
+        // Map Modal open/close logic using WATCH DEMO button
+        (function () {
+            var watchDemoBtn = document.getElementById('watchDemoBtn');
+            var mapModal = document.getElementById('mapModal');
+            var closeMapModalBtn = document.getElementById('closeMapModal');
+            if (watchDemoBtn && mapModal && closeMapModalBtn) {
+                if (mapModal.parentElement !== document.body) {
+                    document.body.appendChild(mapModal);
+                }
+
+                watchDemoBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    mapModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+                closeMapModalBtn.addEventListener('click', function () {
+                    mapModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+                mapModal.addEventListener('click', function (e) {
+                    if (e.target === mapModal) {
+                        mapModal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && mapModal.classList.contains('active')) {
+                        mapModal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        })();
+    </script>
+
+    <script>
+        // Dynamically create map regions and effects from JSON
+        fetch('/assets/map-interactive-data.json')
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('map-regions-container');
+                const mapImg = document.querySelector('.map-image');
+                if (!container || !mapImg) return;
+                // Wait for image to load to get natural size
+                function renderRegions() {
+                    container.innerHTML = '';
+                    const imgW = mapImg.naturalWidth;
+                    const imgH = mapImg.naturalHeight;
+                    // Helper to render overlays for any array (regions or creatures)
+                    function renderOverlay(item, type) {
+                        const [x, y, r] = item.coords.split(',').map(Number);
+                        const cx = x / imgW * 100;
+                        const cy = y / imgH * 100;
+                        const cr = r / imgW * 100;
+                        const div = document.createElement('div');
+                        div.className = type === 'creature' ? 'map-region creature-region' : 'map-region';
+                        div.id = `${type}-${item.id}`;
+                        div.style.position = 'absolute';
+                        div.style.left = `calc(${cx}% - ${cr}% )`;
+                        div.style.top = `calc(${cy}% - ${cr}% )`;
+                        div.style.width = `${cr * 2}%`;
+                        div.style.height = `${cr * 2}%`;
+                        div.style.cursor = 'pointer';
+                        // Tooltip events
+                        div.addEventListener('mouseenter', e => showMapTooltip(item, e.clientX, e.clientY, type));
+                        div.addEventListener('mousemove', e => showMapTooltip(item, e.clientX, e.clientY, type));
+                        div.addEventListener('mouseleave', hideMapTooltip);
+                        div.addEventListener('click', () => expandLore());
+                        container.appendChild(div);
+                        // Add animated effect overlay
+                        if (item.effect) {
+                            const effect = document.createElement('div');
+                            let effectClass = '';
+                            if (item.effect === 'corrupted') effectClass = 'corrupted-flash';
+                            else if (item.effect === 'glow') effectClass = 'aeyantis-glow';
+                            else effectClass = item.effect; // allow custom creature effects
+                            effect.className = 'map-effect ' + effectClass;
+                            effect.style.position = 'absolute';
+                            effect.style.left = `calc(${cx}% - ${cr * 0.9}% )`;
+                            effect.style.top = `calc(${cy}% - ${cr * 0.9}% )`;
+                            effect.style.width = `${cr * 2 * 0.9}%`;
+                            effect.style.height = `${cr * 2 * 0.9}%`;
+                            effect.style.pointerEvents = 'none';
+                            container.appendChild(effect);
+                        }
+                    }
+                    // Render regions
+                    (data.regions || []).forEach(region => renderOverlay(region, 'region'));
+                    // Render creatures
+                    (data.creatures || []).forEach(creature => renderOverlay(creature, 'creature'));
+                }
+
+                if (mapImg.complete) {
+                    renderRegions();
+                } else {
+                    mapImg.onload = renderRegions;
+                }
+
+                window.addEventListener('resize', renderRegions);
+                // Tooltip logic
+                function showMapTooltip(item, x, y, type) {
+                    const tooltip = document.getElementById('map-tooltip');
+                    if (!tooltip || !item) return;
+                    let loreBlock = `<span style='font-size:0.95em;color:#b8e0ff;display:none;' class='lore'>${item.lore}</span>`;
+                    let dangerBlock = '';
+                    let expandPrompt = `<span style='display:block;font-size:0.93em;color:#e6c97a;margin-top:0.5em;'>Click to expand lore</span>`;
+                    if (type === 'creature' && item.danger) {
+                        dangerBlock = `<span style='display:inline-block;margin:0.2em 0 0.5em 0;padding:0.2em 0.7em;border-radius:6px;background:#b91c1c;color:#fff;font-size:0.98em;'>Danger: ${item.danger}</span><br>`;
+                    }
+                    tooltip.innerHTML = `<strong>${item.name}</strong><br>${dangerBlock}<em>${item.blurb}</em>${expandPrompt}<br>${loreBlock}`;
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = (x + 24) + 'px';
+                    tooltip.style.top = (y - 10) + 'px';
+                    tooltip.style.opacity = 1;
+                }
+
+                function hideMapTooltip() {
+                    const tooltip = document.getElementById('map-tooltip');
+                    if (tooltip) { tooltip.style.display = 'none'; tooltip.style.opacity = 0; }
+                }
+
+                function expandLore() {
+                    const tooltip = document.getElementById('map-tooltip');
+                    if (tooltip) {
+                        const lore = tooltip.querySelector('.lore');
+                        if (lore) lore.style.display = 'block';
+                    }
+                }
+            });
+    </script>
+
+    <style>
+        .project-navigation {
+            margin: 4rem 0 2rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            text-decoration: none;
+            color: #f7c86d;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: transparent;
+            color: #bcbdc1;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Video Modal Styles */
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .video-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .video-modal-content {
+            position: relative;
+            width: 95%;
+            max-width: 1200px;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .video-modal.active .video-modal-content {
+            transform: scale(1);
+        }
+
+        .video-modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-modal-close {
+            position: absolute;
+            top: -50px;
+            right: -10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 10001;
+        }
+
+        .video-modal-close:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .video-modal-content {
+                width: 98%;
+            }
+
+            .video-modal-close {
+                top: -45px;
+                right: 5px;
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+        }
+
+        /* Carousel Arrow Styles */
+        .carousel-arrow {
+            transition: all 0.3s ease;
+            animation: arrowPulse 1.5s infinite alternate;
+        }
+
+        .carousel-arrow:hover {
+            filter: drop-shadow(0 0 8px rgba(230, 201, 122, 0.9)) !important;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        @keyframes arrowPulse {
+            0% {
+                filter: drop-shadow(0 0 4px rgba(230, 201, 122, 0.6));
+            }
+            100% {
+                filter: drop-shadow(0 0 8px rgba(230, 201, 122, 0.8));
+            }
+        }
+    </style>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <button class="video-modal-close" id="closeModal">×</button>
+            <iframe id="modalVideo" src="" title="Scrolls of Odyssey: Call to TarragØn Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Cyrenthos/Lumyrion Image Carousel
+        (function () {
+            const portraitImagesByKey = {
+                cyrenthos: [
+                    '/assets/soct-characters/Cyrenthos.png',
+                    '/assets/soct-characters/CyrenthosFemale.png'
+                ],
+                lumyrion: [
+                    '/assets/soct-characters/Lumyrion.png',
+                    '/assets/soct-characters/LumyrionArtifact.png'
+                ]
+            };
+
+            function updateArrow(arrowElement, currentIndex) {
+                const path = arrowElement.querySelector('path');
+                if (!path) return;
+
+                if (currentIndex === 1) {
+                    arrowElement.classList.remove('carousel-arrow-right');
+                    arrowElement.classList.add('carousel-arrow-left');
+                    arrowElement.style.right = 'auto';
+                    arrowElement.style.left = '10px';
+                    path.setAttribute('d', 'M10 2L4 8l6 6');
+                } else {
+                    arrowElement.classList.remove('carousel-arrow-left');
+                    arrowElement.classList.add('carousel-arrow-right');
+                    arrowElement.style.left = 'auto';
+                    arrowElement.style.right = '10px';
+                    path.setAttribute('d', 'M6 2l6 6-6 6');
+                }
+            }
+
+            document.querySelectorAll('[data-portrait-carousel]').forEach((portraitContainer) => {
+                const key = portraitContainer.getAttribute('data-portrait-carousel');
+                const images = portraitImagesByKey[key];
+                if (!images || images.length < 2) return;
+
+                const imgElement = portraitContainer.querySelector('.portraitImage');
+                const arrowElement = portraitContainer.querySelector('.portraitArrow');
+                if (!imgElement || !arrowElement) return;
+
+                let currentIndex = Math.max(0, images.indexOf(imgElement.getAttribute('src') || ''));
+                updateArrow(arrowElement, currentIndex);
+
+                arrowElement.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imgElement.src = images[currentIndex];
+                    updateArrow(arrowElement, currentIndex);
+                });
+            });
+        })();
+    </script>
+
+    <script>
+        // SVG fog with organic drift + scroll-linked flow
+        (function () {
+            const fogBg = document.getElementById('fog-bg');
+            if (!fogBg) return;
+
+            // Your original style fog, but without inline top/height (CSS controls size)
+            const fogSvgs = [
+                // Back layer - very soft
+                `<svg class="fog-layer" data-layer="0"
+                   viewBox="0 0 1600 420"
+                   preserveAspectRatio="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="blur1" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="32" />
+                    </filter>
+                </defs>
+                <path d="M0 320 Q400 200 800 320 T1600 320 Q1400 420 800 400 Q200 380 0 320Z"
+                      fill="white"
+                      filter="url(#blur1)" />
+            </svg>`,
+
+                // Mid layer
+                `<svg class="fog-layer" data-layer="1"
+                   viewBox="0 0 1400 340"
+                   preserveAspectRatio="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="blur2" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="20" />
+                    </filter>
+                </defs>
+                <path d="M0 220 Q350 120 700 220 T1400 220 Q1200 340 700 320 Q200 300 0 220Z"
+                      fill="white"
+                      filter="url(#blur2)" />
+            </svg>`,
+
+                // Front layer - more pronounced
+                `<svg class="fog-layer" data-layer="2"
+                   viewBox="0 0 900 180"
+                   preserveAspectRatio="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="blur3" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="14" />
+                    </filter>
+                </defs>
+                <path d="M0 120 Q200 60 450 120 T900 120 Q800 180 450 170 Q100 160 0 120Z"
+                      fill="white"
+                      filter="url(#blur3)" />
+            </svg>`
+            ];
+
+            fogBg.innerHTML = fogSvgs.join('');
+            const layers = Array.from(fogBg.querySelectorAll('.fog-layer'));
+
+            // Parameters per layer:
+            // - baseY spreads them vertically so it's not all in one band
+            // - scrollRange controls how much each layer reacts to scroll
+            const fogParams = [
+                {
+                    baseY: -100, speed: 0.025, ampX: 260, ampY: 25,
+                    opBase: 0.10, opAmp: 0.06, opSpeed: 0.18,
+                    scrollRange: 80
+                },
+                {
+                    baseY: -10, speed: -0.035, ampX: 300, ampY: 35,
+                    opBase: 0.13, opAmp: 0.07, opSpeed: 0.22,
+                    scrollRange: 120
+                },
+                {
+                    baseY: 90, speed: 0.055, ampX: 220, ampY: 40,
+                    opBase: 0.16, opAmp: 0.10, opSpeed: 0.27,
+                    scrollRange: 160
+                }
+            ];
+
+            let start = null;
+            let scrollY = window.scrollY || window.pageYOffset || 0;
+
+            // Track scroll; we’ll use it in the animation loop
+            window.addEventListener('scroll', function () {
+                scrollY = window.scrollY || window.pageYOffset || 0;
+            }, { passive: true });
+
+            function animateFog(ts) {
+                if (!start) start = ts;
+                const t = (ts - start) / 1000; // seconds
+
+                const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight || 1;
+                const viewportHeight = window.innerHeight || 1;
+                const maxScrollable = Math.max(docHeight - viewportHeight, 1);
+                const scrollNorm = scrollY / maxScrollable; // 0..1 across page
+
+                layers.forEach((layer, i) => {
+                    const p = fogParams[i] || fogParams[0];
+
+                    // Time-based organic movement (your original idea)
+                    const x = Math.sin(t * p.speed + i) * p.ampX;
+                    const yWave = Math.cos(t * (p.speed * 0.7) + i) * p.ampY;
+
+                    // Scroll-based vertical “flow”
+                    const yScroll = -scrollNorm * p.scrollRange;
+
+                    const y = p.baseY + yWave + yScroll;
+
+                    // Soft opacity pulsing
+                    const op = p.opBase + Math.abs(Math.sin(t * p.opSpeed + i)) * p.opAmp;
+
+                    layer.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+                    layer.style.opacity = op.toFixed(3);
+                });
+
+                requestAnimationFrame(animateFog);
+            }
+
+            requestAnimationFrame(animateFog);
+        })();
+    </script>
+</body>
+
+</html>
