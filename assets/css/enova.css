@@ -810,7 +810,8 @@ body.enova-page .enova-wordmark-clip-bottom {
 */
 body.enova-page .enova-wordmark-clip span {
     position: absolute;
-    left: var(--enova-hero-x);
+    left: auto;
+    right: var(--enova-hero-x);
     top: var(--enova-hero-split);
     transform: translateY(-50%);
     display: block;
@@ -849,14 +850,39 @@ body.enova-page .enova-hero-shell {
     display: grid;
     grid-template-columns: minmax(520px, 42vw) minmax(0, 1fr);
     gap: clamp(2rem, 6vw, 6rem);
-    align-items: center;
+    align-items: end;
 }
 
 body.enova-page .enova-hero-copy {
     max-width: 640px;
-    padding-top: clamp(6rem, 10vh, 8rem);
+    padding-top: clamp(2.2rem, 4vh, 3.2rem);
     text-align: left;
     justify-self: start;
+    align-self: end;
+    position: relative;
+}
+
+body.enova-page .enova-hero-copy::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: clamp(-6rem, -8vh, -4.2rem);
+    color: #7052BF;
+    font-size: .92rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+}
+
+body.enova-page .enova-hero-copy::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(clamp(-6rem, -8vh, -4.2rem) + 2.15rem);
+    width: 80px;
+    height: 2px;
+    background: #7052BF;
 }
 
 body.enova-page .enova-hero-copy h1 {
@@ -954,7 +980,15 @@ body.enova-page .enova-hero-visual::before {
     }
 
     body.enova-page .enova-hero-copy {
-        padding-top: 7rem;
+        padding-top: clamp(1.8rem, 4vh, 2.6rem);
+    }
+
+    body.enova-page .enova-hero-copy::before {
+        top: clamp(-4.8rem, -7vh, -3.4rem);
+    }
+
+    body.enova-page .enova-hero-copy::after {
+        top: calc(clamp(-4.8rem, -7vh, -3.4rem) + 1.95rem);
     }
 
     body.enova-page .enova-hero-visual {
@@ -983,7 +1017,17 @@ body.enova-page .enova-hero-visual::before {
     }
 
     body.enova-page .enova-hero-copy {
-        padding-top: 4.3rem;
+        padding-top: 1.8rem;
+    }
+
+    body.enova-page .enova-hero-copy::before {
+        top: -3.9rem;
+        font-size: .76rem;
+    }
+
+    body.enova-page .enova-hero-copy::after {
+        top: -2.3rem;
+        width: 64px;
     }
 
     body.enova-page .enova-hero-copy h1 {
@@ -1099,5 +1143,194 @@ body.enova-page .enova-hero .hero-secondary-button:focus-visible {
     body.enova-page .enova-hero .hero-secondary-button {
         width: 100%;
         min-height: 50px;
+    }
+}
+
+
+/* =====================================================
+   HERO LEFT COLUMN MATCH TUNE
+   Fine-tune weight, spacing, and colour against reference.
+===================================================== */
+
+body.enova-page .enova-hero-copy {
+    max-width: 610px;
+    position: absolute;
+    left: var(--enova-hero-x);
+    top: calc(var(--enova-hero-split) + clamp(1.2rem, 2.4vh, 2rem));
+    width: min(610px, calc(100% - (2 * var(--enova-hero-x))));
+    max-width: 610px;
+    padding-top: 0;
+}
+
+body.enova-page .enova-hero-copy::before {
+    top: clamp(-6.2rem, -8.4vh, -4.4rem);
+    color: #7052BF;
+    font-size: .92rem;
+    font-weight: 600;
+    letter-spacing: .035em;
+}
+
+body.enova-page .enova-hero-copy::after {
+    top: calc(clamp(-6.2rem, -8.4vh, -4.4rem) + 2.15rem);
+    width: 80px;
+    height: 2px;
+    background: #7052BF;
+}
+
+body.enova-page .enova-hero-copy h1 {
+    margin: 0;
+    max-width: none;
+    color: #091A38;
+    font-size: clamp(3.45rem, 4.4vw, 4.95rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -.052em;
+}
+
+body.enova-page .enova-hero-copy h1 + h1 {
+    margin-top: .03em;
+}
+
+body.enova-page .enova-hero-copy h1:nth-of-type(3) {
+    color: #7052BF;
+    white-space: nowrap;
+    margin-bottom: 1.85rem;
+}
+
+body.enova-page .enova-hero-copy p {
+    max-width: 560px;
+    margin: 0 0 2.7rem;
+    color: rgba(9, 26, 56, .82);
+    font-size: clamp(1.08rem, 1.25vw, 1.28rem);
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: -.01em;
+}
+
+body.enova-page .enova-hero .hero-actions {
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+body.enova-page .enova-hero-copy .hero-primary-button,
+body.enova-page .enova-hero-copy .hero-secondary-button {
+    min-height: 52px;
+    padding: 0 1.4rem;
+    border-radius: 10px;
+    gap: .65rem;
+    font-size: .86rem;
+    font-weight: 800;
+    letter-spacing: .025em;
+    text-transform: uppercase;
+}
+
+body.enova-page .enova-hero-copy .hero-primary-button {
+    min-width: 0;
+    background: var(--enova-hero-ink) !important;
+    border: 1px solid var(--enova-hero-ink) !important;
+    color: #fff !important;
+}
+
+body.enova-page .enova-hero-copy .hero-primary-button:hover {
+    background: #10284D !important;
+    border-color: #10284D !important;
+    box-shadow: 0 12px 28px rgba(8, 26, 53, .18);
+}
+
+body.enova-page .enova-hero-copy .hero-secondary-button {
+    min-width: 0;
+    background: rgba(255, 255, 255, .2) !important;
+    border: 1.5px solid rgba(8, 26, 53, .62) !important;
+    color: var(--enova-hero-ink) !important;
+}
+
+body.enova-page .enova-hero-copy .hero-secondary-button:hover {
+    background: rgba(255, 255, 255, .58) !important;
+    border-color: var(--enova-hero-ink) !important;
+    color: var(--enova-hero-ink) !important;
+    box-shadow: 0 12px 28px rgba(8, 26, 53, .1);
+}
+
+@media (max-width: 1180px) {
+    body.enova-page .enova-hero-copy {
+        width: min(560px, calc(100% - (2 * var(--enova-hero-x))));
+    }
+
+    body.enova-page .enova-hero-copy h1 {
+        font-size: clamp(3.2rem, 5.2vw, 4.35rem);
+    }
+
+    body.enova-page .enova-hero-copy .hero-primary-button,
+    body.enova-page .enova-hero-copy .hero-secondary-button {
+        min-height: 52px;
+        padding: 0 1.4rem;
+        font-size: .86rem;
+    }
+}
+
+@media (max-width: 860px) {
+    body.enova-page .enova-hero-copy {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        max-width: 650px;
+        padding-top: clamp(1.8rem, 4vh, 2.6rem);
+    }
+
+    body.enova-page .enova-hero-copy::before,
+    body.enova-page .enova-hero-copy::after {
+        top: auto;
+    }
+
+    body.enova-page .enova-hero-copy::before {
+        top: -4.3rem;
+    }
+
+    body.enova-page .enova-hero-copy::after {
+        top: -2.4rem;
+    }
+
+    body.enova-page .enova-hero-copy h1 {
+        font-size: clamp(2.85rem, 8.8vw, 3.9rem);
+    }
+
+    body.enova-page .enova-hero .hero-actions {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    body.enova-page .enova-hero-copy .hero-primary-button,
+    body.enova-page .enova-hero-copy .hero-secondary-button {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 620px) {
+    body.enova-page .enova-hero-copy h1 {
+        font-size: clamp(2.25rem, 11.5vw, 3.15rem);
+    }
+
+    body.enova-page .enova-hero-copy h1:nth-of-type(3) {
+        white-space: normal;
+        margin-bottom: 1.8rem;
+    }
+
+    body.enova-page .enova-hero-copy p {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    body.enova-page .enova-hero .hero-actions {
+        display: grid;
+        gap: .9rem;
+    }
+
+    body.enova-page .enova-hero-copy .hero-primary-button,
+    body.enova-page .enova-hero-copy .hero-secondary-button {
+        width: 100%;
+        min-height: 60px;
+        padding: 0 1.25rem;
+        font-size: .98rem;
     }
 }
