@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENOVA - Carla Sofia Lima</title>
-    <meta name="description" content="ENOVA is a health and education concept combining a period-care dispenser, personal case, student card and app to support access, dignity and menstrual wellbeing in schools." />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="ENOVA - Carla Sofia Lima" />
-    <meta property="og:description" content="A human-centred health and education product system designed to reduce period poverty and stigma in educational spaces." />
-    <meta property="og:site_name" content="Carla Sofia Lima" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f5f0f7">
 
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ENOVA — Carla Sofia Lima</title>
+    <meta name="description" content="ENOVA is a human-centred product ecosystem combining a period-care dispenser, protective case, student card and app to support menstrual wellbeing in education.">
 
-    <!-- Shared Theme -->
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ENOVA — Carla Sofia Lima">
+    <meta property="og:description" content="A physical and digital product system designed to improve access, dignity and menstrual wellbeing in education.">
+    <meta property="og:site_name" content="Carla Sofia Lima">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <link rel="stylesheet" href="../targetPortfolio/theme.css">
-
-    <!-- Category Page Template -->
     <link rel="stylesheet" href="../assets/css/category-page.css">
-
-    <!-- ENOVA Page Overrides -->
     <link rel="stylesheet" href="../assets/css/enova.css">
 </head>
 
 <body data-category="health" class="enova-page">
-    <!-- Header -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <header class="header">
         <nav class="nav">
             <a href="/" class="logo">PORTFOLIO |</a>
@@ -38,7 +35,7 @@
                 <li><a href="../targetPortfolio/test.html#home">HOME</a></li>
                 <li><a href="../targetPortfolio/test.html#about">ABOUT</a></li>
                 <li class="nav-projects-dropdown">
-                    <a href="#" aria-haspopup="true" aria-expanded="false">MY WORK <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" aria-haspopup="true" aria-expanded="false">MY WORK <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="../product-design/" role="menuitem">Product Design</a></li>
                         <li><a href="../engineering/" role="menuitem">Engineering</a></li>
@@ -46,48 +43,57 @@
                 </li>
                 <li><a href="../targetPortfolio/test.html#contact">CONTACT</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn" type="button" aria-label="Open menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
         </nav>
     </header>
 
-    <main>
-        <!-- Hero -->
-        <section class="hero enova-hero" id="home">
-            <div class="enova-wordmark-split" aria-hidden="true">
-                <img src="../assets/enova-logo-thumbnail-Photoroom.png" alt="" class="enova-wordmark-traced">
-            </div>
+    <main id="main-content">
+        <section class="enova-hero" id="home" aria-labelledby="project-title">
+            <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
 
             <div class="container enova-hero-shell">
-                <div class="enova-hero-copy fade-in-up">
-                    <h1>Dignity.</h1>
-                    <h1>Access.</h1>
-                    <h1>Empowerment.</h1>
-                    <p>ENOVA is an inter-connected ecosystem improving menstrual wellbeing through technology, education, and support community.</p>
+                <div class="enova-hero-copy">
+                    <p class="hero-kicker">Product design · Health &amp; education</p>
+                    <h1 id="project-title">
+                        <span>Dignity.</span>
+                        <span>Access.</span>
+                        <span class="hero-accent-word">Empowerment.</span>
+                    </h1>
+                    <p class="hero-summary">ENOVA is a connected physical and digital ecosystem designed to improve menstrual wellbeing through discreet access, practical education and supportive technology.</p>
 
                     <div class="hero-actions" aria-label="Project actions">
-                        <a href="https://www.figma.com/proto/MjM44iWukJDj1uiGtX6JOJ/ENOVA?node-id=0-3&scaling=contain&t=ndd9NYvlqSsRJbuZ-1" target="_blank" rel="noreferrer noopener" class="cta-button hero-primary-button">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            View App Prototype
+                        <a href="https://www.figma.com/proto/MjM44iWukJDj1uiGtX6JOJ/ENOVA?node-id=0-3&scaling=contain&t=ndd9NYvlqSsRJbuZ-1" target="_blank" rel="noreferrer noopener" class="button button-primary">
+                            View app prototype
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                         </a>
-                        <a href="#snapshot-title" class="secondary-button hero-secondary-button">
-                            <i class="fa-solid fa-arrow-down"></i>
-                            Explore the Project
+                        <a href="#snapshot-title" class="button button-secondary">
+                            Explore the project
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="enova-hero-visual" aria-hidden="true">
-                    <!-- Add your product/phone imagery here later if wanted. -->
+                <div class="enova-hero-visual">
+                    <div class="hero-wordmark" aria-hidden="true">ENOVA</div>
+                    <figure class="hero-product-card hero-product-primary">
+                        <img src="../assets/enova-gal1.jpg" alt="ENOVA menstrual product dispenser prototype" fetchpriority="high">
+                        <figcaption>Physical access point</figcaption>
+                    </figure>
+                    <figure class="hero-product-card hero-product-secondary">
+                        <img src="../assets/enova-gal2.png" alt="ENOVA companion app home screen" fetchpriority="high">
+                        <figcaption>Digital support</figcaption>
+                    </figure>
+                    <img class="hero-brand-mark" src="../assets/enova-logo-thumbnail-Photoroom.png" alt="" aria-hidden="true">
                 </div>
             </div>
         </section>
 
-        <!-- Project Snapshot -->
         <section class="section enova-snapshot" aria-labelledby="snapshot-title">
             <div class="container">
                 <div class="section-heading split-heading">
                     <div>
-                        <span class="eyebrow">Project Snapshot</span>
+                        <span class="eyebrow">Project snapshot</span>
                         <h2 id="snapshot-title">A product ecosystem for safer access to menstrual care.</h2>
                     </div>
                     <p>ENOVA responds to period poverty and stigma in education by pairing discreet physical access points with supportive digital guidance.</p>
@@ -95,123 +101,132 @@
 
                 <div class="metric-grid">
                     <article class="metric-card">
-                        <i class="fa-solid fa-users"></i>
+                        <span class="card-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
                         <strong>Audience</strong>
                         <span>Students in UK education</span>
                     </article>
                     <article class="metric-card">
-                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <span class="card-icon"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span>
                         <strong>Purpose</strong>
                         <span>Access, dignity and wellbeing</span>
                     </article>
                     <article class="metric-card">
-                        <i class="fa-solid fa-layer-group"></i>
+                        <span class="card-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
                         <strong>System</strong>
-                        <span>Physical + digital artefacts</span>
+                        <span>Physical and digital artefacts</span>
                     </article>
                     <article class="metric-card">
-                        <i class="fa-solid fa-pen-ruler"></i>
+                        <span class="card-icon"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i></span>
                         <strong>Method</strong>
-                        <span>Human-centred design</span>
+                        <span>Human-centred product design</span>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Brief -->
         <section class="section enova-brief" aria-labelledby="brief-title">
             <div class="container case-panel">
                 <div class="section-heading">
-                    <span class="eyebrow">The Brief</span>
+                    <span class="eyebrow">The brief</span>
                     <h2 id="brief-title">Develop an engineered solution from concept through to artefact.</h2>
                     <p>The outcome needed to demonstrate design development, engineering problem-solving and human-centred design expertise within health and education. ENOVA became a combined physical and digital proposal for tackling real-world barriers around menstrual product access.</p>
                 </div>
 
                 <div class="brief-grid">
                     <article>
-                        <h3><i class="fa-solid fa-bullseye"></i> Goal</h3>
+                        <span class="step-number" aria-hidden="true">01</span>
+                        <h3><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Goal</h3>
                         <p>Create a dignified way for students to access period-care products without shame, disruption or unnecessary attention.</p>
                     </article>
                     <article>
-                        <h3><i class="fa-solid fa-triangle-exclamation"></i> Problem</h3>
+                        <span class="step-number" aria-hidden="true">02</span>
+                        <h3><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Problem</h3>
                         <p>Period poverty and stigma can affect attendance, confidence and wellbeing, especially when students cannot access products discreetly.</p>
                     </article>
                     <article>
-                        <h3><i class="fa-solid fa-lightbulb"></i> Response</h3>
+                        <span class="step-number" aria-hidden="true">03</span>
+                        <h3><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Response</h3>
                         <p>A connected system including a dispenser, protective case, student card and companion app to support practical access and education.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Story + carousel -->
         <section class="section enova-story" aria-labelledby="story-title">
             <div class="container story-grid">
                 <div class="story-copy">
-                    <span class="eyebrow">The Story</span>
+                    <span class="eyebrow">The story</span>
                     <h2 id="story-title">Designing for confidence, privacy and everyday use.</h2>
                     <p>ENOVA proposes a combination of physical products and a dedicated application for educational institutions. The goal is to empower and support young people by tackling period poverty and reducing the stigma around menstruation.</p>
-                    <br>
                     <p>The concept uses soft, calm visual language and approachable product touchpoints so that practical care feels normal, accessible and safe.</p>
                 </div>
 
-                <aside class="impact-carousel" aria-label="Period poverty impact carousel">
-                    <div class="impact-track">
-                        <article class="impact-slide active">
-                            <i class="fas fa-female"></i>
-                            <strong>500 Million</strong>
+                <section class="impact-carousel" aria-roledescription="carousel" aria-label="Period poverty impact" tabindex="0">
+                    <div class="impact-viewport" aria-live="polite">
+                        <article class="impact-slide is-active" data-slide="0">
+                            <span class="impact-icon"><i class="fa-solid fa-venus" aria-hidden="true"></i></span>
+                            <p class="impact-stat">500 million</p>
                             <p>women and girls are living in period poverty every month.</p>
                         </article>
-                        <article class="impact-slide">
-                            <i class="fas fa-comment-slash"></i>
-                            <strong>Stigma</strong>
+                        <article class="impact-slide" data-slide="1" hidden>
+                            <span class="impact-icon"><i class="fa-solid fa-comment-slash" aria-hidden="true"></i></span>
+                            <p class="impact-stat">Stigma</p>
                             <p>around menstruation can create silence, discomfort and barriers to support.</p>
                         </article>
-                        <article class="impact-slide">
-                            <i class="fas fa-newspaper"></i>
-                            <strong>10%</strong>
+                        <article class="impact-slide" data-slide="2" hidden>
+                            <span class="impact-icon"><i class="fa-solid fa-newspaper" aria-hidden="true"></i></span>
+                            <p class="impact-stat">10%</p>
                             <p>of girls use newspapers, rags, toilet paper and leaves as substitutes for sanitary products.</p>
                         </article>
-                        <article class="impact-slide">
-                            <i class="fas fa-shopping-basket"></i>
-                            <strong>1 in 10</strong>
+                        <article class="impact-slide" data-slide="3" hidden>
+                            <span class="impact-icon"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i></span>
+                            <p class="impact-stat">1 in 10</p>
                             <p>girls in the UK in 2017 could not afford to buy menstrual products.</p>
                         </article>
                     </div>
-                    <button class="impact-toggle" type="button" aria-label="Pause carousel">
-                        <span class="impact-toggle-icon">&#10073;&#10073;</span>
-                    </button>
-                </aside>
+
+                    <div class="impact-controls">
+                        <div class="impact-arrows">
+                            <button class="icon-button impact-prev" type="button" aria-label="Previous impact slide"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                            <button class="icon-button impact-next" type="button" aria-label="Next impact slide"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="impact-dots" aria-label="Choose impact slide"></div>
+                        <button class="icon-button impact-toggle" type="button" aria-label="Pause carousel" aria-pressed="false"><i class="fa-solid fa-pause" aria-hidden="true"></i></button>
+                    </div>
+                </section>
             </div>
         </section>
 
-        <!-- Solution -->
         <section class="section enova-solution" id="solution" aria-labelledby="solution-title">
             <div class="container">
                 <div class="section-heading centered">
-                    <span class="eyebrow">Solution System</span>
+                    <span class="eyebrow">Solution system</span>
                     <h2 id="solution-title">Four touchpoints, one support experience.</h2>
                     <p>Each element is designed to reduce friction: access products, carry them discreetly, verify availability and support menstrual education.</p>
                 </div>
 
                 <div class="solution-grid">
                     <article class="solution-card">
-                        <i class="fa-solid fa-box-open"></i>
+                        <span class="solution-index">01</span>
+                        <span class="card-icon"><i class="fa-solid fa-box-open" aria-hidden="true"></i></span>
                         <h3>ENOVA Dispenser</h3>
                         <p>A school-based access point for menstrual products, designed to feel intentional, visible and non-stigmatising.</p>
                     </article>
                     <article class="solution-card">
-                        <i class="fa-solid fa-wallet"></i>
+                        <span class="solution-index">02</span>
+                        <span class="card-icon"><i class="fa-solid fa-wallet" aria-hidden="true"></i></span>
                         <h3>Protective Case</h3>
                         <p>A compact carry solution that keeps products clean, private and easy to store in everyday school life.</p>
                     </article>
                     <article class="solution-card">
-                        <i class="fa-solid fa-id-card"></i>
+                        <span class="solution-index">03</span>
+                        <span class="card-icon"><i class="fa-solid fa-id-card" aria-hidden="true"></i></span>
                         <h3>Student Card</h3>
                         <p>A simple access and identification layer that fits naturally into an educational environment.</p>
                     </article>
                     <article class="solution-card">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <span class="solution-index">04</span>
+                        <span class="card-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></span>
                         <h3>ENOVA App</h3>
                         <p>A digital companion for product guidance, catalogue browsing and educational support around menstrual wellbeing.</p>
                     </article>
@@ -219,20 +234,21 @@
             </div>
         </section>
 
-        <!-- Design Show Banner -->
         <section class="section enova-banner" aria-labelledby="banner-title">
             <div class="container">
-                <div class="section-heading centered">
-                    <span class="eyebrow">Presentation</span>
-                    <h2 id="banner-title">Design Show Banner</h2>
+                <div class="section-heading split-heading">
+                    <div>
+                        <span class="eyebrow">Presentation</span>
+                        <h2 id="banner-title">Communicating the complete ENOVA system.</h2>
+                    </div>
+                    <p>The design-show banner brings the physical artefacts, app interface and project story together in one visual narrative.</p>
                 </div>
                 <figure class="banner-frame">
-                    <img src="/assets/DesignShowBanner.png" alt="ENOVA design show banner" loading="lazy">
+                    <img src="../assets/DesignShowBanner.png" alt="ENOVA design-show banner presenting the dispenser, case, card and app" loading="lazy">
                 </figure>
             </div>
         </section>
 
-        <!-- Gallery -->
         <section class="section enova-gallery" aria-labelledby="gallery-title">
             <div class="container">
                 <div class="section-heading split-heading">
@@ -240,27 +256,59 @@
                         <span class="eyebrow">Gallery</span>
                         <h2 id="gallery-title">Product artefacts and interface screens.</h2>
                     </div>
-                    <p>Click any image to view it larger.</p>
+                    <p>Open an image to inspect the prototypes and interface details at a larger scale.</p>
                 </div>
 
                 <div class="gallery-grid">
-                    <img src="../assets/enova-gal1.jpg" alt="ENOVA dispenser" data-desc="ENOVA Dispenser" class="gallery-lightbox-img" loading="lazy">
-                    <img src="../assets/enova-gal2.png" alt="ENOVA app home screen" data-desc="ENOVA App - Home Screen" class="gallery-lightbox-img" loading="lazy">
-                    <img src="../assets/enova-gal3.png" alt="ENOVA app case sleeve catalogue screen" data-desc="ENOVA App - Case Sleeve Catalogue" class="gallery-lightbox-img" loading="lazy">
-                    <img src="../assets/enova-gal4.png" alt="ENOVA case" data-desc="ENOVA Case" class="gallery-lightbox-img" loading="lazy">
-                    <img src="../assets/enova-gal5.jpg" alt="ENOVA empty case" data-desc="ENOVA Case - Empty" class="gallery-lightbox-img" loading="lazy">
-                    <img src="../assets/enova-gal6.jpg" alt="ENOVA case perspective" data-desc="ENOVA Case - Perspective" class="gallery-lightbox-img" loading="lazy">
-                    <img src="../assets/enova-gal7.jpg" alt="ENOVA case sleeve without hook and loop" data-desc="ENOVA Case Sleeve - No Hook and Loop" class="gallery-lightbox-img" loading="lazy">
-                    <img src="../assets/enova-gal8.jpg" alt="ENOVA case sleeve with hook and loop" data-desc="ENOVA Case Sleeve - Hook and Loop" class="gallery-lightbox-img" loading="lazy">
-                    <img src="../assets/enova-gal9.jpg" alt="ENOVA magnetic latch" data-desc="ENOVA Case - Magnetic Latch" class="gallery-lightbox-img" loading="lazy">
-                    <img src="../assets/enova-gal10.png" alt="ENOVA student card front" data-desc="ENOVA Student Card - Front" class="gallery-lightbox-img" loading="lazy">
-                    <img src="../assets/enova-gal11.png" alt="ENOVA student card back" data-desc="ENOVA Student Card - Back" class="gallery-lightbox-img" loading="lazy">
+                    <button class="gallery-item gallery-item-featured" type="button" data-desc="ENOVA dispenser prototype">
+                        <img src="../assets/enova-gal1.jpg" alt="ENOVA dispenser prototype" loading="lazy">
+                        <span class="gallery-caption"><span>Dispenser</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
+                    <button class="gallery-item gallery-item-tall" type="button" data-desc="ENOVA app home screen">
+                        <img src="../assets/enova-gal2.png" alt="ENOVA app home screen" loading="lazy">
+                        <span class="gallery-caption"><span>App home</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
+                    <button class="gallery-item gallery-item-tall" type="button" data-desc="ENOVA app case sleeve catalogue">
+                        <img src="../assets/enova-gal3.png" alt="ENOVA app case sleeve catalogue screen" loading="lazy">
+                        <span class="gallery-caption"><span>Sleeve catalogue</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
+                    <button class="gallery-item" type="button" data-desc="ENOVA protective case">
+                        <img src="../assets/enova-gal4.png" alt="ENOVA protective case" loading="lazy">
+                        <span class="gallery-caption"><span>Protective case</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
+                    <button class="gallery-item" type="button" data-desc="ENOVA case shown empty">
+                        <img src="../assets/enova-gal5.jpg" alt="Open ENOVA case shown empty" loading="lazy">
+                        <span class="gallery-caption"><span>Case interior</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
+                    <button class="gallery-item" type="button" data-desc="ENOVA case perspective">
+                        <img src="../assets/enova-gal6.jpg" alt="ENOVA case from a three-quarter perspective" loading="lazy">
+                        <span class="gallery-caption"><span>Case perspective</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
+                    <button class="gallery-item" type="button" data-desc="ENOVA case sleeve without hook-and-loop closure">
+                        <img src="../assets/enova-gal7.jpg" alt="ENOVA case sleeve without hook-and-loop closure" loading="lazy">
+                        <span class="gallery-caption"><span>Sleeve development</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
+                    <button class="gallery-item" type="button" data-desc="ENOVA case sleeve with hook-and-loop closure">
+                        <img src="../assets/enova-gal8.jpg" alt="ENOVA case sleeve with hook-and-loop closure" loading="lazy">
+                        <span class="gallery-caption"><span>Closure detail</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
+                    <button class="gallery-item" type="button" data-desc="ENOVA case magnetic latch">
+                        <img src="../assets/enova-gal9.jpg" alt="Close-up of the ENOVA case magnetic latch" loading="lazy">
+                        <span class="gallery-caption"><span>Magnetic latch</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
+                    <button class="gallery-item" type="button" data-desc="ENOVA student card front">
+                        <img src="../assets/enova-gal10.png" alt="Front of the ENOVA student card" loading="lazy">
+                        <span class="gallery-caption"><span>Student card front</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
+                    <button class="gallery-item" type="button" data-desc="ENOVA student card back">
+                        <img src="../assets/enova-gal11.png" alt="Back of the ENOVA student card" loading="lazy">
+                        <span class="gallery-caption"><span>Student card back</span><i class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i></span>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Reports -->
-        <section class="section enova-reports" aria-labelledby="reports-title">
+        <section class="section enova-resources" aria-labelledby="reports-title">
             <div class="container">
                 <div class="section-heading split-heading">
                     <div>
@@ -270,78 +318,71 @@
                     <p>Supporting documents showing the design development, research and specification work behind ENOVA.</p>
                 </div>
 
-                <div class="document-grid">
-                    <article class="document-card">
-                        <div>
-                            <h3>Project Report</h3>
-                            <p>Preview and download the full project report.</p>
-                        </div>
-                        <a href="../assets/projectReport.pdf" target="_blank" rel="noopener" class="doc-link">Open PDF <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-                    <article class="document-card">
-                        <div>
-                            <h3>Product Design Specification</h3>
-                            <p>Preview and download the product design specification.</p>
-                        </div>
-                        <a href="../assets/projectResearch.pdf" target="_blank" rel="noopener" class="doc-link">Open PDF <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Videos -->
-        <section class="section enova-videos" aria-labelledby="videos-title">
-            <div class="container">
-                <div class="section-heading split-heading">
-                    <div>
-                        <span class="eyebrow">Demonstration</span>
-                        <h2 id="videos-title">Prototype walkthroughs.</h2>
+                <div class="resource-layout">
+                    <div class="document-grid">
+                        <a href="../assets/projectReport.pdf" target="_blank" rel="noopener" class="document-card">
+                            <span class="resource-icon"><i class="fa-regular fa-file-lines" aria-hidden="true"></i></span>
+                            <div>
+                                <span class="resource-type">PDF document</span>
+                                <h3>Project Report</h3>
+                                <p>Design development, research and the complete project narrative.</p>
+                            </div>
+                            <span class="resource-action">Open report <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                        </a>
+                        <a href="../assets/projectResearch.pdf" target="_blank" rel="noopener" class="document-card">
+                            <span class="resource-icon"><i class="fa-regular fa-clipboard" aria-hidden="true"></i></span>
+                            <div>
+                                <span class="resource-type">PDF document</span>
+                                <h3>Product Design Specification</h3>
+                                <p>Product requirements, research findings and design criteria.</p>
+                            </div>
+                            <span class="resource-action">Open specification <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                        </a>
                     </div>
-                    <p>Watch the dispenser and app concept demonstrations.</p>
-                </div>
 
-                <div class="video-grid">
-                    <article class="video-card video-lightbox-trigger" data-video="https://www.youtube.com/embed/g_pYIK9BgFQ?list=PLBb5VxtHK_n_JGOV66HqvVE7QESpE8zNi" tabindex="0" role="button" aria-label="Play ENOVA dispenser prototype video">
-                        <div class="video-thumb">
-                            <img src="https://img.youtube.com/vi/g_pYIK9BgFQ/hqdefault.jpg" alt="ENOVA dispenser prototype video thumbnail" loading="lazy">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div class="video-copy">
-                            <h3>ENOVA Dispenser Prototype</h3>
-                            <p>Physical concept and system demonstration.</p>
-                        </div>
-                    </article>
+                    <div class="video-grid">
+                        <button class="video-card" type="button" data-video="https://www.youtube.com/embed/g_pYIK9BgFQ?list=PLBb5VxtHK_n_JGOV66HqvVE7QESpE8zNi" aria-label="Play ENOVA dispenser prototype video">
+                            <span class="video-thumb">
+                                <img src="https://img.youtube.com/vi/g_pYIK9BgFQ/hqdefault.jpg" alt="" loading="lazy">
+                                <span class="play-button" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="video-copy">
+                                <span class="resource-type">Prototype video</span>
+                                <strong>ENOVA Dispenser Prototype</strong>
+                                <span>Physical concept and system demonstration.</span>
+                            </span>
+                        </button>
 
-                    <article class="video-card video-lightbox-trigger" data-video="https://www.youtube.com/embed/OIWOaEc2Id4" tabindex="0" role="button" aria-label="Play ENOVA app walkthrough video">
-                        <div class="video-thumb">
-                            <img src="https://img.youtube.com/vi/OIWOaEc2Id4/hqdefault.jpg" alt="ENOVA app walkthrough video thumbnail" loading="lazy">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div class="video-copy">
-                            <h3>ENOVA App Walkthrough</h3>
-                            <p>Digital interface concept and user journey.</p>
-                        </div>
-                    </article>
+                        <button class="video-card" type="button" data-video="https://www.youtube.com/embed/OIWOaEc2Id4" aria-label="Play ENOVA app walkthrough video">
+                            <span class="video-thumb">
+                                <img src="https://img.youtube.com/vi/OIWOaEc2Id4/hqdefault.jpg" alt="" loading="lazy">
+                                <span class="play-button" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="video-copy">
+                                <span class="resource-type">Prototype video</span>
+                                <strong>ENOVA App Walkthrough</strong>
+                                <span>Digital interface concept and user journey.</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Navigation -->
-        <section class="project-navigation">
+        <section class="project-navigation" aria-label="Project navigation">
             <div class="container nav-buttons">
                 <a href="../brightup/" class="nav-btn back">
-                    <i class="fas fa-arrow-left"></i>
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
                     <span>Previous: BrightUp</span>
                 </a>
                 <a href="../scaar/" class="nav-btn next">
                     <span>Next: Nomad</span>
-                    <i class="fas fa-arrow-right"></i>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -369,157 +410,190 @@
         </div>
     </footer>
 
-    <!-- Gallery Lightbox -->
-    <div id="gallery-lightbox-overlay" class="lightbox-overlay" aria-hidden="true">
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="gallery-lightbox-close" aria-label="Close gallery image">&times;</button>
-            <img id="gallery-lightbox-img" src="" alt="Gallery preview">
-            <p id="gallery-lightbox-desc"></p>
+    <dialog id="gallery-dialog" class="media-dialog" aria-labelledby="gallery-dialog-title">
+        <div class="dialog-shell gallery-dialog-shell">
+            <div class="dialog-toolbar">
+                <p id="gallery-dialog-title">Gallery image</p>
+                <button class="dialog-close" type="button" data-close-dialog aria-label="Close gallery image"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            </div>
+            <img id="gallery-dialog-image" src="" alt="">
+            <p id="gallery-dialog-caption" class="dialog-caption"></p>
         </div>
-    </div>
+    </dialog>
 
-    <!-- Video Lightbox -->
-    <div id="video-lightbox-overlay" class="lightbox-overlay" aria-hidden="true">
-        <div class="video-lightbox-content">
-            <button class="lightbox-close" id="video-lightbox-close" aria-label="Close video">&times;</button>
-            <iframe id="video-lightbox-iframe" width="900" height="506" src="" title="ENOVA video player" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    <dialog id="video-dialog" class="media-dialog" aria-labelledby="video-dialog-title">
+        <div class="dialog-shell video-dialog-shell">
+            <div class="dialog-toolbar">
+                <p id="video-dialog-title">ENOVA prototype video</p>
+                <button class="dialog-close" type="button" data-close-dialog aria-label="Close video"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            </div>
+            <div class="video-embed">
+                <iframe id="video-dialog-iframe" src="" title="ENOVA video player" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
-    </div>
+    </dialog>
 
-    <!-- External JavaScript Files -->
     <script src="../assets/js/navigation.js" defer></script>
-
     <script>
-        // Impact carousel
-        (function () {
+        (() => {
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Impact carousel
             const carousel = document.querySelector('.impact-carousel');
-            if (!carousel) return;
+            if (carousel) {
+                const slides = [...carousel.querySelectorAll('.impact-slide')];
+                const dotsWrap = carousel.querySelector('.impact-dots');
+                const previous = carousel.querySelector('.impact-prev');
+                const next = carousel.querySelector('.impact-next');
+                const toggle = carousel.querySelector('.impact-toggle');
+                let activeIndex = 0;
+                let timer = null;
+                let userPaused = reducedMotion;
+                let interactionPaused = false;
 
-            const items = Array.from(carousel.querySelectorAll('.impact-slide'));
-            const toggleBtn = carousel.querySelector('.impact-toggle');
-            const toggleIcon = carousel.querySelector('.impact-toggle-icon');
-            let index = 0;
-            let interval = null;
-            let paused = false;
+                const dots = slides.map((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'impact-dot';
+                    dot.setAttribute('aria-label', `Show impact slide ${index + 1}`);
+                    dot.addEventListener('click', () => {
+                        showSlide(index);
+                        restart();
+                    });
+                    dotsWrap.appendChild(dot);
+                    return dot;
+                });
 
-            function showSlide(nextIndex) {
-                index = nextIndex;
-                items.forEach((item, i) => item.classList.toggle('active', i === index));
-            }
+                function showSlide(index) {
+                    activeIndex = (index + slides.length) % slides.length;
+                    slides.forEach((slide, slideIndex) => {
+                        const isActive = slideIndex === activeIndex;
+                        slide.hidden = !isActive;
+                        slide.classList.toggle('is-active', isActive);
+                    });
+                    dots.forEach((dot, dotIndex) => {
+                        const isActive = dotIndex === activeIndex;
+                        dot.classList.toggle('is-active', isActive);
+                        dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+                    });
+                }
 
-            function nextSlide() {
-                showSlide((index + 1) % items.length);
-            }
+                function clearTimer() {
+                    window.clearInterval(timer);
+                    timer = null;
+                }
 
-            function startAuto() {
-                clearInterval(interval);
-                if (!paused) interval = setInterval(nextSlide, 3000);
-            }
+                function startTimer() {
+                    clearTimer();
+                    if (!userPaused && !interactionPaused && !reducedMotion) {
+                        timer = window.setInterval(() => showSlide(activeIndex + 1), 5500);
+                    }
+                }
 
-            function stopAuto() {
-                clearInterval(interval);
-            }
+                function restart() {
+                    clearTimer();
+                    startTimer();
+                }
 
-            if (toggleBtn) {
-                toggleBtn.addEventListener('click', function () {
-                    paused = !paused;
-                    if (paused) {
-                        stopAuto();
-                        toggleIcon.innerHTML = '&#9654;';
-                        toggleBtn.setAttribute('aria-label', 'Play carousel');
-                    } else {
-                        toggleIcon.innerHTML = '&#10073;&#10073;';
-                        toggleBtn.setAttribute('aria-label', 'Pause carousel');
-                        startAuto();
+                function updateToggle() {
+                    const icon = toggle.querySelector('i');
+                    toggle.setAttribute('aria-pressed', String(userPaused));
+                    toggle.setAttribute('aria-label', userPaused ? 'Play carousel' : 'Pause carousel');
+                    icon.className = userPaused ? 'fa-solid fa-play' : 'fa-solid fa-pause';
+                }
+
+                previous.addEventListener('click', () => {
+                    showSlide(activeIndex - 1);
+                    restart();
+                });
+                next.addEventListener('click', () => {
+                    showSlide(activeIndex + 1);
+                    restart();
+                });
+                toggle.addEventListener('click', () => {
+                    userPaused = !userPaused;
+                    updateToggle();
+                    startTimer();
+                });
+                carousel.addEventListener('mouseenter', () => {
+                    interactionPaused = true;
+                    clearTimer();
+                });
+                carousel.addEventListener('mouseleave', () => {
+                    interactionPaused = false;
+                    startTimer();
+                });
+                carousel.addEventListener('focusin', () => {
+                    interactionPaused = true;
+                    clearTimer();
+                });
+                carousel.addEventListener('focusout', (event) => {
+                    if (!carousel.contains(event.relatedTarget)) {
+                        interactionPaused = false;
+                        startTimer();
                     }
                 });
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) clearTimer();
+                    else startTimer();
+                });
+
+                showSlide(0);
+                updateToggle();
+                startTimer();
             }
 
-            showSlide(index);
-            startAuto();
-        })();
+            // Dialog helpers
+            const galleryDialog = document.getElementById('gallery-dialog');
+            const galleryImage = document.getElementById('gallery-dialog-image');
+            const galleryCaption = document.getElementById('gallery-dialog-caption');
+            const videoDialog = document.getElementById('video-dialog');
+            const videoFrame = document.getElementById('video-dialog-iframe');
 
-        // Gallery lightbox
-        (function () {
-            const overlay = document.getElementById('gallery-lightbox-overlay');
-            const lightboxImg = document.getElementById('gallery-lightbox-img');
-            const lightboxDesc = document.getElementById('gallery-lightbox-desc');
-            const closeBtn = document.getElementById('gallery-lightbox-close');
-
-            if (!overlay || !lightboxImg || !closeBtn) return;
-
-            function openLightbox(img) {
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt || 'ENOVA gallery image';
-                lightboxDesc.textContent = img.dataset.desc || img.alt || 'ENOVA gallery image';
-                overlay.classList.add('active');
-                overlay.setAttribute('aria-hidden', 'false');
+            function closeDialog(dialog) {
+                if (!dialog || !dialog.open) return;
+                dialog.close();
+                document.body.classList.remove('dialog-open');
+                if (dialog === videoDialog) videoFrame.src = '';
             }
 
-            function closeLightbox() {
-                overlay.classList.remove('active');
-                overlay.setAttribute('aria-hidden', 'true');
-                lightboxImg.src = '';
-            }
-
-            document.querySelectorAll('.gallery-lightbox-img').forEach(function (img) {
-                img.addEventListener('click', function () { openLightbox(img); });
-            });
-
-            closeBtn.addEventListener('click', closeLightbox);
-            overlay.addEventListener('click', function (event) {
-                if (event.target === overlay) closeLightbox();
-            });
-        })();
-
-        // Video lightbox
-        (function () {
-            const overlay = document.getElementById('video-lightbox-overlay');
-            const iframe = document.getElementById('video-lightbox-iframe');
-            const closeBtn = document.getElementById('video-lightbox-close');
-            if (!overlay || !iframe || !closeBtn) return;
-
-            function openVideo(card) {
-                const videoUrl = card.getAttribute('data-video');
-                if (!videoUrl) return;
-                iframe.src = videoUrl + (videoUrl.includes('?') ? '&autoplay=1' : '?autoplay=1');
-                overlay.classList.add('active');
-                overlay.setAttribute('aria-hidden', 'false');
-            }
-
-            function closeVideo() {
-                iframe.src = '';
-                overlay.classList.remove('active');
-                overlay.setAttribute('aria-hidden', 'true');
-            }
-
-            document.querySelectorAll('.video-lightbox-trigger').forEach(function (card) {
-                card.addEventListener('click', function () { openVideo(card); });
-                card.addEventListener('keydown', function (event) {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        openVideo(card);
-                    }
+            document.querySelectorAll('.gallery-item').forEach((item) => {
+                item.addEventListener('click', () => {
+                    const source = item.querySelector('img');
+                    galleryImage.src = source.currentSrc || source.src;
+                    galleryImage.alt = source.alt;
+                    galleryCaption.textContent = item.dataset.desc || source.alt;
+                    galleryDialog.showModal();
+                    document.body.classList.add('dialog-open');
                 });
             });
 
-            closeBtn.addEventListener('click', closeVideo);
-            overlay.addEventListener('click', function (event) {
-                if (event.target === overlay) closeVideo();
+            document.querySelectorAll('.video-card').forEach((card) => {
+                card.addEventListener('click', () => {
+                    const source = card.dataset.video;
+                    if (!source) return;
+                    videoFrame.src = source + (source.includes('?') ? '&autoplay=1' : '?autoplay=1');
+                    videoDialog.showModal();
+                    document.body.classList.add('dialog-open');
+                });
+            });
+
+            document.querySelectorAll('[data-close-dialog]').forEach((button) => {
+                button.addEventListener('click', () => closeDialog(button.closest('dialog')));
+            });
+
+            [galleryDialog, videoDialog].forEach((dialog) => {
+                dialog.addEventListener('click', (event) => {
+                    const bounds = dialog.getBoundingClientRect();
+                    const clickedOutside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
+                    if (clickedOutside) closeDialog(dialog);
+                });
+                dialog.addEventListener('close', () => {
+                    document.body.classList.remove('dialog-open');
+                    if (dialog === videoDialog) videoFrame.src = '';
+                });
             });
         })();
-
-        // Escape closes lightboxes
-        document.addEventListener('keydown', function (event) {
-            if (event.key !== 'Escape') return;
-            const galleryOverlay = document.getElementById('gallery-lightbox-overlay');
-            const videoOverlay = document.getElementById('video-lightbox-overlay');
-            const videoIframe = document.getElementById('video-lightbox-iframe');
-            if (galleryOverlay) galleryOverlay.classList.remove('active');
-            if (videoOverlay) videoOverlay.classList.remove('active');
-            if (videoIframe) videoIframe.src = '';
-        });
     </script>
 </body>
-
 </html>
