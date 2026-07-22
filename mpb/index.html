@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morning Prayer Bot - Carla Sofia Lima</title>
-    <meta name="description"
-        content="Morning Prayer Bot: a YouTube RSS to WhatsApp automation case study built with Apple Shortcuts.">
+    <meta name="theme-color" content="#07111d">
+
+    <title>Morning Prayer Bot — Carla Sofia Lima</title>
+    <meta name="description" content="Morning Prayer Bot is an iPadOS automation that retrieves the newest prayer video from YouTube RSS, prevents duplicate posts and delivers it to WhatsApp.">
+
+    <meta property="og:locale" content="en_GB">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Morning Prayer Bot - Carla Sofia Lima">
-    <meta property="og:description"
-        content="A daily prayer video delivery workflow powered by YouTube RSS, RSS2JSON, Apple Shortcuts and WhatsApp.">
+    <meta property="og:title" content="Morning Prayer Bot — Carla Sofia Lima">
+    <meta property="og:description" content="A lightweight YouTube RSS to WhatsApp automation built with Apple Shortcuts.">
     <meta property="og:site_name" content="Carla Sofia Lima">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- Shared Theme -->
     <link rel="stylesheet" href="../targetPortfolio/theme.css">
-
-    <!-- Category Page Template -->
     <link rel="stylesheet" href="../assets/css/category-page.css">
-
-    <!-- Morning Prayer Bot Overrides -->
     <link rel="stylesheet" href="../assets/css/morning-prayer-bot.css">
 </head>
 
-<body data-category="automation">
-    <!-- Header -->
+<body data-category="automation" class="morning-prayer-page">
+    <a class="mpb-skip-link" href="#main-content">Skip to main content</a>
+
     <header class="header">
         <nav class="nav" aria-label="Primary navigation">
             <a href="/" class="logo">PORTFOLIO |</a>
@@ -39,8 +35,7 @@
                 <li><a href="../targetPortfolio/test.html#home">HOME</a></li>
                 <li><a href="../targetPortfolio/test.html#about">ABOUT</a></li>
                 <li class="nav-projects-dropdown">
-                    <a href="#" aria-haspopup="true" aria-expanded="false">MY WORK <i class="fas fa-chevron-down"
-                            aria-hidden="true"></i></a>
+                    <a href="#" aria-haspopup="true" aria-expanded="false">MY WORK <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="../product-design/" role="menuitem">Product Design</a></li>
                         <li><a href="../engineering/" role="menuitem">Engineering</a></li>
@@ -48,384 +43,281 @@
                 </li>
                 <li><a href="../targetPortfolio/test.html#contact">CONNECT</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="Open mobile menu"><i class="fas fa-bars"
-                    aria-hidden="true"></i></button>
+            <button class="mobile-menu-btn" type="button" aria-label="Open mobile menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
         </nav>
     </header>
 
-    <main>
-        <!-- Hero -->
-        <section class="hero mpb-hero" id="home">
-            <div class="container">
-                <div class="mpb-hero-grid">
-                    <div class="hero-content fade-in-up">
-                        <div class="mpb-pill">
-                            <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-                            Apple Shortcuts Automation
-                        </div>
-                        <h1>Daily Prayer Delivery, Fully Automated.</h1>
-                        <p class="hero-quote">
-                            Morning Prayer Bot is a lightweight iPadOS automation that monitors a YouTube prayer feed,
-                            extracts the newest video, prevents duplicates and sends the daily link to WhatsApp.
-                        </p>
-                        <div class="mpb-hero-actions">
-                            <a href="#workflow" class="mpb-button mpb-button-primary">
-                                View workflow <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
-                            </a>
-                            <a href="#architecture" class="mpb-button mpb-button-secondary">
-                                See architecture <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
+    <main id="main-content">
+        <section class="hero mpb-hero" id="home" aria-labelledby="project-title">
+            <div class="container mpb-hero-grid">
+                <div class="mpb-hero-copy">
+                    <p class="mpb-eyebrow">Apple Shortcuts automation</p>
+                    <h1 id="project-title">Daily prayer delivery, <span>fully automated.</span></h1>
+                    <p class="mpb-hero-summary">Morning Prayer Bot is a lightweight iPadOS workflow that monitors a YouTube prayer feed, extracts the newest video, prevents duplicate posts and sends the daily link to WhatsApp.</p>
 
-                    <aside class="mpb-hero-card" aria-label="Automation preview">
-                        <div class="mpb-device-card">
-                            <div class="mpb-device-top" aria-hidden="true">
-                                <span class="mpb-device-dot"></span>
-                                <span class="mpb-device-dot"></span>
-                                <span class="mpb-device-dot"></span>
-                            </div>
-                            <div class="mpb-automation-preview">
-                                <div class="mpb-preview-row">
-                                    <div class="mpb-preview-icon"><i class="fa-brands fa-youtube"
-                                            aria-hidden="true"></i></div>
-                                    <div>
-                                        <strong>GracePrayer Upload</strong>
-                                        <span>Latest video detected from YouTube RSS</span>
-                                    </div>
-                                </div>
-                                <div class="mpb-preview-row">
-                                    <div class="mpb-preview-icon"><i class="fa-solid fa-code-branch"
-                                            aria-hidden="true"></i></div>
-                                    <div>
-                                        <strong>Shortcut Logic</strong>
-                                        <span>Metadata parsed and duplicate check completed</span>
-                                    </div>
-                                </div>
-                                <div class="mpb-preview-row">
-                                    <div class="mpb-preview-icon"><i class="fa-brands fa-whatsapp"
-                                            aria-hidden="true"></i></div>
-                                    <div>
-                                        <strong>WhatsApp Delivery</strong>
-                                        <span>Daily prayer video sent to the group</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
+                    <div class="mpb-hero-actions" aria-label="Project actions">
+                        <a href="#workflow" class="mpb-button mpb-button-primary">
+                            View workflow
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                        </a>
+                        <a href="#architecture" class="mpb-button mpb-button-secondary">
+                            See architecture
+                            <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mpb-bot-stage" aria-label="Morning Prayer Bot character and automation status">
+                    <div class="mpb-bot-halo" aria-hidden="true"></div>
+                    <img class="mpb-bot-character" src="../assets/mpb-character.png" alt="Morning Prayer Bot character" width="855" height="595" decoding="async" fetchpriority="high">
                 </div>
             </div>
         </section>
 
-        <!-- Highlight -->
-        <section class="mpb-highlight" aria-label="Project summary">
+        <section class="mpb-section mpb-snapshot" aria-labelledby="snapshot-title">
             <div class="container">
-                <div class="mpb-highlight-card">
-                    <img src="../assets/mpb-logo.png" alt="Morning Prayer Bot logo">
-                    <div>
-                        <h2>Automation • Apple Shortcuts • YouTube • WhatsApp</h2>
-                        <p>A faith-based content distribution workflow designed for reliability, simplicity and
-                            zero-maintenance daily use.</p>
-                    </div>
-                    <a href="#sourceCode" class="mpb-button mpb-button-secondary">View source</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats -->
-        <section class="mpb-section-tight" aria-label="Project facts">
-            <div class="container">
-                <div class="mpb-stats-grid">
-                    <div class="mpb-stat-card">
-                        <span>Automation</span>
-                        <strong>Daily</strong>
-                    </div>
-                    <div class="mpb-stat-card">
-                        <span>Platform</span>
-                        <strong>iPadOS</strong>
-                    </div>
-                    <div class="mpb-stat-card">
-                        <span>Source</span>
-                        <strong>YouTube RSS</strong>
-                    </div>
-                    <div class="mpb-stat-card">
-                        <span>Delivery</span>
-                        <strong>WhatsApp</strong>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Overview -->
-        <section class="mpb-section" id="overview">
-            <div class="container">
-                <div class="mpb-overview-grid">
-                    <header class="mpb-section-header">
-                        <p class="mpb-eyebrow">Overview</p>
-                        <h2 class="mpb-section-title">A small automation with a clear daily purpose.</h2>
-                    </header>
-
-                    <div>
-                        <p class="mpb-section-copy">
-                            Morning Prayer Bot (MPB) is an automated iPadOS Shortcuts system that delivers daily prayer
-                            videos from YouTube directly to a WhatsApp group without manual posting. The project
-                            monitors the GracePrayer YouTube RSS feed, retrieves the latest uploaded video and sends the
-                            video link with thumbnail support through a scheduled daily automation.
-                        </p>
-                        <div class="mpb-info-card" style="margin-top: 1.5rem;">
-                            <h3>Problem</h3>
-                            <p>Daily content sharing can become repetitive and easy to forget, especially when the same
-                                process needs to happen at a consistent time every morning.</p>
-                        </div>
-                        <div class="mpb-info-card">
-                            <h3>Solution</h3>
-                            <p>A mobile-first workflow that checks for the newest upload, validates whether it has
-                                already been sent and automatically posts it to WhatsApp.</p>
+                <div class="mpb-split-heading">
+                    <div class="mpb-project-intro">
+                        <div>
+                            <p class="mpb-eyebrow">Project snapshot</p>
+                            <h2 id="snapshot-title" class="mpb-section-title">A focused automation for one recurring daily task.</h2>
                         </div>
                     </div>
+                    <p class="mpb-section-copy">The system replaces a repetitive morning routine with a small, understandable workflow that can run without a custom server or complex infrastructure.</p>
+                </div>
+
+                <dl class="mpb-facts" aria-label="Morning Prayer Bot project facts">
+                    <div><dt>Platform</dt><dd>iPadOS</dd></div>
+                    <div><dt>Frequency</dt><dd>Daily</dd></div>
+                    <div><dt>Input</dt><dd>YouTube RSS</dd></div>
+                    <div><dt>Processing</dt><dd>RSS2JSON + Shortcuts</dd></div>
+                    <div><dt>Output</dt><dd>WhatsApp</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="mpb-section mpb-problem" aria-labelledby="problem-title">
+            <div class="container">
+                <div class="mpb-editorial-grid">
+                    <article>
+                        <p class="mpb-eyebrow">The problem</p>
+                        <h2 id="problem-title" class="mpb-section-title">A simple task that still had to be remembered every morning.</h2>
+                        <p class="mpb-section-copy">Sharing the latest prayer video involved checking the channel, finding the newest upload and posting it manually at a consistent time. The process was repetitive and could easily be delayed or forgotten.</p>
+                    </article>
+                    <article>
+                        <p class="mpb-eyebrow">The response</p>
+                        <h2 class="mpb-editorial-title">Automate retrieval, validation and delivery.</h2>
+                        <p class="mpb-section-copy">A scheduled Apple Shortcut retrieves the newest feed item, extracts the required metadata, checks whether the video has already been sent and posts only new content to WhatsApp.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Workflow -->
-        <section class="mpb-section" id="workflow">
+        <section class="mpb-section mpb-workflow-section" id="workflow" aria-labelledby="workflow-title">
             <div class="container">
                 <header class="mpb-section-header mpb-centered">
                     <p class="mpb-eyebrow">System workflow</p>
-                    <h2 class="mpb-section-title">From YouTube upload to WhatsApp delivery.</h2>
-                    <p class="mpb-section-copy">The automation is intentionally simple: fetch structured feed data,
-                        isolate the latest video, check state, then send only when there is new content.</p>
+                    <h2 id="workflow-title" class="mpb-section-title">From YouTube upload to WhatsApp delivery.</h2>
+                    <p class="mpb-section-copy">The sequence uses structured feed data and a small amount of stored state to ensure that only the newest unsent video reaches the group.</p>
                 </header>
 
-                <div class="mpb-workflow" aria-label="Morning Prayer Bot workflow steps">
-                    <article class="mpb-workflow-step">
-                        <span class="mpb-step-number">1</span>
-                        <h3>YouTube Upload</h3>
+                <ol class="mpb-workflow" aria-label="Morning Prayer Bot workflow steps">
+                    <li>
+                        <span class="mpb-step-number">01</span>
+                        <h3>YouTube upload</h3>
                         <p>GracePrayer publishes a new daily prayer video.</p>
-                    </article>
-                    <article class="mpb-workflow-step">
-                        <span class="mpb-step-number">2</span>
-                        <h3>RSS Feed</h3>
-                        <p>The channel feed is monitored for the most recent entry.</p>
-                    </article>
-                    <article class="mpb-workflow-step">
-                        <span class="mpb-step-number">3</span>
+                    </li>
+                    <li>
+                        <span class="mpb-step-number">02</span>
+                        <h3>RSS feed</h3>
+                        <p>The channel feed exposes the latest upload metadata.</p>
+                    </li>
+                    <li>
+                        <span class="mpb-step-number">03</span>
                         <h3>RSS2JSON</h3>
-                        <p>Feed data is converted into structured JSON for Shortcuts.</p>
-                    </article>
-                    <article class="mpb-workflow-step">
-                        <span class="mpb-step-number">4</span>
+                        <p>The feed is converted into predictable structured data.</p>
+                    </li>
+                    <li>
+                        <span class="mpb-step-number">04</span>
                         <h3>Apple Shortcut</h3>
-                        <p>The shortcut extracts title, URL, date and thumbnail data.</p>
+                        <p>Title, URL, date and thumbnail information are extracted.</p>
+                    </li>
+                    <li>
+                        <span class="mpb-step-number">05</span>
+                        <h3>Duplicate check</h3>
+                        <p>The current video is compared with the saved previous state.</p>
+                    </li>
+                    <li>
+                        <span class="mpb-step-number">06</span>
+                        <h3>WhatsApp delivery</h3>
+                        <p>A new video is sent automatically to the target group.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="mpb-section mpb-capabilities" aria-labelledby="capabilities-title">
+            <div class="container">
+                <div class="mpb-split-heading">
+                    <div>
+                        <p class="mpb-eyebrow">Core capabilities</p>
+                        <h2 id="capabilities-title" class="mpb-section-title">Four functions keep the workflow useful and dependable.</h2>
+                    </div>
+                    <p class="mpb-section-copy">The project deliberately limits its scope. Each function directly supports reliable daily delivery rather than adding unnecessary infrastructure.</p>
+                </div>
+
+                <div class="mpb-capability-grid">
+                    <article>
+                        <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                        <h3>Scheduled retrieval</h3>
+                        <p>The Shortcut runs at a consistent time without requiring a manual check.</p>
                     </article>
-                    <article class="mpb-workflow-step">
-                        <span class="mpb-step-number">5</span>
-                        <h3>Duplicate Check</h3>
-                        <p>A saved state file prevents repeated video delivery.</p>
+                    <article>
+                        <i class="fa-solid fa-rss" aria-hidden="true"></i>
+                        <h3>Feed parsing</h3>
+                        <p>RSS2JSON creates a predictable structure that Shortcuts can process reliably.</p>
                     </article>
-                    <article class="mpb-workflow-step">
-                        <span class="mpb-step-number">6</span>
-                        <h3>WhatsApp Group</h3>
-                        <p>The new video is shared automatically with recipients.</p>
+                    <article>
+                        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                        <h3>Duplicate prevention</h3>
+                        <p>A stored video reference stops repeated delivery across scheduled runs.</p>
+                    </article>
+                    <article>
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        <h3>Direct delivery</h3>
+                        <p>The latest valid link is shared through the familiar WhatsApp channel.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Features -->
-        <section class="mpb-section" id="features">
+        <section class="mpb-section mpb-architecture" id="architecture" aria-labelledby="architecture-title">
+            <div class="container">
+                <div class="mpb-split-heading">
+                    <div>
+                        <p class="mpb-eyebrow">Architecture</p>
+                        <h2 id="architecture-title" class="mpb-section-title">A mobile-first pipeline with minimal moving parts.</h2>
+                    </div>
+                    <p class="mpb-section-copy">The implementation keeps orchestration, validation and delivery on the iPad while relying on established services for the feed and messaging layers.</p>
+                </div>
+
+                <div class="mpb-architecture-grid">
+                    <figure class="mpb-architecture-figure">
+                        <img src="../assets/mpb-architecture-diagram.png" alt="Morning Prayer Bot system integration architecture diagram" loading="lazy" decoding="async">
+                    </figure>
+
+                    <div class="mpb-architecture-notes">
+                        <article>
+                            <span>01</span>
+                            <div><h3>Structured input</h3><p>YouTube RSS is converted before it reaches Shortcuts, reducing parsing complexity inside the automation.</p></div>
+                        </article>
+                        <article>
+                            <span>02</span>
+                            <div><h3>Local state</h3><p>The last delivered video is stored locally, giving the Shortcut a simple and persistent duplicate check.</p></div>
+                        </article>
+                        <article>
+                            <span>03</span>
+                            <div><h3>No custom backend</h3><p>The workflow remains understandable and maintainable without hosting, databases or server-side code.</p></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mpb-section mpb-engineering" aria-labelledby="engineering-title">
             <div class="container">
                 <header class="mpb-section-header">
-                    <p class="mpb-eyebrow">Features</p>
-                    <h2 class="mpb-section-title">Built for low maintenance and reliable sharing.</h2>
-                    <p class="mpb-section-copy">The project uses lightweight tooling rather than a custom backend,
-                        making it easier to run, maintain and adapt from an iPad.</p>
+                    <p class="mpb-eyebrow">Engineering the workflow</p>
+                    <h2 id="engineering-title" class="mpb-section-title">Technical decisions shaped by reliability and simplicity.</h2>
                 </header>
 
-                <div class="mpb-card-grid">
-                    <article class="mpb-feature-card">
-                        <div class="mpb-feature-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
-                        <h3>Scheduled Automation</h3>
-                        <p>Runs automatically each morning through Apple Shortcuts, reducing the need for manual
-                            checking and posting.</p>
+                <div class="mpb-engineering-grid">
+                    <article>
+                        <p class="mpb-module-meta">Data handling</p>
+                        <h3>Convert the feed before parsing it.</h3>
+                        <p>RSS2JSON reduces the amount of XML handling required inside Apple Shortcuts and exposes only the structured values needed by the workflow.</p>
                     </article>
-                    <article class="mpb-feature-card">
-                        <div class="mpb-feature-icon"><i class="fa-solid fa-rss" aria-hidden="true"></i></div>
-                        <h3>RSS Feed Processing</h3>
-                        <p>Uses YouTube RSS and RSS2JSON to create structured data that Apple Shortcuts can process
-                            reliably.</p>
+                    <article>
+                        <p class="mpb-module-meta">State management</p>
+                        <h3>Store the last delivered item locally.</h3>
+                        <p>Comparing the latest video with a saved reference creates duplicate protection without introducing a database or account system.</p>
                     </article>
-                    <article class="mpb-feature-card">
-                        <div class="mpb-feature-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
-                        <h3>WhatsApp Delivery</h3>
-                        <p>Sends the prayer video link directly to the target WhatsApp group with support for richer
-                            preview content.</p>
-                    </article>
-                    <article class="mpb-feature-card">
-                        <div class="mpb-feature-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-                        <h3>Duplicate Detection</h3>
-                        <p>Tracks the previously sent video so the same upload is not posted multiple times.</p>
-                    </article>
-                    <article class="mpb-feature-card">
-                        <div class="mpb-feature-icon"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i></div>
-                        <h3>Mobile-First Build</h3>
-                        <p>Designed to run from iPadOS without a server, custom API or complex infrastructure.</p>
-                    </article>
-                    <article class="mpb-feature-card">
-                        <div class="mpb-feature-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
-                        </div>
-                        <h3>Simple Architecture</h3>
-                        <p>Keeps the system easy to understand: feed input, parsing, validation and message delivery.
-                        </p>
+                    <article>
+                        <p class="mpb-module-meta">System scope</p>
+                        <h3>Keep orchestration on the device.</h3>
+                        <p>A mobile-first build makes the system easier to inspect, adapt and maintain from the iPad that already runs the daily automation.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Architecture -->
-        <section class="mpb-section" id="architecture">
+        <section class="mpb-section mpb-challenges" aria-labelledby="challenges-title">
             <div class="container">
-                <header class="mpb-section-header mpb-centered">
-                    <p class="mpb-eyebrow">Architecture</p>
-                    <h2 class="mpb-section-title">A clear mobile automation pipeline.</h2>
-                    <p class="mpb-section-copy">The architecture focuses on minimal moving parts while still supporting
-                        feed parsing, metadata extraction, duplicate prevention and WhatsApp delivery.</p>
-                </header>
+                <div class="mpb-split-heading">
+                    <div>
+                        <p class="mpb-eyebrow">Challenges and fixes</p>
+                        <h2 id="challenges-title" class="mpb-section-title">Making a small workflow dependable.</h2>
+                    </div>
+                    <p class="mpb-section-copy">Reliability depended less on adding tools and more on controlling input, state and failure points.</p>
+                </div>
 
-                <figure class="mpb-architecture-card">
-                    <img src="../assets/mpb-architecture-diagram.png"
-                        alt="Morning Prayer Bot system integration architecture diagram" loading="lazy">
-                </figure>
-            </div>
-        </section>
-
-        <!-- Technical stack -->
-        <section class="mpb-section" id="tech-stack">
-            <div class="container">
-                <header class="mpb-section-header">
-                    <p class="mpb-eyebrow">Technology stack</p>
-                    <h2 class="mpb-section-title">Low-code tools, practical system logic.</h2>
-                </header>
-
-                <div class="mpb-two-column">
-                    <article class="mpb-list-card">
-                        <h3>Core tools</h3>
-                        <ul class="mpb-clean-list">
-                            <li>Apple Shortcuts for orchestration and scheduled execution.</li>
-                            <li>YouTube RSS feed as the content source.</li>
-                            <li>RSS2JSON for structured data conversion.</li>
-                            <li>WhatsApp as the final delivery channel.</li>
-                        </ul>
+                <div class="mpb-challenge-list">
+                    <article>
+                        <div><span>Challenge</span><h3>Feed data included more information than the workflow required.</h3></div>
+                        <div><span>Response</span><p>Extract only the title, link, publication date and thumbnail before continuing.</p></div>
                     </article>
-                    <article class="mpb-list-card">
-                        <h3>Automation logic</h3>
-                        <ul class="mpb-clean-list">
-                            <li>Retrieve latest feed item and parse key metadata.</li>
-                            <li>Compare current video against stored previous state.</li>
-                            <li>Skip delivery when the video has already been shared.</li>
-                            <li>Send a clean message with the newest video link when valid.</li>
-                        </ul>
+                    <article>
+                        <div><span>Challenge</span><h3>Repeated scheduled runs could post the same video more than once.</h3></div>
+                        <div><span>Response</span><p>Compare each feed item against a locally stored reference to the previously delivered video.</p></div>
+                    </article>
+                    <article>
+                        <div><span>Challenge</span><h3>Apple Shortcuts required predictable data structures to avoid broken runs.</h3></div>
+                        <div><span>Response</span><p>Convert the RSS feed into JSON before parsing and accessing individual values.</p></div>
+                    </article>
+                    <article>
+                        <div><span>Challenge</span><h3>The project needed to stay lightweight and manageable without a server.</h3></div>
+                        <div><span>Response</span><p>Use existing services and local device automation rather than building custom infrastructure.</p></div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Challenges -->
-        <section class="mpb-section" id="challenges">
+        <section class="mpb-section mpb-future" aria-labelledby="future-title">
             <div class="container">
-                <header class="mpb-section-header">
-                    <p class="mpb-eyebrow">Challenges & fixes</p>
-                    <h2 class="mpb-section-title">Making a small workflow dependable.</h2>
-                </header>
-
-                <div class="mpb-two-column">
-                    <article class="mpb-list-card">
-                        <h3>Challenges</h3>
-                        <ul class="mpb-clean-list">
-                            <li>Apple Shortcuts needs predictable data structures to avoid broken runs.</li>
-                            <li>RSS feed data can contain more information than the workflow actually needs.</li>
-                            <li>Repeated runs could accidentally repost the same video.</li>
-                            <li>The system needed to stay lightweight without a backend server.</li>
-                        </ul>
-                    </article>
-                    <article class="mpb-list-card">
-                        <h3>Fixes</h3>
-                        <ul class="mpb-clean-list">
-                            <li>Converted RSS into JSON before parsing inside Shortcuts.</li>
-                            <li>Extracted only the required fields: title, link, date and thumbnail.</li>
-                            <li>Added file-based state tracking for the last delivered video.</li>
-                            <li>Kept the architecture entirely mobile-first and low maintenance.</li>
-                        </ul>
-                    </article>
+                <div class="mpb-split-heading">
+                    <div>
+                        <p class="mpb-eyebrow">Future development</p>
+                        <h2 id="future-title" class="mpb-section-title">Focused improvements for the next version.</h2>
+                    </div>
+                    <p class="mpb-section-copy">Further development would concentrate on observability and configuration rather than making the core workflow more complex.</p>
                 </div>
+
+                <ol class="mpb-future-list">
+                    <li><span>01</span><div><h3>Configurable schedule</h3><p>Change the delivery time without editing the main Shortcut logic.</p></div></li>
+                    <li><span>02</span><div><h3>Error alerts</h3><p>Send a private notification when feed parsing fails or no valid item is available.</p></div></li>
+                    <li><span>03</span><div><h3>Delivery log</h3><p>Maintain a small history of sent videos for review and troubleshooting.</p></div></li>
+                </ol>
             </div>
         </section>
 
-        <!-- Future development -->
-        <section class="mpb-section" id="future-development">
+        <section class="mpb-section mpb-outcome" id="sourceCode" aria-labelledby="outcome-title">
             <div class="container">
-                <header class="mpb-section-header">
-                    <p class="mpb-eyebrow">Future development</p>
-                    <h2 class="mpb-section-title">Possible improvements for the next version.</h2>
-                </header>
-
-                <div class="mpb-card-grid">
-                    <article class="mpb-feature-card">
-                        <div class="mpb-feature-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
-                        <h3>Configurable Schedule</h3>
-                        <p>Allow the delivery time to be changed without editing the main shortcut logic.</p>
-                    </article>
-                    <article class="mpb-feature-card">
-                        <div class="mpb-feature-icon"><i class="fa-solid fa-bell" aria-hidden="true"></i></div>
-                        <h3>Error Alerts</h3>
-                        <p>Add a private notification when feed parsing fails or no video is available.</p>
-                    </article>
-                    <article class="mpb-feature-card">
-                        <div class="mpb-feature-icon"><i class="fa-solid fa-database" aria-hidden="true"></i></div>
-                        <h3>Delivery Log</h3>
-                        <p>Store a small history of sent videos for easier debugging and review.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Outcome -->
-        <section class="mpb-section" id="outcome">
-            <div class="container">
-                <div class="mpb-final-cta">
-                    <p class="mpb-eyebrow">Project outcome</p>
-                    <h2 class="mpb-section-title">A reliable daily sharing system with minimal overhead.</h2>
-                    <p>
-                        Morning Prayer Bot shows how practical automation can remove repetitive manual tasks while
-                        keeping the implementation simple, understandable and easy to maintain.
-                    </p>
-                    <a class="mpb-button mpb-button-primary" href="#sourceCode">
-                        Explore source <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                <div class="mpb-outcome-panel">
+                    <div>
+                        <p class="mpb-eyebrow">Project outcome</p>
+                        <h2 id="outcome-title" class="mpb-section-title">A reliable daily sharing system with minimal overhead.</h2>
+                        <p>Morning Prayer Bot demonstrates how a small, carefully scoped automation can remove a repetitive manual task while remaining understandable and easy to maintain.</p>
+                    </div>
+                    <a class="mpb-button mpb-button-primary" href="https://github.com/csmorenolima" target="_blank" rel="noopener">
+                        Open GitHub profile
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Source -->
-        <section class="mpb-section-tight" id="sourceCode">
-            <div class="container">
-                <div class="mpb-final-cta">
-                    <p class="mpb-eyebrow">Call to action</p>
-                    <h2 class="mpb-section-title">View the source</h2>
-                    <p>Want to explore the implementation details and project files?</p>
-                    <a class="mpb-button mpb-button-primary" href="https://github.com/csmorenolima" target="_blank"
-                        rel="noopener">
-                        Open GitHub repo <i class="fa-brands fa-github" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Navigation -->
-    <section class="project-navigation">
-        <div class="container">
-            <div class="nav-buttons">
+        <section class="project-navigation" aria-label="Project navigation">
+            <div class="container nav-buttons">
                 <a href="../engineering/" class="nav-btn back">
                     <i class="fas fa-arrow-left" aria-hidden="true"></i>
                     <span>Back to Engineering</span>
@@ -435,42 +327,33 @@
                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <p>Learning Together, Growing Together.</p>
                 </div>
-
                 <div class="footer-section">
                     <h3>OfficialMV</h3>
-                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank"
-                        rel="noopener">RedBubble</a>
-                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank"
-                        rel="noopener">Instagram</a>
+                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank" rel="noopener">RedBubble</a>
+                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank" rel="noopener">Instagram</a>
                     <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank" rel="noopener">TikTok</a>
                 </div>
-
                 <div class="footer-section">
                     <h3>Social</h3>
-                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank"
-                        rel="noopener">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank" rel="noopener">LinkedIn</a>
                     <a href="https://github.com/csmorenolima" target="_blank" rel="noopener">GitHub</a>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p>&copy; COPYRIGHT 2025 . ALL RIGHTS RESERVED</p>
             </div>
         </div>
     </footer>
 
-    <!-- External JavaScript Files -->
-    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/navigation.js" defer></script>
 </body>
-
 </html>
