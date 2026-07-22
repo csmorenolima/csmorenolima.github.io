@@ -789,11 +789,11 @@ body.enova-page .enova-wordmark-split {
     user-select: none;
 }
 
-body.enova-page .enova-wordmark-clip {
+/* body.enova-page .enova-wordmark-clip {
     position: absolute;
     inset: 0;
     overflow: hidden;
-}
+} */
 
 /* The clipping boundary is the actual hero divider */
 body.enova-page .enova-wordmark-clip-top {
@@ -804,10 +804,6 @@ body.enova-page .enova-wordmark-clip-bottom {
     clip-path: inset(var(--enova-hero-split) 0 0 0);
 }
 
-/*
-   Both words have identical coordinates.
-   Their vertical centre is attached to the divider itself.
-*/
 body.enova-page .enova-wordmark-clip span {
     position: absolute;
     left: auto;
@@ -1333,4 +1329,134 @@ body.enova-page .enova-hero-copy .hero-secondary-button:hover {
         padding: 0 1.25rem;
         font-size: .98rem;
     }
+}
+
+
+/* =====================================================
+   EXACT ENOVA IMAGE WATERMARK
+   Uses the supplied transparent wordmark artwork.
+   No hero layout, copy, button, or animation changes.
+===================================================== */
+
+body.enova-page .enova-wordmark-split {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+/* Disable the former duplicate text layers */
+body.enova-page .enova-wordmark-split .enova-wordmark-clip {
+    display: none !important;
+}
+
+/*
+   The image is positioned on the same divider coordinate used
+   by the existing watermark. Its original proportions are retained.
+*/
+body.enova-page .enova-wordmark-image {
+    position: absolute;
+    right: var(--enova-hero-x);
+    top: var(--enova-hero-split);
+    transform: translateY(-50%);
+    display: block;
+    width: clamp(42rem, 74vw, 76rem);
+    height: auto;
+    max-width: none;
+    opacity: .82;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+@media (max-width: 1180px) {
+    body.enova-page .enova-wordmark-image {
+        width: clamp(36rem, 80vw, 64rem);
+    }
+}
+
+@media (max-width: 980px) {
+    body.enova-page .enova-wordmark-image {
+        width: clamp(30rem, 88vw, 54rem);
+    }
+}
+
+@media (max-width: 720px) {
+    body.enova-page .enova-wordmark-image {
+        right: var(--enova-hero-x);
+        width: clamp(23rem, 112vw, 35rem);
+        opacity: .78;
+    }
+}
+
+/* =====================================================
+   FINAL SMALLER WATERMARK POSITION
+   Right-aligned, restrained, and proportionally scaled.
+===================================================== */
+
+body.enova-page .enova-wordmark-image {
+    position: absolute;
+    right: var(--enova-hero-x);
+    top: calc(var(--enova-hero-split) + .65rem);
+    transform: translateY(-50%);
+
+    width: clamp(32rem, 58vw, 58rem);
+    height: auto;
+    max-width: none;
+
+    opacity: .72;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+@media (max-width: 1180px) {
+    body.enova-page .enova-wordmark-image {
+        width: clamp(28rem, 64vw, 48rem);
+    }
+}
+
+@media (max-width: 980px) {
+    body.enova-page .enova-wordmark-image {
+        right: var(--enova-hero-x);
+        width: clamp(25rem, 76vw, 40rem);
+        top: calc(var(--enova-hero-split) + .4rem);
+    }
+}
+
+@media (max-width: 720px) {
+    body.enova-page .enova-wordmark-image {
+        right: -.5rem;
+        width: clamp(20rem, 98vw, 30rem);
+        top: var(--enova-hero-split);
+        opacity: .68;
+    }
+}
+
+
+/* Final hero logo */
+body.enova-page .enova-wordmark-split{display:none!important;}
+
+body.enova-page .enova-hero-visual{
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:520px;
+}
+
+body.enova-page .enova-hero-logo{
+width:min(520px,90%);
+height:auto;
+display:block;
+filter:drop-shadow(0 18px 40px rgba(0,0,0,.08));
+}
+
+@media(max-width:980px){
+ body.enova-page .enova-hero-logo{
+   width:min(420px,80vw);
+ }
 }
