@@ -551,6 +551,7 @@ body.soct-page .soct-scroll-panel-royal {
     align-items: stretch;
     justify-content: flex-start;
     text-align: center;
+    max-width: 450px;
 }
 
 body.soct-page .soct-scroll-kicker {
@@ -564,16 +565,10 @@ body.soct-page .soct-scroll-kicker {
     text-transform: uppercase;
 }
 
-body.soct-page .soct-scroll-title {
-    flex: 0 0 auto;
-    margin: 0;
-    color: #684616;
-    font-family: "EB Garamond", Georgia, serif;
-    font-size: clamp(1.7rem, 2.9vw, 2.5rem);
-    font-weight: 700;
-    line-height: 1.02;
-    letter-spacing: -.02em;
-    text-align: center;
+body.soct-page #scroll-stamp-top {
+    color: #881313;
+    padding-bottom: 1rem;
+    font-size: 2rem;
 }
 
 body.soct-page .soct-scroll-subtitle {
@@ -584,6 +579,7 @@ body.soct-page .soct-scroll-subtitle {
     font-size: clamp(.95rem, 1.55vw, 1.18rem);
     font-style: italic;
     line-height: 1.25;
+    text-align: start;
 }
 
 body.soct-page .soct-scroll-signoff {
