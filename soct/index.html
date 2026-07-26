@@ -119,8 +119,7 @@
                                 height="120" src="../assets/so-ct-thumbnail.png" width="360" />
                             <p class="soct-poster-tagline">EMERSIVE <span aria-hidden="true">•</span> FANTASY <span
                                     aria-hidden="true">•</span> LORE</p>
-                            <button class="soct-poster-explore" data-open-map="" type="button">Read The
-                                Chronicle</button>
+                            <button class="soct-poster-explore" data-open-map="" type="button">Read The Chronicle</button>
                         </div>
                     </div>
                 </div>
@@ -1179,6 +1178,35 @@
                         <p class="character-role">
                             Former Ruler of Dsärr
                         </p>
+                        <ul class="character-stats">
+                            <li>
+                                <span>
+                                    Endurance
+                                </span>
+                                <div class="bar">
+                                    <i data-level="82">
+                                    </i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>
+                                    Restraint
+                                </span>
+                                <div class="bar">
+                                    <i data-level="88">
+                                    </i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>
+                                    Legacy
+                                </span>
+                                <div class="bar">
+                                    <i data-level="72">
+                                    </i>
+                                </div>
+                            </li>
+                        </ul>
                         <p class="character-lore">
                             A king who chose survival over pride. His quiet rule kept the West alive,
                             but planted the seeds of rebellion.
@@ -1230,6 +1258,35 @@
                         <p class="character-role">
                             Ruler of Edresan
                         </p>
+                        <ul class="character-stats">
+                            <li>
+                                <span>
+                                    Cunning
+                                </span>
+                                <div class="bar">
+                                    <i data-level="91">
+                                    </i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>
+                                    Ambition
+                                </span>
+                                <div class="bar">
+                                    <i data-level="87">
+                                    </i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>
+                                    Influence
+                                </span>
+                                <div class="bar">
+                                    <i data-level="78">
+                                    </i>
+                                </div>
+                            </li>
+                        </ul>
                         <p class="character-lore">
                             A conspirator who traded stability for ambition, believing the West
                             deserved more than obedience.
@@ -1246,6 +1303,35 @@
                         <p class="character-role">
                             Ruler of Yán
                         </p>
+                        <ul class="character-stats">
+                            <li>
+                                <span>
+                                    Sorcery
+                                </span>
+                                <div class="bar">
+                                    <i data-level="89">
+                                    </i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>
+                                    Devotion
+                                </span>
+                                <div class="bar">
+                                    <i data-level="84">
+                                    </i>
+                                </div>
+                            </li>
+                            <li>
+                                <span>
+                                    Influence
+                                </span>
+                                <div class="bar">
+                                    <i data-level="74">
+                                    </i>
+                                </div>
+                            </li>
+                        </ul>
                         <p class="character-lore">
                             Bound to TarragØn through shared rule, Yán’s fate is entwined with
                             Saar’s awakening.
@@ -1258,24 +1344,26 @@
                 <h3 class="character-section-title">
                     Mythic Forces
                 </h3>
-                <div class="character-grid">
+                <div class="character-grid character-grid-compact character-grid-mythic">
                     <article class="character-card mythic">
-                        <h4>
-                            Lumyrion
-                        </h4>
-                        <div class="character-portrait portrait-carousel" data-portrait-carousel="lumyrion">
-                            <img alt="Lumyrion" class="portraitImage" decoding="async" loading="lazy"
-                                src="../assets/soct-characters/Lumyrion.png" />
-                            <span aria-label="Show alternate character image"
-                                class="portraitArrow carousel-arrow carousel-arrow-right" role="button"
-                                tabindex="0">
-                                <svg class="portrait-arrow-icon" fill="none" height="32" viewbox="0 0 16 16"
-                                    width="32" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 2l6 6-6 6" fill="none" stroke="#e6c97a" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2">
-                                    </path>
-                                </svg>
-                            </span>
+                        <div class="mythic-card-head">
+                            <h4>
+                                Lumyrion
+                            </h4>
+                            <div class="character-portrait portrait-carousel" data-portrait-carousel="lumyrion">
+                                <img alt="Lumyrion" class="portraitImage" decoding="async" loading="lazy"
+                                    src="../assets/soct-characters/Lumyrion.png" />
+                                <span aria-label="Show alternate character image"
+                                    class="portraitArrow carousel-arrow carousel-arrow-right" role="button"
+                                    tabindex="0">
+                                    <svg class="portrait-arrow-icon" fill="none" height="32" viewbox="0 0 16 16"
+                                        width="32" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 2l6 6-6 6" fill="none" stroke="#e6c97a" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
                         </div>
                         <p class="character-role">
                             Guardian of Balance
@@ -1289,7 +1377,7 @@
                         <h4>
                             Saar
                         </h4>
-                        <div class="character-portrait">
+                        <div class="character-portrait character-portrait-saar">
                             <img alt="Saar" decoding="async" loading="lazy" src="../assets/soct-characters/Saar.png" />
                         </div>
                         <p class="character-role">
@@ -1611,19 +1699,9 @@
                                 <h4>
                                     Cyrenthos
                                 </h4>
-                                <div class="character-portrait portrait-carousel" data-portrait-carousel="cyrenthos">
-                                    <img alt="Cyrenthos" class="portraitImage" decoding="async" loading="lazy"
+                                <div class="character-portrait">
+                                    <img alt="Cyrenthos" decoding="async" loading="lazy"
                                         src="../assets/soct-characters/Cyrenthos.png" />
-                                    <span aria-label="Show alternate character image"
-                                        class="portraitArrow carousel-arrow carousel-arrow-right" role="button"
-                                        tabindex="0">
-                                        <svg class="portrait-arrow-icon" fill="none" height="32" viewbox="0 0 16 16"
-                                            width="32" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 2l6 6-6 6" fill="none" stroke="#e6c97a" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2">
-                                            </path>
-                                        </svg>
-                                    </span>
                                 </div>
                                 <p class="character-role">
                                     Corruption-Bound Entity
@@ -1692,7 +1770,7 @@
                 <h3 class="character-section-title">
                     Companions &amp; Allies
                 </h3>
-                <div class="character-grid">
+                <div class="character-grid character-grid-compact character-grid-companions">
                     <article class="character-card">
                         <h4>
                             Grog
@@ -1741,17 +1819,16 @@
                 ×
             </button>
             <h2 class="map-modal-title" id="map-modal-title">
-                DOMAINS OF THE ENËN SEA
+                MAP OF THE REALMS OF THE ENËN SEA
             </h2>
             <div class="map-modal-subtitle">
                 <p>
-                    Explore the kingdoms, secrets and dangers of the world. Hover for rulers and lore; select a region
-                    to reveal more.
+                    Explore the updated realms, ports, creatures and frontier zones of the Enën Sea. Hover for lore and select a region to reveal more.
                 </p>
             </div>
             <div class="map-wrapper">
                 <img alt="Map of the Enën Sea" class="map-image" decoding="async" loading="lazy"
-                    src="../assets/EnënSeaMap.jpg" />
+                    src="../assets/EnënSeaMap.png" />
                 <!-- Overlay for interactive regions -->
                 <div id="map-regions-container">
                 </div>

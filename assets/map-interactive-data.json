@@ -1,140 +1,232 @@
 {
   "regions": [
     {
-      "id": "TarragØn",
-      "name": "The Kingdom of TarragØn",
-      "coords": "219,258,107",
-      "blurb": "The birthplace of the West’s downfall.",
-      "lore": "Once the fertile heartland of the West, TarragØn rose when Zuläch united the Western Realms. But beneath Dsärr he broke the ancient seal, awakening the force sealed by the Old Treaty. Corruption surged outward, twisting land and creatures alike. All blight across the Enën Sea originates here.",
-      "effect": "corrupted"
+      "id": "tarragon",
+      "name": "Tarragon",
+      "coords": "166,247,150",
+      "effect": "corrupted",
+      "blurb": "The Corrupted Three-Realm Throne",
+      "lore": "Tarragon is now a single corrupted western kingdom formed from Dsärr, Edresan and Yán. With Dsärr at its heart and the other two realms folded within its borders, Zuläch rules the whole western mass as Saar’s throne made flesh."
     },
     {
-      "id": "aeyantis",
-      "name": "Aeyantis Kingdom",
-      "coords": "1218,370,53",
-      "blurb": "The oldest of the kingdoms, ruled by Queen Ahris.",
-      "lore": "Aeyantis is the heart of civilisation and the seat of Queen Ahris. Here the Guardian Lumyrion was summoned—an ancient relic awakened only when chaos threatens the world. Aeyantis stands as one of the last bastions of order as the realm collapses around it.",
-      "effect": "glow"
-    },
-    {
-      "id": "katzh",
-      "name": "Katzh Kingdom",
-      "coords": "1006,584,42",
-      "blurb": "A quiet, reflective kingdom of serene forests and calm waters.",
-      "lore": "Katzh, ruled by the formless sovereign Yutanari, lies far from TarragØn’s direct influence. Though its mist-laden lands sense the imbalance spreading across the Enën Sea, Katzh itself remains uncorrupted. Its people act as watchers of the world’s shifting tides, preparing for the moment the darkness reaches their borders.",
-      "effect": "glow"
-    },
-    {
-      "id": "dreonathen",
-      "name": "Dreonathen Kingdom",
-      "coords": "508,512,48",
-      "blurb": "A warrior kingdom standing between East and West.",
-      "lore": "Dreonathen, ruled by King Diogenes, formed the shield between the Western Realms and the Six Kingdoms. Their stone fortresses were the first to face TarragØn’s spread. Though strong, their borders tremble as corruption pushes closer.",
-      "effect": "glow"
-    },
-    {
-      "id": "yan",
-      "name": "Yán Realm",
-      "coords": "52,117,37",
-      "blurb": "A fractured realm known for its sky-watchers.",
-      "lore": "Under Domiyán, the Yán Realm once observed the heavens for signs of destiny. When Zuläch united the West, Yán followed—but corruption now divides its people. Some cling to TarragØn’s order; others flee from the spreading darkness.",
-      "effect": "corrupted"
+      "id": "dsarr",
+      "name": "Dsärr",
+      "coords": "184,260,24",
+      "blurb": "Ancient heart-realm of Tarragon",
+      "lore": "Once ruled by Zhäro, Dsärr now sits at the centre of Tarragon as its ancient heart-realm. Its older identity survives in memory, but its lands are now bound into the larger corrupted western kingdom."
     },
     {
       "id": "edresan",
-      "name": "Edresan Realm",
-      "coords": "170,93,55",
-      "blurb": "One of the Western Realms absorbed into TarragØn.",
-      "lore": "Ruled by Qadril, Edresan stood beside Zuläch during the unification of the West. Their marsh strongholds and covert alliances gave him the advantage needed to form TarragØn. Now corruption seeps through the wetlands, twisting both land and allegiance.",
-      "effect": "corrupted"
+      "name": "Edresan",
+      "coords": "126,322,20",
+      "blurb": "Inner western realm within Tarragon",
+      "lore": "Edresan, once Qadril’s power base, now lies within Tarragon’s western domain. Its ambition and opportunistic politics helped the three western realms collapse into a single throne."
     },
     {
-      "id": "kithren",
-      "name": "Kithren Queendom",
-      "coords": "548,268,23",
-      "blurb": "A bright queendom now standing against encroaching shadow.",
-      "lore": "Kithren, ruled by Queen Keisth, once flourished on harmony and enchantment. Its shimmering stone cities have grown quiet as TarragØn’s blight approaches, blackening their once-luminous forests and silencing their choral wildlife.",
-      "effect": "corrupted"
+      "id": "yan",
+      "name": "Yán",
+      "coords": "108,388,20",
+      "blurb": "Southern western realm within Tarragon",
+      "lore": "Yán, formerly ruled by Domiyán, is now the third realm held within Tarragon’s borders. Its fate is inseparable from the corruption spreading outward under Saar’s influence."
+    },
+    {
+      "id": "shalmur",
+      "name": "Mountains of Shal Mur",
+      "coords": "102,486,44",
+      "blurb": "Ancient prison of Saar",
+      "lore": "Beneath Shal Mur lie the Four Eternal Chains — Order, Will, Form and Veil — the ancient bindings that imprisoned Saar after the Sundering. Zuläch shattered the Chain of Will here and allowed Saar’s essence to enter him."
+    },
+    {
+      "id": "stronghold",
+      "name": "Corruption Stronghold",
+      "coords": "291,365,20",
+      "effect": "corrupted",
+      "blurb": "Fortress on the corrupted frontier",
+      "lore": "A forward bastion along Tarragon’s fractured border, where corruption presses into the neighbouring lands and distorts old roads and watchlines."
     },
     {
       "id": "vulcaria",
-      "name": "Vulcaria Kingdom",
-      "coords": "1004,118,32",
-      "blurb": "A volcanic kingdom of ancient fire.",
-      "lore": "Vulcaria, ruled by Queen Olorus, stands on rivers of molten rock. The kingdom’s fire-wrought fortresses resist corruption, yet tremors beneath the volcanic halls suggest TarragØn’s influence is reaching deep into the earth’s oldest veins.",
-      "effect": "glow"
+      "name": "Vulcaria",
+      "coords": "451,294,28",
+      "blurb": "Land of Ash and Fire",
+      "lore": "Vulcaria is the volcanic kingdom of Queen Olorus. Calderas, lava fields and geothermal nesting grounds shape its way of life, and its fire-tempered people endure heat, ash and upheaval better than most."
+    },
+    {
+      "id": "amberisles",
+      "name": "The Amber Isles",
+      "coords": "605,136,24",
+      "blurb": "Northern trade isles",
+      "lore": "A chain of smaller northern islands that divide shipping lanes and provide stopping points between the western coast, Amexore and Brigachian waters."
     },
     {
       "id": "amexore",
-      "name": "Ame’xore Kingdom",
-      "coords": "645,154,33",
-      "blurb": "A kingdom of winds, peaks, and hidden archives.",
-      "lore": "Ruled by Queen Teri'itaria, Ame’xore protects vast archives of lost languages and ancient records. Scholars race to decode forgotten texts as corruption rides the mountain winds toward their sky temples.",
-      "effect": "corrupted"
+      "name": "Amexore",
+      "coords": "797,173,42",
+      "blurb": "Kingdom of Hidden Knowledge",
+      "lore": "Ruled by Queen Teri’itaria, Amexore safeguards hidden archives, forbidden records and the knowledge that first revealed Saar’s return to the eastern courts."
     },
     {
-      "id": "brigachin",
-      "name": "Brigachin Realm",
-      "coords": "1254,196,42",
-      "blurb": "A harsh northern realm bordering Aeyantis.",
-      "lore": "Brigachin, ruled by Broyagia, lies just north of Aeyantis, separated by fortified ridgelines and cold highlands. Despite this proximity, Brigachin has long isolated itself from the affairs of the Six Kingdoms. When Queen Ahris warned of rising corruption, Brigachin dismissed it as an eastern burden. But now distortions creep through their northern passes—proof that even their rigid traditions cannot hold back the spreading chaos.",
-      "effect": "glow"
+      "id": "brigachian",
+      "name": "Brigachian",
+      "coords": "1063,150,40",
+      "blurb": "Northern Sea Frontier",
+      "lore": "The frozen northern frontier, marked by ice-choked seas, remote watchpoints and harsh maritime routes. Brigachian secures the far north and monitors cold-water approaches."
+    },
+    {
+      "id": "aeyantis",
+      "name": "Aeyantis",
+      "coords": "1318,355,48",
+      "effect": "glow",
+      "blurb": "Radiant Kingdom of the Sun Court",
+      "lore": "Queen Ahris rules Aeyantis, the radiant eastern kingdom. Here Lumyrion was awakened and entrusted to the bearer chosen to carry the light west toward Tarragon."
+    },
+    {
+      "id": "journey",
+      "name": "Your Journey Begins Here",
+      "coords": "1363,501,22",
+      "effect": "glow",
+      "blurb": "Starting point of the royal charge",
+      "lore": "The journey begins at the eastern edge of Aeyantis, where the bearer departs with Lumyrion and follows the marked route across sea lanes, ports and borderlands toward the corrupted west."
+    },
+    {
+      "id": "crownsgate",
+      "name": "Crown’s Gate Isles",
+      "coords": "1126,412,24",
+      "blurb": "Trade hub and enclave",
+      "lore": "These island enclaves sit between Aeyantis and Katzh, funnelling sea trade, envoys and information through one of the most strategic corridors in the Enën Sea."
+    },
+    {
+      "id": "katzh",
+      "name": "Katzh",
+      "coords": "1038,505,38",
+      "blurb": "Crownlands — Kingdom of Law and Trade",
+      "lore": "Katzh is a disciplined mercantile kingdom whose harbours, ledgers and legal order help stabilise movement between the eastern and central realms."
+    },
+    {
+      "id": "dreonathen",
+      "name": "Dreonathen",
+      "coords": "743,587,44",
+      "blurb": "The Last Shield",
+      "lore": "Ruled by King Diogenes, Dreonathen stands as a defensive buffer between the heartlands and the west. Its roads, forts and disciplined people form a living shield against the advance of corruption."
+    },
+    {
+      "id": "kithren",
+      "name": "Kithren",
+      "coords": "386,685,46",
+      "blurb": "Mistwood Queendom",
+      "lore": "Kithren’s old forests, misted valleys and hidden paths are ruled by Queen Kelisth. As corruption spreads, Kithren is among the first realms to feel its pressure along the western woodland frontier."
+    },
+    {
+      "id": "verdant",
+      "name": "The Verdant Reaches",
+      "coords": "427,392,24",
+      "blurb": "Border woodlands and passes",
+      "lore": "This lush transitional zone softens the edge between volcanic terrain and the greener central lands. It holds passes, river mouths and concealed movement routes."
+    },
+    {
+      "id": "lycaen",
+      "name": "Lycaen Hunting Enclave",
+      "coords": "284,778,22",
+      "blurb": "Forest outpost in Kithren’s deep woods",
+      "lore": "A hunting enclave deep in the mistwoods, known for stealth, tracking and the dangerous predators that roam beneath the canopy."
+    },
+    {
+      "id": "velmist",
+      "name": "Velmist Isles",
+      "coords": "613,802,22",
+      "blurb": "Low isles in the southern waters",
+      "lore": "A dispersed island chain in the lower sea, often used by sailors as weather shelters and by wanderers avoiding the more watched eastern routes."
+    },
+    {
+      "id": "reefs",
+      "name": "The Whispering Reefs",
+      "coords": "748,791,24",
+      "blurb": "Pirates’ archipelago",
+      "lore": "A maze of reefs, wreck routes and hidden anchorages, notorious for pirates, smugglers and rumours that carry farther than ships."
+    },
+    {
+      "id": "atolls",
+      "name": "The Sundried Atolls",
+      "coords": "1070,736,24",
+      "blurb": "Ancient ruins among the shoals",
+      "lore": "These exposed atolls are strewn with old stonework and broken foundations — remnants of forgotten settlements now left to salt, wind and patient tides."
+    },
+    {
+      "id": "duskreach",
+      "name": "The Duskreach",
+      "coords": "1286,781,50",
+      "blurb": "Shadow-blighted outer realm",
+      "lore": "A remote and ominous quarter of the world where the sea darkens and strange violet disturbances stain the land. It lies beyond the main road to Tarragon, but not beyond the world’s growing unease."
+    },
+    {
+      "id": "leviathan",
+      "name": "The Leviathan Depths",
+      "coords": "1261,989,22",
+      "blurb": "Dangerous trench waters",
+      "lore": "A feared lower-sea trench where the water seems unnaturally heavy and soundless. Mariners whisper of immense things moving in the black beneath."
+    },
+    {
+      "id": "southwind",
+      "name": "Southwind Expanse",
+      "coords": "924,943,22",
+      "blurb": "Unmapped southern waters",
+      "lore": "An open southern expanse of sea and scattered landfall, charted only in part and often left deliberately vague on the maps of the Six Crowns."
+    },
+    {
+      "id": "bleakfen",
+      "name": "The Bleakfen Mire",
+      "coords": "420,953,20",
+      "blurb": "Remote marshland",
+      "lore": "A dim marsh and fen region, difficult to cross and thick with stagnant waters, fog and old stories best left untold."
+    },
+    {
+      "id": "fogbound",
+      "name": "The Fogbound Wilds",
+      "coords": "206,907,22",
+      "blurb": "Outer wilderness frontier",
+      "lore": "A remote wildland of cold mist, broken ground and uncertain footing. It marks one of the most isolated corners of the southern-western world."
     }
   ],
   "creatures": [
     {
-      "id": "megalore",
-      "name": "Megalore Domain",
-      "coords": "1245,655,70",
+      "id": "gortusk",
+      "name": "Gortusk",
+      "coords": "534,244,18",
       "danger": "High",
-      "blurb": "A colossal apex predator ruling the deep coastal waters.",
-      "lore": "Megalore stalks the warm currents near Katzh and the southern Aeyantis coast. Sailors say the tides shift when it hunts, and whole ships vanish without a cry. Its massive, angular head slices through both waves and hulls, marking it the terror of the Enën Sea.",
-      "effect": "water-glow"
+      "blurb": "Volcanic war-beast",
+      "lore": "Gortusks are armoured titans of volcanic terrain whose tusks and plated shells make them natural siege-breakers. They roam the ash highlands around Vulcaria rather than serving any ruler outright."
+    },
+    {
+      "id": "megalore",
+      "name": "Megalore",
+      "coords": "1233,64,20",
+      "danger": "Severe",
+      "blurb": "Lizard of the frozen depths",
+      "lore": "A colossal predator of the far northern waters. Megalore stalks the frozen reach beyond Brigachian, threatening ships that wander too close to the deep cold routes."
     },
     {
       "id": "lycara",
-      "name": "Ly’cara Hunting Grounds",
-      "coords": "560,475,60",
-      "danger": "Medium",
-      "blurb": "Territorial forest hunters who never stalk alone.",
-      "lore": "The Ly’cara roam the shadow-thick forests between Kithren and Dreonathen. Swift, coordinated, and fiercely territorial, their cries echo through the trees long before a pack is seen. Many believe they are nature’s first warning before greater dangers draw near.",
-      "effect": "forest-mist"
-    },
-    {
-      "id": "gortusk",
-      "name": "Gortusk Highlands",
-      "coords": "1085,270,65",
-      "danger": "High",
-      "blurb": "Armored war-beasts forged by volcanic heat.",
-      "lore": "In the volcanic plains of Vulcaria, the Gortusk thrive among molten rock and ash storms. Their armored hides are said to be tougher than forged steel. When a herd stampedes, the ground itself trembles under the weight of living battering rams.",
-      "effect": "ember-glow"
-    },
-    {
-      "id": "deep_abyssal",
-      "name": "Deep Abyssal Trenches",
-      "coords": "220,650,85",
-      "danger": "Extreme",
-      "blurb": "Towering horrors from the lightless depths.",
-      "lore": "In the northern ocean trenches, where light has never touched, the Deep Abyssal rise from fathomless voids. Standing taller than most mortal architecture, these beings twist water and shadow alike. Their presence signals an ancient darkness stirring beneath the waves.",
-      "effect": "abyss-dark"
+      "name": "Ly’cara",
+      "coords": "300,742,18",
+      "danger": "Moderate",
+      "blurb": "Mistwood pack hunters",
+      "lore": "Fast and shadow-quiet, Ly’cara packs hunt through Kithren’s deeper woods. They know the fog better than any traveller does."
     },
     {
       "id": "cyrenthos",
-      "name": "Cyrenthos Valley",
-      "coords": "360,340,55",
+      "name": "Cyrenthos",
+      "coords": "515,520,22",
       "danger": "High",
-      "blurb": "Savage valley predators warped by TarragØn’s corruption.",
-      "lore": "Once noble valley guardians, the Cyrenthos were twisted when TarragØn fell to Saar’s corruption. Their equine bodies carry monstrous upper torsos, driven by a rage not fully their own. They patrol the borderlands between Dreonathen and TarragØn, striking down anything that crosses.",
-      "effect": "corruption-flicker"
+      "blurb": "Corruption-bound entities",
+      "lore": "Ancient creatures twisted by corruption and found near the scarred valleys between the western frontier and Dreonathen. Their presence often signals that the land itself is starting to change."
     },
     {
-      "id": "mighty_troll",
-      "name": "Mighty Troll of TarragØn",
-      "coords": "230,295,110",
-      "danger": "Cataclysmic",
-      "blurb": "The corrupted titan that rules TarragØn’s core.",
-      "lore": "Once Zuläch of Dsärr, now the living vessel of Saar’s hatred. The Mighty Troll towers above all creatures, wrapped in dark energy that rots the land beneath its feet. Every step spreads corruption. Every roar shakes kingdoms. Defeating it is the only hope to end the unraveling of the Enën Sea.",
-      "effect": "void-corruption"
+      "id": "abyssal",
+      "name": "Deep Abyssal",
+      "coords": "1215,856,22",
+      "danger": "Severe",
+      "blurb": "Trench-dwelling colossi",
+      "lore": "Towering abyssal beings are said to rise from the deep trenches east of the main sea routes, warping current, darkness and sound around them."
     }
   ]
 }

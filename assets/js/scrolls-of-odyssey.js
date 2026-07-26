@@ -26,10 +26,6 @@
 
     function initPortraitCarousels() {
         const imagesByKey = {
-            cyrenthos: [
-                "../assets/soct-characters/Cyrenthos.png",
-                "../assets/soct-characters/CyrenthosFemale.png"
-            ],
             lumyrion: [
                 "../assets/soct-characters/Lumyrion.png",
                 "../assets/soct-characters/LumyrionArtifact.png"
@@ -218,6 +214,10 @@
                 region.style.top = `calc(${centreY}% - ${relativeRadius}%)`;
                 region.style.width = `${relativeRadius * 2}%`;
                 region.style.height = `${relativeRadius * 2}%`;
+                const stackingOrder = type === "creature"
+                    ? 320
+                    : Math.max(20, 260 - Math.round(radius * 2));
+                region.style.zIndex = String(stackingOrder);
 
                 let loreVisible = false;
 

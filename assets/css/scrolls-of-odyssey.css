@@ -1087,6 +1087,7 @@ body.soct-page .character-card h4 {
     color: var(--soct-text);
     font-family: "EB Garamond", Georgia, serif;
     font-size: 1.55rem;
+    text-align: center;
 }
 
 body.soct-page .character-portrait {
@@ -1111,6 +1112,19 @@ body.soct-page .character-portrait img {
     height: 100%;
     display: block;
     object-fit: contain;
+}
+
+body.soct-page .mythic-card-head {
+    display: flex;
+    flex-direction: column;
+    gap: .85rem;
+}
+
+body.soct-page .character-portrait-saar img {
+    object-fit: cover;
+    object-position: center 28%;
+    transform: scale(1.14);
+    transform-origin: center;
 }
 
 body.soct-page .character-role {
