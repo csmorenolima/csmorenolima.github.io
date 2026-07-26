@@ -551,12 +551,13 @@ body.soct-page .soct-scroll-panel-royal {
     align-items: stretch;
     justify-content: flex-start;
     text-align: center;
+    max-width: 450px;
 }
 
 body.soct-page .soct-scroll-kicker {
     flex: 0 0 auto;
     margin: 0 0 .25rem;
-    color: #7b5520;
+    color: #881313;
     font-size: clamp(.52rem, .9vw, .64rem);
     font-weight: 800;
     letter-spacing: .16em;
@@ -564,16 +565,10 @@ body.soct-page .soct-scroll-kicker {
     text-transform: uppercase;
 }
 
-body.soct-page .soct-scroll-title {
-    flex: 0 0 auto;
-    margin: 0;
-    color: #684616;
-    font-family: "EB Garamond", Georgia, serif;
-    font-size: clamp(1.7rem, 2.9vw, 2.5rem);
-    font-weight: 700;
-    line-height: 1.02;
-    letter-spacing: -.02em;
-    text-align: center;
+body.soct-page #scroll-stamp-top {
+    color: #881313;
+    padding-bottom: 1rem;
+    font-size: 2rem;
 }
 
 body.soct-page .soct-scroll-subtitle {
@@ -584,6 +579,7 @@ body.soct-page .soct-scroll-subtitle {
     font-size: clamp(.95rem, 1.55vw, 1.18rem);
     font-style: italic;
     line-height: 1.25;
+    text-align: start;
 }
 
 body.soct-page .soct-scroll-signoff {
@@ -594,19 +590,6 @@ body.soct-page .soct-scroll-signoff {
     padding: .8rem 0 0;
     border-top: 1px solid rgba(104, 70, 22, .28);
     text-align: center;
-}
-
-body.soct-page .soct-scroll-signoff::before {
-    content: "❦";
-    position: absolute;
-    left: 50%;
-    top: -0.7rem;
-    transform: translateX(-50%);
-    padding: 0 .45rem;
-    color: rgba(122, 85, 29, .75);
-    font-size: .9rem;
-    line-height: 1;
-    background: #dfbf81;
 }
 
 body.soct-page .soct-scroll-signoff-line {
@@ -620,7 +603,7 @@ body.soct-page .soct-scroll-signature {
     position: relative;
     width: min(100%, 330px);
     margin: .08rem auto 0;
-    padding-bottom: .4rem;
+    padding-top: .5rem;
 }
 
 body.soct-page .soct-scroll-signature-name {
@@ -631,20 +614,6 @@ body.soct-page .soct-scroll-signature-name {
     line-height: .92;
     font-weight: 500;
     letter-spacing: .02em;
-    transform: rotate(-5deg);
-}
-
-body.soct-page .soct-scroll-signature::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: .15rem;
-    width: 86%;
-    height: 2px;
-    background: #5a2d1e;
-    border-radius: 999px;
-    transform: translateX(-50%) rotate(-4deg);
-    transform-origin: center;
 }
 
 body.soct-page .soct-scroll-seal {
@@ -847,14 +816,26 @@ body.soct-page .journey-node-final {
 body.soct-page .journey-node-final .journey-icon-final {
     border-color: rgba(229, 104, 97, .9);
     color: var(--soct-red);
+    display: grid;
+    place-items: center;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
     background: #14080a;
     box-shadow: 0 0 22px rgba(229, 104, 97, .38);
 }
 
 body.soct-page .journey-node-final .journey-icon-final svg {
-    width: 52px;
-    height: 52px;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 34px;
+    height: 34px;
+    display: block;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
 }
+
 
 body.soct-page .journey-node-final .journey-step-sub {
     color: #f39a96;
@@ -1065,7 +1046,9 @@ body.soct-page .character-section-title {
 }
 
 body.soct-page .character-grid {
-    --soct-character-card-height: 680px;
+    --soct-character-card-height: 720px;
+    --soct-character-portrait-height: 350px;
+
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-auto-rows: var(--soct-character-card-height);
@@ -1077,7 +1060,8 @@ body.soct-page .character-grid {
 body.soct-page .character-card {
     min-width: 0;
     width: 100%;
-    height: 100%;
+    height: var(--soct-character-card-height);
+    min-height: var(--soct-character-card-height);
     display: flex;
     flex-direction: column;
     gap: .85rem;
@@ -1107,9 +1091,10 @@ body.soct-page .character-card h4 {
 
 body.soct-page .character-portrait {
     position: relative;
+    flex: 0 0 var(--soct-character-portrait-height);
     width: 100%;
-    height: 330px;
-    flex: 0 0 330px;
+    height: var(--soct-character-portrait-height);
+    min-height: var(--soct-character-portrait-height);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1188,10 +1173,15 @@ body.soct-page .character-stats .bar i[data-level="98"] { width: 98%; }
 body.soct-page .character-stats .bar i[data-level="100"] { width: 100%; }
 
 body.soct-page .character-lore {
+    min-height: 0;
     margin: auto 0 0;
+    overflow-y: auto;
+    padding-right: .2rem;
     color: var(--soct-muted);
     font-size: .88rem;
     line-height: 1.62;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(230, 201, 122, .45) transparent;
 }
 
 body.soct-page .character-card.antagonist {
@@ -1219,8 +1209,8 @@ body.soct-page .character-card.beast h4 {
 body.soct-page .flip-card {
     position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 0;
+    height: var(--soct-character-card-height);
+    min-height: var(--soct-character-card-height);
     padding: 0;
     border: 0;
     background: transparent;
@@ -1239,6 +1229,7 @@ body.soct-page .flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
+    min-height: 0;
     display: grid;
     transition: transform .65s cubic-bezier(.2, .75, .2, 1);
     transform-style: preserve-3d;
@@ -1692,13 +1683,7 @@ body.soct-page .project-navigation .nav-btn:focus-visible {
     }
 
     body.soct-page .character-grid {
-        --soct-character-card-height: 650px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    body.soct-page .character-portrait {
-        height: 300px;
-        flex-basis: 300px;
     }
 }
 
@@ -1837,15 +1822,6 @@ body.soct-page .project-navigation .nav-btn:focus-visible {
     body.soct-page .journey-sides-grid,
     body.soct-page .character-grid {
         grid-template-columns: 1fr;
-    }
-
-    body.soct-page .character-grid {
-        --soct-character-card-height: 620px;
-    }
-
-    body.soct-page .character-portrait {
-        height: 280px;
-        flex-basis: 280px;
     }
 
     body.soct-page .map-modal-overlay {
