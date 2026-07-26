@@ -551,13 +551,12 @@ body.soct-page .soct-scroll-panel-royal {
     align-items: stretch;
     justify-content: flex-start;
     text-align: center;
-    max-width: 450px;
 }
 
 body.soct-page .soct-scroll-kicker {
     flex: 0 0 auto;
     margin: 0 0 .25rem;
-    color: #881313;
+    color: #7b5520;
     font-size: clamp(.52rem, .9vw, .64rem);
     font-weight: 800;
     letter-spacing: .16em;
@@ -565,10 +564,16 @@ body.soct-page .soct-scroll-kicker {
     text-transform: uppercase;
 }
 
-body.soct-page #scroll-stamp-top {
-    color: #881313;
-    padding-bottom: 1rem;
-    font-size: 2rem;
+body.soct-page .soct-scroll-title {
+    flex: 0 0 auto;
+    margin: 0;
+    color: #684616;
+    font-family: "EB Garamond", Georgia, serif;
+    font-size: clamp(1.7rem, 2.9vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -.02em;
+    text-align: center;
 }
 
 body.soct-page .soct-scroll-subtitle {
@@ -579,7 +584,6 @@ body.soct-page .soct-scroll-subtitle {
     font-size: clamp(.95rem, 1.55vw, 1.18rem);
     font-style: italic;
     line-height: 1.25;
-    text-align: start;
 }
 
 body.soct-page .soct-scroll-signoff {
@@ -590,6 +594,19 @@ body.soct-page .soct-scroll-signoff {
     padding: .8rem 0 0;
     border-top: 1px solid rgba(104, 70, 22, .28);
     text-align: center;
+}
+
+body.soct-page .soct-scroll-signoff::before {
+    content: "❦";
+    position: absolute;
+    left: 50%;
+    top: -0.7rem;
+    transform: translateX(-50%);
+    padding: 0 .45rem;
+    color: rgba(122, 85, 29, .75);
+    font-size: .9rem;
+    line-height: 1;
+    background: #dfbf81;
 }
 
 body.soct-page .soct-scroll-signoff-line {
@@ -603,7 +620,7 @@ body.soct-page .soct-scroll-signature {
     position: relative;
     width: min(100%, 330px);
     margin: .08rem auto 0;
-    padding-top: .5rem;
+    padding-bottom: .4rem;
 }
 
 body.soct-page .soct-scroll-signature-name {
@@ -614,6 +631,20 @@ body.soct-page .soct-scroll-signature-name {
     line-height: .92;
     font-weight: 500;
     letter-spacing: .02em;
+    transform: rotate(-5deg);
+}
+
+body.soct-page .soct-scroll-signature::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: .15rem;
+    width: 86%;
+    height: 2px;
+    background: #5a2d1e;
+    border-radius: 999px;
+    transform: translateX(-50%) rotate(-4deg);
+    transform-origin: center;
 }
 
 body.soct-page .soct-scroll-seal {
@@ -1034,42 +1065,23 @@ body.soct-page .character-section-title {
 }
 
 body.soct-page .character-grid {
+    --soct-character-card-height: 680px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: var(--soct-character-card-height);
     gap: 1.35rem;
     align-items: stretch;
     margin-top: 1.7rem;
 }
 
-body.soct-page .character-grid-compact {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 330px));
-    justify-content: start;
-    align-items: start;
-}
-
-body.soct-page .character-grid-companions {
-    grid-template-columns: minmax(270px, 360px);
-}
-
-body.soct-page .character-grid-compact .character-card {
-    width: 100%;
-    min-height: 0;
-}
-
-body.soct-page .character-grid-compact .character-portrait {
-    max-height: 310px;
-    aspect-ratio: 4 / 3;
-}
-
-body.soct-page .character-grid-compact .character-lore {
-    margin-top: 0;
-}
-
 body.soct-page .character-card {
     min-width: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: .85rem;
+    overflow: hidden;
     padding: 1.25rem;
     border: 1px solid rgba(230, 201, 122, .25);
     border-radius: var(--soct-radius-md);
@@ -1096,7 +1108,8 @@ body.soct-page .character-card h4 {
 body.soct-page .character-portrait {
     position: relative;
     width: 100%;
-    aspect-ratio: 3.2 / 4;
+    height: 330px;
+    flex: 0 0 330px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1205,7 +1218,9 @@ body.soct-page .character-card.beast h4 {
 /* Flip cards */
 body.soct-page .flip-card {
     position: relative;
-    min-height: 680px;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
     padding: 0;
     border: 0;
     background: transparent;
@@ -1236,7 +1251,9 @@ body.soct-page .flip-card.flipped .flip-card-inner {
 body.soct-page .flip-card-front,
 body.soct-page .flip-card-back {
     grid-area: 1 / 1;
-    min-height: 680px;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
     overflow: hidden;
     border: 1px dashed rgba(230, 201, 122, .46);
     border-radius: var(--soct-radius-md);
@@ -1675,15 +1692,13 @@ body.soct-page .project-navigation .nav-btn:focus-visible {
     }
 
     body.soct-page .character-grid {
+        --soct-character-card-height: 650px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    body.soct-page .character-grid-compact {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 310px));
-    }
-
-    body.soct-page .character-grid-companions {
-        grid-template-columns: minmax(260px, 340px);
+    body.soct-page .character-portrait {
+        height: 300px;
+        flex-basis: 300px;
     }
 }
 
@@ -1820,21 +1835,17 @@ body.soct-page .project-navigation .nav-btn:focus-visible {
     }
 
     body.soct-page .journey-sides-grid,
-    body.soct-page .character-grid,
-    body.soct-page .character-grid-compact,
-    body.soct-page .character-grid-companions {
+    body.soct-page .character-grid {
         grid-template-columns: 1fr;
     }
 
-    body.soct-page .character-grid-compact .character-portrait {
-        max-height: none;
-        aspect-ratio: 3.2 / 4;
+    body.soct-page .character-grid {
+        --soct-character-card-height: 620px;
     }
 
-    body.soct-page .flip-card,
-    body.soct-page .flip-card-front,
-    body.soct-page .flip-card-back {
-        min-height: 650px;
+    body.soct-page .character-portrait {
+        height: 280px;
+        flex-basis: 280px;
     }
 
     body.soct-page .map-modal-overlay {
