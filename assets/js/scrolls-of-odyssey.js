@@ -206,7 +206,9 @@
 
                 const region = document.createElement("button");
                 region.type = "button";
-                region.className = type === "creature" ? "map-region creature-region" : "map-region";
+                region.className = "map-region";
+                if (type === "creature") region.classList.add("creature-region");
+                if (item.kind === "pillar") region.classList.add("pillar-region");
                 region.id = `${type}-${item.id}`;
                 region.setAttribute("aria-label", `${item.name}: ${item.blurb || "View lore"}`);
                 region.style.position = "absolute";
