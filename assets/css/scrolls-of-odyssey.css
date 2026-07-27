@@ -124,6 +124,13 @@ body.soct-page main > *:not(#fog-bg) {
     z-index: 1;
 }
 
+body.soct-page footer {
+    position: relative;
+    z-index: 10;
+    background: #05090f;
+    box-shadow: 0 -30px 50px #05090f;
+}
+
 /* Shared project typography */
 body.soct-page .soct-section {
     position: relative;
