@@ -353,5 +353,15 @@
         initMapModal();
         initInteractiveMap();
         initFog();
+
+        document
+        .querySelectorAll(".character-stats .bar i[data-level]")
+        .forEach((bar) => {
+            const level = Number(bar.dataset.level);
+
+            if (Number.isFinite(level)) {
+                bar.style.width = `${Math.max(0, Math.min(100, level))}%`;
+            }
+        });
     });
 })();
