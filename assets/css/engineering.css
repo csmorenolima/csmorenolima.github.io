@@ -113,14 +113,6 @@ body[data-category="engineering"] .section-title {
   color: #20242b;
 }
 
-body[data-category="engineering"] .section-subtitle {
-  max-width: 650px;
-  margin: 0 auto;
-  color: #66707a;
-  font-size: 1.03rem;
-  line-height: 1.75;
-}
-
 /* Carousel */
 
 body[data-category="engineering"] .project-carousel {

@@ -1,0 +1,488 @@
+/* =========================================================
+   PRODUCT DESIGN PAGE
+   Engineering-family layout with a warm product-design palette
+   ========================================================= */
+
+body[data-category="product-design"] {
+  --pd-accent: #f59e0b;
+  --pd-accent-dark: #d97706;
+  --pd-accent-deep: #9a4f00;
+  --pd-accent-soft: #fff4d6;
+  --pd-accent-softer: #fff9ec;
+  --pd-border: #ead9bd;
+  --pd-text: #20242b;
+  --pd-muted: #66707a;
+
+  background: #f7f7f5;
+  color: var(--pd-text);
+  overflow-x: hidden;
+}
+
+/* -------------------------
+   Hero
+   ------------------------- */
+
+body[data-category="product-design"] .hero {
+  min-height: 76vh;
+  padding: 8.5rem 0 5.5rem;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(31, 20, 7, 0.58),
+      rgba(146, 78, 8, 0.34)
+    ),
+    url("../product-design-hero.jpg") center / cover no-repeat;
+}
+
+body[data-category="product-design"] .hero::before {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.04),
+      rgba(31, 20, 7, 0.30)
+    );
+  opacity: 1;
+}
+
+body[data-category="product-design"] .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 28% 24%,
+      rgba(251, 191, 36, 0.16),
+      transparent 34%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05),
+      transparent 38%
+    );
+}
+
+body[data-category="product-design"] .hero-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body[data-category="product-design"] .hero h1 {
+  margin: 0;
+  max-width: 720px;
+  color: #fff;
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+  text-shadow: 0 14px 45px rgba(0, 0, 0, 0.24);
+}
+
+body[data-category="product-design"] .hero h1 span {
+  display: block;
+}
+
+body[data-category="product-design"] .hero-quote {
+  max-width: 650px;
+  margin: 1.35rem auto 2rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.75;
+}
+
+body[data-category="product-design"] .hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.82rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  background: rgba(245, 158, 11, 0.18);
+  backdrop-filter: blur(8px);
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+body[data-category="product-design"] .hero-cta:hover {
+  transform: translateY(-2px);
+  background: rgba(245, 158, 11, 0.30);
+  border-color: rgba(255, 255, 255, 0.58);
+}
+
+/* -------------------------
+   Projects heading
+   ------------------------- */
+
+body[data-category="product-design"] .projects-section {
+  padding: 6rem 0 7rem;
+  background: #f7f7f5;
+}
+
+body[data-category="product-design"] .section-heading {
+  max-width: 760px;
+  margin: 0 auto 4.25rem;
+  text-align: center;
+}
+
+body[data-category="product-design"] .section-kicker {
+  margin: 0 0 0.85rem;
+  color: var(--pd-accent-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+body[data-category="product-design"] .selected-work-kicker {
+  margin-bottom: 0;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  color: var(--pd-text);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* -------------------------
+   Project groups
+   ------------------------- */
+
+body[data-category="product-design"] .project-group {
+  margin-top: 4.75rem;
+}
+
+body[data-category="product-design"] .project-group:first-of-type {
+  margin-top: 0;
+}
+
+body[data-category="product-design"] .project-group-heading {
+  max-width: 1120px;
+  margin: 0 auto 1.5rem;
+}
+
+body[data-category="product-design"] .project-group-heading h3 {
+  margin: 0;
+  color: var(--pd-text);
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  letter-spacing: -0.035em;
+}
+
+/* -------------------------
+   Carousel
+   ------------------------- */
+
+body[data-category="product-design"] .project-carousel {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+body[data-category="product-design"] .project-carousel-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding: 0.7rem 0 1.8rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+body[data-category="product-design"] .project-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* A one-project category still keeps the carousel shell,
+   but the card is intentionally centered and aligned. */
+body[data-category="product-design"] .project-carousel-track.is-single {
+  justify-content: flex-start;
+  overflow-x: hidden;
+}
+
+body[data-category="product-design"] .project-carousel-track.is-single .project-card {
+  margin: 0;
+}
+
+/* -------------------------
+   Cards
+   ------------------------- */
+
+body[data-category="product-design"] .project-card {
+  flex: 0 0 clamp(285px, 29vw, 330px);
+  min-width: 285px;
+  max-width: 330px;
+  width: 100%;
+  scroll-snap-align: start;
+  overflow: hidden;
+  border: 1px solid var(--pd-border);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 16px 42px rgba(63, 45, 21, 0.08);
+  transition:
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+body[data-category="product-design"] .project-card:hover {
+  transform: none;
+  border-color: #e5b95e;
+  box-shadow: 0 24px 58px rgba(63, 45, 21, 0.13);
+}
+
+body[data-category="product-design"] .project-card > a {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 250, 239, 0.96) 0%,
+      rgba(255, 244, 214, 0.98) 100%
+    );
+}
+
+body[data-category="product-design"] .project-image-wrap {
+  padding: 0;
+  background: #fff;
+}
+
+body[data-category="product-design"] .project-image {
+  width: 100%;
+  height: 220px;
+  border-radius: 0;
+  background-color: transparent;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+
+body[data-category="product-design"] .project-image[style*="brightup-logo-thumbnail"],
+body[data-category="product-design"] .project-image[style*="enova-logo-thumbnail"],
+body[data-category="product-design"] .project-image[style*="scaarLogo"] {
+  background-size: contain !important;
+}
+
+body[data-category="product-design"] .barebarrel-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none !important;
+  background-color: transparent;
+}
+
+body[data-category="product-design"] .barebarrel-image i {
+  font-size: 3rem;
+  color: var(--pd-accent-dark);
+}
+
+body[data-category="product-design"] .featured-content {
+  position: relative;
+  padding: 1.3rem 1.4rem 1.5rem;
+  border-top: 1px solid rgba(217, 119, 6, 0.14);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 250, 239, 0.96) 0%,
+      rgba(255, 244, 214, 0.98) 100%
+    );
+}
+
+body[data-category="product-design"] .featured-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 88% 10%,
+      rgba(245, 158, 11, 0.10),
+      transparent 36%
+    );
+}
+
+body[data-category="product-design"] .project-meta,
+body[data-category="product-design"] .featured-title,
+body[data-category="product-design"] .featured-description,
+body[data-category="product-design"] .project-link {
+  position: relative;
+  z-index: 1;
+}
+
+body[data-category="product-design"] .project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+body[data-category="product-design"] .project-meta span {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #efd7a4;
+  border-radius: 999px;
+  background: var(--pd-accent-softer);
+  color: var(--pd-accent-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+body[data-category="product-design"] .featured-title {
+  margin: 0 0 0.65rem;
+  color: var(--pd-text);
+  font-size: clamp(1.18rem, 1.9vw, 1.4rem);
+  line-height: 1.25;
+}
+
+body[data-category="product-design"] .featured-description {
+  margin: 0;
+  color: var(--pd-muted);
+  line-height: 1.7;
+}
+
+body[data-category="product-design"] .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  color: var(--pd-accent-dark);
+  font-weight: 700;
+}
+
+body[data-category="product-design"] .project-link i {
+  transition: transform 180ms ease;
+}
+
+body[data-category="product-design"] .project-card:hover .project-link i {
+  transform: translateX(4px);
+}
+
+/* -------------------------
+   Carousel controls
+   ------------------------- */
+
+body[data-category="product-design"] .project-carousel-btn {
+  position: absolute;
+  top: 0.7rem;
+  bottom: 1.8rem;
+  z-index: 5;
+  width: 64px;
+  height: auto;
+  border: 0;
+  color: #fff;
+  background: rgba(245, 159, 11, 0.817);
+  box-shadow: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  cursor: pointer;
+  transform: none;
+  transition:
+    background 180ms ease,
+    opacity 180ms ease;
+}
+
+body[data-category="product-design"] .project-carousel-btn:hover {
+  background: rgba(245, 158, 11, 0.56);
+}
+
+body[data-category="product-design"] .project-carousel-btn.previous {
+  left: 0;
+  border-radius: 22px 0 0 22px;
+}
+
+body[data-category="product-design"] .project-carousel-btn.next {
+  right: 0;
+  border-radius: 0 22px 22px 0;
+}
+
+body[data-category="product-design"] .project-carousel-btn i {
+  font-size: 1.45rem;
+}
+
+body[data-category="product-design"] .project-carousel-btn:hover:not(:disabled) {
+  background: rgba(245, 158, 11, 0.68);
+  color: #fff;
+}
+
+body[data-category="product-design"] .project-carousel-btn:disabled {
+  opacity: 0.78;
+  cursor: pointer;
+}
+
+body[data-category="product-design"] .project-carousel-btn[hidden] {
+  display: none;
+}
+
+/* -------------------------
+   Responsive
+   ------------------------- */
+
+@media (max-width: 768px) {
+  body[data-category="product-design"] .hero {
+    min-height: 68vh;
+    padding: 7.25rem 0 4.5rem;
+  }
+
+  body[data-category="product-design"] .hero-content {
+    max-width: 100%;
+  }
+
+  body[data-category="product-design"] .projects-section {
+    padding: 4.75rem 0 5.5rem;
+  }
+
+  body[data-category="product-design"] .project-group {
+    margin-top: 3.5rem;
+  }
+
+  body[data-category="product-design"] .project-carousel-track {
+    padding-inline: 0.3rem;
+  }
+
+  body[data-category="product-design"] .project-carousel-track.is-single {
+    justify-content: flex-start;
+  }
+
+  body[data-category="product-design"] .project-card {
+    flex-basis: min(84vw, 330px);
+    min-width: min(84vw, 285px);
+    max-width: 330px;
+  }
+
+  body[data-category="product-design"] .project-carousel-btn {
+    display: none;
+  }
+
+  body[data-category="product-design"] .project-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  body[data-category="product-design"] .project-card {
+    flex-basis: calc(100vw - 2rem);
+    min-width: 0;
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-category="product-design"] .hero-cta,
+  body[data-category="product-design"] .project-card,
+  body[data-category="product-design"] .project-link i,
+  body[data-category="product-design"] .project-carousel-btn {
+    transition: none;
+  }
+}

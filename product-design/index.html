@@ -3,232 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Design - Carla Sofia Lima</title>
-    <meta name="description" content="Audio electronics and product design projects by Carla Sofia Lima." />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Product Design - Carla Sofia Lima" />
-    <meta property="og:description" content="Explore Drop Mini, HonEcomb, Sensation 360, BrightUP, ENOVA, NOMAD." />
-    <meta property="og:site_name" content="Carla Sofia Lima" />
-    <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Product Design | Carla Sofia Lima</title>
+    <meta name="description" content="Audio electronics, product and service design, and transportation concepts by Carla Sofia Lima.">
 
-    <!-- Shared Theme -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Product Design | Carla Sofia Lima">
+    <meta property="og:description" content="Explore Drop Mini, HonEcomb, Sensation 360, BrightUP, ENOVA, The BareBarrel, and NOMAD.">
+    <meta property="og:site_name" content="Carla Sofia Lima">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <link rel="stylesheet" href="../targetPortfolio/theme.css">
-
-    <!-- Category Page Template -->
     <link rel="stylesheet" href="../assets/css/category-page.css">
+    <link rel="stylesheet" href="../assets/css/product-design.css">
 </head>
+
 <body data-category="product-design">
-    <!-- Header -->
     <header class="header">
-        <nav class="nav">
-            <a href="/" class="logo">PORTFOLIO |</a>
-            <ul class="nav-links">
-                <li><a href="../targetPortfolio/test.html#home">HOME</a></li>
-                <li><a href="../targetPortfolio/test.html#about">ABOUT</a></li>
+        <nav class="nav" aria-label="Primary navigation">
+            <a href="../targetPortfolio/test.html#home" class="logo" aria-label="Carla Sofia Lima portfolio home">PORTFOLIO</a>
+            <button class="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" id="primary-navigation">
+                <li><a href="../targetPortfolio/test.html#home">Home</a></li>
+                <li><a href="../targetPortfolio/test.html#about">About</a></li>
                 <li class="nav-projects-dropdown">
-                    <a href="#" aria-haspopup="true" aria-expanded="false">MY WORK <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="../product-design/" role="menuitem">Product Design</a></li>
-                        <li><a href="../engineering/" role="menuitem">Engineering</a></li>
+                    <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                        My work <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-label="Project categories">
+                        <li><a href="../product-design/" aria-current="page">Product design</a></li>
+                        <li><a href="../engineering/">Engineering</a></li>
                     </ul>
                 </li>
-                <li><a href="../targetPortfolio/test.html#contact">CONNECT</a></li>
+                <li><a href="../targetPortfolio/test.html#contact">Connect</a></li>
             </ul>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content fade-in-up">
-                <h1>Product Design</h1>
-                <p class="hero-quote">Audio electronics, products & services, and transportation.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Content -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-
-            <!-- Audio Electronics Carousel -->
-            <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin-bottom:1rem;">Audio Electronics</h3>
-            <div class="carousel-container">
-                <button class="carousel-btn left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-track">
-                    <div class="carousel-card featured-item">
-                        <a href="/drop-mini/">
-                            <div class="featured-image" style="background-image:url('/assets/bassDropMini-thumbnail.jpg')"></div>
-                            <div class="featured-content">
-                                <h3 class="featured-title">Drop Mini</h3>
-                                <p class="featured-description">Compact wireless speaker design with deep bass and quick charge.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="carousel-card featured-item">
-                        <a href="/honecomb/">
-                            <div class="featured-image" style="background-image: url('/assets/honEcomb-thumbnail.jpg')"></div>
-                            <div class="featured-content">
-                                <h3 class="featured-title">HonEcomb</h3>
-                                <p class="featured-description">Bamboo portable speaker with LED touch sensor technology.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="carousel-card featured-item">
-                        <a href="/bassSensation360/">
-                            <div class="featured-image" style="background-image: url('/assets/bassSensation360-thumbnail.jpg')"></div>
-                            <div class="featured-content">
-                                <h3 class="featured-title">Sensation 360</h3>
-                                <p class="featured-description">Immersive audio headset concept exploring human-product emotion.</p>
-                            </div>
-                        </a>
-                    </div>
+    <main id="main-content">
+        <section class="hero product-design-hero" aria-labelledby="page-title">
+            <div class="container">
+                <div class="hero-content fade-in-up">
+                    <h1 id="page-title"><span>Product</span><span>Design</span></h1>
+                    <p class="hero-quote">Audio electronics, products and services, and transportation concepts shaped around people.</p>
+                    <a class="hero-cta" href="#projects">Explore projects <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
                 </div>
-                <button class="carousel-btn right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
             </div>
+        </section>
 
-            <!-- Products & Services Carousel -->
-            <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin:2rem 0 1rem;">Health & Education</h3>
-            <div class="carousel-container">
-                <button class="carousel-btn left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-track">
-                    <div class="carousel-card featured-item">
-                        <a href="/brightup/">
-                            <div class="featured-image" style="background-image:url('/assets/brightup-logo-thumbnail.png')"></div>
-                            <div class="featured-content">
-                                <h3 class="featured-title">BrightUP</h3>
-                                <p class="featured-description">Brand and product experience concepts.</p>
-                            </div>
-                        </a>
+        <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+            <div class="container">
+                <header class="section-heading">
+                    <p class="section-kicker selected-work-kicker">Selected work</p>
+                </header>
+
+                <section class="project-group" aria-labelledby="audio-title">
+                    <div class="project-group-heading">
+                        <div>
+                            <h3 id="audio-title">Audio Electronics</h3>
+                        </div>
                     </div>
-                    <div class="carousel-card featured-item">
-                        <a href="/health/">
-                            <div class="featured-image" style="background-image:url('/assets/enova-logo-thumbnail.png');background-size:contain !important;"></div>
-                            <div class="featured-content">
-                                <h3 class="featured-title">ENOVA</h3>
-                                <p class="featured-description">App, case and dispenser prototypes for student services.</p>
-                            </div>
-                        </a>
+                    <div class="project-carousel" data-project-carousel>
+                        <button class="project-carousel-btn previous" type="button" aria-label="Previous audio project"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                        <div class="project-carousel-track">
+                            <article class="project-card featured-item"><a href="/drop-mini/" aria-label="View Drop Mini"><div class="project-image-wrap"><div class="featured-image project-image" style="background-image:url('/assets/bassDropMini-thumbnail.jpg')" role="img" aria-label="Drop Mini product artwork"></div></div><div class="featured-content"><div class="project-meta"><span>Audio</span><span>Speaker</span></div><h4 class="featured-title">Drop Mini</h4><p class="featured-description">Compact wireless speaker design with deep bass and quick charge.</p><span class="project-link">View project <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div></a></article>
+                            <article class="project-card featured-item"><a href="/honecomb/" aria-label="View HonEcomb"><div class="project-image-wrap"><div class="featured-image project-image" style="background-image:url('/assets/honEcomb-thumbnail.jpg')" role="img" aria-label="HonEcomb product artwork"></div></div><div class="featured-content"><div class="project-meta"><span>Audio</span><span>Material Exploration</span></div><h4 class="featured-title">HonEcomb</h4><p class="featured-description">Bamboo portable speaker with LED touch sensor technology.</p><span class="project-link">View project <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div></a></article>
+                            <article class="project-card featured-item"><a href="/bassSensation360/" aria-label="View Sensation 360"><div class="project-image-wrap"><div class="featured-image project-image" style="background-image:url('/assets/bassSensation360-thumbnail.jpg')" role="img" aria-label="Sensation 360 product artwork"></div></div><div class="featured-content"><div class="project-meta"><span>Audio</span><span>Experience Design</span></div><h4 class="featured-title">Sensation 360</h4><p class="featured-description">Immersive audio headset concept exploring human-product emotion.</p><span class="project-link">View project <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div></a></article>
+                        </div>
+                        <button class="project-carousel-btn next" type="button" aria-label="Next audio project"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
                     </div>
-                    <div class="carousel-card featured-item">
-                        <a href="/barebarrel/">
-                            <div class="featured-image" style="background:#f3f3f3;display:flex;align-items:center;justify-content:center;height:200px;">
-                                <i class="fas fa-tools" style="font-size:3rem;color:#764ba2;"></i>
-                            </div>
-                            <div class="featured-content">
-                                <h3 class="featured-title">The BareBarrel</h3>
-                                <p class="featured-description">Sustainable product design for modern living.</p>
-                            </div>
-                        </a>
+                </section>
+
+                <section class="project-group" aria-labelledby="health-title">
+                    <div class="project-group-heading">
+                        <div>
+                            <h3 id="health-title">Health &amp; Education</h3>
+                        </div>
                     </div>
-                </div>
-                <button class="carousel-btn right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+                    <div class="project-carousel" data-project-carousel>
+                        <button class="project-carousel-btn previous" type="button" aria-label="Previous health and education project"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                        <div class="project-carousel-track">
+                            <article class="project-card featured-item"><a href="/brightup/" aria-label="View BrightUP"><div class="project-image-wrap"><div class="featured-image project-image" style="background-image:url('/assets/brightup-logo-thumbnail.png')" role="img" aria-label="BrightUP project artwork"></div></div><div class="featured-content"><div class="project-meta"><span>UX/UI</span><span>Education</span></div><h4 class="featured-title">BrightUP</h4><p class="featured-description">Brand and product experience concepts focused on a clear, approachable service.</p><span class="project-link">View project <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div></a></article>
+                            <article class="project-card featured-item"><a href="/health/" aria-label="View ENOVA"><div class="project-image-wrap"><div class="featured-image project-image" style="background-image:url('/assets/enova-logo-thumbnail.png')" role="img" aria-label="ENOVA project artwork"></div></div><div class="featured-content"><div class="project-meta"><span>Health</span><span>Service Design</span></div><h4 class="featured-title">ENOVA</h4><p class="featured-description">App, case, and dispenser prototypes developed for student services.</p><span class="project-link">View project <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div></a></article>
+                            <article class="project-card featured-item"><a href="/barebarrel/" aria-label="View The BareBarrel"><div class="project-image-wrap"><div class="featured-image project-image barebarrel-image" role="img" aria-label="The BareBarrel project placeholder"><i class="fas fa-tools" aria-hidden="true"></i></div></div><div class="featured-content"><div class="project-meta"><span>Woodwork</span><span>Upcycle</span></div><h4 class="featured-title">The BareBarrel</h4><p class="featured-description">Sustainable product design exploring practical solutions for modern living.</p><span class="project-link">View project <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div></a></article>
+                        </div>
+                        <button class="project-carousel-btn next" type="button" aria-label="Next health and education project"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                    </div>
+                </section>
+
+                <section class="project-group" aria-labelledby="transport-title">
+                    <div class="project-group-heading">
+                        <div>
+                            <h3 id="transport-title">Transportation</h3>
+                        </div>
+                    </div>
+                    <div class="project-carousel" data-project-carousel>
+                        <button class="project-carousel-btn previous" type="button" aria-label="Previous transportation project"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                        <div class="project-carousel-track">
+                            <article class="project-card featured-item"><a href="/scaar/" aria-label="View NOMAD"><div class="project-image-wrap"><div class="featured-image project-image" style="background-image:url('/assets/scaarLogo.png')" role="img" aria-label="NOMAD transportation project artwork"></div></div><div class="featured-content"><div class="project-meta"><span>Concept Design</span><span>Prototype</span></div><h4 class="featured-title">NOMAD</h4><p class="featured-description">Transportation concept developed within the SCAAR project.</p><span class="project-link">View project <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div></a></article>
+                        </div>
+                        <button class="project-carousel-btn next" type="button" aria-label="Next transportation project"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                    </div>
+                </section>
             </div>
+        </section>
+    </main>
 
-            <!-- Transportation Carousel -->
-            <h3 class="section-title" style="font-size:1.5rem;text-align:left;margin:2rem 0 1rem;">Transportation</h3>
-            <div class="carousel-container">
-                <button class="carousel-btn left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-track">
-                    <div class="carousel-card featured-item">
-                        <a href="/scaar/">
-                            <div class="featured-image" style="background-image:url('/assets/scaarLogo.png');background-size:contain !important;"></div>
-                            <div class="featured-content">
-                                <h3 class="featured-title">NOMAD</h3>
-                                <p class="featured-description">Transportation concept within the SCAAR project.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <button class="carousel-btn right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <p>Learning Together, Growing Together.</p>
-                </div>
-
-                <div class="footer-section">
-                    <h3>OfficialMV</h3>
-                    <span>
-                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank">RedBubble</a>
-                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank">Instagram</a>
-                    <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank">TikTok</a>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Social</h3>
-                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/csmorenolima" target="_blank">GitHub</a>
-                </div>
+                <div class="footer-section footer-intro"><a href="../targetPortfolio/test.html#home" class="footer-brand">Carla Sofia Lima</a><p>Learning together, growing together.</p></div>
+                <div class="footer-section"><h3>OfficialMV</h3><a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank" rel="noopener noreferrer">RedBubble</a><a href="https://www.instagram.com/officialmorenovalentim/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank" rel="noopener noreferrer">TikTok</a></div>
+                <div class="footer-section"><h3>Social</h3><a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/csmorenolima" target="_blank" rel="noopener noreferrer">GitHub</a></div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; COPYRIGHT 2025 . ALL RIGHTS RESERVED</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; <span id="current-year"></span> Carla Sofia Lima. All rights reserved.</p></div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = 'white';
-                navLinks.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-                navLinks.style.padding = '1rem';
-            }
-        });
-        // Projects dropdown toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const projectsItem = document.querySelector('.nav-projects-dropdown > a');
-            const menu = document.querySelector('.nav-projects-dropdown .dropdown-menu');
-            if (projectsItem && menu) {
-                projectsItem.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const isOpen = menu.style.display === 'block';
-                    menu.style.display = isOpen ? 'none' : 'block';
-                    projectsItem.setAttribute('aria-expanded', (!isOpen).toString());
-                });
-                document.addEventListener('click', function(e) {
-                    if (!menu.contains(e.target) && !projectsItem.contains(e.target)) {
-                        menu.style.display = 'none';
-                        projectsItem.setAttribute('aria-expanded', 'false');
+        (() => {
+            "use strict";
+            const mobileButton = document.querySelector(".mobile-menu-btn");
+            const navLinks = document.querySelector(".nav-links");
+            const dropdown = document.querySelector(".nav-projects-dropdown");
+            const dropdownButton = document.querySelector(".dropdown-toggle");
+            const dropdownMenu = document.querySelector(".dropdown-menu");
+            const year = document.getElementById("current-year");
+            if (year) year.textContent = String(new Date().getFullYear());
+            const closeMobileMenu = () => { if (!mobileButton || !navLinks) return; navLinks.classList.remove("is-open"); mobileButton.setAttribute("aria-expanded", "false"); mobileButton.setAttribute("aria-label", "Open navigation menu"); };
+            const closeDropdown = () => { if (!dropdown || !dropdownButton) return; dropdown.classList.remove("is-open"); dropdownButton.setAttribute("aria-expanded", "false"); };
+            if (mobileButton && navLinks) mobileButton.addEventListener("click", () => { const isOpen = navLinks.classList.toggle("is-open"); mobileButton.setAttribute("aria-expanded", String(isOpen)); mobileButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu"); });
+            if (dropdown && dropdownButton && dropdownMenu) { dropdownButton.addEventListener("click", (event) => { event.stopPropagation(); const isOpen = dropdown.classList.toggle("is-open"); dropdownButton.setAttribute("aria-expanded", String(isOpen)); }); dropdownMenu.addEventListener("click", (event) => event.stopPropagation()); }
+            document.querySelectorAll("[data-project-carousel]").forEach((carousel) => {
+                const track = carousel.querySelector(".project-carousel-track");
+                const previousButton = carousel.querySelector(".project-carousel-btn.previous");
+                const nextButton = carousel.querySelector(".project-carousel-btn.next");
+                if (!track || !previousButton || !nextButton) return;
+                const getScrollAmount = () => { const card = track.querySelector(".project-card"); if (!card) return 400; const styles = window.getComputedStyle(track); const gap = Number.parseFloat(styles.columnGap) || 0; return card.getBoundingClientRect().width + gap; };
+                const updateControls = () => {
+                    const hasOverflow = track.scrollWidth > track.clientWidth + 2;
+                    const cardCount = track.querySelectorAll(".project-card").length;
+                    const isSingle = cardCount === 1;
+
+                    track.classList.toggle("is-single", isSingle);
+
+                    // Keep the side controls visible on every carousel so the
+                    // visual treatment stays consistent across all categories.
+                    previousButton.hidden = false;
+                    nextButton.hidden = false;
+
+                    if (!hasOverflow) {
+                        previousButton.disabled = true;
+                        nextButton.disabled = true;
+                        return;
                     }
-                });
-            }
-        });
-        document.querySelectorAll('.carousel-container').forEach(function(container) {
-            const track = container.querySelector('.carousel-track');
-            const leftBtn = container.querySelector('.carousel-btn.left');
-            const rightBtn = container.querySelector('.carousel-btn.right');
-            leftBtn.addEventListener('click', function() {
-                track.scrollBy({ left: -340, behavior: 'smooth' });
+
+                    previousButton.disabled = track.scrollLeft <= 2;
+                    nextButton.disabled =
+                        track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+                };
+                previousButton.addEventListener("click", () => track.scrollBy({ left: -getScrollAmount(), behavior: "smooth" }));
+                nextButton.addEventListener("click", () => track.scrollBy({ left: getScrollAmount(), behavior: "smooth" }));
+                track.addEventListener("scroll", updateControls, { passive: true });
+                window.addEventListener("resize", updateControls, { passive: true });
+                updateControls();
             });
-            rightBtn.addEventListener('click', function() {
-                track.scrollBy({ left: 340, behavior: 'smooth' });
-            });
-        });
+            document.addEventListener("click", closeDropdown);
+            document.addEventListener("keydown", (event) => { if (event.key === "Escape") { closeDropdown(); closeMobileMenu(); } });
+            window.addEventListener("resize", () => { if (window.innerWidth > 768) closeMobileMenu(); }, { passive: true });
+        })();
     </script>
 </body>
 </html>
