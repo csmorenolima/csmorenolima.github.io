@@ -606,7 +606,7 @@ body.s360-page .s360-feature-main {
     grid-row: span 2;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: start;
     min-height: 400px;
     background:
         radial-gradient(circle at 72% 22%, rgba(237,22,140,.2), transparent 28%),
