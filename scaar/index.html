@@ -3,379 +3,590 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nomad - Carla Sofia Lima</title>
-    <meta name="description" content="SCAAR NOMAD project: Laid Back Bike builds on Aim93 initiative to break speed records for human power vehicles using innovative design." />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Transportation - Carla Sofia Lima" />
-    <meta property="og:description" content="SCAAR NOMAD: Advanced transportation design and recumbent cycle prototyping." />
-    <meta property="og:site_name" content="Carla Sofia Lima" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#ece8df">
 
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>NOMAD — SCAAR | Carla Sofia Lima</title>
+    <meta name="description" content="NOMAD is a SCAAR transportation design project exploring recumbent geometry, reclaimed bicycle components, bamboo, fiberglass and hands-on prototyping.">
 
-    <!-- Shared Theme -->
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NOMAD — SCAAR | Carla Sofia Lima">
+    <meta property="og:description" content="A human-powered transportation project shaped through CAD, fabrication and physical prototyping.">
+    <meta property="og:site_name" content="Carla Sofia Lima">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+
     <link rel="stylesheet" href="../targetPortfolio/theme.css">
-
-    <!-- Category Page Template -->
-    <link rel="stylesheet" href="../assets/css/category-page.css">
+    <link rel="stylesheet" href="../assets/css/scaar.css">
 </head>
-<body data-category="transportation">
-    <!-- Header -->
+
+<body class="scaar-page" data-project="scaar">
+    <a class="scaar-skip-link" href="#main-content">Skip to main content</a>
+
     <header class="header">
-        <nav class="nav">
-            <a href="/" class="logo">PORTFOLIO |</a>
-            <ul class="nav-links">
-                <li><a href="../targetPortfolio/test.html#home">HOME</a></li>
-                <li><a href="../targetPortfolio/test.html#about">ABOUT</a></li>
+        <nav class="nav" aria-label="Primary navigation">
+            <a href="../targetPortfolio/test.html#home" class="logo">PORTFOLIO</a>
+
+            <button class="mobile-menu-btn"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-controls="primary-navigation"
+                    aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <ul class="nav-links" id="primary-navigation">
+                <li><a href="../targetPortfolio/test.html#home">Home</a></li>
+                <li><a href="../targetPortfolio/test.html#about">About</a></li>
                 <li class="nav-projects-dropdown">
-                    <a href="#" aria-haspopup="true" aria-expanded="false">MY WORK <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="../product-design/" role="menuitem">Product Design</a></li>
-                        <li><a href="../engineering/" role="menuitem">Engineering</a></li>
+                    <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                        My work <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-label="Project categories">
+                        <li><a href="../product-design/">Product design</a></li>
+                        <li><a href="../engineering/">Engineering</a></li>
                     </ul>
                 </li>
-                <li><a href="../targetPortfolio/test.html#contact">CONTACT</a></li>
+                <li><a href="../targetPortfolio/test.html#contact">Connect</a></li>
             </ul>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="hero transportation">
-        <div class="container">
-            <div class="hero-content fade-in-up">
-                <h1>Nomad</h1>
-                <p class="hero-quote">Advanced vehicle design and human-powered innovation.</p>
-            </div>
-        </div>
-    </section>
+    <main id="main-content">
 
-    <!-- NOMAD Section -->
-    <section class="section">
-        <div class="container">
-            <div class="featured-project" style="text-align: center; margin-bottom: 3rem;">
-                <div style="background: linear-gradient(135deg, #b89c7a 0%, #8d6742 100%); padding: 3rem; border-radius: 16px; color: white;">
-                    <img src="/assets/scaarLogoW.png" alt="Bass Logo" style="height: 60px; margin-bottom: 1rem;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">JOY IN THE JOURNEY</h2>
-                    <a href="https://www.dropbox.com/s/ffo1yrrpmab4rw2/JCPD8428.MP4?dl=0" target="_blank" rel="noreferrer noopener" class="cta-button" style="display: inline-block; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
-                        <strong>Watch Video</strong>
-                    </a>
+        <section class="nomad-hero" aria-labelledby="project-title">
+            <div class="nomad-hero-image" aria-hidden="true"></div>
+            <div class="nomad-hero-shade" aria-hidden="true"></div>
+
+            <div class="container nomad-hero-inner">
+                <div class="nomad-hero-copy">
+                    <p class="nomad-overline">SCAAR · Transportation Design</p>
+                    <h1 id="project-title">NOMAD</h1>
+                    <p class="nomad-hero-statement">
+                        A human-powered vehicle built around a simple question:
+                        <strong>what if comfort, speed and sustainability shared the same frame?</strong>
+                    </p>
+
+                    <div class="nomad-hero-actions">
+                        <a class="nomad-button nomad-button-primary" href="#project-overview">
+                            View the case study
+                            <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                        </a>
+                        <a class="nomad-button nomad-button-glass"
+                           href="https://www.dropbox.com/s/ffo1yrrpmab4rw2/JCPD8428.MP4?dl=0"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fas fa-play" aria-hidden="true"></i>
+                            Watch film
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nomad-hero-index" aria-label="Project highlights">
+                    <div><span>01</span><p>Recumbent geometry</p></div>
+                    <div><span>02</span><p>Reclaimed components</p></div>
+                    <div><span>03</span><p>Bamboo + composites</p></div>
                 </div>
             </div>
+        </section>
 
-            <h2 class="section-title">OVERVIEW</h2>
-            <p class="section-subtitle">The SCAAR project focuses on advanced transportation design and recumbent cycle development.</p>
-        </div>
+        <section class="nomad-intro" id="project-overview">
+            <div class="container">
+                <div class="nomad-intro-grid">
+                    <div class="nomad-intro-brand" aria-label="SCAAR project identity">
+                        <img src="/assets/scaarLogo.png" alt="SCAAR logo">
+                        <p>Joy in the journey</p>
+                        <span>NOMAD · Human-powered mobility</span>
+                    </div>
 
-        <h2 class="section-title">THE BRIEF</h2>
-    <p class="section-subtitle" style="text-align: justify;">Working collaboratively, first-year Product Design and Engineering Product Design students designed and prototyped recumbent cycles using reclaimed bicycles, bamboo, fiberglass tape, and epoxy resin as primary structural materials. The project emphasised teamwork, sustainable practices and hands-on engineering experience.</p>
-    </section>
-
-    <section class="section">
-        <div class="about-section" style="background: #f5f6fa; border-radius: 18px; box-shadow: 0 4px 18px rgba(45,143,71,0.07); padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: stretch; justify-content: space-between; width: 100%; max-width: 1100px; margin: 0 auto;">
-                <!-- Left: Text -->
-                <div style="flex: 0.8 1 380px; min-width: 320px; max-width: 420px; text-align: left; display: flex; flex-direction: column; justify-content: center;">
-                    <h2 style="font-size: 2rem; color: #8d6742; margin-bottom: 1.2rem; text-align:left;">The Story</h2>
-                    <p style="font-size: 1.08rem; color: #222; margin-bottom: 1.2rem; text-align:left;">The 'Laid Back Bike' project builds on the School of Engineering's <strong>Aim93</strong> initiative which aims to break the speed record for a human power vehicle.</p>
+                    <div class="nomad-intro-copy">
+                        <p class="nomad-kicker">Project overview</p>
+                        <h2>Engineering the ride from the rider outwards.</h2>
+                        <p>
+                            The SCAAR project focuses on advanced transportation design and recumbent cycle development.
+                            NOMAD was developed through collaborative design, CAD and physical prototyping.
+                        </p>
+                    </div>
                 </div>
-                <div style="flex: 1 1 480px; min-width: 320px; max-width: 480px; display: flex; justify-content: flex-end; align-items: center;">
-                    <div class="auto-carousel scaar-story-carousel" style="width: 100%; max-width: 480px; min-width: 320px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(45,143,71,0.07); border-left: 4px solid #8d6742; position: relative;">
-                        <div class="overview-carousel-track">
-                            <div class="overview-carousel-item active benefit-item">
-                                <i class="fas fa-wind" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
-                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">15-30%</h4>
-                                <p style="color: var(--text-secondary);">More wind resistant than the traditional bike.</p>
-                            </div>
 
-                            <div class="overview-carousel-item benefit-item">
-                                <i class="fas fa-child" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
-                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Reduced Stress</h4>
-                                <p style="color: var(--text-secondary);">On the rider's back muscle, arm and hands due to its ergonomic design.</p>
-                            </div>
+                <dl class="nomad-facts">
+                    <div>
+                        <dt>Discipline</dt>
+                        <dd>Transportation Design</dd>
+                    </div>
+                    <div>
+                        <dt>Project type</dt>
+                        <dd>Collaborative prototype</dd>
+                    </div>
+                    <div>
+                        <dt>Core materials</dt>
+                        <dd>Bamboo · Fiberglass · Epoxy</dd>
+                    </div>
+                    <div>
+                        <dt>Build strategy</dt>
+                        <dd>Reclaimed bicycle parts</dd>
+                    </div>
+                    <div>
+                        <dt>Context</dt>
+                        <dd>Aim93 initiative</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
 
-                            <div class="overview-carousel-item benefit-item">
-                                <i class="fas fa-shield-alt" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
-                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Increased Safety and comfort</h4>
-                                <p style="color: var(--text-secondary);">Due to a lower center of gravity, a lower risk of going over the handlebars and a more visiblity and better riding position.</p>
-                            </div>
+        <section class="nomad-brief">
+            <div class="container">
+                <div class="nomad-brief-grid">
+                    <div class="nomad-brief-heading">
+                        <p class="nomad-kicker">The brief</p>
+                        <h2>Build a recumbent cycle from reclaimed parts.</h2>
+                    </div>
+                    <div class="nomad-brief-copy">
+                        <p>Working collaboratively, first-year Product Design and Engineering Product Design students used reclaimed bicycles, bamboo, fiberglass tape and epoxy resin to develop a rideable prototype.</p>
+                        <p>The challenge was to balance rider position, structural behaviour, sustainability and manufacturability while learning through physical making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                            <div class="overview-carousel-item benefit-item">
-                                <i class="fas fa-flag-checkered" style="font-size: 2rem; color: #8d6742; margin-bottom: 0.7rem;"></i>
-                                <h4 style="font-size:1.3rem; margin-bottom: 0.5rem; color: var(--text-primary);">Speed Record Challenge</h4>
-                                <p style="color: var(--text-secondary);">Part of the Aim93 initiative to break human-powered vehicle speed records.</p>
-                            </div>
+        <section class="nomad-anatomy" aria-labelledby="anatomy-title">
+            <div class="container">
+                <div class="nomad-anatomy-heading">
+                    <p class="nomad-kicker">Vehicle anatomy</p>
+                    <h2 id="anatomy-title">A different architecture for a different ride.</h2>
+                </div>
+                <div class="nomad-anatomy-stage">
+                    <img src="../assets/scaargallery1.jpg"
+                         alt="Side profile of the NOMAD recumbent cycle"
+                         class="gallery-lightbox-img nomad-anatomy-image"
+                         loading="lazy">
+                </div>
+
+                <div class="nomad-anatomy-notes" aria-label="NOMAD design features">
+                    <article>
+                        <span>01</span>
+                        <div>
+                            <h3>Supported seat</h3>
+                            <p>The reclined position supports the rider differently from a conventional upright bicycle.</p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <span>02</span>
+                        <div>
+                            <h3>Bamboo + composite structure</h3>
+                            <p>Bamboo members are reinforced with fiberglass tape and epoxy resin as part of the structural build.</p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <span>03</span>
+                        <div>
+                            <h3>Reclaimed bicycle components</h3>
+                            <p>Existing bicycle parts are reused and reorganised within the recumbent layout.</p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <span>04</span>
+                        <div>
+                            <h3>Extended wheelbase</h3>
+                            <p>The stretched layout creates the space required for the lower, reclined riding position.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="nomad-why" aria-labelledby="why-title">
+            <div class="container nomad-why-grid">
+                <div class="nomad-why-copy">
+                    <p class="nomad-kicker">Why recumbent?</p>
+                    <h2 id="why-title">Changing the rider position changes the entire vehicle.</h2>
+
+                    <p>
+                        NOMAD starts with a recumbent riding position: the rider sits lower,
+                        leans back into a supported seat, and extends the legs forward.
+                    </p>
+
+                    <p>
+                        That single decision affects the vehicle's proportions, steering,
+                        centre of gravity, comfort and aerodynamic profile. The slideshow
+                        highlights the four design consequences that shaped the project.
+                    </p>
+                </div>
+
+                <div class="nomad-impact-carousel" data-recumbent-carousel>
+                    <div class="nomad-impact-track">
+                        <article class="nomad-impact-slide active">
+                            <i class="fa-solid fa-wind" aria-hidden="true"></i>
+                            <strong>Lower profile</strong>
+                            <p>
+                                Reclining the rider reduces the frontal profile presented to the airflow,
+                                creating a more aerodynamic starting point than an upright riding position.
+                            </p>
+                        </article>
+
+                        <article class="nomad-impact-slide">
+                            <i class="fa-solid fa-chair" aria-hidden="true"></i>
+                            <strong>Supported posture</strong>
+                            <p>
+                                The seat supports the rider's torso and changes how body weight is distributed,
+                                reducing reliance on the hands and arms for upper-body support.
+                            </p>
+                        </article>
+
+                        <article class="nomad-impact-slide">
+                            <i class="fa-solid fa-arrows-down-to-line" aria-hidden="true"></i>
+                            <strong>Lower centre</strong>
+                            <p>
+                                Sitting closer to the ground changes the centre of gravity and influences
+                                stability, steering behaviour and the rider's relationship with the road.
+                            </p>
+                        </article>
+
+                        <article class="nomad-impact-slide">
+                            <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i>
+                            <strong>Aim93</strong>
+                            <p>
+                                The project connects with the School of Engineering's Aim93 initiative,
+                                which explores the performance potential of human-powered vehicles.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="nomad-impact-footer">
+                        <div class="nomad-impact-arrows">
+                            <button class="nomad-impact-arrow previous" type="button" aria-label="Previous slide">
+                                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                            </button>
+                            <button class="nomad-impact-arrow next" type="button" aria-label="Next slide">
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </button>
                         </div>
 
-                        <button class="carousel-toggle" aria-label="Pause carousel" style="position: absolute; top: 10px; right: 10px; background: #f8fffe; border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(45,143,71,0.07); cursor: pointer;">
-                            <span class="carousel-toggle-icon" style="font-size: 1.2rem; color: #8d6742;">&#10073;&#10073;</span>
+                        <div class="nomad-impact-dots" aria-label="Slide navigation"></div>
+
+                        <button class="nomad-impact-toggle" type="button" aria-label="Pause slideshow" aria-pressed="false">
+                            <i class="fa-solid fa-pause" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h3 class="section-title" style="font-size: 2rem;">GALLERY</h3>
-            <div class="gallery-grid" style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
-                <img src="../assets/scaargallery1.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
-                <img src="../assets/scaargalary2.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
-                <img src="../assets/scaargallery3.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
-                <img src="../assets/scaargallery4.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">
-                <img src="../assets/scaargallery5.jpg" alt="Speaker 3" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;" loading="lazy">            
+        </section>
             </div>
-            <!-- Lightbox overlay markup -->
-            <div id="gallery-lightbox-overlay" class="gallery-lightbox-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;">
-                <div class="gallery-lightbox-content" style="position:relative;max-width:90vw;max-height:90vh;">
-                    <button class="gallery-lightbox-close" aria-label="Close" onclick="document.getElementById('gallery-lightbox-overlay').style.display='none';" style="position:absolute;top:-40px;right:0;font-size:2.5rem;color:#fff;background:none;border:none;cursor:pointer;">&times;</button>
-                    <img id="gallery-lightbox-img" src="" alt="Gallery Image" style="max-width:100%;max-height:80vh;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);" loading="lazy">
-                    <div id="gallery-lightbox-desc" style="color:#fff; margin-top:1.5rem; font-size:1.1rem; text-align:center;"></div>
+        </section>
+
+        <section class="nomad-gallery" aria-labelledby="prototype-title">
+            <div class="container">
+                <div class="nomad-gallery-heading">
+                    <div>
+                        <p class="nomad-kicker">Physical prototype</p>
+                        <h2 id="prototype-title">The object is the evidence.</h2>
+                    </div>
+                    <p>
+                        The final form reveals the design decisions directly: frame proportions, rider position,
+                        wheel relationship and the transition from bicycle parts into a new vehicle architecture.
+                    </p>
+                </div>
+
+                <div class="nomad-gallery-grid">
+                    <figure class="nomad-gallery-main">
+                        <img src="../assets/scaargallery1.jpg"
+                             alt="NOMAD recumbent cycle side view"
+                             class="gallery-lightbox-img"
+                             loading="lazy">
+                    </figure>
+
+                    <figure>
+                        <img src="../assets/scaargalary2.jpg"
+                             alt="NOMAD recumbent cycle front view"
+                             class="gallery-lightbox-img"
+                             loading="lazy">
+                    </figure>
+
+                    <figure>
+                        <img src="../assets/scaargallery3.jpg"
+                             alt="NOMAD recumbent cycle rear perspective"
+                             class="gallery-lightbox-img"
+                             loading="lazy">
+                    </figure>
+
+                    <figure>
+                        <img src="../assets/scaargallery4.jpg"
+                             alt="NOMAD recumbent cycle side profile"
+                             class="gallery-lightbox-img"
+                             loading="lazy">
+                    </figure>
+
+                    <figure>
+                        <img src="../assets/scaargallery5.jpg"
+                             alt="NOMAD prototype detail"
+                             class="gallery-lightbox-img"
+                             loading="lazy">
+                    </figure>
                 </div>
             </div>
-        </div>
-        <script>
-        // (Moved to end of file)
-        </script>
-    </section>
+        </section>
 
-    <!-- Engineering Process Section -->
-    <section class="section">
-        <div class="container">
-            <h3 class="section-title" style="font-size: 1.8rem;">Computer Aided Design</h3>
-            <div class="carousel-container">
-                <button class="carousel-btn left" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-track">
-                    <div class="carousel-card">
-                        <img class="gallery-lightbox-img" src="../assets/engineering-drawing.jpg" alt="Engineering Drawing" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;cursor:pointer;">
-                    </div>
-                    <div class="carousel-card">
-                        <img class="gallery-lightbox-img" src="../assets/scaarCADModel.png" alt="CAD Model" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;cursor:pointer;">
-                    </div>
-                    <div class="carousel-card">
-                        <img class="gallery-lightbox-img" src="../assets/engineering3Dscaar.png" alt="3D CAD Model 1" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;cursor:pointer;">
-                    </div>
-                    <div class="carousel-card">
-                        <img class="gallery-lightbox-img" src="../assets/engineering3Dscaar2.png" alt="3D CAD Model 2" loading="lazy" style="max-width:100%;height:240px;object-fit:cover;border-radius:10px;background:#f3f3f3;cursor:pointer;">
+        <section class="nomad-process">
+            <div class="container">
+                <div class="nomad-process-heading">
+                    <div><p class="nomad-kicker">Development</p><h2>From dimensions to something rideable.</h2></div>
+                    <p>The process moved repeatedly between geometry, modelling, fabrication and physical evaluation rather than following a purely linear path.</p>
+                </div>
+                <div class="nomad-process-grid">
+                    <article class="nomad-process-card"><div class="nomad-process-image"><img src="../assets/engineering-drawing.jpg" alt="Engineering drawing used to understand NOMAD geometry" class="gallery-lightbox-img" loading="lazy"></div><div class="nomad-process-body"><span>01</span><h3>Understand the geometry</h3><p>Study rider position, wheelbase, steering and recumbent proportions.</p></div></article>
+                    <article class="nomad-process-card"><div class="nomad-process-image"><img src="../assets/scaarCADModel.png" alt="NOMAD CAD model" class="gallery-lightbox-img" loading="lazy"></div><div class="nomad-process-body"><span>02</span><h3>Resolve it in CAD</h3><p>Develop the frame relationships before committing to fabrication.</p></div></article>
+                    <article class="nomad-process-card"><div class="nomad-process-image"><img src="../assets/scaargallery5.jpg" alt="NOMAD fabrication and assembly" class="gallery-lightbox-img" loading="lazy"></div><div class="nomad-process-body"><span>03</span><h3>Build with constraints</h3><p>Combine reclaimed bicycle parts with bamboo and composite reinforcement.</p></div></article>
+                    <article class="nomad-process-card"><div class="nomad-process-image"><img src="../assets/scaargallery3.jpg" alt="Completed NOMAD prototype" class="gallery-lightbox-img" loading="lazy"></div><div class="nomad-process-body"><span>04</span><h3>Test the physical system</h3><p>Evaluate alignment, seating, stability and the overall riding experience.</p></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="nomad-cad" aria-labelledby="cad-title">
+            <div class="container">
+                <div class="nomad-cad-heading">
+                    <p class="nomad-kicker">Computer Aided Design</p>
+                    <h2 id="cad-title">Geometry before fabrication.</h2>
+                    <p>Technical drawings and 3D development helped resolve proportion, packaging and structural relationships before the physical build.</p>
+                </div>
+                <div class="nomad-cad-viewer" data-cad-viewer>
+                    <figure class="nomad-cad-feature">
+                        <img id="nomad-cad-main" class="gallery-lightbox-img" src="../assets/engineering-drawing.jpg" alt="NOMAD engineering drawing" loading="lazy">
+                        <figcaption id="nomad-cad-caption">Engineering drawing</figcaption>
+                    </figure>
+                    <div class="nomad-cad-thumbs" role="list" aria-label="CAD views">
+                        <button class="nomad-cad-thumb is-active" type="button" data-src="../assets/engineering-drawing.jpg" data-alt="NOMAD engineering drawing" data-caption="Engineering drawing"><img src="../assets/engineering-drawing.jpg" alt=""><span>01 · Drawing</span></button>
+                        <button class="nomad-cad-thumb" type="button" data-src="../assets/scaarCADModel.png" data-alt="NOMAD CAD model" data-caption="CAD model"><img src="../assets/scaarCADModel.png" alt=""><span>02 · CAD model</span></button>
+                        <button class="nomad-cad-thumb" type="button" data-src="../assets/engineering3Dscaar.png" data-alt="NOMAD 3D CAD development" data-caption="3D development"><img src="../assets/engineering3Dscaar.png" alt=""><span>03 · 3D development</span></button>
+                        <button class="nomad-cad-thumb" type="button" data-src="../assets/engineering3Dscaar2.png" data-alt="NOMAD alternate CAD view" data-caption="Alternate view"><img src="../assets/engineering3Dscaar2.png" alt=""><span>04 · Alternate view</span></button>
                     </div>
                 </div>
-                <button class="carousel-btn right" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Navigation -->
-    <section class="project-navigation">
-        <div class="nav-buttons">
-            <a href="../health/" class="nav-btn back">
-                <i class="fas fa-arrow-left"></i>
-                <span>Previous: ENOVA</span>
-            </a>
-            <a href="../product-design/" class="nav-btn next">
-                <span>Back To Product Design</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-    </section>
+        <section class="project-navigation" aria-label="Project navigation">
+            <div class="container nav-buttons">
+                <a href="../health/" class="nav-btn back">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    <span><small>Previous project</small>ENOVA</span>
+                </a>
 
-    <!-- Footer -->
+                <a href="../product-design/" class="nav-btn next">
+                    <span><small>Return to</small>Product Design</span>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="gallery-lightbox-overlay" class="gallery-lightbox-overlay" aria-hidden="true">
+        <div class="gallery-lightbox-content">
+            <button class="gallery-lightbox-close" type="button" aria-label="Close image">&times;</button>
+            <img id="gallery-lightbox-img" src="" alt="">
+            <p id="gallery-lightbox-desc"></p>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <p>Learning Together, Growing Together.</p>
+                <div class="footer-section footer-intro">
+                    <a href="../targetPortfolio/test.html#home" class="footer-brand">Carla Sofia Lima</a>
+                    <p>Learning together, growing together.</p>
                 </div>
 
                 <div class="footer-section">
                     <h3>OfficialMV</h3>
-                    <span>
-                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank">RedBubble</a>
-                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank">Instagram</a>
-                    <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank">TikTok</a>
+                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank" rel="noopener noreferrer">RedBubble</a>
+                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank" rel="noopener noreferrer">TikTok</a>
                 </div>
 
                 <div class="footer-section">
                     <h3>Social</h3>
-                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/csmorenolima" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/csmorenolima" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; COPYRIGHT 2025 . ALL RIGHTS RESERVED</p>
+                <p>&copy; <span id="current-year"></span> Carla Sofia Lima. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- External JavaScript Files -->
     <script src="../assets/js/navigation.js"></script>
 
-    <style>
-        .auto-carousel {
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .overview-carousel-track {
-            display: flex;
-            transition: transform 0.7s cubic-bezier(.77, 0, .18, 1);
-        }
-
-        .overview-carousel-item {
-            flex: 0 0 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 320px;
-            min-height: 320px;
-            max-height: 320px;
-        }
-
-        .overview-carousel-item.active {
-            display: flex;
-        }
-
-                .project-navigation {
-            margin: 4rem 0 2rem;
-            padding: 2rem 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn:hover {
-            background: transparent;
-            color: #8d6742;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .nav-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
-
     <script>
-    // Lightbox functionality for gallery images (main gallery and CAD carousel)
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.gallery-lightbox-img').forEach(function(img) {
-            img.addEventListener('click', function() {
-                var overlay = document.getElementById('gallery-lightbox-overlay');
-                var lightboxImg = document.getElementById('gallery-lightbox-img');
-                var lightboxDesc = document.getElementById('gallery-lightbox-desc');
-                lightboxImg.src = this.src;
-                // Set description based on image src or alt
-                var desc = '';
-                var file = this.src.split('/').pop();
-                switch(file) {
-                    case 'scaargallery1.jpg': desc = 'SIDE VIEW'; break;
-                    case 'scaargalary2.jpg': desc = 'FRONT VIEW'; break;
-                    case 'scaargallery3.jpg': desc = 'PERSPECTIVE BACK VIEW'; break;
-                    case 'scaargallery4.jpg': desc = 'SIDE VIEW'; break;
-                    case 'scaargallery5.jpg': desc = 'SIDE VIEW'; break;
-                    case 'engineering-drawing.jpg': desc = 'ENGINEERING DRAWING'; break;
-                    case 'scaarCADModel.png': desc = 'CAD MODEL'; break;
-                    case 'engineering3Dscaar.png': desc = '3D CAD MODEL 1'; break;
-                    case 'engineering3Dscaar2.png': desc = '3D CAD MODEL 2'; break;
-                    default: desc = this.alt || 'Gallery Image';
-                }
-                lightboxDesc.textContent = desc;
-                overlay.style.display = 'flex';
-            });
-        });
-    });
-    </script>
+        (() => {
+            "use strict";
 
-    <script>
-        // Story section auto-carousel (unchanged)
-        (function () {
-            const carousel = document.querySelector('.scaar-story-carousel.auto-carousel');
-            if (!carousel) return;
-            const track = carousel.querySelector('.overview-carousel-track');
-            const items = Array.from(track.children);
-            const toggleBtn = carousel.querySelector('.carousel-toggle');
-            const toggleIcon = toggleBtn.querySelector('.carousel-toggle-icon');
-            let index = 0;
-            let interval = null;
-            let paused = false;
+            const year = document.getElementById("current-year");
+            if (year) year.textContent = String(new Date().getFullYear());
 
-            function updateClasses() {
-                items.forEach((item, i) => {
-                    item.classList.toggle('active', i === index);
+            document.querySelectorAll("[data-nomad-carousel]").forEach((carousel) => {
+                const track = carousel.querySelector(".nomad-cad-track");
+                const previousButton = carousel.querySelector(".nomad-carousel-btn.previous");
+                const nextButton = carousel.querySelector(".nomad-carousel-btn.next");
+
+                if (!track || !previousButton || !nextButton) return;
+
+                const amount = () => {
+                    const card = track.querySelector(".nomad-cad-card");
+                    if (!card) return 420;
+                    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+                    return card.getBoundingClientRect().width + gap;
+                };
+
+                previousButton.addEventListener("click", () => {
+                    track.scrollBy({ left: -amount(), behavior: "smooth" });
                 });
-            }
-            function showSlide(i) {
-                index = i;
-                updateClasses();
-            }
-            function nextSlide() {
-                index = (index + 1) % items.length;
-                showSlide(index);
-            }
-            function startAuto() {
-                if (interval) clearInterval(interval);
-                if (!paused) interval = setInterval(nextSlide, 2500);
-            }
-            function stopAuto() {
-                if (interval) clearInterval(interval);
-            }
-            toggleBtn.addEventListener('click', function () {
-                paused = !paused;
-                if (paused) {
-                    stopAuto();
-                    toggleIcon.innerHTML = '&#9654;'; // play icon
-                    toggleBtn.setAttribute('aria-label', 'Play carousel');
-                } else {
-                    startAuto();
-                    toggleIcon.innerHTML = '&#10073;&#10073;'; // pause icon
-                    toggleBtn.setAttribute('aria-label', 'Pause carousel');
+
+                nextButton.addEventListener("click", () => {
+                    track.scrollBy({ left: amount(), behavior: "smooth" });
+                });
+            });
+
+            document.querySelectorAll("[data-recumbent-carousel]").forEach((carousel) => {
+                const slides = Array.from(carousel.querySelectorAll(".nomad-impact-slide"));
+                const previousButton = carousel.querySelector(".nomad-impact-arrow.previous");
+                const nextButton = carousel.querySelector(".nomad-impact-arrow.next");
+                const toggleButton = carousel.querySelector(".nomad-impact-toggle");
+                const dotsContainer = carousel.querySelector(".nomad-impact-dots");
+
+                if (!slides.length || !previousButton || !nextButton || !toggleButton || !dotsContainer) return;
+
+                let currentIndex = 0;
+                let paused = false;
+                let intervalId = null;
+
+                const dots = slides.map((slide, index) => {
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "nomad-impact-dot";
+                    button.setAttribute("aria-label", `Show slide ${index + 1}`);
+                    button.addEventListener("click", () => {
+                        showSlide(index);
+                        restart();
+                    });
+                    dotsContainer.appendChild(button);
+                    return button;
+                });
+
+                const showSlide = (index) => {
+                    currentIndex = (index + slides.length) % slides.length;
+
+                    slides.forEach((slide, slideIndex) => {
+                        slide.classList.toggle("active", slideIndex === currentIndex);
+                    });
+
+                    dots.forEach((dot, dotIndex) => {
+                        const active = dotIndex === currentIndex;
+                        dot.classList.toggle("active", active);
+                        dot.setAttribute("aria-current", active ? "true" : "false");
+                    });
+                };
+
+                const stop = () => {
+                    if (intervalId !== null) {
+                        window.clearInterval(intervalId);
+                        intervalId = null;
+                    }
+                };
+
+                const start = () => {
+                    stop();
+                    if (!paused && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                        intervalId = window.setInterval(() => showSlide(currentIndex + 1), 5000);
+                    }
+                };
+
+                const restart = () => {
+                    stop();
+                    start();
+                };
+
+                previousButton.addEventListener("click", () => {
+                    showSlide(currentIndex - 1);
+                    restart();
+                });
+
+                nextButton.addEventListener("click", () => {
+                    showSlide(currentIndex + 1);
+                    restart();
+                });
+
+                toggleButton.addEventListener("click", () => {
+                    paused = !paused;
+                    const icon = toggleButton.querySelector("i");
+                    toggleButton.setAttribute("aria-pressed", String(paused));
+                    toggleButton.setAttribute("aria-label", paused ? "Play slideshow" : "Pause slideshow");
+                    if (icon) icon.className = paused ? "fa-solid fa-play" : "fa-solid fa-pause";
+                    paused ? stop() : start();
+                });
+
+                carousel.addEventListener("mouseenter", stop);
+                carousel.addEventListener("mouseleave", start);
+
+                showSlide(0);
+                start();
+            });
+
+            const cadMain = document.getElementById("nomad-cad-main");
+            const cadCaption = document.getElementById("nomad-cad-caption");
+            const cadThumbs = document.querySelectorAll(".nomad-cad-thumb");
+            cadThumbs.forEach((button) => {
+                button.addEventListener("click", () => {
+                    cadThumbs.forEach((item) => item.classList.remove("is-active"));
+                    button.classList.add("is-active");
+                    cadMain.src = button.dataset.src;
+                    cadMain.alt = button.dataset.alt;
+                    cadCaption.textContent = button.dataset.caption;
+                });
+            });
+
+            const overlay = document.getElementById("gallery-lightbox-overlay");
+            const largeImage = document.getElementById("gallery-lightbox-img");
+            const description = document.getElementById("gallery-lightbox-desc");
+            const closeButton = document.querySelector(".gallery-lightbox-close");
+
+            const closeLightbox = () => {
+                overlay.classList.remove("is-open");
+                overlay.setAttribute("aria-hidden", "true");
+                largeImage.src = "";
+            };
+
+            document.querySelectorAll(".gallery-lightbox-img").forEach((image) => {
+                image.addEventListener("click", () => {
+                    largeImage.src = image.src;
+                    largeImage.alt = image.alt;
+                    description.textContent = image.alt;
+                    overlay.classList.add("is-open");
+                    overlay.setAttribute("aria-hidden", "false");
+                });
+            });
+
+            closeButton.addEventListener("click", closeLightbox);
+            overlay.addEventListener("click", (event) => {
+                if (event.target === overlay) closeLightbox();
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape" && overlay.classList.contains("is-open")) {
+                    closeLightbox();
                 }
             });
-            showSlide(index);
-            startAuto();
         })();
-
-        // Manual scroll for all .carousel-container carousels (Engineering Process, Physical Prototype)
-        document.querySelectorAll('.carousel-container').forEach(function(container) {
-            const track = container.querySelector('.carousel-track');
-            const leftBtn = container.querySelector('.carousel-btn.left');
-            const rightBtn = container.querySelector('.carousel-btn.right');
-            if (!track || !leftBtn || !rightBtn) return;
-            leftBtn.addEventListener('click', function() {
-                track.scrollBy({ left: -340, behavior: 'smooth' });
-            });
-            rightBtn.addEventListener('click', function() {
-                track.scrollBy({ left: 340, behavior: 'smooth' });
-            });
-        });
     </script>
-
-    </body>
+</body>
 </html>
