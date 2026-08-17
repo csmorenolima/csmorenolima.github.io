@@ -3,428 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sensation 360 - Carla Sofia Lima</title>
-    <meta name="description" content="Sensation 360 headphones with temperature-detecting technology and liquid crystal mood display. Premium wireless listening experience." />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Bass Sensation 360 - Carla Sofia Lima" />
-    <meta property="og:description" content="Sensation 360 headphones with temperature-detecting technology and mood display." />
-    <meta property="og:site_name" content="Carla Sofia Lima" />
-    <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sensation 360 — Emotion Technology Headphones | Carla Sofia Lima</title>
+    <meta name="description" content="Sensation 360 is a headphone concept combining immersive audio, temperature sensing and a liquid crystal mood display.">
 
-    <!-- Shared Theme -->
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sensation 360 — Emotion Technology Headphones">
+    <meta property="og:description" content="A headphone concept that turns biometric signals into a live colour experience.">
+    <meta property="og:site_name" content="Carla Sofia Lima">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+
     <link rel="stylesheet" href="../targetPortfolio/theme.css">
-    <!-- Category Page Template -->
     <link rel="stylesheet" href="../assets/css/category-page.css">
+    <link rel="stylesheet" href="../assets/css/sensation360.css">
 </head>
-<body data-category="electronics">
-    <!-- Header -->
+
+<body class="s360-page" data-project="sensation360">
+    <a class="s360-skip-link" href="#main-content">Skip to main content</a>
+
     <header class="header">
-        <nav class="nav">
-            <a href="/" class="logo">PORTFOLIO |</a>
-            <ul class="nav-links">
-                <li><a href="../targetPortfolio/test.html#home">HOME</a></li>
-                <li><a href="../targetPortfolio/test.html#about">ABOUT</a></li>
+        <nav class="nav" aria-label="Primary navigation">
+            <a href="../targetPortfolio/test.html#home" class="logo">PORTFOLIO</a>
+
+            <button class="mobile-menu-btn"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-controls="primary-navigation"
+                    aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <ul class="nav-links" id="primary-navigation">
+                <li><a href="../targetPortfolio/test.html#home">Home</a></li>
+                <li><a href="../targetPortfolio/test.html#about">About</a></li>
                 <li class="nav-projects-dropdown">
-                    <a href="#" aria-haspopup="true" aria-expanded="false">MY WORK <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="../product-design/" role="menuitem">Product Design</a></li>
-                        <li><a href="../engineering/" role="menuitem">Engineering</a></li>
+                    <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                        My work <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-label="Project categories">
+                        <li><a href="../product-design/">Product design</a></li>
+                        <li><a href="../engineering/">Engineering</a></li>
                     </ul>
                 </li>
-                <li><a href="../targetPortfolio/test.html#contact">CONNECT</a></li>
+                <li><a href="../targetPortfolio/test.html#contact">Connect</a></li>
             </ul>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="hero transportation">
-        <div class="container">
-            <div class="hero-content fade-in-up">
-                <h1>Sensation 360</h1>
-                <p class="hero-quote">Revolutionary headphones with temperature-detecting technology and mood display.</p>
-            </div>
-        </div>
-    </section>
+    <main id="main-content">
+        <section class="s360-hero" aria-labelledby="page-title">
+            <div class="s360-aurora s360-aurora-one" aria-hidden="true"></div>
+            <div class="s360-aurora s360-aurora-two" aria-hidden="true"></div>
 
-    <!-- Sensation 360 Section -->
-    <section class="section">
-        <div class="container">
-            <div class="featured-project" style="text-align: center; margin-bottom: 3rem;">
-                <div style="background: linear-gradient(135deg, rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.9)); padding: 3rem; border-radius: 16px; color: white;">
-                    <img src="../assets/bass-logo.png" alt="Bass Logo" style="height: 60px; margin-bottom: 1rem;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">EMOTION TECHNOLOGY</h2>
-                    <a href="https://myhub.autodesk360.com/ue2d7afdd/shares/public/SH30dd5QT870c25f12fcdab4b09f17cfe78d?mode=embed" target="_blank" rel="noreferrer noopener" class="cta-button" style="display: inline-block; background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
-                        <strong>3D Viewer</strong>
-                    </a>
-                </div>
-            </div>
-            <h2 class="section-title">OVERVIEW</h2>
-            <p class="section-subtitle" style="text-align: justify;">The Sensation 360 takes human and product relation to a new level.<br><br><strong>Emotion: </strong>Technology has become an essential part of our daily lives, both at work and at home. With Sensation 360, I set out to elevate the relationship between humans and products. The headphones feature integrated temperature sensors and microcontrollers that continuously monitor the wearer’s body temperature. Advanced algorithms process this data to interpret emotional states, which are visualised through a dynamic liquid crystal display. This innovative tech stack enables Sensation 360 to analyse and display colors in real time, creating a highly personalised mood reflection for each user.</p>
-            <div class="project-features">
-                <div class="feature-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
-                        <i class="fas fa-palette" style="font-size: 2.5rem; color: #e10098; margin-bottom: 1rem;"></i>
-                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Liquid Crystal Display</h3>
-                        <p style="color: var(--text-secondary);">Dynamic colour changes reflect your emotional state</p>
-                    </div>
-                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border);">
-                        <i class="fas fa-headphones" style="font-size: 2.5rem; color: #e10098; margin-bottom: 1rem;"></i>
-                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">360° Audio</h3>
-                        <p style="color: var(--text-secondary);">Immersive surround sound experience</p>
-                    </div>
-                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
-                        <i class="fas fa-thermometer-half" style="font-size: 2.5rem; color: #e10098; margin-bottom: 1rem;"></i>
-                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Temperature Detection</h3>
-                        <p style="color: var(--text-secondary);">Advanced sensors analyse your mood through body temperature</p>
-                    </div>
-                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
-                        <i class="fas fa-bolt" style="font-size: 2.5rem; color: #e10098; margin-bottom: 1rem;"></i>
-                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Quick Charge</h3>
-                        <p style="color: var(--text-secondary);">3-hour charge for all-day listening</p>
-                    </div>
-                    <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
-                        <i class="fab fa-bluetooth-b" style="font-size: 2.5rem; color: #e10098; margin-bottom: 1rem;"></i>
-                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Smart Connectivity</h3>
-                        <p style="color: var(--text-secondary);">Seamless Bluetooth pairing and app integration</p>
-                </div>
-                <div class="feature-item" style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border); transition: transform 0.3s ease;">
-                    <i class="fas fa-wave-square" style="font-size: 2.5rem; color: #e10098; margin-bottom: 1rem;"></i>
-                    <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Adaptive Mood Engine</h3>
-                    <p style="color: var(--text-secondary);">Proprietary algorithms transform biometric signals into a personalised colour experience that matches your emotional state.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="container s360-hero-grid">
+                <div class="s360-hero-copy fade-in-up">
+                    <p class="s360-kicker">BASS · Emotion Technology</p>
+                    <img class="s360-logo" src="../assets/bass-logo.png" alt="BASS logo">
 
-    <!-- Lightbox overlay markup outside gallery-grid -->
-    <div id="gallery-lightbox-overlay" class="gallery-lightbox-overlay" style="display:none;">
-        <div class="gallery-lightbox-content">
-            <button class="gallery-lightbox-close" aria-label="Close" onclick="document.getElementById('gallery-lightbox-overlay').style.display='none';">&times;</button>
-            <img id="gallery-lightbox-img" src="" alt="Gallery Image">
+                    <h1 id="page-title">Sensation <span>360</span></h1>
+
+                    <p class="s360-hero-lead">
+                        Headphones that do more than play sound — they sense, interpret
+                        and visualise the wearer's emotional state through colour.
+                    </p>
+
+                    <div class="s360-hero-actions">
+                        <a class="s360-button s360-button-primary"
+                           href="https://myhub.autodesk360.com/ue2d7afdd/shares/public/SH30dd5QT870c25f12fcdab4b09f17cfe78d?mode=embed"
+                           target="_blank"
+                           rel="noreferrer noopener">
+                            View 3D model
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="s360-button s360-button-secondary" href="#overview">
+                            Explore the concept
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="s360-hero-specs" aria-label="Product highlights">
+                        <span><strong>40 mm</strong> driver</span>
+                        <span><strong>12 h</strong> playtime</span>
+                        <span><strong>Bluetooth 5.0</strong></span>
+                    </div>
+                </div>
+
+                <div class="s360-hero-product" aria-label="Sensation 360 product visual">
+                    <div class="s360-product-halo" aria-hidden="true"></div>
+                    <img src="../assets/sensation_360_by_bass_gallery.jpg"
+                         alt="Sensation 360 headphones"
+                         class="s360-product-image">
+                    <div class="s360-sensor-chip">
+                        <span>LIVE</span>
+                        <strong>37.1°C</strong>
+                        <small>temperature sensing</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="s360-overview" id="overview">
+            <div class="container s360-overview-grid">
+                <div>
+                    <p class="s360-kicker">Overview</p>
+                    <h2>When the product becomes emotionally responsive.</h2>
+                </div>
+
+                <div class="s360-overview-copy">
+                    <p>
+                        Sensation 360 explores a deeper relationship between humans and technology.
+                        Integrated temperature sensors and microcontrollers continuously monitor the
+                        wearer's body temperature.
+                    </p>
+                    <p>
+                        Algorithms interpret those biometric signals and translate them into a dynamic
+                        liquid crystal colour display, creating a personalised mood reflection in real time.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="s360-emotion" aria-labelledby="emotion-title">
+            <div class="container s360-emotion-grid">
+                <div class="s360-emotion-copy">
+                    <p class="s360-kicker">The concept</p>
+                    <h2 id="emotion-title">Emotion becomes part of the interface.</h2>
+                    <p>
+                        Instead of hiding the technology, Sensation 360 makes the sensing layer visible.
+                        The exterior display responds with changing colour, turning biometric input into
+                        an expressive product behaviour.
+                    </p>
+                </div>
+
+                <div class="s360-mood-panel">
+                    <div class="s360-mood-orb" aria-hidden="true"></div>
+                    <div class="s360-mood-readout">
+                        <span>MOOD SIGNAL</span>
+                        <strong>Calm</strong>
+                        <p>Liquid crystal colour response</p>
+                    </div>
+                    <div class="s360-mood-spectrum" aria-hidden="true">
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="s360-features" aria-labelledby="features-title">
+            <div class="container">
+                <div class="s360-section-heading">
+                    <p class="s360-kicker">Product system</p>
+                    <h2 id="features-title">Audio, sensing and expression in one object.</h2>
+                </div>
+
+                <div class="s360-feature-grid">
+                    <article>
+                        <i class="fa-solid fa-temperature-half" aria-hidden="true"></i>
+                        <span>01</span>
+                        <h3>Temperature detection</h3>
+                        <p>Integrated sensors capture changes in body temperature as biometric input.</p>
+                    </article>
+
+                    <article>
+                        <i class="fa-solid fa-palette" aria-hidden="true"></i>
+                        <span>02</span>
+                        <h3>Liquid crystal display</h3>
+                        <p>Colour shifts visualise emotional state and make the product feel responsive.</p>
+                    </article>
+
+                    <article>
+                        <i class="fa-solid fa-headphones" aria-hidden="true"></i>
+                        <span>03</span>
+                        <h3>360° audio</h3>
+                        <p>An immersive listening experience keeps the concept grounded as a premium audio product.</p>
+                    </article>
+
+                    <article>
+                        <i class="fa-brands fa-bluetooth-b" aria-hidden="true"></i>
+                        <span>04</span>
+                        <h3>Smart connectivity</h3>
+                        <p>Bluetooth and app integration connect the physical product to a wider digital experience.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="s360-colours" aria-labelledby="colours-title">
+            <div class="container">
+                <div class="s360-colours-heading">
+                    <div>
+                        <p class="s360-kicker">Colourways</p>
+                        <h2 id="colours-title">One form. Six personalities.</h2>
+                    </div>
+                    <p>
+                        The colour range shifts the emotional character of the product without changing
+                        its core geometry.
+                    </p>
+                </div>
+
+                <div class="s360-colour-carousel" data-s360-carousel>
+                    <div class="s360-colour-track">
+                        <article class="s360-colour-slide active">
+                            <img src="../assets/bassSensation360-beach.jpg" alt="Beach matte colourway">
+                            <div><span>01</span><strong>Beach</strong><small>Matte</small></div>
+                        </article>
+
+                        <article class="s360-colour-slide">
+                            <img src="../assets/bassSensation360-blitz.jpg" alt="Blitz matte colourway">
+                            <div><span>02</span><strong>Blitz</strong><small>Matte</small></div>
+                        </article>
+
+                        <article class="s360-colour-slide">
+                            <img src="../assets/bassSensation360-camo.jpg" alt="Kamo matte colourway">
+                            <div><span>03</span><strong>Kamo</strong><small>Matte</small></div>
+                        </article>
+
+                        <article class="s360-colour-slide">
+                            <img src="../assets/bassSensation360-cool-grey.jpg" alt="Cool Grey matte colourway">
+                            <div><span>04</span><strong>Cool Grey</strong><small>Matte</small></div>
+                        </article>
+
+                        <article class="s360-colour-slide">
+                            <img src="../assets/bassSensation360-cotton.jpg" alt="Cotton matte colourway">
+                            <div><span>05</span><strong>Cotton</strong><small>Matte</small></div>
+                        </article>
+
+                        <article class="s360-colour-slide">
+                            <img src="../assets/bassSensation360-pink.jpg" alt="Pink matte colourway">
+                            <div><span>06</span><strong>Pink</strong><small>Matte</small></div>
+                        </article>
+                    </div>
+
+                    <div class="s360-carousel-controls">
+                        <button class="s360-carousel-button previous" type="button" aria-label="Previous colourway">
+                            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="s360-carousel-dots" aria-label="Colourway navigation"></div>
+
+                        <button class="s360-carousel-button next" type="button" aria-label="Next colourway">
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="s360-specs" aria-labelledby="specs-title">
+            <div class="container">
+                <div class="s360-specs-heading">
+                    <p class="s360-kicker">Technical specifications</p>
+                    <h2 id="specs-title">Designed as a believable audio product.</h2>
+                </div>
+
+                <dl class="s360-spec-grid">
+                    <div>
+                        <dt>Audio</dt>
+                        <dd><strong>40 mm</strong> full-range driver</dd>
+                        <dd>60 Hz – 20 kHz response</dd>
+                    </div>
+
+                    <div>
+                        <dt>Battery</dt>
+                        <dd><strong>12 h</strong> playtime</dd>
+                        <dd>2 h charging time</dd>
+                    </div>
+
+                    <div>
+                        <dt>Connectivity</dt>
+                        <dd><strong>Bluetooth 5.0</strong></dd>
+                        <dd>30 ft range</dd>
+                    </div>
+
+                    <div>
+                        <dt>Dimensions</dt>
+                        <dd>178 × 181 × 78 mm</dd>
+                        <dd><strong>260 g</strong></dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="s360-gallery" aria-labelledby="gallery-title">
+            <div class="container">
+                <div class="s360-gallery-heading">
+                    <p class="s360-kicker">Product view</p>
+                    <h2 id="gallery-title">A wearable object with a visible emotional layer.</h2>
+                </div>
+
+                <figure class="s360-gallery-figure">
+                    <img src="../assets/sensation_360_by_bass_gallery.jpg"
+                         alt="Sensation 360 headphones product view"
+                         class="s360-lightbox-img"
+                         loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-navigation" aria-label="Project navigation">
+            <div class="container nav-buttons">
+                <a href="../honecomb/" class="nav-btn back">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    <span><small>Previous project</small>HonEcomb</span>
+                </a>
+
+                <a href="../brightup/" class="nav-btn next">
+                    <span><small>Next project</small>BrightUP</span>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div class="s360-lightbox" id="s360-lightbox" aria-hidden="true">
+        <div class="s360-lightbox-content">
+            <button class="s360-lightbox-close" type="button" aria-label="Close image">&times;</button>
+            <img id="s360-lightbox-image" src="" alt="">
         </div>
     </div>
 
-    <style>
-    /* Lightbox overlay styles */
-    .gallery-lightbox-overlay {
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0,0,0,0.85);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.3s;
-    }
-    .gallery-lightbox-content {
-        position: relative;
-        background: #181818;
-        max-width: 90vw;
-        max-height: 90vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .gallery-lightbox-content img {
-        max-width: 80vw;
-        max-height: 80vh;
-        border-radius: 10px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-    }
-    .gallery-lightbox-close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 2rem;
-        cursor: pointer;
-        z-index: 2;
-    }
-    </style>
-    <script>
-    document.querySelectorAll('.gallery-lightbox-img').forEach(function(img) {
-        img.addEventListener('click', function() {
-            var overlay = document.getElementById('gallery-lightbox-overlay');
-            var overlayImg = document.getElementById('gallery-lightbox-img');
-            overlayImg.src = img.src;
-            overlayImg.alt = img.alt;
-            overlay.style.display = 'flex';
-        });
-    });
-    // Close overlay on background click
-    document.getElementById('gallery-lightbox-overlay').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.style.display = 'none';
-        }
-    });
-    </script>
-
-    <!-- Available Colours Section -->
-    <section class="section">
-        <div class="container">
-            <h3 class="section-title" style="font-size: 2rem;">AVAILABLE COLOURS</h3>
-            <div class="auto-carousel" style="max-width: 840px; width: 840px; margin: 0 auto; position: relative; overflow: hidden;">
-                <button class="carousel-toggle" aria-label="Pause carousel" style="position:absolute;top:10px;right:10px;z-index:2;background:rgba(255,255,255,0.8);border:none;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.3rem;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-                    <span class="carousel-toggle-icon" style="color:#e10098">&#10073;&#10073;</span>
-                </button>
-                <div class="availableColours-carousel-track">
-                    <div class="availableColours-carousel-item"><img src="../assets/bassSensation360-beach.jpg" alt="Beach"><div class="color-label" style="background:#fbeec1; color:#222;">Beach - Matte</div></div>
-                    <div class="availableColours-carousel-item"><img src="../assets/bassSensation360-blitz.jpg" alt="Blitz"><div class="color-label" style="background:#111111; color:#fff;">Blitz - Matte</div></div>
-                    <div class="availableColours-carousel-item"><img src="../assets/bassSensation360-camo.jpg" alt="Kamo"><div class="color-label" style="background:#bfc7b2; color:#222;">Kamo - Matte</div></div>
-                    <div class="availableColours-carousel-item"><img src="../assets/bassSensation360-cool-grey.jpg" alt="Cool Grey"><div class="color-label" style="background:#d3d3d3; color:#222;">Cool Grey - Matte</div></div>
-                    <div class="availableColours-carousel-item"><img src="../assets/bassSensation360-cotton.jpg" alt="Cotton"><div class="color-label" style="background:#f7f7f7; color:#222;">Cotton - Matte</div></div>
-                    <div class="availableColours-carousel-item"><img src="../assets/bassSensation360-pink.jpg" alt="Pink"><div class="color-label" style="background:#f8b6d2; color:#222;">Pink - Matte</div></div>
-                </div>
-            </div>
-        </div>
-        <style>
-            .auto-carousel {
-                margin: 0 auto;
-                position: relative;
-                overflow: hidden;
-                min-height: 440px; /* Ensures stability even if content changes */
-            }
-            .availableColours-carousel-track {
-                display: flex;
-                min-height: 400px; /* Ensures stability even if content changes */
-            }
-            .availableColours-carousel-item {
-                flex: 0 0 100%;
-                max-width: 100%;
-                box-sizing: border-box;
-                text-align: center;
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-            .availableColours-carousel-item.active {
-                display: flex;
-            }
-            .availableColours-carousel-item img {
-                width: 100%;
-                height: 400px;
-                border-radius: 12px;
-                background: #f3f3f3;
-                border: 2px solid #fff;
-                box-sizing: border-box;
-            }
-            .color-label {
-                margin-top: 0;
-                font-weight: 700;
-                font-size: 1.1rem;
-                letter-spacing: 0.5px;
-                padding: 0.7em 0;
-                border-radius: 0 0 12px 12px;
-                display: block;
-                min-width: 100%;
-                width: 100%;
-                box-shadow: none;
-                opacity: 1;
-                position: relative;
-                top: 0;
-                left: 0;
-                text-align: center;
-                border-top: 1px solid #e5e7eb;
-                margin-bottom: 0;
-            }
-            @media (max-width: 700px) {
-                .auto-carousel { max-width: 100vw; }
-                .availableColours-carousel-item img { height: 80px; }
-            }
-        </style>
-
-        <script>
-            (function() {
-                const carousel = document.querySelector('.auto-carousel');
-                const track = carousel.querySelector('.availableColours-carousel-track');
-                const items = Array.from(track.children);
-                const toggleBtn = carousel.querySelector('.carousel-toggle');
-                const toggleIcon = toggleBtn.querySelector('.carousel-toggle-icon');
-                let index = 0;
-                let interval = null;
-                let paused = false;
-
-                function updateClasses() {
-                    items.forEach((item, i) => {
-                        item.classList.toggle('active', i === index);
-                    });
-                }
-                function showSlide(i) {
-                    index = i;
-                    updateClasses();
-                }
-                function nextSlide() {
-                    index = (index + 1) % items.length;
-                    showSlide(index);
-                }
-                function startAuto() {
-                    if (interval) clearInterval(interval);
-                    if (!paused) interval = setInterval(nextSlide, 2500);
-                }
-                toggleBtn.addEventListener('click', function() {
-                    paused = !paused;
-                    toggleIcon.textContent = paused ? '\u25B6' : '\u23F8';
-                    startAuto();
-                });
-                carousel.addEventListener('mouseenter', () => { paused = true; startAuto(); });
-                carousel.addEventListener('mouseleave', () => { paused = false; startAuto(); });
-                showSlide(0);
-                startAuto();
-            })();
-        </script>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section">
-        <div class="container">
-            <h3 class="section-title" style="font-size: 2rem;">GALLERY</h3>
-            <div class="gallery-grid" style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
-                <img src="../assets/sensation_360_by_bass_gallery.jpg" alt="Headphone shot" class="gallery-lightbox-img" style="max-width:400px;width:100%;height:240px;border-radius:10px;object-fit:cover;background:#f3f3f3;cursor:pointer;">
-            </div>
-            <!-- Lightbox overlay markup -->
-            <div id="gallery-lightbox-overlay" class="gallery-lightbox-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;">
-                <div class="gallery-lightbox-content" style="position:relative;max-width:90vw;max-height:90vh;">
-                    <button class="gallery-lightbox-close" aria-label="Close" onclick="document.getElementById('gallery-lightbox-overlay').style.display='none';" style="position:absolute;top:-40px;right:0;font-size:2.5rem;color:#fff;background:none;border:none;cursor:pointer;">&times;</button>
-                    <img id="gallery-lightbox-img" src="" alt="Gallery Image" style="max-width:100%;max-height:80vh;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);">
-                </div>
-            </div>
-        </div>
-        <script>
-        // Lightbox functionality for gallery images
-        document.querySelectorAll('.gallery-lightbox-img').forEach(function(img) {
-            img.addEventListener('click', function() {
-                var overlay = document.getElementById('gallery-lightbox-overlay');
-                var lightboxImg = document.getElementById('gallery-lightbox-img');
-                lightboxImg.src = this.src;
-                overlay.style.display = 'flex';
-            });
-        });
-        </script>
-    </section>
-
-    <!-- Technical Specifications Section -->
-    <section class="section">
-        <div class="container">
-            <h3 class="section-title" style="font-size: 2rem;">TECHNICAL SPECIFICATIONS</h3>
-            <div class="specs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                <div class="spec-card" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
-                    <h4 style="color: #333; margin-bottom: 0.5rem;">Audio</h4>
-                    <p style="color: #666; margin: 0;">40mm Full Range Driver<br><hr>60Hz - 20kHz Frequency Response</p>
-                </div>
-                <div class="spec-card" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
-                    <h4 style="color: #333; margin-bottom: 0.5rem;">Battery</h4>
-                    <p style="color: #666; margin: 0;">12 Hours Playtime<br><hr>2 Hours Charging Time</p>
-                </div>
-                <div class="spec-card" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
-                    <h4 style="color: #333; margin-bottom: 0.5rem;">Connectivity</h4>
-                    <p style="color: #666; margin: 0;">Bluetooth 5.0<br><hr>30ft Range</p>
-                </div>
-                <div class="spec-card" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
-                    <h4 style="color: #333; margin-bottom: 0.5rem;">Dimensions</h4>
-                    <ul style="color: #666; margin: 0; padding-left: 0; list-style: none;">
-                        <li style="margin-bottom:2px;">L: 178mm</li><hr>
-                        <li style="margin-bottom:2px;">H:181mm</li><hr>
-                        <li style="margin-bottom:2px;">W: 78mm</li><hr>
-                        <li>W: 260g</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Navigation -->
-    <section class="project-navigation">
-        <div class="nav-buttons">
-            <a href="../honecomb/" class="nav-btn back">
-                <i class="fas fa-arrow-left"></i>
-                <span>Previous: HonEcomb</span>
-            </a>
-            <a href="../brightup/" class="nav-btn next">
-                <span>Next: BrightUp</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-    </section>
-
-    <style>
-        .project-navigation {
-            margin: 4rem 0 2rem;
-            padding: 2rem 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn:hover {
-            background: transparent;
-            color: #e10098;
-            transform: translateY(-2px);
-            cursor:pointer;
-        }
-
-        @media (max-width: 768px) {
-            .nav-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <p>Learning Together, Growing Together.</p>
+                <div class="footer-section footer-intro">
+                    <a href="../targetPortfolio/test.html#home" class="footer-brand">Carla Sofia Lima</a>
+                    <p>Learning together, growing together.</p>
                 </div>
 
                 <div class="footer-section">
                     <h3>OfficialMV</h3>
-                    <span>
-                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank">RedBubble</a>
-                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank">Instagram</a>
-                    <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank">TikTok</a>
+                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank" rel="noopener noreferrer">RedBubble</a>
+                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank" rel="noopener noreferrer">TikTok</a>
                 </div>
 
                 <div class="footer-section">
                     <h3>Social</h3>
-                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/csmorenolima" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/csmorenolima" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; COPYRIGHT 2025 . ALL RIGHTS RESERVED</p>
+                <p>&copy; <span id="current-year"></span> Carla Sofia Lima. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- External JavaScript Files -->
     <script src="../assets/js/navigation.js"></script>
+
+    <script>
+        (() => {
+            "use strict";
+
+            const year = document.getElementById("current-year");
+            if (year) year.textContent = String(new Date().getFullYear());
+
+            document.querySelectorAll("[data-s360-carousel]").forEach((carousel) => {
+                const slides = Array.from(carousel.querySelectorAll(".s360-colour-slide"));
+                const previousButton = carousel.querySelector(".s360-carousel-button.previous");
+                const nextButton = carousel.querySelector(".s360-carousel-button.next");
+                const dotsContainer = carousel.querySelector(".s360-carousel-dots");
+
+                if (!slides.length || !previousButton || !nextButton || !dotsContainer) return;
+
+                let index = 0;
+
+                const dots = slides.map((_, dotIndex) => {
+                    const dot = document.createElement("button");
+                    dot.type = "button";
+                    dot.className = "s360-carousel-dot";
+                    dot.setAttribute("aria-label", `Show colourway ${dotIndex + 1}`);
+                    dot.addEventListener("click", () => show(dotIndex));
+                    dotsContainer.appendChild(dot);
+                    return dot;
+                });
+
+                const show = (nextIndex) => {
+                    index = (nextIndex + slides.length) % slides.length;
+
+                    slides.forEach((slide, slideIndex) => {
+                        slide.classList.toggle("active", slideIndex === index);
+                    });
+
+                    dots.forEach((dot, dotIndex) => {
+                        const active = dotIndex === index;
+                        dot.classList.toggle("active", active);
+                        dot.setAttribute("aria-current", active ? "true" : "false");
+                    });
+                };
+
+                previousButton.addEventListener("click", () => show(index - 1));
+                nextButton.addEventListener("click", () => show(index + 1));
+
+                show(0);
+            });
+
+            const lightbox = document.getElementById("s360-lightbox");
+            const lightboxImage = document.getElementById("s360-lightbox-image");
+            const closeButton = document.querySelector(".s360-lightbox-close");
+
+            const closeLightbox = () => {
+                lightbox.classList.remove("is-open");
+                lightbox.setAttribute("aria-hidden", "true");
+                lightboxImage.src = "";
+            };
+
+            document.querySelectorAll(".s360-lightbox-img").forEach((image) => {
+                image.addEventListener("click", () => {
+                    lightboxImage.src = image.src;
+                    lightboxImage.alt = image.alt;
+                    lightbox.classList.add("is-open");
+                    lightbox.setAttribute("aria-hidden", "false");
+                });
+            });
+
+            closeButton.addEventListener("click", closeLightbox);
+            lightbox.addEventListener("click", (event) => {
+                if (event.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+                    closeLightbox();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

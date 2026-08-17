@@ -106,22 +106,6 @@ body.brightup-page .brightup-hero-copy {
     max-width: 760px;
 }
 
-body.brightup-page .brightup-pill {
-    width: fit-content;
-    display: inline-flex;
-    align-items: center;
-    gap: .55rem;
-    margin-bottom: 1.3rem;
-    padding: .52rem .8rem;
-    border: 1px solid rgba(255,255,255,.16);
-    border-radius: 999px;
-    color: #dce9ff;
-    background: rgba(255,255,255,.07);
-    font-size: .73rem;
-    font-weight: 700;
-    letter-spacing: .05em;
-}
-
 body.brightup-page .brightup-logo {
     display: block;
     width: min(230px, 52vw);
