@@ -1,0 +1,1000 @@
+/* =========================================================
+   BRIGHTUP
+   Civic education / gamified learning project
+   ========================================================= */
+
+body.brightup-page {
+    --bu-ink: #0e1b35;
+    --bu-ink-soft: #17284b;
+    --bu-blue: #2677ff;
+    --bu-blue-dark: #1457c7;
+    --bu-sky: #dfeeff;
+    --bu-sky-soft: #f3f8ff;
+    --bu-yellow: #ffd95a;
+    --bu-yellow-soft: #fff4b8;
+    --bu-green: #48c7a8;
+    --bu-paper: #f7f9fc;
+    --bu-white: #ffffff;
+    --bu-text: #172033;
+    --bu-muted: #667085;
+    --bu-line: rgba(23, 32, 51, .13);
+    --bu-line-light: rgba(255, 255, 255, .16);
+    --bu-shadow: 0 28px 80px rgba(32, 73, 139, .16);
+
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--bu-text);
+    background: var(--bu-paper);
+    font-family: "Inter", sans-serif;
+}
+
+body.brightup-page h1,
+body.brightup-page h2,
+body.brightup-page h3 {
+    font-family: "Manrope", "Inter", sans-serif;
+}
+
+body.brightup-page .container {
+    width: min(1180px, calc(100% - 2rem));
+    margin-inline: auto;
+}
+
+body.brightup-page .brightup-skip-link {
+    position: fixed;
+    top: .8rem;
+    left: .8rem;
+    z-index: 10000;
+    padding: .7rem 1rem;
+    border-radius: 999px;
+    color: #fff;
+    background: var(--bu-ink);
+    transform: translateY(-180%);
+}
+
+body.brightup-page .brightup-skip-link:focus {
+    transform: translateY(0);
+}
+
+body.brightup-page .brightup-kicker {
+    margin: 0 0 .75rem;
+    color: var(--bu-blue);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+
+body.brightup-page .brightup-hero {
+    position: relative;
+    min-height: max(760px, 100svh);
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 9rem 0 5.5rem;
+    color: #fff;
+    background:
+        radial-gradient(circle at 82% 24%, rgba(38, 119, 255, .28), transparent 28rem),
+        radial-gradient(circle at 65% 85%, rgba(72, 199, 168, .15), transparent 24rem),
+        linear-gradient(135deg, #0d1830, #10244e 58%, #173367);
+}
+
+body.brightup-page .brightup-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .2;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: linear-gradient(90deg, transparent, #000 20%, #000 85%, transparent);
+}
+
+body.brightup-page .brightup-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, .72fr);
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: center;
+}
+
+body.brightup-page .brightup-hero-copy {
+    max-width: 760px;
+}
+
+body.brightup-page .brightup-pill {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    margin-bottom: 1.3rem;
+    padding: .52rem .8rem;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 999px;
+    color: #dce9ff;
+    background: rgba(255,255,255,.07);
+    font-size: .73rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+}
+
+body.brightup-page .brightup-logo {
+    display: block;
+    width: min(230px, 52vw);
+    max-height: 82px;
+    object-fit: contain;
+    object-position: left center;
+    margin-bottom: 1.4rem;
+    filter: brightness(0) invert(1);
+}
+
+body.brightup-page .brightup-hero h1 {
+    max-width: 780px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(3.4rem, 7vw, 6.8rem);
+    font-weight: 800;
+    line-height: .93;
+    letter-spacing: -.065em;
+}
+
+body.brightup-page .brightup-hero-summary {
+    max-width: 680px;
+    margin: 1.5rem 0 0;
+    color: rgba(255,255,255,.74);
+    font-size: clamp(1rem, 1.4vw, 1.18rem);
+    line-height: 1.75;
+}
+
+body.brightup-page .brightup-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .85rem;
+    margin-top: 2rem;
+}
+
+body.brightup-page .brightup-button {
+    min-height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .65rem;
+    padding: .85rem 1.15rem;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    font-size: .84rem;
+    font-weight: 700;
+    transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+}
+
+body.brightup-page .brightup-button:hover {
+    transform: translateY(-2px);
+}
+
+body.brightup-page .brightup-button-primary {
+    color: var(--bu-ink);
+    background: var(--bu-yellow);
+    border-color: var(--bu-yellow);
+}
+
+body.brightup-page .brightup-button-secondary {
+    background: rgba(255,255,255,.06);
+}
+
+body.brightup-page .brightup-button-secondary:hover {
+    background: rgba(255,255,255,.11);
+}
+
+body.brightup-page .brightup-mantra {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    margin-top: 3.2rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(255,255,255,.14);
+}
+
+body.brightup-page .brightup-mantra span {
+    color: rgba(255,255,255,.6);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+/* Hero phone */
+
+body.brightup-page .brightup-hero-visual {
+    position: relative;
+    min-height: 600px;
+    display: grid;
+    place-items: center;
+}
+
+body.brightup-page .brightup-phone {
+    width: min(340px, 86%);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 34px;
+    background: #f8fbff;
+    box-shadow: 0 36px 100px rgba(0, 4, 20, .36);
+    transform: rotate(2deg);
+}
+
+body.brightup-page .brightup-phone-bar {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    padding: 0 1rem;
+    background: #eef5ff;
+    border-bottom: 1px solid #dbe8fa;
+}
+
+body.brightup-page .brightup-phone-bar span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #adc8ec;
+}
+
+body.brightup-page .brightup-phone-screen {
+    padding: 1.45rem;
+    color: var(--bu-text);
+}
+
+body.brightup-page .brightup-screen-label {
+    margin-bottom: .7rem;
+    color: var(--bu-blue);
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+body.brightup-page .brightup-phone-screen h2 {
+    margin: 0;
+    color: var(--bu-ink);
+    font-size: 2rem;
+    line-height: 1.04;
+    letter-spacing: -.045em;
+}
+
+body.brightup-page .brightup-progress {
+    height: 7px;
+    overflow: hidden;
+    margin: 1.4rem 0;
+    border-radius: 99px;
+    background: #e2ebf8;
+}
+
+body.brightup-page .brightup-progress span {
+    display: block;
+    width: 68%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--bu-blue), #4db5ff);
+}
+
+body.brightup-page .brightup-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .7rem;
+}
+
+body.brightup-page .brightup-choice-grid div {
+    min-height: 102px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .9rem;
+    border: 1px solid #dbe6f4;
+    border-radius: 18px;
+    background: #fff;
+}
+
+body.brightup-page .brightup-choice-grid i {
+    color: var(--bu-blue);
+    font-size: 1.2rem;
+}
+
+body.brightup-page .brightup-choice-grid span {
+    color: var(--bu-ink-soft);
+    font-size: .83rem;
+    font-weight: 700;
+}
+
+body.brightup-page .brightup-streak {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    margin-top: .8rem;
+    padding: .9rem;
+    border-radius: 18px;
+    color: #694d00;
+    background: var(--bu-yellow-soft);
+}
+
+body.brightup-page .brightup-streak > i {
+    color: #ffb000;
+    font-size: 1.25rem;
+}
+
+body.brightup-page .brightup-streak div {
+    display: flex;
+    flex-direction: column;
+}
+
+body.brightup-page .brightup-streak strong {
+    font-size: .82rem;
+}
+
+body.brightup-page .brightup-streak span {
+    font-size: .7rem;
+    opacity: .7;
+}
+
+body.brightup-page .brightup-float-card {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .75rem .9rem;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 16px;
+    color: #fff;
+    background: rgba(11, 24, 48, .76);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 18px 44px rgba(0,0,0,.18);
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+body.brightup-page .brightup-float-card span {
+    color: var(--bu-yellow);
+    font-weight: 800;
+}
+
+body.brightup-page .brightup-float-card-one {
+    left: -2rem;
+    top: 23%;
+}
+
+body.brightup-page .brightup-float-card-two {
+    right: -1.2rem;
+    bottom: 17%;
+}
+
+/* =========================================================
+   Brief
+   ========================================================= */
+
+body.brightup-page .brightup-brief {
+    padding: clamp(5rem, 8vw, 8rem) 0;
+    background: #fff;
+}
+
+body.brightup-page .brightup-brief-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, .7fr);
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: end;
+}
+
+body.brightup-page .brightup-brief h2,
+body.brightup-page .brightup-story h2,
+body.brightup-page .brightup-section-heading h2,
+body.brightup-page .brightup-gallery-heading h2,
+body.brightup-page .brightup-development-heading h2 {
+    margin: 0;
+    color: var(--bu-ink);
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
+    line-height: .98;
+    letter-spacing: -.055em;
+}
+
+body.brightup-page .brightup-brief-grid > p {
+    margin: 0;
+    color: var(--bu-muted);
+    line-height: 1.8;
+}
+
+/* =========================================================
+   Story + insight carousel
+   ========================================================= */
+
+body.brightup-page .brightup-story {
+    padding: clamp(6rem, 9vw, 9rem) 0;
+    color: #fff;
+    background:
+        radial-gradient(circle at 90% 10%, rgba(38,119,255,.17), transparent 26rem),
+        var(--bu-ink);
+}
+
+body.brightup-page .brightup-story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(370px, .7fr);
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: center;
+}
+
+body.brightup-page .brightup-story .brightup-kicker {
+    color: #9fc4ff;
+}
+
+body.brightup-page .brightup-story h2 {
+    color: #fff;
+}
+
+body.brightup-page .brightup-story-copy > p:not(.brightup-kicker) {
+    max-width: 690px;
+    margin: 1.1rem 0 0;
+    color: rgba(255,255,255,.66);
+    line-height: 1.8;
+}
+
+body.brightup-page .brightup-insight-carousel {
+    min-width: 0;
+    height: 430px;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) 72px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 28px;
+    background: rgba(255,255,255,.06);
+    box-shadow: 0 28px 74px rgba(0,0,0,.2);
+}
+
+body.brightup-page .brightup-insight-track {
+    position: relative;
+    min-height: 0;
+}
+
+body.brightup-page .brightup-insight-slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+body.brightup-page .brightup-insight-slide.active {
+    display: flex;
+    animation: brightupFade .35s ease both;
+}
+
+@keyframes brightupFade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body.brightup-page .brightup-insight-meta {
+    margin-bottom: 1rem;
+    color: var(--bu-yellow);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+body.brightup-page .brightup-insight-slide strong {
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(4rem, 8vw, 7rem);
+    line-height: .82;
+    letter-spacing: -.07em;
+}
+
+body.brightup-page .brightup-insight-slide p {
+    max-width: 430px;
+    margin: 1.15rem 0 0;
+    color: rgba(255,255,255,.66);
+    line-height: 1.72;
+}
+
+body.brightup-page .brightup-insight-controls {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: .75rem 1rem;
+    border-top: 1px solid rgba(255,255,255,.11);
+}
+
+body.brightup-page .brightup-insight-arrows {
+    display: flex;
+    gap: .55rem;
+}
+
+body.brightup-page .brightup-carousel-button {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(255,255,255,.06);
+    cursor: pointer;
+}
+
+body.brightup-page .brightup-carousel-button:hover {
+    background: rgba(38,119,255,.32);
+}
+
+body.brightup-page .brightup-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: .48rem;
+}
+
+body.brightup-page .brightup-carousel-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255,255,255,.28);
+    cursor: pointer;
+}
+
+body.brightup-page .brightup-carousel-dot.active {
+    width: 28px;
+    background: var(--bu-yellow);
+}
+
+/* =========================================================
+   Design response
+   ========================================================= */
+
+body.brightup-page .brightup-response {
+    padding: clamp(6rem, 9vw, 9rem) 0;
+    background: var(--bu-sky-soft);
+}
+
+body.brightup-page .brightup-section-heading {
+    max-width: 900px;
+    margin-bottom: 3rem;
+}
+
+body.brightup-page .brightup-response-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--bu-line);
+    border-bottom: 1px solid var(--bu-line);
+}
+
+body.brightup-page .brightup-response-grid article {
+    min-width: 0;
+    padding: 2rem 1.35rem 2.3rem;
+    border-left: 1px solid var(--bu-line);
+}
+
+body.brightup-page .brightup-response-grid article:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+body.brightup-page .brightup-response-grid article > span {
+    display: block;
+    margin-bottom: 1.8rem;
+    color: var(--bu-blue);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+body.brightup-page .brightup-response-grid i {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1.1rem;
+    border-radius: 16px;
+    color: var(--bu-blue);
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(38,119,255,.08);
+}
+
+body.brightup-page .brightup-response-grid h3 {
+    margin: 0 0 .6rem;
+    color: var(--bu-ink);
+    font-size: 1.16rem;
+}
+
+body.brightup-page .brightup-response-grid p {
+    margin: 0;
+    color: var(--bu-muted);
+    font-size: .9rem;
+    line-height: 1.68;
+}
+
+/* =========================================================
+   Gallery
+   ========================================================= */
+
+body.brightup-page .brightup-gallery {
+    padding: clamp(6rem, 9vw, 9rem) 0;
+    background: #fff;
+}
+
+body.brightup-page .brightup-gallery-heading {
+    display: grid;
+    grid-template-columns: 1fr .62fr;
+    gap: 3rem;
+    align-items: end;
+    margin-bottom: 3rem;
+}
+
+body.brightup-page .brightup-gallery-heading > p {
+    max-width: 540px;
+    justify-self: end;
+    margin: 0;
+    color: var(--bu-muted);
+    line-height: 1.8;
+}
+
+body.brightup-page .brightup-gallery-grid {
+    display: grid;
+    grid-template-columns: 1.35fr .82fr .82fr;
+    grid-template-rows: repeat(2, 290px);
+    gap: 1rem;
+}
+
+body.brightup-page .brightup-gallery-grid figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e6eef9;
+}
+
+body.brightup-page .brightup-gallery-main {
+    grid-row: span 2;
+}
+
+body.brightup-page .brightup-gallery-grid img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: transform .3s ease;
+}
+
+body.brightup-page .brightup-gallery-grid figure:hover img {
+    transform: scale(1.025);
+}
+
+/* =========================================================
+   Development
+   ========================================================= */
+
+body.brightup-page .brightup-development {
+    padding: clamp(6rem, 9vw, 9rem) 0;
+    background:
+        linear-gradient(90deg, rgba(38,119,255,.035) 1px, transparent 1px),
+        linear-gradient(rgba(38,119,255,.035) 1px, transparent 1px),
+        #eef5ff;
+    background-size: 52px 52px;
+}
+
+body.brightup-page .brightup-development-heading {
+    max-width: 850px;
+    margin-bottom: 3rem;
+}
+
+body.brightup-page .brightup-development-heading > p:last-child {
+    max-width: 670px;
+    margin: 1rem 0 0;
+    color: var(--bu-muted);
+    line-height: 1.75;
+}
+
+body.brightup-page .brightup-development-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+body.brightup-page .brightup-development-card {
+    overflow: hidden;
+    border: 1px solid rgba(38,119,255,.12);
+    border-radius: 22px;
+    background: rgba(255,255,255,.82);
+    box-shadow: 0 18px 50px rgba(38,119,255,.08);
+}
+
+body.brightup-page .brightup-development-image {
+    height: 320px;
+    overflow: hidden;
+    background: #fff;
+}
+
+body.brightup-page .brightup-development-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: zoom-in;
+}
+
+body.brightup-page .brightup-development-card > div:last-child {
+    padding: 1.4rem 1.5rem 1.6rem;
+}
+
+body.brightup-page .brightup-development-card span {
+    color: var(--bu-blue);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+body.brightup-page .brightup-development-card h3 {
+    margin: .55rem 0 .45rem;
+    color: var(--bu-ink);
+    font-size: 1.25rem;
+}
+
+body.brightup-page .brightup-development-card p {
+    margin: 0;
+    color: var(--bu-muted);
+    font-size: .9rem;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   Navigation
+   ========================================================= */
+
+body.brightup-page .project-navigation {
+    padding: 3rem 0 4rem;
+    border-top: 1px solid var(--bu-line);
+    background: #fff;
+}
+
+body.brightup-page .nav-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+body.brightup-page .nav-btn {
+    width: fit-content;
+    min-height: 52px;
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .85rem 1.15rem;
+    border: 1px solid var(--bu-line);
+    border-radius: 999px;
+    color: var(--bu-ink);
+    background: var(--bu-sky-soft);
+    text-decoration: none;
+    font-size: .84rem;
+    font-weight: 700;
+    transition: transform .2s ease, background-color .2s ease;
+}
+
+body.brightup-page .nav-btn.back {
+    justify-self: start;
+}
+
+body.brightup-page .nav-btn.next {
+    justify-self: end;
+}
+
+body.brightup-page .nav-btn span {
+    display: flex;
+    flex-direction: column;
+}
+
+body.brightup-page .nav-btn small {
+    margin-bottom: .18rem;
+    color: var(--bu-muted);
+    font-size: .61rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+body.brightup-page .nav-btn:hover {
+    color: #fff;
+    background: var(--bu-blue);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   Lightbox
+   ========================================================= */
+
+body.brightup-page .brightup-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(3, 10, 24, .92);
+}
+
+body.brightup-page .brightup-lightbox.is-open {
+    display: flex;
+}
+
+body.brightup-page .brightup-lightbox-content {
+    position: relative;
+    max-width: min(1100px, 92vw);
+    max-height: 90vh;
+    text-align: center;
+}
+
+body.brightup-page .brightup-lightbox-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 78vh;
+    margin: 0 auto;
+    border-radius: 16px;
+}
+
+body.brightup-page .brightup-lightbox-close {
+    position: absolute;
+    top: -3.2rem;
+    right: 0;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    font-size: 2.6rem;
+    cursor: pointer;
+}
+
+body.brightup-page #brightup-lightbox-caption {
+    margin: 1rem 0 0;
+    color: rgba(255,255,255,.72);
+    font-size: .9rem;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    body.brightup-page .brightup-hero-grid,
+    body.brightup-page .brightup-story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.brightup-page .brightup-hero-visual {
+        min-height: 520px;
+        justify-items: start;
+    }
+
+    body.brightup-page .brightup-float-card-one {
+        left: 18rem;
+        top: 18%;
+    }
+
+    body.brightup-page .brightup-float-card-two {
+        right: auto;
+        left: 2rem;
+        bottom: 8%;
+    }
+
+    body.brightup-page .brightup-response-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    body.brightup-page .brightup-response-grid article:nth-child(3) {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid var(--bu-line);
+    }
+
+    body.brightup-page .brightup-response-grid article:nth-child(4) {
+        border-top: 1px solid var(--bu-line);
+    }
+
+    body.brightup-page .brightup-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 420px 250px;
+    }
+
+    body.brightup-page .brightup-gallery-main {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 720px) {
+    body.brightup-page .brightup-hero {
+        min-height: auto;
+        padding: 8rem 0 5rem;
+    }
+
+    body.brightup-page .brightup-hero-visual {
+        min-height: 470px;
+    }
+
+    body.brightup-page .brightup-phone {
+        width: min(330px, 94%);
+        transform: none;
+    }
+
+    body.brightup-page .brightup-float-card {
+        display: none;
+    }
+
+    body.brightup-page .brightup-brief-grid,
+    body.brightup-page .brightup-gallery-heading,
+    body.brightup-page .brightup-development-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.brightup-page .brightup-insight-carousel {
+        height: 390px;
+    }
+
+    body.brightup-page .brightup-response-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.brightup-page .brightup-response-grid article,
+    body.brightup-page .brightup-response-grid article:first-child,
+    body.brightup-page .brightup-response-grid article:nth-child(3),
+    body.brightup-page .brightup-response-grid article:nth-child(4) {
+        padding: 1.8rem 0;
+        border-left: 0;
+        border-top: 1px solid var(--bu-line);
+    }
+
+    body.brightup-page .brightup-gallery-heading > p {
+        justify-self: start;
+    }
+
+    body.brightup-page .brightup-gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+
+    body.brightup-page .brightup-gallery-main {
+        grid-column: auto;
+    }
+
+    body.brightup-page .brightup-gallery-grid figure {
+        height: 260px;
+    }
+
+    body.brightup-page .brightup-development-image {
+        height: 250px;
+    }
+
+    body.brightup-page .nav-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    body.brightup-page .nav-btn,
+    body.brightup-page .nav-btn.back,
+    body.brightup-page .nav-btn.next {
+        width: 100%;
+        justify-self: stretch;
+        justify-content: space-between;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.brightup-page *,
+    body.brightup-page *::before,
+    body.brightup-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .001ms !important;
+        transition-duration: .001ms !important;
+    }
+}
