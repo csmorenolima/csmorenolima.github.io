@@ -51,8 +51,7 @@ body.scaar-page h3 {
     font-family: "Space Grotesk", "Inter", sans-serif;
 }
 
-body.scaar-page .nomad-kicker,
-body.scaar-page .nomad-overline {
+body.scaar-page .nomad-kicker {
     margin: 0 0 .8rem;
     color: var(--nomad-rust);
     font-size: .72rem;
@@ -120,12 +119,17 @@ body.scaar-page .nomad-hero-inner {
     align-items: end;
 }
 
-body.scaar-page .nomad-hero-copy {
-    max-width: 800px;
+body.scaar-page .nomad-hero-logo {
+    width: min(24vw, 180px);
+    max-width: 180px;
+    height: auto;
+    justify-self: end;
+    align-self: end;
+    object-fit: contain;
 }
 
-body.scaar-page .nomad-overline {
-    color: #e1c09c;
+body.scaar-page .nomad-hero-copy {
+    max-width: 800px;
 }
 
 body.scaar-page .nomad-hero h1 {
@@ -196,39 +200,6 @@ body.scaar-page .nomad-button-glass:hover {
     background: rgba(255,255,255,.14);
 }
 
-body.scaar-page .nomad-hero-index {
-    width: 230px;
-    display: grid;
-    gap: 0;
-    border-top: 1px solid rgba(255,255,255,.24);
-    border-bottom: 1px solid rgba(255,255,255,.24);
-}
-
-body.scaar-page .nomad-hero-index div {
-    display: grid;
-    grid-template-columns: 36px 1fr;
-    gap: .7rem;
-    padding: .9rem 0;
-    border-top: 1px solid rgba(255,255,255,.12);
-}
-
-body.scaar-page .nomad-hero-index div:first-child {
-    border-top: 0;
-}
-
-body.scaar-page .nomad-hero-index span {
-    color: #d5a16e;
-    font-size: .67rem;
-    font-weight: 800;
-}
-
-body.scaar-page .nomad-hero-index p {
-    margin: 0;
-    color: rgba(255,255,255,.7);
-    font-size: .76rem;
-    line-height: 1.45;
-}
-
 /* =========================================================
    Intro / facts
    ========================================================= */
@@ -254,13 +225,6 @@ body.scaar-page .nomad-intro-mark {
     border: 1px solid var(--nomad-line);
     border-radius: 26px;
     background: #ded4c6;
-}
-
-body.scaar-page .nomad-intro-mark img {
-    width: min(170px, 70%);
-    max-height: 74px;
-    object-fit: contain;
-    object-position: left center;
 }
 
 body.scaar-page .nomad-intro-mark span {
@@ -804,120 +768,121 @@ body.scaar-page #gallery-lightbox-desc {
 }
 
 @media (max-width: 720px) {
-    body.scaar-page .nomad-hero {
-        min-height: 820px;
-        padding: 8rem 0 3.5rem;
-    }
+  body.scaar-page .nomad-hero {
+      min-height: 820px;
+      padding: 8rem 0 3.5rem;
+  }
 
-    body.scaar-page .nomad-hero-image {
-        background-position: 62% center;
-    }
+  body.scaar-page .nomad-hero-image {
+      background-position: 62% center;
+  }
 
-    body.scaar-page .nomad-hero-shade {
-        background:
-            linear-gradient(180deg,
-                rgba(10,12,12,.48),
-                rgba(10,12,12,.7) 45%,
-                rgba(10,12,12,.94));
-    }
+  body.scaar-page .nomad-hero-shade {
+    background: linear-gradient(180deg,rgba(10,12,12,.48), rgba(10,12,12,.7) 45%,rgba(10,12,12,.94));
+  }
 
-    body.scaar-page .nomad-hero h1 {
-        font-size: clamp(5.2rem, 28vw, 8rem);
-    }
+  body.scaar-page .nomad-hero h1 {
+      font-size: clamp(5.2rem, 28vw, 8rem);
+  }
 
-    body.scaar-page .nomad-hero-index {
-        grid-template-columns: 1fr;
-    }
+  body.scaar-page .nomad-hero-logo {
+      width: min(34vw, 180px);
+      max-width: 180px;
+  }
 
-    body.scaar-page .nomad-hero-index div,
-    body.scaar-page .nomad-hero-index div:first-child {
-        grid-template-columns: 34px 1fr;
-        padding: .75rem 0;
-        border-left: 0;
-        border-top: 1px solid rgba(255,255,255,.12);
-    }
+  body.scaar-page .nomad-hero-index {
+      grid-template-columns: 1fr;
+  }
 
-    body.scaar-page .nomad-intro-grid,
-    body.scaar-page .nomad-brief-grid,
-    body.scaar-page .nomad-gallery-heading {
-        grid-template-columns: 1fr;
-    }
+  body.scaar-page .nomad-hero-index div,
+  body.scaar-page .nomad-hero-index div:first-child {
+      grid-template-columns: 34px 1fr;
+      padding: .75rem 0;
+      border-left: 0;
+      border-top: 1px solid rgba(255,255,255,.12);
+  }
 
-    body.scaar-page .nomad-intro-mark {
-        min-height: 190px;
-    }
+  body.scaar-page .nomad-intro-grid,
+  body.scaar-page .nomad-brief-grid,
+  body.scaar-page .nomad-gallery-heading {
+      grid-template-columns: 1fr;
+  }
 
-    body.scaar-page .nomad-facts {
-        grid-template-columns: 1fr;
-        row-gap: 0;
-    }
+  body.scaar-page .nomad-intro-mark {
+      min-height: 190px;
+  }
 
-    body.scaar-page .nomad-facts > div,
-    body.scaar-page .nomad-facts > div:first-child {
-        padding: 1rem 0;
-        border-left: 0;
-        border-top: 1px solid var(--nomad-line);
-    }
+  body.scaar-page .nomad-facts {
+      grid-template-columns: 1fr;
+      row-gap: 0;
+  }
 
-    body.scaar-page .nomad-brief-copy {
-        grid-column: auto;
-    }
+  body.scaar-page .nomad-facts > div,
+  body.scaar-page .nomad-facts > div:first-child {
+      padding: 1rem 0;
+      border-left: 0;
+      border-top: 1px solid var(--nomad-line);
+  }
 
-    body.scaar-page .nomad-benefit-track {
-        grid-template-columns: 1fr;
-    }
+  body.scaar-page .nomad-brief-copy {
+      grid-column: auto;
+  }
 
-    body.scaar-page .nomad-benefit,
-    body.scaar-page .nomad-benefit:first-child,
-    body.scaar-page .nomad-benefit:nth-child(3),
-    body.scaar-page .nomad-benefit:nth-child(4) {
-        padding: 1.8rem 0;
-        border-left: 0;
-        border-top: 1px solid var(--nomad-line);
-    }
+  body.scaar-page .nomad-benefit-track {
+      grid-template-columns: 1fr;
+  }
 
-    body.scaar-page .nomad-gallery-heading > p {
-        justify-self: start;
-    }
+  body.scaar-page .nomad-benefit,
+  body.scaar-page .nomad-benefit:first-child,
+  body.scaar-page .nomad-benefit:nth-child(3),
+  body.scaar-page .nomad-benefit:nth-child(4) {
+      padding: 1.8rem 0;
+      border-left: 0;
+      border-top: 1px solid var(--nomad-line);
+  }
 
-    body.scaar-page .nomad-gallery-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
-    }
+  body.scaar-page .nomad-gallery-heading > p {
+      justify-self: start;
+  }
 
-    body.scaar-page .nomad-gallery-grid .nomad-gallery-main {
-        grid-column: auto;
-    }
+  body.scaar-page .nomad-gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: none;
+  }
 
-    body.scaar-page .nomad-gallery-grid figure {
-        height: 260px;
-    }
+  body.scaar-page .nomad-gallery-grid .nomad-gallery-main {
+      grid-column: auto;
+  }
 
-    body.scaar-page .nomad-process-list li {
-        grid-template-columns: 54px minmax(0, 1fr);
-        gap: 1rem;
-    }
+  body.scaar-page .nomad-gallery-grid figure {
+      height: 260px;
+  }
 
-    body.scaar-page .nomad-carousel-btn {
-        display: none;
-    }
+  body.scaar-page .nomad-process-list li {
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 1rem;
+  }
 
-    body.scaar-page .nomad-cad-card {
-        flex-basis: min(84vw, 360px);
-    }
+  body.scaar-page .nomad-carousel-btn {
+      display: none;
+  }
 
-    body.scaar-page .nav-buttons {
-        grid-template-columns: 1fr;
-    }
+  body.scaar-page .nomad-cad-card {
+      flex-basis: min(84vw, 360px);
+  }
 
-    body.scaar-page .nav-btn,
-    body.scaar-page .nav-btn.back,
-    body.scaar-page .nav-btn.next {
-        width: 100%;
-        justify-self: stretch;
-        justify-content: space-between;
-    }
+  body.scaar-page .nav-buttons {
+      grid-template-columns: 1fr;
+  }
+
+  body.scaar-page .nav-btn,
+  body.scaar-page .nav-btn.back,
+  body.scaar-page .nav-btn.next {
+      width: 100%;
+      justify-self: stretch;
+      justify-content: space-between;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1127,12 +1092,9 @@ body.scaar-page .nomad-intro-grid {
 body.scaar-page .nomad-intro-brand {
     align-self: stretch;
     min-height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     padding: 1.7rem 0;
     border-top: 1px solid var(--nomad-line);
-    border-bottom: 1px solid var(--nomad-line);
+    align-items: center;
 }
 
 body.scaar-page .nomad-intro-brand img {
