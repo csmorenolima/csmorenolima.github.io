@@ -20,20 +20,14 @@
     <link rel="stylesheet" href="../assets/css/drop-mini.css">
 </head>
 <body class="dropmini-page" data-project="drop-mini">
-    <a class="dm-skip-link" href="#main-content">Skip to main content</a>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="header">
         <nav class="nav" aria-label="Primary navigation">
-            <a href="../targetPortfolio/test.html#home" class="logo">PORTFOLIO</a>
-
-            <button class="mobile-menu-btn"
-                    type="button"
-                    aria-label="Open navigation menu"
-                    aria-controls="primary-navigation"
-                    aria-expanded="false">
+            <a href="../targetPortfolio/test.html#home" class="logo" aria-label="Carla Sofia Lima portfolio home">PORTFOLIO</a>
+            <button class="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-
             <ul class="nav-links" id="primary-navigation">
                 <li><a href="../targetPortfolio/test.html#home">Home</a></li>
                 <li><a href="../targetPortfolio/test.html#about">About</a></li>
@@ -42,7 +36,7 @@
                         My work <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </button>
                     <ul class="dropdown-menu" aria-label="Project categories">
-                        <li><a href="../product-design/">Product design</a></li>
+                        <li><a href="../product-design/" aria-current="page">Product design</a></li>
                         <li><a href="../engineering/">Engineering</a></li>
                     </ul>
                 </li>
@@ -53,65 +47,57 @@
 
     <main id="main-content">
         <section class="dm-hero" aria-labelledby="page-title">
-            <div class="dm-hero-fluid dm-fluid-top" aria-hidden="true"></div>
-            <div class="dm-hero-fluid dm-fluid-bottom" aria-hidden="true"></div>
+            <div class="dm-liquid-ribbon dm-liquid-ribbon-a" aria-hidden="true"></div>
+            <div class="dm-liquid-ribbon dm-liquid-ribbon-b" aria-hidden="true"></div>
 
-            <div class="container dm-hero-layout">
+            <div class="dm-hero-inner">
                 <div class="dm-hero-copy">
                     <p class="dm-eyebrow">BASS · PORTABLE AUDIO</p>
-                    <img class="dm-logo" src="../assets/bass-logo.png" alt="BASS logo">
 
-                    <h1 id="page-title">Drop Mini</h1>
+                    <h1 id="page-title">Drop <span class="dm-title-mini">Mini</span></h1>
 
                     <p class="dm-tagline">Soft in form. Full in sound.</p>
 
                     <p class="dm-summary">
-                        A compact wireless speaker shaped around the soft geometry of a water droplet —
-                        designed to go anywhere and sound beautiful.
+                        A compact wireless speaker shaped around the soft geometry of a water droplet,
+                        designed to travel easily and sound confident.
                     </p>
 
                     <div class="dm-actions">
                         <a class="dm-btn dm-btn-primary" href="#overview">
                             Explore Drop Mini
-                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                         </a>
 
                         <a class="dm-btn dm-btn-secondary"
                            href="https://lsbu1974.autodesk360.com/shares/public/SH28cd1QT2badd0ea72b0c51a647bf7778b6?mode=embed"
                            target="_blank"
-                           rel="noreferrer noopener">
+                           rel="noreferrer noopener"
+                           aria-label="View Drop Mini 3D model in a new tab">
                             <i class="fa-solid fa-cube" aria-hidden="true"></i>
                             View in 3D
                         </a>
                     </div>
                 </div>
 
-                <div class="dm-product-stage">
-                    <div class="dm-water-ripples" aria-hidden="true">
-                        <i></i><i></i><i></i><i></i><i></i>
-                    </div>
+                <div class="dm-product-scene" aria-label="Blue Drop Mini portable speaker">
+                    <div class="dm-product-aura" aria-hidden="true"></div>
 
-                    <div class="dm-water-glow" aria-hidden="true"></div>
+                    <div class="dm-floating-droplet dm-droplet-1" aria-hidden="true"></div>
+                    <div class="dm-floating-droplet dm-droplet-2" aria-hidden="true"></div>
+                    <div class="dm-floating-droplet dm-droplet-3" aria-hidden="true"></div>
+                    <div class="dm-floating-droplet dm-droplet-4" aria-hidden="true"></div>
+                    <div class="dm-floating-droplet dm-droplet-5" aria-hidden="true"></div>
+                    <div class="dm-floating-droplet dm-droplet-6" aria-hidden="true"></div>
 
                     <img class="dm-hero-product-image"
                          src="../assets/drop-mini-product-blue-cutout.png"
                          alt="Blue Drop Mini portable speaker">
-                </div>
 
-                <div class="dm-spec-bar" aria-label="Key product specifications">
-                    <div>
-                        <span class="dm-spec-icon"><i class="fa-solid fa-battery-three-quarters" aria-hidden="true"></i></span>
-                        <p><strong>12 h</strong><small>Battery life</small></p>
-                    </div>
+                    <div class="dm-product-shadow" aria-hidden="true"></div>
 
-                    <div>
-                        <span class="dm-spec-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></span>
-                        <p><strong>IPX5</strong><small>Splash resistance</small></p>
-                    </div>
-
-                    <div>
-                        <span class="dm-spec-icon"><i class="fa-brands fa-bluetooth-b" aria-hidden="true"></i></span>
-                        <p><strong>Bluetooth 5.0</strong><small>Stable connection</small></p>
+                    <div class="dm-ripple-stack" aria-hidden="true">
+                        <i></i><i></i><i></i><i></i><i></i><i></i>
                     </div>
                 </div>
             </div>
@@ -126,18 +112,39 @@
 
                 <div class="dm-overview-copy">
                     <p>
-                        Unlike the more immersive, emotional direction of the Sensation 360 page,
-                        Drop Mini should feel lighter, friendlier and more everyday. The core idea
-                        is not spectacle — it is a compact object with a memorable shape.
+                        Drop Mini was designed to feel lighter and friendlier than a typical audio product.
+                        The compact form keeps the object approachable while still giving it enough presence
+                        to feel memorable.
                     </p>
                     <p>
-                        The water-droplet silhouette helps communicate approachability and portability,
-                        while the product features focus on bass, battery, touch control, splash
-                        resistance and easy use on the go.
+                        The water-droplet silhouette communicates portability, while the feature set keeps the
+                        product grounded in bass, battery life, touch control, splash resistance and easy use.
                     </p>
                 </div>
             </div>
         </section>
+
+        <section class="dm-highlights" aria-label="Drop Mini product highlights">
+            <div class="container dm-highlight-grid">
+                <article>
+                    <span class="dm-highlight-icon"><i class="fa-solid fa-battery-full" aria-hidden="true"></i></span>
+                    <div><strong>12 h</strong><small>Battery life</small></div>
+                </article>
+                <article>
+                    <span class="dm-highlight-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></span>
+                    <div><strong>IPX5</strong><small>Splash resistant</small></div>
+                </article>
+                <article>
+                    <span class="dm-highlight-icon"><i class="fa-solid fa-wave-square" aria-hidden="true"></i></span>
+                    <div><strong>40 mm</strong><small>Full-range driver</small></div>
+                </article>
+                <article>
+                    <span class="dm-highlight-icon"><i class="fa-solid fa-feather" aria-hidden="true"></i></span>
+                    <div><strong>Compact</strong><small>Light &amp; portable</small></div>
+                </article>
+            </div>
+        </section>
+
 
         <section class="dm-principles" aria-labelledby="principles-title">
             <div class="container">
@@ -148,36 +155,21 @@
 
                 <div class="dm-principle-grid">
                     <article class="dm-principle-card">
-                        <div class="dm-principle-icon">
-                            <i class="fa-solid fa-droplet" aria-hidden="true"></i>
-                        </div>
+                        <div class="dm-principle-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
                         <h3>Droplet identity</h3>
-                        <p>
-                            The curved silhouette gives the speaker a softer personality and
-                            makes the concept immediately distinctive.
-                        </p>
+                        <p>The curved silhouette gives the speaker a softer personality and makes it immediately distinctive.</p>
                     </article>
 
                     <article class="dm-principle-card">
-                        <div class="dm-principle-icon">
-                            <i class="fa-solid fa-hand" aria-hidden="true"></i>
-                        </div>
+                        <div class="dm-principle-icon"><i class="fa-solid fa-hand" aria-hidden="true"></i></div>
                         <h3>Small in the hand</h3>
-                        <p>
-                            The compact size is central to the concept. It should feel light,
-                            portable and easy to pick up, carry and place anywhere.
-                        </p>
+                        <p>The compact size is central to the concept. It should feel light, portable and easy to place anywhere.</p>
                     </article>
 
                     <article class="dm-principle-card">
-                        <div class="dm-principle-icon">
-                            <i class="fa-solid fa-water" aria-hidden="true"></i>
-                        </div>
+                        <div class="dm-principle-icon"><i class="fa-solid fa-water" aria-hidden="true"></i></div>
                         <h3>Made for everyday use</h3>
-                        <p>
-                            Splash resistance and a simple interface support the idea of a
-                            product that fits naturally into day-to-day life.
-                        </p>
+                        <p>Splash resistance and a simple interface support a product that fits naturally into day-to-day life.</p>
                     </article>
                 </div>
             </div>
@@ -189,9 +181,8 @@
                     <p class="dm-kicker">Product experience</p>
                     <h2 id="features-title">Small body, full feature set.</h2>
                     <p>
-                        Drop Mini is designed to feel playful and practical at the same time.
-                        The feature set supports portable listening rather than overwhelming the
-                        page with high-tech drama.
+                        Drop Mini is designed to feel playful and practical at the same time. The feature set supports
+                        portable listening rather than overwhelming the page with high-tech drama.
                     </p>
                 </div>
 
@@ -243,80 +234,41 @@
                         <h2 id="colours-title">One droplet, six moods.</h2>
                     </div>
                     <p>
-                        The rounded form stays constant, while the colour shifts the product
-                        from understated to playful.
+                        The rounded form stays constant, while each finish shifts the personality
+                        of the speaker.
                     </p>
                 </div>
 
-                <div class="dm-colour-viewer">
-                    <figure class="dm-colour-stage">
-                        <div class="dm-colour-stage-drop">
-                            <img id="dm-main-image"
-                                 src="../assets/bass-speakers-black.jpg"
-                                 alt="Black Drop Mini speaker">
-                        </div>
-                        <figcaption class="dm-colour-caption">
-                            <span id="dm-colour-index">01 / 06</span>
-                            <strong id="dm-colour-name">Black</strong>
-                            <small>Compact wireless speaker</small>
-                        </figcaption>
+                <div class="dm-colour-gallery">
+                    <figure class="dm-colour-tile dm-colour-tile-featured">
+                        <img src="../assets/bass-speakers-black.jpg" alt="Black Drop Mini speaker" class="dm-lightbox-img" loading="lazy">
+                        <figcaption><span>01</span><strong>Black</strong></figcaption>
                     </figure>
 
-                    <div class="dm-colour-thumbs" aria-label="Choose a colour">
-                        <button class="dm-thumb active" type="button"
-                                data-src="../assets/bass-speakers-black.jpg"
-                                data-name="Black"
-                                data-index="01 / 06"
-                                data-alt="Black Drop Mini speaker">
-                            <img src="../assets/bass-speakers-black.jpg" alt="">
-                            <span>Black</span>
-                        </button>
+                    <figure class="dm-colour-tile">
+                        <img src="../assets/bass-speakers-blue.jpg" alt="Blue Drop Mini speaker" class="dm-lightbox-img" loading="lazy">
+                        <figcaption><span>02</span><strong>Blue</strong></figcaption>
+                    </figure>
 
-                        <button class="dm-thumb" type="button"
-                                data-src="../assets/bass-speakers-silver.jpg"
-                                data-name="Silver"
-                                data-index="02 / 06"
-                                data-alt="Silver Drop Mini speaker">
-                            <img src="../assets/bass-speakers-silver.jpg" alt="">
-                            <span>Silver</span>
-                        </button>
+                    <figure class="dm-colour-tile">
+                        <img src="../assets/bass-speakers-silver.jpg" alt="Silver Drop Mini speaker" class="dm-lightbox-img" loading="lazy">
+                        <figcaption><span>03</span><strong>Silver</strong></figcaption>
+                    </figure>
 
-                        <button class="dm-thumb" type="button"
-                                data-src="../assets/bass-speakers-blue.jpg"
-                                data-name="Blue"
-                                data-index="03 / 06"
-                                data-alt="Blue Drop Mini speaker">
-                            <img src="../assets/bass-speakers-blue.jpg" alt="">
-                            <span>Blue</span>
-                        </button>
+                    <figure class="dm-colour-tile">
+                        <img src="../assets/bass-speakers-red.png" alt="Red Drop Mini speaker" class="dm-lightbox-img" loading="lazy">
+                        <figcaption><span>04</span><strong>Red</strong></figcaption>
+                    </figure>
 
-                        <button class="dm-thumb" type="button"
-                                data-src="../assets/bass-speakers-red.png"
-                                data-name="Red"
-                                data-index="04 / 06"
-                                data-alt="Red Drop Mini speaker">
-                            <img src="../assets/bass-speakers-red.png" alt="">
-                            <span>Red</span>
-                        </button>
+                    <figure class="dm-colour-tile">
+                        <img src="../assets/bass-speakers-yellow.jpg" alt="Yellow Drop Mini speaker" class="dm-lightbox-img" loading="lazy">
+                        <figcaption><span>05</span><strong>Yellow</strong></figcaption>
+                    </figure>
 
-                        <button class="dm-thumb" type="button"
-                                data-src="../assets/bass-speakers-yellow.jpg"
-                                data-name="Yellow"
-                                data-index="05 / 06"
-                                data-alt="Yellow Drop Mini speaker">
-                            <img src="../assets/bass-speakers-yellow.jpg" alt="">
-                            <span>Yellow</span>
-                        </button>
-
-                        <button class="dm-thumb" type="button"
-                                data-src="../assets/bass-speakers-orange.jpg"
-                                data-name="Orange"
-                                data-index="06 / 06"
-                                data-alt="Orange Drop Mini speaker">
-                            <img src="../assets/bass-speakers-orange.jpg" alt="">
-                            <span>Orange</span>
-                        </button>
-                    </div>
+                    <figure class="dm-colour-tile">
+                        <img src="../assets/bass-speakers-orange.jpg" alt="Orange Drop Mini speaker" class="dm-lightbox-img" loading="lazy">
+                        <figcaption><span>06</span><strong>Orange</strong></figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -327,8 +279,8 @@
                     <p class="dm-kicker">Details</p>
                     <h2 id="gallery-title">A softer product language, carried through the details.</h2>
                     <p>
-                        The rear view and controls show how ports, interaction points and hardware
-                        are integrated without losing the simple, compact personality of the product.
+                        The rear view and controls show how ports, interaction points and hardware are integrated without
+                        losing the simple, compact personality of the product.
                     </p>
                 </div>
 
@@ -386,13 +338,13 @@
         <section class="project-navigation" aria-label="Project navigation">
             <div class="container nav-buttons">
                 <a href="../product-design/" class="nav-btn back">
-                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                    <span><small>Return to</small>Product Design</span>
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="nav-btn-copy"><small>Return to</small><strong>Product Design</strong></span>
                 </a>
 
                 <a href="../honecomb/" class="nav-btn next">
-                    <span><small>Next project</small>HonEcomb</span>
-                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    <span class="nav-btn-copy"><small>Next project</small><strong>HonEcomb</strong></span>
+                    <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </section>
@@ -415,15 +367,15 @@
 
                 <div class="footer-section">
                     <h3>OfficialMV</h3>
-                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank">RedBubble</a>
-                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank">Instagram</a>
-                    <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank">TikTok</a>
+                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank" rel="noreferrer noopener">RedBubble</a>
+                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank" rel="noreferrer noopener">Instagram</a>
+                    <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank" rel="noreferrer noopener">TikTok</a>
                 </div>
 
                 <div class="footer-section">
                     <h3>Social</h3>
-                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/csmorenolima" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+                    <a href="https://github.com/csmorenolima" target="_blank" rel="noreferrer noopener">GitHub</a>
                 </div>
             </div>
 
@@ -434,29 +386,13 @@
     </footer>
 
     <script src="../assets/js/navigation.js"></script>
+
     <script>
         (() => {
             "use strict";
 
             const year = document.getElementById("current-year");
             if (year) year.textContent = String(new Date().getFullYear());
-
-            const mainImage = document.getElementById("dm-main-image");
-            const nameLabel = document.getElementById("dm-colour-name");
-            const indexLabel = document.getElementById("dm-colour-index");
-            const thumbs = document.querySelectorAll(".dm-thumb");
-
-            thumbs.forEach((button) => {
-                button.addEventListener("click", () => {
-                    thumbs.forEach((item) => item.classList.remove("active"));
-                    button.classList.add("active");
-
-                    mainImage.src = button.dataset.src;
-                    mainImage.alt = button.dataset.alt;
-                    nameLabel.textContent = button.dataset.name;
-                    indexLabel.textContent = button.dataset.index;
-                });
-            });
 
             const lightbox = document.getElementById("dm-lightbox");
             const lightboxImage = document.getElementById("dm-lightbox-image");
