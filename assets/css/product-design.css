@@ -271,6 +271,7 @@ body[data-category="product-design"] .project-image {
 
 body[data-category="product-design"] .project-image[style*="brightup-logo-thumbnail"],
 body[data-category="product-design"] .project-image[style*="enova-logo-thumbnail"],
+body[data-category="product-design"] .project-image[style*="bass-logo"],
 body[data-category="product-design"] .project-image[style*="scaarLogo"] {
   background-size: contain !important;
 }

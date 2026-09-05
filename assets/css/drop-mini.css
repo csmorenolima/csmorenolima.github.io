@@ -1636,3 +1636,416 @@ body.dropmini-page .project-navigation .nav-btn:hover {
         justify-content: space-between;
     }
 }
+
+
+/* =========================================================
+   NUMBERING CLEANUP
+   Decorative numbering removed where it did not add meaning.
+   ========================================================= */
+
+body.dropmini-page .dm-feature-list article > span {
+    display: none !important;
+}
+
+body.dropmini-page .dm-colour-tile figcaption {
+    gap: 0;
+}
+
+body.dropmini-page .dm-colour-tile figcaption span {
+    display: none !important;
+}
+
+body.dropmini-page .dm-colour-tile figcaption strong {
+    font-size: .86rem;
+    letter-spacing: .01em;
+}
+
+
+/* =========================================================
+   COLOURWAYS + LIGHTBOX — matched to HonEcomb interaction
+   ========================================================= */
+
+/* Same warm gallery field and simple image-led layout language as HonEcomb */
+body.dropmini-page .dm-colours {
+    padding: clamp(6rem, 9vw, 9rem) 0;
+    background: #eee9df;
+}
+
+body.dropmini-page .dm-colours .dm-section-heading-split {
+    display: grid;
+    grid-template-columns: 1fr .62fr;
+    gap: 3rem;
+    align-items: end;
+    margin-bottom: 3rem;
+}
+
+body.dropmini-page .dm-colours .dm-section-heading-split > p {
+    color: #70766f;
+    line-height: 1.8;
+}
+
+/* Honecomb uses 1.4fr / .8fr / .8fr and 290px rows */
+body.dropmini-page .dm-colour-gallery {
+    display: grid;
+    grid-template-columns: 1.4fr .8fr .8fr;
+    grid-template-rows: repeat(3, 290px);
+    gap: 1rem;
+}
+
+body.dropmini-page .dm-colour-tile,
+body.dropmini-page .dm-colour-tile-featured,
+body.dropmini-page .dm-colour-tile:nth-child(n) {
+    position: relative;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 20px;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* First image gets the same tall "big" role as HonEcomb */
+body.dropmini-page .dm-colour-tile-featured {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+body.dropmini-page .dm-colour-tile:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+body.dropmini-page .dm-colour-tile:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+body.dropmini-page .dm-colour-tile:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+body.dropmini-page .dm-colour-tile:nth-child(5) {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+/* Sixth colour becomes the closing wide image while keeping the same gallery language */
+body.dropmini-page .dm-colour-tile:nth-child(6) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+body.dropmini-page .dm-colour-tile img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: zoom-in;
+    transform: none;
+    transition: none;
+}
+
+/* Keep colour names, but visually quiet so imagery remains primary */
+body.dropmini-page .dm-colour-tile figcaption {
+    position: absolute;
+    left: .9rem;
+    bottom: .9rem;
+    display: inline-flex;
+    align-items: center;
+    padding: .58rem .8rem;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(18, 24, 22, .78);
+    backdrop-filter: blur(8px);
+}
+
+body.dropmini-page .dm-colour-tile figcaption strong {
+    color: #fff;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+/* Exact HonEcomb-style dark modal */
+body.dropmini-page .dm-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: rgba(0, 0, 0, .9);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    backdrop-filter: none;
+}
+
+body.dropmini-page .dm-lightbox.is-open {
+    display: flex;
+}
+
+body.dropmini-page .dm-lightbox > img,
+body.dropmini-page #dm-lightbox-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 82vh;
+    border-radius: 16px;
+    box-shadow: none;
+    object-fit: contain;
+}
+
+body.dropmini-page .dm-lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 2;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+body.dropmini-page .dm-lightbox-close:hover {
+    background: none;
+    color: #fff;
+    transform: none;
+}
+
+/* HonEcomb gallery responsive behavior */
+@media (max-width: 900px) {
+    body.dropmini-page .dm-colour-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 420px 250px 250px 250px;
+    }
+
+    body.dropmini-page .dm-colour-tile-featured {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    body.dropmini-page .dm-colour-tile:nth-child(2),
+    body.dropmini-page .dm-colour-tile:nth-child(3),
+    body.dropmini-page .dm-colour-tile:nth-child(4),
+    body.dropmini-page .dm-colour-tile:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    body.dropmini-page .dm-colour-tile:nth-child(6) {
+        grid-column: 1 / span 2;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    body.dropmini-page .dm-colours .dm-section-heading-split,
+    body.dropmini-page .dm-colour-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-colour-gallery {
+        grid-template-rows: none;
+    }
+
+    body.dropmini-page .dm-colour-tile,
+    body.dropmini-page .dm-colour-tile-featured,
+    body.dropmini-page .dm-colour-tile:nth-child(n) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    body.dropmini-page .dm-colour-tile img {
+        height: 260px;
+    }
+
+    body.dropmini-page .dm-lightbox-close {
+        top: 1.25rem;
+        right: 1.25rem;
+    }
+}
+
+
+/* =========================================================
+   COLOURWAYS — featured image zoom + section colour fix
+   ========================================================= */
+
+/* Match the hero primary button colour */
+body.dropmini-page .dm-colours {
+    background: linear-gradient(135deg, #4c8ee3 0%, #286fcf 100%);
+}
+
+/* Keep the heading readable on the blue field */
+body.dropmini-page .dm-colours .dm-kicker {
+    color: rgba(255,255,255,.72);
+}
+
+body.dropmini-page .dm-colours .dm-section-heading h2,
+body.dropmini-page .dm-colours .dm-section-heading-split > p {
+    color: #fff;
+}
+
+/*
+   The earlier gallery rule sets every image to object-fit: cover.
+   This selector is deliberately more specific and comes later,
+   so the large featured tile shows the FULL image instead of cropping it.
+*/
+body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured {
+    background: rgba(255,255,255,.12);
+}
+
+body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    object-fit: contain;
+    object-position: center center;
+    border-radius: 20px;
+}
+
+/* Slight inset so the full render has breathing room without changing the image edges */
+body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: 20px;
+    background: rgba(255,255,255,.06);
+    pointer-events: none;
+}
+
+body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > img,
+body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > figcaption {
+    position: relative;
+    z-index: 1;
+}
+
+body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > figcaption {
+    position: absolute;
+}
+
+
+/* =========================================================
+   COLOURWAYS — corrected proportions for landscape renders
+   Keeps HonEcomb's clean gallery language without forcing
+   a landscape speaker render into a tall portrait tile.
+   ========================================================= */
+
+body.dropmini-page .dm-colour-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: 280px 240px 250px;
+    gap: 1rem;
+}
+
+/* Black is the featured image, but stays landscape instead of becoming a tall box */
+body.dropmini-page .dm-colour-tile-featured {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+/* Blue completes the first row */
+body.dropmini-page .dm-colour-tile:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* Three equal landscape tiles */
+body.dropmini-page .dm-colour-tile:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+body.dropmini-page .dm-colour-tile:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+body.dropmini-page .dm-colour-tile:nth-child(5) {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+/* Closing wide image */
+body.dropmini-page .dm-colour-tile:nth-child(6) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+/* All of these renders are naturally landscape, so let the tile proportions do the work */
+body.dropmini-page .dm-colour-gallery .dm-colour-tile > img,
+body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 20px;
+}
+
+/* Remove the artificial inset/letterbox treatment added to the featured tile */
+body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured {
+    background: transparent;
+}
+
+body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured::before {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    body.dropmini-page .dm-colour-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 240px 240px 240px;
+    }
+
+    body.dropmini-page .dm-colour-tile-featured {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    body.dropmini-page .dm-colour-tile:nth-child(2),
+    body.dropmini-page .dm-colour-tile:nth-child(3),
+    body.dropmini-page .dm-colour-tile:nth-child(4),
+    body.dropmini-page .dm-colour-tile:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    body.dropmini-page .dm-colour-tile:nth-child(6) {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    body.dropmini-page .dm-colour-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+
+    body.dropmini-page .dm-colour-tile,
+    body.dropmini-page .dm-colour-tile-featured,
+    body.dropmini-page .dm-colour-tile:nth-child(n) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    body.dropmini-page .dm-colour-gallery .dm-colour-tile > img,
+    body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > img {
+        height: 250px;
+    }
+}
