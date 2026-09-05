@@ -39,22 +39,6 @@ body.s360-page .container {
     margin-inline: auto;
 }
 
-body.s360-page .s360-skip-link {
-    position: fixed;
-    top: .8rem;
-    left: .8rem;
-    z-index: 10000;
-    padding: .7rem 1rem;
-    border-radius: 999px;
-    color: #fff;
-    background: #111;
-    transform: translateY(-180%);
-}
-
-body.s360-page .s360-skip-link:focus {
-    transform: translateY(0);
-}
-
 body.s360-page .s360-kicker {
     margin: 0 0 .8rem;
     color: var(--s360-pink);

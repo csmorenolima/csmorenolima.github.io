@@ -73,24 +73,6 @@ body.soct-page :focus-visible {
     outline-offset: 4px;
 }
 
-body.soct-page .soct-skip-link {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 10050;
-    padding: .8rem 1rem;
-    border-radius: 10px;
-    color: #071018;
-    background: #fff;
-    font-weight: 800;
-    text-decoration: none;
-    transform: translateY(-160%);
-}
-
-body.soct-page .soct-skip-link:focus {
-    transform: translateY(0);
-}
-
 /* Atmospheric background */
 body.soct-page #fog-bg {
     position: fixed;

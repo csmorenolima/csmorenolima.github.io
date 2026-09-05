@@ -1,1480 +1,584 @@
 /* =========================================================
-   DROP MINI PAGE
-   Full-page styling for the product case study
+   DROP MINI — FROM SCRATCH
+   Product-focused case study
    ========================================================= */
 
 body.dropmini-page {
-    --dm-ink: #eef5ff;
-    --dm-ink-soft: #bfd0e7;
-    --dm-muted: #8ea6c4;
-    --dm-primary: #63ddff;
-    --dm-primary-deep: #1590dc;
-    --dm-primary-warm: #99f4e3;
-    --dm-surface: rgba(7, 17, 30, .58);
-    --dm-surface-strong: rgba(10, 22, 39, .84);
-    --dm-surface-soft: rgba(12, 26, 45, .74);
-    --dm-border: rgba(126, 189, 255, .16);
+    --dm-blue: #347bd8;
+    --dm-blue-dark: #245fae;
+    --dm-ink: #11233c;
+    --dm-muted: #647890;
+    --dm-line: rgba(31, 82, 143, .12);
+    --dm-pale: #f7fbff;
+    --dm-pale-blue: #edf5fb;
+    --dm-width: 1480px;
+    --dm-gutter: 4.5rem;
 
-    background:
-        radial-gradient(circle at 16% 14%, rgba(99, 221, 255, .14), transparent 18rem),
-        radial-gradient(circle at 84% 8%, rgba(153, 244, 227, .12), transparent 20rem),
-        radial-gradient(circle at 75% 82%, rgba(21, 144, 220, .18), transparent 24rem),
-        linear-gradient(180deg, #07111e 0%, #091625 56%, #060d16 100%);
+    margin: 0;
     color: var(--dm-ink);
+    background: #fff;
     overflow-x: hidden;
 }
 
+body.dropmini-page .container,
+body.dropmini-page .dm-story,
+body.dropmini-page .dm-form,
+body.dropmini-page .dm-colourways,
+body.dropmini-page .dm-detail,
+body.dropmini-page .dm-spec-ribbon-inner {
+    width: min(var(--dm-width), calc(100% - (var(--dm-gutter) * 2)));
+    margin-inline: auto;
+}
+
+body.dropmini-page .dm-kicker,
+body.dropmini-page .dm-eyebrow {
+    margin: 0 0 .9rem;
+    color: var(--dm-blue);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+}
+
+body.dropmini-page h2 {
+    margin: 0;
+    color: var(--dm-ink);
+    font-family: "Manrope", "Inter", sans-serif;
+    font-size: clamp(2.4rem, 3.7vw, 4.5rem);
+    font-weight: 700;
+    line-height: .98;
+    letter-spacing: -.055em;
+}
+
+/* HERO */
 body.dropmini-page .dm-hero {
-    position: relative;
     min-height: 76vh;
-    padding: 7.6rem 0 3.6rem;
-    overflow: hidden;
-    isolation: isolate;
-    background:
-        radial-gradient(circle at 78% 18%, rgba(99, 221, 255, .18), transparent 24rem),
-        radial-gradient(circle at 11% 77%, rgba(153, 244, 227, .12), transparent 28rem),
-        linear-gradient(145deg, #091422 0%, #0c1d31 50%, #09101b 100%);
-}
-
-body.dropmini-page .dm-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -5;
-    background:
-        radial-gradient(circle at 30% 34%, rgba(99, 221, 255, .12), transparent 22rem),
-        radial-gradient(circle at 74% 58%, rgba(153, 244, 227, .10), transparent 30rem);
-}
-
-body.dropmini-page .dm-liquid-ribbon {
-    position: absolute;
-    z-index: -2;
-    pointer-events: none;
-    border-radius: 50%;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, .86);
-    filter: drop-shadow(0 0 4px rgba(130, 180, 235, .18));
-}
-
-body.dropmini-page .dm-liquid-ribbon::after {
-    content: "";
-    position: absolute;
-    inset: -20px;
-    border-radius: inherit;
-    border: 2px solid rgba(126, 177, 231, .18);
-}
-
-body.dropmini-page .dm-liquid-ribbon-a {
-    width: 930px;
-    height: 390px;
-    right: -190px;
-    top: -200px;
-    border-width: 48px;
-    box-shadow:
-        0 0 0 28px rgba(204, 227, 250, .14),
-        0 0 0 60px rgba(204, 227, 250, .08);
-    transform: rotate(-9deg);
-}
-
-body.dropmini-page .dm-liquid-ribbon-b {
-    width: 930px;
-    height: 360px;
-    right: -170px;
-    bottom: -290px;
-    border-width: 46px;
-    box-shadow:
-        0 0 0 26px rgba(204, 227, 250, .13),
-        0 0 0 58px rgba(204, 227, 250, .07);
-    transform: rotate(5deg);
-}
-
-body.dropmini-page .dm-hero-inner {
-    position: relative;
-    z-index: 2;
-    width: min(1510px, calc(100% - 8.5rem));
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(0, 46%) minmax(0, 54%);
-    align-items: end;
-    gap: 2rem;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 3rem;
+
+    padding:
+        7rem
+        max(var(--dm-gutter), calc((100vw - var(--dm-width)) / 2))
+        3.5rem;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 83% 17%, rgba(76, 158, 227, .19), transparent 24rem),
+        radial-gradient(circle at 15% 78%, rgba(152, 222, 246, .13), transparent 26rem),
+        linear-gradient(145deg, #ffffff 0%, #f7fbff 50%, #e9f4fd 100%);
 }
 
 body.dropmini-page .dm-hero-copy {
-    position: relative;
-    z-index: 2;
-    max-width: 640px;
+    max-width: 620px;
 }
 
 body.dropmini-page .dm-eyebrow {
-    margin: 0 0 2.5rem;
-    color: var(--dm-primary);
-    font-size: .82rem;
-    font-weight: 800;
-    letter-spacing: .31em;
-    text-transform: uppercase;
+    margin-bottom: 1.25rem;
 }
 
 body.dropmini-page .dm-hero h1 {
     margin: 0;
     color: var(--dm-ink);
     font-family: "Manrope", "Inter", sans-serif;
-    font-size: clamp(5.8rem, 7.6vw, 8.8rem);
+    font-size: clamp(5rem, 7vw, 7.9rem);
     font-weight: 500;
-    line-height: .89;
-    letter-spacing: -.075em;
-    text-wrap: balance;
+    line-height: .87;
+    letter-spacing: -.078em;
 }
 
-body.dropmini-page .dm-tagline {
-    margin: 1.45rem 0 1.75rem;
-    color: var(--dm-ink-soft);
+body.dropmini-page .dm-hero h1 span {
+    color: var(--dm-blue);
+}
+
+body.dropmini-page .dm-hero-line {
+    margin: 1.15rem 0 1rem;
+    color: #6884a7;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2rem, 2.5vw, 2.75rem);
-    font-weight: 400;
+    font-size: clamp(1.8rem, 2.2vw, 2.4rem);
     line-height: 1.05;
-    letter-spacing: -.025em;
 }
 
-body.dropmini-page .dm-summary {
-    max-width: 520px;
+body.dropmini-page .dm-hero-intro {
+    max-width: 525px;
     margin: 0;
-    color: #536c92;
-    font-size: 1.05rem;
-    line-height: 1.82;
+    color: var(--dm-muted);
+    font-size: 1rem;
+    line-height: 1.75;
 }
 
-body.dropmini-page .dm-actions {
+body.dropmini-page .dm-hero-actions {
     display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin-top: 2.25rem;
     flex-wrap: wrap;
+    gap: .8rem;
+    margin-top: 1.7rem;
 }
 
-body.dropmini-page .dm-btn {
-    min-height: 58px;
+body.dropmini-page .dm-button {
+    min-height: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: .85rem;
-    padding: .9rem 1.55rem;
+    gap: .65rem;
+    padding: .78rem 1.2rem;
     border-radius: 999px;
+    font-size: .86rem;
+    font-weight: 700;
     text-decoration: none;
-    font-size: .95rem;
-    font-weight: 600;
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+    transition: transform .18s ease, box-shadow .18s ease;
 }
 
-body.dropmini-page .dm-btn:hover {
+body.dropmini-page .dm-button:hover {
     transform: translateY(-2px);
 }
 
-body.dropmini-page .dm-btn-primary {
-    min-width: 244px;
+body.dropmini-page .dm-button-primary {
     color: #fff;
-    border: 1px solid var(--dm-primary);
-    background: linear-gradient(135deg, #2b7ff0, var(--dm-primary-deep));
-    box-shadow: 0 14px 28px rgba(20, 94, 201, .17);
+    background: linear-gradient(135deg, #4c8ee3 0%, #286fcf 100%);
+    box-shadow: 0 10px 22px rgba(40, 111, 207, .15);
 }
 
-body.dropmini-page .dm-btn-secondary {
-    min-width: 190px;
-    color: var(--dm-primary);
-    border: 1.5px solid rgba(13, 94, 208, .45);
-    background: rgba(255, 255, 255, .76);
+body.dropmini-page .dm-button-secondary {
+    color: var(--dm-blue-dark);
+    border: 1px solid rgba(52, 123, 216, .28);
+    background: rgba(255, 255, 255, .82);
 }
 
-body.dropmini-page .dm-spec-cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: .9rem;
-    margin-top: 2.35rem;
-    max-width: 640px;
-}
-
-body.dropmini-page .dm-spec-cards article {
-    display: flex;
-    align-items: center;
-    gap: .95rem;
-    padding: 1rem 1.05rem;
-    border-radius: 20px;
-    background: var(--dm-surface);
-    border: 1px solid var(--dm-border);
-    box-shadow: 0 12px 30px rgba(79, 114, 164, .08);
-}
-
-body.dropmini-page .dm-spec-icon {
-    width: 2.65rem;
-    height: 2.65rem;
-    flex: 0 0 auto;
-    display: inline-grid;
-    place-items: center;
-    border-radius: 50%;
-    color: var(--dm-primary);
-    background: linear-gradient(180deg, rgba(36, 115, 220, .14), rgba(36, 115, 220, .06));
-}
-
-body.dropmini-page .dm-spec-cards strong {
-    display: block;
-    color: var(--dm-ink);
-    font-size: 1rem;
-    font-weight: 800;
-}
-
-body.dropmini-page .dm-spec-cards small {
-    display: block;
-    margin-top: .12rem;
-    color: var(--dm-muted);
-    font-size: .87rem;
-}
-
-body.dropmini-page .dm-product-scene {
+body.dropmini-page .dm-hero-product {
     position: relative;
-    min-height: 560px;
+    min-height: 520px;
     display: grid;
     place-items: center;
 }
 
-body.dropmini-page .dm-product-aura {
+body.dropmini-page .dm-hero-glow {
     position: absolute;
-    z-index: 0;
-    right: -2%;
-    top: 6%;
-    width: 85%;
-    height: 74%;
-    border-radius: 48% 52% 50% 46%;
-    background:
-        radial-gradient(circle at 50% 48%, rgba(99, 221, 255, .20) 0%, rgba(153, 244, 227, .12) 36%, rgba(21, 144, 220, .08) 62%, transparent 76%);
-    filter: blur(8px);
+    width: 78%;
+    height: 60%;
+    border-radius: 50%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(82, 166, 229, .17),
+        rgba(135, 204, 245, .08) 44%,
+        transparent 72%
+    );
+    filter: blur(20px);
 }
 
-body.dropmini-page .dm-hero-product-image {
+body.dropmini-page .dm-hero-product img {
     position: relative;
-    z-index: 4;
-    width: min(100%, 760px);
-    max-height: 450px;
+    z-index: 3;
+    width: min(100%, 770px);
+    max-height: 435px;
     object-fit: contain;
-    transform: translate(5%, -4%) scale(1.07);
-    filter: drop-shadow(0 36px 38px rgba(0, 0, 0, .50));
+    transform: translateY(-5%);
+    filter: drop-shadow(0 18px 22px rgba(46, 75, 115, .14));
 }
 
-body.dropmini-page .dm-product-shadow {
+body.dropmini-page .dm-ripples {
     position: absolute;
-    z-index: 2;
-    right: 13%;
-    bottom: 17.5%;
-    width: 48%;
-    height: 48px;
-    border-radius: 50%;
-    background:
-        radial-gradient(ellipse at center, rgba(99, 221, 255, .16) 0%, rgba(153, 244, 227, .08) 42%, transparent 74%);
-    filter: blur(16px);
+    z-index: 1;
+    right: 2%;
+    bottom: 2%;
+    width: 82%;
+    height: 155px;
+    transform: perspective(560px) rotateX(66deg);
 }
 
-body.dropmini-page .dm-floating-droplet {
+body.dropmini-page .dm-ripples::before {
+    content: "";
     position: absolute;
-    z-index: 5;
+    left: 50%;
+    top: 52%;
+    width: 86%;
+    height: 74%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    border: 1px solid rgba(99, 221, 255, .22);
+
     background:
-        radial-gradient(circle at 30% 27%, rgba(255, 255, 255, .98) 0 14%, rgba(99, 221, 255, .52) 38%, rgba(21, 144, 220, .22) 62%, rgba(255, 255, 255, .06) 78%);
-    box-shadow:
-        inset -6px -8px 12px rgba(0, 0, 0, .18),
-        0 10px 18px rgba(0, 0, 0, .18);
-    animation: floatDroplet 4s ease-in-out infinite;
+        radial-gradient(
+            ellipse at center,
+            transparent 0 26%,
+            rgba(52, 123, 216, .26) 27% 28%,
+            transparent 29% 39%,
+            rgba(79, 156, 222, .20) 40% 41%,
+            transparent 42% 53%,
+            rgba(105, 180, 231, .15) 54% 55%,
+            transparent 56% 67%,
+            rgba(135, 202, 240, .11) 68% 69%,
+            transparent 70%
+        );
 }
 
-@keyframes floatDroplet {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+body.dropmini-page .dm-ripples span {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    width: 30%;
+    height: 28%;
+    transform: translate(-50%, -50%);
+    border: 1.4px solid rgba(52, 123, 216, .24);
+    border-radius: 50%;
+    opacity: 0;
+    animation: dm-ripple 6s ease-out infinite;
 }
 
-body.dropmini-page .dm-droplet-1 { width: 28px; left: 2%; top: 43%; }
-body.dropmini-page .dm-droplet-2 { width: 33px; left: 6%; top: 60%; }
-body.dropmini-page .dm-droplet-3 { width: 20px; right: 15%; top: 24%; }
-body.dropmini-page .dm-droplet-4 { width: 31px; right: 25%; top: 36%; }
-body.dropmini-page .dm-droplet-5 { width: 23px; right: 23%; top: 47%; }
-body.dropmini-page .dm-droplet-6 { width: 13px; right: 4%; top: 63%; }
+body.dropmini-page .dm-ripples span:nth-child(2) { animation-delay: 1.5s; }
+body.dropmini-page .dm-ripples span:nth-child(3) { animation-delay: 3s; }
+body.dropmini-page .dm-ripples span:nth-child(4) { animation-delay: 4.5s; }
 
-body.dropmini-page .dm-overview,
-body.dropmini-page .dm-principles,
-body.dropmini-page .dm-features,
-body.dropmini-page .dm-colours,
-body.dropmini-page .dm-gallery,
-body.dropmini-page .dm-specs,
-body.dropmini-page .project-navigation {
-    padding: 6rem 0;
-    scroll-margin-top: 2rem;
+@keyframes dm-ripple {
+    0% {
+        width: 30%;
+        height: 28%;
+        opacity: 0;
+    }
+    18% {
+        opacity: .34;
+    }
+    62% {
+        opacity: .14;
+    }
+    100% {
+        width: 96%;
+        height: 84%;
+        opacity: 0;
+    }
 }
 
-body.dropmini-page .dm-overview {
-    background: linear-gradient(180deg, rgba(9, 19, 35, .98), rgba(6, 13, 22, .98));
-}
-
-body.dropmini-page .dm-principles,
-body.dropmini-page .dm-colours,
-body.dropmini-page .dm-specs {
-    background: linear-gradient(180deg, rgba(10, 22, 39, .98), rgba(8, 16, 29, .98));
-}
-
-body.dropmini-page .dm-features,
-body.dropmini-page .dm-gallery,
-body.dropmini-page .project-navigation {
-    background:
-        radial-gradient(circle at 15% 20%, rgba(99, 221, 255, .06), transparent 18rem),
-        radial-gradient(circle at 84% 72%, rgba(153, 244, 227, .05), transparent 20rem),
-        linear-gradient(180deg, rgba(7, 17, 30, .98), rgba(9, 19, 35, .98));
-}
-
-body.dropmini-page .dm-overview-grid,
-body.dropmini-page .dm-feature-layout,
-body.dropmini-page .dm-colour-viewer,
-body.dropmini-page .dm-gallery-grid,
-body.dropmini-page .dm-spec-grid {
-    position: relative;
-}
-
-body.dropmini-page .dm-overview-grid {
+/* STORY */
+body.dropmini-page .dm-story {
+    padding: 7rem 0 5.8rem;
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-    gap: 3rem;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: clamp(4rem, 8vw, 8rem);
     align-items: start;
 }
 
-body.dropmini-page .dm-overview-intro,
-body.dropmini-page .dm-feature-copy,
-body.dropmini-page .dm-gallery-copy {
-    max-width: 700px;
+body.dropmini-page .dm-story-heading {
+    max-width: 640px;
 }
 
-body.dropmini-page .dm-kicker {
-    margin: 0 0 .85rem;
-    color: var(--dm-primary);
-    font-size: .8rem;
-    font-weight: 800;
-    letter-spacing: .28em;
-    text-transform: uppercase;
+body.dropmini-page .dm-story-copy {
+    max-width: 690px;
+    justify-self: end;
 }
 
-body.dropmini-page .dm-overview h2,
-body.dropmini-page .dm-section-heading h2,
-body.dropmini-page .dm-feature-copy h2,
-body.dropmini-page .dm-gallery-copy h2,
-body.dropmini-page .dm-specs h2 {
+body.dropmini-page .dm-story-copy p {
     margin: 0;
-    color: #f7fbff;
-    font-family: "Manrope", "Inter", sans-serif;
-    font-size: clamp(2rem, 3vw, 3.35rem);
-    line-height: 1.02;
-    letter-spacing: -.05em;
-}
-
-body.dropmini-page .dm-overview-copy p,
-body.dropmini-page .dm-feature-copy p,
-body.dropmini-page .dm-section-heading-split > p,
-body.dropmini-page .dm-gallery-copy p {
-    color: #9ab0cb;
+    color: var(--dm-muted);
     line-height: 1.85;
 }
 
-body.dropmini-page .dm-overview-copy p {
-    color: #f7fbff;
-    text-align: justify;
+body.dropmini-page .dm-story-copy p + p {
+    margin-top: 1.25rem;
 }
 
-body.dropmini-page .dm-section-heading {
-    max-width: 760px;
-    margin: 0 auto 2.5rem;
+body.dropmini-page .dm-story-lead {
+    color: #3d5675 !important;
+    font-size: 1.18rem;
+    line-height: 1.65 !important;
 }
 
-body.dropmini-page .dm-section-heading-split {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 2rem;
-    max-width: none;
+/* SPEC RIBBON */
+body.dropmini-page .dm-spec-ribbon {
+    padding: 1.45rem 0;
+    border-top: 1px solid var(--dm-line);
+    border-bottom: 1px solid var(--dm-line);
+    background: var(--dm-pale-blue);
 }
 
-body.dropmini-page .dm-section-heading-split > div {
-    max-width: 760px;
-}
-
-body.dropmini-page .dm-section-heading-split > p {
-    max-width: 440px;
-    margin: 0;
-}
-
-body.dropmini-page .dm-principle-grid {
+body.dropmini-page .dm-spec-ribbon-inner {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-body.dropmini-page .dm-principle-card,
-body.dropmini-page .dm-feature-list article,
-body.dropmini-page .dm-thumb,
-body.dropmini-page .dm-gallery-card,
-body.dropmini-page .dm-spec-grid div {
-    border: 1px solid rgba(126, 189, 255, .16);
-    box-shadow: 0 18px 44px rgba(0, 0, 0, .20);
+body.dropmini-page .dm-spec-ribbon article {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    align-items: center;
+    gap: .85rem;
+    padding: .3rem 1.55rem;
+    border-left: 1px solid var(--dm-line);
 }
 
-body.dropmini-page .dm-principle-card {
-    padding: 1.5rem;
-    border-radius: 24px;
-    background: rgba(10, 22, 39, .72);
+body.dropmini-page .dm-spec-ribbon article:first-child {
+    padding-left: 0;
+    border-left: 0;
 }
 
-body.dropmini-page .dm-principle-icon {
-    width: 56px;
-    height: 56px;
+body.dropmini-page .dm-spec-ribbon article:last-child {
+    padding-right: 0;
+}
+
+body.dropmini-page .dm-spec-icon {
+    width: 40px;
+    height: 40px;
     display: grid;
     place-items: center;
-    margin-bottom: 1.2rem;
-    border-radius: 18px;
-    color: var(--dm-primary);
-    background: linear-gradient(180deg, rgba(99, 221, 255, .14), rgba(153, 244, 227, .08));
+    border-radius: 50%;
+    color: var(--dm-blue);
+    background: #fff;
 }
 
-body.dropmini-page .dm-principle-card h3,
-body.dropmini-page .dm-feature-list h3 {
-    margin: 0 0 .7rem;
+body.dropmini-page .dm-spec-ribbon p {
+    margin: 0 0 .2rem;
+    color: var(--dm-blue);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+body.dropmini-page .dm-spec-ribbon strong,
+body.dropmini-page .dm-spec-ribbon small {
+    display: block;
+}
+
+body.dropmini-page .dm-spec-ribbon strong {
     color: var(--dm-ink);
-    font-size: 1.18rem;
-    letter-spacing: -.03em;
+    font-size: 1rem;
 }
 
-body.dropmini-page .dm-principle-card p,
-body.dropmini-page .dm-feature-list p {
+body.dropmini-page .dm-spec-ribbon small {
+    margin-top: .12rem;
+    color: var(--dm-muted);
+    font-size: .7rem;
+}
+
+/* FORM + INTERACTION */
+body.dropmini-page .dm-form {
+    padding: 7rem 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: center;
+}
+
+body.dropmini-page .dm-form-image {
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+body.dropmini-page .dm-form-image img {
+    display: block;
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+
+body.dropmini-page .dm-form-copy {
+    max-width: 560px;
+}
+
+body.dropmini-page .dm-form-copy p {
+    color: var(--dm-muted);
+    line-height: 1.85;
+}
+
+body.dropmini-page .dm-form-copy h2 + p {
+    margin-top: 1.4rem;
+}
+
+/* COLOURWAYS */
+body.dropmini-page .dm-colourways {
+    padding: clamp(6rem, 8vw, 8rem) 0;
+    color: var(--dm-ink);
+    background: #f5f8fc;
+}
+
+body.dropmini-page .dm-colourways-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, .58fr);
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: end;
+    margin-bottom: 3rem;
+}
+
+body.dropmini-page .dm-colourways-heading > div {
+    max-width: 800px;
+}
+
+body.dropmini-page .dm-colourways-heading > p {
+    max-width: 500px;
     margin: 0;
     color: var(--dm-muted);
     line-height: 1.8;
 }
 
-body.dropmini-page .dm-feature-layout {
-    display: grid;
-    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    gap: 2.5rem;
-    align-items: start;
-}
-
-body.dropmini-page .dm-feature-copy p {
-    max-width: 520px;
-}
-
-body.dropmini-page .dm-feature-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-}
-
-body.dropmini-page .dm-feature-list article {
-    padding: 1.3rem 1.25rem;
-    border-radius: 22px;
-    background: rgba(10, 22, 39, .72);
-}
-
-body.dropmini-page .dm-feature-list span {
-    display: inline-flex;
-    margin-bottom: .75rem;
-    color: var(--dm-primary-warm);
-    font-size: .78rem;
-    font-weight: 800;
-    letter-spacing: .22em;
-}
-
 body.dropmini-page .dm-colour-viewer {
     display: grid;
-    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
-    gap: 2rem;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 1rem;
+    align-items: stretch;
 }
 
-body.dropmini-page .dm-colour-stage {
+body.dropmini-page .dm-colour-feature {
+    position: relative;
+    min-height: 590px;
     margin: 0;
+    overflow: hidden;
+    border-radius: 26px;
+    background: #e9eef4;
 }
 
-body.dropmini-page .dm-colour-stage-drop {
-    padding: 1.15rem;
-    border-radius: 34px;
-    background: linear-gradient(180deg, rgba(10, 22, 39, .90), rgba(8, 16, 29, .88));
-    border: 1px solid rgba(99, 221, 255, .16);
-    box-shadow: 0 22px 48px rgba(0, 0, 0, .28);
-}
-
-body.dropmini-page .dm-colour-stage-drop img {
+body.dropmini-page .dm-colour-feature > img {
     display: block;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 590px;
     object-fit: cover;
-    border-radius: 24px;
+    object-position: center;
+    cursor: zoom-in;
 }
 
-body.dropmini-page .dm-colour-caption {
+body.dropmini-page .dm-colour-feature figcaption {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding-top: 1rem;
-    color: #8ea4c0;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, .28);
+    border-radius: 16px;
+    color: #fff;
+    background: rgba(10, 22, 39, .68);
+    backdrop-filter: blur(12px);
 }
 
-body.dropmini-page #dm-colour-index {
-    color: var(--dm-primary-warm);
-    font-size: .78rem;
-    font-weight: 800;
-    letter-spacing: .25em;
-    text-transform: uppercase;
+body.dropmini-page .dm-colour-feature figcaption strong {
+    font-size: 1rem;
+    font-weight: 700;
 }
 
-body.dropmini-page #dm-colour-name {
-    display: block;
-    color: #f7fbff;
-    font-size: 1.25rem;
+body.dropmini-page .dm-colour-feature figcaption span {
+    color: rgba(255, 255, 255, .62);
+    font-size: .76rem;
 }
 
 body.dropmini-page .dm-colour-thumbs {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-rows: repeat(6, 1fr);
+    gap: .65rem;
 }
 
-body.dropmini-page .dm-thumb {
-    appearance: none;
-    padding: .85rem;
-    border-radius: 22px;
-    background: rgba(10, 22, 39, .74);
+body.dropmini-page .dm-colour-thumb {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 68px 1fr;
+    align-items: center;
+    gap: .75rem;
+    padding: .45rem;
+    border: 1px solid var(--dm-line);
+    border-radius: 14px;
+    color: #5d6f85;
+    background: rgba(255, 255, 255, .72);
     text-align: left;
     cursor: pointer;
-    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background .18s ease,
+        box-shadow .18s ease;
 }
 
-body.dropmini-page .dm-thumb:hover {
-    transform: translateY(-3px);
-    border-color: rgba(99, 221, 255, .30);
-}
-
-body.dropmini-page .dm-thumb.active {
-    border-color: var(--dm-primary);
-    box-shadow: 0 20px 42px rgba(99, 221, 255, .14);
-    transform: translateY(-4px);
-}
-
-body.dropmini-page .dm-thumb img {
+body.dropmini-page .dm-colour-thumb img {
+    width: 68px;
+    height: 68px;
     display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 18px;
-    margin-bottom: .8rem;
+    border-radius: 9px;
 }
 
-body.dropmini-page .dm-thumb span {
-    display: block;
-    color: #edf5ff;
-    font-size: .92rem;
-    font-weight: 700;
-}
-
-body.dropmini-page .dm-gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    align-items: start;
-}
-
-body.dropmini-page .dm-gallery-copy {
-    grid-column: 1 / -1;
-    max-width: 760px;
-    margin-bottom: .5rem;
-}
-
-body.dropmini-page .dm-gallery-card {
-    min-height: 320px;
-    overflow: hidden;
-    border-radius: 28px;
-    background: var(--dm-surface-strong);
-}
-
-body.dropmini-page .dm-gallery-card-large {
-    min-height: 420px;
-}
-
-body.dropmini-page .dm-lightbox-img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: zoom-in;
-}
-
-body.dropmini-page .dm-spec-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
-    margin: 0;
-}
-
-body.dropmini-page .dm-spec-grid div {
-    padding: 1.4rem;
-    border-radius: 24px;
-    background: rgba(10, 22, 39, .72);
-}
-
-body.dropmini-page .container article dt {
-    color: var(--dm-primary-warm);
+body.dropmini-page .dm-colour-thumb span {
     font-size: .78rem;
-    font-weight: 800;
-    letter-spacing: .24em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
-body.dropmini-page .container article dd {
-    margin: .5rem 0 0;
-    color: #93a8c2;
-    line-height: 1.6;
-}
-
-body.dropmini-page .dm-spec-grid strong {
-    color: #f7fbff;
-}
-
-body.dropmini-page .project-navigation .nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-body.dropmini-page .nav-btn {
-    background: rgba(10, 22, 39, .76);
-    border: 1px solid rgba(99, 221, 255, .16);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, .18);
-}
-
-body.dropmini-page .dm-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 50;
-    display: grid;
-    place-items: center;
-    padding: 1.5rem;
-    background: rgba(10, 19, 34, .72);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity .2s ease, visibility .2s ease;
-}
-
-body.dropmini-page .dm-lightbox.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-body.dropmini-page .dm-lightbox-content {
-    position: relative;
-    width: min(980px, 100%);
-}
-
-body.dropmini-page .dm-lightbox-content img {
-    display: block;
-    width: 100%;
-    border-radius: 24px;
-    box-shadow: 0 30px 70px rgba(0, 0, 0, .24);
-}
-
-body.dropmini-page .dm-lightbox-close {
-    position: absolute;
-    top: -.8rem;
-    right: -.8rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 0;
-    border-radius: 50%;
-    background: #fff;
-    color: #0f2345;
-    font-size: 1.4rem;
-    cursor: pointer;
-    box-shadow: 0 16px 34px rgba(0, 0, 0, .22);
-}
-
-@media (max-width: 1260px) {
-    body.dropmini-page .dm-hero-inner {
-        width: min(1280px, calc(100% - 5rem));
-        grid-template-columns: minmax(0, 44%) minmax(0, 56%);
-        min-height: auto;
-    }
-
-    body.dropmini-page .dm-hero h1 {
-        font-size: clamp(5rem, 7vw, 7.2rem);
-    }
-}
-
-@media (max-width: 980px) {
-    body.dropmini-page .dm-product-nav {
-        width: min(100% - 1rem, 980px);
-        flex-wrap: wrap;
-        justify-content: center;
-        border-radius: 28px;
-    }
-
-    body.dropmini-page .dm-product-nav-links {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-    }
-
-    body.dropmini-page .dm-hero-inner {
-        width: min(100% - 2rem, 980px);
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        min-height: auto;
-        padding-top: 5.5rem;
-    }
-
-    body.dropmini-page .dm-product-scene {
-        min-height: 500px;
-    }
-
-    body.dropmini-page .dm-overview-grid,
-    body.dropmini-page .dm-feature-layout,
-    body.dropmini-page .dm-colour-viewer,
-    body.dropmini-page .dm-gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-gallery-copy {
-        grid-column: auto;
-    }
-
-    body.dropmini-page .dm-spec-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 760px) {
-    body.dropmini-page .dm-hero {
-        padding-top: 7rem;
-    }
-
-    body.dropmini-page .dm-hero h1 {
-        white-space: normal;
-        font-size: clamp(3.8rem, 16vw, 5rem);
-    }
-
-    body.dropmini-page .dm-tagline {
-        font-size: clamp(1.5rem, 7vw, 2.3rem);
-    }
-
-    body.dropmini-page .dm-actions {
-        gap: .85rem;
-    }
-
-    body.dropmini-page .dm-btn,
-    body.dropmini-page .dm-btn-primary,
-    body.dropmini-page .dm-btn-secondary {
-        width: 100%;
-        min-width: 0;
-    }
-
-    body.dropmini-page .dm-spec-cards,
-    body.dropmini-page .dm-principle-grid,
-    body.dropmini-page .dm-feature-list,
-    body.dropmini-page .dm-colour-thumbs,
-    body.dropmini-page .dm-spec-grid {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-section-heading-split {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    body.dropmini-page .dm-product-scene {
-        min-height: 430px;
-    }
-
-    body.dropmini-page .dm-hero-product-image {
-        transform: translate(2%, -2%) scale(1.02);
-    }
-
-    body.dropmini-page .dm-liquid-ribbon-a,
-    body.dropmini-page .dm-liquid-ribbon-b {
-        opacity: .7;
-    }
-
-    body.dropmini-page .project-navigation .nav-buttons {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 560px) {
-    body.dropmini-page .dm-product-nav {
-        padding: .85rem .95rem;
-    }
-
-    body.dropmini-page .dm-product-brand img {
-        height: 24px;
-    }
-
-    body.dropmini-page .dm-product-nav-links {
-        gap: .9rem;
-    }
-
-    body.dropmini-page .dm-hero-inner {
-        width: min(100% - 1rem, 560px);
-        padding-top: 5rem;
-    }
-
-    body.dropmini-page .dm-overview,
-    body.dropmini-page .dm-principles,
-    body.dropmini-page .dm-features,
-    body.dropmini-page .dm-colours,
-    body.dropmini-page .dm-gallery,
-    body.dropmini-page .dm-specs,
-    body.dropmini-page .project-navigation {
-        padding: 4.75rem 0;
-    }
-
-    body.dropmini-page .dm-product-scene {
-        min-height: 390px;
-    }
-
-    body.dropmini-page .dm-spec-cards article {
-        padding: .95rem;
-    }
-
-    body.dropmini-page .dm-colour-caption {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    body.dropmini-page .dm-gallery-card,
-    body.dropmini-page .dm-gallery-card-large {
-        min-height: 260px;
-    }
-
-    body.dropmini-page .dm-lightbox-content {
-        width: min(100%, 560px);
-    }
-}
-
-/* Hero height normalization to match other project pages */
-body.dropmini-page .dm-hero {
-    min-height: 76vh;
-    padding: 7.6rem 0 3.6rem;
-}
-
-body.dropmini-page .dm-hero-inner {
-    min-height: 0;
-    align-items: center;
-}
-
-body.dropmini-page .dm-product-scene {
-    min-height: 560px;
-}
-
-body.dropmini-page .dm-hero-product-image {
-    max-height: 450px;
-}
-
-@media (max-width: 980px) {
-    body.dropmini-page .dm-hero {
-        min-height: auto;
-    }
-    body.dropmini-page .dm-product-scene {
-        min-height: 500px;
-    }
-}
-
-@media (max-width: 760px) {
-    body.dropmini-page .dm-hero {
-        padding: 7rem 0 3.5rem;
-    }
-    body.dropmini-page .dm-product-scene {
-        min-height: 430px;
-    }
-}
-
-
-/* =========================================================
-   FINAL POLISH
-   Buttons, hero balance and full-page visual consistency
-   ========================================================= */
-
-/* Make the light water-led identity consistent across the page */
-body.dropmini-page {
-    --dm-page-ink: #12243e;
-    --dm-page-muted: #657a96;
-    --dm-page-blue: #347bd8;
-    --dm-page-blue-deep: #1f63bf;
-    --dm-page-cyan: #7fd8f4;
-    --dm-page-soft: #eef6fc;
-    --dm-page-soft-2: #f7fbfe;
-    --dm-page-line: rgba(31, 82, 143, .11);
-
-    color: var(--dm-page-ink);
-    background: #f6fafe;
-}
-
-/* ---------- HERO BALANCE ---------- */
-
-body.dropmini-page .dm-hero {
-    min-height: 76vh;
-    padding: 7.2rem 0 3.4rem;
-    display: flex;
-    align-items: center;
-    background:
-        radial-gradient(circle at 79% 18%, rgba(120, 194, 247, .22), transparent 23rem),
-        radial-gradient(circle at 7% 76%, rgba(155, 227, 250, .17), transparent 24rem),
-        linear-gradient(145deg, #ffffff 0%, #f7fbff 48%, #edf6ff 100%);
-}
-
-body.dropmini-page .dm-hero-inner {
-    align-items: center;
-}
-
-body.dropmini-page .dm-eyebrow {
-    margin-bottom: 1.35rem;
-    color: var(--dm-page-blue-deep);
-}
-
-body.dropmini-page .dm-hero h1 {
-    color: #10223d;
-    font-size: clamp(4.9rem, 7vw, 7.7rem);
-}
-
-body.dropmini-page .dm-tagline {
-    margin: 1rem 0 1rem;
-    color: #6685ad;
-    font-size: clamp(1.7rem, 2.2vw, 2.35rem);
-}
-
-body.dropmini-page .dm-summary {
-    max-width: 500px;
-    color: #607590;
-    font-size: .98rem;
-    line-height: 1.72;
-}
-
-/* ---------- HERO BUTTONS ---------- */
-
-body.dropmini-page .dm-actions {
-    gap: .75rem;
-    margin-top: 1.55rem;
-}
-
-body.dropmini-page .dm-btn {
-    min-height: 48px;
-    gap: .65rem;
-    padding: .78rem 1.15rem;
-    border-radius: 999px;
-    font-size: .86rem;
     font-weight: 700;
-    line-height: 1;
-    white-space: nowrap;
-    box-shadow: none;
 }
 
-body.dropmini-page .dm-btn i {
-    font-size: .84rem;
-    transition: transform .18s ease;
-}
-
-body.dropmini-page .dm-btn-primary {
-    min-width: 0;
-    color: #fff;
-    border: 1px solid var(--dm-page-blue);
-    background: linear-gradient(135deg, #4c8ee3 0%, #286fcf 100%);
-    box-shadow: 0 10px 22px rgba(40,111,207,.15);
-}
-
-body.dropmini-page .dm-btn-primary:hover {
-    background: linear-gradient(135deg, #4184da 0%, #2165c0 100%);
-    box-shadow: 0 14px 26px rgba(40,111,207,.20);
-}
-
-body.dropmini-page .dm-btn-primary:hover i {
-    transform: translateX(3px);
-}
-
-body.dropmini-page .dm-btn-secondary {
-    min-width: 0;
-    color: #286fcf;
-    border: 1px solid rgba(40,111,207,.30);
-    background: rgba(255,255,255,.76);
-    box-shadow: 0 8px 18px rgba(42,88,142,.06);
-    backdrop-filter: blur(10px);
-}
-
-body.dropmini-page .dm-btn-secondary:hover {
-    color: #1f63bf;
-    border-color: rgba(40,111,207,.50);
+body.dropmini-page .dm-colour-thumb:hover {
+    transform: translateY(-1px);
+    border-color: rgba(52, 123, 216, .34);
     background: #fff;
 }
 
-/* ---------- SPEC CARDS ---------- */
-
-body.dropmini-page .dm-spec-cards {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: .65rem;
-    max-width: 700px;
-    margin-top: 1.7rem;
-}
-
-body.dropmini-page .dm-spec-cards article {
-    min-height: 74px;
-    gap: .7rem;
-    padding: .72rem .8rem;
-    border: 1px solid rgba(41,100,167,.09);
-    border-radius: 16px;
-    background: rgba(255,255,255,.74);
-    box-shadow: 0 10px 22px rgba(38,80,126,.055);
-    backdrop-filter: blur(10px);
-}
-
-body.dropmini-page .dm-spec-icon {
-    width: 2.3rem;
-    height: 2.3rem;
-    color: var(--dm-page-blue);
-    background: #edf5ff;
-}
-
-body.dropmini-page .dm-spec-cards strong {
-    color: #152843;
-    font-size: .91rem;
-}
-
-body.dropmini-page .dm-spec-cards small {
-    color: #71839b;
-    font-size: .69rem;
-    line-height: 1.25;
-}
-
-/* ---------- PRODUCT / RIPPLE ---------- */
-
-body.dropmini-page .dm-product-scene {
-    min-height: 535px;
-}
-
-body.dropmini-page .dm-hero-product-image {
-    max-height: 425px;
-    filter: drop-shadow(0 24px 27px rgba(46,75,115,.18));
-}
-
-body.dropmini-page .dm-product-aura {
-    opacity: .72;
-}
-
-body.dropmini-page .dm-product-shadow {
-    right: 15%;
-    bottom: 17%;
-    width: 44%;
-    opacity: .8;
-}
-
-/* ---------- BODY SECTIONS: LIGHT, CLEAN, CONSISTENT ---------- */
-
-body.dropmini-page .dm-overview,
-body.dropmini-page .dm-principles,
-body.dropmini-page .dm-features,
-body.dropmini-page .dm-colours,
-body.dropmini-page .dm-gallery,
-body.dropmini-page .dm-specs,
-body.dropmini-page .project-navigation {
-    padding: 5.5rem 0;
-    color: var(--dm-page-ink);
-}
-
-body.dropmini-page .dm-overview,
-body.dropmini-page .dm-features,
-body.dropmini-page .dm-gallery {
-    background: #f7fbfe;
-}
-
-body.dropmini-page .dm-principles,
-body.dropmini-page .dm-colours,
-body.dropmini-page .dm-specs {
-    background:
-        radial-gradient(circle at 84% 18%, rgba(116,193,239,.08), transparent 20rem),
-        #ffffff;
-}
-
-body.dropmini-page .project-navigation {
-    background: #eef5fb;
-    border-top: 1px solid var(--dm-page-line);
-}
-
-body.dropmini-page .dm-kicker {
-    color: var(--dm-page-blue);
-}
-
-body.dropmini-page .dm-overview h2,
-body.dropmini-page .dm-section-heading h2,
-body.dropmini-page .dm-feature-copy h2,
-body.dropmini-page .dm-gallery-copy h2,
-body.dropmini-page .dm-specs h2 {
-    color: var(--dm-page-ink);
-}
-
-body.dropmini-page .dm-overview-copy p,
-body.dropmini-page .dm-feature-copy p,
-body.dropmini-page .dm-section-heading-split > p,
-body.dropmini-page .dm-gallery-copy p {
-    color: var(--dm-page-muted);
-}
-
-body.dropmini-page .dm-overview-copy p {
-    color: var(--dm-page-muted);
-}
-
-/* Cards */
-body.dropmini-page .dm-principle-card,
-body.dropmini-page .dm-feature-list article,
-body.dropmini-page .dm-spec-grid div {
-    border: 1px solid var(--dm-page-line);
-    background: rgba(255,255,255,.86);
-    box-shadow: 0 16px 34px rgba(31,70,114,.06);
-}
-
-body.dropmini-page .dm-principle-card h3,
-body.dropmini-page .dm-feature-list h3 {
-    color: var(--dm-page-ink);
-}
-
-body.dropmini-page .dm-principle-card p,
-body.dropmini-page .dm-feature-list p {
-    color: var(--dm-page-muted);
-}
-
-body.dropmini-page .dm-principle-icon {
-    color: var(--dm-page-blue);
-    background: #edf5ff;
-}
-
-/* Feature numbering */
-body.dropmini-page .dm-feature-list span {
-    color: var(--dm-page-blue);
-}
-
-/* ---------- COLOURWAY SECTION ---------- */
-
-body.dropmini-page .dm-colour-stage-drop {
-    border: 1px solid var(--dm-page-line);
-    background: #eef4f9;
-    box-shadow: 0 20px 42px rgba(31,70,114,.08);
-}
-
-body.dropmini-page .dm-colour-caption {
-    color: var(--dm-page-muted);
-}
-
-body.dropmini-page #dm-colour-index {
-    color: var(--dm-page-blue);
-}
-
-body.dropmini-page #dm-colour-name {
-    color: var(--dm-page-ink);
-}
-
-body.dropmini-page .dm-thumb {
-    border: 1px solid var(--dm-page-line);
-    color: var(--dm-page-ink);
+body.dropmini-page .dm-colour-thumb.active {
+    color: var(--dm-ink);
+    border-color: rgba(52, 123, 216, .62);
     background: #fff;
-    box-shadow: 0 12px 28px rgba(31,70,114,.05);
+    box-shadow: 0 12px 28px rgba(31, 70, 114, .08);
 }
 
-body.dropmini-page .dm-thumb:hover {
-    border-color: rgba(52,123,216,.34);
-    box-shadow: 0 16px 30px rgba(31,70,114,.08);
-}
+/* DETAIL */
 
-body.dropmini-page .dm-thumb.active {
-    border-color: var(--dm-page-blue);
-    box-shadow: 0 16px 34px rgba(52,123,216,.13);
-}
-
-body.dropmini-page .dm-thumb span {
-    color: var(--dm-page-ink);
-}
-
-/* ---------- GALLERY ---------- */
-
-body.dropmini-page .dm-gallery-card {
-    border: 1px solid var(--dm-page-line);
-    background: #eaf2f8;
-    box-shadow: 0 18px 38px rgba(31,70,114,.07);
-}
-
-/* ---------- TECH SPECS ---------- */
-
-body.dropmini-page .container article dt {
-    color: var(--dm-page-blue);
-}
-
-body.dropmini-page .container article dd {
-    color: var(--dm-page-muted);
-}
-
-body.dropmini-page .dm-spec-grid strong {
-    color: var(--dm-page-ink);
-}
-
-/* ---------- PROJECT NAV BUTTONS ---------- */
-
-body.dropmini-page .project-navigation .nav-buttons {
+body.dropmini-page .dm-detail {
+    padding: 7rem 0;
+    display: grid;
+    grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+    gap: clamp(3rem, 7vw, 7rem);
     align-items: center;
 }
 
-body.dropmini-page .nav-btn {
-    min-height: 48px;
-    padding: .74rem 1rem;
-    border: 1px solid rgba(40,111,207,.18);
-    border-radius: 999px;
-    color: var(--dm-page-ink);
-    background: rgba(255,255,255,.82);
-    box-shadow: 0 10px 24px rgba(31,70,114,.06);
-    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+body.dropmini-page .dm-detail-copy {
+    max-width: 600px;
 }
 
-body.dropmini-page .nav-btn:hover {
-    transform: translateY(-2px);
-    border-color: rgba(40,111,207,.35);
-    background: #fff;
+body.dropmini-page .dm-detail-copy p {
+    color: var(--dm-muted);
+    line-height: 1.8;
 }
 
-body.dropmini-page .nav-btn small {
-    color: #788ba3;
+body.dropmini-page .dm-detail-copy h2 + p {
+    margin-top: 1.35rem;
 }
 
-/* ---------- RESPONSIVE ---------- */
-
-@media (max-width: 1260px) {
-    body.dropmini-page .dm-spec-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        max-width: 560px;
-    }
-}
-
-@media (max-width: 980px) {
-    body.dropmini-page .dm-hero {
-        min-height: auto;
-        padding: 6.5rem 0 3.5rem;
-    }
-
-    body.dropmini-page .dm-hero-inner {
-        padding-top: 0;
-        gap: 1.5rem;
-    }
-
-    body.dropmini-page .dm-product-scene {
-        min-height: 460px;
-    }
-}
-
-@media (max-width: 760px) {
-    body.dropmini-page .dm-hero {
-        padding-top: 5.5rem;
-    }
-
-    body.dropmini-page .dm-actions {
-        flex-direction: row;
-    }
-
-    body.dropmini-page .dm-btn,
-    body.dropmini-page .dm-btn-primary,
-    body.dropmini-page .dm-btn-secondary {
-        width: auto;
-    }
-
-    body.dropmini-page .dm-spec-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    body.dropmini-page .dm-product-scene {
-        min-height: 410px;
-    }
-}
-
-@media (max-width: 540px) {
-    body.dropmini-page .dm-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    body.dropmini-page .dm-btn,
-    body.dropmini-page .dm-btn-primary,
-    body.dropmini-page .dm-btn-secondary {
-        width: 100%;
-    }
-
-    body.dropmini-page .dm-spec-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* =========================================================
-   REQUESTED REFINEMENTS
-   ========================================================= */
-
-body.dropmini-page .dm-title-mini {
-    color: var(--dm-page-blue, #347bd8);
-}
-
-/* Highlights moved below Overview */
-body.dropmini-page .dm-highlights {
-    padding: 1.25rem 0;
-    border-top: 1px solid rgba(31, 82, 143, .08);
-    border-bottom: 1px solid rgba(31, 82, 143, .08);
-    background: #edf5fb;
-}
-
-body.dropmini-page .dm-highlight-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-body.dropmini-page .dm-highlight-grid article {
-    min-width: 0;
-    display: grid;
-    grid-template-columns: 42px minmax(0, 1fr);
-    align-items: center;
-    gap: .75rem;
-    padding: .35rem 1.25rem;
-    border-left: 1px solid rgba(31, 82, 143, .10);
-}
-
-body.dropmini-page .dm-highlight-grid article:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-body.dropmini-page .dm-highlight-icon {
-    width: 38px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: #347bd8;
-    background: #fff;
-    box-shadow: 0 7px 17px rgba(40,91,150,.07);
-}
-
-body.dropmini-page .dm-highlight-grid article > div {
-    display: flex;
-    flex-direction: column;
-    gap: .08rem;
-}
-
-body.dropmini-page .dm-highlight-grid strong {
-    color: #152843;
-    font-size: .94rem;
-}
-
-body.dropmini-page .dm-highlight-grid small {
-    color: #71839b;
-    font-size: .71rem;
-}
-
-/* Honecomb-inspired Colourways mosaic */
-body.dropmini-page .dm-colours {
-    background: #eee9df;
-}
-
-body.dropmini-page .dm-colour-gallery {
-    display: grid;
-    grid-template-columns: 1.4fr .8fr .8fr;
-    grid-template-rows: repeat(3, 210px);
-    gap: 1rem;
-}
-
-body.dropmini-page .dm-colour-tile {
-    position: relative;
-    min-width: 0;
+body.dropmini-page .dm-detail-media {
     margin: 0;
     overflow: hidden;
-    border-radius: 20px;
-    background: #dfe7ed;
+    border-radius: 24px;
 }
 
-body.dropmini-page .dm-colour-tile-featured {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-}
-
-body.dropmini-page .dm-colour-tile:nth-child(2) { grid-column: 2; grid-row: 1; }
-body.dropmini-page .dm-colour-tile:nth-child(3) { grid-column: 3; grid-row: 1; }
-body.dropmini-page .dm-colour-tile:nth-child(4) { grid-column: 2; grid-row: 2; }
-body.dropmini-page .dm-colour-tile:nth-child(5) { grid-column: 3; grid-row: 2; }
-body.dropmini-page .dm-colour-tile:nth-child(6) { grid-column: 1 / -1; grid-row: 3; }
-
-body.dropmini-page .dm-colour-tile img {
+body.dropmini-page .dm-detail-media img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 520px;
     object-fit: cover;
     cursor: zoom-in;
-    transition: transform .28s ease;
 }
 
-body.dropmini-page .dm-colour-tile:hover img {
-    transform: scale(1.025);
+/* PROJECT NAV */
+body.dropmini-page .project-navigation {
+    padding: 3rem 0;
+    border-top: 1px solid var(--dm-line);
+    background: #eef5fb;
 }
 
-body.dropmini-page .dm-colour-tile figcaption {
-    position: absolute;
-    left: .8rem;
-    bottom: .8rem;
-    display: inline-flex;
-    align-items: center;
-    gap: .65rem;
-    padding: .58rem .76rem;
-    border: 1px solid rgba(255,255,255,.24);
-    border-radius: 999px;
-    color: #fff;
-    background: rgba(14,30,49,.68);
-    backdrop-filter: blur(10px);
-}
-
-body.dropmini-page .dm-colour-tile figcaption span {
-    color: #91dcff;
-    font-size: .62rem;
-    font-weight: 800;
-    letter-spacing: .1em;
-}
-
-body.dropmini-page .dm-colour-tile figcaption strong {
-    color: #fff;
-    font-size: .82rem;
-}
-
-/* Project navigation */
 body.dropmini-page .project-navigation .nav-buttons {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
     align-items: center;
+    gap: 1rem;
 }
 
-body.dropmini-page .project-navigation .nav-btn {
+body.dropmini-page .nav-btn {
     width: fit-content;
     min-height: 48px;
     display: inline-flex;
     align-items: center;
     gap: .75rem;
     padding: .74rem 1rem;
-    border: 1px solid rgba(52,123,216,.18);
+    border: 1px solid rgba(52, 123, 216, .18);
     border-radius: 999px;
-    color: #152843;
-    background: rgba(255,255,255,.84);
+    color: var(--dm-ink);
+    background: #fff;
     text-decoration: none;
-    box-shadow: 0 10px 24px rgba(31,70,114,.06);
 }
 
-body.dropmini-page .project-navigation .nav-btn.next {
+body.dropmini-page .nav-btn.next {
     justify-self: end;
 }
 
@@ -1482,11 +586,9 @@ body.dropmini-page .nav-btn-copy {
     display: flex;
     flex-direction: column;
     gap: .12rem;
-    line-height: 1.05;
 }
 
 body.dropmini-page .nav-btn-copy small {
-    display: block;
     color: #7b8da4;
     font-size: .57rem;
     font-weight: 700;
@@ -1495,222 +597,12 @@ body.dropmini-page .nav-btn-copy small {
 }
 
 body.dropmini-page .nav-btn-copy strong {
-    display: block;
-    color: #152843;
+    color: var(--dm-ink);
     font-size: .82rem;
-    font-weight: 700;
     white-space: nowrap;
 }
 
-body.dropmini-page .project-navigation .nav-btn:hover {
-    border-color: rgba(52,123,216,.38);
-    background: #fff;
-    transform: translateY(-2px);
-}
-
-@media (max-width: 900px) {
-    body.dropmini-page .dm-highlight-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 1rem;
-    }
-
-    body.dropmini-page .dm-highlight-grid article:nth-child(odd) {
-        padding-left: 0;
-        border-left: 0;
-    }
-
-    body.dropmini-page .dm-colour-gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 340px repeat(3, 220px);
-    }
-
-    body.dropmini-page .dm-colour-tile-featured {
-        grid-column: 1 / -1;
-        grid-row: 1;
-    }
-
-    body.dropmini-page .dm-colour-tile:nth-child(n+2):nth-child(-n+5) {
-        grid-column: auto;
-        grid-row: auto;
-    }
-
-    body.dropmini-page .dm-colour-tile:nth-child(6) {
-        grid-column: 1 / -1;
-        grid-row: auto;
-    }
-}
-
-@media (max-width: 620px) {
-    body.dropmini-page .dm-highlight-grid,
-    body.dropmini-page .dm-colour-gallery,
-    body.dropmini-page .project-navigation .nav-buttons {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-highlight-grid article,
-    body.dropmini-page .dm-highlight-grid article:nth-child(odd) {
-        padding: .75rem 0;
-        border-left: 0;
-        border-top: 1px solid rgba(31,82,143,.08);
-    }
-
-    body.dropmini-page .dm-highlight-grid article:first-child {
-        border-top: 0;
-    }
-
-    body.dropmini-page .dm-colour-gallery {
-        grid-template-rows: none;
-    }
-
-    body.dropmini-page .dm-colour-tile,
-    body.dropmini-page .dm-colour-tile-featured,
-    body.dropmini-page .dm-colour-tile:nth-child(n) {
-        grid-column: auto;
-        grid-row: auto;
-        height: 260px;
-    }
-
-    body.dropmini-page .project-navigation .nav-btn,
-    body.dropmini-page .project-navigation .nav-btn.next {
-        width: 100%;
-        justify-self: stretch;
-        justify-content: space-between;
-    }
-}
-
-
-/* =========================================================
-   NUMBERING CLEANUP
-   Decorative numbering removed where it did not add meaning.
-   ========================================================= */
-
-body.dropmini-page .dm-feature-list article > span {
-    display: none !important;
-}
-
-body.dropmini-page .dm-colour-tile figcaption {
-    gap: 0;
-}
-
-body.dropmini-page .dm-colour-tile figcaption span {
-    display: none !important;
-}
-
-body.dropmini-page .dm-colour-tile figcaption strong {
-    font-size: .86rem;
-    letter-spacing: .01em;
-}
-
-
-/* =========================================================
-   COLOURWAYS + LIGHTBOX — matched to HonEcomb interaction
-   ========================================================= */
-
-/* Same warm gallery field and simple image-led layout language as HonEcomb */
-body.dropmini-page .dm-colours {
-    padding: clamp(6rem, 9vw, 9rem) 0;
-    background: #eee9df;
-}
-
-body.dropmini-page .dm-colours .dm-section-heading-split {
-    display: grid;
-    grid-template-columns: 1fr .62fr;
-    gap: 3rem;
-    align-items: end;
-    margin-bottom: 3rem;
-}
-
-body.dropmini-page .dm-colours .dm-section-heading-split > p {
-    color: #70766f;
-    line-height: 1.8;
-}
-
-/* Honecomb uses 1.4fr / .8fr / .8fr and 290px rows */
-body.dropmini-page .dm-colour-gallery {
-    display: grid;
-    grid-template-columns: 1.4fr .8fr .8fr;
-    grid-template-rows: repeat(3, 290px);
-    gap: 1rem;
-}
-
-body.dropmini-page .dm-colour-tile,
-body.dropmini-page .dm-colour-tile-featured,
-body.dropmini-page .dm-colour-tile:nth-child(n) {
-    position: relative;
-    min-width: 0;
-    margin: 0;
-    overflow: hidden;
-    border: 0;
-    border-radius: 20px;
-    background: transparent;
-    box-shadow: none;
-}
-
-/* First image gets the same tall "big" role as HonEcomb */
-body.dropmini-page .dm-colour-tile-featured {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-}
-
-body.dropmini-page .dm-colour-tile:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-body.dropmini-page .dm-colour-tile:nth-child(3) {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-body.dropmini-page .dm-colour-tile:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-body.dropmini-page .dm-colour-tile:nth-child(5) {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-/* Sixth colour becomes the closing wide image while keeping the same gallery language */
-body.dropmini-page .dm-colour-tile:nth-child(6) {
-    grid-column: 1 / -1;
-    grid-row: 3;
-}
-
-body.dropmini-page .dm-colour-tile img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    border-radius: 20px;
-    cursor: zoom-in;
-    transform: none;
-    transition: none;
-}
-
-/* Keep colour names, but visually quiet so imagery remains primary */
-body.dropmini-page .dm-colour-tile figcaption {
-    position: absolute;
-    left: .9rem;
-    bottom: .9rem;
-    display: inline-flex;
-    align-items: center;
-    padding: .58rem .8rem;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(18, 24, 22, .78);
-    backdrop-filter: blur(8px);
-}
-
-body.dropmini-page .dm-colour-tile figcaption strong {
-    color: #fff;
-    font-size: .82rem;
-    font-weight: 700;
-    letter-spacing: 0;
-}
-
-/* Exact HonEcomb-style dark modal */
+/* LIGHTBOX */
 body.dropmini-page .dm-lightbox {
     position: fixed;
     inset: 0;
@@ -1718,19 +610,13 @@ body.dropmini-page .dm-lightbox {
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 0;
     background: rgba(0, 0, 0, .9);
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    backdrop-filter: none;
 }
 
 body.dropmini-page .dm-lightbox.is-open {
     display: flex;
 }
 
-body.dropmini-page .dm-lightbox > img,
 body.dropmini-page #dm-lightbox-image {
     display: block;
     width: auto;
@@ -1738,7 +624,6 @@ body.dropmini-page #dm-lightbox-image {
     max-width: 90vw;
     max-height: 82vh;
     border-radius: 16px;
-    box-shadow: none;
     object-fit: contain;
 }
 
@@ -1746,1587 +631,1350 @@ body.dropmini-page .dm-lightbox-close {
     position: absolute;
     top: 2rem;
     right: 2rem;
-    z-index: 2;
-    width: auto;
-    height: auto;
     padding: 0;
     border: 0;
-    border-radius: 0;
     background: none;
     color: #fff;
     font-size: 3rem;
     font-weight: 300;
     line-height: 1;
     cursor: pointer;
-    box-shadow: none;
 }
 
-body.dropmini-page .dm-lightbox-close:hover {
-    background: none;
-    color: #fff;
-    transform: none;
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    body.dropmini-page {
+        --dm-gutter: 2.5rem;
+    }
 }
 
-/* HonEcomb gallery responsive behavior */
 @media (max-width: 900px) {
-    body.dropmini-page .dm-colour-gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 420px 250px 250px 250px;
+    body.dropmini-page {
+        --dm-gutter: 1.5rem;
     }
 
-    body.dropmini-page .dm-colour-tile-featured {
-        grid-column: 1 / span 2;
-        grid-row: 1;
-    }
-
-    body.dropmini-page .dm-colour-tile:nth-child(2),
-    body.dropmini-page .dm-colour-tile:nth-child(3),
-    body.dropmini-page .dm-colour-tile:nth-child(4),
-    body.dropmini-page .dm-colour-tile:nth-child(5) {
-        grid-column: auto;
-        grid-row: auto;
-    }
-
-    body.dropmini-page .dm-colour-tile:nth-child(6) {
-        grid-column: 1 / span 2;
-        grid-row: auto;
-    }
-}
-
-@media (max-width: 700px) {
-    body.dropmini-page .dm-colours .dm-section-heading-split,
-    body.dropmini-page .dm-colour-gallery {
+    body.dropmini-page .dm-hero,
+    body.dropmini-page .dm-story,
+    body.dropmini-page .dm-form,
+    body.dropmini-page .dm-detail {
         grid-template-columns: 1fr;
     }
 
-    body.dropmini-page .dm-colour-gallery {
+    body.dropmini-page .dm-hero {
+        padding-inline: var(--dm-gutter);
+        min-height: auto;
+    }
+
+    body.dropmini-page .dm-hero-product {
+        min-height: 430px;
+    }
+
+    body.dropmini-page .dm-story-copy {
+        justify-self: start;
+    }
+
+    body.dropmini-page .dm-spec-ribbon-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 1rem;
+    }
+
+    body.dropmini-page .dm-spec-ribbon article:nth-child(odd) {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    body.dropmini-page .dm-form-image img,
+    body.dropmini-page .dm-detail-media img {
+        height: 420px;
+    }
+
+    body.dropmini-page .dm-colour-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 220px 220px 240px;
+    }
+
+    body.dropmini-page .dm-colour-featured,
+    body.dropmini-page .dm-colour-wide {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 620px) {
+    body.dropmini-page {
+        --dm-gutter: 1rem;
+    }
+
+    body.dropmini-page .dm-hero h1 {
+        font-size: clamp(3.8rem, 16vw, 5rem);
+    }
+
+    body.dropmini-page .dm-hero-actions {
+        flex-direction: column;
+    }
+
+    body.dropmini-page .dm-button {
+        width: 100%;
+    }
+
+    body.dropmini-page .dm-spec-ribbon-inner {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-spec-ribbon article,
+    body.dropmini-page .dm-spec-ribbon article:nth-child(odd) {
+        padding: .9rem 0;
+        border-left: 0;
+        border-top: 1px solid var(--dm-line);
+    }
+
+    body.dropmini-page .dm-spec-ribbon article:first-child {
+        border-top: 0;
+    }
+
+    body.dropmini-page .dm-colour-grid {
+        grid-template-columns: 1fr;
         grid-template-rows: none;
     }
 
-    body.dropmini-page .dm-colour-tile,
-    body.dropmini-page .dm-colour-tile-featured,
-    body.dropmini-page .dm-colour-tile:nth-child(n) {
+    body.dropmini-page .dm-colour-featured,
+    body.dropmini-page .dm-colour-wide {
         grid-column: auto;
-        grid-row: auto;
     }
 
-    body.dropmini-page .dm-colour-tile img {
-        height: 260px;
+    body.dropmini-page .dm-colour img {
+        height: 250px;
     }
 
-    body.dropmini-page .dm-lightbox-close {
-        top: 1.25rem;
-        right: 1.25rem;
+    body.dropmini-page .project-navigation .nav-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .nav-btn.next {
+        justify-self: start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.dropmini-page .dm-ripples span {
+        animation: none;
+    }
+}
+
+
+/* Colourway viewer responsive refinement */
+@media (max-width: 1000px) {
+    body.dropmini-page .dm-colourways-heading {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    body.dropmini-page .dm-colourways-heading > p {
+        max-width: 700px;
+    }
+
+    body.dropmini-page .dm-colour-viewer {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-colour-thumbs {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: none;
+    }
+
+    body.dropmini-page .dm-colour-thumb {
+        grid-template-columns: 1fr;
+        gap: .45rem;
+        padding: .4rem;
+        text-align: center;
+    }
+
+    body.dropmini-page .dm-colour-thumb img {
+        width: 100%;
+        height: 84px;
+    }
+}
+
+@media (max-width: 720px) {
+    body.dropmini-page .dm-colour-feature,
+    body.dropmini-page .dm-colour-feature > img {
+        min-height: 390px;
+        height: 390px;
+    }
+
+    body.dropmini-page .dm-colour-thumbs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    body.dropmini-page .dm-colour-thumb img {
+        height: 76px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.dropmini-page .dm-colour-thumbs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 
 /* =========================================================
-   COLOURWAYS — featured image zoom + section colour fix
+   DROP MINI — COLOURWAYS CONTAINER FIX
+   Full-bleed blue section with one contained inner composition.
    ========================================================= */
 
-/* Match the hero primary button colour */
-body.dropmini-page .dm-colours {
-    background: linear-gradient(135deg, #4c8ee3 0%, #286fcf 100%);
+/* The section itself owns the full-width blue background. */
+body.dropmini-page .dm-colourways {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: clamp(6rem, 8vw, 8rem) 0;
+    color: #fff;
+    background:
+        radial-gradient(circle at 84% 16%, rgba(255,255,255,.10), transparent 27rem),
+        radial-gradient(circle at 10% 90%, rgba(141,213,255,.12), transparent 25rem),
+        linear-gradient(135deg, #4c8ee3 0%, #286fcf 100%);
 }
 
-/* Keep the heading readable on the blue field */
-body.dropmini-page .dm-colours .dm-kicker {
+/* Everything inside shares one clear content boundary. */
+body.dropmini-page .dm-colourways-inner {
+    width: min(var(--dm-width), calc(100% - (var(--dm-gutter) * 2)));
+    margin-inline: auto;
+}
+
+/* Heading and supporting copy live inside the same blue composition. */
+body.dropmini-page .dm-colourways-heading {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, .58fr);
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: end;
+    margin: 0 0 3rem;
+}
+
+body.dropmini-page .dm-colourways .dm-kicker {
     color: rgba(255,255,255,.72);
 }
 
-body.dropmini-page .dm-colours .dm-section-heading h2,
-body.dropmini-page .dm-colours .dm-section-heading-split > p {
+body.dropmini-page .dm-colourways h2 {
     color: #fff;
 }
 
-/*
-   The earlier gallery rule sets every image to object-fit: cover.
-   This selector is deliberately more specific and comes later,
-   so the large featured tile shows the FULL image instead of cropping it.
-*/
-body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured {
-    background: rgba(255,255,255,.12);
+body.dropmini-page .dm-colourways-heading > p {
+    max-width: 500px;
+    margin: 0;
+    color: rgba(255,255,255,.74);
+    line-height: 1.8;
 }
 
-body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > img {
+/* Viewer is fully contained by the same inner width. */
+body.dropmini-page .dm-colour-viewer {
     width: 100%;
-    height: 100%;
-    padding: 0;
-    object-fit: contain;
-    object-position: center center;
-    border-radius: 20px;
-}
-
-/* Slight inset so the full render has breathing room without changing the image edges */
-body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    border-radius: 20px;
-    background: rgba(255,255,255,.06);
-    pointer-events: none;
-}
-
-body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > img,
-body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > figcaption {
-    position: relative;
-    z-index: 1;
-}
-
-body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > figcaption {
-    position: absolute;
-}
-
-
-/* =========================================================
-   COLOURWAYS — corrected proportions for landscape renders
-   Keeps HonEcomb's clean gallery language without forcing
-   a landscape speaker render into a tall portrait tile.
-   ========================================================= */
-
-body.dropmini-page .dm-colour-gallery {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: 280px 240px 250px;
+    grid-template-columns: minmax(0, 1fr) 220px;
     gap: 1rem;
+    align-items: stretch;
 }
 
-/* Black is the featured image, but stays landscape instead of becoming a tall box */
-body.dropmini-page .dm-colour-tile-featured {
-    grid-column: 1 / span 2;
-    grid-row: 1;
+/* Main image feels like part of the section, not a floating grey panel. */
+body.dropmini-page .dm-colour-feature {
+    position: relative;
+    min-width: 0;
+    min-height: 590px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 24px;
+    background: rgba(9,28,53,.12);
+    box-shadow: 0 22px 55px rgba(11,46,91,.16);
 }
 
-/* Blue completes the first row */
-body.dropmini-page .dm-colour-tile:nth-child(2) {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-/* Three equal landscape tiles */
-body.dropmini-page .dm-colour-tile:nth-child(3) {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-body.dropmini-page .dm-colour-tile:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-body.dropmini-page .dm-colour-tile:nth-child(5) {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-/* Closing wide image */
-body.dropmini-page .dm-colour-tile:nth-child(6) {
-    grid-column: 1 / -1;
-    grid-row: 3;
-}
-
-/* All of these renders are naturally landscape, so let the tile proportions do the work */
-body.dropmini-page .dm-colour-gallery .dm-colour-tile > img,
-body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > img {
+body.dropmini-page .dm-colour-feature > img {
     width: 100%;
-    height: 100%;
-    padding: 0;
+    height: 590px;
+    display: block;
     object-fit: cover;
-    object-position: center center;
-    border-radius: 20px;
 }
 
-/* Remove the artificial inset/letterbox treatment added to the featured tile */
-body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured {
-    background: transparent;
+/* Caption remains inside the image frame with equal inset all around. */
+body.dropmini-page .dm-colour-feature figcaption {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    margin: 0;
+    padding: .95rem 1.1rem;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(9,25,46,.78);
 }
 
-body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured::before {
-    display: none;
+/* Thumbnail rail belongs visually to the blue section. */
+body.dropmini-page .dm-colour-thumbs {
+    min-width: 0;
+    display: grid;
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+    gap: .65rem;
 }
 
-@media (max-width: 900px) {
-    body.dropmini-page .dm-colour-gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 300px 240px 240px 240px;
-    }
-
-    body.dropmini-page .dm-colour-tile-featured {
-        grid-column: 1 / -1;
-        grid-row: 1;
-    }
-
-    body.dropmini-page .dm-colour-tile:nth-child(2),
-    body.dropmini-page .dm-colour-tile:nth-child(3),
-    body.dropmini-page .dm-colour-tile:nth-child(4),
-    body.dropmini-page .dm-colour-tile:nth-child(5) {
-        grid-column: auto;
-        grid-row: auto;
-    }
-
-    body.dropmini-page .dm-colour-tile:nth-child(6) {
-        grid-column: 1 / -1;
-        grid-row: auto;
-    }
+body.dropmini-page .dm-colour-thumb {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 68px minmax(0, 1fr);
+    align-items: center;
+    gap: .75rem;
+    padding: .45rem;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 14px;
+    color: rgba(255,255,255,.78);
+    background: rgba(255,255,255,.095);
+    box-shadow: none;
+    overflow: hidden;
 }
 
-@media (max-width: 700px) {
-    body.dropmini-page .dm-colour-gallery {
+body.dropmini-page .dm-colour-thumb span {
+    min-width: 0;
+    color: inherit;
+}
+
+body.dropmini-page .dm-colour-thumb:hover {
+    border-color: rgba(255,255,255,.38);
+    background: rgba(255,255,255,.15);
+}
+
+body.dropmini-page .dm-colour-thumb.active {
+    color: #fff;
+    border-color: rgba(255,255,255,.72);
+    background: rgba(255,255,255,.18);
+    box-shadow: 0 10px 24px rgba(13,49,95,.13);
+}
+
+/* Keep thumbnails crisp without looking like detached white cards. */
+body.dropmini-page .dm-colour-thumb img {
+    border-radius: 9px;
+}
+
+/* Responsive: retain the same contained rhythm. */
+@media (max-width: 1000px) {
+    body.dropmini-page .dm-colourways-heading {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    body.dropmini-page .dm-colourways-heading > p {
+        max-width: 720px;
+    }
+
+    body.dropmini-page .dm-colour-viewer {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-colour-thumbs {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
         grid-template-rows: none;
     }
 
-    body.dropmini-page .dm-colour-tile,
-    body.dropmini-page .dm-colour-tile-featured,
-    body.dropmini-page .dm-colour-tile:nth-child(n) {
-        grid-column: auto;
-        grid-row: auto;
-    }
-
-    body.dropmini-page .dm-colour-gallery .dm-colour-tile > img,
-    body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > img {
-        height: 250px;
-    }
-}
-
-body.dropmini-page .dm-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: .6rem;
-    margin: 0;
-    color: var(--dm-page-blue);
-    font-size: .72rem;
-    font-weight: 800;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-}
-
-body.dropmini-page .dm-eyebrow::before {
-    content: "";
-    width: 28px;
-    height: 1px;
-    background: currentColor;
-}
-
-/* =========================================================
-   DROP MINI — FINAL HIGHLIGHT CARD STYLING
-   Header + icon = blue/bold
-   Main stat = normal dark colour/bold
-   Supporting text = muted
-   ========================================================= */
-
-body.dropmini-page .dm-highlight-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 0;
-}
-
-body.dropmini-page .dm-highlight-grid article {
-    min-width: 0;
-    display: grid;
-    grid-template-columns: 42px minmax(0, 1fr);
-    grid-template-areas:
-        "label label"
-        "icon value"
-        "icon meta";
-    column-gap: .8rem;
-    row-gap: .32rem;
-    align-items: center;
-    padding: .85rem 1.35rem;
-    border-left: 1px solid rgba(31, 82, 143, .10);
-}
-
-body.dropmini-page .dm-highlight-grid article:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-/* Article header: blue + bold */
-body.dropmini-page .dm-highlight-grid article > dt {
-    grid-area: label;
-    margin: 0 0 .38rem;
-    color: var(--dm-page-blue, #347bd8);
-    font-family: "Inter", sans-serif;
-    font-size: .68rem;
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-}
-
-/* Icon: blue */
-body.dropmini-page .dm-highlight-grid article > .dm-highlight-icon {
-    grid-area: icon;
-    width: 38px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    align-self: center;
-    border-radius: 50%;
-    color: var(--dm-page-blue, #347bd8);
-    background: #fff;
-    box-shadow: 0 7px 17px rgba(40, 91, 150, .07);
-}
-
-/* Main row */
-body.dropmini-page .dm-highlight-grid article > div {
-    grid-area: value;
-    min-width: 0;
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: .32rem;
-    margin: 0;
-    color: #536c92;
-    font-size: .79rem;
-    line-height: 1.25;
-}
-
-/* Main stat: dark + bold */
-body.dropmini-page .dm-highlight-grid article > div strong {
-    color: #152843;
-    font-family: "Manrope", "Inter", sans-serif;
-    font-size: .98rem;
-    font-weight: 800;
-    line-height: 1;
-}
-
-/* Supporting detail */
-body.dropmini-page .dm-highlight-grid article > small {
-    grid-area: meta;
-    display: block;
-    margin: 0;
-    color: #71839b;
-    font-size: .69rem;
-    line-height: 1.35;
-}
-
-/* Remove default indentation from dd inside small */
-body.dropmini-page .dm-highlight-grid article > small > dd {
-    margin: 0;
-    color: inherit;
-    font: inherit;
-    line-height: inherit;
-}
-
-/* Prevent broad dt/dd rules from overriding highlight cards */
-body.dropmini-page .dm-highlight-grid article dt,
-body.dropmini-page .dm-highlight-grid article dd {
-    margin-left: 0;
-}
-
-/* Keep technical specification list styling independent */
-body.dropmini-page .dm-spec-grid dt {
-    margin: 0 0 .9rem;
-    color: var(--dm-page-blue, #347bd8);
-    font-size: .7rem;
-    font-weight: 800;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-}
-
-body.dropmini-page .dm-spec-grid dd {
-    margin: .35rem 0;
-    color: var(--dm-page-muted, #657a96);
-    line-height: 1.55;
-}
-
-body.dropmini-page .dm-spec-grid dd strong {
-    color: var(--dm-page-ink, #12243e);
-}
-
-@media (max-width: 900px) {
-    body.dropmini-page .dm-highlight-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 1rem;
-    }
-
-    body.dropmini-page .dm-highlight-grid article:nth-child(odd) {
-        padding-left: 0;
-        border-left: 0;
-    }
-}
-
-@media (max-width: 620px) {
-    body.dropmini-page .dm-highlight-grid {
+    body.dropmini-page .dm-colour-thumb {
         grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-highlight-grid article,
-    body.dropmini-page .dm-highlight-grid article:nth-child(odd) {
-        padding: .9rem 0;
-        border-left: 0;
-        border-top: 1px solid rgba(31, 82, 143, .08);
-    }
-
-    body.dropmini-page .dm-highlight-grid article:first-child {
-        border-top: 0;
+        gap: .45rem;
+        text-align: center;
     }
 }
 
+@media (max-width: 720px) {
+    body.dropmini-page .dm-colour-feature,
+    body.dropmini-page .dm-colour-feature > img {
+        min-height: 390px;
+        height: 390px;
+    }
 
-/* =========================================================
-   DROP MINI — FINAL TOP SPECIFICATION ROW
-   Lower Technical Specifications section removed.
-   ========================================================= */
-
-body.dropmini-page .dm-highlights {
-    padding: 1.35rem 0;
-    border-top: 1px solid rgba(31, 82, 143, .08);
-    border-bottom: 1px solid rgba(31, 82, 143, .08);
-    background: #edf5fb;
+    body.dropmini-page .dm-colour-thumbs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
-body.dropmini-page .dm-highlight-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0;
-    align-items: stretch;
-}
-
-body.dropmini-page .dm-highlight-card {
-    min-width: 0;
-    display: grid;
-    grid-template-columns: 44px minmax(0, 1fr);
-    grid-template-areas:
-        "label label"
-        "icon content";
-    column-gap: .85rem;
-    row-gap: .6rem;
-    align-items: center;
-    padding: .45rem 1.35rem;
-    border-left: 1px solid rgba(31, 82, 143, .10);
-}
-
-body.dropmini-page .dm-highlight-card:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-/* Blue bold article header */
-body.dropmini-page .dm-highlight-label {
-    grid-area: label;
-    margin: 0;
-    color: var(--dm-page-blue, #347bd8);
-    font-family: "Inter", sans-serif;
-    font-size: .7rem;
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-}
-
-/* Blue icon */
-body.dropmini-page .dm-highlight-card > .dm-highlight-icon {
-    grid-area: icon;
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: var(--dm-page-blue, #347bd8);
-    background: #fff;
-    box-shadow: 0 7px 17px rgba(40, 91, 150, .07);
-    font-size: 1rem;
-}
-
-/* Main + secondary text block */
-body.dropmini-page .dm-highlight-content {
-    grid-area: content;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: .22rem;
-}
-
-body.dropmini-page .dm-highlight-value {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: .34rem;
-    margin: 0;
-    color: #536c92;
-    font-size: .8rem;
-    line-height: 1.25;
-}
-
-/* Main specification: dark/navy + bold */
-body.dropmini-page .dm-highlight-value strong {
-    color: #152843;
-    font-family: "Manrope", "Inter", sans-serif;
-    font-size: .98rem;
-    font-weight: 800;
-    line-height: 1;
-}
-
-/* Descriptor: normal muted */
-body.dropmini-page .dm-highlight-value span {
-    color: #536c92;
-    font-size: .79rem;
-    font-weight: 500;
-}
-
-/* Supporting detail */
-body.dropmini-page .dm-highlight-content small {
-    margin: 0;
-    color: #71839b;
-    font-size: .7rem;
-    line-height: 1.35;
-}
-
-/* The old lower specs section is no longer used */
-body.dropmini-page .dm-specs,
-body.dropmini-page .dm-spec-grid {
-    display: none !important;
-}
-
-@media (max-width: 900px) {
-    body.dropmini-page .dm-highlight-grid {
+@media (max-width: 480px) {
+    body.dropmini-page .dm-colour-thumbs {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 1rem;
-    }
-
-    body.dropmini-page .dm-highlight-card:nth-child(odd) {
-        padding-left: 0;
-        border-left: 0;
-    }
-}
-
-@media (max-width: 620px) {
-    body.dropmini-page .dm-highlight-grid {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-highlight-card,
-    body.dropmini-page .dm-highlight-card:nth-child(odd) {
-        padding: .9rem 0;
-        border-left: 0;
-        border-top: 1px solid rgba(31, 82, 143, .08);
-    }
-
-    body.dropmini-page .dm-highlight-card:first-child {
-        border-top: 0;
     }
 }
 
 
 /* =========================================================
-   DROP MINI — RAINED-ON GLASS HERO
-   Subtle animated condensation / window-droplet treatment.
-   This block intentionally sits last so it overrides the
-   earlier hero background rules without changing the layout.
+   DROP MINI — RIPPLE VISIBILITY BOOST
+   Stronger, still soft and water-like.
    ========================================================= */
 
-body.dropmini-page .dm-hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
-    /* Keep the clean pale-blue Drop Mini identity underneath the glass */
-    background:
-        radial-gradient(circle at 77% 23%, rgba(83, 161, 235, .20), transparent 25rem),
-        radial-gradient(circle at 14% 72%, rgba(126, 213, 243, .18), transparent 25rem),
-        linear-gradient(145deg, #fbfdff 0%, #eef7ff 46%, #dceefa 100%);
-}
-
-/* Soft atmospheric depth behind the droplets */
-body.dropmini-page .dm-hero::before {
-    content: "";
-    position: absolute;
-    inset: -6%;
-    z-index: -6;
-    pointer-events: none;
-    background:
-        radial-gradient(ellipse at 78% 42%, rgba(99, 174, 233, .18), transparent 31%),
-        radial-gradient(ellipse at 36% 22%, rgba(255,255,255,.95), transparent 30%),
-        linear-gradient(120deg, rgba(255,255,255,.28), rgba(123,190,235,.10));
-    filter: blur(18px);
-    transform: scale(1.04);
-}
-
-/* Main condensation layer.
-   Each radial-gradient is a separate glass droplet with a bright
-   upper-left rim and darker lower-right refraction. */
-body.dropmini-page .dm-rain-glass {
-    position: absolute;
-    inset: -2%;
-    z-index: -3;
-    pointer-events: none;
-    opacity: .72;
-    mix-blend-mode: multiply;
-
-    background-image:
-        radial-gradient(ellipse at 33% 27%,
-            rgba(255,255,255,.92) 0 12%,
-            rgba(255,255,255,.20) 18%,
-            rgba(72,133,181,.18) 47%,
-            rgba(23,79,122,.32) 68%,
-            transparent 72%),
-        radial-gradient(ellipse at 34% 26%,
-            rgba(255,255,255,.90) 0 10%,
-            rgba(255,255,255,.12) 17%,
-            rgba(55,119,167,.20) 50%,
-            rgba(22,75,117,.28) 69%,
-            transparent 73%),
-        radial-gradient(ellipse at 34% 25%,
-            rgba(255,255,255,.86) 0 11%,
-            rgba(255,255,255,.14) 18%,
-            rgba(57,124,172,.18) 49%,
-            rgba(21,73,112,.28) 69%,
-            transparent 73%),
-        radial-gradient(ellipse at 34% 25%,
-            rgba(255,255,255,.82) 0 10%,
-            rgba(255,255,255,.12) 18%,
-            rgba(54,118,163,.17) 48%,
-            rgba(18,67,105,.25) 70%,
-            transparent 74%),
-        radial-gradient(circle,
-            rgba(35,91,132,.18) 0 18%,
-            transparent 23%);
-
-    background-size:
-        104px 132px,
-        66px 82px,
-        44px 58px,
-        28px 36px,
-        13px 13px;
-
-    background-position:
-        4% 12%,
-        28% 8%,
-        60% 18%,
-        84% 9%,
-        0 0;
-
-    filter:
-        drop-shadow(1px 2px 1px rgba(23, 69, 104, .12))
-        drop-shadow(-1px -1px 1px rgba(255,255,255,.42));
-
-    animation: dmRainGlassDrift 18s ease-in-out infinite alternate;
-}
-
-/* Secondary micro-droplets so the pattern does not feel tiled */
-body.dropmini-page .dm-rain-glass::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle at 8% 24%, rgba(255,255,255,.80) 0 2px, rgba(40,102,148,.18) 3px, transparent 5px),
-        radial-gradient(circle at 17% 61%, rgba(255,255,255,.75) 0 3px, rgba(40,102,148,.16) 4px, transparent 7px),
-        radial-gradient(circle at 25% 33%, rgba(255,255,255,.78) 0 2px, rgba(40,102,148,.16) 3px, transparent 5px),
-        radial-gradient(circle at 37% 72%, rgba(255,255,255,.78) 0 4px, rgba(40,102,148,.17) 5px, transparent 8px),
-        radial-gradient(circle at 48% 18%, rgba(255,255,255,.82) 0 3px, rgba(40,102,148,.16) 4px, transparent 7px),
-        radial-gradient(circle at 56% 54%, rgba(255,255,255,.76) 0 2px, rgba(40,102,148,.18) 3px, transparent 6px),
-        radial-gradient(circle at 66% 30%, rgba(255,255,255,.82) 0 4px, rgba(40,102,148,.17) 5px, transparent 9px),
-        radial-gradient(circle at 72% 76%, rgba(255,255,255,.78) 0 3px, rgba(40,102,148,.17) 4px, transparent 7px),
-        radial-gradient(circle at 82% 47%, rgba(255,255,255,.84) 0 4px, rgba(40,102,148,.17) 5px, transparent 9px),
-        radial-gradient(circle at 91% 19%, rgba(255,255,255,.82) 0 3px, rgba(40,102,148,.17) 4px, transparent 7px),
-        radial-gradient(circle at 94% 69%, rgba(255,255,255,.80) 0 2px, rgba(40,102,148,.16) 3px, transparent 6px);
-    opacity: .85;
-}
-
-/* A few elongated running drops.
-   They move very slowly to avoid looking like a rain animation overlay. */
-body.dropmini-page .dm-rain-streaks {
-    position: absolute;
-    inset: -8% 0 -12%;
-    z-index: -2;
-    pointer-events: none;
-    opacity: .30;
-
-    background:
-        linear-gradient(180deg,
-            transparent 0 4%,
-            rgba(255,255,255,.45) 5%,
-            rgba(53,119,166,.16) 7% 62%,
-            rgba(26,83,126,.22) 73%,
-            transparent 78%) 15% -140px / 2px 360px no-repeat,
-        linear-gradient(180deg,
-            transparent 0 5%,
-            rgba(255,255,255,.42) 7%,
-            rgba(53,119,166,.14) 10% 58%,
-            rgba(26,83,126,.20) 70%,
-            transparent 76%) 46% -40px / 2px 440px no-repeat,
-        linear-gradient(180deg,
-            transparent 0 4%,
-            rgba(255,255,255,.40) 6%,
-            rgba(53,119,166,.15) 9% 64%,
-            rgba(26,83,126,.20) 72%,
-            transparent 79%) 72% -210px / 2px 410px no-repeat,
-        linear-gradient(180deg,
-            transparent 0 6%,
-            rgba(255,255,255,.40) 8%,
-            rgba(53,119,166,.13) 11% 62%,
-            rgba(26,83,126,.18) 74%,
-            transparent 80%) 89% -80px / 2px 390px no-repeat;
-
-    filter: blur(.25px);
-    animation: dmRainStreakSlide 12s ease-in-out infinite alternate;
-}
-
-/* Keep the existing ribbons, but make them secondary to the glass */
-body.dropmini-page .dm-liquid-ribbon {
-    opacity: .24;
-}
-
-/* Product remains crisp and clearly separated from the wet glass */
-body.dropmini-page .dm-product-scene,
-body.dropmini-page .dm-hero-copy {
-    position: relative;
-    z-index: 3;
-}
-
-body.dropmini-page .dm-hero-product-image {
-    filter: drop-shadow(0 21px 24px rgba(46,75,115,.16));
-}
-
-/* Slight glass sheen across the whole hero */
-body.dropmini-page .dm-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-        linear-gradient(112deg,
-            rgba(255,255,255,.18) 0%,
-            rgba(255,255,255,.02) 29%,
-            rgba(255,255,255,.10) 52%,
-            transparent 72%);
-    opacity: .75;
-}
-
-@keyframes dmRainGlassDrift {
-    0% {
-        transform: translate3d(0, -2px, 0) scale(1.01);
-        background-position:
-            4% 12%,
-            28% 8%,
-            60% 18%,
-            84% 9%,
-            0 0;
-    }
-    100% {
-        transform: translate3d(0, 5px, 0) scale(1.012);
-        background-position:
-            4% 15%,
-            28% 11%,
-            60% 21%,
-            84% 12%,
-            2px 3px;
-    }
-}
-
-@keyframes dmRainStreakSlide {
-    0%   { transform: translateY(-8px); opacity: .22; }
-    55%  { opacity: .31; }
-    100% { transform: translateY(24px); opacity: .27; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    body.dropmini-page .dm-rain-glass,
-    body.dropmini-page .dm-rain-streaks {
-        animation: none;
-    }
-}
-
-@media (max-width: 760px) {
-    body.dropmini-page .dm-rain-glass {
-        opacity: .50;
-        background-size:
-            84px 104px,
-            54px 66px,
-            36px 46px,
-            24px 30px,
-            12px 12px;
-    }
-
-    body.dropmini-page .dm-rain-streaks {
-        opacity: .20;
-    }
-}
-
-
-/* =========================================================
-   DROP MINI — WET GLASS HERO / REFINED
-   Sparse, irregular condensation. No repeating bubble texture.
-   ========================================================= */
-
-body.dropmini-page .dm-hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 82% 18%, rgba(82, 162, 226, .18), transparent 25rem),
-        radial-gradient(circle at 12% 78%, rgba(128, 215, 245, .15), transparent 26rem),
-        linear-gradient(145deg, #fbfdff 0%, #f2f9ff 48%, #e4f1fb 100%);
-}
-
-/* Cancel the earlier repeating gradient texture completely */
-body.dropmini-page .dm-rain-glass {
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    pointer-events: none;
-
-    background: none !important;
-    background-image: none !important;
-    background-size: auto !important;
-    background-position: 0 0 !important;
-    background-repeat: no-repeat !important;
-
+body.dropmini-page .dm-ripples {
     opacity: 1;
-    mix-blend-mode: normal;
-    filter: none;
-    animation: none;
-    transform: none;
+    right: 0;
+    bottom: 0;
+    width: 86%;
+    height: 170px;
 }
 
-/* Remove the previous micro-drop pseudo texture */
-body.dropmini-page .dm-rain-glass::before {
-    content: none !important;
-    display: none !important;
-}
-
-/* Individual droplets:
-   asymmetrical, slightly elongated and refractive rather than circular */
-body.dropmini-page .dm-glass-drop {
-    position: absolute;
-    display: block;
-    width: 18px;
-    height: 28px;
-    border-radius: 58% 42% 62% 38% / 42% 54% 46% 58%;
-    opacity: .42;
-
-    background:
-        radial-gradient(circle at 28% 22%,
-            rgba(255,255,255,.88) 0 10%,
-            rgba(255,255,255,.24) 12% 22%,
-            transparent 24%),
-        linear-gradient(145deg,
-            rgba(255,255,255,.28) 0 38%,
-            rgba(56,117,164,.13) 62%,
-            rgba(21,71,109,.20) 100%);
-
-    border:
-        1px solid rgba(47, 104, 148, .12);
-
-    box-shadow:
-        inset 1px 1px 2px rgba(255,255,255,.55),
-        inset -2px -3px 4px rgba(26,76,113,.10),
-        0 2px 3px rgba(40,87,123,.05);
-
-    backdrop-filter: blur(1.1px) saturate(1.05);
-    -webkit-backdrop-filter: blur(1.1px) saturate(1.05);
-
-    transform: rotate(var(--drop-rotate, 0deg));
-    animation: dmDropCreep var(--drop-speed, 16s) ease-in-out infinite alternate;
-}
-
-/* Make every droplet intentionally different */
-body.dropmini-page .dm-glass-drop-1  { left: 7%;  top: 16%; width: 10px; height: 17px; --drop-rotate: 11deg; --drop-speed: 17s; }
-body.dropmini-page .dm-glass-drop-2  { left: 18%; top: 68%; width: 14px; height: 24px; --drop-rotate: -7deg; --drop-speed: 21s; opacity: .30; }
-body.dropmini-page .dm-glass-drop-3  { left: 31%; top: 22%; width: 8px;  height: 13px; --drop-rotate: 8deg; --drop-speed: 19s; opacity: .34; }
-body.dropmini-page .dm-glass-drop-4  { left: 42%; top: 76%; width: 17px; height: 29px; --drop-rotate: 5deg; --drop-speed: 22s; opacity: .28; }
-body.dropmini-page .dm-glass-drop-5  { left: 53%; top: 11%; width: 12px; height: 20px; --drop-rotate: -10deg; --drop-speed: 18s; }
-body.dropmini-page .dm-glass-drop-6  { left: 64%; top: 63%; width: 9px;  height: 15px; --drop-rotate: 13deg; --drop-speed: 24s; opacity: .30; }
-body.dropmini-page .dm-glass-drop-7  { left: 72%; top: 25%; width: 16px; height: 26px; --drop-rotate: -5deg; --drop-speed: 20s; opacity: .36; }
-body.dropmini-page .dm-glass-drop-8  { left: 83%; top: 71%; width: 11px; height: 19px; --drop-rotate: 9deg; --drop-speed: 23s; opacity: .30; }
-body.dropmini-page .dm-glass-drop-9  { left: 91%; top: 18%; width: 7px;  height: 12px; --drop-rotate: -13deg; --drop-speed: 19s; opacity: .26; }
-body.dropmini-page .dm-glass-drop-10 { left: 12%; top: 46%; width: 6px;  height: 10px; --drop-rotate: 7deg; --drop-speed: 25s; opacity: .24; }
-body.dropmini-page .dm-glass-drop-11 { left: 58%; top: 44%; width: 7px;  height: 12px; --drop-rotate: -4deg; --drop-speed: 21s; opacity: .24; }
-body.dropmini-page .dm-glass-drop-12 { left: 87%; top: 43%; width: 13px; height: 21px; --drop-rotate: 6deg; --drop-speed: 26s; opacity: .28; }
-
-/* Running-water streaks:
-   thin, irregular, tapered — more like water travelling down glass */
-body.dropmini-page .dm-rain-streaks {
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    pointer-events: none;
-    background: none !important;
-    opacity: 1;
-    filter: none;
-    animation: none;
-    transform: none;
-}
-
-body.dropmini-page .dm-glass-streak {
-    position: absolute;
-    display: block;
-    width: 2px;
-    height: 150px;
-    border-radius: 999px;
-    opacity: .13;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent 0%,
-            rgba(255,255,255,.55) 7%,
-            rgba(87,143,184,.18) 18%,
-            rgba(57,112,153,.15) 63%,
-            rgba(255,255,255,.30) 78%,
-            transparent 100%
-        );
-
-    box-shadow:
-        1px 0 0 rgba(255,255,255,.16),
-        -1px 0 0 rgba(48,100,138,.05);
-
-    animation: dmStreakCreep var(--streak-speed, 20s) ease-in-out infinite alternate;
-}
-
-body.dropmini-page .dm-glass-streak::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -5px;
-    width: 7px;
-    height: 11px;
-    transform: translateX(-50%) rotate(7deg);
-    border-radius: 60% 40% 62% 38% / 46% 52% 48% 54%;
-    background:
-        radial-gradient(circle at 30% 24%, rgba(255,255,255,.72) 0 13%, transparent 16%),
-        linear-gradient(145deg, rgba(255,255,255,.18), rgba(42,102,145,.12));
-    border: 1px solid rgba(52,106,146,.10);
-}
-
-body.dropmini-page .dm-glass-streak-1 { left: 14%; top: 4%;  height: 118px; --streak-speed: 24s; transform: rotate(.7deg); }
-body.dropmini-page .dm-glass-streak-2 { left: 47%; top: 18%; height: 190px; --streak-speed: 29s; transform: rotate(-.5deg); opacity: .10; }
-body.dropmini-page .dm-glass-streak-3 { left: 76%; top: 3%;  height: 142px; --streak-speed: 25s; transform: rotate(.45deg); opacity: .11; }
-body.dropmini-page .dm-glass-streak-4 { left: 93%; top: 30%; height: 104px; --streak-speed: 31s; transform: rotate(-.8deg); opacity: .08; }
-
-/* Very soft mist/frosting at the hero edges only */
-body.dropmini-page .dm-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.15) 0%,
-            transparent 18%,
-            transparent 80%,
-            rgba(201,228,247,.10) 100%
-        );
-}
-
-/* Keep the original decorative ribbons very quiet */
-body.dropmini-page .dm-liquid-ribbon {
-    opacity: .10;
-}
-
-/* Product remains the hero focal point */
-body.dropmini-page .dm-hero-copy,
-body.dropmini-page .dm-product-scene {
-    position: relative;
-    z-index: 3;
-}
-
-body.dropmini-page .dm-hero-product-image {
-    filter: drop-shadow(0 19px 22px rgba(46,75,115,.14));
-}
-
-@keyframes dmDropCreep {
-    0% {
-        translate: 0 0;
-    }
-    100% {
-        translate: 0 9px;
-    }
-}
-
-@keyframes dmStreakCreep {
-    0% {
-        translate: 0 -3px;
-    }
-    100% {
-        translate: 0 18px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    body.dropmini-page .dm-glass-drop,
-    body.dropmini-page .dm-glass-streak {
-        animation: none;
-    }
-}
-
-@media (max-width: 760px) {
-    body.dropmini-page .dm-glass-drop {
-        opacity: .24;
-    }
-
-    body.dropmini-page .dm-glass-streak {
-        opacity: .07;
-    }
-
-    body.dropmini-page .dm-glass-drop-3,
-    body.dropmini-page .dm-glass-drop-6,
-    body.dropmini-page .dm-glass-drop-9,
-    body.dropmini-page .dm-glass-drop-10,
-    body.dropmini-page .dm-glass-drop-11,
-    body.dropmini-page .dm-glass-drop-12 {
-        display: none;
-    }
-}
-
-
-/* =========================================================
-   DROP MINI — HERO RIPPLE REFINEMENT
-   Replaces the wet-glass effect with subtle water ripples.
-   ========================================================= */
-
-body.dropmini-page .dm-hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 76% 24%, rgba(83, 162, 226, .18), transparent 25rem),
-        radial-gradient(circle at 16% 74%, rgba(126, 213, 243, .14), transparent 24rem),
-        linear-gradient(145deg, #ffffff 0%, #f7fbff 48%, #e8f4fd 100%);
-}
-
-/* Disable any previous rain / condensation layers from older CSS */
-body.dropmini-page .dm-rain-glass,
-body.dropmini-page .dm-rain-streaks,
-body.dropmini-page .dm-glass-drop,
-body.dropmini-page .dm-glass-streak {
-    display: none !important;
-}
-
-/* Broad background ripples: large, faint, irregular and soft */
-body.dropmini-page .dm-water-ripples {
-    position: absolute;
-    inset: 0;
-    z-index: -3;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-body.dropmini-page .dm-water-ripple {
-    position: absolute;
-    left: 67%;
-    top: 54%;
-    width: 420px;
-    height: 118px;
-    border: 1px solid rgba(63, 137, 207, .10);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) rotate(-3deg);
-    box-shadow:
-        0 0 24px rgba(93, 171, 228, .035),
-        inset 0 0 16px rgba(255,255,255,.20);
-    opacity: 0;
-    animation: dmHeroRipple 7s ease-out infinite;
-}
-
-body.dropmini-page .dm-water-ripple-2 {
-    animation-delay: 1.7s;
-    width: 520px;
-    height: 145px;
-    left: 70%;
-    top: 56%;
-}
-
-body.dropmini-page .dm-water-ripple-3 {
-    animation-delay: 3.4s;
-    width: 610px;
-    height: 172px;
-    left: 68%;
-    top: 58%;
-}
-
-body.dropmini-page .dm-water-ripple-4 {
-    animation-delay: 5.1s;
-    width: 700px;
-    height: 198px;
-    left: 72%;
-    top: 61%;
-}
-
-/* Tight ripple field directly beneath the speaker */
-body.dropmini-page .dm-speaker-ripple-field {
-    position: absolute;
-    z-index: 1;
-    right: 5%;
-    bottom: 8%;
-    width: 74%;
-    height: 122px;
-    transform: perspective(620px) rotateX(63deg);
-    transform-origin: center center;
-    pointer-events: none;
-}
-
-body.dropmini-page .dm-speaker-ripple-field span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 32%;
-    height: 44%;
-    transform: translate(-50%, -50%);
-    border: 1.5px solid rgba(60, 132, 208, .22);
-    border-radius: 50%;
-    opacity: 0;
-    box-shadow: 0 0 16px rgba(86, 162, 225, .07);
-    animation: dmSpeakerRipple 5.8s ease-out infinite;
-}
-
-body.dropmini-page .dm-speaker-ripple-field span:nth-child(2) {
-    animation-delay: 1.45s;
-}
-
-body.dropmini-page .dm-speaker-ripple-field span:nth-child(3) {
-    animation-delay: 2.9s;
-}
-
-body.dropmini-page .dm-speaker-ripple-field span:nth-child(4) {
-    animation-delay: 4.35s;
-}
-
-/* Soft contact glow instead of a heavy shadow */
-body.dropmini-page .dm-product-shadow {
-    right: 13%;
-    bottom: 14%;
-    width: 52%;
-    height: 30px;
-    opacity: .42;
+/* Make the static ripple structure clearly visible at rest */
+body.dropmini-page .dm-ripples::before {
+    width: 90%;
+    height: 78%;
     background:
         radial-gradient(
             ellipse at center,
-            rgba(63, 139, 210, .18) 0%,
-            rgba(119, 191, 238, .08) 45%,
-            transparent 76%
+            rgba(88, 166, 225, .055) 0 20%,
+            transparent 21% 25%,
+            rgba(52, 123, 216, .34) 26% 27.5%,
+            transparent 28.5% 38%,
+            rgba(73, 151, 220, .28) 39% 40.5%,
+            transparent 41.5% 51%,
+            rgba(96, 174, 230, .22) 52% 53.5%,
+            transparent 54.5% 64%,
+            rgba(123, 192, 237, .17) 65% 66.5%,
+            transparent 67.5% 100%
         );
-    filter: blur(12px);
+    filter: blur(.2px);
 }
 
-body.dropmini-page .dm-hero-product-image {
-    position: relative;
-    z-index: 4;
-    filter: drop-shadow(0 18px 21px rgba(46,75,115,.14));
+/* Add a soft contact glow so the ripple reads as water, not radar rings */
+body.dropmini-page .dm-ripples::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    width: 34%;
+    height: 28%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(92, 179, 235, .22) 0%,
+        rgba(92, 179, 235, .09) 44%,
+        transparent 72%
+    );
+    filter: blur(10px);
 }
 
-/* Keep existing decorative ribbons nearly invisible */
-body.dropmini-page .dm-liquid-ribbon {
-    opacity: .08;
+/* Stronger animated secondary ripples */
+body.dropmini-page .dm-ripples span {
+    border-color: rgba(52, 123, 216, .34);
+    border-width: 1.6px;
 }
 
-@keyframes dmHeroRipple {
+@keyframes dm-ripple {
     0% {
-        transform: translate(-50%, -50%) rotate(-3deg) scale(.72);
+        width: 30%;
+        height: 28%;
         opacity: 0;
     }
-    18% {
+
+    14% {
+        opacity: .48;
+    }
+
+    46% {
+        opacity: .30;
+    }
+
+    72% {
         opacity: .16;
     }
-    72% {
-        opacity: .07;
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(-3deg) scale(1.18);
-        opacity: 0;
-    }
-}
 
-@keyframes dmSpeakerRipple {
-    0% {
-        width: 28%;
-        height: 40%;
-        opacity: 0;
-    }
-    18% {
-        opacity: .32;
-    }
-    75% {
-        opacity: .10;
-    }
     100% {
         width: 98%;
-        height: 94%;
+        height: 86%;
         opacity: 0;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    body.dropmini-page .dm-water-ripple,
-    body.dropmini-page .dm-speaker-ripple-field span {
-        animation: none;
-        opacity: .10;
-    }
-}
-
-@media (max-width: 760px) {
-    body.dropmini-page .dm-water-ripple {
-        left: 56%;
-        opacity: .06;
-    }
-
-    body.dropmini-page .dm-speaker-ripple-field {
-        right: 8%;
-        bottom: 7%;
-        width: 82%;
-        height: 98px;
-    }
+/* Slightly lift the speaker so the ripple remains visible underneath */
+body.dropmini-page .dm-hero-product img {
+    transform: translateY(-7%);
 }
 
 
 /* =========================================================
-   DROP MINI — RIPPLE VISIBILITY FIX
-   Makes the water effect clearly visible beneath the speaker
-   without turning it into target/radar rings.
+   DROP MINI — ORGANIC WATER RIPPLE REBUILD
+   No stationary concentric rings. All visible waves move.
    ========================================================= */
 
-body.dropmini-page .dm-speaker-ripple-field {
-    z-index: 2;
-    right: 2%;
-    bottom: 3.5%;
-    width: 82%;
-    height: 150px;
-
-    transform: perspective(560px) rotateX(67deg);
-    transform-origin: center center;
-
+body.dropmini-page .dm-ripples {
+    right: 0;
+    bottom: 1%;
+    width: 86%;
+    height: 165px;
     opacity: 1;
-    overflow: visible;
+    transform: perspective(580px) rotateX(68deg);
 }
 
-/* Soft water glow underneath */
-body.dropmini-page .dm-speaker-ripple-field::before {
+/* Remove the stationary concentric-ring graphic completely. */
+body.dropmini-page .dm-ripples::before {
     content: "";
     position: absolute;
     left: 50%;
     top: 53%;
-    width: 62%;
-    height: 48%;
+    width: 36%;
+    height: 28%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(74, 157, 224, .22) 0%,
-            rgba(105, 183, 236, .12) 30%,
-            rgba(161, 218, 249, .08) 48%,
-            transparent 72%
-        );
-    filter: blur(11px);
+    background: radial-gradient(
+        ellipse at center,
+        rgba(82, 171, 232, .19) 0%,
+        rgba(82, 171, 232, .08) 42%,
+        transparent 72%
+    );
+    filter: blur(12px);
+    animation: dm-water-contact 3.8s ease-in-out infinite;
 }
 
-/* Main ripple lines */
-body.dropmini-page .dm-speaker-ripple-field span {
+/* The second glow also breathes instead of sitting still. */
+body.dropmini-page .dm-ripples::after {
+    content: "";
     position: absolute;
     left: 50%;
-    top: 51%;
-
-    width: 34%;
-    height: 34%;
-
+    top: 53%;
+    width: 24%;
+    height: 18%;
     transform: translate(-50%, -50%);
-    border: 2px solid rgba(52, 123, 216, .34);
-    border-left-color: rgba(52, 123, 216, .18);
-    border-right-color: rgba(105, 183, 236, .20);
-    border-radius: 49% 51% 47% 53% / 56% 47% 53% 44%;
+    border-radius: 50%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(126, 202, 242, .18) 0%,
+        rgba(126, 202, 242, .06) 48%,
+        transparent 76%
+    );
+    filter: blur(8px);
+    animation: dm-water-contact-small 2.9s ease-in-out infinite;
+}
 
-    box-shadow:
-        0 0 9px rgba(70, 151, 217, .10),
-        inset 0 0 7px rgba(255,255,255,.22);
-
+/* Each wave is an imperfect partial ellipse, not a full graphic ring. */
+body.dropmini-page .dm-ripples span {
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    width: 28%;
+    height: 24%;
     opacity: 0;
-    animation: dmSpeakerRippleVisible 5.6s ease-out infinite;
+
+    border: 0;
+    border-top: 1.8px solid rgba(45, 125, 211, .42);
+    border-left: 1.1px solid rgba(75, 158, 222, .18);
+    border-right: 1.4px solid rgba(83, 166, 226, .27);
+    border-bottom: 1px solid rgba(126, 197, 238, .08);
+
+    border-radius: 48% 52% 46% 54% / 53% 45% 55% 47%;
+    filter: blur(.25px);
+    transform-origin: center;
+    animation: dm-water-ripple-a 5.8s cubic-bezier(.22,.61,.36,1) infinite;
 }
 
-body.dropmini-page .dm-speaker-ripple-field span:nth-child(2) {
+body.dropmini-page .dm-ripples span:nth-child(2) {
+    border-radius: 52% 48% 55% 45% / 46% 55% 45% 54%;
+    animation-name: dm-water-ripple-b;
     animation-delay: 1.35s;
-    border-radius: 53% 47% 52% 48% / 47% 56% 44% 53%;
 }
 
-body.dropmini-page .dm-speaker-ripple-field span:nth-child(3) {
+body.dropmini-page .dm-ripples span:nth-child(3) {
+    border-radius: 46% 54% 50% 50% / 56% 44% 53% 47%;
+    animation-name: dm-water-ripple-c;
     animation-delay: 2.7s;
-    border-radius: 47% 53% 49% 51% / 54% 45% 55% 46%;
 }
 
-body.dropmini-page .dm-speaker-ripple-field span:nth-child(4) {
+body.dropmini-page .dm-ripples span:nth-child(4) {
+    border-radius: 54% 46% 47% 53% / 48% 52% 44% 56%;
+    animation-name: dm-water-ripple-d;
     animation-delay: 4.05s;
-    border-radius: 52% 48% 46% 54% / 48% 54% 46% 52%;
 }
 
-@keyframes dmSpeakerRippleVisible {
+/* Slightly different paths stop the waves reading as concentric discs. */
+@keyframes dm-water-ripple-a {
     0% {
-        width: 28%;
-        height: 28%;
+        width: 24%;
+        height: 20%;
         opacity: 0;
-        transform: translate(-50%, -50%) scale(.96);
+        transform: translate(-50%, -50%) rotate(-2deg) scale(.92);
     }
-
-    12% {
-        opacity: .58;
+    14% {
+        opacity: .48;
     }
-
-    44% {
-        opacity: .34;
+    52% {
+        opacity: .24;
+        transform: translate(-51%, -49%) rotate(1.5deg) scale(1.02);
     }
-
-    78% {
-        opacity: .16;
-    }
-
     100% {
-        width: 100%;
-        height: 88%;
+        width: 93%;
+        height: 78%;
         opacity: 0;
-        transform: translate(-50%, -50%) scale(1.02);
+        transform: translate(-48%, -47%) rotate(3deg) scale(1.05);
     }
 }
 
-/* Background ripples: visible but very soft */
-body.dropmini-page .dm-water-ripple {
-    z-index: -3;
-    border-width: 1.5px;
-    border-color: rgba(52,123,216,.13);
-    box-shadow:
-        0 0 18px rgba(83,162,226,.06),
-        inset 0 0 14px rgba(255,255,255,.25);
-}
-
-@keyframes dmHeroRipple {
+@keyframes dm-water-ripple-b {
     0% {
-        transform: translate(-50%, -50%) rotate(-3deg) scale(.72);
+        width: 22%;
+        height: 18%;
         opacity: 0;
+        transform: translate(-50%, -50%) rotate(3deg) scale(.9);
     }
+    16% {
+        opacity: .42;
+    }
+    58% {
+        opacity: .21;
+        transform: translate(-48%, -50%) rotate(-1deg) scale(1.03);
+    }
+    100% {
+        width: 88%;
+        height: 74%;
+        opacity: 0;
+        transform: translate(-52%, -46%) rotate(-3deg) scale(1.06);
+    }
+}
 
+@keyframes dm-water-ripple-c {
+    0% {
+        width: 26%;
+        height: 21%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-3deg) scale(.94);
+    }
+    13% {
+        opacity: .44;
+    }
+    54% {
+        opacity: .2;
+        transform: translate(-52%, -48%) rotate(2deg) scale(1.01);
+    }
+    100% {
+        width: 96%;
+        height: 80%;
+        opacity: 0;
+        transform: translate(-47%, -45%) rotate(4deg) scale(1.07);
+    }
+}
+
+@keyframes dm-water-ripple-d {
+    0% {
+        width: 23%;
+        height: 19%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(1deg) scale(.91);
+    }
     15% {
-        opacity: .20;
+        opacity: .40;
     }
-
-    55% {
-        opacity: .10;
+    57% {
+        opacity: .19;
+        transform: translate(-49%, -51%) rotate(-2deg) scale(1.02);
     }
-
     100% {
-        transform: translate(-50%, -50%) rotate(-3deg) scale(1.22);
-        opacity: 0;
-    }
-}
-
-/* Lift the speaker slightly so the ripple is not hidden behind it */
-body.dropmini-page .dm-hero-product-image {
-    transform: translate(5%, -7%) scale(1.07);
-}
-
-/* Reduce the old shadow so the ripple is readable */
-body.dropmini-page .dm-product-shadow {
-    bottom: 11.5%;
-    width: 48%;
-    height: 24px;
-    opacity: .28;
-    filter: blur(10px);
-}
-
-@media (max-width: 980px) {
-    body.dropmini-page .dm-speaker-ripple-field {
-        right: 3%;
-        bottom: 2%;
-        width: 86%;
-        height: 125px;
-    }
-}
-
-@media (max-width: 760px) {
-    body.dropmini-page .dm-speaker-ripple-field {
-        right: 4%;
-        bottom: 0;
         width: 90%;
-        height: 105px;
+        height: 76%;
+        opacity: 0;
+        transform: translate(-53%, -46%) rotate(-4deg) scale(1.05);
     }
+}
 
-    body.dropmini-page .dm-speaker-ripple-field span {
-        border-width: 1.5px;
+@keyframes dm-water-contact {
+    0%, 100% {
+        opacity: .48;
+        transform: translate(-50%, -50%) scale(.94);
     }
+    50% {
+        opacity: .82;
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
 
-    body.dropmini-page .dm-hero-product-image {
-        transform: translate(2%, -5%) scale(1.02);
+@keyframes dm-water-contact-small {
+    0%, 100% {
+        opacity: .35;
+        transform: translate(-50%, -50%) scale(.9);
+    }
+    50% {
+        opacity: .62;
+        transform: translate(-50%, -50%) scale(1.12);
     }
 }
 
 
 /* =========================================================
-   DROP MINI — RIPPLE VISIBILITY / FINAL
-   Stronger static water rings + subtle pulse animation.
-   This intentionally overrides all earlier ripple rules.
+   DROP MINI — ORGANIC RIPPLE VISIBILITY CORRECTION
+   Keep the irregular moving-water treatment, but make it
+   unmistakably visible. No static concentric-ring graphic.
    ========================================================= */
 
-body.dropmini-page .dm-speaker-ripple-field {
-    position: absolute;
-    z-index: 2;
+body.dropmini-page .dm-ripples {
     right: -1%;
-    bottom: 2%;
-    width: 86%;
-    height: 165px;
-    pointer-events: none;
+    bottom: 0;
+    width: 90%;
+    height: 180px;
     opacity: 1 !important;
-    overflow: visible;
     transform: perspective(560px) rotateX(66deg);
-    transform-origin: center;
 }
 
-body.dropmini-page .dm-speaker-ripple-field::before {
-    content: "";
-    position: absolute;
-    inset: 14% 3% 6%;
-    border-radius: 50%;
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(73, 158, 226, .18) 0%,
-            rgba(73, 158, 226, .11) 22%,
-            rgba(124, 194, 239, .07) 40%,
-            transparent 70%
-        );
-    filter: blur(7px);
-    opacity: .95;
-}
-
-body.dropmini-page .dm-speaker-ripple-field::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 52%;
-    width: 84%;
-    height: 74%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background:
-        radial-gradient(
-            ellipse at center,
-            transparent 0 27%,
-            rgba(48, 122, 207, .24) 28% 29%,
-            transparent 30% 40%,
-            rgba(72, 151, 220, .20) 41% 42%,
-            transparent 43% 53%,
-            rgba(98, 173, 228, .17) 54% 55%,
-            transparent 56% 66%,
-            rgba(126, 192, 234, .14) 67% 68%,
-            transparent 69% 100%
-        );
-    filter: blur(.2px);
+/* Stronger moving contact disturbance — still soft, never a ring. */
+body.dropmini-page .dm-ripples::before {
+    width: 46%;
+    height: 34%;
     opacity: 1;
-    animation: dmRippleBreath 4.8s ease-in-out infinite;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(49, 131, 211, .32) 0%,
+            rgba(72, 160, 224, .22) 28%,
+            rgba(104, 186, 235, .10) 50%,
+            transparent 72%
+        );
+    filter: blur(13px);
+    animation: dm-water-contact 3.2s ease-in-out infinite;
 }
 
-body.dropmini-page .dm-speaker-ripple-field span {
-    position: absolute;
-    left: 50%;
-    top: 52%;
-    width: 36%;
-    height: 32%;
-    transform: translate(-50%, -50%);
-    border: 1.6px solid rgba(45, 119, 205, .28);
-    border-radius: 52% 48% 50% 50% / 45% 55% 47% 53%;
-    opacity: .24 !important;
-    box-shadow: 0 0 10px rgba(67, 146, 214, .10);
-    animation: dmRippleSpreadStrong 6.2s ease-out infinite;
+/* Secondary highlight moves independently so the centre feels alive. */
+body.dropmini-page .dm-ripples::after {
+    width: 30%;
+    height: 22%;
+    opacity: 1;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(95, 183, 235, .30) 0%,
+            rgba(126, 202, 242, .14) 42%,
+            transparent 74%
+        );
+    filter: blur(8px);
+    animation: dm-water-contact-small 2.45s ease-in-out infinite;
 }
 
-body.dropmini-page .dm-speaker-ripple-field span:nth-child(2) {
-    animation-delay: 1.55s;
-    border-radius: 47% 53% 49% 51% / 52% 48% 55% 45%;
-}
-body.dropmini-page .dm-speaker-ripple-field span:nth-child(3) {
-    animation-delay: 3.1s;
-    border-radius: 54% 46% 51% 49% / 48% 52% 46% 54%;
-}
-body.dropmini-page .dm-speaker-ripple-field span:nth-child(4) {
-    animation-delay: 4.65s;
-    border-radius: 49% 51% 46% 54% / 54% 46% 51% 49%;
-}
-
-body.dropmini-page .dm-water-ripples {
-    display: none !important;
+/* Make the wave fronts clearer, but preserve their irregular partial-ellipse look. */
+body.dropmini-page .dm-ripples span {
+    border-top-color: rgba(35, 112, 202, .72);
+    border-left-color: rgba(63, 149, 217, .38);
+    border-right-color: rgba(69, 158, 223, .48);
+    border-bottom-color: rgba(112, 192, 237, .15);
+    border-top-width: 2.2px;
+    border-left-width: 1.35px;
+    border-right-width: 1.65px;
+    border-bottom-width: 1px;
+    filter:
+        drop-shadow(0 0 2px rgba(53, 132, 211, .13))
+        blur(.12px);
 }
 
-body.dropmini-page .dm-hero-product-image {
-    transform: translate(5%, -8%) scale(1.07);
-    filter: drop-shadow(0 17px 20px rgba(46,75,115,.13));
-}
-
-body.dropmini-page .dm-product-shadow {
-    right: 14%;
-    bottom: 10%;
-    width: 48%;
-    height: 20px;
-    opacity: .22 !important;
-    filter: blur(9px);
-}
-
-@keyframes dmRippleBreath {
-    0%, 100% {
-        transform: translate(-50%, -50%) scale(.985);
-        opacity: .88;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.025);
-        opacity: 1;
-    }
-}
-
-@keyframes dmRippleSpreadStrong {
+/* Each ripple is stronger at the beginning/middle of its travel,
+   then fades only near the outer edge. */
+@keyframes dm-water-ripple-a {
     0% {
-        width: 34%;
-        height: 30%;
-        opacity: 0 !important;
+        width: 23%;
+        height: 19%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-3deg) scale(.90);
     }
-    15% {
-        opacity: .42 !important;
+    10% {
+        opacity: .74;
     }
-    55% {
-        opacity: .24 !important;
+    38% {
+        opacity: .58;
+        transform: translate(-51%, -49%) rotate(1deg) scale(.99);
+    }
+    68% {
+        opacity: .33;
     }
     100% {
-        width: 96%;
-        height: 84%;
-        opacity: 0 !important;
+        width: 95%;
+        height: 79%;
+        opacity: 0;
+        transform: translate(-47%, -45%) rotate(4deg) scale(1.06);
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    body.dropmini-page .dm-speaker-ripple-field::after,
-    body.dropmini-page .dm-speaker-ripple-field span {
-        animation: none !important;
+@keyframes dm-water-ripple-b {
+    0% {
+        width: 21%;
+        height: 18%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(4deg) scale(.89);
     }
-
-    body.dropmini-page .dm-speaker-ripple-field span {
-        opacity: .16 !important;
+    11% {
+        opacity: .68;
+    }
+    42% {
+        opacity: .52;
+        transform: translate(-48%, -50%) rotate(-1deg) scale(1);
+    }
+    70% {
+        opacity: .30;
+    }
+    100% {
+        width: 89%;
+        height: 75%;
+        opacity: 0;
+        transform: translate(-52%, -45%) rotate(-4deg) scale(1.05);
     }
 }
 
-@media (max-width: 980px) {
-    body.dropmini-page .dm-speaker-ripple-field {
-        right: 0;
-        bottom: 1%;
-        width: 90%;
-        height: 145px;
+@keyframes dm-water-ripple-c {
+    0% {
+        width: 25%;
+        height: 20%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-4deg) scale(.92);
+    }
+    9% {
+        opacity: .70;
+    }
+    40% {
+        opacity: .54;
+        transform: translate(-52%, -48%) rotate(2deg) scale(1);
+    }
+    69% {
+        opacity: .31;
+    }
+    100% {
+        width: 98%;
+        height: 81%;
+        opacity: 0;
+        transform: translate(-46%, -44%) rotate(5deg) scale(1.07);
     }
 }
 
-@media (max-width: 760px) {
-    body.dropmini-page .dm-speaker-ripple-field {
-        right: 2%;
-        bottom: 0;
-        width: 94%;
-        height: 115px;
+@keyframes dm-water-ripple-d {
+    0% {
+        width: 22%;
+        height: 18%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(2deg) scale(.9);
     }
-
-    body.dropmini-page .dm-speaker-ripple-field::after {
+    12% {
+        opacity: .66;
+    }
+    43% {
+        opacity: .50;
+        transform: translate(-49%, -51%) rotate(-2deg) scale(1);
+    }
+    71% {
+        opacity: .28;
+    }
+    100% {
         width: 92%;
-        height: 80%;
+        height: 77%;
+        opacity: 0;
+        transform: translate(-53%, -45%) rotate(-5deg) scale(1.05);
     }
+}
 
-    body.dropmini-page .dm-hero-product-image {
-        transform: translate(2%, -6%) scale(1.02);
+/* Contact glow gets a more noticeable pulse without becoming a disc. */
+@keyframes dm-water-contact {
+    0%, 100% {
+        opacity: .64;
+        transform: translate(-50%, -50%) scale(.92) skewX(-2deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-49%, -51%) scale(1.12) skewX(2deg);
+    }
+}
+
+@keyframes dm-water-contact-small {
+    0%, 100% {
+        opacity: .48;
+        transform: translate(-50%, -50%) scale(.88) rotate(-2deg);
+    }
+    50% {
+        opacity: .86;
+        transform: translate(-51%, -49%) scale(1.16) rotate(2deg);
+    }
+}
+
+/* Give the waves enough separation to remain continuously visible. */
+body.dropmini-page .dm-ripples span:nth-child(1) {
+    animation-duration: 5.2s;
+    animation-delay: 0s;
+}
+body.dropmini-page .dm-ripples span:nth-child(2) {
+    animation-duration: 5.5s;
+    animation-delay: 1.15s;
+}
+body.dropmini-page .dm-ripples span:nth-child(3) {
+    animation-duration: 5.1s;
+    animation-delay: 2.3s;
+}
+body.dropmini-page .dm-ripples span:nth-child(4) {
+    animation-duration: 5.6s;
+    animation-delay: 3.45s;
+}
+
+
+/* =========================================================
+   DROP MINI — RIPPLE POSITIONING
+   Move the water contact closer to the speaker body.
+   ========================================================= */
+
+body.dropmini-page .dm-ripples {
+    left: 61%;
+    right: auto;
+    bottom: 10%;
+    width: 58%;
+    height: 130px;
+    transform: translateX(-50%) perspective(560px) rotateX(70deg);
+    transform-origin: center center;
+    z-index: 1;
+    opacity: 1 !important;
+}
+
+/* Keep the speaker visually sitting above the ripple field. */
+body.dropmini-page .dm-hero-product img {
+    position: relative;
+    z-index: 3;
+}
+
+/* Pull the animated contact glow upward with the ripple group. */
+body.dropmini-page .dm-ripples::before,
+body.dropmini-page .dm-ripples::after {
+    top: 50%;
+}
+
+/* Slightly tighten the organic wave spread so it reads as contact,
+   rather than a separate floating pool underneath. */
+body.dropmini-page .dm-ripples span {
+    top: 50%;
+}
+
+@media (max-width: 900px) {
+    body.dropmini-page .dm-ripples {
+        left: 58%;
+        bottom: 8%;
+        width: 68%;
+        height: 120px;
+    }
+}
+
+@media (max-width: 620px) {
+    body.dropmini-page .dm-ripples {
+        left: 55%;
+        bottom: 7%;
+        width: 78%;
+        height: 105px;
+    }
+}
+
+
+/* =========================================================
+   DROP MINI — RIPPLE ALIGNMENT + VISIBILITY FINAL
+   Align the water disturbance directly under the speaker's
+   visual contact point and keep the organic moving-wave style.
+   ========================================================= */
+
+body.dropmini-page .dm-hero-product {
+    position: relative;
+}
+
+/* Re-center the ripple under the body instead of the right-hand side. */
+body.dropmini-page .dm-ripples {
+    left: 52% !important;
+    right: auto !important;
+    bottom: 5.5% !important;
+
+    width: 68% !important;
+    height: 145px !important;
+
+    opacity: 1 !important;
+    transform: translateX(-50%) perspective(560px) rotateX(67deg) !important;
+    transform-origin: center center;
+    z-index: 1;
+}
+
+/* Stronger moving contact disturbance. */
+body.dropmini-page .dm-ripples::before {
+    left: 50%;
+    top: 49%;
+    width: 48%;
+    height: 34%;
+
+    opacity: 1 !important;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(35, 115, 205, .34) 0%,
+            rgba(62, 150, 220, .24) 28%,
+            rgba(94, 181, 233, .12) 50%,
+            transparent 72%
+        ) !important;
+
+    filter: blur(10px) !important;
+    animation: dm-water-contact 3.1s ease-in-out infinite !important;
+}
+
+/* Secondary highlight remains soft but visible. */
+body.dropmini-page .dm-ripples::after {
+    left: 50%;
+    top: 49%;
+    width: 30%;
+    height: 22%;
+
+    opacity: 1 !important;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(89, 176, 234, .30) 0%,
+            rgba(118, 198, 241, .14) 44%,
+            transparent 75%
+        ) !important;
+
+    filter: blur(7px) !important;
+    animation: dm-water-contact-small 2.5s ease-in-out infinite !important;
+}
+
+/* Make the organic wave fronts clearly legible without returning to discs. */
+body.dropmini-page .dm-ripples span {
+    top: 49% !important;
+
+    border-top: 2.4px solid rgba(31, 107, 199, .78) !important;
+    border-left: 1.45px solid rgba(58, 145, 216, .42) !important;
+    border-right: 1.75px solid rgba(69, 158, 223, .52) !important;
+    border-bottom: 1px solid rgba(111, 190, 237, .18) !important;
+
+    opacity: 0;
+    filter:
+        drop-shadow(0 0 2px rgba(45, 121, 204, .18))
+        blur(.08px) !important;
+}
+
+/* Keep a ripple visibly travelling most of the time. */
+@keyframes dm-water-ripple-a {
+    0% {
+        width: 24%;
+        height: 19%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-3deg) scale(.90);
+    }
+    8% { opacity: .82; }
+    36% {
+        opacity: .64;
+        transform: translate(-51%, -49%) rotate(1deg) scale(.99);
+    }
+    66% { opacity: .38; }
+    100% {
+        width: 96%;
+        height: 78%;
+        opacity: 0;
+        transform: translate(-47%, -45%) rotate(4deg) scale(1.06);
+    }
+}
+
+@keyframes dm-water-ripple-b {
+    0% {
+        width: 22%;
+        height: 18%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(4deg) scale(.89);
+    }
+    9% { opacity: .76; }
+    38% {
+        opacity: .59;
+        transform: translate(-48%, -50%) rotate(-1deg) scale(1);
+    }
+    68% { opacity: .35; }
+    100% {
+        width: 91%;
+        height: 74%;
+        opacity: 0;
+        transform: translate(-52%, -45%) rotate(-4deg) scale(1.05);
+    }
+}
+
+@keyframes dm-water-ripple-c {
+    0% {
+        width: 25%;
+        height: 20%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-4deg) scale(.92);
+    }
+    8% { opacity: .79; }
+    37% {
+        opacity: .61;
+        transform: translate(-52%, -48%) rotate(2deg) scale(1);
+    }
+    67% { opacity: .36; }
+    100% {
+        width: 98%;
+        height: 80%;
+        opacity: 0;
+        transform: translate(-46%, -44%) rotate(5deg) scale(1.07);
+    }
+}
+
+@keyframes dm-water-ripple-d {
+    0% {
+        width: 23%;
+        height: 18%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(2deg) scale(.9);
+    }
+    10% { opacity: .73; }
+    40% {
+        opacity: .56;
+        transform: translate(-49%, -51%) rotate(-2deg) scale(1);
+    }
+    69% { opacity: .33; }
+    100% {
+        width: 93%;
+        height: 76%;
+        opacity: 0;
+        transform: translate(-53%, -45%) rotate(-5deg) scale(1.05);
+    }
+}
+
+/* Faster overlap means the effect never disappears between waves. */
+body.dropmini-page .dm-ripples span:nth-child(1) {
+    animation: dm-water-ripple-a 4.8s cubic-bezier(.22,.61,.36,1) infinite !important;
+}
+body.dropmini-page .dm-ripples span:nth-child(2) {
+    animation: dm-water-ripple-b 5s cubic-bezier(.22,.61,.36,1) .9s infinite !important;
+}
+body.dropmini-page .dm-ripples span:nth-child(3) {
+    animation: dm-water-ripple-c 4.9s cubic-bezier(.22,.61,.36,1) 1.8s infinite !important;
+}
+body.dropmini-page .dm-ripples span:nth-child(4) {
+    animation: dm-water-ripple-d 5.1s cubic-bezier(.22,.61,.36,1) 2.7s infinite !important;
+}
+
+/* Keep the speaker clearly above the water treatment. */
+body.dropmini-page .dm-hero-product img {
+    position: relative;
+    z-index: 3;
+}
+
+/* Tablet/mobile alignment follows the centre of the model. */
+@media (max-width: 900px) {
+    body.dropmini-page .dm-ripples {
+        left: 52% !important;
+        bottom: 5% !important;
+        width: 74% !important;
+        height: 125px !important;
+    }
+}
+
+@media (max-width: 620px) {
+    body.dropmini-page .dm-ripples {
+        left: 51% !important;
+        bottom: 4% !important;
+        width: 84% !important;
+        height: 108px !important;
+    }
+}
+
+
+/* =========================================================
+   DROP MINI — RIPPLE COHERENCE PASS
+   One clear impact point, smoother expansion, less sideways drift.
+   ========================================================= */
+
+body.dropmini-page .dm-ripples {
+    left: 50% !important;
+    right: auto !important;
+    bottom: 6.5% !important;
+    width: 64% !important;
+    height: 138px !important;
+    transform: translateX(-50%) perspective(560px) rotateX(68deg) !important;
+    transform-origin: 50% 50%;
+    opacity: 1 !important;
+}
+
+/* One shared contact point directly beneath the speaker. */
+body.dropmini-page .dm-ripples::before {
+    left: 50% !important;
+    top: 50% !important;
+    width: 42% !important;
+    height: 30% !important;
+    transform: translate(-50%, -50%);
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(36, 116, 205, .32) 0%,
+            rgba(70, 158, 223, .21) 30%,
+            rgba(111, 190, 236, .10) 52%,
+            transparent 74%
+        ) !important;
+    filter: blur(10px) !important;
+    animation: dm-coherent-contact 3.2s ease-in-out infinite !important;
+}
+
+body.dropmini-page .dm-ripples::after {
+    left: 50% !important;
+    top: 50% !important;
+    width: 25% !important;
+    height: 18% !important;
+    transform: translate(-50%, -50%);
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(103, 190, 239, .26) 0%,
+            rgba(129, 203, 242, .12) 46%,
+            transparent 76%
+        ) !important;
+    filter: blur(7px) !important;
+    animation: dm-coherent-contact-small 2.55s ease-in-out infinite !important;
+}
+
+/* All waves now expand from the same origin.
+   Organic shape is kept through slight radius/rotation differences,
+   not by drifting sideways. */
+body.dropmini-page .dm-ripples span {
+    left: 50% !important;
+    top: 50% !important;
+    width: 24%;
+    height: 19%;
+
+    border-top: 2.25px solid rgba(31, 108, 199, .76) !important;
+    border-left: 1.35px solid rgba(58, 145, 216, .38) !important;
+    border-right: 1.55px solid rgba(69, 158, 223, .46) !important;
+    border-bottom: 1px solid rgba(111, 190, 237, .14) !important;
+
+    opacity: 0;
+    transform-origin: 50% 50%;
+    filter: drop-shadow(0 0 2px rgba(45, 121, 204, .13)) !important;
+}
+
+/* Same expansion curve for every wave = visually coherent.
+   Each span only varies slightly in rotation/radius. */
+@keyframes dm-coherent-ripple-1 {
+    0% {
+        width: 24%;
+        height: 19%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-2deg) scale(.92);
+    }
+    10% { opacity: .78; }
+    42% {
+        opacity: .58;
+        transform: translate(-50%, -50%) rotate(-1deg) scale(1);
+    }
+    72% { opacity: .30; }
+    100% {
+        width: 92%;
+        height: 74%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(1deg) scale(1.03);
+    }
+}
+
+@keyframes dm-coherent-ripple-2 {
+    0% {
+        width: 23%;
+        height: 18%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(2deg) scale(.91);
+    }
+    10% { opacity: .73; }
+    42% {
+        opacity: .54;
+        transform: translate(-50%, -50%) rotate(1deg) scale(1);
+    }
+    72% { opacity: .28; }
+    100% {
+        width: 90%;
+        height: 72%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-1deg) scale(1.03);
+    }
+}
+
+@keyframes dm-coherent-ripple-3 {
+    0% {
+        width: 25%;
+        height: 20%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-1deg) scale(.92);
+    }
+    10% { opacity: .76; }
+    42% {
+        opacity: .56;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    72% { opacity: .29; }
+    100% {
+        width: 94%;
+        height: 76%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(2deg) scale(1.03);
+    }
+}
+
+@keyframes dm-coherent-ripple-4 {
+    0% {
+        width: 24%;
+        height: 19%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(1deg) scale(.91);
+    }
+    10% { opacity: .71; }
+    42% {
+        opacity: .52;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    72% { opacity: .27; }
+    100% {
+        width: 91%;
+        height: 73%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-2deg) scale(1.03);
+    }
+}
+
+body.dropmini-page .dm-ripples span:nth-child(1) {
+    border-radius: 49% 51% 48% 52% / 51% 48% 52% 49%;
+    animation: dm-coherent-ripple-1 5.2s cubic-bezier(.22,.61,.36,1) infinite !important;
+}
+
+body.dropmini-page .dm-ripples span:nth-child(2) {
+    border-radius: 51% 49% 52% 48% / 49% 52% 48% 51%;
+    animation: dm-coherent-ripple-2 5.2s cubic-bezier(.22,.61,.36,1) 1.3s infinite !important;
+}
+
+body.dropmini-page .dm-ripples span:nth-child(3) {
+    border-radius: 48% 52% 50% 50% / 52% 49% 51% 48%;
+    animation: dm-coherent-ripple-3 5.2s cubic-bezier(.22,.61,.36,1) 2.6s infinite !important;
+}
+
+body.dropmini-page .dm-ripples span:nth-child(4) {
+    border-radius: 52% 48% 49% 51% / 48% 51% 49% 52%;
+    animation: dm-coherent-ripple-4 5.2s cubic-bezier(.22,.61,.36,1) 3.9s infinite !important;
+}
+
+@keyframes dm-coherent-contact {
+    0%, 100% {
+        opacity: .64;
+        transform: translate(-50%, -50%) scale(.95);
+    }
+    50% {
+        opacity: .92;
+        transform: translate(-50%, -50%) scale(1.06);
+    }
+}
+
+@keyframes dm-coherent-contact-small {
+    0%, 100% {
+        opacity: .42;
+        transform: translate(-50%, -50%) scale(.92);
+    }
+    50% {
+        opacity: .72;
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
+
+@media (max-width: 900px) {
+    body.dropmini-page .dm-ripples {
+        left: 50% !important;
+        bottom: 5.5% !important;
+        width: 72% !important;
+        height: 122px !important;
+    }
+}
+
+@media (max-width: 620px) {
+    body.dropmini-page .dm-ripples {
+        left: 50% !important;
+        bottom: 5% !important;
+        width: 82% !important;
+        height: 108px !important;
     }
 }

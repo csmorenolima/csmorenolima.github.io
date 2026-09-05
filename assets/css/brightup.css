@@ -39,22 +39,6 @@ body.brightup-page .container {
     margin-inline: auto;
 }
 
-body.brightup-page .brightup-skip-link {
-    position: fixed;
-    top: .8rem;
-    left: .8rem;
-    z-index: 10000;
-    padding: .7rem 1rem;
-    border-radius: 999px;
-    color: #fff;
-    background: var(--bu-ink);
-    transform: translateY(-180%);
-}
-
-body.brightup-page .brightup-skip-link:focus {
-    transform: translateY(0);
-}
-
 body.brightup-page .brightup-kicker {
     margin: 0 0 .75rem;
     color: var(--bu-blue);

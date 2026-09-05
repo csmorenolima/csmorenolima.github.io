@@ -29,22 +29,6 @@ body.scaar-page .container {
     margin-inline: auto;
 }
 
-body.scaar-page .scaar-skip-link {
-    position: fixed;
-    top: .8rem;
-    left: .8rem;
-    z-index: 10000;
-    padding: .7rem 1rem;
-    border-radius: 999px;
-    color: var(--nomad-white);
-    background: var(--nomad-ink);
-    transform: translateY(-180%);
-}
-
-body.scaar-page .scaar-skip-link:focus {
-    transform: translateY(0);
-}
-
 body.scaar-page h1,
 body.scaar-page h2,
 body.scaar-page h3 {

@@ -63,23 +63,6 @@ body.enova-page .container {
     margin-inline: auto;
 }
 
-body.enova-page .skip-link {
-    position: fixed;
-    left: 1rem;
-    top: 1rem;
-    z-index: 10000;
-    padding: .85rem 1rem;
-    border-radius: 12px;
-    color: #fff;
-    background: var(--enova-ink);
-    text-decoration: none;
-    transform: translateY(-160%);
-}
-
-body.enova-page .skip-link:focus {
-    transform: translateY(0);
-}
-
 body.enova-page.dialog-open {
     overflow: hidden;
 }

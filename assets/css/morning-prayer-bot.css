@@ -50,25 +50,6 @@ body.morning-prayer-page :focus-visible {
     outline: 3px solid rgba(56, 189, 248, .55);
     outline-offset: 4px;
 }
-
-body.morning-prayer-page .mpb-skip-link {
-    position: fixed;
-    left: 1rem;
-    top: 1rem;
-    z-index: 10000;
-    padding: .8rem 1rem;
-    border-radius: 10px;
-    color: var(--mpb-bg-deep);
-    background: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    transform: translateY(-160%);
-}
-
-body.morning-prayer-page .mpb-skip-link:focus {
-    transform: translateY(0);
-}
-
 /* Shared page structure */
 body.morning-prayer-page .mpb-section {
     position: relative;
