@@ -1978,3 +1978,247 @@ body.dropmini-page .dm-ripples span:nth-child(4) {
         height: 108px !important;
     }
 }
+
+
+/* Discover CTA points downward because it scrolls to content on this page. */
+body.dropmini-page .dm-button-primary[href="#story"] i {
+    transition: transform .18s ease;
+}
+
+body.dropmini-page .dm-button-primary[href="#story"]:hover i {
+    transform: translateY(3px);
+}
+
+
+/* =========================================================
+   DROP MINI — DISCOVER CTA HOVER FIX
+   Keep the button stationary; animate only the down arrow.
+   ========================================================= */
+
+body.dropmini-page .dm-button-primary[href="#story"]:hover {
+    transform: none !important;
+}
+
+body.dropmini-page .dm-button-primary[href="#story"] i {
+    display: inline-block;
+    transform: translateY(0);
+    transition: transform .2s ease;
+}
+
+body.dropmini-page .dm-button-primary[href="#story"]:hover i {
+    transform: translateY(4px) !important;
+}
+
+
+/* =========================================================
+   DROP MINI — DISCOVER CTA MATCH SENSATION 360
+   Arrow remains fixed inside the button; button and icon move together.
+   ========================================================= */
+
+body.dropmini-page .dm-button-primary[href="#story"] {
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+body.dropmini-page .dm-button-primary[href="#story"] i {
+    display: inline-block;
+    transform: none !important;
+    transition: none !important;
+}
+
+body.dropmini-page .dm-button-primary[href="#story"]:hover {
+    transform: translateY(-2px) !important;
+}
+
+body.dropmini-page .dm-button-primary[href="#story"]:hover i {
+    transform: none !important;
+}
+
+
+/* =========================================================
+   DROP MINI — SECTION LABEL CONSISTENCY
+   Match the blue Overview kicker across the light sections.
+   ========================================================= */
+
+body.dropmini-page .dm-story .dm-kicker,
+body.dropmini-page .dm-form .dm-kicker,
+body.dropmini-page .dm-detail .dm-kicker {
+    color: var(--dm-blue) !important;
+}
+
+/* Keep Colourways readable on its blue background. */
+body.dropmini-page .dm-colourways .dm-kicker {
+    color: rgba(255, 255, 255, .78) !important;
+}
+
+
+/* =========================================================
+   DROP MINI — MERGED FORM & INTERACTION SECTION
+   Removes the duplicate standalone Interaction section.
+   ========================================================= */
+
+body.dropmini-page .dm-form {
+    padding: 7rem 0;
+    display: grid;
+    grid-template-columns: minmax(320px, .72fr) minmax(0, 1.28fr);
+    gap: clamp(3.5rem, 7vw, 7rem);
+    align-items: start;
+}
+
+body.dropmini-page .dm-form-copy {
+    position: sticky;
+    top: 7rem;
+    max-width: 560px;
+}
+
+body.dropmini-page .dm-form-copy p {
+    color: var(--dm-muted);
+    line-height: 1.85;
+}
+
+body.dropmini-page .dm-form-copy h2 + p {
+    margin-top: 1.4rem;
+}
+
+body.dropmini-page .dm-form-media {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, .48fr);
+    gap: 1rem;
+    align-items: stretch;
+}
+
+body.dropmini-page .dm-form-image {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #eef3f7;
+}
+
+body.dropmini-page .dm-form-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+
+body.dropmini-page .dm-form-image-large {
+    min-height: 560px;
+}
+
+body.dropmini-page .dm-form-image-small {
+    min-height: 560px;
+}
+
+body.dropmini-page .dm-form-image-small img {
+    object-position: center;
+}
+
+/* Old standalone detail section is intentionally gone. */
+body.dropmini-page .dm-detail {
+    display: none !important;
+}
+
+@media (max-width: 980px) {
+    body.dropmini-page .dm-form {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-form-copy {
+        position: static;
+        max-width: 700px;
+    }
+
+    body.dropmini-page .dm-form-media {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    body.dropmini-page .dm-form-image-large,
+    body.dropmini-page .dm-form-image-small {
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 620px) {
+    body.dropmini-page .dm-form-media {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-form-image-large,
+    body.dropmini-page .dm-form-image-small {
+        min-height: 300px;
+    }
+}
+
+
+/* =========================================================
+   DROP MINI — FORM & INTERACTION SCROLL FIX
+   Keep the text static instead of sticky while scrolling.
+   ========================================================= */
+
+body.dropmini-page .dm-form-copy {
+    position: static !important;
+    top: auto !important;
+}
+
+
+/* =========================================================
+   DROP MINI — FORM & INTERACTION IMAGE FIX
+   Preserve each image's natural proportions; no forced
+   equal-height cropping or narrow squashed presentation.
+   ========================================================= */
+
+body.dropmini-page .dm-form-media {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+    gap: 1.25rem;
+    align-items: start;
+}
+
+body.dropmini-page .dm-form-image,
+body.dropmini-page .dm-form-image-large,
+body.dropmini-page .dm-form-image-small {
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #eef3f7;
+}
+
+/* Let both source images keep their true aspect ratio. */
+body.dropmini-page .dm-form-image img,
+body.dropmini-page .dm-form-image-large img,
+body.dropmini-page .dm-form-image-small img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* The controls render is narrower/taller by nature, so give it
+   enough width instead of forcing it into a skinny slot. */
+body.dropmini-page .dm-form-image-small {
+    align-self: start;
+}
+
+/* Keep the composition balanced on medium screens. */
+@media (max-width: 1100px) {
+    body.dropmini-page .dm-form-media {
+        grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
+    }
+}
+
+@media (max-width: 900px) {
+    body.dropmini-page .dm-form-media {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    body.dropmini-page .dm-form-media {
+        grid-template-columns: 1fr;
+    }
+}
