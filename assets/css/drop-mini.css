@@ -426,6 +426,7 @@ body.dropmini-page .dm-gallery-copy p {
 
 body.dropmini-page .dm-overview-copy p {
     color: #f7fbff;
+    text-align: justify;
 }
 
 body.dropmini-page .dm-section-heading {
