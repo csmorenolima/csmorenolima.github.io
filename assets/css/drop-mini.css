@@ -621,7 +621,7 @@ body.dropmini-page .dm-spec-grid div {
     background: rgba(10, 22, 39, .72);
 }
 
-body.dropmini-page .dm-spec-grid dt {
+body.dropmini-page .container article dt {
     color: var(--dm-primary-warm);
     font-size: .78rem;
     font-weight: 800;
@@ -630,7 +630,7 @@ body.dropmini-page .dm-spec-grid dt {
     margin-bottom: 1rem;
 }
 
-body.dropmini-page .dm-spec-grid dd {
+body.dropmini-page .container article dd {
     margin: .5rem 0 0;
     color: #93a8c2;
     line-height: 1.6;
@@ -1210,11 +1210,11 @@ body.dropmini-page .dm-gallery-card {
 
 /* ---------- TECH SPECS ---------- */
 
-body.dropmini-page .dm-spec-grid dt {
+body.dropmini-page .container article dt {
     color: var(--dm-page-blue);
 }
 
-body.dropmini-page .dm-spec-grid dd {
+body.dropmini-page .container article dd {
     color: var(--dm-page-muted);
 }
 
@@ -1988,5 +1988,326 @@ body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured::before {
     body.dropmini-page .dm-colour-gallery .dm-colour-tile > img,
     body.dropmini-page .dm-colour-gallery .dm-colour-tile-featured > img {
         height: 250px;
+    }
+}
+
+body.dropmini-page .dm-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    margin: 0;
+    color: var(--dm-page-blue);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+body.dropmini-page .dm-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+}
+
+/* =========================================================
+   DROP MINI — FINAL HIGHLIGHT CARD STYLING
+   Header + icon = blue/bold
+   Main stat = normal dark colour/bold
+   Supporting text = muted
+   ========================================================= */
+
+body.dropmini-page .dm-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 0;
+}
+
+body.dropmini-page .dm-highlight-grid article {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    grid-template-areas:
+        "label label"
+        "icon value"
+        "icon meta";
+    column-gap: .8rem;
+    row-gap: .32rem;
+    align-items: center;
+    padding: .85rem 1.35rem;
+    border-left: 1px solid rgba(31, 82, 143, .10);
+}
+
+body.dropmini-page .dm-highlight-grid article:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+/* Article header: blue + bold */
+body.dropmini-page .dm-highlight-grid article > dt {
+    grid-area: label;
+    margin: 0 0 .38rem;
+    color: var(--dm-page-blue, #347bd8);
+    font-family: "Inter", sans-serif;
+    font-size: .68rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+/* Icon: blue */
+body.dropmini-page .dm-highlight-grid article > .dm-highlight-icon {
+    grid-area: icon;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    align-self: center;
+    border-radius: 50%;
+    color: var(--dm-page-blue, #347bd8);
+    background: #fff;
+    box-shadow: 0 7px 17px rgba(40, 91, 150, .07);
+}
+
+/* Main row */
+body.dropmini-page .dm-highlight-grid article > div {
+    grid-area: value;
+    min-width: 0;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: .32rem;
+    margin: 0;
+    color: #536c92;
+    font-size: .79rem;
+    line-height: 1.25;
+}
+
+/* Main stat: dark + bold */
+body.dropmini-page .dm-highlight-grid article > div strong {
+    color: #152843;
+    font-family: "Manrope", "Inter", sans-serif;
+    font-size: .98rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* Supporting detail */
+body.dropmini-page .dm-highlight-grid article > small {
+    grid-area: meta;
+    display: block;
+    margin: 0;
+    color: #71839b;
+    font-size: .69rem;
+    line-height: 1.35;
+}
+
+/* Remove default indentation from dd inside small */
+body.dropmini-page .dm-highlight-grid article > small > dd {
+    margin: 0;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+}
+
+/* Prevent broad dt/dd rules from overriding highlight cards */
+body.dropmini-page .dm-highlight-grid article dt,
+body.dropmini-page .dm-highlight-grid article dd {
+    margin-left: 0;
+}
+
+/* Keep technical specification list styling independent */
+body.dropmini-page .dm-spec-grid dt {
+    margin: 0 0 .9rem;
+    color: var(--dm-page-blue, #347bd8);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+body.dropmini-page .dm-spec-grid dd {
+    margin: .35rem 0;
+    color: var(--dm-page-muted, #657a96);
+    line-height: 1.55;
+}
+
+body.dropmini-page .dm-spec-grid dd strong {
+    color: var(--dm-page-ink, #12243e);
+}
+
+@media (max-width: 900px) {
+    body.dropmini-page .dm-highlight-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 1rem;
+    }
+
+    body.dropmini-page .dm-highlight-grid article:nth-child(odd) {
+        padding-left: 0;
+        border-left: 0;
+    }
+}
+
+@media (max-width: 620px) {
+    body.dropmini-page .dm-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-highlight-grid article,
+    body.dropmini-page .dm-highlight-grid article:nth-child(odd) {
+        padding: .9rem 0;
+        border-left: 0;
+        border-top: 1px solid rgba(31, 82, 143, .08);
+    }
+
+    body.dropmini-page .dm-highlight-grid article:first-child {
+        border-top: 0;
+    }
+}
+
+
+/* =========================================================
+   DROP MINI — FINAL TOP SPECIFICATION ROW
+   Lower Technical Specifications section removed.
+   ========================================================= */
+
+body.dropmini-page .dm-highlights {
+    padding: 1.35rem 0;
+    border-top: 1px solid rgba(31, 82, 143, .08);
+    border-bottom: 1px solid rgba(31, 82, 143, .08);
+    background: #edf5fb;
+}
+
+body.dropmini-page .dm-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    align-items: stretch;
+}
+
+body.dropmini-page .dm-highlight-card {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-areas:
+        "label label"
+        "icon content";
+    column-gap: .85rem;
+    row-gap: .6rem;
+    align-items: center;
+    padding: .45rem 1.35rem;
+    border-left: 1px solid rgba(31, 82, 143, .10);
+}
+
+body.dropmini-page .dm-highlight-card:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+/* Blue bold article header */
+body.dropmini-page .dm-highlight-label {
+    grid-area: label;
+    margin: 0;
+    color: var(--dm-page-blue, #347bd8);
+    font-family: "Inter", sans-serif;
+    font-size: .7rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+/* Blue icon */
+body.dropmini-page .dm-highlight-card > .dm-highlight-icon {
+    grid-area: icon;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--dm-page-blue, #347bd8);
+    background: #fff;
+    box-shadow: 0 7px 17px rgba(40, 91, 150, .07);
+    font-size: 1rem;
+}
+
+/* Main + secondary text block */
+body.dropmini-page .dm-highlight-content {
+    grid-area: content;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .22rem;
+}
+
+body.dropmini-page .dm-highlight-value {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: .34rem;
+    margin: 0;
+    color: #536c92;
+    font-size: .8rem;
+    line-height: 1.25;
+}
+
+/* Main specification: dark/navy + bold */
+body.dropmini-page .dm-highlight-value strong {
+    color: #152843;
+    font-family: "Manrope", "Inter", sans-serif;
+    font-size: .98rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* Descriptor: normal muted */
+body.dropmini-page .dm-highlight-value span {
+    color: #536c92;
+    font-size: .79rem;
+    font-weight: 500;
+}
+
+/* Supporting detail */
+body.dropmini-page .dm-highlight-content small {
+    margin: 0;
+    color: #71839b;
+    font-size: .7rem;
+    line-height: 1.35;
+}
+
+/* The old lower specs section is no longer used */
+body.dropmini-page .dm-specs,
+body.dropmini-page .dm-spec-grid {
+    display: none !important;
+}
+
+@media (max-width: 900px) {
+    body.dropmini-page .dm-highlight-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 1rem;
+    }
+
+    body.dropmini-page .dm-highlight-card:nth-child(odd) {
+        padding-left: 0;
+        border-left: 0;
+    }
+}
+
+@media (max-width: 620px) {
+    body.dropmini-page .dm-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-highlight-card,
+    body.dropmini-page .dm-highlight-card:nth-child(odd) {
+        padding: .9rem 0;
+        border-left: 0;
+        border-top: 1px solid rgba(31, 82, 143, .08);
+    }
+
+    body.dropmini-page .dm-highlight-card:first-child {
+        border-top: 0;
     }
 }
