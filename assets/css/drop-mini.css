@@ -2311,3 +2311,1022 @@ body.dropmini-page .dm-spec-grid {
         border-top: 0;
     }
 }
+
+
+/* =========================================================
+   DROP MINI — RAINED-ON GLASS HERO
+   Subtle animated condensation / window-droplet treatment.
+   This block intentionally sits last so it overrides the
+   earlier hero background rules without changing the layout.
+   ========================================================= */
+
+body.dropmini-page .dm-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    /* Keep the clean pale-blue Drop Mini identity underneath the glass */
+    background:
+        radial-gradient(circle at 77% 23%, rgba(83, 161, 235, .20), transparent 25rem),
+        radial-gradient(circle at 14% 72%, rgba(126, 213, 243, .18), transparent 25rem),
+        linear-gradient(145deg, #fbfdff 0%, #eef7ff 46%, #dceefa 100%);
+}
+
+/* Soft atmospheric depth behind the droplets */
+body.dropmini-page .dm-hero::before {
+    content: "";
+    position: absolute;
+    inset: -6%;
+    z-index: -6;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at 78% 42%, rgba(99, 174, 233, .18), transparent 31%),
+        radial-gradient(ellipse at 36% 22%, rgba(255,255,255,.95), transparent 30%),
+        linear-gradient(120deg, rgba(255,255,255,.28), rgba(123,190,235,.10));
+    filter: blur(18px);
+    transform: scale(1.04);
+}
+
+/* Main condensation layer.
+   Each radial-gradient is a separate glass droplet with a bright
+   upper-left rim and darker lower-right refraction. */
+body.dropmini-page .dm-rain-glass {
+    position: absolute;
+    inset: -2%;
+    z-index: -3;
+    pointer-events: none;
+    opacity: .72;
+    mix-blend-mode: multiply;
+
+    background-image:
+        radial-gradient(ellipse at 33% 27%,
+            rgba(255,255,255,.92) 0 12%,
+            rgba(255,255,255,.20) 18%,
+            rgba(72,133,181,.18) 47%,
+            rgba(23,79,122,.32) 68%,
+            transparent 72%),
+        radial-gradient(ellipse at 34% 26%,
+            rgba(255,255,255,.90) 0 10%,
+            rgba(255,255,255,.12) 17%,
+            rgba(55,119,167,.20) 50%,
+            rgba(22,75,117,.28) 69%,
+            transparent 73%),
+        radial-gradient(ellipse at 34% 25%,
+            rgba(255,255,255,.86) 0 11%,
+            rgba(255,255,255,.14) 18%,
+            rgba(57,124,172,.18) 49%,
+            rgba(21,73,112,.28) 69%,
+            transparent 73%),
+        radial-gradient(ellipse at 34% 25%,
+            rgba(255,255,255,.82) 0 10%,
+            rgba(255,255,255,.12) 18%,
+            rgba(54,118,163,.17) 48%,
+            rgba(18,67,105,.25) 70%,
+            transparent 74%),
+        radial-gradient(circle,
+            rgba(35,91,132,.18) 0 18%,
+            transparent 23%);
+
+    background-size:
+        104px 132px,
+        66px 82px,
+        44px 58px,
+        28px 36px,
+        13px 13px;
+
+    background-position:
+        4% 12%,
+        28% 8%,
+        60% 18%,
+        84% 9%,
+        0 0;
+
+    filter:
+        drop-shadow(1px 2px 1px rgba(23, 69, 104, .12))
+        drop-shadow(-1px -1px 1px rgba(255,255,255,.42));
+
+    animation: dmRainGlassDrift 18s ease-in-out infinite alternate;
+}
+
+/* Secondary micro-droplets so the pattern does not feel tiled */
+body.dropmini-page .dm-rain-glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 8% 24%, rgba(255,255,255,.80) 0 2px, rgba(40,102,148,.18) 3px, transparent 5px),
+        radial-gradient(circle at 17% 61%, rgba(255,255,255,.75) 0 3px, rgba(40,102,148,.16) 4px, transparent 7px),
+        radial-gradient(circle at 25% 33%, rgba(255,255,255,.78) 0 2px, rgba(40,102,148,.16) 3px, transparent 5px),
+        radial-gradient(circle at 37% 72%, rgba(255,255,255,.78) 0 4px, rgba(40,102,148,.17) 5px, transparent 8px),
+        radial-gradient(circle at 48% 18%, rgba(255,255,255,.82) 0 3px, rgba(40,102,148,.16) 4px, transparent 7px),
+        radial-gradient(circle at 56% 54%, rgba(255,255,255,.76) 0 2px, rgba(40,102,148,.18) 3px, transparent 6px),
+        radial-gradient(circle at 66% 30%, rgba(255,255,255,.82) 0 4px, rgba(40,102,148,.17) 5px, transparent 9px),
+        radial-gradient(circle at 72% 76%, rgba(255,255,255,.78) 0 3px, rgba(40,102,148,.17) 4px, transparent 7px),
+        radial-gradient(circle at 82% 47%, rgba(255,255,255,.84) 0 4px, rgba(40,102,148,.17) 5px, transparent 9px),
+        radial-gradient(circle at 91% 19%, rgba(255,255,255,.82) 0 3px, rgba(40,102,148,.17) 4px, transparent 7px),
+        radial-gradient(circle at 94% 69%, rgba(255,255,255,.80) 0 2px, rgba(40,102,148,.16) 3px, transparent 6px);
+    opacity: .85;
+}
+
+/* A few elongated running drops.
+   They move very slowly to avoid looking like a rain animation overlay. */
+body.dropmini-page .dm-rain-streaks {
+    position: absolute;
+    inset: -8% 0 -12%;
+    z-index: -2;
+    pointer-events: none;
+    opacity: .30;
+
+    background:
+        linear-gradient(180deg,
+            transparent 0 4%,
+            rgba(255,255,255,.45) 5%,
+            rgba(53,119,166,.16) 7% 62%,
+            rgba(26,83,126,.22) 73%,
+            transparent 78%) 15% -140px / 2px 360px no-repeat,
+        linear-gradient(180deg,
+            transparent 0 5%,
+            rgba(255,255,255,.42) 7%,
+            rgba(53,119,166,.14) 10% 58%,
+            rgba(26,83,126,.20) 70%,
+            transparent 76%) 46% -40px / 2px 440px no-repeat,
+        linear-gradient(180deg,
+            transparent 0 4%,
+            rgba(255,255,255,.40) 6%,
+            rgba(53,119,166,.15) 9% 64%,
+            rgba(26,83,126,.20) 72%,
+            transparent 79%) 72% -210px / 2px 410px no-repeat,
+        linear-gradient(180deg,
+            transparent 0 6%,
+            rgba(255,255,255,.40) 8%,
+            rgba(53,119,166,.13) 11% 62%,
+            rgba(26,83,126,.18) 74%,
+            transparent 80%) 89% -80px / 2px 390px no-repeat;
+
+    filter: blur(.25px);
+    animation: dmRainStreakSlide 12s ease-in-out infinite alternate;
+}
+
+/* Keep the existing ribbons, but make them secondary to the glass */
+body.dropmini-page .dm-liquid-ribbon {
+    opacity: .24;
+}
+
+/* Product remains crisp and clearly separated from the wet glass */
+body.dropmini-page .dm-product-scene,
+body.dropmini-page .dm-hero-copy {
+    position: relative;
+    z-index: 3;
+}
+
+body.dropmini-page .dm-hero-product-image {
+    filter: drop-shadow(0 21px 24px rgba(46,75,115,.16));
+}
+
+/* Slight glass sheen across the whole hero */
+body.dropmini-page .dm-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(112deg,
+            rgba(255,255,255,.18) 0%,
+            rgba(255,255,255,.02) 29%,
+            rgba(255,255,255,.10) 52%,
+            transparent 72%);
+    opacity: .75;
+}
+
+@keyframes dmRainGlassDrift {
+    0% {
+        transform: translate3d(0, -2px, 0) scale(1.01);
+        background-position:
+            4% 12%,
+            28% 8%,
+            60% 18%,
+            84% 9%,
+            0 0;
+    }
+    100% {
+        transform: translate3d(0, 5px, 0) scale(1.012);
+        background-position:
+            4% 15%,
+            28% 11%,
+            60% 21%,
+            84% 12%,
+            2px 3px;
+    }
+}
+
+@keyframes dmRainStreakSlide {
+    0%   { transform: translateY(-8px); opacity: .22; }
+    55%  { opacity: .31; }
+    100% { transform: translateY(24px); opacity: .27; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.dropmini-page .dm-rain-glass,
+    body.dropmini-page .dm-rain-streaks {
+        animation: none;
+    }
+}
+
+@media (max-width: 760px) {
+    body.dropmini-page .dm-rain-glass {
+        opacity: .50;
+        background-size:
+            84px 104px,
+            54px 66px,
+            36px 46px,
+            24px 30px,
+            12px 12px;
+    }
+
+    body.dropmini-page .dm-rain-streaks {
+        opacity: .20;
+    }
+}
+
+
+/* =========================================================
+   DROP MINI — WET GLASS HERO / REFINED
+   Sparse, irregular condensation. No repeating bubble texture.
+   ========================================================= */
+
+body.dropmini-page .dm-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 82% 18%, rgba(82, 162, 226, .18), transparent 25rem),
+        radial-gradient(circle at 12% 78%, rgba(128, 215, 245, .15), transparent 26rem),
+        linear-gradient(145deg, #fbfdff 0%, #f2f9ff 48%, #e4f1fb 100%);
+}
+
+/* Cancel the earlier repeating gradient texture completely */
+body.dropmini-page .dm-rain-glass {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background: none !important;
+    background-image: none !important;
+    background-size: auto !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+
+    opacity: 1;
+    mix-blend-mode: normal;
+    filter: none;
+    animation: none;
+    transform: none;
+}
+
+/* Remove the previous micro-drop pseudo texture */
+body.dropmini-page .dm-rain-glass::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Individual droplets:
+   asymmetrical, slightly elongated and refractive rather than circular */
+body.dropmini-page .dm-glass-drop {
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 28px;
+    border-radius: 58% 42% 62% 38% / 42% 54% 46% 58%;
+    opacity: .42;
+
+    background:
+        radial-gradient(circle at 28% 22%,
+            rgba(255,255,255,.88) 0 10%,
+            rgba(255,255,255,.24) 12% 22%,
+            transparent 24%),
+        linear-gradient(145deg,
+            rgba(255,255,255,.28) 0 38%,
+            rgba(56,117,164,.13) 62%,
+            rgba(21,71,109,.20) 100%);
+
+    border:
+        1px solid rgba(47, 104, 148, .12);
+
+    box-shadow:
+        inset 1px 1px 2px rgba(255,255,255,.55),
+        inset -2px -3px 4px rgba(26,76,113,.10),
+        0 2px 3px rgba(40,87,123,.05);
+
+    backdrop-filter: blur(1.1px) saturate(1.05);
+    -webkit-backdrop-filter: blur(1.1px) saturate(1.05);
+
+    transform: rotate(var(--drop-rotate, 0deg));
+    animation: dmDropCreep var(--drop-speed, 16s) ease-in-out infinite alternate;
+}
+
+/* Make every droplet intentionally different */
+body.dropmini-page .dm-glass-drop-1  { left: 7%;  top: 16%; width: 10px; height: 17px; --drop-rotate: 11deg; --drop-speed: 17s; }
+body.dropmini-page .dm-glass-drop-2  { left: 18%; top: 68%; width: 14px; height: 24px; --drop-rotate: -7deg; --drop-speed: 21s; opacity: .30; }
+body.dropmini-page .dm-glass-drop-3  { left: 31%; top: 22%; width: 8px;  height: 13px; --drop-rotate: 8deg; --drop-speed: 19s; opacity: .34; }
+body.dropmini-page .dm-glass-drop-4  { left: 42%; top: 76%; width: 17px; height: 29px; --drop-rotate: 5deg; --drop-speed: 22s; opacity: .28; }
+body.dropmini-page .dm-glass-drop-5  { left: 53%; top: 11%; width: 12px; height: 20px; --drop-rotate: -10deg; --drop-speed: 18s; }
+body.dropmini-page .dm-glass-drop-6  { left: 64%; top: 63%; width: 9px;  height: 15px; --drop-rotate: 13deg; --drop-speed: 24s; opacity: .30; }
+body.dropmini-page .dm-glass-drop-7  { left: 72%; top: 25%; width: 16px; height: 26px; --drop-rotate: -5deg; --drop-speed: 20s; opacity: .36; }
+body.dropmini-page .dm-glass-drop-8  { left: 83%; top: 71%; width: 11px; height: 19px; --drop-rotate: 9deg; --drop-speed: 23s; opacity: .30; }
+body.dropmini-page .dm-glass-drop-9  { left: 91%; top: 18%; width: 7px;  height: 12px; --drop-rotate: -13deg; --drop-speed: 19s; opacity: .26; }
+body.dropmini-page .dm-glass-drop-10 { left: 12%; top: 46%; width: 6px;  height: 10px; --drop-rotate: 7deg; --drop-speed: 25s; opacity: .24; }
+body.dropmini-page .dm-glass-drop-11 { left: 58%; top: 44%; width: 7px;  height: 12px; --drop-rotate: -4deg; --drop-speed: 21s; opacity: .24; }
+body.dropmini-page .dm-glass-drop-12 { left: 87%; top: 43%; width: 13px; height: 21px; --drop-rotate: 6deg; --drop-speed: 26s; opacity: .28; }
+
+/* Running-water streaks:
+   thin, irregular, tapered — more like water travelling down glass */
+body.dropmini-page .dm-rain-streaks {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background: none !important;
+    opacity: 1;
+    filter: none;
+    animation: none;
+    transform: none;
+}
+
+body.dropmini-page .dm-glass-streak {
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: 150px;
+    border-radius: 999px;
+    opacity: .13;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(255,255,255,.55) 7%,
+            rgba(87,143,184,.18) 18%,
+            rgba(57,112,153,.15) 63%,
+            rgba(255,255,255,.30) 78%,
+            transparent 100%
+        );
+
+    box-shadow:
+        1px 0 0 rgba(255,255,255,.16),
+        -1px 0 0 rgba(48,100,138,.05);
+
+    animation: dmStreakCreep var(--streak-speed, 20s) ease-in-out infinite alternate;
+}
+
+body.dropmini-page .dm-glass-streak::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 7px;
+    height: 11px;
+    transform: translateX(-50%) rotate(7deg);
+    border-radius: 60% 40% 62% 38% / 46% 52% 48% 54%;
+    background:
+        radial-gradient(circle at 30% 24%, rgba(255,255,255,.72) 0 13%, transparent 16%),
+        linear-gradient(145deg, rgba(255,255,255,.18), rgba(42,102,145,.12));
+    border: 1px solid rgba(52,106,146,.10);
+}
+
+body.dropmini-page .dm-glass-streak-1 { left: 14%; top: 4%;  height: 118px; --streak-speed: 24s; transform: rotate(.7deg); }
+body.dropmini-page .dm-glass-streak-2 { left: 47%; top: 18%; height: 190px; --streak-speed: 29s; transform: rotate(-.5deg); opacity: .10; }
+body.dropmini-page .dm-glass-streak-3 { left: 76%; top: 3%;  height: 142px; --streak-speed: 25s; transform: rotate(.45deg); opacity: .11; }
+body.dropmini-page .dm-glass-streak-4 { left: 93%; top: 30%; height: 104px; --streak-speed: 31s; transform: rotate(-.8deg); opacity: .08; }
+
+/* Very soft mist/frosting at the hero edges only */
+body.dropmini-page .dm-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.15) 0%,
+            transparent 18%,
+            transparent 80%,
+            rgba(201,228,247,.10) 100%
+        );
+}
+
+/* Keep the original decorative ribbons very quiet */
+body.dropmini-page .dm-liquid-ribbon {
+    opacity: .10;
+}
+
+/* Product remains the hero focal point */
+body.dropmini-page .dm-hero-copy,
+body.dropmini-page .dm-product-scene {
+    position: relative;
+    z-index: 3;
+}
+
+body.dropmini-page .dm-hero-product-image {
+    filter: drop-shadow(0 19px 22px rgba(46,75,115,.14));
+}
+
+@keyframes dmDropCreep {
+    0% {
+        translate: 0 0;
+    }
+    100% {
+        translate: 0 9px;
+    }
+}
+
+@keyframes dmStreakCreep {
+    0% {
+        translate: 0 -3px;
+    }
+    100% {
+        translate: 0 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.dropmini-page .dm-glass-drop,
+    body.dropmini-page .dm-glass-streak {
+        animation: none;
+    }
+}
+
+@media (max-width: 760px) {
+    body.dropmini-page .dm-glass-drop {
+        opacity: .24;
+    }
+
+    body.dropmini-page .dm-glass-streak {
+        opacity: .07;
+    }
+
+    body.dropmini-page .dm-glass-drop-3,
+    body.dropmini-page .dm-glass-drop-6,
+    body.dropmini-page .dm-glass-drop-9,
+    body.dropmini-page .dm-glass-drop-10,
+    body.dropmini-page .dm-glass-drop-11,
+    body.dropmini-page .dm-glass-drop-12 {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   DROP MINI — HERO RIPPLE REFINEMENT
+   Replaces the wet-glass effect with subtle water ripples.
+   ========================================================= */
+
+body.dropmini-page .dm-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 76% 24%, rgba(83, 162, 226, .18), transparent 25rem),
+        radial-gradient(circle at 16% 74%, rgba(126, 213, 243, .14), transparent 24rem),
+        linear-gradient(145deg, #ffffff 0%, #f7fbff 48%, #e8f4fd 100%);
+}
+
+/* Disable any previous rain / condensation layers from older CSS */
+body.dropmini-page .dm-rain-glass,
+body.dropmini-page .dm-rain-streaks,
+body.dropmini-page .dm-glass-drop,
+body.dropmini-page .dm-glass-streak {
+    display: none !important;
+}
+
+/* Broad background ripples: large, faint, irregular and soft */
+body.dropmini-page .dm-water-ripples {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+body.dropmini-page .dm-water-ripple {
+    position: absolute;
+    left: 67%;
+    top: 54%;
+    width: 420px;
+    height: 118px;
+    border: 1px solid rgba(63, 137, 207, .10);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-3deg);
+    box-shadow:
+        0 0 24px rgba(93, 171, 228, .035),
+        inset 0 0 16px rgba(255,255,255,.20);
+    opacity: 0;
+    animation: dmHeroRipple 7s ease-out infinite;
+}
+
+body.dropmini-page .dm-water-ripple-2 {
+    animation-delay: 1.7s;
+    width: 520px;
+    height: 145px;
+    left: 70%;
+    top: 56%;
+}
+
+body.dropmini-page .dm-water-ripple-3 {
+    animation-delay: 3.4s;
+    width: 610px;
+    height: 172px;
+    left: 68%;
+    top: 58%;
+}
+
+body.dropmini-page .dm-water-ripple-4 {
+    animation-delay: 5.1s;
+    width: 700px;
+    height: 198px;
+    left: 72%;
+    top: 61%;
+}
+
+/* Tight ripple field directly beneath the speaker */
+body.dropmini-page .dm-speaker-ripple-field {
+    position: absolute;
+    z-index: 1;
+    right: 5%;
+    bottom: 8%;
+    width: 74%;
+    height: 122px;
+    transform: perspective(620px) rotateX(63deg);
+    transform-origin: center center;
+    pointer-events: none;
+}
+
+body.dropmini-page .dm-speaker-ripple-field span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 32%;
+    height: 44%;
+    transform: translate(-50%, -50%);
+    border: 1.5px solid rgba(60, 132, 208, .22);
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 16px rgba(86, 162, 225, .07);
+    animation: dmSpeakerRipple 5.8s ease-out infinite;
+}
+
+body.dropmini-page .dm-speaker-ripple-field span:nth-child(2) {
+    animation-delay: 1.45s;
+}
+
+body.dropmini-page .dm-speaker-ripple-field span:nth-child(3) {
+    animation-delay: 2.9s;
+}
+
+body.dropmini-page .dm-speaker-ripple-field span:nth-child(4) {
+    animation-delay: 4.35s;
+}
+
+/* Soft contact glow instead of a heavy shadow */
+body.dropmini-page .dm-product-shadow {
+    right: 13%;
+    bottom: 14%;
+    width: 52%;
+    height: 30px;
+    opacity: .42;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(63, 139, 210, .18) 0%,
+            rgba(119, 191, 238, .08) 45%,
+            transparent 76%
+        );
+    filter: blur(12px);
+}
+
+body.dropmini-page .dm-hero-product-image {
+    position: relative;
+    z-index: 4;
+    filter: drop-shadow(0 18px 21px rgba(46,75,115,.14));
+}
+
+/* Keep existing decorative ribbons nearly invisible */
+body.dropmini-page .dm-liquid-ribbon {
+    opacity: .08;
+}
+
+@keyframes dmHeroRipple {
+    0% {
+        transform: translate(-50%, -50%) rotate(-3deg) scale(.72);
+        opacity: 0;
+    }
+    18% {
+        opacity: .16;
+    }
+    72% {
+        opacity: .07;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-3deg) scale(1.18);
+        opacity: 0;
+    }
+}
+
+@keyframes dmSpeakerRipple {
+    0% {
+        width: 28%;
+        height: 40%;
+        opacity: 0;
+    }
+    18% {
+        opacity: .32;
+    }
+    75% {
+        opacity: .10;
+    }
+    100% {
+        width: 98%;
+        height: 94%;
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.dropmini-page .dm-water-ripple,
+    body.dropmini-page .dm-speaker-ripple-field span {
+        animation: none;
+        opacity: .10;
+    }
+}
+
+@media (max-width: 760px) {
+    body.dropmini-page .dm-water-ripple {
+        left: 56%;
+        opacity: .06;
+    }
+
+    body.dropmini-page .dm-speaker-ripple-field {
+        right: 8%;
+        bottom: 7%;
+        width: 82%;
+        height: 98px;
+    }
+}
+
+
+/* =========================================================
+   DROP MINI — RIPPLE VISIBILITY FIX
+   Makes the water effect clearly visible beneath the speaker
+   without turning it into target/radar rings.
+   ========================================================= */
+
+body.dropmini-page .dm-speaker-ripple-field {
+    z-index: 2;
+    right: 2%;
+    bottom: 3.5%;
+    width: 82%;
+    height: 150px;
+
+    transform: perspective(560px) rotateX(67deg);
+    transform-origin: center center;
+
+    opacity: 1;
+    overflow: visible;
+}
+
+/* Soft water glow underneath */
+body.dropmini-page .dm-speaker-ripple-field::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    width: 62%;
+    height: 48%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(74, 157, 224, .22) 0%,
+            rgba(105, 183, 236, .12) 30%,
+            rgba(161, 218, 249, .08) 48%,
+            transparent 72%
+        );
+    filter: blur(11px);
+}
+
+/* Main ripple lines */
+body.dropmini-page .dm-speaker-ripple-field span {
+    position: absolute;
+    left: 50%;
+    top: 51%;
+
+    width: 34%;
+    height: 34%;
+
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(52, 123, 216, .34);
+    border-left-color: rgba(52, 123, 216, .18);
+    border-right-color: rgba(105, 183, 236, .20);
+    border-radius: 49% 51% 47% 53% / 56% 47% 53% 44%;
+
+    box-shadow:
+        0 0 9px rgba(70, 151, 217, .10),
+        inset 0 0 7px rgba(255,255,255,.22);
+
+    opacity: 0;
+    animation: dmSpeakerRippleVisible 5.6s ease-out infinite;
+}
+
+body.dropmini-page .dm-speaker-ripple-field span:nth-child(2) {
+    animation-delay: 1.35s;
+    border-radius: 53% 47% 52% 48% / 47% 56% 44% 53%;
+}
+
+body.dropmini-page .dm-speaker-ripple-field span:nth-child(3) {
+    animation-delay: 2.7s;
+    border-radius: 47% 53% 49% 51% / 54% 45% 55% 46%;
+}
+
+body.dropmini-page .dm-speaker-ripple-field span:nth-child(4) {
+    animation-delay: 4.05s;
+    border-radius: 52% 48% 46% 54% / 48% 54% 46% 52%;
+}
+
+@keyframes dmSpeakerRippleVisible {
+    0% {
+        width: 28%;
+        height: 28%;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.96);
+    }
+
+    12% {
+        opacity: .58;
+    }
+
+    44% {
+        opacity: .34;
+    }
+
+    78% {
+        opacity: .16;
+    }
+
+    100% {
+        width: 100%;
+        height: 88%;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+}
+
+/* Background ripples: visible but very soft */
+body.dropmini-page .dm-water-ripple {
+    z-index: -3;
+    border-width: 1.5px;
+    border-color: rgba(52,123,216,.13);
+    box-shadow:
+        0 0 18px rgba(83,162,226,.06),
+        inset 0 0 14px rgba(255,255,255,.25);
+}
+
+@keyframes dmHeroRipple {
+    0% {
+        transform: translate(-50%, -50%) rotate(-3deg) scale(.72);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .20;
+    }
+
+    55% {
+        opacity: .10;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-3deg) scale(1.22);
+        opacity: 0;
+    }
+}
+
+/* Lift the speaker slightly so the ripple is not hidden behind it */
+body.dropmini-page .dm-hero-product-image {
+    transform: translate(5%, -7%) scale(1.07);
+}
+
+/* Reduce the old shadow so the ripple is readable */
+body.dropmini-page .dm-product-shadow {
+    bottom: 11.5%;
+    width: 48%;
+    height: 24px;
+    opacity: .28;
+    filter: blur(10px);
+}
+
+@media (max-width: 980px) {
+    body.dropmini-page .dm-speaker-ripple-field {
+        right: 3%;
+        bottom: 2%;
+        width: 86%;
+        height: 125px;
+    }
+}
+
+@media (max-width: 760px) {
+    body.dropmini-page .dm-speaker-ripple-field {
+        right: 4%;
+        bottom: 0;
+        width: 90%;
+        height: 105px;
+    }
+
+    body.dropmini-page .dm-speaker-ripple-field span {
+        border-width: 1.5px;
+    }
+
+    body.dropmini-page .dm-hero-product-image {
+        transform: translate(2%, -5%) scale(1.02);
+    }
+}
+
+
+/* =========================================================
+   DROP MINI — RIPPLE VISIBILITY / FINAL
+   Stronger static water rings + subtle pulse animation.
+   This intentionally overrides all earlier ripple rules.
+   ========================================================= */
+
+body.dropmini-page .dm-speaker-ripple-field {
+    position: absolute;
+    z-index: 2;
+    right: -1%;
+    bottom: 2%;
+    width: 86%;
+    height: 165px;
+    pointer-events: none;
+    opacity: 1 !important;
+    overflow: visible;
+    transform: perspective(560px) rotateX(66deg);
+    transform-origin: center;
+}
+
+body.dropmini-page .dm-speaker-ripple-field::before {
+    content: "";
+    position: absolute;
+    inset: 14% 3% 6%;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(73, 158, 226, .18) 0%,
+            rgba(73, 158, 226, .11) 22%,
+            rgba(124, 194, 239, .07) 40%,
+            transparent 70%
+        );
+    filter: blur(7px);
+    opacity: .95;
+}
+
+body.dropmini-page .dm-speaker-ripple-field::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    width: 84%;
+    height: 74%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 0 27%,
+            rgba(48, 122, 207, .24) 28% 29%,
+            transparent 30% 40%,
+            rgba(72, 151, 220, .20) 41% 42%,
+            transparent 43% 53%,
+            rgba(98, 173, 228, .17) 54% 55%,
+            transparent 56% 66%,
+            rgba(126, 192, 234, .14) 67% 68%,
+            transparent 69% 100%
+        );
+    filter: blur(.2px);
+    opacity: 1;
+    animation: dmRippleBreath 4.8s ease-in-out infinite;
+}
+
+body.dropmini-page .dm-speaker-ripple-field span {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    width: 36%;
+    height: 32%;
+    transform: translate(-50%, -50%);
+    border: 1.6px solid rgba(45, 119, 205, .28);
+    border-radius: 52% 48% 50% 50% / 45% 55% 47% 53%;
+    opacity: .24 !important;
+    box-shadow: 0 0 10px rgba(67, 146, 214, .10);
+    animation: dmRippleSpreadStrong 6.2s ease-out infinite;
+}
+
+body.dropmini-page .dm-speaker-ripple-field span:nth-child(2) {
+    animation-delay: 1.55s;
+    border-radius: 47% 53% 49% 51% / 52% 48% 55% 45%;
+}
+body.dropmini-page .dm-speaker-ripple-field span:nth-child(3) {
+    animation-delay: 3.1s;
+    border-radius: 54% 46% 51% 49% / 48% 52% 46% 54%;
+}
+body.dropmini-page .dm-speaker-ripple-field span:nth-child(4) {
+    animation-delay: 4.65s;
+    border-radius: 49% 51% 46% 54% / 54% 46% 51% 49%;
+}
+
+body.dropmini-page .dm-water-ripples {
+    display: none !important;
+}
+
+body.dropmini-page .dm-hero-product-image {
+    transform: translate(5%, -8%) scale(1.07);
+    filter: drop-shadow(0 17px 20px rgba(46,75,115,.13));
+}
+
+body.dropmini-page .dm-product-shadow {
+    right: 14%;
+    bottom: 10%;
+    width: 48%;
+    height: 20px;
+    opacity: .22 !important;
+    filter: blur(9px);
+}
+
+@keyframes dmRippleBreath {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(.985);
+        opacity: .88;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.025);
+        opacity: 1;
+    }
+}
+
+@keyframes dmRippleSpreadStrong {
+    0% {
+        width: 34%;
+        height: 30%;
+        opacity: 0 !important;
+    }
+    15% {
+        opacity: .42 !important;
+    }
+    55% {
+        opacity: .24 !important;
+    }
+    100% {
+        width: 96%;
+        height: 84%;
+        opacity: 0 !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.dropmini-page .dm-speaker-ripple-field::after,
+    body.dropmini-page .dm-speaker-ripple-field span {
+        animation: none !important;
+    }
+
+    body.dropmini-page .dm-speaker-ripple-field span {
+        opacity: .16 !important;
+    }
+}
+
+@media (max-width: 980px) {
+    body.dropmini-page .dm-speaker-ripple-field {
+        right: 0;
+        bottom: 1%;
+        width: 90%;
+        height: 145px;
+    }
+}
+
+@media (max-width: 760px) {
+    body.dropmini-page .dm-speaker-ripple-field {
+        right: 2%;
+        bottom: 0;
+        width: 94%;
+        height: 115px;
+    }
+
+    body.dropmini-page .dm-speaker-ripple-field::after {
+        width: 92%;
+        height: 80%;
+    }
+
+    body.dropmini-page .dm-hero-product-image {
+        transform: translate(2%, -6%) scale(1.02);
+    }
+}
