@@ -1197,3 +1197,50 @@ body[data-category="soct"] .character-portrait {
 .theChronicleText {
   text-align: justify;
 }
+
+
+/* =========================================================
+   SHARED PROJECT EYEBROW
+   Use this on every project page:
+     <p class="project-eyebrow">Section label</p>
+     <h2>Section heading</h2>
+
+   The shared stylesheet owns layout/typography.
+   Each project only overrides --project-eyebrow-color.
+   ========================================================= */
+
+:root {
+    --project-eyebrow-color: var(--primary-color, #347bd8);
+}
+
+.project-eyebrow {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 .8rem;
+    color: var(--project-eyebrow-color);
+    font-size: .72rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+/* The heading always starts below the eyebrow. */
+.project-eyebrow + :is(h1, h2, h3, h4) {
+    display: block;
+    margin-top: 0;
+}
+
+/* Optional shared heading wrapper for future pages. */
+.project-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-heading--center {
+    align-items: center;
+    text-align: center;
+}
+

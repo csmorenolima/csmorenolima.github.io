@@ -30,23 +30,24 @@ body.dropmini-page .dm-spec-ribbon-inner {
     margin-inline: auto;
 }
 
-body.dropmini-page .dm-kicker,
-body.dropmini-page .dm-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: .6rem;
-    margin: 0;
-    color: var(--dm-blue);
-    font-size: .72rem;
-    font-weight: 800;
-    letter-spacing: .16em;
-    text-transform: uppercase;
+/* Eyebrow layout/typography now comes from shared category-page.css. */
+body.dropmini-page {
+    --project-eyebrow-color: var(--dm-blue);
 }
 
-body.dropmini-page .dm-eyebrow::before{
+body.dropmini-page .dm-kicker,
+body.dropmini-page .dm-eyebrow {
+    color: var(--project-eyebrow-color);
+}
+
+/* Drop Mini keeps its small decorative hero rule as a page-specific detail. */
+body.dropmini-page .dm-eyebrow::before {
     content: "";
+    display: inline-block;
     width: 28px;
     height: 1px;
+    margin-right: .6rem;
+    vertical-align: middle;
     background: currentColor;
 }
 
@@ -861,8 +862,8 @@ body.dropmini-page .dm-colourways-heading {
     margin: 0 0 3rem;
 }
 
-body.dropmini-page .dm-colourways .dm-kicker {
-    color: rgba(255,255,255,.72);
+body.dropmini-page .dm-colourways {
+    --project-eyebrow-color: rgba(255, 255, 255, .78);
 }
 
 body.dropmini-page .dm-colourways h2 {
@@ -2045,20 +2046,18 @@ body.dropmini-page .dm-button-primary[href="#story"]:hover i {
 
 
 /* =========================================================
-   DROP MINI — SECTION LABEL CONSISTENCY
-   Match the blue Overview kicker across the light sections.
+   DROP MINI — EYEBROW COLOUR OVERRIDES
+   Position/spacing/type come from the shared project-eyebrow component.
    ========================================================= */
 
-body.dropmini-page .dm-story .dm-kicker,
-body.dropmini-page .dm-form .dm-kicker,
-body.dropmini-page .dm-detail .dm-kicker {
-    color: var(--dm-blue) !important;
+body.dropmini-page {
+    --project-eyebrow-color: var(--dm-blue);
 }
 
-/* Keep Colourways readable on its blue background. */
-body.dropmini-page .dm-colourways .dm-kicker {
-    color: rgba(255, 255, 255, .78) !important;
+body.dropmini-page .dm-colourways {
+    --project-eyebrow-color: rgba(255, 255, 255, .78);
 }
+
 
 
 /* =========================================================
