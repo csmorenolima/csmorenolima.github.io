@@ -32,12 +32,22 @@ body.dropmini-page .dm-spec-ribbon-inner {
 
 body.dropmini-page .dm-kicker,
 body.dropmini-page .dm-eyebrow {
-    margin: 0 0 .9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    margin: 0;
     color: var(--dm-blue);
     font-size: .72rem;
     font-weight: 800;
-    letter-spacing: .22em;
+    letter-spacing: .16em;
     text-transform: uppercase;
+}
+
+body.dropmini-page .dm-eyebrow::before{
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: currentColor;
 }
 
 body.dropmini-page h2 {

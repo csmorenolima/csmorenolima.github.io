@@ -337,7 +337,7 @@
             
             miniBlobs.forEach(blob => {
                 if(blob.collected) return;
-                uncollectedBlobs++;
+    uncollectedBlobs++;
                 
                 const blobRect = blob.getBoundingClientRect();
                 const blobX = blobRect.left + 12;
@@ -353,7 +353,7 @@
                 );
                 
                 if(isOutsideViewport) {
-                    unreachableBlobs++;
+        unreachableBlobs++;
                 } else {
                     // This blob is reachable, consider it for targeting
                     if(distance < nearestReachableDistance) {

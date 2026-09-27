@@ -48,49 +48,50 @@ body[data-category="soct"] .hero,
 body[data-category="health"] .hero,
 .hero.health {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../enova-app.jpg') center/cover;
+    url('../enova-app.jpg') center/cover;
 }
 
 /* Nomad category hero */
 body[data-category="transportation"] .hero,
 .hero.transportation {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../scaar_nomad-hero.png') center/cover;
+    url('../scaar_nomad-hero.png') center/cover;
 }
 
 /* Sensation 360 hero */
 body[data-category="electronics"] .hero,
 .hero.electronics {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../bass-sensation-360-4-hero.jpg') center/cover;
+    url('../bass-sensation-360-4-hero.jpg') center/cover;
 }
 
 /* Drop Mini hero */
 body[data-category="drop-mini"] .hero,
 .hero.drop-mini {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../bassDropMini-hero.jpg') center/cover;
+    url('../bassDropMini-hero.jpg') center/cover;
 }
 
-/* Engineering category hero */
+/* Engineering Landing hero */
 body[data-category="engineering"] .hero,
 .hero.engineering {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../Engineering_hero.jpg') center/cover;
+    url('../Engineering_hero.jpg') center/cover;
 }
 
 /* BrightUp hero */
 body[data-category="design"] .hero,
 .hero.design {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../brightUp_hero.png') center/cover;
+    url('../brightUp_hero.png') center/cover;
 }
 
-/* Product Design category hero */
+/* Product Design Landing hero */
 body[data-category="product-design"] .hero,
 .hero.product-design {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../product-design-hero.jpg')center/cover;
+    url('../product-design-hero.jpg')center/cover;
+
 
 }
 
@@ -98,7 +99,7 @@ body[data-category="product-design"] .hero,
 body[data-category="honEcomb"] .hero,
 .hero.honEcomb {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('../honEcomb_hero.jpg') center/cover;
+    url('../honEcomb_hero.jpg') center/cover;
 }
 
 /* Colours Grid for Bass Sensation 360 */

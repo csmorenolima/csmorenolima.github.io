@@ -27,8 +27,8 @@
     function initPortraitCarousels() {
         const imagesByKey = {
             lumyrion: [
-                "../assets/soct-characters/Lumyrion.png",
-                "../assets/soct-characters/LumyrionArtifact.png"
+                "/assets/soct-characters/Lumyrion.png",
+                "/assets/soct-characters/LumyrionArtifact.png"
             ]
         };
 
@@ -55,14 +55,14 @@
             if (!images || !image || !arrow) return;
 
             let index = Math.max(0, images.indexOf(image.getAttribute("src") || ""));
-            updateArrow(arrow, index);
+    updateArrow(arrow, index);
 
             const advance = (event) => {
                 event.preventDefault();
                 event.stopPropagation();
                 index = (index + 1) % images.length;
                 image.src = images[index];
-                updateArrow(arrow, index);
+    updateArrow(arrow, index);
             };
 
             arrow.addEventListener("click", advance);
@@ -265,7 +265,7 @@
             (data.creatures || []).forEach((creature) => renderOverlay(creature, "creature"));
         };
 
-        fetch("../assets/map-interactive-data.json")
+        fetch("/assets/map-interactive-data.json")
             .then((response) => {
                 if (!response.ok) throw new Error(`Map data request failed: ${response.status}`);
                 return response.json();

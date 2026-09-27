@@ -34,7 +34,7 @@ body.soct-page {
     background-color: var(--soct-bg);
     background-image:
         linear-gradient(180deg, rgba(2, 4, 7, .30), rgba(2, 4, 7, .56)),
-        url("../so-ct-hero.jpeg");
+    url("../so-ct-hero.jpeg");
     background-position: center, 50% 18%;
     background-size: cover, cover;
     background-repeat: no-repeat;
