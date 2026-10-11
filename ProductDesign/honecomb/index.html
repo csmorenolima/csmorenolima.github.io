@@ -13,9 +13,9 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="..//assets/css/theme.css">
-    <link rel="stylesheet" href="..//assets/css/category-page.css">
-    <link rel="stylesheet" href="..//assets/css/honecomb.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+    <link rel="stylesheet" href="/assets/css/category-page.css">
+    <link rel="stylesheet" href="/assets/css/honecomb.css">
 </head>
 
 <body class="honecomb-page" data-project="honecomb">
@@ -38,11 +38,11 @@
         </nav>
     </header>
     <main>
-        <section class="hc-hero"><img class="hc-hero-image" src="..//assets/speakers3_jpg-1.jpg" alt="">
+        <section class="hc-hero"><img class="hc-hero-image" src="/assets/speakers3_jpg-1.jpg" alt="">
             <div class="hc-hero-shade"></div>
             <div class="container hc-hero-grid">
                 <div class="hc-copy">
-                    <p class="hc-kicker">BASS · Sustainable Audio</p><img class="hc-logo" src="..//assets/bass-logo.png"
+                    <p class="hc-kicker">BASS · Sustainable Audio</p><img class="hc-logo" src="/assets/bass-logo.png"
                         alt="BASS logo">
                     <h1>HonEcomb</h1>
                     <p class="hc-tagline">Simple. Sustainable. Modern.</p>
@@ -94,7 +94,7 @@
                         bamboo with decorative technology, the design keeps the interface restrained.</p>
                 </div>
                 <div class="hc-material">
-                    <img class="hc-bamboo" src="..//assets/HonecombBamboo.png" alt="HonEcomb bamboo detail">
+                    <img class="hc-bamboo" src="/assets/HonecombBamboo.png" alt="HonEcomb bamboo detail">
                     <div><small>MATERIAL FOCUS</small><strong>Bamboo</strong>
                         <p>Warm, renewable and naturally expressive.</p>
                     </div>
@@ -165,11 +165,11 @@
                     </div>
                     <p>Material, proportion and the relationship between the bamboo body and touch-control surface.</p>
                 </div>
-                <div class="hc-gallery-grid"><img class="big lightbox" src="..//assets/speakers3_jpg-1.jpg"
-                        alt="HonEcomb bamboo speaker"><img class="lightbox" src="..//assets/speakers4jpg-2.jpg"
+                <div class="hc-gallery-grid"><img class="big lightbox" src="/assets/speakers3_jpg-1.jpg"
+                        alt="HonEcomb bamboo speaker"><img class="lightbox" src="/assets/speakers4jpg-2.jpg"
                         alt="HonEcomb speaker alternate view"><img class="lightbox"
-                        src="..//assets/speakers5-edited_jpg.jpg" alt="HonEcomb speaker detail"><img class="lightbox"
-                        src="..//assets/touch-controls.jpg" alt="HonEcomb touch controls"></div>
+                        src="/assets/speakers5-edited_jpg.jpg" alt="HonEcomb speaker detail"><img class="lightbox"
+                        src="/assets/touch-controls.jpg" alt="HonEcomb touch controls"></div>
             </div>
         </section>
         <section class="hc-specs">
@@ -239,8 +239,33 @@
             </div>
         </div>
     </footer>
-    <script src="..//assets/js/navigation.js"></script>
-    <script>(() => { document.querySelectorAll('[data-carousel]').forEach(c => { const s = [...c.querySelectorAll('article')], p = c.querySelector('.prev'), n = c.querySelector('.next'), d = c.querySelector('.dots'); let i = 0; const dots = s.map((_, x) => { let b = document.createElement('button'); b.onclick = () => show(x); d.appendChild(b); return b }); function show(x) { i = (x + s.length) % s.length; s.forEach((e, j) => e.classList.toggle('active', j === i)); dots.forEach((e, j) => e.classList.toggle('active', j === i)) } p.onclick = () => show(i - 1); n.onclick = () => show(i + 1); show(0) }); const lb = document.getElementById('hc-lightbox'), im = lb.querySelector('img'); document.querySelectorAll('.lightbox').forEach(x => x.onclick = () => { im.src = x.src; im.alt = x.alt; lb.classList.add('open') }); lb.onclick = e => { if (e.target === lb || e.target.tagName === 'BUTTON') lb.classList.remove('open') } })();</script>
+
+    <script src="/assets/js/navigation.js"></script>
+    <script>
+        (() => { 
+            document.querySelectorAll('[data-carousel]').forEach(c => {
+                const s = [...c.querySelectorAll('article')], p = c.querySelector('.prev'), n = c.querySelector('.next'), d = c.querySelector('.dots'); let i = 0; const dots = s.map((_, x) => { 
+                    let b = document.createElement('button'); b.onclick = () => show(x); d.appendChild(b); return b 
+                }); 
+                    
+                function show(x) {
+                    i = (x + s.length) % s.length; s.forEach((e, j) => e.classList.toggle('active', j === i)); dots.forEach((e, j) => e.classList.toggle('active', j === i))
+                }
+                
+                p.onclick = () => show(i - 1); n.onclick = () => show(i + 1); show(0) 
+            }); 
+            
+            const lb = document.getElementById('hc-lightbox'), im = lb.querySelector('img'); document.querySelectorAll('.lightbox').forEach(x => x.onclick = () => {
+                im.src = x.src; im.alt = x.alt; lb.classList.add('open') 
+            });
+            
+            lb.onclick = e => { 
+                if (e.target === lb || e.target.tagName === 'BUTTON') lb.classList.remove('open') 
+            }
+ 
+        })();
+    
+    </script>
 </body>
 
 </html>
