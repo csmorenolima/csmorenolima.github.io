@@ -53,7 +53,7 @@ body.s360-page .s360-hero {
     position: relative;
     min-height: var(--project-hero-min-height, max(760px, 100svh));
     display: flex;
-    align-items: var(--project-hero-align, flex-start);
+    align-items: var(--project-hero-align, center);
     isolation: isolate;
     overflow: hidden;
     padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
@@ -76,7 +76,6 @@ body.s360-page .s360-hero-media img {
     mix-blend-mode: screen;
 }
 
-
 body.s360-page .s360-hero-overlay {
     position: absolute;
     inset: 0;
@@ -92,7 +91,6 @@ body.s360-page .s360-hero-overlay {
         radial-gradient(circle at center, rgba(255,255,255,.05), transparent 56%),
         linear-gradient(180deg, rgba(3,4,10,.12), rgba(3,4,10,.82));
 }
-
 
 body.s360-page .s360-hero::after {
     content: "";
@@ -115,7 +113,6 @@ body.s360-page .s360-hero::after {
     clip-path: polygon(0 69%, 8% 59%, 15% 74%, 23% 46%, 31% 64%, 40% 30%, 49% 64%, 56% 44%, 65% 59%, 74% 34%, 83% 54%, 92% 38%, 100% 46%, 100% 86%, 0 96%);
     filter: drop-shadow(0 0 20px rgba(237, 22, 140, .16)) drop-shadow(0 0 32px rgba(255, 189, 103, .14));
 }
-
 
 body.s360-page .s360-hero::before {
     content: "";
@@ -141,8 +138,6 @@ body.s360-page .s360-hero::before {
     filter: drop-shadow(0 0 24px rgba(104, 86, 255, .22)) drop-shadow(0 0 36px rgba(255, 189, 103, .18));
 }
 
-
-
 body.s360-page .s360-hero-orbit {
     position: absolute;
     z-index: -1;
@@ -153,7 +148,6 @@ body.s360-page .s360-hero-orbit {
     filter: blur(28px);
 }
 
-
 body.s360-page .s360-orbit-one {
     width: 24rem;
     height: 24rem;
@@ -162,7 +156,6 @@ body.s360-page .s360-orbit-one {
     background: radial-gradient(circle, rgba(29, 163, 255, .24) 0%, rgba(49, 34, 255, .18) 38%, transparent 74%);
 }
 
-
 body.s360-page .s360-orbit-two {
     width: 28rem;
     height: 22rem;
@@ -170,7 +163,6 @@ body.s360-page .s360-orbit-two {
     top: 17%;
     background: radial-gradient(circle, rgba(255, 65, 199, .18) 0%, rgba(255, 163, 42, .16) 42%, transparent 78%);
 }
-
 
 body.s360-page .s360-hero-inner {
     display: grid;
@@ -277,8 +269,6 @@ body.s360-page .s360-cta-ghost {
     background: rgba(255,255,255,.06);
     backdrop-filter: blur(8px);
 }
-
-
 
 /* SPEC RIBBON — moved out of the hero to match Drop Mini */
 body.s360-page .s360-spec-ribbon {
@@ -395,7 +385,6 @@ body.s360-page .s360-flow h2,
 body.s360-page .s360-mood h2,
 body.s360-page .s360-section-heading h2,
 body.s360-page .s360-colours-heading h2,
-body.s360-page .s360-specs-heading h2,
 body.s360-page .s360-final h2 {
     margin: 0;
     font-size: clamp(2.7rem,5vw,4.9rem);
@@ -812,56 +801,6 @@ body.s360-page .s360-colour-thumb.active {
     background: #fff;
 }
 
-/* SPECS */
-body.s360-page .s360-specs {
-    padding: clamp(6rem,9vw,9rem) 0;
-    color: var(--s360-ink);
-    background: #fff;
-}
-
-body.s360-page .s360-specs-heading {
-    max-width: 850px;
-    margin-bottom: 3rem;
-}
-
-body.s360-page .s360-spec-grid {
-    display: grid;
-    grid-template-columns: repeat(4,minmax(0,1fr));
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid var(--s360-line-dark);
-    border-bottom: 1px solid var(--s360-line-dark);
-}
-
-body.s360-page .s360-spec-grid > div {
-    padding: 1.8rem 1.35rem;
-    border-left: 1px solid var(--s360-line-dark);
-}
-
-body.s360-page .s360-spec-grid > div:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-body.s360-page .s360-spec-grid dt {
-    margin-bottom: 1.1rem;
-    color: var(--s360-pink);
-    font-size: .66rem;
-    font-weight: 800;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-}
-
-body.s360-page .s360-spec-grid dd {
-    margin: .35rem 0;
-    color: #676a73;
-    font-size: .88rem;
-}
-
-body.s360-page .s360-spec-grid strong {
-    color: #16171c;
-}
-
 /* FINAL */
 body.s360-page .s360-final {
     padding: clamp(6rem,9vw,9rem) 0;
@@ -1005,12 +944,7 @@ body.s360-page .s360-lightbox-close {
         grid-column: span 2;
         min-height: 300px;
     }
-
-    body.s360-page .s360-spec-grid {
-        grid-template-columns: repeat(2,minmax(0,1fr));
-    }
-
-    body.s360-page .s360-colour-viewer {
+body.s360-page .s360-colour-viewer {
         grid-template-columns: 1fr;
     }
 
@@ -1038,7 +972,6 @@ body.s360-page .s360-lightbox-close {
     }
 }
 
-
 @media (prefers-reduced-motion: reduce) {
     body.s360-page *,
     body.s360-page *::before,
@@ -1048,7 +981,6 @@ body.s360-page .s360-lightbox-close {
         transition-duration: .001ms !important;
     }
 }
-
 
 @media (max-width: 900px) {
     body.s360-page .s360-hero::before {

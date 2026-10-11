@@ -1,1431 +1,2191 @@
 /* =========================================================
+
    ENOVA project page
+
    Consolidated, page-scoped styles. This file is intended to
+
    replace the previous ENOVA override stylesheet.
+
 ========================================================= */
 
 body.enova-page {
+
     --enova-ink: #10182b;
+
     --enova-ink-soft: #26324a;
+
     --enova-muted: #667085;
+
     --enova-accent: #76558f;
+
     --enova-accent-strong: #634179;
-    --enova-lilac: #ece5f1;
     --enova-lilac-soft: #f6f2f8;
+
     --enova-paper: #fffdfd;
-    --enova-surface: rgba(255, 255, 255, .86);
     --enova-border: rgba(85, 65, 103, .14);
+
     --enova-border-strong: rgba(85, 65, 103, .24);
+
     --enova-shadow-sm: 0 12px 32px rgba(45, 32, 58, .08);
+
     --enova-shadow-md: 0 24px 70px rgba(45, 32, 58, .12);
-    --enova-shadow-lg: 0 36px 100px rgba(45, 32, 58, .16);
-    --enova-radius-sm: 16px;
     --enova-radius-md: 24px;
+
     --enova-radius-lg: 36px;
+
     --enova-container: 1180px;
 
     margin: 0;
+
     color: var(--enova-ink);
+
     background: var(--enova-paper);
+
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
     text-rendering: optimizeLegibility;
+
     -webkit-font-smoothing: antialiased;
+
 }
 
 body.enova-page *,
+
 body.enova-page *::before,
+
 body.enova-page *::after {
+
     box-sizing: border-box;
+
 }
 
 body.enova-page img {
+
     max-width: 100%;
+
 }
 
 body.enova-page button,
+
 body.enova-page a {
+
     -webkit-tap-highlight-color: transparent;
+
 }
 
 body.enova-page a,
+
 body.enova-page button {
+
     transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+
 }
 
 body.enova-page :focus-visible {
+
     outline: 3px solid rgba(118, 85, 143, .42);
+
     outline-offset: 4px;
+
 }
 
 body.enova-page .container {
+
     width: min(calc(100% - 3rem), var(--enova-container));
+
     max-width: var(--enova-container);
+
     margin-inline: auto;
+
 }
 
 body.enova-page.dialog-open {
+
     overflow: hidden;
+
 }
 
 /* Keep in-page anchors visible below the fixed header inherited from theme.css. */
+
 body.enova-page main [id] {
+
     scroll-margin-top: 6rem;
+
 }
 
 /* Header and primary navigation are inherited from theme.css. */
 
 /* Shared project typography */
+
 body.enova-page .section {
+
     position: relative;
+
     padding: clamp(5rem, 8vw, 8rem) 0;
+
 }
 
 body.enova-page .section-heading {
+
     max-width: 790px;
+
     margin: 0 0 clamp(2.25rem, 4vw, 3.5rem);
+
 }
 
 body.enova-page .section-heading.centered {
+
     margin-inline: auto;
+
     text-align: center;
+
 }
 
 body.enova-page .eyebrow{
+
     display: inline-flex;
+
     align-items: center;
+
     gap: .55rem;
+
     margin: 0;
+
     color: var(--enova-accent-strong);
+
     font-size: .72rem;
+
     font-weight: 800;
+
     letter-spacing: .16em;
+
     text-transform: uppercase;
+
 }
 
 body.enova-page .eyebrow::before {
+
     content: "";
+
     width: 28px;
+
     height: 1px;
+
     background: currentColor;
+
 }
 
 body.enova-page .section-heading h2,
+
 body.enova-page .story-copy h2 {
+
     margin: .65rem 0 1rem;
+
     color: var(--enova-ink);
+
     font-size: clamp(2rem, 3.2vw, 3.35rem);
+
     font-weight: 750;
+
     line-height: 1.04;
+
     letter-spacing: -.045em;
+
 }
 
 body.enova-page .section-heading p,
+
 body.enova-page .split-heading > p,
+
 body.enova-page .story-copy p {
+
     margin: 0;
+
     color: var(--enova-muted);
+
     font-size: clamp(1rem, 1.15vw, 1.08rem);
+
     line-height: 1.75;
+
 }
 
 body.enova-page .story-copy p + p {
+
     margin-top: 1.2rem;
+
 }
 
 /* Buttons */
+
 body.enova-page .button {
+
     min-height: 54px;
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: .75rem;
+
     padding: 0 1.35rem;
+
     border: 1px solid transparent;
+
     border-radius: 12px;
+
     font-size: .79rem;
+
     font-weight: 800;
+
     letter-spacing: .06em;
+
     text-decoration: none;
+
     text-transform: uppercase;
+
 }
 
 body.enova-page .button::before {
+
     display: none !important;
+
 }
 
 body.enova-page .button-primary {
+
     color: #fff;
+
     background: var(--enova-ink);
+
     border-color: var(--enova-ink);
+
     box-shadow: 0 14px 30px rgba(16, 24, 43, .15);
+
 }
 
 body.enova-page .button-primary:hover {
+
     color: #fff;
+
     background: #25324b;
+
     border-color: #25324b;
+
     transform: translateY(-2px);
+
     box-shadow: 0 18px 38px rgba(16, 24, 43, .2);
+
 }
 
 body.enova-page .button-secondary {
+
     color: var(--enova-ink);
+
     background: rgba(255, 255, 255, .7);
+
     border-color: rgba(16, 24, 43, .25);
+
 }
 
 body.enova-page .button-secondary:hover {
+
     color: var(--enova-accent-strong);
+
     background: #fff;
+
     border-color: var(--enova-accent);
+
     transform: translateY(-2px);
+
 }
 
 /* Hero */
+
 body.enova-page .enova-hero {
+
     position: relative;
+
     min-height: var(--project-hero-min-height, max(760px, 100svh));
+
     display: flex;
+
     align-items: var(--project-hero-align, flex-start);
+
     overflow: hidden;
+
     padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
+
     color: var(--enova-ink);
+
     text-align: left;
+
     background:
+
         linear-gradient(115deg, rgba(255, 253, 253, .98) 0%, rgba(255, 253, 253, .95) 39%, rgba(244, 238, 247, .96) 100%);
+
 }
 
 body.enova-page .enova-hero::before {
+
     content: "";
+
     position: absolute;
+
     inset: auto 0 0;
+
     height: 25%;
+
     background: linear-gradient(180deg, rgba(236, 229, 241, 0), rgba(236, 229, 241, .7));
+
     pointer-events: none;
+
 }
 
 body.enova-page .enova-hero-shell {
+
     position: relative;
+
     z-index: 2;
+
     width: min(var(--project-hero-content-width, 1200px), 100%);
+
     max-width: var(--project-hero-content-width, 1200px);
+
     padding-inline: var(--project-hero-content-gutter, 2rem);
+
     box-sizing: border-box;
+
     display: grid;
+
     grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
+
     gap: clamp(2.5rem, 5vw, 5rem);
+
     align-items: center;
+
 }
 
 body.enova-page .enova-hero-copy {
+
     max-width: 650px;
+
 }
 
 body.enova-page .enova-hero h1 {
+
     margin: 0;
+
     color: var(--enova-ink);
+
     font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
+
     font-weight: 750;
+
     line-height: .86;
+
     letter-spacing: -.075em;
+
     text-shadow: none;
+
 }
 
 body.enova-page .enova-hero h1 span {
+
     display: block;
+
 }
 
 /* Keep Dignity and Access visually lighter. */
+
 body.enova-page .enova-hero h1 span:not(.hero-accent-word) {
+
     font-weight: 500;
+
 }
 
 body.enova-page .enova-hero h1 span + span {
+
     margin-top: .09em;
+
 }
 
 body.enova-page .enova-hero .hero-accent-word {
+
     color: var(--enova-accent-strong);
+
     font-weight: 700;
+
 }
 
 body.enova-page .hero-summary {
+
     max-width: 610px;
+
     margin: 2rem 0 0;
+
     color: var(--enova-ink-soft);
+
     font-size: clamp(1.03rem, 1.25vw, 1.18rem);
+
     line-height: 1.72;
+
 }
 
-
-
-
-
-
-
-
-
-
-
 body.enova-page .hero-actions {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: .85rem;
+
     margin-top: 2rem;
+
 }
 
 body.enova-page .enova-hero-visual {
+
     position: relative;
+
     min-height: 500px;
+
     isolation: isolate;
+
 }
-
-
 
 body.enova-page .hero-orb {
+
     position: absolute;
+
     z-index: 0;
+
     border-radius: 50%;
+
     pointer-events: none;
+
     animation-play-state: paused;
+
     will-change: auto;
+
 }
 
-
 body.enova-page .enova-hero.is-in-view .hero-orb {
+
     animation-play-state: running;
+
     will-change: transform;
+
 }
 
 body.enova-page .hero-orb-one {
+
     width: 430px;
+
     height: 430px;
+
     right: -130px;
+
     top: 120px;
+
     background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .9), rgba(184, 162, 198, .26) 60%, rgba(118, 85, 143, .08));
+
     animation: enova-orb-one 24s ease-in-out infinite;
+
 }
 
 body.enova-page .hero-orb-two {
+
     width: 220px;
+
     height: 220px;
+
     left: 45%;
+
     bottom: -80px;
+
     background: rgba(255, 255, 255, .52);
+
     border: 1px solid rgba(118, 85, 143, .08);
+
     animation: enova-orb-two 30s ease-in-out infinite;
+
     animation-delay: -8s;
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 body.enova-page .hero-brand-mark {
+
     position: absolute;
+
     width: min(48%, 320px);
+
     right: 0;
+
     bottom: 2rem;
+
     z-index: 3;
+
     opacity: .9;
+
     filter: drop-shadow(0 18px 30px rgba(45, 32, 58, .12));
+
 }
 
 /* Snapshot */
+
 body.enova-page .enova-snapshot {
+
     background: #fff;
+
 }
 
 body.enova-page .snapshot-facts {
+
     display: grid;
+
     grid-template-columns: repeat(4, minmax(0, 1fr));
+
     margin: 0;
+
     padding: 1.4rem 0 0;
+
     border-top: 1px solid var(--enova-border-strong);
+
 }
 
 body.enova-page .snapshot-fact {
+
     min-width: 0;
+
     padding: .35rem 1.5rem 0;
+
     border-left: 1px solid var(--enova-border);
+
 }
 
 body.enova-page .snapshot-fact:first-child {
+
     padding-left: 0;
+
     border-left: 0;
+
 }
 
 body.enova-page .snapshot-icon {
+
     display: block;
+
     margin-bottom: 1.15rem;
+
     color: var(--enova-accent-strong);
+
     font-size: 1.15rem;
+
 }
 
 body.enova-page .snapshot-fact dt {
+
     margin: 0 0 .35rem;
+
     color: var(--enova-ink);
+
     font-size: .78rem;
+
     font-weight: 800;
+
     letter-spacing: .08em;
+
     text-transform: uppercase;
+
 }
 
 body.enova-page .snapshot-fact dd {
+
     margin: 0;
+
     color: var(--enova-muted);
+
     font-size: .95rem;
+
     line-height: 1.55;
+
 }
 
 /* Academic project context */
+
 body.enova-page .enova-brief {
+
     background: var(--enova-lilac-soft);
+
 }
 
 body.enova-page .enova-brief .section-heading {
+
     max-width: 900px;
+
 }
 
 body.enova-page .academic-modules {
+
     display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     border-top: 1px solid var(--enova-border-strong);
+
     border-bottom: 1px solid var(--enova-border-strong);
+
 }
 
 body.enova-page .academic-module {
+
     position: relative;
+
     min-width: 0;
+
     padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3.5rem);
+
 }
 
 body.enova-page .academic-module:first-child {
+
     padding-left: 0;
+
 }
 
 body.enova-page .academic-module + .academic-module {
+
     border-left: 1px solid var(--enova-border-strong);
+
 }
 
 body.enova-page .module-number {
+
     display: block;
+
     margin-bottom: 1.5rem;
+
     color: rgba(118, 85, 143, .42);
+
     font-size: .72rem;
+
     font-weight: 800;
+
     letter-spacing: .16em;
+
 }
 
 body.enova-page .module-meta,
+
 body.enova-page .deliverables-kicker {
+
     margin: 0;
+
     color: var(--enova-accent-strong);
+
     font-size: .68rem;
+
     font-weight: 800;
+
     letter-spacing: .12em;
+
     text-transform: uppercase;
+
 }
 
 body.enova-page .academic-module h3 {
+
     max-width: 470px;
+
     margin: .7rem 0 1rem;
+
     color: var(--enova-ink);
+
     font-size: clamp(1.25rem, 2vw, 1.65rem);
+
     line-height: 1.18;
+
     letter-spacing: -.025em;
+
 }
 
 body.enova-page .academic-module > p:last-child {
+
     max-width: 520px;
+
     margin: 0;
+
     color: var(--enova-muted);
+
     line-height: 1.75;
+
 }
 
 body.enova-page .deliverables-row {
+
     display: grid;
+
     grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr);
+
     gap: clamp(2rem, 6vw, 6rem);
+
     align-items: start;
+
     padding-top: clamp(2rem, 4vw, 3rem);
+
 }
 
 body.enova-page .deliverables-copy h3 {
+
     max-width: 420px;
+
     margin: .65rem 0 0;
+
     color: var(--enova-ink);
+
     font-size: clamp(1.35rem, 2.4vw, 2rem);
+
     line-height: 1.15;
+
     letter-spacing: -.035em;
+
 }
 
 body.enova-page .deliverables-list {
+
     display: grid;
+
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 1.25rem;
+
     margin: 0;
+
     padding: 0;
+
     list-style: none;
+
 }
 
 body.enova-page .deliverables-list li {
+
     position: relative;
+
     padding: 1rem 0 1rem 1.15rem;
+
     border-bottom: 1px solid var(--enova-border-strong);
+
     color: var(--enova-muted);
+
     font-size: .92rem;
+
     line-height: 1.6;
+
 }
 
 /* Story and impact */
+
 body.enova-page .enova-story {
+
     overflow: hidden;
+
     background: var(--enova-ink);
+
 }
 
 body.enova-page .story-grid {
+
     position: relative;
+
     z-index: 1;
+
     display: grid;
+
     grid-template-columns: minmax(0, .9fr) minmax(360px, .75fr);
+
     gap: clamp(3rem, 8vw, 8rem);
+
     align-items: center;
+
 }
 
 body.enova-page .enova-story .eyebrow {
+
     color: #d9c8e5;
+
 }
 
 body.enova-page .enova-story .story-copy h2 {
+
     color: #fff;
+
 }
 
 body.enova-page .enova-story .story-copy p {
+
     color: rgba(255, 255, 255, .67);
+
 }
 
 body.enova-page .impact-carousel {
+
     position: relative;
+
     min-height: 430px;
+
     padding: 1.1rem;
+
     border: 1px solid rgba(255, 255, 255, .14);
+
     border-radius: var(--enova-radius-lg);
+
     background: rgba(255, 255, 255, .075);
+
     box-shadow: 0 32px 80px rgba(0, 0, 0, .22);
+
 }
 
 body.enova-page .impact-viewport {
+
     min-height: 330px;
+
 }
 
 body.enova-page .impact-slide {
+
     min-height: 330px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     justify-content: center;
+
     padding: clamp(1.4rem, 4vw, 2.6rem);
+
 }
 
 body.enova-page .impact-slide.is-active {
+
     animation: enova-fade-up .4s ease both;
+
 }
 
 body.enova-page .impact-slide[hidden] {
+
     display: none;
+
 }
 
-
-
 body.enova-page .impact-stat {
+
     margin: 1.5rem 0 .85rem !important;
+
     color: #fff !important;
+
     font-size: clamp(2.8rem, 6vw, 5.4rem) !important;
+
     font-weight: 750;
+
     line-height: .9 !important;
+
     letter-spacing: -.06em;
+
 }
 
 body.enova-page .impact-slide > p:last-child {
+
     max-width: 420px;
+
     margin: 0;
+
     color: rgba(255, 255, 255, .68);
+
     font-size: 1rem;
+
     line-height: 1.7;
+
 }
 
 body.enova-page .impact-controls {
+
     min-height: 64px;
+
     display: grid;
+
     grid-template-columns: auto 1fr auto;
+
     align-items: center;
+
     gap: 1rem;
+
     padding: .7rem;
+
     border-top: 1px solid rgba(255, 255, 255, .12);
+
 }
 
 body.enova-page .impact-arrows {
+
     display: flex;
+
     gap: .55rem;
+
 }
 
 body.enova-page .icon-button {
+
     width: 42px;
+
     height: 42px;
+
     display: inline-grid;
+
     place-items: center;
+
     border: 1px solid rgba(255, 255, 255, .16);
+
     border-radius: 50%;
+
     color: #fff;
+
     background: rgba(255, 255, 255, .08);
+
     cursor: pointer;
+
 }
 
 body.enova-page .icon-button:hover {
+
     background: rgba(255, 255, 255, .16);
+
     transform: translateY(-2px);
+
 }
 
 body.enova-page .impact-dots {
+
     display: flex;
+
     justify-content: center;
+
     gap: .5rem;
+
 }
 
 body.enova-page .impact-dot {
+
     width: 7px;
+
     height: 7px;
+
     padding: 0;
+
     border: 0;
+
     border-radius: 999px;
+
     background: rgba(255, 255, 255, .28);
+
     cursor: pointer;
+
 }
 
 body.enova-page .impact-dot.is-active {
+
     width: 28px;
+
     background: #fff;
+
 }
 
 /* Solution */
+
 body.enova-page .enova-solution {
+
     background: linear-gradient(180deg, #fff 0%, #fbf8fc 100%);
+
 }
 
 body.enova-page .solution-grid {
+
     display: grid;
+
     grid-template-columns: repeat(4, minmax(0, 1fr));
+
     gap: 1rem;
+
 }
 
 body.enova-page .solution-card {
+
     position: relative;
+
     contain: layout paint;
+
     min-height: 220px;
+
     display: flex;
+
     flex-direction: column;
+
     padding: 1.6rem;
+
     overflow: hidden;
+
     border: 1px solid var(--enova-border);
+
     border-radius: var(--enova-radius-md);
+
     background: linear-gradient(145deg, #fff 0%, #fcf9fd 100%);
+
     box-shadow: var(--enova-shadow-sm);
+
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
 }
 
 body.enova-page .solution-card::before {
+
     content: "";
+
     width: 38px;
+
     height: 2px;
+
     margin-bottom: auto;
+
     background: var(--enova-accent);
+
 }
 
 body.enova-page .solution-card::after {
+
     content: "";
+
     position: absolute;
+
     inset: auto -25% -42% 30%;
+
     aspect-ratio: 1;
+
     border-radius: 50%;
+
     background: radial-gradient(circle, rgba(118, 85, 143, .10), transparent 68%);
+
     pointer-events: none;
+
 }
 
 body.enova-page .solution-card h3 {
+
     position: relative;
+
     margin: 1.4rem 0 .65rem;
+
     color: var(--enova-ink);
+
     font-size: 1.08rem;
+
 }
 
 body.enova-page .solution-card p {
+
     position: relative;
+
     margin: 0;
+
     color: var(--enova-muted);
+
     font-size: .92rem;
+
     line-height: 1.68;
+
 }
 
 body.enova-page .solution-card:hover {
+
     transform: translateY(-6px);
+
     border-color: var(--enova-border-strong);
+
     box-shadow: var(--enova-shadow-md);
+
 }
 
 /* Banner */
+
 body.enova-page .enova-banner {
+
     background: var(--enova-lilac-soft);
+
 }
 
 body.enova-page .banner-frame {
+
     margin: 0;
+
     padding: clamp(.7rem, 2vw, 1.25rem);
+
     border: 1px solid rgba(255, 255, 255, .9);
+
     border-radius: var(--enova-radius-lg);
+
     background: rgba(255, 255, 255, .72);
+
     box-shadow: var(--enova-shadow-md);
+
 }
 
 body.enova-page .banner-frame img {
+
     width: 100%;
+
     display: block;
+
     border-radius: 26px;
+
 }
 
 /* Gallery */
+
 body.enova-page .enova-gallery {
+
     background: #fff;
+
 }
 
 body.enova-page .gallery-grid {
+
     display: grid;
+
     grid-template-columns: repeat(4, minmax(0, 1fr));
+
     grid-auto-rows: 220px;
+
     gap: 1rem;
+
 }
 
 body.enova-page .gallery-item {
+
     position: relative;
+
     contain: layout paint;
+
     min-width: 0;
+
     margin: 0;
+
     padding: 0;
+
     overflow: hidden;
+
     border: 0;
+
     border-radius: var(--enova-radius-md);
+
     color: #fff;
+
     background: var(--enova-lilac-soft);
+
     box-shadow: var(--enova-shadow-sm);
+
     cursor: zoom-in;
+
 }
 
 body.enova-page .gallery-item-featured {
+
     grid-column: span 2;
+
     grid-row: span 2;
+
 }
 
 body.enova-page .gallery-item-tall {
+
     grid-row: span 2;
+
 }
 
 body.enova-page .gallery-item img {
+
     width: 100%;
+
     height: 100%;
+
     display: block;
+
     object-fit: cover;
+
     transition: transform .5s cubic-bezier(.2, .7, .2, 1), filter .3s ease;
+
 }
 
 body.enova-page .gallery-item-tall img {
+
     object-fit: contain;
+
     padding: 1rem;
+
     background: #eee7f2;
+
 }
 
 body.enova-page .gallery-item::after {
+
     content: "";
+
     position: absolute;
+
     inset: 0;
+
     background: linear-gradient(180deg, transparent 54%, rgba(16, 24, 43, .78) 100%);
+
 }
 
 body.enova-page .gallery-caption {
+
     position: absolute;
+
     inset: auto 1rem 1rem;
+
     z-index: 2;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 1rem;
+
     font-size: .78rem;
+
     font-weight: 700;
+
     text-align: left;
+
 }
 
 body.enova-page .gallery-item:hover img,
+
 body.enova-page .gallery-item:focus-visible img {
+
     transform: scale(1.045);
+
 }
 
 body.enova-page .gallery-item:hover,
+
 body.enova-page .gallery-item:focus-visible {
+
     transform: translateY(-4px);
+
     box-shadow: var(--enova-shadow-md);
+
 }
 
 /* Reports */
+
 body.enova-page .enova-reports {
+
     background: linear-gradient(180deg, var(--enova-lilac-soft), #fff);
+
 }
 
 body.enova-page .document-grid {
+
     display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 1rem;
+
 }
 
 body.enova-page .document-card {
+
     min-height: 230px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 1rem;
+
     padding: 1.5rem;
+
     border: 1px solid var(--enova-border);
+
     border-radius: var(--enova-radius-md);
+
     background: rgba(255, 255, 255, .9);
+
     box-shadow: var(--enova-shadow-sm);
+
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
 }
 
 body.enova-page .document-card h3 {
+
     margin: 0 0 .45rem;
+
     color: var(--enova-ink);
+
     font-size: 1.08rem;
+
 }
 
 body.enova-page .document-card p {
+
     margin: 0;
+
     color: var(--enova-muted);
+
     font-size: .91rem;
+
     line-height: 1.6;
+
 }
 
 body.enova-page .doc-link {
+
     min-height: 52px;
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: .65rem;
+
     margin-top: auto;
+
     padding: 0 1.4rem;
+
     border: 1px solid var(--enova-ink);
+
     border-radius: 10px;
+
     color: #fff;
+
     background: var(--enova-ink);
+
     font-size: .76rem;
+
     font-weight: 800;
+
     letter-spacing: .06em;
+
     line-height: 1;
+
     text-decoration: none;
+
     text-transform: uppercase;
+
     white-space: nowrap;
+
     transition: transform .22s ease, background-color .22s ease, border-color .22s ease, box-shadow .22s ease;
+
 }
 
 body.enova-page .doc-link:hover {
+
     color: #fff;
+
     background: #25324b;
+
     border-color: #25324b;
+
     transform: translateY(-2px);
+
     box-shadow: 0 12px 28px rgba(16, 24, 43, .18);
+
 }
 
 body.enova-page .document-card:hover {
+
     transform: translateY(-5px);
+
     border-color: var(--enova-border-strong);
+
     box-shadow: var(--enova-shadow-md);
+
 }
 
 /* Videos */
+
 body.enova-page .enova-videos {
+
     background: #fff;
+
 }
 
 body.enova-page .video-grid {
+
     display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 1rem;
+
 }
 
 body.enova-page .video-card {
+
     min-width: 0;
+
     contain: layout paint;
+
     display: block;
+
     padding: 0;
+
     overflow: hidden;
+
     border: 1px solid var(--enova-border);
+
     border-radius: 30px;
+
     color: inherit;
+
     background: rgba(255, 255, 255, .9);
+
     box-shadow: var(--enova-shadow-sm);
+
     font: inherit;
+
     text-align: left;
+
     cursor: pointer;
+
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
 }
 
 body.enova-page .video-thumb {
+
     position: relative;
+
     height: 280px;
+
     display: block;
+
     overflow: hidden;
+
     background: var(--enova-lilac-soft);
+
 }
 
 body.enova-page .video-thumb img {
+
     width: 100%;
+
     height: 100%;
+
     display: block;
+
     object-fit: cover;
+
     filter: brightness(.78) saturate(1.05);
+
     transition: transform .35s ease;
+
 }
 
 body.enova-page .play-button {
+
     position: absolute;
+
     left: 50%;
+
     top: 50%;
+
     width: 64px;
+
     height: 64px;
+
     display: grid;
+
     place-items: center;
+
     border: 1px solid rgba(255, 255, 255, .55);
+
     border-radius: 50%;
+
     color: var(--enova-ink);
+
     background: rgba(255, 255, 255, .92);
+
     transform: translate(-50%, -50%);
+
     box-shadow: 0 14px 30px rgba(0, 0, 0, .2);
+
     transition: transform .25s ease, background-color .25s ease;
+
 }
 
 body.enova-page .play-button i {
+
     margin-left: .15rem;
+
 }
 
 body.enova-page .video-copy {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     padding: 1.35rem;
+
 }
 
 body.enova-page .video-copy strong {
+
     margin: 0 0 .45rem;
+
     color: var(--enova-ink);
+
     font-size: 1.05rem;
+
 }
 
 body.enova-page .video-copy > span:last-child {
+
     color: var(--enova-muted);
+
     font-size: .9rem;
+
     line-height: 1.55;
+
 }
 
 body.enova-page .video-card:hover,
+
 body.enova-page .video-card:focus-visible {
+
     transform: translateY(-5px);
+
     border-color: var(--enova-border-strong);
+
     box-shadow: var(--enova-shadow-md);
+
 }
 
 body.enova-page .video-card:hover .video-thumb img,
+
 body.enova-page .video-card:focus-visible .video-thumb img {
+
     transform: scale(1.05);
+
 }
 
 body.enova-page .video-card:hover .play-button,
+
 body.enova-page .video-card:focus-visible .play-button {
+
     transform: translate(-50%, -50%) scale(1.07);
+
 }
 
-/* Project navigation */
-body.enova-page .project-navigation {
-    padding: 3rem 0 4.5rem;
-    background: #fff;
-    border-top: 1px solid var(--enova-border);
-}
+/* Project navigation is inherited entirely from category-page.css. */
 
-body.enova-page .nav-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-}
-
-body.enova-page .nav-btn:first-child {
-    justify-self: start;
-}
-
-body.enova-page .nav-btn.next {
-    justify-self: end;
-    text-align: right;
-}
-
-body.enova-page .nav-btn {
-    display: inline-flex;
-    align-items: center;
-    min-height: auto;
-    color: rgb(58, 46, 69);
-    gap: 0.65rem;
-    background: rgba(255, 255, 255, 0.66);
-    border: 1px solid var(--enova-border);
-    border-radius: 999px;
-    padding: 0.8rem 1.1rem;
-    text-decoration: none;
-    transition: transform 0.25s, background 0.25s, color 0.25s;
-}
-
-
-
-body.enova-page .nav-btn strong {
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    letter-spacing: -.04em;
-}
-
-body.enova-page .nav-btn:hover {
-    color: var(--enova-accent-strong);
-    background: #fff;
-    transform: translateY(-5px);
-    box-shadow: var(--enova-shadow-md);
-}
-
-/* Footer */
-body.enova-page .footer {
-    padding: 4rem 0 1.5rem;
-    color: #fff;
-    background: var(--enova-ink);
-}
-
-
-
-
-
-
-
-
-
-
-body.enova-page .footer-bottom a {
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    color: rgba(255, 255, 255, .72);
-    font-size: .85rem;
-    text-decoration: none;
-}
-
-
-body.enova-page .footer-bottom a:hover {
-    color: #fff;
-}
-
-body.enova-page .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-top: 1.4rem;
-    border-top: 1px solid rgba(255, 255, 255, .12);
-}
-
-body.enova-page .footer-bottom p {
-    margin: 0;
-    color: rgba(255, 255, 255, .48);
-    font-size: .76rem;
-}
+/* Footer styling is inherited from category-page.css. */
 
 /* Dialogs */
+
 body.enova-page .media-dialog {
+
     width: min(1100px, calc(100vw - 2rem));
+
     max-width: none;
+
     max-height: calc(100svh - 2rem);
+
     margin: auto;
+
     padding: 0;
+
     overflow: visible;
+
     border: 0;
+
     border-radius: 26px;
+
     color: #fff;
+
     background: transparent;
+
 }
 
 body.enova-page .media-dialog::backdrop {
+
     background: rgba(8, 12, 22, .88);
+
     backdrop-filter: blur(12px);
+
 }
 
 body.enova-page .dialog-shell {
+
     overflow: hidden;
+
     border: 1px solid rgba(255, 255, 255, .12);
+
     border-radius: 26px;
+
     background: #111827;
+
     box-shadow: 0 40px 120px rgba(0, 0, 0, .45);
+
 }
 
 body.enova-page .dialog-toolbar {
+
     min-height: 62px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 1rem;
+
     padding: .7rem .75rem .7rem 1.15rem;
+
     border-bottom: 1px solid rgba(255, 255, 255, .1);
+
 }
 
 body.enova-page .dialog-toolbar p {
+
     margin: 0;
+
     font-size: .82rem;
+
     font-weight: 650;
+
 }
 
 body.enova-page .dialog-close {
+
     width: 42px;
+
     height: 42px;
+
     display: grid;
+
     place-items: center;
+
     border: 1px solid rgba(255, 255, 255, .14);
+
     border-radius: 50%;
+
     color: #fff;
+
     background: rgba(255, 255, 255, .08);
+
     cursor: pointer;
+
 }
 
 body.enova-page .dialog-close:hover {
+
     background: rgba(255, 255, 255, .16);
+
 }
 
 body.enova-page .gallery-dialog-shell {
+
     max-height: calc(100svh - 2rem);
+
     display: grid;
+
     grid-template-rows: auto minmax(0, 1fr) auto;
+
 }
 
 body.enova-page #gallery-dialog-image {
+
     width: 100%;
+
     max-height: calc(100svh - 9rem);
+
     display: block;
+
     object-fit: contain;
+
     background: #090f1d;
+
 }
 
 body.enova-page .dialog-caption {
+
     margin: 0;
+
     padding: .9rem 1.15rem 1rem;
+
     color: rgba(255, 255, 255, .7);
+
     font-size: .82rem;
+
     text-align: center;
+
 }
 
 body.enova-page .video-embed {
+
     width: min(1100px, calc(100vw - 2rem));
+
     aspect-ratio: 16 / 9;
+
     background: #000;
+
 }
 
 body.enova-page .video-embed iframe {
+
     width: 100%;
+
     height: 100%;
+
     display: block;
+
     border: 0;
+
 }
 
-
 /* Defer below-the-fold rendering until sections approach the viewport. */
+
 @supports (content-visibility: auto) {
+
     body.enova-page .enova-brief,
+
     body.enova-page .enova-story,
+
     body.enova-page .enova-solution,
+
     body.enova-page .enova-banner,
+
     body.enova-page .enova-gallery,
+
     body.enova-page .enova-reports,
+
     body.enova-page .enova-videos,
+
     body.enova-page .project-navigation {
+
         content-visibility: auto;
+
         contain-intrinsic-size: auto 760px;
+
     }
+
 }
 
 @keyframes enova-orb-one {
+
     0%,
+
     100% {
+
         transform: translate3d(0, 0, 0) scale(1);
+
     }
 
     35% {
+
         transform: translate3d(-55px, 35px, 0) scale(1.05);
+
     }
 
     70% {
+
         transform: translate3d(-20px, 85px, 0) scale(.96);
+
     }
+
 }
 
 @keyframes enova-orb-two {
+
     0%,
+
     100% {
+
         transform: translate3d(0, 0, 0) scale(1);
+
     }
 
     35% {
+
         transform: translate3d(65px, -45px, 0) scale(1.08);
+
     }
 
     70% {
+
         transform: translate3d(-40px, -75px, 0) scale(.94);
+
     }
+
 }
 
 @keyframes enova-fade-up {
+
     from { opacity: 0; transform: translateY(12px); }
+
     to { opacity: 1; transform: translateY(0); }
+
 }
 
 /* Responsive */
+
 @media (max-width: 1120px) {
+
     body.enova-page .enova-hero-shell {
+
         grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr);
+
         gap: 3rem;
+
     }
 
     body.enova-page .enova-hero-visual {
+
         min-height: 540px;
+
     }
 
     body.enova-page .solution-grid,
+
     body.enova-page .snapshot-facts {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
     }
 
     body.enova-page .snapshot-fact:nth-child(2n + 1) {
+
         padding-left: 0;
+
         border-left: 0;
+
     }
 
     body.enova-page .snapshot-fact:nth-child(n + 3) {
+
         margin-top: 1.5rem;
+
         padding-top: 1.5rem;
+
         border-top: 1px solid var(--enova-border);
+
     }
 
     body.enova-page .gallery-grid {
+
         grid-template-columns: repeat(3, minmax(0, 1fr));
+
     }
 
     body.enova-page .document-grid {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
     }
+
 }
 
 @media (max-width: 900px) {
+
     body.enova-page .enova-hero {
+
         min-height: auto;
+
         padding: 8.5rem 0 5rem;
+
     }
 
     body.enova-page .enova-hero-shell,
+
     body.enova-page .story-grid,
+
     body.enova-page .split-heading {
+
         grid-template-columns: 1fr;
+
     }
 
     body.enova-page .enova-hero-copy {
+
         max-width: 720px;
+
     }
 
     body.enova-page .enova-hero-visual {
+
         min-height: 600px;
+
     }
 
-    
-
-    
-
     body.enova-page .section-heading.centered {
+
         text-align: left;
+
         margin-left: 0;
+
     }
 
     body.enova-page .academic-modules,
+
     body.enova-page .deliverables-row {
+
         grid-template-columns: 1fr;
+
     }
 
     body.enova-page .academic-module {
+
         padding-left: 0;
+
         padding-right: 0;
+
     }
 
     body.enova-page .academic-module + .academic-module {
+
         border-left: 0;
+
         border-top: 1px solid var(--enova-border-strong);
+
     }
 
     body.enova-page .gallery-grid {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
     }
+
 }
 
 @media (max-width: 680px) {
+
     body.enova-page .container,
+
     body.enova-page .enova-hero-shell {
+
         width: min(calc(100% - 2rem), var(--enova-container));
+
     }
 
     body.enova-page .section {
+
         padding: 4.75rem 0;
+
     }
 
     body.enova-page .enova-hero h1 {
+
         font-size: clamp(3.05rem, 16vw, 5rem);
+
     }
 
     body.enova-page .hero-summary {
+
         font-size: 1rem;
+
     }
 
-    
-
-    
-
     body.enova-page .hero-actions {
+
         display: grid;
+
     }
 
     body.enova-page .button {
+
         width: 100%;
+
     }
 
     body.enova-page .enova-hero-visual {
+
         min-height: 480px;
+
         margin-top: 1rem;
+
     }
 
-    
-
-    
-
     body.enova-page .hero-brand-mark {
+
         width: 46%;
+
     }
 
     body.enova-page .snapshot-facts,
+
     body.enova-page .solution-grid,
+
     body.enova-page .document-grid,
-    body.enova-page .video-grid,
-    body.enova-page .nav-buttons {
+
+    body.enova-page .video-grid {
+
         grid-template-columns: 1fr;
+
     }
 
     body.enova-page .snapshot-facts {
+
         padding-top: 0;
+
     }
 
     body.enova-page .snapshot-fact,
+
     body.enova-page .snapshot-fact:first-child,
+
     body.enova-page .snapshot-fact:nth-child(2n + 1),
+
     body.enova-page .snapshot-fact:nth-child(n + 3) {
+
         margin-top: 0;
+
         padding: 1.25rem 0;
+
         border-left: 0;
+
         border-top: 1px solid var(--enova-border);
+
     }
 
     body.enova-page .snapshot-fact:first-child {
+
         border-top: 0;
+
     }
 
     body.enova-page .deliverables-list {
+
         grid-template-columns: 1fr;
+
         gap: .75rem;
+
     }
 
     body.enova-page .solution-card {
+
         min-height: 0;
+
     }
 
     body.enova-page .impact-carousel {
+
         min-height: 400px;
+
     }
 
     body.enova-page .impact-viewport,
+
     body.enova-page .impact-slide {
+
         min-height: 300px;
+
     }
 
     body.enova-page .impact-controls {
+
         grid-template-columns: auto 1fr auto;
+
         gap: .6rem;
+
     }
 
     body.enova-page .gallery-grid {
+
         grid-template-columns: 1fr;
+
         grid-auto-rows: 300px;
+
     }
 
     body.enova-page .gallery-item-featured,
-    body.enova-page .gallery-item-tall {
-        grid-column: auto;
-        grid-row: auto;
-    }
 
+    body.enova-page .gallery-item-tall {
+
+        grid-column: auto;
+
+        grid-row: auto;
+
+    }
 
     body.enova-page .video-thumb {
+
         height: 220px;
-    }
 
-    body.enova-page .nav-btn {
-        min-height: 130px;
     }
+body.enova-page .footer-bottom {
 
-    
-    body.enova-page .footer-bottom {
         align-items: flex-start;
+
         flex-direction: column;
+
     }
 
-    
-
-    
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     body.enova-page .hero-orb {
+
         animation: none !important;
+
         will-change: auto !important;
+
     }
 
     body.enova-page *,
+
     body.enova-page *::before,
+
     body.enova-page *::after {
+
         scroll-behavior: auto !important;
+
         animation-duration: .001ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: .001ms !important;
+
     }
+
 }
 
 @media (prefers-contrast: more) {
+
     body.enova-page {
+
         --enova-border: rgba(16, 24, 43, .35);
+
         --enova-border-strong: rgba(16, 24, 43, .6);
+
         --enova-muted: #445065;
+
     }
+
 }
