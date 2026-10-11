@@ -90,9 +90,7 @@ body.enova-page .section-heading.centered {
     text-align: center;
 }
 
-body.enova-page .eyebrow,
-body.enova-page .resource-type,
-body.enova-page .footer-kicker {
+body.enova-page .eyebrow{
     display: inline-flex;
     align-items: center;
     gap: .55rem;
@@ -188,7 +186,7 @@ body.enova-page .enova-hero {
     position: relative;
     min-height: var(--project-hero-min-height);
     display: flex;
-    align-items: var(--project-hero-align-items);
+    align-items: var(--project-hero-align, center);
     overflow: hidden;
     padding: var(--project-hero-padding-top) 0 var(--project-hero-padding-bottom);
     color: var(--enova-ink);
@@ -257,40 +255,15 @@ body.enova-page .hero-summary {
     line-height: 1.72;
 }
 
-body.enova-page .hero-meta {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: .75rem;
-    margin: 2rem 0 0;
-    padding: 0;
-    list-style: none;
-}
 
-body.enova-page .hero-meta li {
-    min-width: 0;
-    padding-top: .85rem;
-    border-top: 1px solid var(--enova-border-strong);
-}
 
-body.enova-page .hero-meta strong,
-body.enova-page .hero-meta span {
-    display: block;
-}
 
-body.enova-page .hero-meta strong {
-    margin-bottom: .32rem;
-    color: var(--enova-muted);
-    font-size: .66rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-}
 
-body.enova-page .hero-meta span {
-    color: var(--enova-ink);
-    font-size: .83rem;
-    font-weight: 650;
-    line-height: 1.35;
-}
+
+
+
+
+
 
 body.enova-page .hero-actions {
     display: flex;
@@ -305,19 +278,7 @@ body.enova-page .enova-hero-visual {
     isolation: isolate;
 }
 
-body.enova-page .hero-wordmark {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -2;
-    color: rgba(118, 85, 143, .08);
-    font-size: clamp(8rem, 16vw, 15rem);
-    font-weight: 800;
-    line-height: .75;
-    letter-spacing: -.1em;
-    transform: translate(-50%, -50%) rotate(-8deg);
-    user-select: none;
-}
+
 
 body.enova-page .hero-orb {
     position: absolute;
@@ -354,63 +315,17 @@ body.enova-page .hero-orb-two {
     animation-delay: -8s;
 }
 
-body.enova-page .hero-product-card {
-    position: absolute;
-    margin: 0;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, .82);
-    background: rgba(255, 255, 255, .7);
-    box-shadow: var(--enova-shadow-lg);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-}
 
-body.enova-page .hero-product-card img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-}
 
-body.enova-page .hero-product-card figcaption {
-    position: absolute;
-    left: 1rem;
-    bottom: 1rem;
-    padding: .65rem .8rem;
-    border: 1px solid rgba(255, 255, 255, .7);
-    border-radius: 999px;
-    color: var(--enova-ink);
-    background: rgba(255, 255, 255, .82);
-    font-size: .69rem;
-    font-weight: 750;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    backdrop-filter: blur(10px);
-}
 
-body.enova-page .hero-product-primary {
-    width: min(72%, 480px);
-    aspect-ratio: 4 / 5;
-    right: 6%;
-    top: 2%;
-    border-radius: 44px;
-    transform: rotate(3deg);
-}
 
-body.enova-page .hero-product-secondary {
-    width: min(38%, 250px);
-    aspect-ratio: 9 / 16;
-    left: 2%;
-    bottom: 2%;
-    z-index: 2;
-    border-radius: 34px;
-    transform: rotate(-7deg);
-}
 
-body.enova-page .hero-product-secondary img {
-    object-fit: contain;
-    background: #f0eaf4;
-}
+
+
+
+
+
+
 
 body.enova-page .hero-brand-mark {
     position: absolute;
@@ -627,11 +542,7 @@ body.enova-page .impact-slide[hidden] {
     display: none;
 }
 
-body.enova-page .impact-icon {
-    color: #fff;
-    background: rgba(255, 255, 255, .12);
-    border-color: rgba(255, 255, 255, .12);
-}
+
 
 body.enova-page .impact-stat {
     margin: 1.5rem 0 .85rem !important;
@@ -1081,16 +992,7 @@ body.enova-page .nav-btn {
     transition: transform 0.25s, background 0.25s, color 0.25s;
 }
 
-body.enova-page .nav-direction {
-    display: inline-flex;
-    align-items: center;
-    gap: .6rem;
-    color: var(--enova-muted);
-    font-size: .7rem;
-    font-weight: 800;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-}
+
 
 body.enova-page .nav-btn strong {
     font-size: clamp(1.8rem, 3vw, 2.8rem);
@@ -1111,36 +1013,15 @@ body.enova-page .footer {
     background: var(--enova-ink);
 }
 
-body.enova-page .footer-top {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 3rem;
-    padding-bottom: 3rem;
-}
 
-body.enova-page .footer-kicker {
-    color: #cfb8dd;
-}
 
-body.enova-page .footer-intro p {
-    max-width: 600px;
-    margin: .75rem 0 0;
-    color: #fff;
-    font-size: clamp(2rem, 4.2vw, 4rem);
-    font-weight: 650;
-    line-height: 1;
-    letter-spacing: -.05em;
-}
 
-body.enova-page .footer-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: .65rem;
-}
 
-body.enova-page .footer-links a,
+
+
+
+
+
 body.enova-page .footer-bottom a {
     display: inline-flex;
     align-items: center;
@@ -1150,7 +1031,7 @@ body.enova-page .footer-bottom a {
     text-decoration: none;
 }
 
-body.enova-page .footer-links a:hover,
+
 body.enova-page .footer-bottom a:hover {
     color: #fff;
 }
@@ -1371,13 +1252,9 @@ body.enova-page .video-embed iframe {
         min-height: 600px;
     }
 
-    body.enova-page .hero-product-primary {
-        right: 10%;
-    }
+    
 
-    body.enova-page .hero-product-secondary {
-        left: 8%;
-    }
+    
 
     body.enova-page .section-heading.centered {
         text-align: left;
@@ -1422,17 +1299,9 @@ body.enova-page .video-embed iframe {
         font-size: 1rem;
     }
 
-    body.enova-page .hero-meta {
-        grid-template-columns: 1fr;
-        gap: .5rem;
-    }
+    
 
-    body.enova-page .hero-meta li {
-        display: grid;
-        grid-template-columns: 90px 1fr;
-        gap: .5rem;
-        padding-top: .65rem;
-    }
+    
 
     body.enova-page .hero-actions {
         display: grid;
@@ -1447,17 +1316,9 @@ body.enova-page .video-embed iframe {
         margin-top: 1rem;
     }
 
-    body.enova-page .hero-product-primary {
-        width: 76%;
-        right: 2%;
-        border-radius: 30px;
-    }
+    
 
-    body.enova-page .hero-product-secondary {
-        width: 39%;
-        left: 0;
-        border-radius: 24px;
-    }
+    
 
     body.enova-page .hero-brand-mark {
         width: 46%;
@@ -1532,19 +1393,15 @@ body.enova-page .video-embed iframe {
         min-height: 130px;
     }
 
-    body.enova-page .footer-top,
+    
     body.enova-page .footer-bottom {
         align-items: flex-start;
         flex-direction: column;
     }
 
-    body.enova-page .footer-links {
-        align-items: flex-start;
-    }
+    
 
-    body.enova-page .footer-intro p {
-        font-size: clamp(2.2rem, 11vw, 3.5rem);
-    }
+    
 }
 
 @media (prefers-reduced-motion: reduce) {

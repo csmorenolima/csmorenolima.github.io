@@ -165,7 +165,7 @@ body.morning-prayer-page .hero.mpb-hero {
     position: relative;
     min-height: var(--project-hero-min-height);
     display: flex;
-    align-items: var(--project-hero-align-items);
+    align-items: var(--project-hero-align, center);
     overflow: hidden;
     padding: var(--project-hero-padding-top) 0 var(--project-hero-padding-bottom);
     color: var(--mpb-text);
@@ -229,116 +229,35 @@ body.morning-prayer-page .mpb-hero-actions {
     margin-top: 2.2rem;
 }
 
-body.morning-prayer-page .mpb-automation-window {
-    overflow: hidden;
-    border: 1px solid var(--mpb-border);
-    border-radius: var(--mpb-radius-lg);
-    background: rgba(5, 14, 24, .82);
-    box-shadow: var(--mpb-shadow);
-}
 
-body.morning-prayer-page .mpb-window-bar {
-    min-height: 58px;
-    display: flex;
-    align-items: center;
-    gap: .45rem;
-    padding: 0 1.15rem;
-    border-bottom: 1px solid var(--mpb-border-soft);
-    background: rgba(255, 255, 255, .035);
-}
 
-body.morning-prayer-page .mpb-window-bar > span {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .22);
-}
 
-body.morning-prayer-page .mpb-window-bar strong {
-    margin-left: auto;
-    color: rgba(255, 255, 255, .6);
-    font-size: .72rem;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-}
 
-body.morning-prayer-page .mpb-preview-flow {
-    display: grid;
-    gap: 0;
-    margin: 0;
-    padding: 1.35rem 1.35rem .5rem;
-    list-style: none;
-}
 
-body.morning-prayer-page .mpb-preview-flow li {
-    position: relative;
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: .9rem;
-    padding: .7rem 0 1.4rem;
-}
 
-body.morning-prayer-page .mpb-preview-flow li:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    left: 23px;
-    top: 54px;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(var(--mpb-border), rgba(255, 255, 255, .02));
-}
 
-body.morning-prayer-page .mpb-preview-icon {
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    position: relative;
-    z-index: 1;
-    border: 1px solid var(--mpb-border-soft);
-    border-radius: 15px;
-    font-size: 1.1rem;
-}
 
-body.morning-prayer-page .mpb-youtube { color: #fca5a5; background: rgba(239, 68, 68, .12); }
-body.morning-prayer-page .mpb-shortcuts { color: #93c5fd; background: rgba(59, 130, 246, .12); }
-body.morning-prayer-page .mpb-whatsapp { color: #86efac; background: rgba(34, 197, 94, .12); }
 
-body.morning-prayer-page .mpb-preview-flow strong,
-body.morning-prayer-page .mpb-preview-flow span {
-    display: block;
-}
 
-body.morning-prayer-page .mpb-preview-flow strong {
-    margin: .15rem 0 .35rem;
-    color: var(--mpb-text);
-    font-size: .96rem;
-}
 
-body.morning-prayer-page .mpb-preview-flow div > span {
-    color: var(--mpb-muted);
-    font-size: .84rem;
-    line-height: 1.55;
-}
 
-body.morning-prayer-page .mpb-window-status {
-    display: flex;
-    align-items: center;
-    gap: .55rem;
-    margin: 0;
-    padding: 1rem 1.35rem 1.2rem;
-    border-top: 1px solid var(--mpb-border-soft);
-    color: var(--mpb-muted);
-    font-size: .78rem;
-}
 
-body.morning-prayer-page .mpb-window-status span {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--mpb-green);
-    box-shadow: 0 0 0 5px rgba(34, 197, 94, .1);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Snapshot */
 body.morning-prayer-page .mpb-snapshot {
@@ -676,9 +595,7 @@ body.morning-prayer-page .project-navigation .nav-btn i {
         grid-template-columns: 1fr;
     }
 
-    body.morning-prayer-page .mpb-automation-window {
-        max-width: 680px;
-    }
+    
 
     body.morning-prayer-page .mpb-facts {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1004,32 +921,9 @@ body.morning-prayer-page .mpb-bot-eye-right {
     }
 }
 
-body.morning-prayer-page .mpb-bot-chip {
-    position: absolute;
-    z-index: 3;
-    min-height: 40px;
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    padding: .65rem .8rem;
-    border: 1px solid rgba(255, 255, 255, .16);
-    border-radius: 999px;
-    color: var(--mpb-text);
-    background: rgba(2, 13, 29, .82);
-    box-shadow: 0 14px 32px rgba(0, 5, 15, .24);
-    font-size: .72rem;
-    font-weight: 750;
-    letter-spacing: .025em;
-    white-space: nowrap;
-}
 
-body.morning-prayer-page .mpb-status-light {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--mpb-orange);
-    box-shadow: 0 0 0 6px rgba(255, 116, 24, .12);
-}
+
+
 
 body.morning-prayer-page .mpb-snapshot {
     background:
@@ -1124,21 +1018,14 @@ body.morning-prayer-page .project-navigation .nav-btn:focus-visible {
         top: 44%;
     }
 
-    body.morning-prayer-page .mpb-bot-chip {
-        min-height: 34px;
-        padding: .5rem .62rem;
-        font-size: .63rem;
-    }
+    
 
-    body.morning-prayer-page .mpb-chip-feed { left: 0; top: 9%; }
-    body.morning-prayer-page .mpb-chip-schedule { right: 0; top: 14%; }
-    body.morning-prayer-page .mpb-chip-check { left: 0; bottom: 18%; }
-    body.morning-prayer-page .mpb-chip-send { right: 0; bottom: 22%; }
+    
+    
+    
+    
 
-    body.morning-prayer-page .mpb-bot-status {
-        bottom: 1%;
-        width: 88%;
-    }
+    
 
 }
 

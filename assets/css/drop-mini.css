@@ -24,7 +24,6 @@ body.dropmini-page .container,
 body.dropmini-page .dm-story,
 body.dropmini-page .dm-form,
 body.dropmini-page .dm-colourways,
-body.dropmini-page .dm-detail,
 body.dropmini-page .dm-spec-ribbon-inner {
     width: min(var(--dm-width), calc(100% - (var(--dm-gutter) * 2)));
     margin-inline: auto;
@@ -526,40 +525,17 @@ body.dropmini-page .dm-colour-thumb.active {
 
 /* DETAIL */
 
-body.dropmini-page .dm-detail {
-    padding: 7rem 0;
-    display: grid;
-    grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
-    gap: clamp(3rem, 7vw, 7rem);
-    align-items: center;
-}
 
-body.dropmini-page .dm-detail-copy {
-    max-width: 600px;
-}
 
-body.dropmini-page .dm-detail-copy p {
-    color: var(--dm-muted);
-    line-height: 1.8;
-}
 
-body.dropmini-page .dm-detail-copy h2 + p {
-    margin-top: 1.35rem;
-}
 
-body.dropmini-page .dm-detail-media {
-    margin: 0;
-    overflow: hidden;
-    border-radius: 24px;
-}
 
-body.dropmini-page .dm-detail-media img {
-    display: block;
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-    cursor: zoom-in;
-}
+
+
+
+
+
+
 
 /* PROJECT NAV */
 body.dropmini-page .project-navigation {
@@ -666,8 +642,7 @@ body.dropmini-page .dm-lightbox-close {
 
     body.dropmini-page .dm-hero,
     body.dropmini-page .dm-story,
-    body.dropmini-page .dm-form,
-    body.dropmini-page .dm-detail {
+    body.dropmini-page .dm-form{
         grid-template-columns: 1fr;
     }
 
@@ -694,20 +669,13 @@ body.dropmini-page .dm-lightbox-close {
         border-left: 0;
     }
 
-    body.dropmini-page .dm-form-image img,
-    body.dropmini-page .dm-detail-media img {
+    body.dropmini-page .dm-form-image img{
         height: 420px;
     }
 
-    body.dropmini-page .dm-colour-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 300px 220px 220px 240px;
-    }
+    
 
-    body.dropmini-page .dm-colour-featured,
-    body.dropmini-page .dm-colour-wide {
-        grid-column: 1 / -1;
-    }
+    
 }
 
 @media (max-width: 620px) {
@@ -742,15 +710,9 @@ body.dropmini-page .dm-lightbox-close {
         border-top: 0;
     }
 
-    body.dropmini-page .dm-colour-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
-    }
+    
 
-    body.dropmini-page .dm-colour-featured,
-    body.dropmini-page .dm-colour-wide {
-        grid-column: auto;
-    }
+    
 
     body.dropmini-page .dm-colour img {
         height: 250px;
@@ -2123,9 +2085,7 @@ body.dropmini-page .dm-form-image-small img {
 }
 
 /* Old standalone detail section is intentionally gone. */
-body.dropmini-page .dm-detail {
-    display: none !important;
-}
+
 
 @media (max-width: 980px) {
     body.dropmini-page .dm-form {

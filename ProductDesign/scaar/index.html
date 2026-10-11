@@ -424,29 +424,6 @@
             const year = document.getElementById("current-year");
             if (year) year.textContent = String(new Date().getFullYear());
 
-            document.querySelectorAll("[data-nomad-carousel]").forEach((carousel) => {
-                const track = carousel.querySelector(".nomad-cad-track");
-                const previousButton = carousel.querySelector(".nomad-carousel-btn.previous");
-                const nextButton = carousel.querySelector(".nomad-carousel-btn.next");
-
-                if (!track || !previousButton || !nextButton) return;
-
-                const amount = () => {
-                    const card = track.querySelector(".nomad-cad-card");
-                    if (!card) return 420;
-                    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-                    return card.getBoundingClientRect().width + gap;
-                };
-
-                previousButton.addEventListener("click", () => {
-                    track.scrollBy({ left: -amount(), behavior: "smooth" });
-                });
-
-                nextButton.addEventListener("click", () => {
-                    track.scrollBy({ left: amount(), behavior: "smooth" });
-                });
-            });
-
             document.querySelectorAll("[data-recumbent-carousel]").forEach((carousel) => {
                 const slides = Array.from(carousel.querySelectorAll(".nomad-impact-slide"));
                 const previousButton = carousel.querySelector(".nomad-impact-arrow.previous");

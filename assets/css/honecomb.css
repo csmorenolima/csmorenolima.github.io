@@ -41,12 +41,12 @@ body.honecomb-page h3 {
 
 .hc-hero {
     position: relative;
-    min-height: var(--project-hero-min-height);
+    min-height: var(--project-hero-min-height, max(760px, 100svh));
     display: flex;
-    align-items: var(--project-hero-align-items);
+    align-items: var(--project-hero-align, center);
     isolation: isolate;
     overflow: hidden;
-    padding: var(--project-hero-padding-top) 0 var(--project-hero-padding-bottom);
+    padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
     color: white;
     background: #18201a
 }
@@ -82,8 +82,8 @@ body.honecomb-page h3 {
 
 .hc-hero-grid {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: 0;
     align-items: end
 }
 
@@ -100,7 +100,7 @@ body.honecomb-page h3 {
 
 .hc-hero h1 {
     margin: .6rem 0 0;
-    font-size: var(--project-hero-title-size);
+    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
     line-height: .8;
     letter-spacing: -.075em
 }
@@ -141,32 +141,103 @@ body.honecomb-page h3 {
     border-color: var(--bamboo-light)
 }
 
-.hc-hero-specs {
-    width: 220px;
-    margin: 0;
-    border-block: 1px solid rgba(255, 255, 255, .2)
+
+
+/* SPEC RIBBON — moved out of the hero to match Drop Mini */
+.hc-spec-ribbon {
+    padding: 1.45rem 0;
+    color: var(--ink);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--sage);
 }
 
-.hc-hero-specs div {
+.hc-spec-ribbon-inner {
     display: grid;
-    grid-template-columns: 1fr auto;
-    padding: .9rem 0;
-    border-top: 1px solid rgba(255, 255, 255, .1)
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.hc-hero-specs div:first-child {
-    border-top: 0
+.hc-spec-ribbon article {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    align-items: center;
+    gap: .85rem;
+    padding: .3rem 1.55rem;
+    border-left: 1px solid var(--line);
 }
 
-.hc-hero-specs dt {
-    color: rgba(255, 255, 255, .55);
-    font-size: .7rem
+.hc-spec-ribbon article:first-child {
+    padding-left: 0;
+    border-left: 0;
 }
 
-.hc-hero-specs dd {
-    margin: 0;
-    color: var(--bamboo-light);
-    font-weight: 700
+.hc-spec-ribbon article:last-child {
+    padding-right: 0;
+}
+
+.hc-spec-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--forest);
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(29, 35, 30, .06);
+}
+
+.hc-spec-ribbon p {
+    margin: 0 0 .2rem;
+    color: var(--forest);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.hc-spec-ribbon strong,
+.hc-spec-ribbon small {
+    display: block;
+}
+
+.hc-spec-ribbon strong {
+    color: var(--ink);
+    font-size: 1rem;
+}
+
+.hc-spec-ribbon small {
+    margin-top: .12rem;
+    color: var(--muted);
+    font-size: .7rem;
+}
+
+@media (max-width: 900px) {
+    .hc-spec-ribbon-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 1rem;
+    }
+
+    .hc-spec-ribbon article:nth-child(odd) {
+        padding-left: 0;
+        border-left: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .hc-spec-ribbon-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hc-spec-ribbon article,
+    .hc-spec-ribbon article:nth-child(odd) {
+        padding: .9rem 0;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+    }
+
+    .hc-spec-ribbon article:first-child {
+        border-top: 0;
+    }
 }
 
 .hc-overview,
@@ -540,7 +611,6 @@ body.honecomb-page h3 {
 @media(max-width:700px) {
     .hc-hero {
         min-height: 820px;
-
         align-items: end;
         padding: 8rem 0 3.5rem
     }

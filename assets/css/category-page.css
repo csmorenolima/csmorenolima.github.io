@@ -1232,20 +1232,6 @@ body[data-category="soct"] .character-portrait {
     margin-top: 0;
 }
 
-/* Optional shared heading wrapper for future pages. */
-.project-heading {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.project-heading--center {
-    align-items: center;
-    text-align: center;
-}
-
-
-
 /* Shared decorative eyebrow line for project heroes */
 .project-eyebrow-line {
     display: block;
@@ -1288,5 +1274,235 @@ body[data-category="soct"] .character-portrait {
             + var(--project-hero-content-gutter)
         )
     );
+}
+
+/* =========================================================
+   SHARED PROJECT NAVIGATION
+   One consistent background for the previous / next project
+   section across every case-study page.
+
+   Project CSS can continue to control button styling, borders,
+   spacing and typography; only the section background is shared.
+   ========================================================= */
+
+:root {
+    --project-navigation-background: #111415;
+}
+
+.project-navigation {
+    background: var(--project-navigation-background) !important;
+}
+
+/* =========================================================
+   SHARED PROJECT NAVIGATION BUTTONS
+
+   All project-navigation buttons share the same visible base
+   colour as SO:CT. A solid colour is used here so the button does not
+   change appearance when the surrounding project-navigation background
+   differs. The only project-specific difference is hover colour.
+   ========================================================= */
+
+:root {
+    --project-nav-button-border: rgba(255, 255, 255, .16);
+    --project-nav-button-text: #ffffff;
+    --project-nav-button-muted: rgba(255, 255, 255, .52);
+    --project-nav-button-hover: #6366f1;
+    --project-nav-button-hover-text: #ffffff;
+}
+
+/* Project-specific hover colours only */
+body.soct-page {
+    --project-nav-button-hover: #ffbb00;
+    --project-nav-button-hover-text: #171105;
+}
+
+body.scaar-page {
+    --project-nav-button-hover: #a35f2e;
+    --project-nav-button-hover-text: #ffffff;
+}
+
+body.dropmini-page {
+    --project-nav-button-hover: #347bd8;
+    --project-nav-button-hover-text: #ffffff;
+}
+
+body.enova-page {
+    --project-nav-button-hover: #76558f;
+    --project-nav-button-hover-text: #ffffff;
+}
+
+body.morning-prayer-page {
+    --project-nav-button-hover: #22c55e;
+    --project-nav-button-hover-text: #07111d;
+}
+
+body.s360-page {
+    --project-nav-button-hover: #ff6bd0;
+    --project-nav-button-hover-text: #090a0c;
+}
+
+body.honecomb-page {
+    --project-nav-button-hover: #2f6d45;
+    --project-nav-button-hover-text: #ffffff;
+}
+
+body.brightup-page {
+    --project-nav-button-hover: #2677ff;
+    --project-nav-button-hover-text: #ffffff;
+}
+
+/*
+   !important is deliberately limited to the button component because
+   project stylesheets load after category-page.css and previously gave
+   each project a different button treatment.
+*/
+.project-navigation .nav-btn {
+    width: fit-content !important;
+    min-height: 52px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: .75rem !important;
+    padding: .85rem 1.15rem !important;
+    border: 1px solid var(--project-nav-button-border) !important;
+    border-radius: 999px !important;
+    color: var(--project-nav-button-text) !important;
+    background: #101215 !important;
+    box-shadow: none !important;
+    font-size: .84rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transform: none;
+    transition:
+        color .2s ease,
+        background-color .2s ease,
+        border-color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease !important;
+}
+
+.project-navigation .nav-btn > span,
+.project-navigation .nav-btn .nav-btn-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: .12rem !important;
+}
+
+.project-navigation .nav-btn small {
+    margin: 0 !important;
+    color: var(--project-nav-button-muted) !important;
+    font-size: .61rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: .1em !important;
+    text-transform: uppercase !important;
+}
+
+.project-navigation .nav-btn strong {
+    color: inherit !important;
+    font-size: .84rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+    white-space: nowrap !important;
+}
+
+.project-navigation .nav-btn:hover,
+.project-navigation .nav-btn:focus-visible {
+    color: var(--project-nav-button-hover-text) !important;
+    background: var(--project-nav-button-hover) !important;
+    border-color: var(--project-nav-button-hover) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .18) !important;
+}
+
+.project-navigation .nav-btn:hover small,
+.project-navigation .nav-btn:focus-visible small,
+.project-navigation .nav-btn:hover strong,
+.project-navigation .nav-btn:focus-visible strong {
+    color: inherit !important;
+}
+
+@media (max-width: 640px) {
+    .project-navigation .nav-btn {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+}
+
+
+
+/* =========================================================
+   SHARED PROJECT FOOTER — SO:CT TEMPLATE
+   All project pages use the same footer structure and styling.
+   ========================================================= */
+
+:root {
+    --project-footer-background: #020407;
+    --project-footer-text: #ffffff;
+    --project-footer-muted: #9ca3af;
+    --project-footer-border: #374151;
+}
+
+.footer {
+    background: var(--project-footer-background) !important;
+    color: var(--project-footer-text) !important;
+    padding: 3rem 0 1rem !important;
+}
+
+.footer .footer-content {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.footer .footer-section {
+    min-width: 0;
+}
+
+.footer .footer-section p {
+    margin: 0 !important;
+    color: var(--project-footer-text) !important;
+    line-height: 1.6 !important;
+}
+
+.footer .footer-section h3 {
+    margin: 0 0 1rem !important;
+    color: var(--accent-color) !important;
+}
+
+.footer .footer-section a {
+    display: block !important;
+    margin-bottom: .5rem !important;
+    color: var(--project-footer-muted) !important;
+    text-decoration: none !important;
+    transition: color .3s ease !important;
+}
+
+.footer .footer-section a:hover,
+.footer .footer-section a:focus-visible {
+    color: var(--accent-color) !important;
+}
+
+.footer .footer-bottom {
+    margin: 0 !important;
+    padding-top: 2rem !important;
+    border-top: 1px solid var(--project-footer-border) !important;
+    color: var(--project-footer-muted) !important;
+    text-align: center !important;
+}
+
+.footer .footer-bottom p {
+    margin: 0 !important;
+    color: inherit !important;
+}
+
+@media (max-width: 768px) {
+    .footer .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 1.75rem !important;
+    }
 }
 
