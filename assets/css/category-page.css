@@ -1244,3 +1244,14 @@ body[data-category="soct"] .character-portrait {
     text-align: center;
 }
 
+
+
+/* Shared decorative eyebrow line for project heroes */
+.project-eyebrow-line {
+    display: block;
+    width: 56px;
+    height: 2px;
+    margin: 0 0 1.8rem;
+    background: var(--project-eyebrow-color);
+    border-radius: 999px;
+}

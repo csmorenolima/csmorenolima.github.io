@@ -16,7 +16,7 @@ body.scaar-page {
     --nomad-line-light: rgba(255, 255, 255, .2);
     --nomad-muted: #6f716f;
     --nomad-shadow: 0 24px 70px rgba(38, 31, 24, .13);
-
+ 
     margin: 0;
     overflow-x: hidden;
     color: var(--nomad-ink);
@@ -292,9 +292,7 @@ body.scaar-page .nomad-brief-grid {
     align-items: start;
 }
 
-body.scaar-page .nomad-brief .nomad-kicker {
-    color: #d9ae82;
-}
+body.scaar-page .nomad-brief { --project-eyebrow-color: #d9ae82; }
 
 body.scaar-page .nomad-brief-statement h2 {
     margin: 0;
@@ -491,9 +489,7 @@ body.scaar-page .nomad-cad {
     background-size: 52px 52px;
 }
 
-body.scaar-page .nomad-cad .nomad-kicker {
-    color: #d9ae82;
-}
+body.scaar-page .nomad-cad { --project-eyebrow-color: #d9ae82; }
 
 body.scaar-page .nomad-cad-heading {
     max-width: 880px;
@@ -1137,9 +1133,7 @@ body.scaar-page .nomad-why-copy {
     max-width: 720px;
 }
 
-body.scaar-page .nomad-why-copy .nomad-kicker {
-    color: #d9ae82;
-}
+body.scaar-page .nomad-why { --project-eyebrow-color: #d9ae82; }
 
 body.scaar-page .nomad-why-copy h2 {
     margin: 0 0 1.6rem;
@@ -1389,9 +1383,7 @@ body.scaar-page .nomad-why-copy {
     max-width: 720px;
 }
 
-body.scaar-page .nomad-why-copy .nomad-kicker {
-    color: #d9ae82;
-}
+body.scaar-page .nomad-why { --project-eyebrow-color: #d9ae82; }
 
 body.scaar-page .nomad-why-copy h2 {
     margin: 0 0 1.5rem;
@@ -1692,4 +1684,27 @@ body.scaar-page .nomad-impact-carousel {
     body.scaar-page .nomad-why::after {
         background: rgba(18, 22, 24, .88);
     }
+}
+
+body.scaar-page { --project-eyebrow-color: var(--nomad-rust); }
+
+
+/* =========================================================
+   SCAAR — SHARED EYEBROW THEME
+   Typography and placement are inherited from category-page.css.
+   SCAAR only supplies colour.
+   ========================================================= */
+
+body.scaar-page .nomad-kicker {
+    color: var(--project-eyebrow-color);
+}
+
+
+/* SCAAR hero eyebrow line */
+body.scaar-page .nomad-hero-copy {
+    --project-eyebrow-color: #d9ae82;
+}
+
+body.scaar-page .nomad-hero-copy .project-eyebrow-line {
+    margin-bottom: 2rem;
 }
