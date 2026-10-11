@@ -54,12 +54,12 @@ body.brightup-page .brightup-kicker {
 
 body.brightup-page .brightup-hero {
     position: relative;
-    min-height: var(--project-hero-min-height);
+    min-height: var(--project-hero-min-height, max(760px, 100svh));
     display: flex;
-    align-items: var(--project-hero-align, center);
+    align-items: var(--project-hero-align, flex-start);
     isolation: isolate;
     overflow: hidden;
-    padding: var(--project-hero-padding-top) 0 var(--project-hero-padding-bottom);
+    padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
     color: #fff;
     background:
         radial-gradient(circle at 82% 24%, rgba(38, 119, 255, .28), transparent 28rem),
@@ -104,7 +104,7 @@ body.brightup-page .brightup-hero h1 {
     max-width: 780px;
     margin: 0;
     color: #fff;
-    font-size: var(--project-hero-title-size);
+    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
     font-weight: 800;
     line-height: .93;
     letter-spacing: -.065em;

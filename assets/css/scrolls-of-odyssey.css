@@ -241,7 +241,7 @@ body.soct-page .soct-hero {
     position: relative;
     min-height: var(--project-hero-min-height, max(760px, 100svh));
     display: flex;
-    align-items: var(--project-hero-align, center);
+    align-items: var(--project-hero-align, flex-start);
     isolation: isolate;
     padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
     overflow: hidden;

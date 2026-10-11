@@ -184,11 +184,11 @@ body.enova-page .button-secondary:hover {
 /* Hero */
 body.enova-page .enova-hero {
     position: relative;
-    min-height: var(--project-hero-min-height);
+    min-height: var(--project-hero-min-height, max(760px, 100svh));
     display: flex;
-    align-items: var(--project-hero-align, center);
+    align-items: var(--project-hero-align, flex-start);
     overflow: hidden;
-    padding: var(--project-hero-padding-top) 0 var(--project-hero-padding-bottom);
+    padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
     color: var(--enova-ink);
     text-align: left;
     background:
@@ -207,11 +207,13 @@ body.enova-page .enova-hero::before {
 body.enova-page .enova-hero-shell {
     position: relative;
     z-index: 2;
-    width: min(calc(100% - 3rem), 1380px);
-    max-width: 1380px;
+    width: min(var(--project-hero-content-width, 1200px), 100%);
+    max-width: var(--project-hero-content-width, 1200px);
+    padding-inline: var(--project-hero-content-gutter, 2rem);
+    box-sizing: border-box;
     display: grid;
-    grid-template-columns: minmax(0, .88fr) minmax(480px, 1.12fr);
-    gap: clamp(3rem, 7vw, 8rem);
+    grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
     align-items: center;
 }
 
@@ -222,7 +224,7 @@ body.enova-page .enova-hero-copy {
 body.enova-page .enova-hero h1 {
     margin: 0;
     color: var(--enova-ink);
-    font-size: var(--project-hero-title-size);
+    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
     font-weight: 750;
     line-height: .86;
     letter-spacing: -.075em;
@@ -274,7 +276,7 @@ body.enova-page .hero-actions {
 
 body.enova-page .enova-hero-visual {
     position: relative;
-    min-height: 610px;
+    min-height: 500px;
     isolation: isolate;
 }
 
@@ -329,9 +331,9 @@ body.enova-page .hero-orb-two {
 
 body.enova-page .hero-brand-mark {
     position: absolute;
-    width: min(44%, 300px);
+    width: min(48%, 320px);
     right: 0;
-    bottom: 0;
+    bottom: 2rem;
     z-index: 3;
     opacity: .9;
     filter: drop-shadow(0 18px 30px rgba(45, 32, 58, .12));

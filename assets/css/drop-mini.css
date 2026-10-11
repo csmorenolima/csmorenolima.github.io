@@ -1,5 +1,5 @@
 /* =========================================================
-   DROP MINI — FROM SCRATCH
+   DROP MINI
    Product-focused case study
    ========================================================= */
 
@@ -9,10 +9,10 @@ body.dropmini-page {
     --dm-ink: #11233c;
     --dm-muted: #647890;
     --dm-line: rgba(31, 82, 143, .12);
-    --dm-pale: #f7fbff;
     --dm-pale-blue: #edf5fb;
     --dm-width: 1480px;
     --dm-gutter: 4.5rem;
+    --project-eyebrow-color: var(--dm-blue);
 
     margin: 0;
     color: var(--dm-ink);
@@ -23,17 +23,13 @@ body.dropmini-page {
 body.dropmini-page .container,
 body.dropmini-page .dm-story,
 body.dropmini-page .dm-form,
-body.dropmini-page .dm-colourways,
+body.dropmini-page .dm-colourways-inner,
 body.dropmini-page .dm-spec-ribbon-inner {
     width: min(var(--dm-width), calc(100% - (var(--dm-gutter) * 2)));
     margin-inline: auto;
 }
 
-/* Eyebrow layout/typography now comes from shared category-page.css. */
-body.dropmini-page {
-    --project-eyebrow-color: var(--dm-blue);
-}
-
+/* Eyebrow typography/placement is shared in category-page.css. */
 body.dropmini-page .dm-kicker,
 body.dropmini-page .dm-eyebrow {
     color: var(--project-eyebrow-color);
@@ -60,21 +56,21 @@ body.dropmini-page h2 {
     letter-spacing: -.055em;
 }
 
-/* HERO */
+/* =========================================================
+   HERO
+   ========================================================= */
+
 body.dropmini-page .dm-hero {
     min-height: var(--project-hero-min-height, max(760px, 100svh));
     display: grid;
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    align-items: var(--project-hero-align, center);
+    align-items: var(--project-hero-align, flex-start);
     gap: 3rem;
-
     padding:
         var(--project-hero-padding-top, 9rem)
         var(--project-hero-content-inset, max(2rem, calc((100vw - 1200px) / 2 + 2rem)))
         var(--project-hero-padding-bottom, 5.5rem);
-
     overflow: hidden;
-
     background:
         radial-gradient(circle at 83% 17%, rgba(76, 158, 227, .19), transparent 24rem),
         radial-gradient(circle at 15% 78%, rgba(152, 222, 246, .13), transparent 26rem),
@@ -183,1581 +179,37 @@ body.dropmini-page .dm-hero-product img {
     width: min(100%, 770px);
     max-height: 435px;
     object-fit: contain;
-    transform: translateY(-5%);
+    transform: translateY(-7%);
     filter: drop-shadow(0 18px 22px rgba(46, 75, 115, .14));
 }
 
+/* Coherent organic water ripple — consolidated from the final approved pass. */
 body.dropmini-page .dm-ripples {
     position: absolute;
     z-index: 1;
-    right: 2%;
-    bottom: 2%;
-    width: 82%;
-    height: 155px;
-    transform: perspective(560px) rotateX(66deg);
-}
-
-body.dropmini-page .dm-ripples::before {
-    content: "";
-    position: absolute;
     left: 50%;
-    top: 52%;
-    width: 86%;
-    height: 74%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            transparent 0 26%,
-            rgba(52, 123, 216, .26) 27% 28%,
-            transparent 29% 39%,
-            rgba(79, 156, 222, .20) 40% 41%,
-            transparent 42% 53%,
-            rgba(105, 180, 231, .15) 54% 55%,
-            transparent 56% 67%,
-            rgba(135, 202, 240, .11) 68% 69%,
-            transparent 70%
-        );
-}
-
-body.dropmini-page .dm-ripples span {
-    position: absolute;
-    left: 50%;
-    top: 52%;
-    width: 30%;
-    height: 28%;
-    transform: translate(-50%, -50%);
-    border: 1.4px solid rgba(52, 123, 216, .24);
-    border-radius: 50%;
-    opacity: 0;
-    animation: dm-ripple 6s ease-out infinite;
-}
-
-body.dropmini-page .dm-ripples span:nth-child(2) { animation-delay: 1.5s; }
-body.dropmini-page .dm-ripples span:nth-child(3) { animation-delay: 3s; }
-body.dropmini-page .dm-ripples span:nth-child(4) { animation-delay: 4.5s; }
-
-@keyframes dm-ripple {
-    0% {
-        width: 30%;
-        height: 28%;
-        opacity: 0;
-    }
-    18% {
-        opacity: .34;
-    }
-    62% {
-        opacity: .14;
-    }
-    100% {
-        width: 96%;
-        height: 84%;
-        opacity: 0;
-    }
-}
-
-/* STORY */
-body.dropmini-page .dm-story {
-    padding: 7rem 0 5.8rem;
-    display: grid;
-    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    gap: clamp(4rem, 8vw, 8rem);
-    align-items: start;
-}
-
-body.dropmini-page .dm-story-heading {
-    max-width: 640px;
-}
-
-body.dropmini-page .dm-story-copy {
-    max-width: 690px;
-    justify-self: end;
-}
-
-body.dropmini-page .dm-story-copy p {
-    margin: 0;
-    color: var(--dm-muted);
-    line-height: 1.85;
-}
-
-body.dropmini-page .dm-story-copy p + p {
-    margin-top: 1.25rem;
-}
-
-body.dropmini-page .dm-story-lead {
-    color: #3d5675 !important;
-    font-size: 1.18rem;
-    line-height: 1.65 !important;
-}
-
-/* SPEC RIBBON */
-body.dropmini-page .dm-spec-ribbon {
-    padding: 1.45rem 0;
-    border-top: 1px solid var(--dm-line);
-    border-bottom: 1px solid var(--dm-line);
-    background: var(--dm-pale-blue);
-}
-
-body.dropmini-page .dm-spec-ribbon-inner {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-body.dropmini-page .dm-spec-ribbon article {
-    display: grid;
-    grid-template-columns: 42px 1fr;
-    align-items: center;
-    gap: .85rem;
-    padding: .3rem 1.55rem;
-    border-left: 1px solid var(--dm-line);
-}
-
-body.dropmini-page .dm-spec-ribbon article:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-body.dropmini-page .dm-spec-ribbon article:last-child {
-    padding-right: 0;
-}
-
-body.dropmini-page .dm-spec-icon {
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: var(--dm-blue);
-    background: #fff;
-}
-
-body.dropmini-page .dm-spec-ribbon p {
-    margin: 0 0 .2rem;
-    color: var(--dm-blue);
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-}
-
-body.dropmini-page .dm-spec-ribbon strong,
-body.dropmini-page .dm-spec-ribbon small {
-    display: block;
-}
-
-body.dropmini-page .dm-spec-ribbon strong {
-    color: var(--dm-ink);
-    font-size: 1rem;
-}
-
-body.dropmini-page .dm-spec-ribbon small {
-    margin-top: .12rem;
-    color: var(--dm-muted);
-    font-size: .7rem;
-}
-
-/* FORM + INTERACTION */
-body.dropmini-page .dm-form {
-    padding: 7rem 0;
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
-    gap: clamp(3rem, 7vw, 7rem);
-    align-items: center;
-}
-
-body.dropmini-page .dm-form-image {
-    overflow: hidden;
-    border-radius: 24px;
-}
-
-body.dropmini-page .dm-form-image img {
-    display: block;
-    width: 100%;
-    height: 560px;
-    object-fit: cover;
-    cursor: zoom-in;
-}
-
-body.dropmini-page .dm-form-copy {
-    max-width: 560px;
-}
-
-body.dropmini-page .dm-form-copy p {
-    color: var(--dm-muted);
-    line-height: 1.85;
-}
-
-body.dropmini-page .dm-form-copy h2 + p {
-    margin-top: 1.4rem;
-}
-
-/* COLOURWAYS */
-body.dropmini-page .dm-colourways {
-    padding: clamp(6rem, 8vw, 8rem) 0;
-    color: var(--dm-ink);
-    background: #f5f8fc;
-}
-
-body.dropmini-page .dm-colourways-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, .58fr);
-    gap: clamp(2.5rem, 6vw, 6rem);
-    align-items: end;
-    margin-bottom: 3rem;
-}
-
-body.dropmini-page .dm-colourways-heading > div {
-    max-width: 800px;
-}
-
-body.dropmini-page .dm-colourways-heading > p {
-    max-width: 500px;
-    margin: 0;
-    color: var(--dm-muted);
-    line-height: 1.8;
-}
-
-body.dropmini-page .dm-colour-viewer {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 220px;
-    gap: 1rem;
-    align-items: stretch;
-}
-
-body.dropmini-page .dm-colour-feature {
-    position: relative;
-    min-height: 590px;
-    margin: 0;
-    overflow: hidden;
-    border-radius: 26px;
-    background: #e9eef4;
-}
-
-body.dropmini-page .dm-colour-feature > img {
-    display: block;
-    width: 100%;
-    height: 590px;
-    object-fit: cover;
-    object-position: center;
-    cursor: zoom-in;
-}
-
-body.dropmini-page .dm-colour-feature figcaption {
-    position: absolute;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1rem 1.1rem;
-    border: 1px solid rgba(255, 255, 255, .28);
-    border-radius: 16px;
-    color: #fff;
-    background: rgba(10, 22, 39, .68);
-    backdrop-filter: blur(12px);
-}
-
-body.dropmini-page .dm-colour-feature figcaption strong {
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-body.dropmini-page .dm-colour-feature figcaption span {
-    color: rgba(255, 255, 255, .62);
-    font-size: .76rem;
-}
-
-body.dropmini-page .dm-colour-thumbs {
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    gap: .65rem;
-}
-
-body.dropmini-page .dm-colour-thumb {
-    min-height: 0;
-    display: grid;
-    grid-template-columns: 68px 1fr;
-    align-items: center;
-    gap: .75rem;
-    padding: .45rem;
-    border: 1px solid var(--dm-line);
-    border-radius: 14px;
-    color: #5d6f85;
-    background: rgba(255, 255, 255, .72);
-    text-align: left;
-    cursor: pointer;
-    transition:
-        transform .18s ease,
-        border-color .18s ease,
-        background .18s ease,
-        box-shadow .18s ease;
-}
-
-body.dropmini-page .dm-colour-thumb img {
-    width: 68px;
-    height: 68px;
-    display: block;
-    object-fit: cover;
-    border-radius: 9px;
-}
-
-body.dropmini-page .dm-colour-thumb span {
-    font-size: .78rem;
-    font-weight: 700;
-}
-
-body.dropmini-page .dm-colour-thumb:hover {
-    transform: translateY(-1px);
-    border-color: rgba(52, 123, 216, .34);
-    background: #fff;
-}
-
-body.dropmini-page .dm-colour-thumb.active {
-    color: var(--dm-ink);
-    border-color: rgba(52, 123, 216, .62);
-    background: #fff;
-    box-shadow: 0 12px 28px rgba(31, 70, 114, .08);
-}
-
-/* DETAIL */
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* PROJECT NAV */
-body.dropmini-page .project-navigation {
-    padding: 3rem 0;
-    border-top: 1px solid var(--dm-line);
-    background: #eef5fb;
-}
-
-body.dropmini-page .project-navigation .nav-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
-    gap: 1rem;
-}
-
-body.dropmini-page .nav-btn {
-    width: fit-content;
-    min-height: 48px;
-    display: inline-flex;
-    align-items: center;
-    gap: .75rem;
-    padding: .74rem 1rem;
-    border: 1px solid rgba(52, 123, 216, .18);
-    border-radius: 999px;
-    color: var(--dm-ink);
-    background: #fff;
-    text-decoration: none;
-}
-
-body.dropmini-page .nav-btn.next {
-    justify-self: end;
-}
-
-body.dropmini-page .nav-btn-copy {
-    display: flex;
-    flex-direction: column;
-    gap: .12rem;
-}
-
-body.dropmini-page .nav-btn-copy small {
-    color: #7b8da4;
-    font-size: .57rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
-
-body.dropmini-page .nav-btn-copy strong {
-    color: var(--dm-ink);
-    font-size: .82rem;
-    white-space: nowrap;
-}
-
-/* LIGHTBOX */
-body.dropmini-page .dm-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, .9);
-}
-
-body.dropmini-page .dm-lightbox.is-open {
-    display: flex;
-}
-
-body.dropmini-page #dm-lightbox-image {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 90vw;
-    max-height: 82vh;
-    border-radius: 16px;
-    object-fit: contain;
-}
-
-body.dropmini-page .dm-lightbox-close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: #fff;
-    font-size: 3rem;
-    font-weight: 300;
-    line-height: 1;
-    cursor: pointer;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1100px) {
-    body.dropmini-page {
-        --dm-gutter: 2.5rem;
-    }
-}
-
-@media (max-width: 900px) {
-    body.dropmini-page {
-        --dm-gutter: 1.5rem;
-    }
-
-    body.dropmini-page .dm-hero,
-    body.dropmini-page .dm-story,
-    body.dropmini-page .dm-form{
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-hero {
-        padding-inline: var(--dm-gutter);
-        min-height: auto;
-    }
-
-    body.dropmini-page .dm-hero-product {
-        min-height: 430px;
-    }
-
-    body.dropmini-page .dm-story-copy {
-        justify-self: start;
-    }
-
-    body.dropmini-page .dm-spec-ribbon-inner {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 1rem;
-    }
-
-    body.dropmini-page .dm-spec-ribbon article:nth-child(odd) {
-        padding-left: 0;
-        border-left: 0;
-    }
-
-    body.dropmini-page .dm-form-image img{
-        height: 420px;
-    }
-
-    
-
-    
-}
-
-@media (max-width: 620px) {
-    body.dropmini-page {
-        --dm-gutter: 1rem;
-    }
-
-    body.dropmini-page .dm-hero h1 {
-        font-size: clamp(3.8rem, 16vw, 5rem);
-    }
-
-    body.dropmini-page .dm-hero-actions {
-        flex-direction: column;
-    }
-
-    body.dropmini-page .dm-button {
-        width: 100%;
-    }
-
-    body.dropmini-page .dm-spec-ribbon-inner {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-spec-ribbon article,
-    body.dropmini-page .dm-spec-ribbon article:nth-child(odd) {
-        padding: .9rem 0;
-        border-left: 0;
-        border-top: 1px solid var(--dm-line);
-    }
-
-    body.dropmini-page .dm-spec-ribbon article:first-child {
-        border-top: 0;
-    }
-
-    
-
-    
-
-    body.dropmini-page .dm-colour img {
-        height: 250px;
-    }
-
-    body.dropmini-page .project-navigation .nav-buttons {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .nav-btn.next {
-        justify-self: start;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    body.dropmini-page .dm-ripples span {
-        animation: none;
-    }
-}
-
-
-/* Colourway viewer responsive refinement */
-@media (max-width: 1000px) {
-    body.dropmini-page .dm-colourways-heading {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-    }
-
-    body.dropmini-page .dm-colourways-heading > p {
-        max-width: 700px;
-    }
-
-    body.dropmini-page .dm-colour-viewer {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-colour-thumbs {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        grid-template-rows: none;
-    }
-
-    body.dropmini-page .dm-colour-thumb {
-        grid-template-columns: 1fr;
-        gap: .45rem;
-        padding: .4rem;
-        text-align: center;
-    }
-
-    body.dropmini-page .dm-colour-thumb img {
-        width: 100%;
-        height: 84px;
-    }
-}
-
-@media (max-width: 720px) {
-    body.dropmini-page .dm-colour-feature,
-    body.dropmini-page .dm-colour-feature > img {
-        min-height: 390px;
-        height: 390px;
-    }
-
-    body.dropmini-page .dm-colour-thumbs {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    body.dropmini-page .dm-colour-thumb img {
-        height: 76px;
-    }
-}
-
-@media (max-width: 480px) {
-    body.dropmini-page .dm-colour-thumbs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-
-/* =========================================================
-   DROP MINI — COLOURWAYS CONTAINER FIX
-   Full-bleed blue section with one contained inner composition.
-   ========================================================= */
-
-/* The section itself owns the full-width blue background. */
-body.dropmini-page .dm-colourways {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: clamp(6rem, 8vw, 8rem) 0;
-    color: #fff;
-    background:
-        radial-gradient(circle at 84% 16%, rgba(255,255,255,.10), transparent 27rem),
-        radial-gradient(circle at 10% 90%, rgba(141,213,255,.12), transparent 25rem),
-        linear-gradient(135deg, #4c8ee3 0%, #286fcf 100%);
-}
-
-/* Everything inside shares one clear content boundary. */
-body.dropmini-page .dm-colourways-inner {
-    width: min(var(--dm-width), calc(100% - (var(--dm-gutter) * 2)));
-    margin-inline: auto;
-}
-
-/* Heading and supporting copy live inside the same blue composition. */
-body.dropmini-page .dm-colourways-heading {
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, .58fr);
-    gap: clamp(2.5rem, 6vw, 6rem);
-    align-items: end;
-    margin: 0 0 3rem;
-}
-
-body.dropmini-page .dm-colourways {
-    --project-eyebrow-color: rgba(255, 255, 255, .78);
-}
-
-body.dropmini-page .dm-colourways h2 {
-    color: #fff;
-}
-
-body.dropmini-page .dm-colourways-heading > p {
-    max-width: 500px;
-    margin: 0;
-    color: rgba(255,255,255,.74);
-    line-height: 1.8;
-}
-
-/* Viewer is fully contained by the same inner width. */
-body.dropmini-page .dm-colour-viewer {
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 220px;
-    gap: 1rem;
-    align-items: stretch;
-}
-
-/* Main image feels like part of the section, not a floating grey panel. */
-body.dropmini-page .dm-colour-feature {
-    position: relative;
-    min-width: 0;
-    min-height: 590px;
-    margin: 0;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,.16);
-    border-radius: 24px;
-    background: rgba(9,28,53,.12);
-    box-shadow: 0 22px 55px rgba(11,46,91,.16);
-}
-
-body.dropmini-page .dm-colour-feature > img {
-    width: 100%;
-    height: 590px;
-    display: block;
-    object-fit: cover;
-}
-
-/* Caption remains inside the image frame with equal inset all around. */
-body.dropmini-page .dm-colour-feature figcaption {
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    margin: 0;
-    padding: .95rem 1.1rem;
-    border: 1px solid rgba(255,255,255,.16);
-    background: rgba(9,25,46,.78);
-}
-
-/* Thumbnail rail belongs visually to the blue section. */
-body.dropmini-page .dm-colour-thumbs {
-    min-width: 0;
-    display: grid;
-    grid-template-rows: repeat(6, minmax(0, 1fr));
-    gap: .65rem;
-}
-
-body.dropmini-page .dm-colour-thumb {
-    width: 100%;
-    min-width: 0;
-    min-height: 0;
-    display: grid;
-    grid-template-columns: 68px minmax(0, 1fr);
-    align-items: center;
-    gap: .75rem;
-    padding: .45rem;
-    border: 1px solid rgba(255,255,255,.16);
-    border-radius: 14px;
-    color: rgba(255,255,255,.78);
-    background: rgba(255,255,255,.095);
-    box-shadow: none;
-    overflow: hidden;
-}
-
-body.dropmini-page .dm-colour-thumb span {
-    min-width: 0;
-    color: inherit;
-}
-
-body.dropmini-page .dm-colour-thumb:hover {
-    border-color: rgba(255,255,255,.38);
-    background: rgba(255,255,255,.15);
-}
-
-body.dropmini-page .dm-colour-thumb.active {
-    color: #fff;
-    border-color: rgba(255,255,255,.72);
-    background: rgba(255,255,255,.18);
-    box-shadow: 0 10px 24px rgba(13,49,95,.13);
-}
-
-/* Keep thumbnails crisp without looking like detached white cards. */
-body.dropmini-page .dm-colour-thumb img {
-    border-radius: 9px;
-}
-
-/* Responsive: retain the same contained rhythm. */
-@media (max-width: 1000px) {
-    body.dropmini-page .dm-colourways-heading {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-    }
-
-    body.dropmini-page .dm-colourways-heading > p {
-        max-width: 720px;
-    }
-
-    body.dropmini-page .dm-colour-viewer {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-colour-thumbs {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        grid-template-rows: none;
-    }
-
-    body.dropmini-page .dm-colour-thumb {
-        grid-template-columns: 1fr;
-        gap: .45rem;
-        text-align: center;
-    }
-}
-
-@media (max-width: 720px) {
-    body.dropmini-page .dm-colour-feature,
-    body.dropmini-page .dm-colour-feature > img {
-        min-height: 390px;
-        height: 390px;
-    }
-
-    body.dropmini-page .dm-colour-thumbs {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    body.dropmini-page .dm-colour-thumbs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-
-/* =========================================================
-   DROP MINI — RIPPLE VISIBILITY BOOST
-   Stronger, still soft and water-like.
-   ========================================================= */
-
-body.dropmini-page .dm-ripples {
-    opacity: 1;
-    right: 0;
-    bottom: 0;
-    width: 86%;
-    height: 170px;
-}
-
-/* Make the static ripple structure clearly visible at rest */
-body.dropmini-page .dm-ripples::before {
-    width: 90%;
-    height: 78%;
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(88, 166, 225, .055) 0 20%,
-            transparent 21% 25%,
-            rgba(52, 123, 216, .34) 26% 27.5%,
-            transparent 28.5% 38%,
-            rgba(73, 151, 220, .28) 39% 40.5%,
-            transparent 41.5% 51%,
-            rgba(96, 174, 230, .22) 52% 53.5%,
-            transparent 54.5% 64%,
-            rgba(123, 192, 237, .17) 65% 66.5%,
-            transparent 67.5% 100%
-        );
-    filter: blur(.2px);
-}
-
-/* Add a soft contact glow so the ripple reads as water, not radar rings */
-body.dropmini-page .dm-ripples::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 52%;
-    width: 34%;
-    height: 28%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: radial-gradient(
-        ellipse at center,
-        rgba(92, 179, 235, .22) 0%,
-        rgba(92, 179, 235, .09) 44%,
-        transparent 72%
-    );
-    filter: blur(10px);
-}
-
-/* Stronger animated secondary ripples */
-body.dropmini-page .dm-ripples span {
-    border-color: rgba(52, 123, 216, .34);
-    border-width: 1.6px;
-}
-
-@keyframes dm-ripple {
-    0% {
-        width: 30%;
-        height: 28%;
-        opacity: 0;
-    }
-
-    14% {
-        opacity: .48;
-    }
-
-    46% {
-        opacity: .30;
-    }
-
-    72% {
-        opacity: .16;
-    }
-
-    100% {
-        width: 98%;
-        height: 86%;
-        opacity: 0;
-    }
-}
-
-/* Slightly lift the speaker so the ripple remains visible underneath */
-body.dropmini-page .dm-hero-product img {
-    transform: translateY(-7%);
-}
-
-
-/* =========================================================
-   DROP MINI — ORGANIC WATER RIPPLE REBUILD
-   No stationary concentric rings. All visible waves move.
-   ========================================================= */
-
-body.dropmini-page .dm-ripples {
-    right: 0;
-    bottom: 1%;
-    width: 86%;
-    height: 165px;
-    opacity: 1;
-    transform: perspective(580px) rotateX(68deg);
-}
-
-/* Remove the stationary concentric-ring graphic completely. */
-body.dropmini-page .dm-ripples::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 53%;
-    width: 36%;
-    height: 28%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: radial-gradient(
-        ellipse at center,
-        rgba(82, 171, 232, .19) 0%,
-        rgba(82, 171, 232, .08) 42%,
-        transparent 72%
-    );
-    filter: blur(12px);
-    animation: dm-water-contact 3.8s ease-in-out infinite;
-}
-
-/* The second glow also breathes instead of sitting still. */
-body.dropmini-page .dm-ripples::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 53%;
-    width: 24%;
-    height: 18%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: radial-gradient(
-        ellipse at center,
-        rgba(126, 202, 242, .18) 0%,
-        rgba(126, 202, 242, .06) 48%,
-        transparent 76%
-    );
-    filter: blur(8px);
-    animation: dm-water-contact-small 2.9s ease-in-out infinite;
-}
-
-/* Each wave is an imperfect partial ellipse, not a full graphic ring. */
-body.dropmini-page .dm-ripples span {
-    position: absolute;
-    left: 50%;
-    top: 53%;
-    width: 28%;
-    height: 24%;
-    opacity: 0;
-
-    border: 0;
-    border-top: 1.8px solid rgba(45, 125, 211, .42);
-    border-left: 1.1px solid rgba(75, 158, 222, .18);
-    border-right: 1.4px solid rgba(83, 166, 226, .27);
-    border-bottom: 1px solid rgba(126, 197, 238, .08);
-
-    border-radius: 48% 52% 46% 54% / 53% 45% 55% 47%;
-    filter: blur(.25px);
-    transform-origin: center;
-    animation: dm-water-ripple-a 5.8s cubic-bezier(.22,.61,.36,1) infinite;
-}
-
-body.dropmini-page .dm-ripples span:nth-child(2) {
-    border-radius: 52% 48% 55% 45% / 46% 55% 45% 54%;
-    animation-name: dm-water-ripple-b;
-    animation-delay: 1.35s;
-}
-
-body.dropmini-page .dm-ripples span:nth-child(3) {
-    border-radius: 46% 54% 50% 50% / 56% 44% 53% 47%;
-    animation-name: dm-water-ripple-c;
-    animation-delay: 2.7s;
-}
-
-body.dropmini-page .dm-ripples span:nth-child(4) {
-    border-radius: 54% 46% 47% 53% / 48% 52% 44% 56%;
-    animation-name: dm-water-ripple-d;
-    animation-delay: 4.05s;
-}
-
-/* Slightly different paths stop the waves reading as concentric discs. */
-@keyframes dm-water-ripple-a {
-    0% {
-        width: 24%;
-        height: 20%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(-2deg) scale(.92);
-    }
-    14% {
-        opacity: .48;
-    }
-    52% {
-        opacity: .24;
-        transform: translate(-51%, -49%) rotate(1.5deg) scale(1.02);
-    }
-    100% {
-        width: 93%;
-        height: 78%;
-        opacity: 0;
-        transform: translate(-48%, -47%) rotate(3deg) scale(1.05);
-    }
-}
-
-@keyframes dm-water-ripple-b {
-    0% {
-        width: 22%;
-        height: 18%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(3deg) scale(.9);
-    }
-    16% {
-        opacity: .42;
-    }
-    58% {
-        opacity: .21;
-        transform: translate(-48%, -50%) rotate(-1deg) scale(1.03);
-    }
-    100% {
-        width: 88%;
-        height: 74%;
-        opacity: 0;
-        transform: translate(-52%, -46%) rotate(-3deg) scale(1.06);
-    }
-}
-
-@keyframes dm-water-ripple-c {
-    0% {
-        width: 26%;
-        height: 21%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(-3deg) scale(.94);
-    }
-    13% {
-        opacity: .44;
-    }
-    54% {
-        opacity: .2;
-        transform: translate(-52%, -48%) rotate(2deg) scale(1.01);
-    }
-    100% {
-        width: 96%;
-        height: 80%;
-        opacity: 0;
-        transform: translate(-47%, -45%) rotate(4deg) scale(1.07);
-    }
-}
-
-@keyframes dm-water-ripple-d {
-    0% {
-        width: 23%;
-        height: 19%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(1deg) scale(.91);
-    }
-    15% {
-        opacity: .40;
-    }
-    57% {
-        opacity: .19;
-        transform: translate(-49%, -51%) rotate(-2deg) scale(1.02);
-    }
-    100% {
-        width: 90%;
-        height: 76%;
-        opacity: 0;
-        transform: translate(-53%, -46%) rotate(-4deg) scale(1.05);
-    }
-}
-
-@keyframes dm-water-contact {
-    0%, 100% {
-        opacity: .48;
-        transform: translate(-50%, -50%) scale(.94);
-    }
-    50% {
-        opacity: .82;
-        transform: translate(-50%, -50%) scale(1.08);
-    }
-}
-
-@keyframes dm-water-contact-small {
-    0%, 100% {
-        opacity: .35;
-        transform: translate(-50%, -50%) scale(.9);
-    }
-    50% {
-        opacity: .62;
-        transform: translate(-50%, -50%) scale(1.12);
-    }
-}
-
-
-/* =========================================================
-   DROP MINI — ORGANIC RIPPLE VISIBILITY CORRECTION
-   Keep the irregular moving-water treatment, but make it
-   unmistakably visible. No static concentric-ring graphic.
-   ========================================================= */
-
-body.dropmini-page .dm-ripples {
-    right: -1%;
-    bottom: 0;
-    width: 90%;
-    height: 180px;
-    opacity: 1 !important;
-    transform: perspective(560px) rotateX(66deg);
-}
-
-/* Stronger moving contact disturbance — still soft, never a ring. */
-body.dropmini-page .dm-ripples::before {
-    width: 46%;
-    height: 34%;
-    opacity: 1;
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(49, 131, 211, .32) 0%,
-            rgba(72, 160, 224, .22) 28%,
-            rgba(104, 186, 235, .10) 50%,
-            transparent 72%
-        );
-    filter: blur(13px);
-    animation: dm-water-contact 3.2s ease-in-out infinite;
-}
-
-/* Secondary highlight moves independently so the centre feels alive. */
-body.dropmini-page .dm-ripples::after {
-    width: 30%;
-    height: 22%;
-    opacity: 1;
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(95, 183, 235, .30) 0%,
-            rgba(126, 202, 242, .14) 42%,
-            transparent 74%
-        );
-    filter: blur(8px);
-    animation: dm-water-contact-small 2.45s ease-in-out infinite;
-}
-
-/* Make the wave fronts clearer, but preserve their irregular partial-ellipse look. */
-body.dropmini-page .dm-ripples span {
-    border-top-color: rgba(35, 112, 202, .72);
-    border-left-color: rgba(63, 149, 217, .38);
-    border-right-color: rgba(69, 158, 223, .48);
-    border-bottom-color: rgba(112, 192, 237, .15);
-    border-top-width: 2.2px;
-    border-left-width: 1.35px;
-    border-right-width: 1.65px;
-    border-bottom-width: 1px;
-    filter:
-        drop-shadow(0 0 2px rgba(53, 132, 211, .13))
-        blur(.12px);
-}
-
-/* Each ripple is stronger at the beginning/middle of its travel,
-   then fades only near the outer edge. */
-@keyframes dm-water-ripple-a {
-    0% {
-        width: 23%;
-        height: 19%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(-3deg) scale(.90);
-    }
-    10% {
-        opacity: .74;
-    }
-    38% {
-        opacity: .58;
-        transform: translate(-51%, -49%) rotate(1deg) scale(.99);
-    }
-    68% {
-        opacity: .33;
-    }
-    100% {
-        width: 95%;
-        height: 79%;
-        opacity: 0;
-        transform: translate(-47%, -45%) rotate(4deg) scale(1.06);
-    }
-}
-
-@keyframes dm-water-ripple-b {
-    0% {
-        width: 21%;
-        height: 18%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(4deg) scale(.89);
-    }
-    11% {
-        opacity: .68;
-    }
-    42% {
-        opacity: .52;
-        transform: translate(-48%, -50%) rotate(-1deg) scale(1);
-    }
-    70% {
-        opacity: .30;
-    }
-    100% {
-        width: 89%;
-        height: 75%;
-        opacity: 0;
-        transform: translate(-52%, -45%) rotate(-4deg) scale(1.05);
-    }
-}
-
-@keyframes dm-water-ripple-c {
-    0% {
-        width: 25%;
-        height: 20%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(-4deg) scale(.92);
-    }
-    9% {
-        opacity: .70;
-    }
-    40% {
-        opacity: .54;
-        transform: translate(-52%, -48%) rotate(2deg) scale(1);
-    }
-    69% {
-        opacity: .31;
-    }
-    100% {
-        width: 98%;
-        height: 81%;
-        opacity: 0;
-        transform: translate(-46%, -44%) rotate(5deg) scale(1.07);
-    }
-}
-
-@keyframes dm-water-ripple-d {
-    0% {
-        width: 22%;
-        height: 18%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(2deg) scale(.9);
-    }
-    12% {
-        opacity: .66;
-    }
-    43% {
-        opacity: .50;
-        transform: translate(-49%, -51%) rotate(-2deg) scale(1);
-    }
-    71% {
-        opacity: .28;
-    }
-    100% {
-        width: 92%;
-        height: 77%;
-        opacity: 0;
-        transform: translate(-53%, -45%) rotate(-5deg) scale(1.05);
-    }
-}
-
-/* Contact glow gets a more noticeable pulse without becoming a disc. */
-@keyframes dm-water-contact {
-    0%, 100% {
-        opacity: .64;
-        transform: translate(-50%, -50%) scale(.92) skewX(-2deg);
-    }
-    50% {
-        opacity: 1;
-        transform: translate(-49%, -51%) scale(1.12) skewX(2deg);
-    }
-}
-
-@keyframes dm-water-contact-small {
-    0%, 100% {
-        opacity: .48;
-        transform: translate(-50%, -50%) scale(.88) rotate(-2deg);
-    }
-    50% {
-        opacity: .86;
-        transform: translate(-51%, -49%) scale(1.16) rotate(2deg);
-    }
-}
-
-/* Give the waves enough separation to remain continuously visible. */
-body.dropmini-page .dm-ripples span:nth-child(1) {
-    animation-duration: 5.2s;
-    animation-delay: 0s;
-}
-body.dropmini-page .dm-ripples span:nth-child(2) {
-    animation-duration: 5.5s;
-    animation-delay: 1.15s;
-}
-body.dropmini-page .dm-ripples span:nth-child(3) {
-    animation-duration: 5.1s;
-    animation-delay: 2.3s;
-}
-body.dropmini-page .dm-ripples span:nth-child(4) {
-    animation-duration: 5.6s;
-    animation-delay: 3.45s;
-}
-
-
-/* =========================================================
-   DROP MINI — RIPPLE POSITIONING
-   Move the water contact closer to the speaker body.
-   ========================================================= */
-
-body.dropmini-page .dm-ripples {
-    left: 61%;
     right: auto;
-    bottom: 10%;
-    width: 58%;
-    height: 130px;
-    transform: translateX(-50%) perspective(560px) rotateX(70deg);
-    transform-origin: center center;
-    z-index: 1;
-    opacity: 1 !important;
+    bottom: 6.5%;
+    width: 64%;
+    height: 138px;
+    opacity: 1;
+    transform: translateX(-50%) perspective(560px) rotateX(68deg);
+    transform-origin: 50% 50%;
 }
 
-/* Keep the speaker visually sitting above the ripple field. */
-body.dropmini-page .dm-hero-product img {
-    position: relative;
-    z-index: 3;
-}
-
-/* Pull the animated contact glow upward with the ripple group. */
 body.dropmini-page .dm-ripples::before,
 body.dropmini-page .dm-ripples::after {
-    top: 50%;
-}
-
-/* Slightly tighten the organic wave spread so it reads as contact,
-   rather than a separate floating pool underneath. */
-body.dropmini-page .dm-ripples span {
-    top: 50%;
-}
-
-@media (max-width: 900px) {
-    body.dropmini-page .dm-ripples {
-        left: 58%;
-        bottom: 8%;
-        width: 68%;
-        height: 120px;
-    }
-}
-
-@media (max-width: 620px) {
-    body.dropmini-page .dm-ripples {
-        left: 55%;
-        bottom: 7%;
-        width: 78%;
-        height: 105px;
-    }
-}
-
-
-/* =========================================================
-   DROP MINI — RIPPLE ALIGNMENT + VISIBILITY FINAL
-   Align the water disturbance directly under the speaker's
-   visual contact point and keep the organic moving-wave style.
-   ========================================================= */
-
-body.dropmini-page .dm-hero-product {
-    position: relative;
-}
-
-/* Re-center the ripple under the body instead of the right-hand side. */
-body.dropmini-page .dm-ripples {
-    left: 52% !important;
-    right: auto !important;
-    bottom: 5.5% !important;
-
-    width: 68% !important;
-    height: 145px !important;
-
-    opacity: 1 !important;
-    transform: translateX(-50%) perspective(560px) rotateX(67deg) !important;
-    transform-origin: center center;
-    z-index: 1;
-}
-
-/* Stronger moving contact disturbance. */
-body.dropmini-page .dm-ripples::before {
+    content: "";
+    position: absolute;
     left: 50%;
-    top: 49%;
-    width: 48%;
-    height: 34%;
-
-    opacity: 1 !important;
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(35, 115, 205, .34) 0%,
-            rgba(62, 150, 220, .24) 28%,
-            rgba(94, 181, 233, .12) 50%,
-            transparent 72%
-        ) !important;
-
-    filter: blur(10px) !important;
-    animation: dm-water-contact 3.1s ease-in-out infinite !important;
-}
-
-/* Secondary highlight remains soft but visible. */
-body.dropmini-page .dm-ripples::after {
-    left: 50%;
-    top: 49%;
-    width: 30%;
-    height: 22%;
-
-    opacity: 1 !important;
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(89, 176, 234, .30) 0%,
-            rgba(118, 198, 241, .14) 44%,
-            transparent 75%
-        ) !important;
-
-    filter: blur(7px) !important;
-    animation: dm-water-contact-small 2.5s ease-in-out infinite !important;
-}
-
-/* Make the organic wave fronts clearly legible without returning to discs. */
-body.dropmini-page .dm-ripples span {
-    top: 49% !important;
-
-    border-top: 2.4px solid rgba(31, 107, 199, .78) !important;
-    border-left: 1.45px solid rgba(58, 145, 216, .42) !important;
-    border-right: 1.75px solid rgba(69, 158, 223, .52) !important;
-    border-bottom: 1px solid rgba(111, 190, 237, .18) !important;
-
-    opacity: 0;
-    filter:
-        drop-shadow(0 0 2px rgba(45, 121, 204, .18))
-        blur(.08px) !important;
-}
-
-/* Keep a ripple visibly travelling most of the time. */
-@keyframes dm-water-ripple-a {
-    0% {
-        width: 24%;
-        height: 19%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(-3deg) scale(.90);
-    }
-    8% { opacity: .82; }
-    36% {
-        opacity: .64;
-        transform: translate(-51%, -49%) rotate(1deg) scale(.99);
-    }
-    66% { opacity: .38; }
-    100% {
-        width: 96%;
-        height: 78%;
-        opacity: 0;
-        transform: translate(-47%, -45%) rotate(4deg) scale(1.06);
-    }
-}
-
-@keyframes dm-water-ripple-b {
-    0% {
-        width: 22%;
-        height: 18%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(4deg) scale(.89);
-    }
-    9% { opacity: .76; }
-    38% {
-        opacity: .59;
-        transform: translate(-48%, -50%) rotate(-1deg) scale(1);
-    }
-    68% { opacity: .35; }
-    100% {
-        width: 91%;
-        height: 74%;
-        opacity: 0;
-        transform: translate(-52%, -45%) rotate(-4deg) scale(1.05);
-    }
-}
-
-@keyframes dm-water-ripple-c {
-    0% {
-        width: 25%;
-        height: 20%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(-4deg) scale(.92);
-    }
-    8% { opacity: .79; }
-    37% {
-        opacity: .61;
-        transform: translate(-52%, -48%) rotate(2deg) scale(1);
-    }
-    67% { opacity: .36; }
-    100% {
-        width: 98%;
-        height: 80%;
-        opacity: 0;
-        transform: translate(-46%, -44%) rotate(5deg) scale(1.07);
-    }
-}
-
-@keyframes dm-water-ripple-d {
-    0% {
-        width: 23%;
-        height: 18%;
-        opacity: 0;
-        transform: translate(-50%, -50%) rotate(2deg) scale(.9);
-    }
-    10% { opacity: .73; }
-    40% {
-        opacity: .56;
-        transform: translate(-49%, -51%) rotate(-2deg) scale(1);
-    }
-    69% { opacity: .33; }
-    100% {
-        width: 93%;
-        height: 76%;
-        opacity: 0;
-        transform: translate(-53%, -45%) rotate(-5deg) scale(1.05);
-    }
-}
-
-/* Faster overlap means the effect never disappears between waves. */
-body.dropmini-page .dm-ripples span:nth-child(1) {
-    animation: dm-water-ripple-a 4.8s cubic-bezier(.22,.61,.36,1) infinite !important;
-}
-body.dropmini-page .dm-ripples span:nth-child(2) {
-    animation: dm-water-ripple-b 5s cubic-bezier(.22,.61,.36,1) .9s infinite !important;
-}
-body.dropmini-page .dm-ripples span:nth-child(3) {
-    animation: dm-water-ripple-c 4.9s cubic-bezier(.22,.61,.36,1) 1.8s infinite !important;
-}
-body.dropmini-page .dm-ripples span:nth-child(4) {
-    animation: dm-water-ripple-d 5.1s cubic-bezier(.22,.61,.36,1) 2.7s infinite !important;
-}
-
-/* Keep the speaker clearly above the water treatment. */
-body.dropmini-page .dm-hero-product img {
-    position: relative;
-    z-index: 3;
-}
-
-/* Tablet/mobile alignment follows the centre of the model. */
-@media (max-width: 900px) {
-    body.dropmini-page .dm-ripples {
-        left: 52% !important;
-        bottom: 5% !important;
-        width: 74% !important;
-        height: 125px !important;
-    }
-}
-
-@media (max-width: 620px) {
-    body.dropmini-page .dm-ripples {
-        left: 51% !important;
-        bottom: 4% !important;
-        width: 84% !important;
-        height: 108px !important;
-    }
-}
-
-
-/* =========================================================
-   DROP MINI — RIPPLE COHERENCE PASS
-   One clear impact point, smoother expansion, less sideways drift.
-   ========================================================= */
-
-body.dropmini-page .dm-ripples {
-    left: 50% !important;
-    right: auto !important;
-    bottom: 6.5% !important;
-    width: 64% !important;
-    height: 138px !important;
-    transform: translateX(-50%) perspective(560px) rotateX(68deg) !important;
-    transform-origin: 50% 50%;
-    opacity: 1 !important;
-}
-
-/* One shared contact point directly beneath the speaker. */
-body.dropmini-page .dm-ripples::before {
-    left: 50% !important;
-    top: 50% !important;
-    width: 42% !important;
-    height: 30% !important;
+    top: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+body.dropmini-page .dm-ripples::before {
+    width: 42%;
+    height: 30%;
     background:
         radial-gradient(
             ellipse at center,
@@ -1765,49 +217,61 @@ body.dropmini-page .dm-ripples::before {
             rgba(70, 158, 223, .21) 30%,
             rgba(111, 190, 236, .10) 52%,
             transparent 74%
-        ) !important;
-    filter: blur(10px) !important;
-    animation: dm-coherent-contact 3.2s ease-in-out infinite !important;
+        );
+    filter: blur(10px);
+    animation: dm-coherent-contact 3.2s ease-in-out infinite;
 }
 
 body.dropmini-page .dm-ripples::after {
-    left: 50% !important;
-    top: 50% !important;
-    width: 25% !important;
-    height: 18% !important;
-    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 18%;
     background:
         radial-gradient(
             ellipse at center,
             rgba(103, 190, 239, .26) 0%,
             rgba(129, 203, 242, .12) 46%,
             transparent 76%
-        ) !important;
-    filter: blur(7px) !important;
-    animation: dm-coherent-contact-small 2.55s ease-in-out infinite !important;
+        );
+    filter: blur(7px);
+    animation: dm-coherent-contact-small 2.55s ease-in-out infinite;
 }
 
-/* All waves now expand from the same origin.
-   Organic shape is kept through slight radius/rotation differences,
-   not by drifting sideways. */
 body.dropmini-page .dm-ripples span {
-    left: 50% !important;
-    top: 50% !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
     width: 24%;
     height: 19%;
-
-    border-top: 2.25px solid rgba(31, 108, 199, .76) !important;
-    border-left: 1.35px solid rgba(58, 145, 216, .38) !important;
-    border-right: 1.55px solid rgba(69, 158, 223, .46) !important;
-    border-bottom: 1px solid rgba(111, 190, 237, .14) !important;
-
     opacity: 0;
+    border: 0;
+    border-top: 2.25px solid rgba(31, 108, 199, .76);
+    border-left: 1.35px solid rgba(58, 145, 216, .38);
+    border-right: 1.55px solid rgba(69, 158, 223, .46);
+    border-bottom: 1px solid rgba(111, 190, 237, .14);
     transform-origin: 50% 50%;
-    filter: drop-shadow(0 0 2px rgba(45, 121, 204, .13)) !important;
+    filter: drop-shadow(0 0 2px rgba(45, 121, 204, .13));
 }
 
-/* Same expansion curve for every wave = visually coherent.
-   Each span only varies slightly in rotation/radius. */
+body.dropmini-page .dm-ripples span:nth-child(1) {
+    border-radius: 49% 51% 48% 52% / 51% 48% 52% 49%;
+    animation: dm-coherent-ripple-1 5.2s cubic-bezier(.22,.61,.36,1) infinite;
+}
+
+body.dropmini-page .dm-ripples span:nth-child(2) {
+    border-radius: 51% 49% 52% 48% / 49% 52% 48% 51%;
+    animation: dm-coherent-ripple-2 5.2s cubic-bezier(.22,.61,.36,1) 1.3s infinite;
+}
+
+body.dropmini-page .dm-ripples span:nth-child(3) {
+    border-radius: 48% 52% 50% 50% / 52% 49% 51% 48%;
+    animation: dm-coherent-ripple-3 5.2s cubic-bezier(.22,.61,.36,1) 2.6s infinite;
+}
+
+body.dropmini-page .dm-ripples span:nth-child(4) {
+    border-radius: 52% 48% 49% 51% / 48% 51% 49% 52%;
+    animation: dm-coherent-ripple-4 5.2s cubic-bezier(.22,.61,.36,1) 3.9s infinite;
+}
+
 @keyframes dm-coherent-ripple-1 {
     0% {
         width: 24%;
@@ -1892,26 +356,6 @@ body.dropmini-page .dm-ripples span {
     }
 }
 
-body.dropmini-page .dm-ripples span:nth-child(1) {
-    border-radius: 49% 51% 48% 52% / 51% 48% 52% 49%;
-    animation: dm-coherent-ripple-1 5.2s cubic-bezier(.22,.61,.36,1) infinite !important;
-}
-
-body.dropmini-page .dm-ripples span:nth-child(2) {
-    border-radius: 51% 49% 52% 48% / 49% 52% 48% 51%;
-    animation: dm-coherent-ripple-2 5.2s cubic-bezier(.22,.61,.36,1) 1.3s infinite !important;
-}
-
-body.dropmini-page .dm-ripples span:nth-child(3) {
-    border-radius: 48% 52% 50% 50% / 52% 49% 51% 48%;
-    animation: dm-coherent-ripple-3 5.2s cubic-bezier(.22,.61,.36,1) 2.6s infinite !important;
-}
-
-body.dropmini-page .dm-ripples span:nth-child(4) {
-    border-radius: 52% 48% 49% 51% / 48% 51% 49% 52%;
-    animation: dm-coherent-ripple-4 5.2s cubic-bezier(.22,.61,.36,1) 3.9s infinite !important;
-}
-
 @keyframes dm-coherent-contact {
     0%, 100% {
         opacity: .64;
@@ -1934,97 +378,114 @@ body.dropmini-page .dm-ripples span:nth-child(4) {
     }
 }
 
-@media (max-width: 900px) {
-    body.dropmini-page .dm-ripples {
-        left: 50% !important;
-        bottom: 5.5% !important;
-        width: 72% !important;
-        height: 122px !important;
-    }
-}
-
-@media (max-width: 620px) {
-    body.dropmini-page .dm-ripples {
-        left: 50% !important;
-        bottom: 5% !important;
-        width: 82% !important;
-        height: 108px !important;
-    }
-}
-
-
-/* Discover CTA points downward because it scrolls to content on this page. */
-body.dropmini-page .dm-button-primary[href="#story"] i {
-    transition: transform .18s ease;
-}
-
-body.dropmini-page .dm-button-primary[href="#story"]:hover i {
-    transform: translateY(3px);
-}
-
-
 /* =========================================================
-   DROP MINI — DISCOVER CTA HOVER FIX
-   Keep the button stationary; animate only the down arrow.
+   STORY
    ========================================================= */
 
-body.dropmini-page .dm-button-primary[href="#story"]:hover {
-    transform: none !important;
+body.dropmini-page .dm-story {
+    padding: 7rem 0 5.8rem;
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: clamp(4rem, 8vw, 8rem);
+    align-items: start;
 }
 
-body.dropmini-page .dm-button-primary[href="#story"] i {
-    display: inline-block;
-    transform: translateY(0);
-    transition: transform .2s ease;
+body.dropmini-page .dm-story-heading {
+    max-width: 640px;
 }
 
-body.dropmini-page .dm-button-primary[href="#story"]:hover i {
-    transform: translateY(4px) !important;
+body.dropmini-page .dm-story-copy {
+    max-width: 690px;
+    justify-self: end;
 }
 
+body.dropmini-page .dm-story-copy p {
+    margin: 0;
+    color: var(--dm-muted);
+    line-height: 1.85;
+}
+
+body.dropmini-page .dm-story-copy p + p {
+    margin-top: 1.25rem;
+}
+
+body.dropmini-page .dm-story-lead {
+    color: #3d5675 !important;
+    font-size: 1.18rem;
+    line-height: 1.65 !important;
+}
 
 /* =========================================================
-   DROP MINI — DISCOVER CTA MATCH SENSATION 360
-   Arrow remains fixed inside the button; button and icon move together.
+   SPEC RIBBON
    ========================================================= */
 
-body.dropmini-page .dm-button-primary[href="#story"] {
-    transition: transform .18s ease, box-shadow .18s ease;
+body.dropmini-page .dm-spec-ribbon {
+    padding: 1.45rem 0;
+    border-top: 1px solid var(--dm-line);
+    border-bottom: 1px solid var(--dm-line);
+    background: var(--dm-pale-blue);
 }
 
-body.dropmini-page .dm-button-primary[href="#story"] i {
-    display: inline-block;
-    transform: none !important;
-    transition: none !important;
+body.dropmini-page .dm-spec-ribbon-inner {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-body.dropmini-page .dm-button-primary[href="#story"]:hover {
-    transform: translateY(-2px) !important;
+body.dropmini-page .dm-spec-ribbon article {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    align-items: center;
+    gap: .85rem;
+    padding: .3rem 1.55rem;
+    border-left: 1px solid var(--dm-line);
 }
 
-body.dropmini-page .dm-button-primary[href="#story"]:hover i {
-    transform: none !important;
+body.dropmini-page .dm-spec-ribbon article:first-child {
+    padding-left: 0;
+    border-left: 0;
 }
 
+body.dropmini-page .dm-spec-ribbon article:last-child {
+    padding-right: 0;
+}
+
+body.dropmini-page .dm-spec-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--dm-blue);
+    background: #fff;
+}
+
+body.dropmini-page .dm-spec-ribbon p {
+    margin: 0 0 .2rem;
+    color: var(--dm-blue);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+body.dropmini-page .dm-spec-ribbon strong,
+body.dropmini-page .dm-spec-ribbon small {
+    display: block;
+}
+
+body.dropmini-page .dm-spec-ribbon strong {
+    color: var(--dm-ink);
+    font-size: 1rem;
+}
+
+body.dropmini-page .dm-spec-ribbon small {
+    margin-top: .12rem;
+    color: var(--dm-muted);
+    font-size: .7rem;
+}
 
 /* =========================================================
-   DROP MINI — EYEBROW COLOUR OVERRIDES
-   Position/spacing/type come from the shared project-eyebrow component.
-   ========================================================= */
-
-body.dropmini-page {
-    --project-eyebrow-color: var(--dm-blue);
-}
-
-body.dropmini-page .dm-colourways {
-    --project-eyebrow-color: rgba(255, 255, 255, .78);
-}
-
-
-
-/* =========================================================
-   DROP MINI — MERGED FORM & INTERACTION SECTION
-   Removes the duplicate standalone Interaction section.
+   FORM & INTERACTION
    ========================================================= */
 
 body.dropmini-page .dm-form {
@@ -2036,8 +497,7 @@ body.dropmini-page .dm-form {
 }
 
 body.dropmini-page .dm-form-copy {
-    position: sticky;
-    top: 7rem;
+    position: static;
     max-width: 560px;
 }
 
@@ -2052,92 +512,6 @@ body.dropmini-page .dm-form-copy h2 + p {
 
 body.dropmini-page .dm-form-media {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(220px, .48fr);
-    gap: 1rem;
-    align-items: stretch;
-}
-
-body.dropmini-page .dm-form-image {
-    margin: 0;
-    overflow: hidden;
-    border-radius: 22px;
-    background: #eef3f7;
-}
-
-body.dropmini-page .dm-form-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: zoom-in;
-}
-
-body.dropmini-page .dm-form-image-large {
-    min-height: 560px;
-}
-
-body.dropmini-page .dm-form-image-small {
-    min-height: 560px;
-}
-
-body.dropmini-page .dm-form-image-small img {
-    object-position: center;
-}
-
-/* Old standalone detail section is intentionally gone. */
-
-
-@media (max-width: 980px) {
-    body.dropmini-page .dm-form {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-form-copy {
-        position: static;
-        max-width: 700px;
-    }
-
-    body.dropmini-page .dm-form-media {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    body.dropmini-page .dm-form-image-large,
-    body.dropmini-page .dm-form-image-small {
-        min-height: 420px;
-    }
-}
-
-@media (max-width: 620px) {
-    body.dropmini-page .dm-form-media {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-form-image-large,
-    body.dropmini-page .dm-form-image-small {
-        min-height: 300px;
-    }
-}
-
-
-/* =========================================================
-   DROP MINI — FORM & INTERACTION SCROLL FIX
-   Keep the text static instead of sticky while scrolling.
-   ========================================================= */
-
-body.dropmini-page .dm-form-copy {
-    position: static !important;
-    top: auto !important;
-}
-
-
-/* =========================================================
-   DROP MINI — FORM & INTERACTION IMAGE FIX
-   Preserve each image's natural proportions; no forced
-   equal-height cropping or narrow squashed presentation.
-   ========================================================= */
-
-body.dropmini-page .dm-form-media {
-    display: grid;
     grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
     gap: 1.25rem;
     align-items: start;
@@ -2146,48 +520,432 @@ body.dropmini-page .dm-form-media {
 body.dropmini-page .dm-form-image,
 body.dropmini-page .dm-form-image-large,
 body.dropmini-page .dm-form-image-small {
-    min-height: 0 !important;
-    height: auto !important;
+    min-height: 0;
+    height: auto;
     margin: 0;
     overflow: hidden;
     border-radius: 22px;
     background: #eef3f7;
 }
 
-/* Let both source images keep their true aspect ratio. */
 body.dropmini-page .dm-form-image img,
 body.dropmini-page .dm-form-image-large img,
 body.dropmini-page .dm-form-image-small img {
     display: block;
     width: 100%;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    object-fit: contain !important;
-    object-position: center !important;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    cursor: zoom-in;
 }
 
-/* The controls render is narrower/taller by nature, so give it
-   enough width instead of forcing it into a skinny slot. */
 body.dropmini-page .dm-form-image-small {
     align-self: start;
 }
 
-/* Keep the composition balanced on medium screens. */
+/* =========================================================
+   COLOURWAYS
+   ========================================================= */
+
+body.dropmini-page .dm-colourways {
+    --project-eyebrow-color: rgba(255, 255, 255, .78);
+
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: clamp(6rem, 8vw, 8rem) 0;
+    color: #fff;
+    background:
+        radial-gradient(circle at 84% 16%, rgba(255,255,255,.10), transparent 27rem),
+        radial-gradient(circle at 10% 90%, rgba(141,213,255,.12), transparent 25rem),
+        linear-gradient(135deg, #4c8ee3 0%, #286fcf 100%);
+}
+
+body.dropmini-page .dm-colourways-heading {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, .58fr);
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: end;
+    margin: 0 0 3rem;
+}
+
+body.dropmini-page .dm-colourways-heading > div {
+    max-width: 800px;
+}
+
+body.dropmini-page .dm-colourways h2 {
+    color: #fff;
+}
+
+body.dropmini-page .dm-colourways-heading > p {
+    max-width: 500px;
+    margin: 0;
+    color: rgba(255,255,255,.74);
+    line-height: 1.8;
+}
+
+body.dropmini-page .dm-colour-viewer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+body.dropmini-page .dm-colour-feature {
+    position: relative;
+    min-width: 0;
+    min-height: 590px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 24px;
+    background: rgba(9,28,53,.12);
+    box-shadow: 0 22px 55px rgba(11,46,91,.16);
+}
+
+body.dropmini-page .dm-colour-feature > img {
+    display: block;
+    width: 100%;
+    height: 590px;
+    object-fit: cover;
+    object-position: center;
+    cursor: zoom-in;
+}
+
+body.dropmini-page .dm-colour-feature figcaption {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+    padding: .95rem 1.1rem;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 16px;
+    color: #fff;
+    background: rgba(9,25,46,.78);
+    backdrop-filter: blur(12px);
+}
+
+body.dropmini-page .dm-colour-feature figcaption strong {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+body.dropmini-page .dm-colour-feature figcaption span {
+    color: rgba(255, 255, 255, .62);
+    font-size: .76rem;
+}
+
+body.dropmini-page .dm-colour-thumbs {
+    min-width: 0;
+    display: grid;
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+    gap: .65rem;
+}
+
+body.dropmini-page .dm-colour-thumb {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 68px minmax(0, 1fr);
+    align-items: center;
+    gap: .75rem;
+    padding: .45rem;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 14px;
+    color: rgba(255,255,255,.78);
+    background: rgba(255,255,255,.095);
+    box-shadow: none;
+    overflow: hidden;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background .18s ease,
+        box-shadow .18s ease;
+}
+
+body.dropmini-page .dm-colour-thumb img {
+    width: 68px;
+    height: 68px;
+    display: block;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+body.dropmini-page .dm-colour-thumb span {
+    min-width: 0;
+    color: inherit;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+body.dropmini-page .dm-colour-thumb:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255,255,255,.38);
+    background: rgba(255,255,255,.15);
+}
+
+body.dropmini-page .dm-colour-thumb.active {
+    color: #fff;
+    border-color: rgba(255,255,255,.72);
+    background: rgba(255,255,255,.18);
+    box-shadow: 0 10px 24px rgba(13,49,95,.13);
+}
+
+/* =========================================================
+   PROJECT NAV
+   Shared button visuals/background come from category-page.css.
+   ========================================================= */
+
+body.dropmini-page .project-navigation {
+    padding: 3rem 0;
+    border-top: 1px solid var(--dm-line);
+}
+
+body.dropmini-page .project-navigation .nav-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 1rem;
+}
+
+body.dropmini-page .nav-btn.next {
+    justify-self: end;
+}
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+body.dropmini-page .dm-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .9);
+}
+
+body.dropmini-page .dm-lightbox.is-open {
+    display: flex;
+}
+
+body.dropmini-page #dm-lightbox-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 82vh;
+    border-radius: 16px;
+    object-fit: contain;
+}
+
+body.dropmini-page .dm-lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
 @media (max-width: 1100px) {
+    body.dropmini-page {
+        --dm-gutter: 2.5rem;
+    }
+
     body.dropmini-page .dm-form-media {
         grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+    body.dropmini-page .dm-colourways-heading {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    body.dropmini-page .dm-colourways-heading > p {
+        max-width: 720px;
+    }
+
+    body.dropmini-page .dm-colour-viewer {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-colour-thumbs {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: none;
+    }
+
+    body.dropmini-page .dm-colour-thumb {
+        grid-template-columns: 1fr;
+        gap: .45rem;
+        text-align: center;
+    }
+
+    body.dropmini-page .dm-colour-thumb img {
+        width: 100%;
+        height: 84px;
+    }
+}
+
+@media (max-width: 980px) {
+    body.dropmini-page .dm-form {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-form-copy {
+        max-width: 700px;
+    }
+
     body.dropmini-page .dm-form-media {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    body.dropmini-page {
+        --dm-gutter: 1.5rem;
+    }
+
+    body.dropmini-page .dm-hero,
+    body.dropmini-page .dm-story {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-hero {
+        min-height: auto;
+        padding-inline: var(--dm-gutter);
+    }
+
+    body.dropmini-page .dm-hero-product {
+        min-height: 430px;
+    }
+
+    body.dropmini-page .dm-story-copy {
+        justify-self: start;
+    }
+
+    body.dropmini-page .dm-spec-ribbon-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 1rem;
+    }
+
+    body.dropmini-page .dm-spec-ribbon article:nth-child(odd) {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    body.dropmini-page .dm-ripples {
+        left: 50%;
+        bottom: 5.5%;
+        width: 72%;
+        height: 122px;
+    }
+}
+
+@media (max-width: 720px) {
+    body.dropmini-page .dm-colour-feature,
+    body.dropmini-page .dm-colour-feature > img {
+        min-height: 390px;
+        height: 390px;
+    }
+
+    body.dropmini-page .dm-colour-thumbs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    body.dropmini-page .dm-colour-thumb img {
+        height: 76px;
     }
 }
 
 @media (max-width: 700px) {
     body.dropmini-page .dm-form-media {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    body.dropmini-page {
+        --dm-gutter: 1rem;
+    }
+
+    body.dropmini-page .dm-hero h1 {
+        font-size: clamp(3.8rem, 16vw, 5rem);
+    }
+
+    body.dropmini-page .dm-hero-actions {
+        flex-direction: column;
+    }
+
+    body.dropmini-page .dm-button {
+        width: 100%;
+    }
+
+    body.dropmini-page .dm-spec-ribbon-inner {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-spec-ribbon article,
+    body.dropmini-page .dm-spec-ribbon article:nth-child(odd) {
+        padding: .9rem 0;
+        border-left: 0;
+        border-top: 1px solid var(--dm-line);
+    }
+
+    body.dropmini-page .dm-spec-ribbon article:first-child {
+        border-top: 0;
+    }
+
+    body.dropmini-page .project-navigation .nav-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .nav-btn.next {
+        justify-self: start;
+    }
+
+    body.dropmini-page .dm-ripples {
+        left: 50%;
+        bottom: 5%;
+        width: 82%;
+        height: 108px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.dropmini-page .dm-colour-thumbs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.dropmini-page .dm-ripples::before,
+    body.dropmini-page .dm-ripples::after,
+    body.dropmini-page .dm-ripples span {
+        animation: none !important;
     }
 }

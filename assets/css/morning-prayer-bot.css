@@ -163,11 +163,11 @@ body.morning-prayer-page .mpb-button-secondary:hover {
 /* Hero */
 body.morning-prayer-page .hero.mpb-hero {
     position: relative;
-    min-height: var(--project-hero-min-height);
+    min-height: var(--project-hero-min-height, max(760px, 100svh));
     display: flex;
-    align-items: var(--project-hero-align, center);
+    align-items: var(--project-hero-align, flex-start);
     overflow: hidden;
-    padding: var(--project-hero-padding-top) 0 var(--project-hero-padding-bottom);
+    padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
     color: var(--mpb-text);
     text-align: left;
     background:
@@ -207,7 +207,7 @@ body.morning-prayer-page .mpb-hero h1 {
     max-width: 760px;
     margin: .85rem 0 1.5rem;
     color: var(--mpb-text);
-    font-size: var(--project-hero-title-size);
+    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
     font-weight: 680;
     line-height: .92;
     letter-spacing: -.072em;
