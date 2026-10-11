@@ -239,11 +239,11 @@ body.soct-page .soct-button-secondary:hover {
 /* Hero */
 body.soct-page .soct-hero {
     position: relative;
-    min-height: max(760px, 100svh);
+    min-height: var(--project-hero-min-height, max(760px, 100svh));
     display: flex;
-    align-items: center;
+    align-items: var(--project-hero-align, center);
     isolation: isolate;
-    padding: 9rem 0 5.5rem;
+    padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
     overflow: hidden;
     background:
         linear-gradient(90deg, rgba(2, 6, 11, .9) 0%, rgba(2, 7, 13, .65) 46%, rgba(2, 7, 13, .22) 100%),
@@ -291,7 +291,7 @@ body.soct-page .soct-hero h1 {
     margin: .85rem 0 1.5rem;
     color: var(--soct-text);
     font-family: "EB Garamond", Georgia, serif;
-    font-size: clamp(4.2rem, 8.3vw, 8.8rem);
+    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
     font-weight: 600;
     line-height: .82;
     letter-spacing: -.065em;

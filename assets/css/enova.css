@@ -186,11 +186,11 @@ body.enova-page .button-secondary:hover {
 /* Hero */
 body.enova-page .enova-hero {
     position: relative;
-    min-height: max(760px, 100svh);
+    min-height: var(--project-hero-min-height);
     display: flex;
-    align-items: center;
+    align-items: var(--project-hero-align-items);
     overflow: hidden;
-    padding: 9rem 0 5.5rem;
+    padding: var(--project-hero-padding-top) 0 var(--project-hero-padding-bottom);
     color: var(--enova-ink);
     text-align: left;
     background:
@@ -224,7 +224,7 @@ body.enova-page .enova-hero-copy {
 body.enova-page .enova-hero h1 {
     margin: 0;
     color: var(--enova-ink);
-    font-size: clamp(3.75rem, 6.8vw, 7.4rem);
+    font-size: var(--project-hero-title-size);
     font-weight: 750;
     line-height: .86;
     letter-spacing: -.075em;

@@ -63,16 +63,16 @@ body.dropmini-page h2 {
 
 /* HERO */
 body.dropmini-page .dm-hero {
-    min-height: 76vh;
+    min-height: var(--project-hero-min-height);
     display: grid;
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    align-items: center;
+    align-items: var(--project-hero-align-items);
     gap: 3rem;
 
     padding:
-        7rem
+        var(--project-hero-padding-top)
         max(var(--dm-gutter), calc((100vw - var(--dm-width)) / 2))
-        3.5rem;
+        var(--project-hero-padding-bottom);
 
     overflow: hidden;
 
@@ -94,7 +94,7 @@ body.dropmini-page .dm-hero h1 {
     margin: 0;
     color: var(--dm-ink);
     font-family: "Manrope", "Inter", sans-serif;
-    font-size: clamp(5rem, 7vw, 7.9rem);
+    font-size: var(--project-hero-title-size);
     font-weight: 500;
     line-height: .87;
     letter-spacing: -.078em;

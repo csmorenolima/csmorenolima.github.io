@@ -51,12 +51,12 @@ body.s360-page .s360-kicker {
 /* HERO */
 body.s360-page .s360-hero {
     position: relative;
-    min-height: 100svh;
+    min-height: var(--project-hero-min-height);
     display: flex;
-    align-items: end;
+    align-items: var(--project-hero-align-items);
     isolation: isolate;
     overflow: hidden;
-    padding: 9rem 0 4.5rem;
+    padding: var(--project-hero-padding-top) 0 var(--project-hero-padding-bottom);
     background: #090a0c;
 }
 
@@ -196,7 +196,7 @@ body.s360-page .s360-logo {
 body.s360-page .s360-hero h1 {
     margin: 0;
     color: #fff;
-    font-size: clamp(4.9rem, 11vw, 10rem);
+    font-size: var(--project-hero-title-size);
     font-weight: 700;
     line-height: .75;
     letter-spacing: -.08em;
@@ -980,6 +980,8 @@ body.s360-page .s360-lightbox-close {
 @media (max-width: 720px) {
     body.s360-page .s360-hero {
         min-height: 850px;
+
+        align-items: end;
         padding: 8rem 0 3.5rem;
     }
 

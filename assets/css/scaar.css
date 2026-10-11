@@ -50,12 +50,12 @@ body.scaar-page .nomad-kicker {
 
 body.scaar-page .nomad-hero {
     position: relative;
-    min-height: 92svh;
+    min-height: var(--project-hero-min-height);
     display: flex;
-    align-items: end;
+    align-items: var(--project-hero-align-items);
     isolation: isolate;
     overflow: hidden;
-    padding: 9rem 0 4.5rem;
+    padding: var(--project-hero-padding-top) 0 var(--project-hero-padding-bottom);
     color: var(--nomad-white);
     background: #131515;
 }
@@ -118,7 +118,7 @@ body.scaar-page .nomad-hero-copy {
 
 body.scaar-page .nomad-hero h1 {
     margin: 0;
-    font-size: clamp(5.8rem, 16vw, 12.5rem);
+    font-size: var(--project-hero-title-size);
     font-weight: 700;
     line-height: .72;
     letter-spacing: -.085em;
@@ -750,6 +750,8 @@ body.scaar-page #gallery-lightbox-desc {
 @media (max-width: 720px) {
   body.scaar-page .nomad-hero {
       min-height: 820px;
+
+      align-items: end;
       padding: 8rem 0 3.5rem;
   }
 

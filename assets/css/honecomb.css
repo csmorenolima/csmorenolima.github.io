@@ -41,12 +41,12 @@ body.honecomb-page h3 {
 
 .hc-hero {
     position: relative;
-    min-height: 94svh;
+    min-height: var(--project-hero-min-height);
     display: flex;
-    align-items: end;
+    align-items: var(--project-hero-align-items);
     isolation: isolate;
     overflow: hidden;
-    padding: 9rem 0 4.5rem;
+    padding: var(--project-hero-padding-top) 0 var(--project-hero-padding-bottom);
     color: white;
     background: #18201a
 }
@@ -100,7 +100,7 @@ body.honecomb-page h3 {
 
 .hc-hero h1 {
     margin: .6rem 0 0;
-    font-size: clamp(5rem, 11vw, 9.5rem);
+    font-size: var(--project-hero-title-size);
     line-height: .8;
     letter-spacing: -.075em
 }
@@ -540,6 +540,8 @@ body.honecomb-page h3 {
 @media(max-width:700px) {
     .hc-hero {
         min-height: 820px;
+
+        align-items: end;
         padding: 8rem 0 3.5rem
     }
 

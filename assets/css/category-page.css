@@ -1255,3 +1255,23 @@ body[data-category="soct"] .character-portrait {
     background: var(--project-eyebrow-color);
     border-radius: 999px;
 }
+
+/* =========================================================
+   SHARED PROJECT HERO TOKENS — SO:CT REFERENCE
+
+   SO:CT itself is intentionally left untouched and remains
+   the visual source of truth.
+
+   Other project pages opt into these values from their own
+   hero selectors. This keeps each project's own font, colour,
+   imagery, grid and responsive structure intact.
+   ========================================================= */
+
+:root {
+    --project-hero-min-height: max(760px, 100svh);
+    --project-hero-align: center;
+    --project-hero-padding-top: 9rem;
+    --project-hero-padding-bottom: 5.5rem;
+    --project-hero-title-size: clamp(4.2rem, 8.3vw, 8.8rem);
+}
+
