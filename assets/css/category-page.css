@@ -1260,11 +1260,11 @@ body[data-category="soct"] .character-portrait {
    ========================================================= */
 
 :root {
-    --project-hero-min-height: max(760px, 100svh);
+    --project-hero-min-height: 100svh;
     --project-hero-align: flex-start;
-    --project-hero-padding-top: 9rem;
-    --project-hero-padding-bottom: 5.5rem;
-    --project-hero-title-size: clamp(4.2rem, 8.3vw, 8.8rem);
+    --project-hero-padding-top: clamp(6rem, 12svh, 9rem);
+    --project-hero-padding-bottom: clamp(3rem, 7svh, 5.5rem);
+    --project-hero-title-size: clamp(4rem, min(8.3vw, 10.5svh), 8.8rem);
 
     /* Match the horizontal content edge created by the shared
        .container used by SO:CT: 1200px outer width + 2rem inner inset. */
@@ -1278,6 +1278,90 @@ body[data-category="soct"] .character-portrait {
         )
     );
 }
+
+/* =========================================================
+   SHARED PROJECT HERO TEMPLATE
+   Opt-in with .project-hero + .project-hero-frame + .project-hero-grid.
+   Project CSS keeps only project-specific colour, imagery and typography.
+   ========================================================= */
+
+:root {
+    --project-hero-grid-columns: minmax(0, 1.05fr) minmax(370px, .72fr);
+    --project-hero-grid-gap: clamp(3rem, 8vw, 8rem);
+    --project-hero-grid-align: start;
+    --project-hero-copy-width: 760px;
+    --project-hero-visual-width: 520px;
+    --project-hero-visual-height: clamp(320px, 56svh, 560px);
+    --project-hero-visual-focus-x: 50%;
+    --project-hero-visual-focus-y: 44%;
+}
+
+.project-hero {
+    position: relative;
+    width: 100%;
+    height: var(--project-hero-min-height, 100svh);
+    min-height: var(--project-hero-min-height, 100svh);
+    max-height: var(--project-hero-min-height, 100svh);
+    display: flex;
+    align-items: var(--project-hero-align, flex-start);
+    justify-content: flex-start;
+    padding: var(--project-hero-padding-top, clamp(6rem, 12svh, 9rem)) 0
+             var(--project-hero-padding-bottom, clamp(3rem, 7svh, 5.5rem));
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.project-hero-frame {
+    width: min(var(--project-hero-content-width, 1200px), 100%);
+    max-width: var(--project-hero-content-width, 1200px);
+    margin-inline: auto;
+    padding-inline: var(--project-hero-content-gutter, 2rem);
+    box-sizing: border-box;
+}
+
+.project-hero-grid {
+    display: grid;
+    grid-template-columns: var(--project-hero-grid-columns);
+    gap: var(--project-hero-grid-gap);
+    align-items: var(--project-hero-grid-align);
+}
+
+.project-hero-copy {
+    width: 100%;
+    max-width: var(--project-hero-copy-width);
+}
+
+.project-hero-visual {
+    width: min(100%, var(--project-hero-visual-width));
+    min-height: var(--project-hero-visual-height, clamp(320px, 56svh, 560px));
+    justify-self: center;
+    align-self: start;
+}
+
+@media (max-width: 1080px) {
+    .project-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-hero-visual {
+        justify-self: start;
+    }
+}
+
+@media (max-width: 640px) {
+    .project-hero {
+        height: auto;
+        min-height: auto;
+        max-height: none;
+        padding-top: 8.25rem;
+        padding-bottom: 5rem;
+    }
+
+    .project-hero-frame {
+        padding-inline: 1rem;
+    }
+}
+
 
 /* =========================================================
    SHARED PROJECT NAVIGATION

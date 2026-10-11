@@ -162,12 +162,7 @@ body.morning-prayer-page .mpb-button-secondary:hover {
 
 /* Hero */
 body.morning-prayer-page .hero.mpb-hero {
-    position: relative;
-    min-height: var(--project-hero-min-height, max(760px, 100svh));
-    display: flex;
-    align-items: var(--project-hero-align, flex-start);
     overflow: hidden;
-    padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
     color: var(--mpb-text);
     text-align: left;
     background:
@@ -190,24 +185,20 @@ body.morning-prayer-page .hero.mpb-hero::before {
     pointer-events: none;
 }
 
-body.morning-prayer-page .mpb-hero-grid {
+body.morning-prayer-page .container.mpb-hero-grid {
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: minmax(0, 1.02fr) minmax(390px, .82fr);
-    gap: clamp(3rem, 8vw, 8rem);
-    align-items: center;
 }
 
 body.morning-prayer-page .mpb-hero-copy {
-    max-width: 720px;
+    max-width: var(--project-hero-copy-width, 760px);
 }
 
 body.morning-prayer-page .mpb-hero h1 {
     max-width: 760px;
-    margin: .85rem 0 1.5rem;
+    margin: 0 0 1.5rem;
     color: var(--mpb-text);
-    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
+    font-size: var(--project-hero-title-size, clamp(4rem, min(8.3vw, 10.5svh), 8.8rem));
     font-weight: 680;
     line-height: .92;
     letter-spacing: -.072em;
@@ -591,9 +582,6 @@ body.morning-prayer-page .project-navigation .nav-btn i {
 
 /* Responsive */
 @media (max-width: 1080px) {
-    body.morning-prayer-page .mpb-hero-grid {
-        grid-template-columns: 1fr;
-    }
 
     
 
@@ -665,15 +653,6 @@ body.morning-prayer-page .project-navigation .nav-btn i {
 }
 
 @media (max-width: 640px) {
-
-    body.morning-prayer-page .hero.mpb-hero {
-        min-height: auto;
-        padding: 8.25rem 0 5rem;
-    }
-
-    body.morning-prayer-page .mpb-hero h1 {
-        font-size: clamp(3rem, 16vw, 4.8rem);
-    }
 
     body.morning-prayer-page .mpb-hero-actions {
         display: grid;
@@ -771,6 +750,7 @@ body.morning-prayer-page {
     --mpb-soft: #eef2f7;
     --mpb-orange: #ff7418;
     --mpb-orange-soft: #ff9a52;
+    --project-eyebrow-color: var(--mpb-orange-soft);
     --mpb-navy: #02224b;
     --mpb-blue: #3b82c4;
     --mpb-green: #25d366;
@@ -822,11 +802,6 @@ body.morning-prayer-page .hero.mpb-hero::before {
     background-size: 78px 78px;
 }
 
-body.morning-prayer-page .mpb-hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(430px, .92fr);
-    gap: clamp(3rem, 7vw, 7rem);
-}
-
 body.morning-prayer-page .mpb-hero h1 span {
     display: block;
     color: var(--mpb-orange);
@@ -834,7 +809,6 @@ body.morning-prayer-page .mpb-hero h1 span {
 
 body.morning-prayer-page .mpb-bot-stage {
     position: relative;
-    min-height: 590px;
     isolation: isolate;
 }
 
@@ -852,8 +826,8 @@ body.morning-prayer-page .mpb-bot-character {
     position: absolute;
     width: min(94%, 610px);
     height: auto;
-    left: 50%;
-    top: 46%;
+    left: var(--project-hero-visual-focus-x, 50%);
+    top: var(--project-hero-visual-focus-y, 44%);
     z-index: 2;
     transform: translate(-50%, -50%);
     filter: drop-shadow(0 30px 36px rgba(0, 5, 15, .34));
@@ -868,8 +842,8 @@ body.morning-prayer-page .mpb-bot-eyes {
     position: absolute;
     width: min(94%, 610px);
     aspect-ratio: 1448 / 1086;
-    left: 50%;
-    top: 46%;
+    left: var(--project-hero-visual-focus-x, 50%);
+    top: var(--project-hero-visual-focus-y, 44%);
     z-index: 3;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -991,19 +965,14 @@ body.morning-prayer-page .project-navigation .nav-btn:focus-visible {
 }
 
 @media (max-width: 1080px) {
-    body.morning-prayer-page .mpb-hero-grid {
+    body.morning-prayer-page .container.mpb-hero-grid {
         grid-template-columns: 1fr;
-    }
-
-    body.morning-prayer-page .mpb-bot-stage {
-        width: min(100%, 720px);
-        min-height: 570px;
     }
 }
 
 @media (max-width: 640px) {
     body.morning-prayer-page .mpb-bot-stage {
-        min-height: 430px;
+        --project-hero-visual-height: 430px;
         margin-top: 1rem;
     }
 
@@ -1015,7 +984,6 @@ body.morning-prayer-page .project-navigation .nav-btn:focus-visible {
     body.morning-prayer-page .mpb-bot-character,
     body.morning-prayer-page .mpb-bot-eyes {
         width: 100%;
-        top: 44%;
     }
 
     
