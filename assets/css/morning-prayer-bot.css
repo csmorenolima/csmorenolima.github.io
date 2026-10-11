@@ -206,18 +206,18 @@ body.morning-prayer-page .mpb-hero h1 {
 }
 
 body.morning-prayer-page .mpb-hero-summary {
-    max-width: 700px;
+    max-width: 680px;
     margin: 0;
     color: var(--mpb-soft);
-    font-size: clamp(1.05rem, 1.45vw, 1.25rem);
-    line-height: 1.72;
+    font-size: clamp(1rem, 1.3vw, 1.16rem);
+    line-height: 1.62;
 }
 
 body.morning-prayer-page .mpb-hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: .85rem;
-    margin-top: 2.2rem;
+    margin-top: 1.65rem;
 }
 
 
@@ -740,6 +740,7 @@ body.morning-prayer-page .project-navigation .nav-btn i {
    Orange, deep navy and off-white are derived from the bot.
 ========================================================= */
 body.morning-prayer-page {
+    --project-hero-logo-width: 150px;
     --mpb-bg: #03162f;
     --mpb-bg-deep: #010913;
     --mpb-bg-soft: #082448;
@@ -824,7 +825,7 @@ body.morning-prayer-page .mpb-bot-halo {
 
 body.morning-prayer-page .mpb-bot-character {
     position: absolute;
-    width: min(94%, 610px);
+    width: min(100%, 620px);
     height: auto;
     left: var(--project-hero-visual-focus-x, 50%);
     top: var(--project-hero-visual-focus-y, 44%);
@@ -840,7 +841,7 @@ body.morning-prayer-page .mpb-bot-character {
    1448 × 1086 source image. */
 body.morning-prayer-page .mpb-bot-eyes {
     position: absolute;
-    width: min(94%, 610px);
+    width: min(100%, 620px);
     aspect-ratio: 1448 / 1086;
     left: var(--project-hero-visual-focus-x, 50%);
     top: var(--project-hero-visual-focus-y, 44%);

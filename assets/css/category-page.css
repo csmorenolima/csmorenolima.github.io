@@ -1314,16 +1314,20 @@ body[data-category="soct"] .character-portrait {
 .project-hero-frame {
     width: min(var(--project-hero-content-width, 1200px), 100%);
     max-width: var(--project-hero-content-width, 1200px);
+    align-self: stretch;
+    display: flex;
+    align-items: center;
     margin-inline: auto;
     padding-inline: var(--project-hero-content-gutter, 2rem);
     box-sizing: border-box;
 }
 
 .project-hero-grid {
+    width: 100%;
     display: grid;
     grid-template-columns: var(--project-hero-grid-columns);
     gap: var(--project-hero-grid-gap);
-    align-items: var(--project-hero-grid-align);
+    align-items: center;
 }
 
 .project-hero-copy {
@@ -1331,11 +1335,28 @@ body[data-category="soct"] .character-portrait {
     max-width: var(--project-hero-copy-width);
 }
 
+.project-hero-corner-logo {
+    position: absolute;
+    z-index: 3;
+    /* Keep corner branding below the fixed site header while still
+       sitting above the hero eyebrow/title stack. */
+    top: max(6rem, calc(var(--project-hero-padding-top, 9rem) - 2.5rem));
+    left: clamp(1rem, 2.5vw, 2.75rem);
+    width: min(var(--project-hero-logo-width, 170px), 28vw);
+    max-height: 72px;
+    display: block;
+    object-fit: contain;
+    object-position: left center;
+    filter: brightness(0) invert(1);
+    pointer-events: none;
+}
+
 .project-hero-visual {
     width: min(100%, var(--project-hero-visual-width));
-    min-height: var(--project-hero-visual-height, clamp(320px, 56svh, 560px));
+    height: var(--project-hero-visual-height, clamp(320px, 56svh, 560px));
+    min-height: 0;
     justify-self: center;
-    align-self: start;
+    align-self: center;
 }
 
 @media (max-width: 1080px) {
@@ -1359,6 +1380,12 @@ body[data-category="soct"] .character-portrait {
 
     .project-hero-frame {
         padding-inline: 1rem;
+    }
+
+    .project-hero-corner-logo {
+        top: 5.75rem;
+        left: 1rem;
+        width: min(var(--project-hero-logo-width, 150px), 38vw);
     }
 }
 
