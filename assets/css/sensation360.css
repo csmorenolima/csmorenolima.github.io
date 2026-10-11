@@ -13,6 +13,7 @@ body.s360-page {
     --s360-muted: #a6a8b2;
     --s360-muted-dark: #6f727d;
     --s360-pink: #ff6bd0;
+    --project-eyebrow-color: var(--s360-pink);
     --s360-magenta: #c73dff;
     --s360-violet: #6856ff;
     --s360-cyan: #57d7ff;
@@ -181,8 +182,14 @@ body.s360-page .s360-logo {
     max-height: 60px;
     object-fit: contain;
     object-position: left center;
-    margin-bottom: 1.1rem;
     filter: brightness(0) invert(1);
+}
+
+body.s360-page .s360-logo-corner {
+    position: absolute;
+    z-index: 2;
+    top: calc(var(--project-hero-padding-top, 9rem) - 2.75rem);
+    left: clamp(1.25rem, 2.5vw, 2.75rem);
 }
 
 body.s360-page .s360-hero h1 {
@@ -955,6 +962,11 @@ body.s360-page .s360-colour-viewer {
 }
 
 @media (max-width: 720px) {
+    body.s360-page .s360-logo-corner {
+        left: 1rem;
+        width: 150px;
+    }
+
     body.s360-page .s360-hero {
         min-height: 850px;
         align-items: end;
