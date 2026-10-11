@@ -1293,7 +1293,31 @@ body[data-category="soct"] .character-portrait {
 }
 
 .project-navigation {
+    position: relative !important;
+    z-index: 2 !important;
+    margin: 0 !important;
+    padding: 3rem 0 4.5rem !important;
+    border-top: 1px solid rgba(255, 255, 255, .08) !important;
     background: var(--project-navigation-background) !important;
+}
+
+.project-navigation .nav-buttons {
+    width: min(1200px, calc(100% - 4rem)) !important;
+    max-width: 1200px !important;
+    margin-inline: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: center !important;
+    gap: 1rem !important;
+}
+
+.project-navigation .nav-btn.back {
+    justify-self: start !important;
+}
+
+.project-navigation .nav-btn.next {
+    justify-self: end !important;
+    text-align: right !important;
 }
 
 /* =========================================================
@@ -1428,9 +1452,18 @@ body.brightup-page {
 }
 
 @media (max-width: 640px) {
-    .project-navigation .nav-btn {
+    .project-navigation .nav-buttons {
+        width: min(100% - 2rem, 1200px) !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .project-navigation .nav-btn,
+    .project-navigation .nav-btn.back,
+    .project-navigation .nav-btn.next {
         width: 100% !important;
+        justify-self: stretch !important;
         justify-content: space-between !important;
+        text-align: left !important;
     }
 }
 

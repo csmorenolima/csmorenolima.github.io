@@ -2138,14 +2138,6 @@ body.enova-page .video-embed iframe {
         height: 220px;
 
     }
-body.enova-page .footer-bottom {
-
-        align-items: flex-start;
-
-        flex-direction: column;
-
-    }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
