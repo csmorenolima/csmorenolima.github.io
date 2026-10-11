@@ -5,6 +5,7 @@ body.honecomb-page {
     --sage: #edf2e9;
     --bamboo: #c89b60;
     --bamboo-light: #ead4ad;
+    --project-eyebrow-color: var(--bamboo-light);
     --paper: #f4f2eb;
     --muted: #70766f;
     --line: rgba(29, 35, 30, .14);
@@ -80,7 +81,12 @@ body.honecomb-page h3 {
     background-size: 54px 94px
 }
 
-.hc-hero-grid {
+body.honecomb-page .container.hc-hero-grid {
+    width: min(var(--project-hero-content-width, 1200px), 100%);
+    max-width: var(--project-hero-content-width, 1200px);
+    margin-inline: auto;
+    padding-inline: var(--project-hero-content-gutter, 2rem);
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
@@ -94,8 +100,17 @@ body.honecomb-page h3 {
 .hc-logo {
     width: 180px;
     max-height: 60px;
+    display: block;
     object-fit: contain;
+    object-position: left center;
     filter: brightness(0) invert(1)
+}
+
+.hc-logo-corner {
+    position: absolute;
+    z-index: 2;
+    top: calc(var(--project-hero-padding-top, 9rem) - 2.75rem);
+    left: clamp(1.25rem, 2.5vw, 2.75rem);
 }
 
 .hc-hero h1 {
@@ -609,17 +624,12 @@ body.honecomb-page h3 {
 }
 
 @media(max-width:700px) {
-    .hc-hero {
-        min-height: 820px;
-        align-items: end;
-        padding: 8rem 0 3.5rem
+    .hc-logo-corner {
+        left: 1rem;
+        width: 150px;
     }
 
-    .hc-hero h1 {
-        font-size: clamp(4.8rem, 23vw, 7rem)
-    }
-
-    .hc-feature-grid,
+.hc-feature-grid,
     .hc-gallery-head,
     .hc-gallery-grid,
     .hc-spec-grid,

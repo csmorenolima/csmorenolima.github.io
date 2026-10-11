@@ -1232,14 +1232,17 @@ body[data-category="soct"] .character-portrait {
     margin-top: 0;
 }
 
-/* Shared decorative eyebrow line for project heroes */
+/* Shared decorative eyebrow line for project heroes.
+   Project CSS may only override --project-eyebrow-color. */
 .project-eyebrow-line {
     display: block;
+    flex: 0 0 auto;
     width: 56px;
     height: 2px;
     margin: 0 0 1.8rem;
-    background: var(--project-eyebrow-color);
+    border: 0;
     border-radius: 999px;
+    background: var(--project-eyebrow-color);
 }
 
 /* =========================================================
