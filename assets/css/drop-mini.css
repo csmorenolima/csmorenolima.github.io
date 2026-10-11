@@ -63,16 +63,16 @@ body.dropmini-page h2 {
 
 /* HERO */
 body.dropmini-page .dm-hero {
-    min-height: var(--project-hero-min-height);
+    min-height: var(--project-hero-min-height, max(760px, 100svh));
     display: grid;
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    align-items: var(--project-hero-align-items);
+    align-items: var(--project-hero-align, center);
     gap: 3rem;
 
     padding:
-        var(--project-hero-padding-top)
-        max(var(--dm-gutter), calc((100vw - var(--dm-width)) / 2))
-        var(--project-hero-padding-bottom);
+        var(--project-hero-padding-top, 9rem)
+        var(--project-hero-content-inset, max(2rem, calc((100vw - 1200px) / 2 + 2rem)))
+        var(--project-hero-padding-bottom, 5.5rem);
 
     overflow: hidden;
 
@@ -94,7 +94,7 @@ body.dropmini-page .dm-hero h1 {
     margin: 0;
     color: var(--dm-ink);
     font-family: "Manrope", "Inter", sans-serif;
-    font-size: var(--project-hero-title-size);
+    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
     font-weight: 500;
     line-height: .87;
     letter-spacing: -.078em;

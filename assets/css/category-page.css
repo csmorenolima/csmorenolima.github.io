@@ -1259,19 +1259,34 @@ body[data-category="soct"] .character-portrait {
 /* =========================================================
    SHARED PROJECT HERO TOKENS — SO:CT REFERENCE
 
-   SO:CT itself is intentionally left untouched and remains
-   the visual source of truth.
+   SO:CT remains the visual source of truth.
 
-   Other project pages opt into these values from their own
-   hero selectors. This keeps each project's own font, colour,
-   imagery, grid and responsive structure intact.
+   The hero content is top-anchored inside the shared 9rem /
+   5.5rem vertical frame so short heroes (such as NOMAD) do
+   not drift downward simply because their content block is
+   shorter than SO:CT's.
+
+   Project pages still keep their own font, colour, imagery,
+   grid and responsive structure.
    ========================================================= */
 
 :root {
     --project-hero-min-height: max(760px, 100svh);
-    --project-hero-align: center;
+    --project-hero-align: flex-start;
     --project-hero-padding-top: 9rem;
     --project-hero-padding-bottom: 5.5rem;
     --project-hero-title-size: clamp(4.2rem, 8.3vw, 8.8rem);
+
+    /* Match the horizontal content edge created by the shared
+       .container used by SO:CT: 1200px outer width + 2rem inner inset. */
+    --project-hero-content-width: 1200px;
+    --project-hero-content-gutter: 2rem;
+    --project-hero-content-inset: max(
+        var(--project-hero-content-gutter),
+        calc(
+            (100vw - var(--project-hero-content-width)) / 2
+            + var(--project-hero-content-gutter)
+        )
+    );
 }
 
