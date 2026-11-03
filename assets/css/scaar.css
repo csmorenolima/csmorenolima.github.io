@@ -10,6 +10,7 @@ body.scaar-page {
     --nomad-paper-soft: #f5f2eb;
     --nomad-white: #fffdf9;
     --nomad-rust: #a35f2e;
+    --project-eyebrow-color: #d9ae82;
     --nomad-rust-dark: #74401f;
     --nomad-sand: #c7a77e;
     --nomad-line: rgba(23, 25, 26, .16);
@@ -49,13 +50,7 @@ body.scaar-page .nomad-kicker {
    ========================================================= */
 
 body.scaar-page .nomad-hero {
-    position: relative;
-    min-height: var(--project-hero-min-height, max(760px, 100svh));
-    display: flex;
-    align-items: var(--project-hero-align, flex-start);
     isolation: isolate;
-    overflow: hidden;
-    padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
     color: var(--nomad-white);
     background: #131515;
 }
@@ -97,6 +92,7 @@ body.scaar-page .nomad-hero::after {
 }
 
 body.scaar-page .nomad-hero-inner {
+    width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 4rem;
@@ -595,23 +591,12 @@ body.scaar-page #gallery-lightbox-desc {
 }
 
 @media (max-width: 720px) {
-  body.scaar-page .nomad-hero {
-      min-height: 820px;
-
-      align-items: end;
-      padding: 8rem 0 3.5rem;
-  }
-
   body.scaar-page .nomad-hero-image {
       background-position: 62% center;
   }
 
   body.scaar-page .nomad-hero-shade {
     background: linear-gradient(180deg,rgba(10,12,12,.48), rgba(10,12,12,.7) 45%,rgba(10,12,12,.94));
-  }
-
-  body.scaar-page .nomad-hero h1 {
-      font-size: clamp(5.2rem, 28vw, 8rem);
   }
 
   body.scaar-page .nomad-hero-logo {
@@ -1459,10 +1444,3 @@ body.scaar-page .nomad-kicker {
 
 
 /* SCAAR hero eyebrow line */
-body.scaar-page .nomad-hero-copy {
-    --project-eyebrow-color: #d9ae82;
-}
-
-body.scaar-page .nomad-hero-copy .project-eyebrow-line {
-    margin-bottom: 2rem;
-}

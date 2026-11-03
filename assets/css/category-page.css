@@ -1262,7 +1262,7 @@ body[data-category="soct"] .character-portrait {
 :root {
     --project-hero-min-height: 100svh;
     --project-hero-align: flex-start;
-    --project-hero-padding-top: clamp(6rem, 12svh, 9rem);
+    --project-hero-padding-top: 9rem;
     --project-hero-padding-bottom: clamp(3rem, 7svh, 5.5rem);
     --project-hero-title-size: clamp(4rem, min(8.3vw, 10.5svh), 8.8rem);
 
@@ -1305,7 +1305,7 @@ body[data-category="soct"] .character-portrait {
     display: flex;
     align-items: var(--project-hero-align, flex-start);
     justify-content: flex-start;
-    padding: var(--project-hero-padding-top, clamp(6rem, 12svh, 9rem)) 0
+    padding: var(--project-hero-padding-top, 9rem) 0
              var(--project-hero-padding-bottom, clamp(3rem, 7svh, 5.5rem));
     overflow: hidden;
     box-sizing: border-box;
@@ -1316,7 +1316,7 @@ body[data-category="soct"] .character-portrait {
     max-width: var(--project-hero-content-width, 1200px);
     align-self: stretch;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-inline: auto;
     padding-inline: var(--project-hero-content-gutter, 2rem);
     box-sizing: border-box;
@@ -1382,7 +1382,8 @@ body[data-category="soct"] .character-portrait {
         padding-inline: 1rem;
     }
 
-    .project-hero-corner-logo {
+    
+.project-hero-corner-logo {
         top: 5.75rem;
         left: 1rem;
         width: min(var(--project-hero-logo-width, 150px), 38vw);

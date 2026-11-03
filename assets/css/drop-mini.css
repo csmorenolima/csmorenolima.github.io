@@ -13,6 +13,7 @@ body.dropmini-page {
     --dm-width: 1480px;
     --dm-gutter: 4.5rem;
     --project-eyebrow-color: var(--dm-blue);
+    --project-hero-logo-width: 135px;
 
     margin: 0;
     color: var(--dm-ink);
@@ -35,17 +36,6 @@ body.dropmini-page .dm-eyebrow {
     color: var(--project-eyebrow-color);
 }
 
-/* Drop Mini keeps its small decorative hero rule as a page-specific detail. */
-body.dropmini-page .dm-eyebrow::before {
-    content: "";
-    display: inline-block;
-    width: 28px;
-    height: 1px;
-    margin-right: .6rem;
-    vertical-align: middle;
-    background: currentColor;
-}
-
 body.dropmini-page h2 {
     margin: 0;
     color: var(--dm-ink);
@@ -61,28 +51,28 @@ body.dropmini-page h2 {
    ========================================================= */
 
 body.dropmini-page .dm-hero {
-    min-height: var(--project-hero-min-height, max(760px, 100svh));
-    display: grid;
-    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    align-items: var(--project-hero-align, flex-start);
-    gap: 3rem;
-    padding:
-        var(--project-hero-padding-top, 9rem)
-        var(--project-hero-content-inset, max(2rem, calc((100vw - 1200px) / 2 + 2rem)))
-        var(--project-hero-padding-bottom, 5.5rem);
-    overflow: hidden;
     background:
-        radial-gradient(circle at 83% 17%, rgba(76, 158, 227, .19), transparent 24rem),
-        radial-gradient(circle at 15% 78%, rgba(152, 222, 246, .13), transparent 26rem),
-        linear-gradient(145deg, #ffffff 0%, #f7fbff 50%, #e9f4fd 100%);
+        linear-gradient(
+            180deg,
+            rgba(52, 123, 216, .42) 0%,
+            rgba(92, 151, 221, .24) 14%,
+            rgba(160, 198, 235, .10) 30%,
+            rgba(248, 251, 255, 0) 48%
+        ),
+        linear-gradient(
+            135deg,
+            #eef5fc 0%,
+            #e8f1fb 52%,
+            #dceafb 100%
+        );
+}
+
+body.dropmini-page .dm-hero-grid {
+    width: 100%;
 }
 
 body.dropmini-page .dm-hero-copy {
-    max-width: 620px;
-}
-
-body.dropmini-page .dm-eyebrow {
-    margin-bottom: 1.25rem;
+    max-width: var(--project-hero-copy-width, 760px);
 }
 
 body.dropmini-page .dm-hero h1 {
@@ -101,7 +91,7 @@ body.dropmini-page .dm-hero h1 span {
 
 body.dropmini-page .dm-hero-line {
     margin: 1.15rem 0 1rem;
-    color: #6884a7;
+    color: #5d7390;
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(1.8rem, 2.2vw, 2.4rem);
     line-height: 1.05;
@@ -110,7 +100,7 @@ body.dropmini-page .dm-hero-line {
 body.dropmini-page .dm-hero-intro {
     max-width: 525px;
     margin: 0;
-    color: var(--dm-muted);
+    color: #586d86;
     font-size: 1rem;
     line-height: 1.75;
 }
@@ -154,7 +144,6 @@ body.dropmini-page .dm-button-secondary {
 
 body.dropmini-page .dm-hero-product {
     position: relative;
-    min-height: 520px;
     display: grid;
     place-items: center;
 }
@@ -830,18 +819,8 @@ body.dropmini-page .dm-lightbox-close {
         --dm-gutter: 1.5rem;
     }
 
-    body.dropmini-page .dm-hero,
     body.dropmini-page .dm-story {
         grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-hero {
-        min-height: auto;
-        padding-inline: var(--dm-gutter);
-    }
-
-    body.dropmini-page .dm-hero-product {
-        min-height: 430px;
     }
 
     body.dropmini-page .dm-story-copy {
@@ -891,10 +870,6 @@ body.dropmini-page .dm-lightbox-close {
 @media (max-width: 620px) {
     body.dropmini-page {
         --dm-gutter: 1rem;
-    }
-
-    body.dropmini-page .dm-hero h1 {
-        font-size: clamp(3.8rem, 16vw, 5rem);
     }
 
     body.dropmini-page .dm-hero-actions {

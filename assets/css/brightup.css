@@ -7,6 +7,8 @@ body.brightup-page {
     --bu-ink: #0e1b35;
     --bu-ink-soft: #17284b;
     --bu-blue: #2677ff;
+    --project-eyebrow-color: var(--bu-yellow);
+    --project-hero-logo-width: 180px;
     --bu-blue-dark: #1457c7;
     --bu-sky: #dfeeff;
     --bu-sky-soft: #f3f8ff;
@@ -53,13 +55,7 @@ body.brightup-page .brightup-kicker {
    ========================================================= */
 
 body.brightup-page .brightup-hero {
-    position: relative;
-    min-height: var(--project-hero-min-height, max(760px, 100svh));
-    display: flex;
-    align-items: var(--project-hero-align, flex-start);
     isolation: isolate;
-    overflow: hidden;
-    padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
     color: #fff;
     background:
         radial-gradient(circle at 82% 24%, rgba(38, 119, 255, .28), transparent 28rem),
@@ -80,6 +76,7 @@ body.brightup-page .brightup-hero::before {
 }
 
 body.brightup-page .brightup-hero-grid {
+    width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(360px, .72fr);
     gap: clamp(3rem, 7vw, 7rem);
@@ -87,16 +84,10 @@ body.brightup-page .brightup-hero-grid {
 }
 
 body.brightup-page .brightup-hero-copy {
-    max-width: 760px;
+    max-width: var(--project-hero-copy-width, 760px);
 }
 
 body.brightup-page .brightup-logo {
-    display: block;
-    width: min(230px, 52vw);
-    max-height: 82px;
-    object-fit: contain;
-    object-position: left center;
-    margin-bottom: 1.4rem;
     filter: brightness(0) invert(1);
 }
 
@@ -180,7 +171,6 @@ body.brightup-page .brightup-mantra span {
 
 body.brightup-page .brightup-hero-visual {
     position: relative;
-    min-height: 600px;
     display: grid;
     place-items: center;
 }
@@ -841,7 +831,6 @@ body.brightup-page #brightup-lightbox-caption {
     }
 
     body.brightup-page .brightup-hero-visual {
-        min-height: 520px;
         justify-items: start;
     }
 
@@ -882,15 +871,6 @@ body.brightup-page #brightup-lightbox-caption {
 }
 
 @media (max-width: 720px) {
-    body.brightup-page .brightup-hero {
-        min-height: auto;
-        padding: 8rem 0 5rem;
-    }
-
-    body.brightup-page .brightup-hero-visual {
-        min-height: 470px;
-    }
-
     body.brightup-page .brightup-phone {
         width: min(330px, 94%);
         transform: none;
