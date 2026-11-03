@@ -45,8 +45,8 @@ body[data-category="soct"] .hero,
 }
 
 /* Enova category hero */
-body[data-category="health"] .hero,
-.hero.health {
+body[data-category="enova"] .hero,
+.hero.enova {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
     url('../enova-app.jpg') center/cover;
 }

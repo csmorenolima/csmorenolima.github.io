@@ -769,7 +769,6 @@ body.scaar-page .nomad-anatomy-notes {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     margin-top: 1.4rem;
-    border-top: 1px solid var(--nomad-line);
     border-bottom: 1px solid var(--nomad-line);
 }
 
