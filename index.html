@@ -1,24 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Carla Sofia Lima - Portfolio</title>
-    <meta name="description" content="DevOps Engineer and Product Designer. I design and build systems like websites and apps, making sure they run smoother than butter." />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Carla Sofia Lima - Portfolio" />
-    <meta property="og:description" content="DevOps Engineer and Product Designer. I design and build systems like websites and apps." />
-    <meta property="og:site_name" content="Carla Sofia Lima" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carla Sofia Lima - Portfolio</title>
+<meta content="DevOps Engineer and Product Designer. I design and build systems like websites and apps, making sure they run smoother than butter." name="description">
+<meta content="en_US" property="og:locale">
+<meta content="website" property="og:type"/>
+<meta content="Carla Sofia Lima - Portfolio" property="og:title"/>
+<meta content="DevOps Engineer and Product Designer. I design and build systems like websites and apps." property="og:description"/>
+<meta content="Carla Sofia Lima" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" referrerpolicy="no-referrer" rel="stylesheet">
+<style>
         :root{
             --primary-color: #6366f1;
             --secondary-color: #8b5cf6;
@@ -808,266 +805,228 @@
             padding: 20px;
             }
     </style>
-</head>
-
+</link></meta></meta><link href="/assets/css/theme.css" rel="stylesheet"/><link href="/assets/css/site-consistency.css" rel="stylesheet"/></head>
 <body>
-    <!-- Page Wrapper for Ultimate Dots Background -->
-    <div class="page-wrapper">
-        <!-- Ultimate Dots Background for Entire Page -->
-        <canvas id="interactive-bg"></canvas>
-
-        <!-- Header -->
-        <header class="header">
-        <nav class="nav">
-            <a href="/portfolioHome.html" class="logo">PORTFOLIO |</a>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li class="nav-projects-dropdown">
-                    <a href="#" aria-haspopup="true" aria-expanded="false">MY WORK <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="/Landing/product-design-landing.html" role="menuitem">Product Design</a></li>
-                        <li><a href="/Landing/engineering-landing.html" role="menuitem">Engineering</a></li>
-                    </ul>
-                </li>
-                <li><a href="#contact">CONNECT</a></li>
-            </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content fade-in-up">
-                <h1>Carla Sofia Lima</h1>
-                <p class="hero-quote">"Dreams can become creativity's greatest tool, in the unconscious mind one is no longer subject to reality"</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text" style="text-align: justify;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1rem;"><strong>Last updated:</strong> 04 Oct 2026</h4>
-                    <p >I'm a <strong>DevOps Engineer</strong><i>(...In case you're wondering that means, I help bridge the gap between software development <–> IT operations by treamlining automated workflows, facilitating continuous deployment and enhancing team collaboration to deliver at pace).</i></italics></p>
-                    <br>
-                    <p>When I'm not optimising infrastructure or streamlining deployment pipelines, you'll find me exploring creative projects and pushing the boundaries of what's possible with technology.</p>
-
-                </div>
-                <div class="about-image">
-                    <img src="/assets/aboutMePhoto.jpg" alt="Carla Sofia Lima" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Read More Dropdown Section -->
-            <div class="read-more-section">
-                <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.5rem;">
-                    <hr style="flex:1;border:none;height:2px;background:#8b5cf6;">
-                    <div class="read-more-toggle" onclick="toggleReadMore()" style="white-space:nowrap;">
-                        <span id="readMoreLabel">Read More</span>
-                        <i id="readMoreIcon" class="fas fa-chevron-down"></i>
-                    </div>
-                    <hr style="flex:1;border:none;height:2px;background:#8b5cf6;">
-                </div>
-
-                <div id="readMoreContent" class="read-more-content">
-                    <div class="read-more-inner">
-                        <h4 style="color: var(--primary-color); text-align: center; margin: 2rem 0 2rem 0;">All Things 🔸Design & 🔹Tech</h4>
-
-                        <div class="two-column-content">
-                            <div class="column">
-                                <h5 style="color: var(--secondary-color); margin: 0 0 1rem 0; font-size:1.3rem; font-weight:700; text-align:center;">Creativity Meets Technical Innovation</h5>
-                                <p>My career journey began with Product Design, where I focused on creating tangible and intangible products that were not only aesthetically pleasing but also functional. This foundation in design led me to Engineering, where I gained the technical expertise to build reliable and efficient systems capable of growing on demand.</p>
-                                <br>
-                                <p>Today, as a DevOps Engineer, I combine user-centric design thinking, engineering and agile to create automated and reliable systems that empower.</p>
-                                <br>
-                                <p>Each role in my career has been a building block, broadening my skill set and allowing me to approach challenges from a holistic perspective. By blending creativity with technical expertise to deliver solutions that don't just work – but work better.</p>
-                            </div>
-
-                            <div class="column">
-                                <h5 style="color: var(--secondary-color); margin: 0 0 1rem 0; font-size:1.3rem; font-weight:700; text-align:center;">Always Evolving...</h5>
-                                <p>The world of technology is ever evolving and I have made a commitment to grow right alongside it.</p>
-                                <br>
-                                <p>I enjoy keeping my creativity alive, expressing it through side projects that challenge my problem-solving skills and ability to think outside the box. From experimenting with upcycling in design to refining my approach for system optimisation, these experiences enable me to integrate my technical and creative passions in meaningful ways.</p>
-                                <br>
-                                <p>My growth mindset makes me eager to break knowledge barriers and learn new technologies to stay at the up to date with industry trends.</p>
-                                <br>
-                                <p>For me, growth isn't simply about adding the next skill to the toolbox – it's about being bold, open to adaptation, staying curious to improve the way one approaches challenges. There is no finishing line...and that's the beauty.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> DevOps & Infrastructure</h3>
-                    <ul class="skill-list">
-                        <li>Docker</li>
-                        <li>Azure</li>
-                        <li>CI/CD Pipelines</li>
-                        <li>Infrastructure as Code</li>
-                        <li>Automation & Integration</li>
-                        <li>Monitoring (Grafana)</li>
-                        <li>Security & Compliance</li>
-                        <li>Linux Environments</li>
-                        <li>Agile</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Development</h3>
-                    <ul class="skill-list">
-                        <li>JavaScript</li>
-                        <li>Java & Spring</li>
-                        <li>React & Node.js</li>
-                        <li>API Development</li>
-                        <li>Version Control (Git)</li>
-                        <li>SQL & NoSQL Databases</li>
-                        <li>TDD & Testing (Jest)</li>
-                        <li>Design Patterns (SOLID, MVC)</li>
-                        <li>Maven & Build Tools</li>
-                        <li>Responsive Web Design</li>
-                        <li>Entity Relationship Diagrams</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-palette"></i> Design</h3>
-                    <ul class="skill-list">
-                        <li>Product Design</li>
-                        <li>User Experience(UX)/User Interface(UI)</li>
-                        <li>Prototyping</li>
-                        <li>3D Modelling</li>
-                        <li>User-Centered Design</li>
-                        <li>Design Thinking</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Here are some the projects that I am most proud, showcasing my skills in DevOps, development and design</p>
-
-            <div class="featured-grid">
-                <!-- SCAAR Project -->
-                <div class="featured-item">
-                    <div class="video-container">
-                        <video controls playsinline preload="metadata">
-                            <source src="https://www.dropbox.com/scl/fi/y6r4cuyvvjtb7pq2sh7fz/JCPD8428.MP4?rlkey=idrhxijjjmb01450pukablggd&raw=1" type="video/mp4">
+<!-- Page Wrapper for Ultimate Dots Background -->
+<div class="page-wrapper">
+<!-- Ultimate Dots Background for Entire Page -->
+<canvas id="interactive-bg"></canvas>
+<!-- Header -->
+<header class="header">
+<nav aria-label="Primary navigation" class="nav">
+<a aria-label="Carla Sofia Lima portfolio home" class="logo" href="/#home">PORTFOLIO |</a>
+<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu" class="mobile-menu-btn" type="button"><i aria-hidden="true" class="fas fa-bars"></i></button>
+<ul class="nav-links" id="primary-navigation">
+<li><a href="/#home">Home</a></li>
+<li><a href="/#about">About</a></li>
+<li class="nav-projects-dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" type="button">My work <i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<ul aria-label="Project categories" class="dropdown-menu">
+<li><a data-nav-category="product" href="/Landing/product-design-landing.html">Product design</a></li>
+<li><a data-nav-category="engineering" href="/Landing/engineering-landing.html">Engineering</a></li>
+</ul>
+</li>
+<li><a href="/#contact">Connect</a></li>
+</ul>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content fade-in-up">
+<h1>Carla Sofia Lima</h1>
+<p class="hero-quote">"Dreams can become creativity's greatest tool, in the unconscious mind one is no longer subject to reality"</p>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="section about" id="about">
+<div class="container">
+<h2 class="section-title">About Me</h2>
+<div class="about-content">
+<div class="about-text" style="text-align: justify;">
+<h3 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1rem;"><strong>Last updated:</strong> 04 Oct 2026
+<p>I'm a <strong>DevOps Engineer</strong><i>(...In case you're wondering that means, I help bridge the gap between software development &lt;–&gt; IT operations by treamlining automated workflows, facilitating continuous deployment and enhancing team collaboration to deliver at pace).</i></p>
+<br/>
+<p>When I'm not optimising infrastructure or streamlining deployment pipelines, you'll find me exploring creative projects and pushing the boundaries of what's possible with technology.</p>
+</h3></div>
+<div class="about-image">
+<img alt="Carla Sofia Lima" loading="lazy" src="/assets/aboutMePhoto.jpg"/>
+</div>
+</div>
+<!-- Read More Dropdown Section -->
+<div class="read-more-section">
+<div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.5rem;">
+<hr style="flex:1;border:none;height:2px;background:#8b5cf6;"/>
+<div class="read-more-toggle" onclick="toggleReadMore()" style="white-space:nowrap;">
+<span id="readMoreLabel">Read More</span>
+<i class="fas fa-chevron-down" id="readMoreIcon"></i>
+</div>
+<hr style="flex:1;border:none;height:2px;background:#8b5cf6;"/>
+</div>
+<div class="read-more-content" id="readMoreContent">
+<div class="read-more-inner">
+<h4 style="color: var(--primary-color); text-align: center; margin: 2rem 0 2rem 0;">All Things 🔸Design &amp; 🔹Tech</h4>
+<div class="two-column-content">
+<div class="column">
+<h5 style="color: var(--secondary-color); margin: 0 0 1rem 0; font-size:1.3rem; font-weight:700; text-align:center;">Creativity Meets Technical Innovation</h5>
+<p>My career journey began with Product Design, where I focused on creating tangible and intangible products that were not only aesthetically pleasing but also functional. This foundation in design led me to Engineering, where I gained the technical expertise to build reliable and efficient systems capable of growing on demand.</p>
+<br/>
+<p>Today, as a DevOps Engineer, I combine user-centric design thinking, engineering and agile to create automated and reliable systems that empower.</p>
+<br/>
+<p>Each role in my career has been a building block, broadening my skill set and allowing me to approach challenges from a holistic perspective. By blending creativity with technical expertise to deliver solutions that don't just work – but work better.</p>
+</div>
+<div class="column">
+<h5 style="color: var(--secondary-color); margin: 0 0 1rem 0; font-size:1.3rem; font-weight:700; text-align:center;">Always Evolving...</h5>
+<p>The world of technology is ever evolving and I have made a commitment to grow right alongside it.</p>
+<br/>
+<p>I enjoy keeping my creativity alive, expressing it through side projects that challenge my problem-solving skills and ability to think outside the box. From experimenting with upcycling in design to refining my approach for system optimisation, these experiences enable me to integrate my technical and creative passions in meaningful ways.</p>
+<br/>
+<p>My growth mindset makes me eager to break knowledge barriers and learn new technologies to stay at the up to date with industry trends.</p>
+<br/>
+<p>For me, growth isn't simply about adding the next skill to the toolbox – it's about being bold, open to adaptation, staying curious to improve the way one approaches challenges. There is no finishing line...and that's the beauty.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="section">
+<div class="container">
+<h2 class="section-title">Skills &amp; Expertise</h2>
+<div class="skills-grid">
+<div class="skill-category">
+<h3><i class="fas fa-server"></i> DevOps &amp; Infrastructure</h3>
+<ul class="skill-list">
+<li>Docker</li>
+<li>Azure</li>
+<li>CI/CD Pipelines</li>
+<li>Infrastructure as Code</li>
+<li>Automation &amp; Integration</li>
+<li>Monitoring (Grafana)</li>
+<li>Security &amp; Compliance</li>
+<li>Linux Environments</li>
+<li>Agile</li>
+</ul>
+</div>
+<div class="skill-category">
+<h3><i class="fas fa-code"></i> Development</h3>
+<ul class="skill-list">
+<li>JavaScript</li>
+<li>Java &amp; Spring</li>
+<li>React &amp; Node.js</li>
+<li>API Development</li>
+<li>Version Control (Git)</li>
+<li>SQL &amp; NoSQL Databases</li>
+<li>TDD &amp; Testing (Jest)</li>
+<li>Design Patterns (SOLID, MVC)</li>
+<li>Maven &amp; Build Tools</li>
+<li>Responsive Web Design</li>
+<li>Entity Relationship Diagrams</li>
+</ul>
+</div>
+<div class="skill-category">
+<h3><i class="fas fa-palette"></i> Design</h3>
+<ul class="skill-list">
+<li>Product Design</li>
+<li>User Experience(UX)/User Interface(UI)</li>
+<li>Prototyping</li>
+<li>3D Modelling</li>
+<li>User-Centered Design</li>
+<li>Design Thinking</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects Section -->
+<section class="section" id="projects">
+<div class="container">
+<h2 class="section-title">Featured Projects</h2>
+<p class="section-subtitle">Here are some the projects that I am most proud, showcasing my skills in DevOps, development and design</p>
+<div class="featured-grid">
+<!-- SCAAR Project -->
+<div class="featured-item">
+<div class="video-container">
+<video controls="" playsinline="" preload="metadata">
+<source src="https://www.dropbox.com/scl/fi/y6r4cuyvvjtb7pq2sh7fz/JCPD8428.MP4?rlkey=idrhxijjjmb01450pukablggd&amp;raw=1" type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>
-                    </div>
-                    <div class="featured-content">
-                        <h3 class="featured-title">SCAAR – NOMAD</h3>
-                        <p class="featured-description">Advanced product design and development project featuring innovative user experience and modern design principles.</p>
-                    </div>
-                </div>
-
-                <!-- Scrolls of Odyssey -->
-                <div class="featured-item">
-                    <div class="featured-image soct-image" style="background-image: url('/assets/so-ct-hero.jpeg')">
-                        <div class="logo-overlay">
-                            <img src="/assets/so-ct-thumbnail.png" alt="SOCT Logo" class="soct-logo">
-                        </div>
-                    </div>
-                    <div class="featured-content">
-                        <h3 class="featured-title">Scrolls of Odyssey: Call to TarragØn</h3>
-                        <p class="featured-description">Adventure game demo showcasing interactive storytelling and immersive gameplay mechanics.</p>
-                    </div>
-                </div>
-
-                <!-- ENOVA -->
-                <div class="featured-item">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/OIWOaEc2Id4" title="ENOVA APP WALKTHROUGH" allowfullscreen></iframe>
-                    </div>
-                    <div class="featured-content">
-                        <h3 class="featured-title">ENOVA</h3>
-                        <p class="featured-description">Mobile application walkthrough demonstrating user interface design and functionality.</p>
-                    </div>
-                </div>
-
-                <!-- BASS Sensation 360 -->
-                <div class="featured-item">
-                    <div class="featured-image" style="background-image: url('/assets/bassSensation360-cool-grey.jpg')"></div>
-                    <div class="featured-content">
-                        <h3 class="featured-title">BASS – Sensation 360</h3>
-                        <p class="featured-description">Product design and development of innovative audio technology with 360-degree sound experience.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-    <div style="width:100vw; margin-left:calc(-50vw + 50%); background: linear-gradient(90deg, #8b5cf6 0%, #6366f1 100%); padding: 1.5rem 0 1.2rem 0; margin-bottom:0; text-align:center;">
-        <h2 class="section-title" style="color: #fff; margin-bottom: 0.5rem;">Let's Collaborate!</h2>
-        <p class="section-subtitle" style="color: #fff; margin-bottom: 1.2rem;">I'm always interested in new opportunities and exciting projects.</p>
-        <div class="contact-links" style="display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; margin-top:0;">
-            <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:rgba(255,255,255,0.15);color:#fff;border-radius:32px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(99,102,241,0.10);transition:background 0.2s;">
-                <i class="fab fa-linkedin-in" style="color:#fff;"></i>
-                <span>Connect on LinkedIn</span>
-            </a>
-            <a href="https://github.com/csmorenolima" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:rgba(255,255,255,0.15);color:#fff;border-radius:32px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(99,102,241,0.10);transition:background 0.2s;">
-                <i class="fab fa-github" style="color:#fff;"></i>
-                <span>View GitHub</span>
-            </a>
-        </div>
-    </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <p>Learning Together, Growing Together.</p>
-                </div>
-
-                <div class="footer-section">
-                    <h3>OfficialMV</h3>
-                    <span>
-                    <a href="https://www.redbubble.com/people/Carla0520/shop" target="_blank">RedBubble</a>
-                    <a href="https://www.instagram.com/officialmorenovalentim/" target="_blank">Instagram</a>
-                    <a href="https://www.tiktok.com/@officialmorenovalentim" target="_blank">TikTok</a>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Social</h3>
-                    <a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/csmorenolima" target="_blank">GitHub</a>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; COPYRIGHT 2026 . ALL RIGHTS RESERVED</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- External JavaScript Files -->
-    <script src="/assets/js/dots-background.js"></script>
-    <script src="/assets/js/navigation.js"></script>
-    <script src="/assets/js/form-handlers.js"></script>
-
-        <!-- Active B-Blob Button -->
-        <button id="activePlayBtn" aria-label="Activate B-Blob mode" style="
+</div>
+<div class="featured-content">
+<h3 class="featured-title">SCAAR – NOMAD</h3>
+<p class="featured-description">Advanced product design and development project featuring innovative user experience and modern design principles.</p>
+</div>
+</div>
+<!-- Scrolls of Odyssey -->
+<div class="featured-item">
+<div class="featured-image soct-image" style="background-image: url('/assets/so-ct-hero.jpeg')">
+<div class="logo-overlay">
+<img alt="SOCT Logo" class="soct-logo" src="/assets/so-ct-thumbnail.png"/>
+</div>
+</div>
+<div class="featured-content">
+<h3 class="featured-title">Scrolls of Odyssey: Call to TarragØn</h3>
+<p class="featured-description">Adventure game demo showcasing interactive storytelling and immersive gameplay mechanics.</p>
+</div>
+</div>
+<!-- ENOVA -->
+<div class="featured-item">
+<div class="video-container">
+<iframe allowfullscreen="" src="https://www.youtube.com/embed/OIWOaEc2Id4" title="ENOVA APP WALKTHROUGH"></iframe>
+</div>
+<div class="featured-content">
+<h3 class="featured-title">ENOVA</h3>
+<p class="featured-description">Mobile application walkthrough demonstrating user interface design and functionality.</p>
+</div>
+</div>
+<!-- BASS Sensation 360 -->
+<div class="featured-item">
+<div class="featured-image" style="background-image: url('/assets/bassSensation360-cool-grey.jpg')"></div>
+<div class="featured-content">
+<h3 class="featured-title">BASS – Sensation 360</h3>
+<p class="featured-description">Product design and development of innovative audio technology with 360-degree sound experience.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="section" id="contact">
+<div style="width:100vw; margin-left:calc(-50vw + 50%); background: linear-gradient(90deg, #8b5cf6 0%, #6366f1 100%); padding: 1.5rem 0 1.2rem 0; margin-bottom:0; text-align:center;">
+<h2 class="section-title" style="color: #fff; margin-bottom: 0.5rem;">Let's Collaborate!</h2>
+<p class="section-subtitle" style="color: #fff; margin-bottom: 1.2rem;">I'm always interested in new opportunities and exciting projects.</p>
+<div class="contact-links" style="display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; margin-top:0;">
+<a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:rgba(255,255,255,0.15);color:#fff;border-radius:32px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(99,102,241,0.10);transition:background 0.2s;" target="_blank">
+<i class="fab fa-linkedin-in" style="color:#fff;"></i>
+<span>Connect on LinkedIn</span>
+</a>
+<a href="https://github.com/csmorenolima" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:rgba(255,255,255,0.15);color:#fff;border-radius:32px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(99,102,241,0.10);transition:background 0.2s;" target="_blank">
+<i class="fab fa-github" style="color:#fff;"></i>
+<span>View GitHub</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section footer-intro"><a class="footer-brand" href="/#home">Carla Sofia Lima</a><p>Learning together, growing together.</p></div>
+<div class="footer-section"><h3>OfficialMV</h3><a href="https://www.redbubble.com/people/Carla0520/shop" rel="noopener noreferrer" target="_blank">RedBubble</a><a href="https://www.instagram.com/officialmorenovalentim/" rel="noopener noreferrer" target="_blank">Instagram</a><a href="https://www.tiktok.com/@officialmorenovalentim" rel="noopener noreferrer" target="_blank">TikTok</a></div>
+<div class="footer-section"><h3>Social</h3><a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" rel="noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/csmorenolima" rel="noopener noreferrer" target="_blank">GitHub</a></div>
+</div>
+<div class="footer-bottom"><p>© <span id="current-year"></span> Carla Sofia Lima. All rights reserved.</p></div>
+</div>
+</footer>
+<!-- External JavaScript Files -->
+<script src="/assets/js/dots-background.js"></script>
+<script src="/assets/js/navigation.js"></script>
+<script src="/assets/js/form-handlers.js"></script>
+<!-- Active B-Blob Button -->
+<button aria-label="Activate B-Blob mode" id="activePlayBtn" style="
                 position: fixed;
                 bottom: 20px;
                 right: 20px;
@@ -1087,9 +1046,8 @@
         ">
             Activate B-Blob
         </button>
-    <script src="/assets/js/b-blob.js"></script>
-
-    <script>
+<script src="/assets/js/b-blob.js"></script>
+<script>
         function toggleReadMore() {
             const content = document.getElementById('readMoreContent');
             const label = document.getElementById('readMoreLabel');
@@ -1108,8 +1066,6 @@
             }
         }
     </script>
-    </div> <!-- End page-wrapper -->
-
-</body>
-
+</div> <!-- End page-wrapper -->
+<script src="/assets/js/site-components.js"></script></body>
 </html>

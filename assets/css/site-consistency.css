@@ -1,0 +1,336 @@
+/* =========================================================
+   PORTFOLIO CONSISTENCY LAYER
+   Loaded last on every page.
+   Keeps project identity (colour, imagery, display type) while
+   standardising shared mechanics and component dimensions.
+   ========================================================= */
+
+:root {
+  --site-content-width: 1200px;
+  --site-wide-width: 1480px;
+  --site-gutter: 2rem;
+  --site-gutter-mobile: 1rem;
+  --site-section-space: clamp(5rem, 8vw, 8rem);
+  --site-radius-sm: 12px;
+  --site-radius-md: 22px;
+  --site-radius-lg: 28px;
+  --site-control-size: 46px;
+  --site-control-duration: 200ms;
+  --site-control-ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* One global shell */
+.header { opacity: 1 !important; }
+.nav {
+  width: min(100%, var(--site-content-width));
+  min-height: 72px;
+  margin-inline: auto;
+  padding: .9rem var(--site-gutter);
+}
+.logo { letter-spacing: -.04em; }
+.nav-links { align-items: center; gap: clamp(1.1rem, 2.4vw, 2rem); }
+.dropdown-toggle { white-space: nowrap; }
+
+/* Shared section rhythm */
+.section,
+body.enova-page .section,
+body.morning-prayer-page .mpb-section {
+  padding-top: var(--site-section-space);
+  padding-bottom: var(--site-section-space);
+}
+
+/* Shared project / section eyebrow treatment */
+.project-eyebrow,
+body.dropmini-page .dm-kicker,
+body.dropmini-page .dm-eyebrow,
+body.brightup-page .brightup-kicker,
+body.scaar-page .nomad-kicker,
+body.enova-page .eyebrow,
+.hc-kicker,
+body.s360-page .s360-kicker,
+body.morning-prayer-page .mpb-eyebrow {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 .8rem;
+  font-size: .72rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+body.enova-page .eyebrow::before,
+body.morning-prayer-page .mpb-eyebrow::before { display: none; }
+
+/* Shared project hero frame: same vertical rhythm, project art remains unique. */
+.project-hero,
+body.enova-page .enova-hero,
+.hc-hero,
+body.s360-page .s360-hero {
+  min-height: 100svh;
+  box-sizing: border-box;
+  padding-top: var(--project-hero-padding-top, 9rem);
+  padding-bottom: var(--project-hero-padding-bottom, clamp(3rem, 7svh, 5.5rem));
+}
+
+/* One CTA geometry. Project styles still own colour/background. */
+.project-button,
+body.dropmini-page .dm-button,
+body.brightup-page .brightup-button,
+body.scaar-page .nomad-button,
+body.enova-page .button,
+.hc-btn,
+body.s360-page .s360-cta,
+body.morning-prayer-page .mpb-button,
+body[data-category="product-design-landing"] .hero-cta,
+body[data-category="engineering"] .hero-cta,
+.cta-button {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .68rem;
+  padding: .82rem 1.22rem;
+  border-radius: 999px;
+  font-size: .84rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  transition: transform var(--site-control-duration) var(--site-control-ease),
+              background-color var(--site-control-duration) var(--site-control-ease),
+              border-color var(--site-control-duration) var(--site-control-ease),
+              box-shadow var(--site-control-duration) var(--site-control-ease),
+              opacity var(--site-control-duration) var(--site-control-ease);
+}
+.project-button:hover,
+body.dropmini-page .dm-button:hover,
+body.brightup-page .brightup-button:hover,
+body.scaar-page .nomad-button:hover,
+body.enova-page .button:hover,
+.hc-btn:hover,
+body.s360-page .s360-cta:hover,
+body.morning-prayer-page .mpb-button:hover,
+body[data-category="product-design-landing"] .hero-cta:hover,
+body[data-category="engineering"] .hero-cta:hover,
+.cta-button:hover { transform: translateY(-2px); }
+
+/* Project-colour tokens used by shared carousel controls. */
+body.dropmini-page { --carousel-accent: var(--dm-blue, #347bd8); }
+body.brightup-page { --carousel-accent: var(--bu-yellow, #ffd95a); }
+body.scaar-page { --carousel-accent: var(--nomad-rust, #a35f2e); }
+body.enova-page { --carousel-accent: var(--enova-accent, #76558f); }
+body.honecomb-page { --carousel-accent: var(--forest, #2f6d45); }
+body.s360-page { --carousel-accent: var(--s360-pink, #ff6bd0); }
+body[data-category="product-design-landing"] { --carousel-accent: var(--pd-accent, #f59e0b); }
+body[data-category="engineering"] { --carousel-accent: var(--eng-accent, #2f8f6b); }
+
+/* Insight carousel family: BrightUP / NOMAD / ENOVA / HonEcomb */
+.carousel--insight,
+.brightup-insight-carousel,
+.nomad-impact-carousel,
+body.enova-page .impact-carousel,
+.hc-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--site-radius-lg);
+}
+.brightup-insight-controls,
+.nomad-impact-footer,
+body.enova-page .impact-controls,
+.hc-controls {
+  min-height: 68px;
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) auto;
+  align-items: center;
+  gap: .8rem;
+  padding: .7rem 1rem;
+}
+/* Autoplay is intentionally disabled in the updated system. */
+.brightup-carousel-button.toggle,
+.nomad-impact-toggle,
+body.enova-page .impact-toggle { display: none !important; }
+
+.carousel--insight .carousel__button,
+.brightup-carousel-button.previous,
+.brightup-carousel-button.next,
+.nomad-impact-arrow.previous,
+.nomad-impact-arrow.next,
+body.enova-page .impact-prev,
+body.enova-page .impact-next,
+.hc-controls > .prev,
+.hc-controls > .next {
+  width: var(--site-control-size) !important;
+  height: var(--site-control-size) !important;
+  min-width: var(--site-control-size);
+  min-height: var(--site-control-size);
+  padding: 0 !important;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--carousel-accent) 35%, transparent) !important;
+  border-radius: 50% !important;
+  background: color-mix(in srgb, var(--carousel-accent) 12%, white) !important;
+  color: color-mix(in srgb, var(--carousel-accent) 84%, #111) !important;
+  cursor: pointer;
+  transition: transform var(--site-control-duration) var(--site-control-ease),
+              background-color var(--site-control-duration) var(--site-control-ease),
+              opacity var(--site-control-duration) var(--site-control-ease);
+}
+.carousel--insight .carousel__button:hover,
+.brightup-carousel-button.previous:hover,
+.brightup-carousel-button.next:hover,
+.nomad-impact-arrow.previous:hover,
+.nomad-impact-arrow.next:hover,
+body.enova-page .impact-prev:hover,
+body.enova-page .impact-next:hover,
+.hc-controls > .prev:hover,
+.hc-controls > .next:hover {
+  transform: translateY(-1px);
+  background: var(--carousel-accent) !important;
+  color: #fff !important;
+}
+
+.brightup-carousel-dots,
+.nomad-impact-dots,
+body.enova-page .impact-dots,
+.hc-controls .dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .48rem;
+}
+.brightup-carousel-dot,
+.nomad-impact-dot,
+body.enova-page .impact-dot,
+.hc-controls .dots button {
+  width: 8px !important;
+  height: 8px !important;
+  min-width: 8px !important;
+  min-height: 8px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--carousel-accent) 30%, transparent) !important;
+  transition: width 180ms ease, background-color 180ms ease;
+}
+.brightup-carousel-dot.active,
+.nomad-impact-dot.active,
+body.enova-page .impact-dot.is-active,
+body.enova-page .impact-dot.active,
+.hc-controls .dots button.active,
+.brightup-carousel-dot[aria-current="true"],
+.nomad-impact-dot[aria-current="true"] {
+  width: 24px !important;
+  background: var(--carousel-accent) !important;
+}
+
+/* Landing project rails
+   Keep the original landing-page control treatment: one tall previous/next
+   control attached to each project row. Product Design and Engineering own
+   their palette while sharing the same geometry in their page styles. */
+
+/* Shared card geometry across both landing pages. */
+body[data-category="product-design-landing"] .project-card,
+body[data-category="engineering"] .project-card {
+  border-radius: var(--site-radius-md);
+}
+body[data-category="product-design-landing"] .project-image-wrap,
+body[data-category="engineering"] .project-image-wrap { overflow: hidden; }
+
+/* Lightbox/dialog presentation: interaction stays page-specific, appearance is shared. */
+.dm-lightbox,
+.brightup-lightbox,
+.gallery-lightbox-overlay,
+.hc-lightbox,
+body.s360-page .s360-lightbox {
+  background: rgba(3,7,18,.92) !important;
+  backdrop-filter: blur(12px);
+}
+.dm-lightbox img,
+.brightup-lightbox-content img,
+.gallery-lightbox-content img,
+.hc-lightbox img,
+body.s360-page .s360-lightbox-content img,
+.media-dialog img {
+  border-radius: 16px !important;
+  box-shadow: 0 30px 90px rgba(0,0,0,.38);
+}
+.dm-lightbox-close,
+.brightup-lightbox-close,
+.gallery-lightbox-close,
+.hc-lightbox button,
+body.s360-page .s360-lightbox-close,
+.dialog-close {
+  width: var(--site-control-size);
+  height: var(--site-control-size);
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  border-radius: 50% !important;
+  background: rgba(15,23,42,.72) !important;
+  color: #fff !important;
+  font-size: 1.45rem !important;
+  line-height: 1;
+}
+
+/* One footer geometry on every page. */
+.footer { padding: 3rem 0 1rem !important; }
+.footer .container { width: min(100%, var(--site-content-width)); margin-inline: auto; padding-inline: var(--site-gutter); }
+.footer-content { align-items: start; }
+.footer-brand { font-weight: 700; }
+
+/* Keyboard focus is consistent and visible. */
+:where(a,button,[tabindex]):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--carousel-accent, var(--primary-color, #6366f1)) 62%, white);
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .nav { padding-inline: var(--site-gutter-mobile); }
+  .project-hero,
+  body.enova-page .enova-hero,
+  .hc-hero,
+  body.s360-page .s360-hero {
+    min-height: auto;
+    padding-top: 8.25rem;
+    padding-bottom: 5rem;
+  }
+  .footer .container { padding-inline: var(--site-gutter-mobile); }
+  body[data-category="product-design-landing"] .project-carousel-btn,
+  body[data-category="engineering"] .project-carousel-btn {
+    width: 42px !important;
+    height: 42px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+
+/* Landing carousel controls stay present per row; disabled state is visible but subdued. */
+body[data-category="product-design-landing"] .project-carousel-btn:disabled,
+body[data-category="engineering"] .project-carousel-btn:disabled {
+  opacity: .38 !important;
+  cursor: default !important;
+}
+
+/* Homepage hero image — keep this after theme.css so the generic hero overlay
+   cannot replace the homepage artwork. */
+.page-wrapper > .hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/assets/HomeHero.jpg') center / cover no-repeat;
+  opacity: 0.3;
+  z-index: 1;
+}
