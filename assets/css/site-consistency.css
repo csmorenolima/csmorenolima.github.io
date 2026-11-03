@@ -334,3 +334,469 @@ body[data-category="engineering"] .project-carousel-btn:disabled {
   opacity: 0.3;
   z-index: 1;
 }
+
+/* =========================================================
+   BASS PROJECT HERO SYSTEM
+   Drop Mini, HonEcomb and Sensation 360 share one hero rhythm.
+   Project CSS still owns colour, background artwork and imagery.
+   ========================================================= */
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) {
+  --bass-hero-title-size: clamp(4rem, min(7.4vw, 9.5svh), 7.8rem);
+  --bass-hero-copy-width: 680px;
+  --bass-hero-statement-size: clamp(1.35rem, 2.05vw, 2rem);
+  --bass-hero-summary-width: 600px;
+  /* Shared breathing room between the BASS corner logo and the eyebrow/title stack. */
+  --bass-hero-copy-top-offset: clamp(6rem, 9svh, 6.75rem);
+}
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero {
+  min-height: 100svh !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  padding-top: var(--project-hero-padding-top, 9rem) !important;
+  padding-bottom: var(--project-hero-padding-bottom, clamp(3rem, 7svh, 5.5rem)) !important;
+  text-align: left !important;
+}
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-frame {
+  width: min(var(--project-hero-content-width, 1200px), 100%) !important;
+  max-width: var(--project-hero-content-width, 1200px) !important;
+  align-self: stretch !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  margin-inline: auto !important;
+  padding-inline: var(--project-hero-content-gutter, 2rem) !important;
+  box-sizing: border-box !important;
+}
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-grid {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  align-items: start !important;
+}
+
+body.dropmini-page .bass-hero--visual .bass-hero-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(370px, .72fr) !important;
+  gap: clamp(3rem, 8vw, 8rem) !important;
+  /* Keep Drop Mini's eyebrow/title stack at the same vertical start as
+     HonEcomb and Sensation 360 instead of centring it against the product. */
+  align-items: start !important;
+}
+
+body.dropmini-page .bass-hero--visual .project-hero-visual {
+  align-self: center !important;
+}
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-copy {
+  width: 100% !important;
+  max-width: var(--bass-hero-copy-width) !important;
+  padding-top: var(--bass-hero-copy-top-offset) !important;
+}
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-logo {
+  position: absolute !important;
+  z-index: 3 !important;
+  top: max(6rem, calc(var(--project-hero-padding-top, 9rem) - 2.5rem)) !important;
+  left: clamp(1rem, 2.5vw, 2.75rem) !important;
+  width: min(135px, 28vw) !important;
+  max-height: 72px !important;
+  display: block !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  filter: brightness(0) invert(1) !important;
+  pointer-events: none !important;
+}
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-eyebrow {
+  width: 56px !important;
+  height: 2px !important;
+  margin: 0 0 1.8rem !important;
+  border-radius: 999px !important;
+  background: var(--project-eyebrow-color) !important;
+}
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-title {
+  max-width: 760px !important;
+  margin: 0 !important;
+  font-family: "Manrope", "Inter", sans-serif !important;
+  font-size: var(--bass-hero-title-size) !important;
+  font-weight: 600 !important;
+  line-height: .86 !important;
+  letter-spacing: -.075em !important;
+  text-wrap: balance;
+}
+
+body.dropmini-page .bass-hero-title { color: var(--dm-ink) !important; }
+body.honecomb-page .bass-hero-title,
+body.s360-page .bass-hero-title { color: #fff !important; }
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-accent {
+  display: inline !important;
+  width: auto !important;
+  margin: 0 !important;
+  -webkit-text-stroke: 0 !important;
+  color: var(--project-eyebrow-color) !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+body.s360-page .bass-hero-title > span,
+body.s360-page .bass-hero-title > strong {
+  display: block !important;
+}
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-statement {
+  max-width: var(--bass-hero-summary-width) !important;
+  margin: 1.25rem 0 .9rem !important;
+  font-family: "Manrope", "Inter", sans-serif !important;
+  font-size: var(--bass-hero-statement-size) !important;
+  font-weight: 600 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -.025em !important;
+}
+
+body.dropmini-page .bass-hero-statement { color: #5d7390 !important; }
+body.honecomb-page .bass-hero-statement { color: var(--bamboo-light) !important; }
+body.s360-page .bass-hero-statement { color: #fff !important; }
+body.s360-page .bass-hero-statement em {
+  color: inherit !important;
+  font-style: italic !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-summary {
+  max-width: var(--bass-hero-summary-width) !important;
+  margin: 0 !important;
+  font-size: 1rem !important;
+  line-height: 1.72 !important;
+}
+body.dropmini-page .bass-hero-summary { color: #586d86 !important; }
+body.honecomb-page .bass-hero-summary,
+body.s360-page .bass-hero-summary { color: rgba(255,255,255,.7) !important; }
+
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: .8rem !important;
+  margin-top: 1.75rem !important;
+}
+
+@media (max-width: 1080px) {
+  body.dropmini-page .bass-hero--visual .bass-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  body.dropmini-page .bass-hero--visual .project-hero-visual {
+    justify-self: start !important;
+  }
+}
+
+@media (max-width: 640px) {
+  :is(body.dropmini-page, body.honecomb-page, body.s360-page) {
+    --bass-hero-title-size: clamp(3.2rem, 15vw, 5rem);
+    --bass-hero-statement-size: clamp(1.2rem, 6vw, 1.55rem);
+    --bass-hero-copy-top-offset: 4.25rem;
+  }
+
+  :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero {
+    min-height: auto !important;
+    padding-top: 8.25rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-frame {
+    padding-inline: 1rem !important;
+  }
+
+  :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-logo {
+    top: 5.75rem !important;
+    left: 1rem !important;
+    width: min(135px, 38vw) !important;
+  }
+
+  :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-eyebrow {
+    margin-bottom: 1.35rem !important;
+  }
+
+  :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-actions {
+    margin-top: 1.5rem !important;
+  }
+}
+
+/* =========================================================
+   BASS HERO MEDIA SEPARATION
+   Keep the shared text stack fixed while pushing project media
+   farther right so artwork does not visually crowd the copy.
+   ========================================================= */
+
+/* Drop Mini uses a separate product visual rather than a full-bleed image. */
+body.dropmini-page .bass-hero--visual .project-hero-visual {
+  transform: translateX(clamp(1rem, 2.5vw, 2.75rem));
+}
+
+/* HonEcomb uses a full-bleed hero image. Scale slightly before shifting
+   so the movement never exposes an empty edge. */
+body.honecomb-page .bass-hero .hc-hero-image {
+  transform: translateX(clamp(2rem, 4.5vw, 4.5rem)) scale(1.08);
+  transform-origin: center center;
+}
+
+/* Sensation 360 uses full-bleed media behind its colour treatment. */
+body.s360-page .bass-hero .s360-hero-media {
+  transform: translateX(clamp(2rem, 4vw, 4rem)) scale(1.07);
+  transform-origin: center center;
+}
+
+@media (max-width: 1080px) {
+  body.dropmini-page .bass-hero--visual .project-hero-visual {
+    transform: translateX(clamp(.5rem, 2vw, 1.5rem));
+  }
+
+  body.honecomb-page .bass-hero .hc-hero-image,
+  body.s360-page .bass-hero .s360-hero-media {
+    transform: translateX(clamp(1rem, 3vw, 2rem)) scale(1.05);
+  }
+}
+
+@media (max-width: 640px) {
+  body.dropmini-page .bass-hero--visual .project-hero-visual,
+  body.honecomb-page .bass-hero .hc-hero-image,
+  body.s360-page .bass-hero .s360-hero-media {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   SENSATION 360 — PRODUCT-RENDER HERO
+   Live text on the left + transparent product render on the right.
+   Keeps the shared BASS logo/eyebrow/spacing system intact.
+   ========================================================= */
+body.s360-page .bass-hero {
+  background:
+    radial-gradient(circle at 78% 46%, rgba(205, 61, 255, .34), transparent 30%),
+    radial-gradient(circle at 66% 70%, rgba(48, 181, 255, .17), transparent 25%),
+    radial-gradient(circle at 52% 34%, rgba(126, 41, 255, .16), transparent 28%),
+    linear-gradient(112deg, #080710 0%, #0b0814 38%, #160920 63%, #250b33 82%, #0c0811 100%) !important;
+}
+
+/* Retire the previous full-bleed photo/wave treatment for this hero. */
+body.s360-page .bass-hero .s360-hero-media,
+body.s360-page .bass-hero .s360-hero-overlay,
+body.s360-page .bass-hero .s360-hero-orbit {
+  display: none !important;
+}
+body.s360-page .bass-hero::before,
+body.s360-page .bass-hero::after {
+  content: none !important;
+  display: none !important;
+}
+
+body.s360-page .bass-hero .bass-hero-grid {
+  grid-template-columns: minmax(0, .92fr) minmax(390px, .88fr) !important;
+  gap: clamp(2.5rem, 5vw, 5.5rem) !important;
+  align-items: start !important;
+}
+
+body.s360-page .bass-hero .bass-hero-copy {
+  --bass-hero-copy-width: 620px;
+  --bass-hero-summary-width: 570px;
+  position: relative;
+  z-index: 2;
+}
+
+body.s360-page .bass-hero .bass-hero-title {
+  max-width: 650px !important;
+  font-size: clamp(4rem, 6.1vw, 6.55rem) !important;
+  line-height: .9 !important;
+  letter-spacing: -.065em !important;
+  white-space: nowrap;
+}
+
+body.s360-page .bass-hero .bass-hero-title > strong {
+  display: inline !important;
+}
+
+body.s360-page .bass-hero .bass-hero-accent {
+  color: #fff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+body.s360-page .bass-hero .bass-hero-eyebrow {
+  background: linear-gradient(90deg, #32d9ff 0%, #8758ff 48%, #f443ff 100%) !important;
+  width: 58px !important;
+}
+
+body.s360-page .bass-hero .bass-hero-statement {
+  margin-top: 1.55rem !important;
+  max-width: 560px !important;
+  font-size: clamp(1.45rem, 2.2vw, 2.05rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.23 !important;
+}
+
+body.s360-page .bass-hero .bass-hero-summary {
+  max-width: 560px !important;
+  color: rgba(255,255,255,.78) !important;
+  line-height: 1.62 !important;
+}
+
+body.s360-page .bass-hero .s360-hero-actions {
+  gap: .9rem !important;
+  margin-top: 2rem !important;
+}
+
+body.s360-page .bass-hero .s360-cta-primary {
+  color: #0b0811 !important;
+  background: #fff !important;
+  border-color: #fff !important;
+  box-shadow: 0 16px 36px rgba(0,0,0,.22) !important;
+}
+body.s360-page .bass-hero .s360-cta-primary:hover {
+  color: #0b0811 !important;
+  background: #f3f4f6 !important;
+  border-color: #f3f4f6 !important;
+}
+body.s360-page .bass-hero .s360-cta-ghost {
+  color: #fff !important;
+  background: rgba(255,255,255,.035) !important;
+  border-color: rgba(255,255,255,.72) !important;
+  backdrop-filter: blur(8px);
+}
+body.s360-page .bass-hero .s360-cta-ghost:hover {
+  background: rgba(255,255,255,.09) !important;
+  border-color: #fff !important;
+}
+
+body.s360-page .s360-hero-product {
+  position: relative;
+  width: min(100%, 560px) !important;
+  height: clamp(470px, 67svh, 690px) !important;
+  align-self: center !important;
+  justify-self: end !important;
+  display: grid;
+  place-items: center;
+  margin-top: clamp(1.5rem, 3.5svh, 3rem);
+  transform: translateX(clamp(1rem, 2.5vw, 2.5rem));
+  isolation: isolate;
+}
+
+body.s360-page .s360-hero-product-glow {
+  position: absolute;
+  z-index: -1;
+  width: 92%;
+  height: 76%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 58% 46%, rgba(207, 66, 255, .42), transparent 47%),
+    radial-gradient(circle at 34% 72%, rgba(52, 193, 255, .24), transparent 42%);
+  filter: blur(32px);
+  opacity: .95;
+  pointer-events: none;
+}
+
+body.s360-page .s360-hero-product::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 12%;
+  right: 5%;
+  bottom: 4%;
+  height: 13%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(154, 58, 255, .34), rgba(40, 163, 255, .14) 42%, transparent 72%);
+  filter: blur(18px);
+}
+
+body.s360-page .s360-hero-product img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  filter: drop-shadow(0 34px 38px rgba(0,0,0,.38));
+}
+
+@media (max-width: 1080px) {
+  body.s360-page .bass-hero .bass-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  body.s360-page .bass-hero .bass-hero-title {
+    white-space: normal;
+  }
+  body.s360-page .s360-hero-product {
+    width: min(100%, 520px) !important;
+    height: clamp(420px, 58svh, 590px) !important;
+    justify-self: center !important;
+    transform: none;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  body.s360-page .bass-hero .bass-hero-title {
+    font-size: clamp(3.15rem, 14.5vw, 4.8rem) !important;
+  }
+  body.s360-page .bass-hero .bass-hero-statement {
+    font-size: clamp(1.25rem, 6.2vw, 1.55rem) !important;
+  }
+  body.s360-page .s360-hero-product {
+    height: min(116vw, 500px) !important;
+    margin-top: .25rem;
+  }
+  body.s360-page .bass-hero .s360-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  body.s360-page .bass-hero .s360-cta {
+    width: 100%;
+  }
+}
+
+
+
+/* Sensation 360 outlined 360 uses inline SVG for a clean no-fill outline. */
+body.s360-page .bass-hero .bass-hero-title {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(.2rem, .55vw, .45rem);
+  flex-wrap: nowrap;
+}
+
+body.s360-page .bass-hero .bass-hero-outline-number {
+  display: inline-flex;
+  align-items: flex-end;
+  flex: 0 0 auto;
+  line-height: 1;
+  transform: translateY(.02em);
+}
+
+body.s360-page .bass-hero .bass-hero-outline-svg {
+  display: block;
+  width: clamp(11.2rem, 17vw, 18.6rem);
+  height: auto;
+  overflow: visible;
+}
+
+body.s360-page .bass-hero .bass-hero-accent {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+body.s360-page .bass-hero .bass-hero-eyebrow {
+  background: #ff5ecf !important;
+  width: 58px !important;
+}
+
+@media (max-width: 900px) {
+  body.s360-page .bass-hero .bass-hero-title {
+    gap: clamp(.12rem, .8vw, .3rem);
+  }
+  body.s360-page .bass-hero .bass-hero-outline-svg {
+    width: clamp(8.2rem, 25vw, 12.2rem);
+  }
+}
