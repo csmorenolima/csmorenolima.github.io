@@ -755,6 +755,8 @@ body.dropmini-page .dm-lightbox-close {
     cursor: pointer;
 }
 
+
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */
@@ -922,5 +924,452 @@ body.dropmini-page .dm-lightbox-close {
     body.dropmini-page .dm-ripples::after,
     body.dropmini-page .dm-ripples span {
         animation: none !important;
+    }
+}
+
+/* =========================================================
+   DROP MINI — EDITORIAL CASE-STUDY PASS
+   BrightUP / Morning Prayer Bot inspired rhythm:
+   concise editorial ideas + restrained media cards + visual payoff.
+   Hero and specification ribbon remain unchanged.
+   ========================================================= */
+
+body.dropmini-page {
+    --dm-width: 1240px;
+    --dm-gutter: clamp(1.25rem, 4vw, 3rem);
+    --dm-section-blue: var(--dm-blue);
+    --dm-soft-surface: #f5f9fd;
+    --dm-soft-border: rgba(31, 82, 143, .11);
+}
+
+/* One section-label colour throughout the Drop Mini case study. */
+body.dropmini-page :is(.dm-story-narrative, .dm-details-section, .dm-colourways) .project-eyebrow,
+body.dropmini-page :is(.dm-story-narrative, .dm-details-section, .dm-colourways) .dm-kicker {
+    color: var(--dm-section-blue) !important;
+}
+
+/* ---------- Product story: narrative + form study ---------- */
+body.dropmini-page .dm-story-narrative {
+    width: min(var(--dm-width), calc(100% - (var(--dm-gutter) * 2)));
+    margin-inline: auto;
+    padding: clamp(6.5rem, 9vw, 8.75rem) 0;
+    display: block;
+}
+
+body.dropmini-page .dm-story-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: center;
+}
+
+body.dropmini-page .dm-story-copy-new {
+    max-width: 700px;
+}
+
+body.dropmini-page .dm-story-copy-new h2 {
+    max-width: 680px;
+    margin-bottom: 1.65rem;
+    font-size: clamp(2.85rem, 5vw, 5.2rem);
+    line-height: .98;
+}
+
+body.dropmini-page .dm-story-lead-new,
+body.dropmini-page .dm-story-body-new {
+    max-width: 58ch;
+    margin: 0;
+    color: var(--dm-muted);
+    font-size: 1rem;
+    line-height: 1.72;
+}
+
+body.dropmini-page .dm-story-body-new {
+    margin-top: 1.15rem;
+}
+
+body.dropmini-page .dm-story-form-study {
+    position: relative;
+    min-height: 390px;
+    overflow: hidden;
+    border: 1px solid var(--dm-soft-border);
+    border-radius: 32px;
+    background:
+        radial-gradient(circle at 52% 42%, rgba(92,163,226,.18), transparent 34%),
+        linear-gradient(145deg, #f6faff 0%, #eaf3fc 100%);
+}
+
+body.dropmini-page .dm-droplet-outline {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 170px;
+    aspect-ratio: 1;
+    border: 2px solid rgba(52,123,216,.58);
+    border-radius: 62% 38% 64% 36% / 66% 37% 63% 34%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow:
+        0 0 0 16px rgba(52,123,216,.035),
+        0 0 0 34px rgba(52,123,216,.018);
+}
+
+body.dropmini-page .dm-droplet-outline::after {
+    content: "";
+    position: absolute;
+    inset: 34%;
+    border-radius: 50%;
+    background: rgba(52,123,216,.12);
+}
+
+body.dropmini-page .dm-form-orbit {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    border: 1px solid rgba(52,123,216,.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body.dropmini-page .dm-form-orbit-one {
+    width: 270px;
+    height: 270px;
+}
+
+body.dropmini-page .dm-form-orbit-two {
+    width: 330px;
+    height: 330px;
+    border-style: dashed;
+}
+
+body.dropmini-page .dm-form-study-caption {
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(52,123,216,.13);
+}
+
+body.dropmini-page .dm-form-study-caption span {
+    color: var(--dm-blue);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+body.dropmini-page .dm-form-study-caption strong {
+    color: var(--dm-ink);
+    font-family: "Manrope", "Inter", sans-serif;
+    font-size: .9rem;
+}
+
+body.dropmini-page .dm-story-process {
+    margin-top: clamp(3rem, 6vw, 5rem);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-bottom: 1px solid var(--dm-soft-border);
+}
+
+body.dropmini-page .dm-story-process article {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.55rem 1.6rem 1.7rem;
+    border-left: 1px solid var(--dm-soft-border);
+}
+
+body.dropmini-page .dm-story-process article:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+body.dropmini-page .dm-story-process article:last-child {
+    padding-right: 0;
+}
+
+body.dropmini-page .dm-story-process article > span {
+    color: var(--dm-blue);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+body.dropmini-page .dm-story-process h3 {
+    margin: 0 0 .35rem;
+    color: var(--dm-ink);
+    font-family: "Manrope", "Inter", sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: -.025em;
+}
+
+body.dropmini-page .dm-story-process p {
+    margin: 0;
+    color: var(--dm-muted);
+    font-size: .86rem;
+    line-height: 1.58;
+}
+
+/* ---------- Form & interaction: BrightUP-style paired media cards ---------- */
+body.dropmini-page .dm-details-section {
+    padding: clamp(6.25rem, 8vw, 8rem) 0;
+    border-top: 1px solid var(--dm-soft-border);
+    border-bottom: 1px solid var(--dm-soft-border);
+    background:
+        radial-gradient(circle at 86% 10%, rgba(52,123,216,.075), transparent 24rem),
+        var(--dm-soft-surface);
+}
+
+body.dropmini-page .dm-details-inner {
+    width: min(var(--dm-width), calc(100% - (var(--dm-gutter) * 2)));
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: 0;
+}
+
+body.dropmini-page .dm-details-heading {
+    max-width: 760px;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+body.dropmini-page .dm-details-heading h2 {
+    max-width: 700px;
+}
+
+body.dropmini-page .dm-details-heading > p:last-child {
+    max-width: 620px;
+    margin: 1.25rem 0 0;
+    color: var(--dm-muted);
+    line-height: 1.75;
+}
+
+body.dropmini-page .dm-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+body.dropmini-page .dm-detail-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--dm-soft-border);
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 16px 42px rgba(35,74,119,.07);
+}
+
+body.dropmini-page .dm-detail-media {
+    margin: 0;
+    overflow: hidden;
+    border-bottom: 1px solid var(--dm-soft-border);
+    background: #eaf1f7;
+}
+
+body.dropmini-page .dm-detail-media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    cursor: zoom-in;
+    transition: transform .4s cubic-bezier(.2,.7,.2,1);
+}
+
+body.dropmini-page .dm-detail-card:hover .dm-detail-media img {
+    transform: scale(1.015);
+}
+
+body.dropmini-page .dm-detail-copy {
+    padding: 1.5rem 1.6rem 1.65rem;
+}
+
+body.dropmini-page .dm-detail-label {
+    display: block;
+    margin-bottom: .7rem;
+    color: var(--dm-blue);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+body.dropmini-page .dm-detail-copy h3 {
+    margin: 0 0 .65rem;
+    color: var(--dm-ink);
+    font-family: "Manrope", "Inter", sans-serif;
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+    line-height: 1.2;
+    letter-spacing: -.03em;
+}
+
+body.dropmini-page .dm-detail-copy p {
+    max-width: 500px;
+    margin: 0;
+    color: var(--dm-muted);
+    font-size: .92rem;
+    line-height: 1.68;
+}
+
+/* ---------- Colourways: visual payoff, same blue eyebrow ---------- */
+body.dropmini-page .dm-colourways {
+    --project-eyebrow-color: var(--dm-blue);
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: clamp(6.5rem, 9vw, 9rem) 0;
+    color: var(--dm-ink);
+    background:
+        radial-gradient(circle at 86% 12%, rgba(52,123,216,.07), transparent 24rem),
+        #fff;
+}
+
+body.dropmini-page .dm-colourways-inner {
+    width: min(1320px, calc(100% - (var(--dm-gutter) * 2)));
+    margin-inline: auto;
+}
+
+body.dropmini-page .dm-colourways-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, .54fr);
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: end;
+    margin: 0 0 2.6rem;
+}
+
+body.dropmini-page .dm-colourways-heading > div {
+    max-width: 760px;
+}
+
+body.dropmini-page .dm-colourways h2 {
+    color: var(--dm-ink);
+}
+
+body.dropmini-page .dm-colourways-heading > p {
+    max-width: 460px;
+    margin: 0;
+    color: var(--dm-muted);
+    line-height: 1.72;
+}
+
+body.dropmini-page .dm-colour-viewer {
+    grid-template-columns: minmax(0, 1fr) 190px;
+    gap: .85rem;
+}
+
+body.dropmini-page .dm-colour-feature {
+    min-height: 540px;
+    border: 1px solid var(--dm-soft-border);
+    background: var(--dm-soft-surface);
+    box-shadow: 0 20px 52px rgba(35,74,119,.09);
+}
+
+body.dropmini-page .dm-colour-feature > img {
+    height: 540px;
+}
+
+body.dropmini-page .dm-colour-feature figcaption {
+    border-color: rgba(17,35,60,.08);
+    color: var(--dm-ink);
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 10px 28px rgba(20,52,91,.08);
+}
+
+body.dropmini-page .dm-colour-feature figcaption span {
+    color: var(--dm-muted);
+}
+
+body.dropmini-page .dm-colour-thumb {
+    border: 1px solid var(--dm-soft-border);
+    color: #506783;
+    background: #f8fbfe;
+}
+
+body.dropmini-page .dm-colour-thumb:hover {
+    border-color: rgba(52,123,216,.32);
+    background: #f0f6fc;
+}
+
+body.dropmini-page .dm-colour-thumb.active {
+    color: var(--dm-blue-dark);
+    border-color: rgba(52,123,216,.55);
+    background: #edf5ff;
+    box-shadow: 0 10px 24px rgba(52,123,216,.10);
+}
+
+@media (max-width: 1000px) {
+    body.dropmini-page .dm-story-intro {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    body.dropmini-page .dm-story-form-study {
+        min-height: 330px;
+    }
+
+    body.dropmini-page .dm-story-process {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-story-process article,
+    body.dropmini-page .dm-story-process article:first-child,
+    body.dropmini-page .dm-story-process article:last-child {
+        padding: 1.35rem 0;
+        border-left: 0;
+        border-top: 1px solid var(--dm-soft-border);
+    }
+
+    body.dropmini-page .dm-story-process article:first-child {
+        border-top: 0;
+    }
+
+    body.dropmini-page .dm-colourways-heading {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    body.dropmini-page .dm-colourways-heading > p {
+        max-width: 720px;
+    }
+
+    body.dropmini-page .dm-colour-viewer {
+        grid-template-columns: 1fr;
+    }
+
+    body.dropmini-page .dm-colour-thumbs {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: none;
+    }
+
+    body.dropmini-page .dm-colour-thumb {
+        grid-template-columns: 1fr;
+        gap: .45rem;
+        text-align: center;
+    }
+
+    body.dropmini-page .dm-colour-thumb img {
+        width: 100%;
+        height: 84px;
+    }
+}
+
+@media (max-width: 780px) {
+    body.dropmini-page .dm-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    body.dropmini-page .dm-colour-feature,
+    body.dropmini-page .dm-colour-feature > img {
+        min-height: 400px;
+        height: 400px;
+    }
+
+    body.dropmini-page .dm-colour-thumbs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
