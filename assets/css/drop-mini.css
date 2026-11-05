@@ -58,7 +58,7 @@ body.dropmini-page :is(
 body.dropmini-page :is(
   .dm-story-lead-new,
   .dm-details-heading > p:last-child,
-  .dm-colourways-heading > p
+  .dm-colourways-description
 ) {
   color: var(--dm-muted);
   font-size: var(--dm-case-copy-size);
@@ -878,7 +878,6 @@ body.dropmini-page .dm-form-study-caption strong {
 }
 
 body.dropmini-page .dm-story-process {
-    margin-top: clamp(3rem, 6vw, 5rem);
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     border-bottom: 1px solid var(--dm-soft-border);

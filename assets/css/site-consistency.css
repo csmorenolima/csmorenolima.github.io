@@ -135,6 +135,15 @@ body.dropmini-page :is(
   text-transform: uppercase !important;
 }
 
+/* Exact eyebrow-to-title gap for all three Drop Mini intro stacks. */
+body.dropmini-page :is(
+  .dm-story-copy-new,
+  .dm-details-heading,
+  .dm-colourways-heading
+) > .dm-kicker.project-eyebrow {
+  margin: 0 0 .8rem !important;
+}
+
 /* Section titles: one exact scale for Product Story, User Interaction and Colourways. */
 body.dropmini-page :is(
   #story-title,
@@ -156,7 +165,7 @@ body.dropmini-page :is(
 body.dropmini-page :is(
   .dm-story-lead-new,
   .dm-details-heading > p:last-child,
-  .dm-colourways-heading > p
+  .dm-colourways-description
 ) {
   width: auto !important;
   max-width: var(--dm-case-copy-width) !important;
@@ -182,6 +191,57 @@ body.dropmini-page .dm-story-intro {
 /* User Interaction and Colourways both lead directly into media. */
 body.dropmini-page :is(.dm-details-heading, .dm-colourways-heading) {
   margin-bottom: clamp(2.5rem, 5vw, 4rem) !important;
+}
+
+/* Product Story heading also gets same margin-bottom for consistency. */
+body.dropmini-page .dm-story-copy-new {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem) !important;
+}
+
+/* Section titles: apply Drop Mini's sizing to all product pages */
+body:is(
+  .honecomb-page,
+  .brightup-page,
+  .s360-page,
+  .enova-page,
+  .scaar-page
+) :is(
+  .brightup-section-heading h2,
+  .brightup-gallery-heading h2,
+  .brightup-development-heading h2,
+  .s360-section-heading h2,
+  .s360-colours-heading h2,
+  .section-heading h2,
+  .story-copy h2,
+  .nomad-brief-heading h2,
+  .nomad-anatomy-heading h2,
+  .nomad-process-heading h2,
+  #story-title,
+  #form-title,
+  #colourways-title,
+  #development-title,
+  #gallery-title,
+  #response-title,
+  #colours-title,
+  #features-title,
+  #final-title,
+  #flow-title,
+  #mood-title,
+  #banner-title,
+  #brief-title,
+  #cad-title,
+  #anatomy-title,
+  #prototype-title,
+  #reports-title,
+  #snapshot-title,
+  #solution-title,
+  #videos-title,
+  #why-title,
+  [class*="-title"]
+) {
+  font-size: clamp(2.4rem, 3.7vw, 4.5rem) !important;
+  line-height: .98 !important;
+  letter-spacing: -.055em !important;
 }
 
 /* Colourways keeps the Sensation 360 viewer, not its two-column intro. */
