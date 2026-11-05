@@ -17,6 +17,7 @@
   --site-control-size: 46px;
   --site-control-duration: 200ms;
   --site-control-ease: cubic-bezier(.2,.7,.2,1);
+  --site-header-anchor-offset: 73px;
 }
 
 /* One global shell */
@@ -30,6 +31,12 @@
 .logo { letter-spacing: -.04em; }
 .nav-links { align-items: center; gap: clamp(1.1rem, 2.4vw, 2rem); }
 .dropdown-toggle { white-space: nowrap; }
+
+/* BASS specification anchors: stop directly below the fixed navbar. */
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) #specifications {
+  scroll-margin-top: var(--site-header-anchor-offset) !important;
+}
+
 
 /* Shared section rhythm */
 .section,
