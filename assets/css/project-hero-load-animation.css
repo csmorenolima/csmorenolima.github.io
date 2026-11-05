@@ -1,0 +1,54 @@
+/* =========================================================
+   SHARED PROJECT HERO LOAD ANIMATION
+   Apply after site-consistency.css.
+   Hero copy rises gently into place once when the page loads.
+   ========================================================= */
+
+@keyframes projectHeroRiseIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 36px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+:is(
+  body.dropmini-page,
+  body.honecomb-page,
+  body.s360-page,
+  body.brightup-page,
+  body.enova-page,
+  body.scaar-page,
+  body.soct-page,
+  body.morning-prayer-page
+) .project-hero-copy {
+  animation: projectHeroRiseIn 1.15s cubic-bezier(.22, 1, .36, 1) .08s both !important;
+  will-change: opacity, transform;
+}
+
+/* BrightUP previously used its own .fade-in-up animation.
+   The shared project motion above intentionally replaces it. */
+body.brightup-page .project-hero-copy.fade-in-up {
+  animation: projectHeroRiseIn 1.15s cubic-bezier(.22, 1, .36, 1) .08s both !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    body.dropmini-page,
+    body.honecomb-page,
+    body.s360-page,
+    body.brightup-page,
+    body.enova-page,
+    body.scaar-page,
+    body.soct-page,
+    body.morning-prayer-page
+  ) .project-hero-copy {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

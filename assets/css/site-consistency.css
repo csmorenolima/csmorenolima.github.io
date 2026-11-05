@@ -1002,3 +1002,65 @@ body.enova-page .hero-brand-mark {
     margin-top: 1.5rem !important;
   }
 }
+
+/* =========================================================
+   SHARED HERO ENTRANCE — MATCHES LANDING PAGE fadeInUp
+   Exact landing-page motion: 30px rise, opacity 0→1,
+   0.8s ease-out. Applied to every case-study hero copy.
+   ========================================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:is(
+  body.dropmini-page,
+  body.honecomb-page,
+  body.s360-page,
+  body.brightup-page,
+  body.enova-page,
+  body.scaar-page,
+  body.soct-page,
+  body.morning-prayer-page
+) :is(
+  .bass-hero-copy,
+  .unified-project-copy,
+  .project-hero-copy
+) {
+  animation: fadeInUp 0.8s ease-out both !important;
+  will-change: opacity, transform;
+}
+
+/* BrightUP may still carry the old helper class; keep one animation only. */
+body.brightup-page .fade-in-up {
+  animation: fadeInUp 0.8s ease-out both !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    body.dropmini-page,
+    body.honecomb-page,
+    body.s360-page,
+    body.brightup-page,
+    body.enova-page,
+    body.scaar-page,
+    body.soct-page,
+    body.morning-prayer-page
+  ) :is(
+    .bass-hero-copy,
+    .unified-project-copy,
+    .project-hero-copy
+  ),
+  body.brightup-page .fade-in-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
