@@ -1,299 +1,345 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="#07111d" name="theme-color"/>
-<title>Morning Prayer Bot — Carla Sofia Lima</title>
-<meta content="Morning Prayer Bot is a lightweight iPadOS workflow that monitors a YouTube prayer feed, adds a motivational message and shares the latest daily video with a WhatsApp group." name="description"/>
-<meta content="en_GB" property="og:locale"/>
-<meta content="website" property="og:type"/>
-<meta content="Morning Prayer Bot — Carla Sofia Lima" property="og:title"/>
-<meta content="A lightweight iPadOS workflow that shares the latest prayer video and a motivational message with a WhatsApp group." property="og:description"/>
-<meta content="Carla Sofia Lima" property="og:site_name"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&amp;display=swap" rel="stylesheet"/>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" referrerpolicy="no-referrer" rel="stylesheet"/>
-<link href="/assets/css/theme.css" rel="stylesheet"/>
-<link href="/assets/css/category-page.css" rel="stylesheet"/>
-<link href="/assets/css/morning-prayer-bot.css" rel="stylesheet"/>
-<link href="/assets/css/site-consistency.css" rel="stylesheet"/></head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="#07111d" name="theme-color" />
+    <title>Morning Prayer Bot — Carla Sofia Lima</title>
+    <meta
+        content="Morning Prayer Bot is a lightweight iPadOS workflow that monitors a YouTube prayer feed, adds a motivational message and shares the latest daily video with a WhatsApp group."
+        name="description" />
+    <meta content="en_GB" property="og:locale" />
+    <meta content="website" property="og:type" />
+    <meta content="Morning Prayer Bot — Carla Sofia Lima" property="og:title" />
+    <meta
+        content="A lightweight iPadOS workflow that shares the latest prayer video and a motivational message with a WhatsApp group."
+        property="og:description" />
+    <meta content="Carla Sofia Lima" property="og:site_name" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&amp;display=swap" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        referrerpolicy="no-referrer" rel="stylesheet" />
+    <link href="/assets/css/theme.css" rel="stylesheet" />
+    <link href="/assets/css/category-page.css" rel="stylesheet" />
+    <link href="/assets/css/morning-prayer-bot.css" rel="stylesheet" />
+    <link href="/assets/css/site-consistency.css" rel="stylesheet" />
+</head>
+
 <body class="morning-prayer-page" data-category="automation">
-<header class="header">
-<nav aria-label="Primary navigation" class="nav">
-<a aria-label="Carla Sofia Lima portfolio home" class="logo" href="/portfolioHome.html#home">PORTFOLIO |</a>
-<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu" class="mobile-menu-btn" type="button"><i aria-hidden="true" class="fas fa-bars"></i></button>
-<ul class="nav-links" id="primary-navigation">
-<li><a href="/portfolioHome.html#home">Home</a></li>
-<li><a href="/portfolioHome.html#about">About</a></li>
-<li class="nav-projects-dropdown">
-<button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" type="button">My work <i aria-hidden="true" class="fas fa-chevron-down"></i></button>
-<ul aria-label="Project categories" class="dropdown-menu">
-<li><a data-nav-category="product" href="/Landing/product-design-landing.html">Product design</a></li>
-<li><a aria-current="page" data-nav-category="engineering" href="/Landing/engineering-landing.html">Engineering</a></li>
-</ul>
-</li>
-<li><a href="/portfolioHome.html#contact">Connect</a></li>
-</ul>
-</nav>
-</header>
-<main id="main-content">
-<section aria-labelledby="project-title" class="hero mpb-hero project-hero unified-project-hero" id="home">
-<img alt="Morning Prayer Bot logo" class="project-hero-corner-logo unified-project-logo" src="/assets/mpb-logo.png"/>
-<div class="container mpb-hero-grid project-hero-frame project-hero-grid unified-project-frame unified-project-grid">
-<div class="mpb-hero-copy project-hero-copy unified-project-copy">
-<span aria-hidden="true" class="project-eyebrow-line unified-project-eyebrow"></span>
-<h1 class="unified-project-title" id="project-title">Daily prayer delivery, <span>fully automated.</span></h1>
-<p class="mpb-hero-summary unified-project-summary">Morning Prayer Bot is a lightweight iPadOS workflow that monitors a
+    <header class="header">
+        <nav aria-label="Primary navigation" class="nav">
+            <a aria-label="Carla Sofia Lima portfolio home" class="logo" href="/portfolioHome.html#home">PORTFOLIO |</a>
+            <button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu"
+                class="mobile-menu-btn" type="button"><i aria-hidden="true" class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="primary-navigation">
+                <li><a href="/portfolioHome.html#home">Home</a></li>
+                <li><a href="/portfolioHome.html#about">About</a></li>
+                <li class="nav-projects-dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" type="button">My work <i
+                            aria-hidden="true" class="fas fa-chevron-down"></i></button>
+                    <ul aria-label="Project categories" class="dropdown-menu">
+                        <li><a data-nav-category="product" href="/Landing/product-design-landing.html">Product
+                                design</a></li>
+                        <li><a aria-current="page" data-nav-category="engineering"
+                                href="/Landing/engineering-landing.html">Engineering</a></li>
+                    </ul>
+                </li>
+                <li><a href="/portfolioHome.html#contact">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content">
+        <section aria-labelledby="project-title" class="hero mpb-hero project-hero unified-project-hero" id="home">
+            <img alt="Morning Prayer Bot logo" class="project-hero-corner-logo unified-project-logo"
+                src="/assets/mpb-logo.png" />
+            <div
+                class="container mpb-hero-grid project-hero-frame project-hero-grid unified-project-frame unified-project-grid">
+                <div class="mpb-hero-copy project-hero-copy unified-project-copy">
+                    <span aria-hidden="true" class="project-eyebrow-line unified-project-eyebrow"></span>
+                    <h1 class="unified-project-title" id="project-title">Daily prayer delivery, <span>fully
+                            automated.</span></h1>
+                    <p class="mpb-hero-summary unified-project-summary">Morning Prayer Bot is a lightweight iPadOS
+                        workflow that monitors a
                         YouTube prayer feed, adds a motivational message, and shares the latest daily video with a
                         WhatsApp group.</p>
-<div aria-label="Project actions" class="mpb-hero-actions unified-project-actions">
-<a class="mpb-button mpb-button-primary project-button" href="#workflow">
+                    <div aria-label="Project actions" class="mpb-hero-actions unified-project-actions">
+                        <a class="mpb-button mpb-button-primary project-button" href="#workflow">
                             View workflow
                             <i aria-hidden="true" class="fa-solid fa-arrow-down"></i>
-</a>
-<a class="mpb-button mpb-button-secondary project-button" href="#architecture">
+                        </a>
+                        <a class="mpb-button mpb-button-secondary project-button" href="#architecture">
                             See architecture
                             <i aria-hidden="true" class="fa-solid fa-diagram-project"></i>
-</a>
-</div>
-</div>
-<div aria-label="Morning Prayer Bot character and automation status" class="mpb-bot-stage project-hero-visual unified-project-visual">
-<div aria-hidden="true" class="mpb-bot-halo"></div>
-<img alt="Morning Prayer Bot character" class="mpb-bot-character" decoding="async" fetchpriority="high" height="1086" src="/assets/mpb-character-base.png" width="1448">
-<div aria-hidden="true" class="mpb-bot-eyes">
-<span class="mpb-bot-eye mpb-bot-eye-left"></span>
-<span class="mpb-bot-eye mpb-bot-eye-right"></span>
-</div>
-</img></div>
-</div>
-</section>
-<section aria-labelledby="snapshot-title" class="mpb-section mpb-snapshot">
-<div class="container">
-<header class="mpb-section-header">
-<p class="mpb-eyebrow project-eyebrow">Project snapshot</p>
-<h2 class="mpb-section-title" id="snapshot-title">Project at a glance.</h2>
-</header>
-<dl aria-label="Morning Prayer Bot project facts" class="mpb-facts">
-<div>
-<dt>Platform</dt>
-<dd>iPadOS</dd>
-</div>
-<div>
-<dt>Frequency</dt>
-<dd>Daily</dd>
-</div>
-<div>
-<dt>Source</dt>
-<dd>YouTube channel</dd>
-</div>
-<div>
-<dt>Build</dt>
-<dd>Apple Shortcuts</dd>
-</div>
-<div>
-<dt>Delivery</dt>
-<dd>WhatsApp group</dd>
-</div>
-</dl>
-</div>
-</section>
-<section aria-labelledby="problem-title" class="mpb-section mpb-problem">
-<div class="container">
-<div class="mpb-editorial-grid">
-<article>
-<p class="mpb-eyebrow project-eyebrow">The problem</p>
-<h2 class="mpb-section-title" id="problem-title">Daily sharing depended on someone remembering
+                        </a>
+                    </div>
+                </div>
+                <div aria-label="Morning Prayer Bot character and automation status"
+                    class="mpb-bot-stage project-hero-visual unified-project-visual">
+                    <div aria-hidden="true" class="mpb-bot-halo"></div>
+                    <img alt="Morning Prayer Bot character" class="mpb-bot-character" decoding="async"
+                        fetchpriority="high" height="1086" src="/assets/mpb-character-base.png" width="1448">
+                    <div aria-hidden="true" class="mpb-bot-eyes">
+                        <span class="mpb-bot-eye mpb-bot-eye-left"></span>
+                        <span class="mpb-bot-eye mpb-bot-eye-right"></span>
+                    </div>
+                    </img>
+                </div>
+            </div>
+        </section>
+        <section aria-labelledby="snapshot-title" class="mpb-section mpb-snapshot">
+            <div class="container">
+                <header class="mpb-section-header">
+                    <p class="mpb-eyebrow project-eyebrow">Project snapshot</p>
+                    <h2 class="mpb-section-title" id="snapshot-title">Project at a glance.</h2>
+                </header>
+                <dl aria-label="Morning Prayer Bot project facts" class="mpb-facts">
+                    <div>
+                        <dt>Platform</dt>
+                        <dd>iPadOS</dd>
+                    </div>
+                    <div>
+                        <dt>Frequency</dt>
+                        <dd>Daily</dd>
+                    </div>
+                    <div>
+                        <dt>Source</dt>
+                        <dd>YouTube channel</dd>
+                    </div>
+                    <div>
+                        <dt>Build</dt>
+                        <dd>Apple Shortcuts</dd>
+                    </div>
+                    <div>
+                        <dt>Delivery</dt>
+                        <dd>WhatsApp group</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+        <section aria-labelledby="problem-title" class="mpb-section mpb-problem">
+            <div class="container">
+                <div class="mpb-editorial-grid">
+                    <article>
+                        <p class="mpb-eyebrow project-eyebrow">The problem</p>
+                        <h2 class="mpb-section-title" id="problem-title">Daily sharing depended on someone remembering
                             to do it.</h2>
-<p class="mpb-section-copy">Each morning, the latest prayer video had to be found and posted
+                        <p class="mpb-section-copy">Each morning, the latest prayer video had to be found and posted
                             manually. The routine was easy to delay or miss.</p>
-</article>
-<article>
-<p class="mpb-eyebrow project-eyebrow">The solution</p>
-<h2 class="mpb-editorial-title">Turn the morning routine into one scheduled action.</h2>
-<p class="mpb-section-copy">Apple Shortcuts checks the channel and shares the latest video with
+                    </article>
+                    <article>
+                        <p class="mpb-eyebrow project-eyebrow">The solution</p>
+                        <h2 class="mpb-editorial-title">Turn the morning routine into one scheduled action.</h2>
+                        <p class="mpb-section-copy">Apple Shortcuts checks the channel and shares the latest video with
                             a motivational message at the chosen time.</p>
-</article>
-</div>
-</div>
-</section>
-<section aria-labelledby="workflow-title" class="mpb-section mpb-workflow-section" id="workflow">
-<div class="container">
-<header class="mpb-section-header mpb-centered">
-<p class="mpb-eyebrow project-eyebrow">System workflow</p>
-<h2 class="mpb-section-title" id="workflow-title">From YouTube upload to WhatsApp delivery.</h2>
-<p class="mpb-section-copy">The full routine is shown below from publication to delivery.</p>
-</header>
-<ol aria-label="Morning Prayer Bot workflow steps" class="mpb-workflow">
-<li>
-<span class="mpb-step-number">01</span>
-<h3>YouTube upload</h3>
-<p>GracePrayer publishes a new daily prayer video.</p>
-</li>
-<li>
-<span class="mpb-step-number">02</span>
-<h3>RSS feed</h3>
-<p>The channel feed exposes the latest upload metadata.</p>
-</li>
-<li>
-<span class="mpb-step-number">03</span>
-<h3>RSS2JSON</h3>
-<p>The feed is converted into predictable structured data.</p>
-</li>
-<li>
-<span class="mpb-step-number">04</span>
-<h3>Apple Shortcut</h3>
-<p>Title, URL, date and thumbnail information are extracted.</p>
-</li>
-<li>
-<span class="mpb-step-number">05</span>
-<h3>Duplicate check</h3>
-<p>The current video is compared with the saved previous state.</p>
-</li>
-<li>
-<span class="mpb-step-number">06</span>
-<h3>WhatsApp delivery</h3>
-<p>The video and motivational message are shared with the group.</p>
-</li>
-</ol>
-</div>
-</section>
-<section aria-labelledby="architecture-title" class="mpb-section mpb-architecture" id="architecture">
-<div class="container">
-<div class="mpb-split-heading">
-<div>
-<p class="mpb-eyebrow project-eyebrow">Architecture</p>
-<h2 class="mpb-section-title" id="architecture-title">How the services connect.</h2>
-</div>
-<p class="mpb-section-copy">The diagram provides a single technical view of the end-to-end system.</p>
-</div>
-<div class="mpb-architecture-grid">
-<figure class="mpb-architecture-figure">
-<img alt="Morning Prayer Bot system integration architecture diagram" decoding="async" loading="lazy" src="/assets/mpb-architecture-diagram.png"/>
-</figure>
-</div>
-</div>
-</section>
-<section aria-labelledby="challenges-title" class="mpb-section mpb-challenges">
-<div class="container">
-<div class="mpb-split-heading">
-<div>
-<p class="mpb-eyebrow project-eyebrow">Challenges and fixes</p>
-<h2 class="mpb-section-title" id="challenges-title">Making a small workflow dependable.</h2>
-</div>
-<p class="mpb-section-copy">Reliability depended less on adding tools and more on controlling input, state and failure points.</p>
-</div>
-<div class="mpb-challenge-list">
-<article>
-<div>
-<span>Challenge</span>
-<h3>Feed data included more information than the workflow required.</h3>
-</div>
-<div>
-<span>Response</span>
-<p>Extract only the title, link, publication date and thumbnail before continuing.</p>
-</div>
-</article>
-<article>
-<div>
-<span>Challenge</span>
-<h3>Repeated scheduled runs could post the same video more than once.</h3>
-</div>
-<div>
-<span>Response</span>
-<p>Compare each feed item against a locally stored reference to the previously delivered video.</p>
-</div>
-</article>
-<article>
-<div>
-<span>Challenge</span>
-<h3>Apple Shortcuts required predictable data structures to avoid broken runs.</h3>
-</div>
-<div>
-<span>Response</span>
-<p>Convert the RSS feed into JSON before parsing and accessing individual values.</p>
-</div>
-</article>
-<article>
-<div>
-<span>Challenge</span>
-<h3>The project needed to stay lightweight and manageable without a server.</h3>
-</div>
-<div>
-<span>Response</span>
-<p>Use existing services and local device automation rather than building custom infrastructure.</p>
-</div>
-</article>
-<article>
-<div>
-<span>Challenge</span>
-<h3>The final WhatsApp action may pause while the host iPad is locked.</h3>
-</div>
-<div>
-<span>Response</span>
-<p>Schedule delivery for a time when the iPad is available, or unlock the device to complete the foreground WhatsApp hand-off.</p>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section aria-labelledby="future-title" class="mpb-section mpb-future">
-<div class="container">
-<div class="mpb-split-heading">
-<div>
-<p class="mpb-eyebrow project-eyebrow">Future development</p>
-<h2 class="mpb-section-title" id="future-title">Focused improvements for the next version.</h2>
-</div>
-<p class="mpb-section-copy">Further development would concentrate on message variety, observability and configuration rather than making the core workflow more complex.</p>
-</div>
-<ol class="mpb-future-list">
-<li><span>01</span>
-<div>
-<h3>Rotating message library</h3>
-<p>Fetch a different motivational message from a small remote library each morning so that repeated wording does not lose its impact over time.</p>
-</div>
-</li>
-<li><span>02</span>
-<div>
-<h3>Error alerts</h3>
-<p>Send a private notification when retrieval, parsing or delivery fails.</p>
-</div>
-</li>
-<li><span>03</span>
-<div>
-<h3>Message Appearance</h3>
-<p>Include the MPB character in each daily message to make it more recognisable and engaging.</p>
-</div>
-</li>
-</ol>
-</div>
-</section>
-<section aria-label="Project navigation" class="project-navigation">
-<div class="container nav-buttons">
-<a class="nav-btn back" href="/Landing/engineering-landing.html">
-<i aria-hidden="true" class="fas fa-arrow-left"></i>
-<span>Back to Engineering</span>
-</a>
-<a class="nav-btn next" href="/portfolioHome.html">
-<span>Back to Portfolio</span>
-<i aria-hidden="true" class="fas fa-arrow-right"></i>
-</a>
-</div>
-</section>
-</main>
-<footer class="footer">
-<div class="container">
-<div class="footer-content">
-<div class="footer-section footer-intro"><a class="footer-brand" href="/portfolioHome.html#home">Carla Sofia Lima</a><p>Learning together, growing together.</p></div>
-<div class="footer-section"><h3>OfficialMV</h3><a href="https://www.redbubble.com/people/Carla0520/shop" rel="noopener noreferrer" target="_blank">RedBubble</a><a href="https://www.instagram.com/officialmorenovalentim/" rel="noopener noreferrer" target="_blank">Instagram</a><a href="https://www.tiktok.com/@officialmorenovalentim" rel="noopener noreferrer" target="_blank">TikTok</a></div>
-<div class="footer-section"><h3>Social</h3><a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/" rel="noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/csmorenolima" rel="noopener noreferrer" target="_blank">GitHub</a></div>
-</div>
-<div class="footer-bottom"><p>© <span id="current-year"></span> Carla Sofia Lima. All rights reserved.</p></div>
-</div>
-</footer>
-<script defer="" src="/assets/js/navigation.js"></script>
-<script src="/assets/js/site-components.js"></script></body>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section aria-labelledby="workflow-title" class="mpb-section mpb-workflow-section" id="workflow">
+            <div class="container">
+                <header class="mpb-section-header mpb-centered">
+                    <p class="mpb-eyebrow project-eyebrow">System workflow</p>
+                    <h2 class="mpb-section-title" id="workflow-title">From YouTube upload to WhatsApp delivery.</h2>
+                    <p class="mpb-section-copy">The full routine is shown below from publication to delivery.</p>
+                </header>
+                <ol aria-label="Morning Prayer Bot workflow steps" class="mpb-workflow">
+                    <li>
+                        <span class="mpb-step-number">01</span>
+                        <h3>YouTube upload</h3>
+                        <p>GracePrayer publishes a new daily prayer video.</p>
+                    </li>
+                    <li>
+                        <span class="mpb-step-number">02</span>
+                        <h3>RSS feed</h3>
+                        <p>The channel feed exposes the latest upload metadata.</p>
+                    </li>
+                    <li>
+                        <span class="mpb-step-number">03</span>
+                        <h3>RSS2JSON</h3>
+                        <p>The feed is converted into predictable structured data.</p>
+                    </li>
+                    <li>
+                        <span class="mpb-step-number">04</span>
+                        <h3>Apple Shortcut</h3>
+                        <p>Title, URL, date and thumbnail information are extracted.</p>
+                    </li>
+                    <li>
+                        <span class="mpb-step-number">05</span>
+                        <h3>Duplicate check</h3>
+                        <p>The current video is compared with the saved previous state.</p>
+                    </li>
+                    <li>
+                        <span class="mpb-step-number">06</span>
+                        <h3>WhatsApp delivery</h3>
+                        <p>The video and motivational message are shared with the group.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+        <section aria-labelledby="architecture-title" class="mpb-section mpb-architecture" id="architecture">
+            <div class="container">
+                <div class="mpb-split-heading">
+                    <div>
+                        <p class="mpb-eyebrow project-eyebrow">Architecture</p>
+                        <h2 class="mpb-section-title" id="architecture-title">How the services connect.</h2>
+                    </div>
+                    <p class="mpb-section-copy">The diagram provides a single technical view of the end-to-end system.
+                    </p>
+                </div>
+                <div class="mpb-architecture-grid">
+                    <figure class="mpb-architecture-figure">
+                        <img alt="Morning Prayer Bot system integration architecture diagram" decoding="async"
+                            loading="lazy" src="/assets/mpb-architecture-diagram.png" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section aria-labelledby="challenges-title" class="mpb-section mpb-challenges">
+            <div class="container">
+                <div class="mpb-split-heading">
+                    <div>
+                        <p class="mpb-eyebrow project-eyebrow">Challenges and fixes</p>
+                        <h2 class="mpb-section-title" id="challenges-title">Making a small workflow dependable.</h2>
+                    </div>
+                    <p class="mpb-section-copy">Reliability depended less on adding tools and more on controlling input,
+                        state and failure points.</p>
+                </div>
+                <div class="mpb-challenge-list">
+                    <article>
+                        <div>
+                            <span>Challenge</span>
+                            <h3>Feed data included more information than the workflow required.</h3>
+                        </div>
+                        <div>
+                            <span>Response</span>
+                            <p>Extract only the title, link, publication date and thumbnail before continuing.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <span>Challenge</span>
+                            <h3>Repeated scheduled runs could post the same video more than once.</h3>
+                        </div>
+                        <div>
+                            <span>Response</span>
+                            <p>Compare each feed item against a locally stored reference to the previously delivered
+                                video.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <span>Challenge</span>
+                            <h3>Apple Shortcuts required predictable data structures to avoid broken runs.</h3>
+                        </div>
+                        <div>
+                            <span>Response</span>
+                            <p>Convert the RSS feed into JSON before parsing and accessing individual values.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <span>Challenge</span>
+                            <h3>The project needed to stay lightweight and manageable without a server.</h3>
+                        </div>
+                        <div>
+                            <span>Response</span>
+                            <p>Use existing services and local device automation rather than building custom
+                                infrastructure.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <span>Challenge</span>
+                            <h3>The final WhatsApp action may pause while the host iPad is locked.</h3>
+                        </div>
+                        <div>
+                            <span>Response</span>
+                            <p>Schedule delivery for a time when the iPad is available, or unlock the device to complete
+                                the foreground WhatsApp hand-off.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section aria-labelledby="future-title" class="mpb-section mpb-future">
+            <div class="container">
+                <div class="mpb-split-heading">
+                    <div>
+                        <p class="mpb-eyebrow project-eyebrow">Future development</p>
+                        <h2 class="mpb-section-title" id="future-title">Focused improvements for the next version.</h2>
+                    </div>
+                    <p class="mpb-section-copy">Further development would concentrate on message variety, observability
+                        and configuration rather than making the core workflow more complex.</p>
+                </div>
+                <ol class="mpb-future-list">
+                    <li><span>01</span>
+                        <div>
+                            <h3>Rotating message library</h3>
+                            <p>Fetch a different motivational message from a small remote library each morning so that
+                                repeated wording does not lose its impact over time.</p>
+                        </div>
+                    </li>
+                    <li><span>02</span>
+                        <div>
+                            <h3>Error alerts</h3>
+                            <p>Send a private notification when retrieval, parsing or delivery fails.</p>
+                        </div>
+                    </li>
+                    <li><span>03</span>
+                        <div>
+                            <h3>Message Appearance</h3>
+                            <p>Include the MPB character in each daily message to make it more recognisable and
+                                engaging.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+        <section aria-label="Project navigation" class="project-navigation">
+            <div class="container nav-buttons">
+                <a class="nav-btn back" href="/Landing/engineering-landing.html">
+                    <i aria-hidden="true" class="fas fa-arrow-left"></i>
+                    <span>Back to Engineering</span>
+                </a>
+                <a class="nav-btn next" href="/portfolioHome.html">
+                    <span>Back to Portfolio</span>
+                    <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-intro"><a class="footer-brand" href="/portfolioHome.html#home">Carla
+                        Sofia Lima</a>
+                    <p>Learning together, growing together.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>OfficialMV</h3><a href="https://www.redbubble.com/people/Carla0520/shop"
+                        rel="noopener noreferrer" target="_blank">RedBubble</a><a
+                        href="https://www.instagram.com/officialmorenovalentim/" rel="noopener noreferrer"
+                        target="_blank">Instagram</a><a href="https://www.tiktok.com/@officialmorenovalentim"
+                        rel="noopener noreferrer" target="_blank">TikTok</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Social</h3><a href="https://www.linkedin.com/in/carla-sofia-lima-a814091a5/"
+                        rel="noopener noreferrer" target="_blank">LinkedIn</a><a href="https://github.com/csmorenolima"
+                        rel="noopener noreferrer" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="current-year"></span> Carla Sofia Lima. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script defer="" src="/assets/js/navigation.js"></script>
+    <script src="/assets/js/site-components.js"></script>
+</body>
+
 </html>
