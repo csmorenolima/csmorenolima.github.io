@@ -31,8 +31,7 @@ body.dropmini-page .dm-spec-ribbon-inner {
 }
 
 /* Eyebrow typography/placement is shared in category-page.css. */
-body.dropmini-page .dm-kicker,
-body.dropmini-page .dm-eyebrow {
+body.dropmini-page .dm-kicker {
     color: var(--project-eyebrow-color);
 }
 
@@ -44,6 +43,34 @@ body.dropmini-page h2 {
     font-weight: 700;
     line-height: .98;
     letter-spacing: -.055em;
+}
+
+/* Section titles (Colourways, Product Story, Contact) */
+body.dropmini-page :is(
+  #story-title,
+  #form-title,
+  #colourways-title
+) {
+  color: var(--dm-ink);
+}
+
+/* Section description copy: Product Story intro, User Interaction intro, Colourways intro */
+body.dropmini-page :is(
+  .dm-story-lead-new,
+  .dm-details-heading > p:last-child,
+  .dm-colourways-heading > p
+) {
+  color: var(--dm-muted);
+  font-size: var(--dm-case-copy-size);
+  line-height: var(--dm-case-copy-leading);
+  text-align: left;
+}
+
+/* Product Story body copy */
+body.dropmini-page .dm-story-body-new {
+  color: var(--dm-muted);
+  font-size: var(--dm-case-copy-size);
+  line-height: var(--dm-case-copy-leading);
 }
 
 /* =========================================================
@@ -535,164 +562,6 @@ body.dropmini-page .dm-form-image-small {
 }
 
 /* =========================================================
-   COLOURWAYS
-   ========================================================= */
-
-body.dropmini-page .dm-colourways {
-    --project-eyebrow-color: rgba(255, 255, 255, .78);
-
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: clamp(6rem, 8vw, 8rem) 0;
-    color: #fff;
-    background:
-        radial-gradient(circle at 84% 16%, rgba(255,255,255,.10), transparent 27rem),
-        radial-gradient(circle at 10% 90%, rgba(141,213,255,.12), transparent 25rem),
-        linear-gradient(135deg, #4c8ee3 0%, #286fcf 100%);
-}
-
-body.dropmini-page .dm-colourways-heading {
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, .58fr);
-    gap: clamp(2.5rem, 6vw, 6rem);
-    align-items: end;
-    margin: 0 0 3rem;
-}
-
-body.dropmini-page .dm-colourways-heading > div {
-    max-width: 800px;
-}
-
-body.dropmini-page .dm-colourways h2 {
-    color: #fff;
-}
-
-body.dropmini-page .dm-colourways-heading > p {
-    max-width: 500px;
-    margin: 0;
-    color: rgba(255,255,255,.74);
-    line-height: 1.8;
-}
-
-body.dropmini-page .dm-colour-viewer {
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 220px;
-    gap: 1rem;
-    align-items: stretch;
-}
-
-body.dropmini-page .dm-colour-feature {
-    position: relative;
-    min-width: 0;
-    min-height: 590px;
-    margin: 0;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,.16);
-    border-radius: 24px;
-    background: rgba(9,28,53,.12);
-    box-shadow: 0 22px 55px rgba(11,46,91,.16);
-}
-
-body.dropmini-page .dm-colour-feature > img {
-    display: block;
-    width: 100%;
-    height: 590px;
-    object-fit: cover;
-    object-position: center;
-    cursor: zoom-in;
-}
-
-body.dropmini-page .dm-colour-feature figcaption {
-    position: absolute;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin: 0;
-    padding: .95rem 1.1rem;
-    border: 1px solid rgba(255,255,255,.16);
-    border-radius: 16px;
-    color: #fff;
-    background: rgba(9,25,46,.78);
-    backdrop-filter: blur(12px);
-}
-
-body.dropmini-page .dm-colour-feature figcaption strong {
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-body.dropmini-page .dm-colour-feature figcaption span {
-    color: rgba(255, 255, 255, .62);
-    font-size: .76rem;
-}
-
-body.dropmini-page .dm-colour-thumbs {
-    min-width: 0;
-    display: grid;
-    grid-template-rows: repeat(6, minmax(0, 1fr));
-    gap: .65rem;
-}
-
-body.dropmini-page .dm-colour-thumb {
-    width: 100%;
-    min-width: 0;
-    min-height: 0;
-    display: grid;
-    grid-template-columns: 68px minmax(0, 1fr);
-    align-items: center;
-    gap: .75rem;
-    padding: .45rem;
-    border: 1px solid rgba(255,255,255,.16);
-    border-radius: 14px;
-    color: rgba(255,255,255,.78);
-    background: rgba(255,255,255,.095);
-    box-shadow: none;
-    overflow: hidden;
-    text-align: left;
-    cursor: pointer;
-    transition:
-        transform .18s ease,
-        border-color .18s ease,
-        background .18s ease,
-        box-shadow .18s ease;
-}
-
-body.dropmini-page .dm-colour-thumb img {
-    width: 68px;
-    height: 68px;
-    display: block;
-    object-fit: cover;
-    border-radius: 9px;
-}
-
-body.dropmini-page .dm-colour-thumb span {
-    min-width: 0;
-    color: inherit;
-    font-size: .78rem;
-    font-weight: 700;
-}
-
-body.dropmini-page .dm-colour-thumb:hover {
-    transform: translateY(-1px);
-    border-color: rgba(255,255,255,.38);
-    background: rgba(255,255,255,.15);
-}
-
-body.dropmini-page .dm-colour-thumb.active {
-    color: #fff;
-    border-color: rgba(255,255,255,.72);
-    background: rgba(255,255,255,.18);
-    box-shadow: 0 10px 24px rgba(13,49,95,.13);
-}
-
-/* =========================================================
    PROJECT NAV
    Shared button visuals/background come from category-page.css.
    ========================================================= */
@@ -768,37 +637,6 @@ body.dropmini-page .dm-lightbox-close {
 
     body.dropmini-page .dm-form-media {
         grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
-    }
-}
-
-@media (max-width: 1000px) {
-    body.dropmini-page .dm-colourways-heading {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-    }
-
-    body.dropmini-page .dm-colourways-heading > p {
-        max-width: 720px;
-    }
-
-    body.dropmini-page .dm-colour-viewer {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-colour-thumbs {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        grid-template-rows: none;
-    }
-
-    body.dropmini-page .dm-colour-thumb {
-        grid-template-columns: 1fr;
-        gap: .45rem;
-        text-align: center;
-    }
-
-    body.dropmini-page .dm-colour-thumb img {
-        width: 100%;
-        height: 84px;
     }
 }
 
@@ -940,19 +778,14 @@ body.dropmini-page {
     --dm-section-blue: var(--dm-blue);
     --dm-soft-surface: #f5f9fd;
     --dm-soft-border: rgba(31, 82, 143, .11);
-}
-
-/* One section-label colour throughout the Drop Mini case study. */
-body.dropmini-page :is(.dm-story-narrative, .dm-details-section, .dm-colourways) .project-eyebrow,
-body.dropmini-page :is(.dm-story-narrative, .dm-details-section, .dm-colourways) .dm-kicker {
-    color: var(--dm-section-blue) !important;
+    --dm-section-space: clamp(6.5rem, 8vw, 8.5rem);
+    --dm-section-copy-width: 58ch;
+    --dm-section-copy-size: 1rem;
+    --dm-section-copy-leading: 1.72;
 }
 
 /* ---------- Product story: narrative + form study ---------- */
 body.dropmini-page .dm-story-narrative {
-    width: min(var(--dm-width), calc(100% - (var(--dm-gutter) * 2)));
-    margin-inline: auto;
-    padding: clamp(6.5rem, 9vw, 8.75rem) 0;
     display: block;
 }
 
@@ -963,29 +796,6 @@ body.dropmini-page .dm-story-intro {
     align-items: center;
 }
 
-body.dropmini-page .dm-story-copy-new {
-    max-width: 700px;
-}
-
-body.dropmini-page .dm-story-copy-new h2 {
-    max-width: 680px;
-    margin-bottom: 1.65rem;
-    font-size: clamp(2.85rem, 5vw, 5.2rem);
-    line-height: .98;
-}
-
-body.dropmini-page .dm-story-lead-new,
-body.dropmini-page .dm-story-body-new {
-    max-width: 58ch;
-    margin: 0;
-    color: var(--dm-muted);
-    font-size: 1rem;
-    line-height: 1.72;
-}
-
-body.dropmini-page .dm-story-body-new {
-    margin-top: 1.15rem;
-}
 
 body.dropmini-page .dm-story-form-study {
     position: relative;
@@ -1046,7 +856,7 @@ body.dropmini-page .dm-form-study-caption {
     right: 1.5rem;
     bottom: 1.4rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: baseline;
     gap: 1rem;
     padding-top: 1rem;
@@ -1116,7 +926,6 @@ body.dropmini-page .dm-story-process p {
 
 /* ---------- Form & interaction: BrightUP-style paired media cards ---------- */
 body.dropmini-page .dm-details-section {
-    padding: clamp(6.25rem, 8vw, 8rem) 0;
     border-top: 1px solid var(--dm-soft-border);
     border-bottom: 1px solid var(--dm-soft-border);
     background:
@@ -1124,28 +933,6 @@ body.dropmini-page .dm-details-section {
         var(--dm-soft-surface);
 }
 
-body.dropmini-page .dm-details-inner {
-    width: min(var(--dm-width), calc(100% - (var(--dm-gutter) * 2)));
-    max-width: none;
-    margin-inline: auto;
-    padding-inline: 0;
-}
-
-body.dropmini-page .dm-details-heading {
-    max-width: 760px;
-    margin-bottom: clamp(2.5rem, 5vw, 4rem);
-}
-
-body.dropmini-page .dm-details-heading h2 {
-    max-width: 700px;
-}
-
-body.dropmini-page .dm-details-heading > p:last-child {
-    max-width: 620px;
-    margin: 1.25rem 0 0;
-    color: var(--dm-muted);
-    line-height: 1.75;
-}
 
 body.dropmini-page .dm-detail-grid {
     display: grid;
@@ -1214,90 +1001,128 @@ body.dropmini-page .dm-detail-copy p {
     line-height: 1.68;
 }
 
-/* ---------- Colourways: visual payoff, same blue eyebrow ---------- */
+/* ---------- Colourways: Sensation 360 treatment, adapted for Drop Mini ---------- */
 body.dropmini-page .dm-colourways {
     --project-eyebrow-color: var(--dm-blue);
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: clamp(6.5rem, 9vw, 9rem) 0;
     color: var(--dm-ink);
-    background:
-        radial-gradient(circle at 86% 12%, rgba(52,123,216,.07), transparent 24rem),
-        #fff;
+    background: #f4f3f7;
 }
 
-body.dropmini-page .dm-colourways-inner {
-    width: min(1320px, calc(100% - (var(--dm-gutter) * 2)));
-    margin-inline: auto;
-}
-
-body.dropmini-page .dm-colourways-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, .54fr);
-    gap: clamp(2.5rem, 6vw, 6rem);
-    align-items: end;
-    margin: 0 0 2.6rem;
-}
-
-body.dropmini-page .dm-colourways-heading > div {
-    max-width: 760px;
-}
-
-body.dropmini-page .dm-colourways h2 {
-    color: var(--dm-ink);
-}
-
-body.dropmini-page .dm-colourways-heading > p {
-    max-width: 460px;
-    margin: 0;
-    color: var(--dm-muted);
-    line-height: 1.72;
-}
 
 body.dropmini-page .dm-colour-viewer {
-    grid-template-columns: minmax(0, 1fr) 190px;
-    gap: .85rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 210px;
+    gap: 1rem;
+    align-items: stretch;
 }
 
 body.dropmini-page .dm-colour-feature {
-    min-height: 540px;
-    border: 1px solid var(--dm-soft-border);
-    background: var(--dm-soft-surface);
-    box-shadow: 0 20px 52px rgba(35,74,119,.09);
+    position: relative;
+    min-width: 0;
+    min-height: 590px;
+    margin: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 26px;
+    background: #e6e6ea;
+    box-shadow: none;
 }
 
 body.dropmini-page .dm-colour-feature > img {
-    height: 540px;
+    display: block;
+    width: 100%;
+    height: 590px;
+    object-fit: cover;
+    object-position: center;
+    cursor: zoom-in;
 }
 
 body.dropmini-page .dm-colour-feature figcaption {
-    border-color: rgba(17,35,60,.08);
-    color: var(--dm-ink);
-    background: rgba(255,255,255,.9);
-    box-shadow: 0 10px 28px rgba(20,52,91,.08);
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 16px;
+    color: #fff;
+    background: rgba(10,10,12,.67);
+    box-shadow: none;
+    backdrop-filter: blur(12px);
 }
 
 body.dropmini-page .dm-colour-feature figcaption span {
-    color: var(--dm-muted);
+    color: var(--dm-blue);
+    font-size: .65rem;
+    font-weight: 800;
+}
+
+body.dropmini-page .dm-colour-feature figcaption strong {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+body.dropmini-page .dm-colour-feature figcaption small {
+    color: rgba(255,255,255,.6);
+    font-size: .76rem;
+}
+
+body.dropmini-page .dm-colour-thumbs {
+    min-width: 0;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: .65rem;
 }
 
 body.dropmini-page .dm-colour-thumb {
-    border: 1px solid var(--dm-soft-border);
-    color: #506783;
-    background: #f8fbfe;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 66px 1fr;
+    align-items: center;
+    gap: .7rem;
+    padding: .45rem;
+    border: 1px solid rgba(17,35,60,.13);
+    border-radius: 14px;
+    color: #555862;
+    background: rgba(255,255,255,.68);
+    box-shadow: none;
+    overflow: hidden;
+    text-align: left;
+    cursor: pointer;
+    transition: .2s ease;
 }
 
-body.dropmini-page .dm-colour-thumb:hover {
-    border-color: rgba(52,123,216,.32);
-    background: #f0f6fc;
+body.dropmini-page .dm-colour-thumb img {
+    width: 66px;
+    height: 66px;
+    display: block;
+    object-fit: cover;
+    border-radius: 9px;
 }
 
+body.dropmini-page .dm-colour-thumb span {
+    min-width: 0;
+    color: inherit;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+body.dropmini-page .dm-colour-thumb:hover,
 body.dropmini-page .dm-colour-thumb.active {
-    color: var(--dm-blue-dark);
-    border-color: rgba(52,123,216,.55);
-    background: #edf5ff;
-    box-shadow: 0 10px 24px rgba(52,123,216,.10);
+    color: var(--dm-ink);
+    border-color: rgba(52,123,216,.6);
+    background: #fff;
+    box-shadow: none;
+    transform: none;
 }
 
 @media (max-width: 1000px) {
@@ -1326,33 +1151,14 @@ body.dropmini-page .dm-colour-thumb.active {
         border-top: 0;
     }
 
-    body.dropmini-page .dm-colourways-heading {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-    }
-
-    body.dropmini-page .dm-colourways-heading > p {
-        max-width: 720px;
-    }
 
     body.dropmini-page .dm-colour-viewer {
         grid-template-columns: 1fr;
     }
 
     body.dropmini-page .dm-colour-thumbs {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-rows: none;
-    }
-
-    body.dropmini-page .dm-colour-thumb {
-        grid-template-columns: 1fr;
-        gap: .45rem;
-        text-align: center;
-    }
-
-    body.dropmini-page .dm-colour-thumb img {
-        width: 100%;
-        height: 84px;
     }
 }
 
@@ -1363,6 +1169,10 @@ body.dropmini-page .dm-colour-thumb.active {
 }
 
 @media (max-width: 620px) {
+    body.dropmini-page {
+        --dm-section-space: 4.75rem;
+    }
+
     body.dropmini-page .dm-colour-feature,
     body.dropmini-page .dm-colour-feature > img {
         min-height: 400px;
@@ -1372,4 +1182,15 @@ body.dropmini-page .dm-colour-thumb.active {
     body.dropmini-page .dm-colour-thumbs {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    body.dropmini-page .dm-colour-thumb {
+        grid-template-columns: 56px minmax(0, 1fr);
+    }
+
+    body.dropmini-page .dm-colour-thumb img {
+        width: 56px;
+        height: 56px;
+    }
 }
+
+
