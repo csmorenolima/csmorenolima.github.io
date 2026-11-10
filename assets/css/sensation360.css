@@ -193,12 +193,7 @@ body.s360-page .s360-logo-corner {
 }
 
 body.s360-page .s360-hero h1 {
-    margin: 0;
     color: #fff;
-    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
-    font-weight: 700;
-    line-height: .75;
-    letter-spacing: -.08em;
 }
 
 body.s360-page .s360-hero h1 span,

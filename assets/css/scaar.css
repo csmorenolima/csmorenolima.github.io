@@ -112,14 +112,6 @@ body.scaar-page .nomad-hero-copy {
     max-width: 800px;
 }
 
-body.scaar-page .nomad-hero h1 {
-    margin: 0;
-    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
-    font-weight: 700;
-    line-height: .72;
-    letter-spacing: -.085em;
-}
-
 body.scaar-page .nomad-hero-statement {
     max-width: 720px;
     margin: 2rem 0 0;

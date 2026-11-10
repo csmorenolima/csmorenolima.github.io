@@ -102,16 +102,6 @@ body.dropmini-page .dm-hero-copy {
     max-width: var(--project-hero-copy-width, 760px);
 }
 
-body.dropmini-page .dm-hero h1 {
-    margin: 0;
-    color: var(--dm-ink);
-    font-family: "Manrope", "Inter", sans-serif;
-    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
-    font-weight: 500;
-    line-height: .87;
-    letter-spacing: -.078em;
-}
-
 body.dropmini-page .dm-hero h1 span {
     color: var(--dm-blue);
 }

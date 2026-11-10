@@ -375,17 +375,7 @@ body.enova-page .enova-hero-copy {
 
 body.enova-page .enova-hero h1 {
 
-    margin: 0;
-
     color: var(--enova-ink);
-
-    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
-
-    font-weight: 750;
-
-    line-height: .86;
-
-    letter-spacing: -.075em;
 
     text-shadow: none;
 
@@ -1998,14 +1988,7 @@ body.enova-page .video-embed iframe {
         padding: 4.75rem 0;
 
     }
-
-    body.enova-page .enova-hero h1 {
-
-        font-size: clamp(3.05rem, 16vw, 5rem);
-
-    }
-
-    body.enova-page .hero-summary {
+body.enova-page .hero-summary {
 
         font-size: 1rem;
 

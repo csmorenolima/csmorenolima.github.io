@@ -196,12 +196,7 @@ body.morning-prayer-page .mpb-hero-copy {
 
 body.morning-prayer-page .mpb-hero h1 {
     max-width: 760px;
-    margin: 0 0 1.5rem;
     color: var(--mpb-text);
-    font-size: var(--project-hero-title-size, clamp(4rem, min(8.3vw, 10.5svh), 8.8rem));
-    font-weight: 680;
-    line-height: .92;
-    letter-spacing: -.072em;
     text-shadow: none;
 }
 

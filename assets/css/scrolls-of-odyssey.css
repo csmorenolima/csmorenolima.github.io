@@ -289,23 +289,13 @@ body.soct-page .soct-hero-copy {
 
 body.soct-page .soct-hero h1 {
     max-width: 820px;
-    margin: 0 0 1.5rem;
     color: var(--soct-text);
-    font-family: "EB Garamond", Georgia, serif;
-    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
-    font-weight: 600;
-    line-height: .82;
-    letter-spacing: -.065em;
     text-wrap: balance;
-    padding-bottom: 1rem
 }
 
 body.soct-page .soct-hero h1 span {
     display: block;
-    margin-top: .14em;
     color: var(--soct-gold);
-    font-size: .72em;
-    line-height: .92;
 }
 
 body.soct-page .soct-hero-summary {
@@ -1717,12 +1707,7 @@ body.soct-page .project-navigation .nav-btn:focus-visible {
         padding: 8.25rem 0 5rem;
         background-position: 62% center;
     }
-
-    body.soct-page .soct-hero h1 {
-        font-size: clamp(3.7rem, 18vw, 5.8rem);
-    }
-
-    body.soct-page .soct-hero-actions {
+body.soct-page .soct-hero-actions {
         display: grid;
     }
 

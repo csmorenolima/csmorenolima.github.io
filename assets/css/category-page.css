@@ -1264,7 +1264,6 @@ body[data-category="soct"] .character-portrait {
     --project-hero-align: flex-start;
     --project-hero-padding-top: 9rem;
     --project-hero-padding-bottom: clamp(3rem, 7svh, 5.5rem);
-    --project-hero-title-size: clamp(4rem, min(8.3vw, 10.5svh), 8.8rem);
 
     /* Match the horizontal content edge created by the shared
        .container used by SO:CT: 1200px outer width + 2rem inner inset. */

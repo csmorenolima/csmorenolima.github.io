@@ -93,12 +93,7 @@ body.brightup-page .brightup-logo {
 
 body.brightup-page .brightup-hero h1 {
     max-width: 780px;
-    margin: 0;
     color: #fff;
-    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
-    font-weight: 800;
-    line-height: .93;
-    letter-spacing: -.065em;
 }
 
 body.brightup-page .brightup-hero-summary {

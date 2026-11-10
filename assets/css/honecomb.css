@@ -113,13 +113,6 @@ body.honecomb-page .container.hc-hero-grid {
     left: clamp(1.25rem, 2.5vw, 2.75rem);
 }
 
-.hc-hero h1 {
-    margin: .6rem 0 0;
-    font-size: var(--project-hero-title-size, clamp(4.2rem, 8.3vw, 8.8rem));
-    line-height: .8;
-    letter-spacing: -.075em
-}
-
 .hc-tagline {
     margin: 1.5rem 0 .7rem;
     color: var(--bamboo-light);
