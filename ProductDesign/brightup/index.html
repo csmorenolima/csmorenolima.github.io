@@ -71,7 +71,7 @@
                             </a>
                             <a class="brightup-button brightup-button-secondary project-button"
                                 href="https://marvelapp.com/di2hef1" rel="noreferrer noopener" target="_blank">
-                                Open app prototype
+                                View App Prototype
                                 <i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
                         </div>
@@ -102,13 +102,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="brightup-float-card brightup-float-card-one">
-                            <span>+XP</span>
-                            Civic knowledge
+                        <div class="brightup-float-card brightup-float-card-one"
+                            data-brightup-fact-card data-position="left-top" aria-hidden="false">
+                            <span class="brightup-fact-label">Civic confidence</span>
+                            <strong class="brightup-fact-text">Build confidence discussing politics and democracy.</strong>
                         </div>
-                        <div class="brightup-float-card brightup-float-card-two">
-                            <i class="fa-solid fa-users"></i>
-                            Learn together
+                        <div class="brightup-float-card brightup-float-card-two"
+                            data-brightup-fact-card-two data-position="right-bottom" aria-hidden="true">
+                            <span class="brightup-fact-label">Take part</span>
+                            <strong class="brightup-fact-text">Discover practical ways to participate and make your voice heard.</strong>
                         </div>
                     </div>
                 </div>
@@ -422,6 +424,138 @@
                 show(0);
                 start();
             });
+
+
+
+            const factCardOne = document.querySelector("[data-brightup-fact-card]");
+            const factCardTwo = document.querySelector("[data-brightup-fact-card-two]");
+
+            if (factCardOne && factCardTwo) {
+                const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+                const factSets = [
+                    {
+                        card: factCardOne,
+                        facts: [
+                            {
+                                label: "Civic confidence",
+                                text: "Build confidence discussing politics and democracy.",
+                                position: "left-top"
+                            },
+                            {
+                                label: "Think critically",
+                                text: "Practise evaluating information and making informed decisions.",
+                                position: "right-top"
+                            },
+                            {
+                                label: "Understand democracy",
+                                text: "Make voting and political processes easier to understand.",
+                                position: "left-bottom"
+                            }
+                        ]
+                    },
+                    {
+                        card: factCardTwo,
+                        facts: [
+                            {
+                                label: "Take part",
+                                text: "Discover practical ways to participate and make your voice heard.",
+                                position: "right-bottom"
+                            },
+                            {
+                                label: "Learn through play",
+                                text: "Turn civic education into an engaging, interactive experience.",
+                                position: "right-top"
+                            },
+                            {
+                                label: "Start early",
+                                text: "Build democratic awareness before disengagement becomes habit.",
+                                position: "right-bottom"
+                            }
+                        ]
+                    }
+                ];
+
+                let activeSet = 0;
+                let factIndexes = [0, 0];
+                let cycleTimer = null;
+
+                const render = (setIndex) => {
+                    const set = factSets[setIndex];
+                    const fact = set.facts[factIndexes[setIndex]];
+                    const label = set.card.querySelector(".brightup-fact-label");
+                    const text = set.card.querySelector(".brightup-fact-text");
+
+                    label.textContent = fact.label;
+                    text.textContent = fact.text;
+                    set.card.dataset.position = fact.position;
+                };
+
+                const showOnly = (setIndex, animate = true) => {
+                    factSets.forEach((set, index) => {
+                        const isActive = index === setIndex;
+                        set.card.classList.toggle("is-active", isActive);
+                        set.card.setAttribute("aria-hidden", isActive ? "false" : "true");
+
+                        if (!isActive) {
+                            set.card.classList.remove("is-entering");
+                        }
+                    });
+
+                    if (animate && !prefersReducedMotion.matches) {
+                        const card = factSets[setIndex].card;
+                        card.classList.add("is-entering");
+                        window.setTimeout(() => card.classList.remove("is-entering"), 520);
+                    }
+                };
+
+                const advance = () => {
+                    const currentCard = factSets[activeSet].card;
+
+                    if (prefersReducedMotion.matches) return;
+
+                    currentCard.classList.add("is-leaving");
+
+                    window.setTimeout(() => {
+                        currentCard.classList.remove("is-leaving", "is-active");
+                        currentCard.setAttribute("aria-hidden", "true");
+
+                        factIndexes[activeSet] =
+                            (factIndexes[activeSet] + 1) % factSets[activeSet].facts.length;
+
+                        activeSet = (activeSet + 1) % factSets.length;
+                        render(activeSet);
+                        showOnly(activeSet, true);
+                    }, 360);
+                };
+
+                const startCycle = () => {
+                    if (prefersReducedMotion.matches || cycleTimer !== null) return;
+                    cycleTimer = window.setInterval(advance, 4800);
+                };
+
+                const stopCycle = () => {
+                    if (cycleTimer !== null) {
+                        window.clearInterval(cycleTimer);
+                        cycleTimer = null;
+                    }
+                };
+
+                render(0);
+                render(1);
+                showOnly(0, false);
+                startCycle();
+
+                document.addEventListener("visibilitychange", () => {
+                    document.hidden ? stopCycle() : startCycle();
+                });
+
+                prefersReducedMotion.addEventListener?.("change", () => {
+                    stopCycle();
+                    showOnly(activeSet, false);
+                    if (!prefersReducedMotion.matches) startCycle();
+                });
+            }
 
             const lightbox = document.getElementById("brightup-lightbox");
             const lightboxImage = document.getElementById("brightup-lightbox-image");

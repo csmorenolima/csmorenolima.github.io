@@ -913,3 +913,223 @@ body.brightup-page #brightup-lightbox-caption {
         transition-duration: .001ms !important;
     }
 }
+
+/* =========================================================
+   BRIGHTUP — ROTATING HERO FACT CALLOUT
+   Card one cycles through concise conclusions from the
+   BrightUP project while keeping the phone as the focal point.
+   ========================================================= */
+body.brightup-page .brightup-float-card-one {
+    width: max-content;
+    min-width: 190px;
+    max-width: 235px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .22rem;
+    padding: .8rem .95rem;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transform-origin: center;
+    transition:
+        opacity .36s ease,
+        transform .36s cubic-bezier(.2, .75, .25, 1),
+        filter .36s ease;
+    will-change: opacity, transform;
+}
+
+body.brightup-page .brightup-float-card-one .brightup-fact-label {
+    color: var(--bu-yellow);
+    font-size: .65rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+body.brightup-page .brightup-float-card-one .brightup-fact-text {
+    max-width: 215px;
+    color: #fff;
+    font-size: .76rem;
+    font-weight: 650;
+    line-height: 1.42;
+    letter-spacing: -.01em;
+}
+
+body.brightup-page .brightup-float-card-one.is-leaving {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(8px) scale(.94);
+}
+
+body.brightup-page .brightup-float-card-one.is-entering {
+    animation: brightup-fact-pop .52s cubic-bezier(.18, .8, .28, 1) both;
+}
+
+@keyframes brightup-fact-pop {
+    0% {
+        opacity: 0;
+        transform: translateY(9px) scale(.93);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-2px) scale(1.015);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Three safe positions around the phone; the card changes position while hidden. */
+body.brightup-page .brightup-float-card-one[data-position="left-top"] {
+    left: -2.2rem;
+    right: auto;
+    top: 20%;
+    bottom: auto;
+}
+
+body.brightup-page .brightup-float-card-one[data-position="right-top"] {
+    left: auto;
+    right: -2rem;
+    top: 12%;
+    bottom: auto;
+}
+
+body.brightup-page .brightup-float-card-one[data-position="left-bottom"] {
+    left: -1.35rem;
+    right: auto;
+    top: auto;
+    bottom: 15%;
+}
+
+@media (max-width: 1050px) and (min-width: 721px) {
+    body.brightup-page .brightup-float-card-one[data-position="left-top"] {
+        left: 16rem;
+        right: auto;
+        top: 16%;
+        bottom: auto;
+    }
+
+    body.brightup-page .brightup-float-card-one[data-position="right-top"] {
+        left: 20rem;
+        right: auto;
+        top: 34%;
+        bottom: auto;
+    }
+
+    body.brightup-page .brightup-float-card-one[data-position="left-bottom"] {
+        left: 1.25rem;
+        right: auto;
+        top: auto;
+        bottom: 10%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.brightup-page .brightup-float-card-one {
+        transition: none;
+        animation: none !important;
+    }
+}
+
+/* Second rotating fact card: staggered complementary callouts */
+body.brightup-page .brightup-float-card-two {
+    width: max-content;
+    min-width: 185px;
+    max-width: 225px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .22rem;
+    padding: .78rem .92rem;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transform-origin: center;
+    transition:
+        opacity .36s ease,
+        transform .36s cubic-bezier(.2, .75, .25, 1),
+        filter .36s ease;
+    will-change: opacity, transform;
+}
+
+body.brightup-page .brightup-float-card-two .brightup-fact-label {
+    color: var(--bu-yellow);
+    font-size: .65rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+body.brightup-page .brightup-float-card-two .brightup-fact-text {
+    max-width: 205px;
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 650;
+    line-height: 1.42;
+    letter-spacing: -.01em;
+}
+
+body.brightup-page .brightup-float-card-two.is-leaving {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(8px) scale(.94);
+}
+
+body.brightup-page .brightup-float-card-two.is-entering {
+    animation: brightup-fact-pop .52s cubic-bezier(.18, .8, .28, 1) both;
+}
+
+body.brightup-page .brightup-float-card-two[data-position="right-bottom"] {
+    left: auto;
+    right: -1.15rem;
+    top: auto;
+    bottom: 12%;
+}
+
+body.brightup-page .brightup-float-card-two[data-position="right-top"] {
+    left: auto;
+    right: -1.8rem;
+    top: 30%;
+    bottom: auto;
+}
+
+@media (max-width: 1050px) and (min-width: 721px) {
+    body.brightup-page .brightup-float-card-two[data-position="right-bottom"] {
+        left: 18rem;
+        right: auto;
+        top: auto;
+        bottom: 8%;
+    }
+
+    body.brightup-page .brightup-float-card-two[data-position="right-top"] {
+        left: 20.5rem;
+        right: auto;
+        top: 48%;
+        bottom: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.brightup-page .brightup-float-card-two {
+        transition: none;
+        animation: none !important;
+    }
+}
+
+/* Only one BrightUP floating fact card is visible at a time. */
+body.brightup-page :is(.brightup-float-card-one, .brightup-float-card-two) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+body.brightup-page :is(.brightup-float-card-one, .brightup-float-card-two).is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.brightup-page :is(.brightup-float-card-one, .brightup-float-card-two).is-active.is-leaving {
+    opacity: 0;
+    visibility: visible;
+}
+
