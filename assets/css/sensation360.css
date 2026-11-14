@@ -4,6 +4,13 @@
    ========================================================= */
 
 body.s360-page {
+    --project-ribbon-bg: #f4eef7;
+    --project-ribbon-line: var(--s360-line-dark);
+    --project-ribbon-accent: var(--s360-pink);
+    --project-ribbon-ink: var(--s360-ink);
+    --project-ribbon-muted: var(--s360-muted-dark);
+    --project-ribbon-icon-shadow: 0 8px 24px rgba(22, 23, 28, .06);
+
     --s360-black: #090a0c;
     --s360-black-soft: #111218;
     --s360-panel: #171922;
@@ -106,6 +113,10 @@ body.s360-page .s360-hero h1 strong {
     display: block;
 }
 
+body.s360-page .s360-hero-statement em {
+    -webkit-background-clip: text;
+    background-clip: text;
+}
 
 body.s360-page .s360-cta {
     min-height: 52px;
@@ -128,103 +139,6 @@ body.s360-page .s360-cta:hover {
 
 body.s360-page .s360-cta-ghost {
     backdrop-filter: blur(8px);
-}
-
-/* SPEC RIBBON — moved out of the hero to match Drop Mini */
-body.s360-page .s360-spec-ribbon {
-    padding: 1.45rem 0;
-    color: var(--s360-ink);
-    border-top: 1px solid var(--s360-line-dark);
-    border-bottom: 1px solid var(--s360-line-dark);
-    background: #f4eef7;
-}
-
-body.s360-page .s360-spec-ribbon-inner {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-body.s360-page .s360-spec-ribbon article {
-    display: grid;
-    grid-template-columns: 42px minmax(0, 1fr);
-    align-items: center;
-    gap: .85rem;
-    padding: .3rem 1.55rem;
-    border-left: 1px solid var(--s360-line-dark);
-}
-
-body.s360-page .s360-spec-ribbon article:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-body.s360-page .s360-spec-ribbon article:last-child {
-    padding-right: 0;
-}
-
-body.s360-page .s360-spec-icon {
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: var(--s360-pink);
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(22, 23, 28, .06);
-}
-
-body.s360-page .s360-spec-ribbon p {
-    margin: 0 0 .2rem;
-    color: var(--s360-pink);
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-}
-
-body.s360-page .s360-spec-ribbon strong,
-body.s360-page .s360-spec-ribbon small {
-    display: block;
-}
-
-body.s360-page .s360-spec-ribbon strong {
-    color: var(--s360-ink);
-    font-size: 1rem;
-}
-
-body.s360-page .s360-spec-ribbon small {
-    margin-top: .12rem;
-    color: var(--s360-muted-dark);
-    font-size: .7rem;
-}
-
-@media (max-width: 900px) {
-    body.s360-page .s360-spec-ribbon-inner {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 1rem;
-    }
-
-    body.s360-page .s360-spec-ribbon article:nth-child(odd) {
-        padding-left: 0;
-        border-left: 0;
-    }
-}
-
-@media (max-width: 560px) {
-    body.s360-page .s360-spec-ribbon-inner {
-        grid-template-columns: 1fr;
-    }
-
-    body.s360-page .s360-spec-ribbon article,
-    body.s360-page .s360-spec-ribbon article:nth-child(odd) {
-        padding: .9rem 0;
-        border-left: 0;
-        border-top: 1px solid var(--s360-line-dark);
-    }
-
-    body.s360-page .s360-spec-ribbon article:first-child {
-        border-top: 0;
-    }
 }
 
 /* MANIFESTO */

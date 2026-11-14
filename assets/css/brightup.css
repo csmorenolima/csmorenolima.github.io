@@ -4,6 +4,14 @@
    ========================================================= */
 
 body.brightup-page {
+    --project-split-copy-color: var(--bu-muted);
+    --project-ribbon-bg: #fff6e8;
+    --project-ribbon-line: var(--bu-line);
+    --project-ribbon-accent: #b77900;
+    --project-ribbon-ink: var(--bu-ink);
+    --project-ribbon-muted: var(--bu-muted);
+    --project-ribbon-icon-shadow: 0 8px 24px rgba(28, 36, 49, .07);
+
     --bu-ink: #0e1b35;
     --bu-ink-soft: #17284b;
     --bu-blue: #2677ff;
@@ -162,6 +170,7 @@ body.brightup-page .brightup-hero-visual {
     position: relative;
     display: grid;
     place-items: center;
+    transform: translateY(clamp(1rem, 2vw, 1.5rem));
 }
 
 body.brightup-page .brightup-phone {
@@ -323,18 +332,10 @@ body.brightup-page .brightup-float-card-two {
    ========================================================= */
 
 body.brightup-page .brightup-brief {
-    padding: clamp(5rem, 8vw, 8rem) 0;
     background: #fff;
 }
 
-body.brightup-page .brightup-brief-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(300px, .7fr);
-    gap: clamp(3rem, 7vw, 7rem);
-    align-items: end;
-}
 
-body.brightup-page .brightup-brief h2,
 body.brightup-page .brightup-story h2,
 body.brightup-page .brightup-section-heading h2,
 body.brightup-page .brightup-gallery-heading h2,
@@ -346,11 +347,6 @@ body.brightup-page .brightup-development-heading h2 {
     letter-spacing: -.055em;
 }
 
-body.brightup-page .brightup-brief-grid > p {
-    margin: 0;
-    color: var(--bu-muted);
-    line-height: 1.8;
-}
 
 /* =========================================================
    Story + insight carousel
@@ -480,72 +476,6 @@ body.brightup-page .brightup-carousel-dots {
 
 body.brightup-page .brightup-carousel-dot {
     cursor: pointer;
-}
-
-/* =========================================================
-   Design response
-   ========================================================= */
-
-body.brightup-page .brightup-response {
-    padding: clamp(6rem, 9vw, 9rem) 0;
-    background: var(--bu-sky-soft);
-}
-
-body.brightup-page .brightup-section-heading {
-    max-width: 900px;
-    margin-bottom: 3rem;
-}
-
-body.brightup-page .brightup-response-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    border-top: 1px solid var(--bu-line);
-    border-bottom: 1px solid var(--bu-line);
-}
-
-body.brightup-page .brightup-response-grid article {
-    min-width: 0;
-    padding: 2rem 1.35rem 2.3rem;
-    border-left: 1px solid var(--bu-line);
-}
-
-body.brightup-page .brightup-response-grid article:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-body.brightup-page .brightup-response-grid article > span {
-    display: block;
-    margin-bottom: 1.8rem;
-    color: var(--bu-blue);
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .12em;
-}
-
-body.brightup-page .brightup-response-grid i {
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    margin-bottom: 1.1rem;
-    border-radius: 16px;
-    color: var(--bu-blue);
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(38,119,255,.08);
-}
-
-body.brightup-page .brightup-response-grid h3 {
-    margin: 0 0 .6rem;
-    color: var(--bu-ink);
-    font-size: 1.16rem;
-}
-
-body.brightup-page .brightup-response-grid p {
-    margin: 0;
-    color: var(--bu-muted);
-    font-size: .9rem;
-    line-height: 1.68;
 }
 
 /* =========================================================
@@ -792,6 +722,10 @@ body.brightup-page #brightup-lightbox-caption {
    ========================================================= */
 
 @media (max-width: 1050px) {
+    body.brightup-page .brightup-hero-visual {
+        transform: translateY(.75rem);
+    }
+
     body.brightup-page .brightup-hero-grid,
     body.brightup-page .brightup-story-grid {
         grid-template-columns: 1fr;
@@ -812,20 +746,6 @@ body.brightup-page #brightup-lightbox-caption {
         bottom: 8%;
     }
 
-    body.brightup-page .brightup-response-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    body.brightup-page .brightup-response-grid article:nth-child(3) {
-        padding-left: 0;
-        border-left: 0;
-        border-top: 1px solid var(--bu-line);
-    }
-
-    body.brightup-page .brightup-response-grid article:nth-child(4) {
-        border-top: 1px solid var(--bu-line);
-    }
-
     body.brightup-page .brightup-gallery-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 420px 250px;
@@ -838,6 +758,10 @@ body.brightup-page #brightup-lightbox-caption {
 }
 
 @media (max-width: 720px) {
+    body.brightup-page .brightup-hero-visual {
+        transform: none;
+    }
+
     body.brightup-page .brightup-phone {
         width: min(330px, 94%);
         transform: none;
@@ -847,7 +771,6 @@ body.brightup-page #brightup-lightbox-caption {
         display: none;
     }
 
-    body.brightup-page .brightup-brief-grid,
     body.brightup-page .brightup-gallery-heading,
     body.brightup-page .brightup-development-grid {
         grid-template-columns: 1fr;
@@ -855,19 +778,6 @@ body.brightup-page #brightup-lightbox-caption {
 
     body.brightup-page .brightup-insight-carousel {
         height: 390px;
-    }
-
-    body.brightup-page .brightup-response-grid {
-        grid-template-columns: 1fr;
-    }
-
-    body.brightup-page .brightup-response-grid article,
-    body.brightup-page .brightup-response-grid article:first-child,
-    body.brightup-page .brightup-response-grid article:nth-child(3),
-    body.brightup-page .brightup-response-grid article:nth-child(4) {
-        padding: 1.8rem 0;
-        border-left: 0;
-        border-top: 1px solid var(--bu-line);
     }
 
     body.brightup-page .brightup-gallery-heading > p {

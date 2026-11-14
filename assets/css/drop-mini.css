@@ -11,6 +11,13 @@ body.dropmini-page {
     --dm-line: rgba(31, 82, 143, .12);
     --dm-pale-blue: #edf5fb;
     --dm-width: 1480px;
+    --project-ribbon-bg: var(--dm-pale-blue);
+    --project-ribbon-line: var(--dm-line);
+    --project-ribbon-accent: var(--dm-blue);
+    --project-ribbon-ink: var(--dm-ink);
+    --project-ribbon-muted: var(--dm-muted);
+    --project-ribbon-icon-shadow: none;
+
     --dm-gutter: 4.5rem;
     --project-eyebrow-color: var(--dm-blue);
     --project-hero-logo-width: 135px;
@@ -353,75 +360,6 @@ body.dropmini-page .dm-story {
 }
 
 /* =========================================================
-   SPEC RIBBON
-   ========================================================= */
-
-body.dropmini-page .dm-spec-ribbon {
-    padding: 1.45rem 0;
-    border-top: 1px solid var(--dm-line);
-    border-bottom: 1px solid var(--dm-line);
-    background: var(--dm-pale-blue);
-}
-
-body.dropmini-page .dm-spec-ribbon-inner {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-body.dropmini-page .dm-spec-ribbon article {
-    display: grid;
-    grid-template-columns: 42px 1fr;
-    align-items: center;
-    gap: .85rem;
-    padding: .3rem 1.55rem;
-    border-left: 1px solid var(--dm-line);
-}
-
-body.dropmini-page .dm-spec-ribbon article:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-body.dropmini-page .dm-spec-ribbon article:last-child {
-    padding-right: 0;
-}
-
-body.dropmini-page .dm-spec-icon {
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: var(--dm-blue);
-    background: #fff;
-}
-
-body.dropmini-page .dm-spec-ribbon p {
-    margin: 0 0 .2rem;
-    color: var(--dm-blue);
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-}
-
-body.dropmini-page .dm-spec-ribbon strong,
-body.dropmini-page .dm-spec-ribbon small {
-    display: block;
-}
-
-body.dropmini-page .dm-spec-ribbon strong {
-    color: var(--dm-ink);
-    font-size: 1rem;
-}
-
-body.dropmini-page .dm-spec-ribbon small {
-    margin-top: .12rem;
-    color: var(--dm-muted);
-    font-size: .7rem;
-}
-
-/* =========================================================
    FORM & INTERACTION
    ========================================================= */
 
@@ -503,16 +441,6 @@ body.dropmini-page .dm-lightbox-close {
         grid-template-columns: 1fr;
     }
 
-    body.dropmini-page .dm-spec-ribbon-inner {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 1rem;
-    }
-
-    body.dropmini-page .dm-spec-ribbon article:nth-child(odd) {
-        padding-left: 0;
-        border-left: 0;
-    }
-
     body.dropmini-page .dm-ripples {
         left: 50%;
         bottom: 5.5%;
@@ -548,21 +476,6 @@ body.dropmini-page .dm-lightbox-close {
 
     body.dropmini-page .dm-button {
         width: 100%;
-    }
-
-    body.dropmini-page .dm-spec-ribbon-inner {
-        grid-template-columns: 1fr;
-    }
-
-    body.dropmini-page .dm-spec-ribbon article,
-    body.dropmini-page .dm-spec-ribbon article:nth-child(odd) {
-        padding: .9rem 0;
-        border-left: 0;
-        border-top: 1px solid var(--dm-line);
-    }
-
-    body.dropmini-page .dm-spec-ribbon article:first-child {
-        border-top: 0;
     }
 
     body.dropmini-page .project-navigation .nav-buttons {
@@ -689,7 +602,6 @@ body.dropmini-page .dm-form-study-caption {
     align-items: baseline;
     gap: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(52,123,216,.13);
 }
 
 body.dropmini-page .dm-form-study-caption span {
@@ -712,7 +624,6 @@ body.dropmini-page .dm-story-process article {
     grid-template-columns: auto minmax(0, 1fr);
     gap: 1rem;
     padding: 1.55rem 1.6rem 1.7rem;
-    border-left: 1px solid var(--dm-soft-border);
 }
 
 body.dropmini-page .dm-story-process article:first-child {
