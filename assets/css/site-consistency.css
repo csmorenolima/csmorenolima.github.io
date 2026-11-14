@@ -40,7 +40,6 @@
      ======================================================= */
   --site-project-hero-title-font: "Manrope", "Inter", sans-serif;
   --site-project-hero-title-size: 84px;
-  --site-project-hero-title-size-mobile: var(--site-project-hero-title-size);
   --site-project-hero-title-weight: 600;
   --site-project-hero-title-leading: .86;
   --site-project-hero-title-tracking: -.075em;
@@ -359,7 +358,7 @@ body.honecomb-page .hc-material small {
   letter-spacing: .14em !important;
 }
 
-/* Section titles only. Hero titles are excluded and owned by the shared BASS hero rule below. */
+/* Section titles only. Project hero titles are owned exclusively by the shared hero systems below. */
 body:is(
   .honecomb-page,
   .brightup-page,
@@ -856,12 +855,7 @@ body.s360-page .bass-hero-summary { color: rgba(255,255,255,.7) !important; }
   :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-copy {
     padding-top: var(--site-project-hero-copy-top-offset-mobile) !important;
   }
-
-  :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-title {
-    font-size: var(--site-project-hero-title-size-mobile) !important;
-  }
-
-  :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-statement {
+:is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-statement {
     font-size: var(--site-project-hero-statement-size-mobile) !important;
   }
 
@@ -1266,6 +1260,34 @@ body.soct-page .unified-project-logo {
   text-align: left !important;
 }
 
+
+:is(
+  body.brightup-page,
+  body.enova-page,
+  body.scaar-page,
+  body.soct-page,
+  body.morning-prayer-page
+) .unified-project-statement {
+  max-width: var(--unified-hero-summary-width) !important;
+  margin: 1.25rem 0 .9rem !important;
+  font-family: var(--site-project-hero-title-font) !important;
+  font-size: var(--site-project-hero-statement-size) !important;
+  font-weight: var(--site-project-hero-statement-weight) !important;
+  line-height: var(--site-project-hero-statement-leading) !important;
+  letter-spacing: var(--site-project-hero-statement-tracking) !important;
+  text-align: left !important;
+}
+
+:is(
+  body.brightup-page,
+  body.enova-page,
+  body.scaar-page,
+  body.soct-page,
+  body.morning-prayer-page
+) .unified-project-statement + .unified-project-summary {
+  margin-top: 0 !important;
+}
+
 :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-summary {
   max-width: var(--unified-hero-summary-width) !important;
   margin: 1.45rem 0 0 !important;
@@ -1326,10 +1348,16 @@ body.enova-page .hero-brand-mark {
   :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-copy {
     padding-top: var(--site-project-hero-copy-top-offset-mobile) !important;
   }
-
-  :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-title {
-    font-size: var(--site-project-hero-title-size-mobile) !important;
+:is(
+    body.brightup-page,
+    body.enova-page,
+    body.scaar-page,
+    body.soct-page,
+    body.morning-prayer-page
+  ) .unified-project-statement {
+    font-size: var(--site-project-hero-statement-size-mobile) !important;
   }
+
 
   :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-logo {
     top: 5.75rem !important;

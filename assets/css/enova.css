@@ -333,7 +333,9 @@ body.enova-page .enova-hero-shell {
 
 }
 
-body.enova-page .enova-hero h1 {
+/* Hero title typography is owned by site-consistency.css.
+   ENOVA keeps only its project-specific colour treatment here. */
+body.enova-page .enova-hero .unified-project-title {
 
     color: var(--enova-ink);
 
@@ -341,7 +343,7 @@ body.enova-page .enova-hero h1 {
 
 }
 
-body.enova-page .enova-hero h1 span {
+body.enova-page .enova-hero .unified-project-title span {
 
     display: block;
 
@@ -349,13 +351,13 @@ body.enova-page .enova-hero h1 span {
 
 /* Keep Dignity and Access visually lighter. */
 
-body.enova-page .enova-hero h1 span:not(.hero-accent-word) {
+body.enova-page .enova-hero .unified-project-title span:not(.hero-accent-word) {
 
     font-weight: 500;
 
 }
 
-body.enova-page .enova-hero h1 span + span {
+body.enova-page .enova-hero .unified-project-title span + span {
 
     margin-top: .09em;
 

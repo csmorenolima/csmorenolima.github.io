@@ -7,6 +7,11 @@ body.brightup-page {
     --bu-ink: #0e1b35;
     --bu-ink-soft: #17284b;
     --bu-blue: #2677ff;
+
+    /* BrightUP logo colours used only in the hero title */
+    --bu-logo-red: #ff003c;
+    --bu-logo-yellow: #ffc31f;
+
     --project-eyebrow-color: var(--bu-yellow);
     --project-hero-logo-width: 180px;
     --bu-blue-dark: #1457c7;
@@ -74,7 +79,25 @@ body.brightup-page .brightup-hero::before {
     mask-image: linear-gradient(90deg, transparent, #000 20%, #000 85%, transparent);
 }
 
-body.brightup-page .brightup-hero h1 {
+/* Hero typography sizing comes from site-consistency.css.
+   BrightUP owns only its brand colour treatment here. */
+body.brightup-page .brightup-product-title {
+    color: #fff;
+}
+
+body.brightup-page .brightup-title-bright {
+    color: var(--bu-logo-red);
+}
+
+body.brightup-page .brightup-title-up {
+    color: var(--bu-logo-yellow);
+}
+
+body.brightup-page .brightup-product-title > span {
+    display: inline;
+}
+
+body.brightup-page .brightup-hero-statement {
     color: #fff;
 }
 

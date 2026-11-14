@@ -29,6 +29,7 @@ body.s360-page {
     font-family: "Inter", sans-serif;
 }
 
+body.s360-page h1,
 body.s360-page h2,
 body.s360-page h3 {
     font-family: "Manrope", "Inter", sans-serif;
@@ -105,10 +106,6 @@ body.s360-page .s360-hero h1 strong {
     display: block;
 }
 
-body.s360-page .s360-hero-statement em {
-    -webkit-background-clip: text;
-    background-clip: text;
-}
 
 body.s360-page .s360-cta {
     min-height: 52px;
