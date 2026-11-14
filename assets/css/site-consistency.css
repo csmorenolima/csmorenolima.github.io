@@ -34,11 +34,43 @@
   --site-support-copy-leading: 1.68;
   --site-eyebrow-size: .72rem;
 
-  /* Canonical project-hero title: Drop Mini's original sizing */
-  --site-project-hero-title-size: clamp(4.2rem, 8.3vw, 8.8rem);
-  --site-project-hero-title-weight: 500;
-  --site-project-hero-title-leading: .87;
-  --site-project-hero-title-tracking: -.078em;
+  /* =======================================================
+     HERO TYPOGRAPHY — SINGLE SOURCE OF TRUTH
+     Project CSS owns colour/art/layout only.
+     ======================================================= */
+  --site-project-hero-title-font: "Manrope", "Inter", sans-serif;
+  --site-project-hero-title-size: 84px;
+  --site-project-hero-title-size-mobile: var(--site-project-hero-title-size);
+  --site-project-hero-title-weight: 600;
+  --site-project-hero-title-leading: .86;
+  --site-project-hero-title-tracking: -.075em;
+
+  --site-project-hero-statement-size: clamp(1.35rem, 2.05vw, 2rem);
+  --site-project-hero-statement-size-mobile: clamp(1.2rem, 6vw, 1.55rem);
+  --site-project-hero-statement-weight: 600;
+  --site-project-hero-statement-leading: 1.15;
+  --site-project-hero-statement-tracking: -.025em;
+
+  --site-project-hero-summary-size: 1rem;
+  --site-project-hero-summary-leading: 1.72;
+
+  --site-project-hero-copy-width: 680px;
+  --site-project-hero-summary-width: 600px;
+  --site-project-hero-copy-top-offset: clamp(6rem, 9svh, 6.75rem);
+  --site-project-hero-copy-top-offset-mobile: 4.25rem;
+  --site-project-hero-eyebrow-gap: 1.8rem;
+  --site-project-hero-eyebrow-gap-mobile: 1.35rem;
+  --site-project-hero-actions-gap: .8rem;
+  --site-project-hero-actions-top: 1.75rem;
+  --site-project-hero-actions-top-mobile: 1.5rem;
+
+  /* Generic/home/category hero typography is also owned here. */
+  --site-generic-hero-title-size: 3.5rem;
+  --site-generic-hero-title-size-mobile: 2.5rem;
+  --site-generic-hero-title-weight: 800;
+  --site-generic-hero-title-gap: 1rem;
+  --site-generic-hero-copy-size: 1.25rem;
+  --site-generic-hero-copy-gap: 2rem;
 
   /* Legacy token points to the same single source. */
   --project-hero-title-size: var(--site-project-hero-title-size);
@@ -61,6 +93,28 @@
   scroll-margin-top: var(--site-header-anchor-offset) !important;
 }
 
+
+
+/* =========================================================
+   GENERIC / LANDING HERO TYPOGRAPHY
+   Homepage and category landing pages inherit these sizes here.
+   ========================================================= */
+.hero h1 {
+  margin-bottom: var(--site-generic-hero-title-gap) !important;
+  font-size: var(--site-generic-hero-title-size) !important;
+  font-weight: var(--site-generic-hero-title-weight) !important;
+}
+
+.hero-quote {
+  margin-bottom: var(--site-generic-hero-copy-gap) !important;
+  font-size: var(--site-generic-hero-copy-size) !important;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: var(--site-generic-hero-title-size-mobile) !important;
+  }
+}
 
 /* Shared section rhythm */
 .section,
@@ -229,27 +283,7 @@ body.dropmini-page .dm-story-copy-new {
   margin-bottom: clamp(2.5rem, 5vw, 4rem) !important;
 }
 
-/* =========================================================
-   HONECOMB — TYPOGRAPHY CONSISTENCY WITH DROP MINI
-   Project CSS keeps colour, materials and layout. This layer owns
-   the shared BASS / case-study text scale.
-   ========================================================= */
-
-body.honecomb-page .hc-tagline {
-  font-family: "Manrope", "Inter", sans-serif !important;
-  font-size: var(--bass-hero-statement-size) !important;
-  font-weight: 600 !important;
-  line-height: 1.15 !important;
-  letter-spacing: -.025em !important;
-}
-
-body.honecomb-page .hc-lead {
-  max-width: var(--bass-hero-summary-width) !important;
-  font-size: var(--site-body-copy-size) !important;
-  line-height: var(--site-body-copy-leading) !important;
-}
-
-/* Section eyebrows already share the global project-eyebrow scale. */
+/* HonEcomb section typography below the hero remains shared here. */
 body.honecomb-page .hc-kicker {
   font-size: var(--site-eyebrow-size) !important;
   line-height: 1.25 !important;
@@ -325,7 +359,7 @@ body.honecomb-page .hc-material small {
   letter-spacing: .14em !important;
 }
 
-/* Section titles: apply Drop Mini's sizing to all product pages */
+/* Section titles only. Hero titles are excluded and owned by the shared BASS hero rule below. */
 body:is(
   .honecomb-page,
   .brightup-page,
@@ -363,8 +397,7 @@ body:is(
   #snapshot-title,
   #solution-title,
   #videos-title,
-  #why-title,
-  [class*="-title"]
+  #why-title
 ) {
   font-size: clamp(2.4rem, 3.7vw, 4.5rem) !important;
   line-height: .98 !important;
@@ -661,12 +694,8 @@ body[data-category="engineering"] .project-carousel-btn:disabled {
    Project CSS still owns colour, background artwork and imagery.
    ========================================================= */
 :is(body.dropmini-page, body.honecomb-page, body.s360-page) {
-  --bass-hero-title-size: var(--site-project-hero-title-size);
-  --bass-hero-copy-width: 680px;
-  --bass-hero-statement-size: clamp(1.35rem, 2.05vw, 2rem);
-  --bass-hero-summary-width: 600px;
-  /* Shared breathing room between the BASS corner logo and the eyebrow/title stack. */
-  --bass-hero-copy-top-offset: clamp(6rem, 9svh, 6.75rem);
+  --bass-hero-copy-width: var(--site-project-hero-copy-width);
+  --bass-hero-summary-width: var(--site-project-hero-summary-width);
 }
 
 :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero {
@@ -712,7 +741,7 @@ body.dropmini-page .bass-hero--visual .project-hero-visual {
 :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-copy {
   width: 100% !important;
   max-width: var(--bass-hero-copy-width) !important;
-  padding-top: var(--bass-hero-copy-top-offset) !important;
+  padding-top: var(--site-project-hero-copy-top-offset) !important;
 }
 
 :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-logo {
@@ -732,7 +761,7 @@ body.dropmini-page .bass-hero--visual .project-hero-visual {
 :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-eyebrow {
   width: 56px !important;
   height: 2px !important;
-  margin: 0 0 1.8rem !important;
+  margin: 0 0 var(--site-project-hero-eyebrow-gap) !important;
   border-radius: 999px !important;
   background: var(--project-eyebrow-color) !important;
 }
@@ -740,7 +769,7 @@ body.dropmini-page .bass-hero--visual .project-hero-visual {
 :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-title {
   max-width: 760px !important;
   margin: 0 !important;
-  font-family: "Manrope", "Inter", sans-serif !important;
+  font-family: var(--site-project-hero-title-font) !important;
   font-size: var(--site-project-hero-title-size) !important;
   font-weight: var(--site-project-hero-title-weight) !important;
   line-height: var(--site-project-hero-title-leading) !important;
@@ -769,11 +798,11 @@ body.s360-page .bass-hero-title > strong {
 :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-statement {
   max-width: var(--bass-hero-summary-width) !important;
   margin: 1.25rem 0 .9rem !important;
-  font-family: "Manrope", "Inter", sans-serif !important;
-  font-size: var(--bass-hero-statement-size) !important;
-  font-weight: 600 !important;
-  line-height: 1.15 !important;
-  letter-spacing: -.025em !important;
+  font-family: var(--site-project-hero-title-font) !important;
+  font-size: var(--site-project-hero-statement-size) !important;
+  font-weight: var(--site-project-hero-statement-weight) !important;
+  line-height: var(--site-project-hero-statement-leading) !important;
+  letter-spacing: var(--site-project-hero-statement-tracking) !important;
 }
 
 body.dropmini-page .bass-hero-statement { color: #5d7390 !important; }
@@ -789,8 +818,8 @@ body.s360-page .bass-hero-statement em {
 :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-summary {
   max-width: var(--bass-hero-summary-width) !important;
   margin: 0 !important;
-  font-size: 1rem !important;
-  line-height: 1.72 !important;
+  font-size: var(--site-project-hero-summary-size) !important;
+  line-height: var(--site-project-hero-summary-leading) !important;
 }
 body.dropmini-page .bass-hero-summary { color: #586d86 !important; }
 body.honecomb-page .bass-hero-summary,
@@ -799,8 +828,8 @@ body.s360-page .bass-hero-summary { color: rgba(255,255,255,.7) !important; }
 :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-actions {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: .8rem !important;
-  margin-top: 1.75rem !important;
+  gap: var(--site-project-hero-actions-gap) !important;
+  margin-top: var(--site-project-hero-actions-top) !important;
 }
 
 @media (max-width: 1080px) {
@@ -814,12 +843,6 @@ body.s360-page .bass-hero-summary { color: rgba(255,255,255,.7) !important; }
 }
 
 @media (max-width: 640px) {
-  :is(body.dropmini-page, body.honecomb-page, body.s360-page) {
-    --bass-hero-title-size: clamp(3.2rem, 15vw, 5rem);
-    --bass-hero-statement-size: clamp(1.2rem, 6vw, 1.55rem);
-    --bass-hero-copy-top-offset: 4.25rem;
-  }
-
   :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero {
     min-height: auto !important;
     padding-top: 8.25rem !important;
@@ -830,6 +853,18 @@ body.s360-page .bass-hero-summary { color: rgba(255,255,255,.7) !important; }
     padding-inline: 1rem !important;
   }
 
+  :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-copy {
+    padding-top: var(--site-project-hero-copy-top-offset-mobile) !important;
+  }
+
+  :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-title {
+    font-size: var(--site-project-hero-title-size-mobile) !important;
+  }
+
+  :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-statement {
+    font-size: var(--site-project-hero-statement-size-mobile) !important;
+  }
+
   :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-logo {
     top: 5.75rem !important;
     left: 1rem !important;
@@ -837,11 +872,11 @@ body.s360-page .bass-hero-summary { color: rgba(255,255,255,.7) !important; }
   }
 
   :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-eyebrow {
-    margin-bottom: 1.35rem !important;
+    margin-bottom: var(--site-project-hero-eyebrow-gap-mobile) !important;
   }
 
   :is(body.dropmini-page, body.honecomb-page, body.s360-page) .bass-hero-actions {
-    margin-top: 1.5rem !important;
+    margin-top: var(--site-project-hero-actions-top-mobile) !important;
   }
 }
 
@@ -946,17 +981,12 @@ body.s360-page .bass-hero .bass-hero-eyebrow {
 }
 
 body.s360-page .bass-hero .bass-hero-statement {
-  margin-top: 1.55rem !important;
   max-width: 560px !important;
-  font-size: clamp(1.45rem, 2.2vw, 2.05rem) !important;
-  font-weight: 600 !important;
-  line-height: 1.23 !important;
 }
 
 body.s360-page .bass-hero .bass-hero-summary {
   max-width: 560px !important;
   color: rgba(255,255,255,.78) !important;
-  line-height: 1.62 !important;
 }
 
 body.s360-page .bass-hero .s360-hero-actions {
@@ -1053,13 +1083,7 @@ body.s360-page .s360-hero-product img {
 }
 
 @media (max-width: 640px) {
-  body.s360-page .bass-hero .bass-hero-title {
-    font-size: clamp(3.15rem, 14.5vw, 4.8rem) !important;
-  }
-  body.s360-page .bass-hero .bass-hero-statement {
-    font-size: clamp(1.25rem, 6.2vw, 1.55rem) !important;
-  }
-  body.s360-page .s360-hero-product {
+body.s360-page .s360-hero-product {
     height: min(116vw, 500px) !important;
     margin-top: .25rem;
   }
@@ -1127,10 +1151,8 @@ body.s360-page .bass-hero .bass-hero-eyebrow {
    Project CSS still owns palette, imagery and type personality.
    ========================================================= */
 :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) {
-  --unified-hero-title-size: var(--site-project-hero-title-size);
   --unified-hero-copy-width: 720px;
   --unified-hero-summary-width: 650px;
-  --unified-hero-copy-top-offset: clamp(6rem, 9svh, 6.75rem);
   --unified-hero-logo-width: 150px;
 }
 
@@ -1190,7 +1212,7 @@ body.enova-page .unified-project-visual {
 :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-copy {
   width: 100% !important;
   max-width: var(--unified-hero-copy-width) !important;
-  padding-top: var(--unified-hero-copy-top-offset) !important;
+  padding-top: var(--site-project-hero-copy-top-offset) !important;
   position: relative;
   z-index: 2;
 }
@@ -1227,7 +1249,7 @@ body.soct-page .unified-project-logo {
   display: block !important;
   width: 56px !important;
   height: 2px !important;
-  margin: 0 0 1.8rem !important;
+  margin: 0 0 var(--site-project-hero-eyebrow-gap) !important;
   border: 0 !important;
   border-radius: 999px !important;
   background: var(--project-eyebrow-color) !important;
@@ -1236,7 +1258,7 @@ body.soct-page .unified-project-logo {
 :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-title {
   max-width: 820px !important;
   margin: 0 !important;
-  font-family: "Manrope", "Inter", sans-serif !important;
+  font-family: var(--site-project-hero-title-font) !important;
   font-size: var(--site-project-hero-title-size) !important;
   font-weight: var(--site-project-hero-title-weight) !important;
   line-height: var(--site-project-hero-title-leading) !important;
@@ -1247,8 +1269,8 @@ body.soct-page .unified-project-logo {
 :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-summary {
   max-width: var(--unified-hero-summary-width) !important;
   margin: 1.45rem 0 0 !important;
-  font-size: clamp(1rem, 1.3vw, 1.16rem) !important;
-  line-height: 1.68 !important;
+  font-size: var(--site-project-hero-summary-size) !important;
+  line-height: var(--site-project-hero-summary-leading) !important;
 }
 
 :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-actions {
@@ -1289,8 +1311,6 @@ body.enova-page .hero-brand-mark {
 
 @media (max-width: 640px) {
   :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) {
-    --unified-hero-title-size: clamp(3.2rem, 15vw, 5rem);
-    --unified-hero-copy-top-offset: 4.25rem;
   }
 
   :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-hero {
@@ -1303,6 +1323,14 @@ body.enova-page .hero-brand-mark {
     padding-inline: 1rem !important;
   }
 
+  :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-copy {
+    padding-top: var(--site-project-hero-copy-top-offset-mobile) !important;
+  }
+
+  :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-title {
+    font-size: var(--site-project-hero-title-size-mobile) !important;
+  }
+
   :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-logo {
     top: 5.75rem !important;
     left: 1rem !important;
@@ -1311,11 +1339,11 @@ body.enova-page .hero-brand-mark {
   }
 
   :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-eyebrow {
-    margin-bottom: 1.35rem !important;
+    margin-bottom: var(--site-project-hero-eyebrow-gap-mobile) !important;
   }
 
   :is(body.brightup-page, body.enova-page, body.scaar-page, body.soct-page, body.morning-prayer-page) .unified-project-actions {
-    margin-top: 1.5rem !important;
+    margin-top: var(--site-project-hero-actions-top-mobile) !important;
   }
 }
 

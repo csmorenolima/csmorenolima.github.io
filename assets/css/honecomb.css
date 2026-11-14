@@ -16,7 +16,6 @@ body.honecomb-page {
     overflow-x: hidden
 }
 
-body.honecomb-page h1,
 body.honecomb-page h2,
 body.honecomb-page h3 {
     font-family: Manrope, Inter, sans-serif
@@ -30,9 +29,7 @@ body.honecomb-page h3 {
 .hc-kicker {
     margin: 0 0 .8rem;
     color: var(--forest);
-    font-size: .7rem;
     font-weight: 800;
-    letter-spacing: .17em;
     text-transform: uppercase
 }
 
@@ -42,9 +39,6 @@ body.honecomb-page h3 {
 
 .hc-hero {
     position: relative;
-    min-height: var(--project-hero-min-height, max(760px, 100svh));
-    display: flex;
-    align-items: var(--project-hero-align, flex-start);
     isolation: isolate;
     overflow: hidden;
     padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
@@ -91,46 +85,6 @@ body.honecomb-page .container.hc-hero-grid {
     grid-template-columns: 1fr;
     gap: 0;
     align-items: end
-}
-
-.hc-copy {
-    max-width: 800px
-}
-
-.hc-logo {
-    width: 180px;
-    max-height: 60px;
-    display: block;
-    object-fit: contain;
-    object-position: left center;
-    filter: brightness(0) invert(1)
-}
-
-.hc-logo-corner {
-    position: absolute;
-    z-index: 2;
-    top: calc(var(--project-hero-padding-top, 9rem) - 2.75rem);
-    left: clamp(1.25rem, 2.5vw, 2.75rem);
-}
-
-.hc-tagline {
-    margin: 1.5rem 0 .7rem;
-    color: var(--bamboo-light);
-    font-size: clamp(1.35rem, 2.5vw, 2.2rem);
-    font-weight: 600
-}
-
-.hc-lead {
-    max-width: 650px;
-    color: rgba(255, 255, 255, .7);
-    line-height: 1.75
-}
-
-.hc-actions {
-    display: flex;
-    gap: .8rem;
-    flex-wrap: wrap;
-    margin-top: 2rem
 }
 
 .hc-btn {
@@ -268,14 +222,10 @@ body.honecomb-page .container.hc-hero-grid {
 .hc-gallery h2,
 .hc-specs h2 {
     margin: 0;
-    font-size: clamp(2.7rem, 5vw, 4.8rem);
-    line-height: .98;
-    letter-spacing: -.055em
 }
 
 .hc-body {
     color: var(--muted);
-    line-height: 1.82
 }
 
 .hc-philosophy {
@@ -286,7 +236,6 @@ body.honecomb-page .container.hc-hero-grid {
 
 .hc-philosophy p {
     color: rgba(255, 255, 255, .68);
-    line-height: 1.8
 }
 
 .hc-material {
@@ -318,12 +267,10 @@ body.honecomb-page .container.hc-hero-grid {
 .hc-material small {
     color: var(--bamboo-light);
     font-weight: 800;
-    letter-spacing: .12em
 }
 
 .hc-material strong {
     display: block;
-    font-size: 2rem
 }
 
 .hc-sustain {
@@ -369,13 +316,11 @@ body.honecomb-page .container.hc-hero-grid {
 }
 
 .hc-slides h3 {
-    font-size: 2rem;
     margin: 1rem 0 .4rem
 }
 
 .hc-slides p {
     color: var(--muted);
-    line-height: 1.7
 }
 
 .hc-controls {
@@ -387,11 +332,6 @@ body.honecomb-page .container.hc-hero-grid {
 }
 
 .hc-controls button {
-    width: 42px;
-    height: 42px;
-    border: 1px solid rgba(47, 109, 69, .18);
-    border-radius: 50%;
-    background: white;
     color: var(--forest)
 }
 
@@ -399,20 +339,6 @@ body.honecomb-page .container.hc-hero-grid {
     display: flex;
     justify-content: center;
     gap: .45rem
-}
-
-.dots button {
-    width: 7px;
-    height: 7px;
-    padding: 0;
-    border: 0;
-    border-radius: 99px;
-    background: rgba(47, 109, 69, .25)
-}
-
-.dots button.active {
-    width: 28px;
-    background: var(--forest)
 }
 
 .hc-features {
@@ -453,7 +379,6 @@ body.honecomb-page .container.hc-hero-grid {
 
 .hc-feature-grid p {
     color: var(--muted);
-    line-height: 1.68
 }
 
 .hc-gallery {
@@ -471,7 +396,6 @@ body.honecomb-page .container.hc-hero-grid {
 
 .hc-gallery-head>p {
     color: var(--muted);
-    line-height: 1.8
 }
 
 .hc-gallery-grid {
@@ -519,7 +443,6 @@ body.honecomb-page .container.hc-hero-grid {
 
 .hc-spec-grid p {
     color: var(--muted);
-    line-height: 1.8
 }
 
 .project-navigation {
@@ -567,7 +490,6 @@ body.honecomb-page .container.hc-hero-grid {
     display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, .9)
 }
 
 .hc-lightbox.open {
@@ -577,17 +499,12 @@ body.honecomb-page .container.hc-hero-grid {
 .hc-lightbox img {
     max-width: 90vw;
     max-height: 82vh;
-    border-radius: 16px
 }
 
 .hc-lightbox button {
     position: absolute;
     top: 2rem;
     right: 2rem;
-    border: 0;
-    background: none;
-    color: #fff;
-    font-size: 3rem
 }
 
 @media(max-width:900px) {
@@ -617,10 +534,6 @@ body.honecomb-page .container.hc-hero-grid {
 }
 
 @media(max-width:700px) {
-    .hc-logo-corner {
-        left: 1rem;
-        width: 150px;
-    }
 
 .hc-feature-grid,
     .hc-gallery-head,

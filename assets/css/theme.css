@@ -306,9 +306,6 @@ body {
     .mobile-menu-btn {
         display: block;
     }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
     .about-content,
     .contact-grid {
         grid-template-columns: 1fr;

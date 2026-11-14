@@ -30,7 +30,6 @@ body.brightup-page {
     font-family: "Inter", sans-serif;
 }
 
-body.brightup-page h1,
 body.brightup-page h2,
 body.brightup-page h3 {
     font-family: "Manrope", "Inter", sans-serif;
@@ -75,40 +74,12 @@ body.brightup-page .brightup-hero::before {
     mask-image: linear-gradient(90deg, transparent, #000 20%, #000 85%, transparent);
 }
 
-body.brightup-page .brightup-hero-grid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(360px, .72fr);
-    gap: clamp(3rem, 7vw, 7rem);
-    align-items: center;
-}
-
-body.brightup-page .brightup-hero-copy {
-    max-width: var(--project-hero-copy-width, 760px);
-}
-
-body.brightup-page .brightup-logo {
-    filter: brightness(0) invert(1);
-}
-
 body.brightup-page .brightup-hero h1 {
-    max-width: 780px;
     color: #fff;
 }
 
 body.brightup-page .brightup-hero-summary {
-    max-width: 680px;
-    margin: 1.5rem 0 0;
     color: rgba(255,255,255,.74);
-    font-size: clamp(1rem, 1.4vw, 1.18rem);
-    line-height: 1.75;
-}
-
-body.brightup-page .brightup-hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .85rem;
-    margin-top: 2rem;
 }
 
 body.brightup-page .brightup-button {
@@ -461,11 +432,6 @@ body.brightup-page .brightup-insight-controls {
     border-top: 1px solid rgba(255,255,255,.11);
 }
 
-body.brightup-page .brightup-insight-arrows {
-    display: flex;
-    gap: .55rem;
-}
-
 body.brightup-page .brightup-carousel-button {
     width: 44px;
     height: 44px;
@@ -490,18 +456,7 @@ body.brightup-page .brightup-carousel-dots {
 }
 
 body.brightup-page .brightup-carousel-dot {
-    width: 7px;
-    height: 7px;
-    padding: 0;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(255,255,255,.28);
     cursor: pointer;
-}
-
-body.brightup-page .brightup-carousel-dot.active {
-    width: 28px;
-    background: var(--bu-yellow);
 }
 
 /* =========================================================
@@ -776,7 +731,6 @@ body.brightup-page .brightup-lightbox {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background: rgba(3, 10, 24, .92);
 }
 
 body.brightup-page .brightup-lightbox.is-open {
@@ -795,17 +749,12 @@ body.brightup-page .brightup-lightbox-content img {
     max-width: 100%;
     max-height: 78vh;
     margin: 0 auto;
-    border-radius: 16px;
 }
 
 body.brightup-page .brightup-lightbox-close {
     position: absolute;
     top: -3.2rem;
     right: 0;
-    border: 0;
-    color: #fff;
-    background: transparent;
-    font-size: 2.6rem;
     cursor: pointer;
 }
 

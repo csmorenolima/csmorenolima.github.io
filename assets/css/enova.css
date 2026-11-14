@@ -183,13 +183,7 @@ body.enova-page .story-copy h2 {
 
     color: var(--enova-ink);
 
-    font-size: clamp(2rem, 3.2vw, 3.35rem);
-
     font-weight: 750;
-
-    line-height: 1.04;
-
-    letter-spacing: -.045em;
 
 }
 
@@ -305,21 +299,9 @@ body.enova-page .button-secondary:hover {
 
 body.enova-page .enova-hero {
 
-    position: relative;
-
-    min-height: var(--project-hero-min-height, max(760px, 100svh));
-
-    display: flex;
-
-    align-items: var(--project-hero-align, flex-start);
-
-    overflow: hidden;
-
     padding: var(--project-hero-padding-top, 9rem) 0 var(--project-hero-padding-bottom, 5.5rem);
 
     color: var(--enova-ink);
-
-    text-align: left;
 
     background:
 
@@ -348,28 +330,6 @@ body.enova-page .enova-hero-shell {
     position: relative;
 
     z-index: 2;
-
-    width: min(var(--project-hero-content-width, 1200px), 100%);
-
-    max-width: var(--project-hero-content-width, 1200px);
-
-    padding-inline: var(--project-hero-content-gutter, 2rem);
-
-    box-sizing: border-box;
-
-    display: grid;
-
-    grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
-
-    gap: clamp(2.5rem, 5vw, 5rem);
-
-    align-items: center;
-
-}
-
-body.enova-page .enova-hero-copy {
-
-    max-width: 650px;
 
 }
 
@@ -411,27 +371,7 @@ body.enova-page .enova-hero .hero-accent-word {
 
 body.enova-page .hero-summary {
 
-    max-width: 610px;
-
-    margin: 2rem 0 0;
-
     color: var(--enova-ink-soft);
-
-    font-size: clamp(1.03rem, 1.25vw, 1.18rem);
-
-    line-height: 1.72;
-
-}
-
-body.enova-page .hero-actions {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: .85rem;
-
-    margin-top: 2rem;
 
 }
 
@@ -919,14 +859,6 @@ body.enova-page .impact-controls {
 
 }
 
-body.enova-page .impact-arrows {
-
-    display: flex;
-
-    gap: .55rem;
-
-}
-
 body.enova-page .icon-button {
 
     width: 42px;
@@ -969,27 +901,7 @@ body.enova-page .impact-dots {
 
 body.enova-page .impact-dot {
 
-    width: 7px;
-
-    height: 7px;
-
-    padding: 0;
-
-    border: 0;
-
-    border-radius: 999px;
-
-    background: rgba(255, 255, 255, .28);
-
     cursor: pointer;
-
-}
-
-body.enova-page .impact-dot.is-active {
-
-    width: 28px;
-
-    background: #fff;
 
 }
 
@@ -1681,14 +1593,6 @@ body.enova-page .dialog-close {
 
     place-items: center;
 
-    border: 1px solid rgba(255, 255, 255, .14);
-
-    border-radius: 50%;
-
-    color: #fff;
-
-    background: rgba(255, 255, 255, .08);
-
     cursor: pointer;
 
 }
@@ -1847,14 +1751,6 @@ body.enova-page .video-embed iframe {
 
 @media (max-width: 1120px) {
 
-    body.enova-page .enova-hero-shell {
-
-        grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr);
-
-        gap: 3rem;
-
-    }
-
     body.enova-page .enova-hero-visual {
 
         min-height: 540px;
@@ -1905,8 +1801,6 @@ body.enova-page .video-embed iframe {
 
     body.enova-page .enova-hero {
 
-        min-height: auto;
-
         padding: 8.5rem 0 5rem;
 
     }
@@ -1918,12 +1812,6 @@ body.enova-page .video-embed iframe {
     body.enova-page .split-heading {
 
         grid-template-columns: 1fr;
-
-    }
-
-    body.enova-page .enova-hero-copy {
-
-        max-width: 720px;
 
     }
 
@@ -1986,17 +1874,6 @@ body.enova-page .video-embed iframe {
     body.enova-page .section {
 
         padding: 4.75rem 0;
-
-    }
-body.enova-page .hero-summary {
-
-        font-size: 1rem;
-
-    }
-
-    body.enova-page .hero-actions {
-
-        display: grid;
 
     }
 
